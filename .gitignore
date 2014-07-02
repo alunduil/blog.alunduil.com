@@ -1,1 +1,4 @@
 *.py[co]
+.doit.db
+cache/
+output/
