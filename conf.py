@@ -89,7 +89,7 @@ NAVIGATION_LINKS = {
         ('/archive.html', 'Archives', 'icon-folder-open-alt'),
         ('/categories/index.html', 'Tags', 'icon-tags'),
         ('/rss.xml', 'RSS', 'icon-rss'),
-        ('/about.html', 'About Me', 'icon-user'),
+        ('/stories/about-alex-brandt.html', 'About Me', 'icon-user'),
         ('https://twitter.com/alunduil', 'My Twitter', 'icon-twitter'),
         ('https://github.com/alunduil', 'My Github', 'icon-github'),
     )
@@ -244,7 +244,8 @@ COMPILERS = {
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-# DEPLOY_COMMANDS = []
+DEPLOY_COMMANDS = [
+]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
