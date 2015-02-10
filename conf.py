@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import unicode_literals
+import os
 import time
 
 #!! This is the configuration of Nikola. !!#
@@ -244,8 +245,14 @@ COMPILERS = {
 # And then do a backup, or run `nikola ping` from the `ping`
 # plugin (`nikola install_plugin ping`).
 # To do manual deployment, set it to []
-DEPLOY_COMMANDS = [
-]
+
+
+DEPLOY_COMMANDS = {
+    'default': [
+        'gsutil -m rsync -d -r output/ gs://blog.alunduil.com/',
+        'gsutil -m acl ch -r -u AllUsers:R gs://blog.alunduil.com/',
+    ],
+}
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
