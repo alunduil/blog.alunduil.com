@@ -17,7 +17,7 @@ SITE_URL = "http://blog.alunduil.com/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
-BLOG_EMAIL = "alunduil@alunduil.com"
+BLOG_EMAIL = "alunduil+blog@alunduil.com"
 BLOG_DESCRIPTION = "Random Technology Findings"
 
 # Nikola is multilingual!
@@ -343,7 +343,7 @@ DEPLOY_COMMANDS = {
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
-THEME = "zen-ipython"
+THEME = "material-theme"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.
