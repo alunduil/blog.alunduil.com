@@ -86,13 +86,13 @@ TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('/stories/about-alex-brandt.html', 'About Me', 'icon-user'),
-        ('https://twitter.com/alunduil', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/alunduil', 'My Github', 'icon-github'),
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('/stories/about-alex-brandt.html', 'About Me'),
+        ('https://twitter.com/alunduil', 'My Twitter'),
+        ('https://github.com/alunduil', 'My Github'),
     )
 }
 
