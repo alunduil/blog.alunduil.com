@@ -1,6 +1,6 @@
 steps:
-  - name: "mgarrido/nikola"
-    args: [ "nikola", "build" ]
+  - name: "dnguyen85/nikola"
+    args: [ "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
     args: [ "-m", "rsync", "-rd", "output/", "gs://blog.alunduil.com/" ]
   - name: "gcr.io/cloud-builders/gsutil"
