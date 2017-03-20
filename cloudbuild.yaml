@@ -2,6 +2,4 @@ steps:
   - name: "gcr.io/alunduil/nikola:7.8.3"
     args: [ "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-rd", "output/", "gs://blog.alunduil.com/" ]
-  - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "acl", "ch", "-r", "-u", "AllUsers:R", "gs://blog.alunduil.com/" ]
+    args: [ "-m", "rsync", "-r", "-d", "-n", "output/", "gs://blog.alunduil.com/" ]
