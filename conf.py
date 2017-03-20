@@ -17,7 +17,7 @@ SITE_URL = "http://blog.alunduil.com/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://getnikola.com/"
-BLOG_EMAIL = "alunduil@alunduil.com"
+BLOG_EMAIL = "alunduil+blog@alunduil.com"
 BLOG_DESCRIPTION = "Random Technology Findings"
 
 # Nikola is multilingual!
@@ -86,13 +86,13 @@ TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/index.html', 'Home', 'icon-home'),
-        ('/archive.html', 'Archives', 'icon-folder-open-alt'),
-        ('/categories/index.html', 'Tags', 'icon-tags'),
-        ('/rss.xml', 'RSS', 'icon-rss'),
-        ('/stories/about-alex-brandt.html', 'About Me', 'icon-user'),
-        ('https://twitter.com/alunduil', 'My Twitter', 'icon-twitter'),
-        ('https://github.com/alunduil', 'My Github', 'icon-github'),
+        ('/index.html', 'Home'),
+        ('/archive.html', 'Archives'),
+        ('/categories/index.html', 'Tags'),
+        ('/rss.xml', 'RSS'),
+        ('/stories/about-alex-brandt.html', 'About Me'),
+        ('https://twitter.com/alunduil', 'My Twitter'),
+        ('https://github.com/alunduil', 'My Github'),
     )
 }
 
@@ -343,7 +343,7 @@ DEPLOY_COMMANDS = {
                              # the main (the newest) index page (index.html)
 
 # Name of the theme to use.
-THEME = "zen-ipython"
+THEME = "material-theme"
 
 # Color scheme to be used for code blocks. If your theme provides
 # "assets/css/code.css" this is ignored.
