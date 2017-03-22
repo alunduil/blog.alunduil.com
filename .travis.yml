@@ -1,7 +1,6 @@
-language: python
-python:
-  - 3.6
-install:
-  - pip install "Nikola[extras]"
+language: haskell
+ghc:
+  - 8.0
 script:
-  - nikola build
+  - cabal configure
+  - cabal run site build
