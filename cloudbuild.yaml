@@ -2,10 +2,8 @@ steps:
   - name: "haskell"
     args: [ "cabal", "sandbox", "init" ]
   - name: "haskell"
-    args: [ "cabal", "configure" ]
+    args: [ "cabal", "configure", "--ghc-options", "\"-O0 -Werror\"" ]
   - name: "haskell"
-    args: [ "cabal", "build" ]
-  - name: "haskell"
-    args: [ "./dist/build/site/site", "build" ]
+    args: [ "cabal", "run", "site", "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
     args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://blog.alunduil.com/" ]
