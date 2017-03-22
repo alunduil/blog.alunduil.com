@@ -1,6 +1,25 @@
-language: haskell
-ghc:
-  - "7.8"
+sudo: false
+language: c
+
+cache:
+  directories:
+    - "${HOME}/.ghc"
+    - "${HOME}/.cabal"
+
+addons:
+  apt:
+    packages:
+      - "cabal-install-1.24"
+      - "ghc-8.0.1"
+    sources:
+      - hvr-ghc
+
+install:
+  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
+  - cabal --version
+  - travis_retry cabal update
+  - cabal install --only-dependencies --force-reinstalls --ghc-options=-O0 --reorder-goals --max-backjumps=-1
+
 script:
-  - "cabal configure"
+  - "cabal configure --ghc-options=\"-O0 -Werror\""
   - "cabal run site build"
