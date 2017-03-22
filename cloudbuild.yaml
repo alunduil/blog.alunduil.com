@@ -1,5 +1,11 @@
 steps:
-  - name: "gcr.io/alunduil/nikola:7.8.3"
-    args: [ "build" ]
+  - name: "haskell"
+    args: [ "cabal", "sandbox", "init" ]
+  - name: "haskell"
+    args: [ "cabal", "configure" ]
+  - name: "haskell"
+    args: [ "cabal", "build" ]
+  - name: "haskell"
+    args: [ "./dist/build/site/site", "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-r", "-d", "output/", "gs://blog.alunduil.com/" ]
+    args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://blog.alunduil.com/" ]
