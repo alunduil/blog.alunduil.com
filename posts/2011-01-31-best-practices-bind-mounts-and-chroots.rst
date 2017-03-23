@@ -1,5 +1,5 @@
 ---
-title: Best Practices: Bind Mounts and chroots
+title: "Best Practices: Bind Mounts and chroots"
 tags: chroot, jail, chroot jail, bind mounts, autochroot, ldd, mount
 ---
 

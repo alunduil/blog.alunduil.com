@@ -1,5 +1,5 @@
 ---
-title: Cheat Sheet: Apache's mod_rewrite
+title: "Cheat Sheet: Apache's mod_rewrite"
 tags: apache, mod_rewrite, http, rewrite, rewritecond, rewriterule, wordpress, drupal, .htaccess, rewritelog, rewriteloglevel, pcre, regex, regular expressions, curl
 ---
 

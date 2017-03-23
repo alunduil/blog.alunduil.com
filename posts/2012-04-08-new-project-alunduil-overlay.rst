@@ -1,5 +1,5 @@
 ---
-title: New Project: alunduil-overlay
+title: "New Project: alunduil-overlay"
 tags: overlay, gentoo, eix-remote, layman, alunduil-overlay
 ---
 

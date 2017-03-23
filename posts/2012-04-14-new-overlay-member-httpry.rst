@@ -1,5 +1,5 @@
 ---
-title: New Overlay Member: httpry
+title: "New Overlay Member: httpry"
 tags: httpry, gentoo, alunduil-overlay, overlay
 ---
 

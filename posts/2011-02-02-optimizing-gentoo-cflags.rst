@@ -1,5 +1,5 @@
 ---
-title: Optimizing Gentoo: CFLAGS
+title: "Optimizing Gentoo: CFLAGS"
 tags: cflags, gentoo, isa, instruction set architecture, optimization, gcc
 ---
 

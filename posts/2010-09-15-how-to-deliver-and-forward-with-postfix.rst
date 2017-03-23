@@ -1,5 +1,5 @@
 ---
-title: How To: Deliver and Forward with Postfix
+title: "How To: Deliver and Forward with Postfix"
 tags: store and forward, deliver and forward, postfix, bcc, recipient_bcc_maps, regexp, auto bcc
 ---
 

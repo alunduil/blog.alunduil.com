@@ -1,5 +1,5 @@
 ---
-title: How To: Boot Using GRUB from a Compaq Smart Array RAID Controller
+title: "How To: Boot Using GRUB from a Compaq Smart Array RAID Controller"
 tags: grub, compaq smart array, gentoo, device map, mbr, master boot record
 ---
 

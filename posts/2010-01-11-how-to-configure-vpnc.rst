@@ -1,6 +1,6 @@
 ---
-title: How To: Configure vpnc
-tags: vpnc, cisco, vpn, virtual private network, tun/tap, tun, tap, ipsec, xauth, alias, sudo
+title: "How To: Configure vpnc"
+tags: "vpnc,cisco,vpn,virtual private network,tun/tap,tun,tap,ipsec,xauth,alias,sudo"
 ---
 
 Introduction

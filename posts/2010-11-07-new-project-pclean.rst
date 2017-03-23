@@ -1,5 +1,5 @@
 ---
-title: New Project: pclean
+title: "New Project: pclean"
 tags: pclean, gentoo, use flags, alunduil-overlay, bugzilla
 ---
 

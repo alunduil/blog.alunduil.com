@@ -1,5 +1,5 @@
 ---
-title: New Project: PL/0 Compiler
+title: "New Project: PL/0 Compiler"
 tags: gpl-2, gpl, git, bison, flex, cmake, pl/0, pascal, sti
 ---
 

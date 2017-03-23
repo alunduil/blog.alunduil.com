@@ -1,5 +1,5 @@
 ---
-title: Optimizing Gentoo: Vacuum Portage Configurations
+title: "Optimizing Gentoo: Vacuum Portage Configurations"
 tags: gentoo, portage, use flags, portageq
 ---
 

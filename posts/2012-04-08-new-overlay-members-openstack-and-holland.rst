@@ -1,5 +1,5 @@
 ---
-title: New Overlay Members: openstack and holland
+title: "New Overlay Members: openstack and holland"
 tags: alunduil-overlay, repoman, python, distutils, eclass, gentoo, holland, openstack, nova
 ---
 

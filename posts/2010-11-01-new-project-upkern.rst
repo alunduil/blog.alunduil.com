@@ -1,5 +1,5 @@
 ---
-title: New Project: upkern
+title: "New Project: upkern"
 tags: upkern, gpl-2, github, bugzilla, gentoo, kernel, linux
 ---
 

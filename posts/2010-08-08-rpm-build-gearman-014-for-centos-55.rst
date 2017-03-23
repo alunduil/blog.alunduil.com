@@ -1,5 +1,5 @@
 ---
-title: RPM Build: Gearman-0.14 for CentOS-5.5
+title: "RPM Build: Gearman-0.14 for CentOS-5.5"
 tags: php, gearman, centos, rpm, rpms, rhel, ius, epel, yum, fedora, rhell, pecl
 ---
 

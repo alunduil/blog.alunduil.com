@@ -1,5 +1,5 @@
 ---
-title: New Project: embodied
+title: "New Project: embodied"
 tags: embodied, gpl-2, subversion, physics, n-particle, potential, barnes-hut tree
 ---
 

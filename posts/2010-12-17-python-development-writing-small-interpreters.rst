@@ -1,5 +1,5 @@
 ---
-title: Python Development: Writing Small Interpreters
+title: "Python Development: Writing Small Interpreters"
 tags: parser, interpreter, compiler, sql, context free grammar, grammar, lr parser, ll parser, pyparsing, python, readline, c, c-plus-plus, bison, lemon
 ---
 

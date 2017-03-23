@@ -1,5 +1,5 @@
 ---
-title: Teaching: Introductory C++ Programming
+title: "Teaching: Introductory C++ Programming"
 tags: tutor, computer science, students, programming, c-plus-plus, object-oriented programming, oop, functions, control structures, keywords, factorial, makefiles, header files, source files, compiling, array, structs, api, advanced programming interface, alice, education, java, c-sharp
 ---
 

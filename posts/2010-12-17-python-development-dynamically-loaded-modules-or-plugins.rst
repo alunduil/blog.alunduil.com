@@ -1,5 +1,5 @@
 ---
-title: Python Development: Dynamically Loaded Modules or Plugins
+title: "Python Development: Dynamically Loaded Modules or Plugins"
 tags: modules, plugins, extensions, python, subcommands, eggs, entry points
 ---
 

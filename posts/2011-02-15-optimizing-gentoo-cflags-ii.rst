@@ -1,5 +1,5 @@
 ---
-title: Optimizing Gentoo: CFLAGS II
+title: "Optimizing Gentoo: CFLAGS II"
 tags: gentoo, cflags, optimization, gcc, use flags
 ---
 

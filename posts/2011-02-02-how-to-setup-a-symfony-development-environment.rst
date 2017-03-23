@@ -1,5 +1,5 @@
 ---
-title: How To: Setup a Symfony Development Environment
+title: "How To: Setup a Symfony Development Environment"
 tags: symfony, mvc, framework, php, agile, use flags, apache, mysql, documentroot, docroot, virtualhost, virtual host
 ---
 
