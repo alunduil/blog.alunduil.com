@@ -1,10 +1,7 @@
-.. title: Optimizing Gentoo: CFLAGS II
-.. slug: optimizing-gentoo-cflags-ii
-.. date: 2011/02/15 16:35:45
-.. tags: gentoo, cflags, optimization, gcc, use flags
-.. link: 
-.. description: 
-.. type: text
+---
+title: Optimizing Gentoo: CFLAGS II
+tags: gentoo, cflags, optimization, gcc, use flags
+---
 
 Introduction
 ------------

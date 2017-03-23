@@ -1,10 +1,7 @@
-.. title: Ping Checks Fail in Cacti with iputils-20100418
-.. slug: ping-checks-fail-in-cacti-with-iputils-20100418
-.. date: 2010/10/24 18:28:59
-.. tags: cacti, ping, iputils, iputils-20100418, icmp, icmp_seq, icmp_req
-.. link: 
-.. description: 
-.. type: text
+---
+title: Ping Checks Fail in Cacti with iputils-20100418
+tags: cacti, ping, iputils, iputils-20100418, icmp, icmp_seq, icmp_req
+---
 
 Introduction
 ------------

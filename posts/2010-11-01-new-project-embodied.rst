@@ -1,10 +1,7 @@
-.. title: New Project: embodied
-.. slug: new-project-embodied
-.. date: 2010/11/01 12:51:34
-.. tags: embodied, gpl-2, subversion, physics, n-particle, potential, barnes-hut tree
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Project: embodied
+tags: embodied, gpl-2, subversion, physics, n-particle, potential, barnes-hut tree
+---
 
 Information
 -----------

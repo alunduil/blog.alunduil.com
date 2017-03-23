@@ -1,10 +1,7 @@
-.. title: An Explanation of Xbox 360 NAT Types
-.. slug: an-explanation-of-xbox-360-nat-types
-.. date: 2010/01/12 00:29:17
-.. tags: xbox, xbox 360, nat, network address translation, open nat, moderate nat, closed nat, xbox live, udp, vista, windows vista, universal plug and play, upnp, security
-.. link: 
-.. description: 
-.. type: text
+---
+title: An Explanation of Xbox 360 NAT Types
+tags: xbox, xbox 360, nat, network address translation, open nat, moderate nat, closed nat, xbox live, udp, vista, windows vista, universal plug and play, upnp, security
+---
 
 I finally broke down and purchased an `Xbox 360 <http://www.xbox.com>`_ with
 `Halo 3 <http://halo.bungie.net/projects/halo3/default.aspx>`_ .  It is an

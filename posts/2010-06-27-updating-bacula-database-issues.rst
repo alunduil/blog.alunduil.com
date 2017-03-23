@@ -1,10 +1,7 @@
-.. title: Updating Bacula — Database Issues
-.. slug: updating-bacula-database-issues
-.. date: 2010/06/27 15:50:03
-.. tags: backups, bacula, gentoo, emerge, portage
-.. link: 
-.. description: 
-.. type: text
+---
+title: Updating Bacula — Database Issues
+tags: backups, bacula, gentoo, emerge, portage
+---
 
 Introduction
 ------------

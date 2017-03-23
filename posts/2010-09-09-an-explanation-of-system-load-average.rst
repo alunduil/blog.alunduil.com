@@ -1,10 +1,7 @@
-.. title: An Explanation of System Load Average
-.. slug: an-explanation-of-system-load-average
-.. date: 2010/09/09 10:05:26
-.. tags: load average, load, system load
-.. link: 
-.. description: 
-.. type: text
+---
+title: An Explanation of System Load Average
+tags: load average, load, system load
+---
 
 Introduction
 ------------

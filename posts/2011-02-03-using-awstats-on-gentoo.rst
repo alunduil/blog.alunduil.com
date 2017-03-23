@@ -1,10 +1,7 @@
-.. title: Using AWStats on Gentoo
-.. slug: using-awstats-on-gentoo
-.. date: 2011/02/03 11:26:11
-.. tags: awstats, emerge, use flags, apache2, geoip, vhosts, virtual hosting, cron
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using AWStats on Gentoo
+tags: awstats, emerge, use flags, apache2, geoip, vhosts, virtual hosting, cron
+---
 
 Requirements
 ------------

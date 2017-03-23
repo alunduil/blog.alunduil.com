@@ -1,10 +1,7 @@
-.. title: How To: Deliver and Forward with Postfix
-.. slug: how-to-deliver-and-forward-with-postfix
-.. date: 2010/09/15 14:05:47
-.. tags: store and forward, deliver and forward, postfix, bcc, recipient_bcc_maps, regexp, auto bcc
-.. link: 
-.. description: 
-.. type: text
+---
+title: How To: Deliver and Forward with Postfix
+tags: store and forward, deliver and forward, postfix, bcc, recipient_bcc_maps, regexp, auto bcc
+---
 
 Introduction
 ------------

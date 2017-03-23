@@ -1,10 +1,7 @@
-.. title: Using Memcached with MediaWiki and Wordpress
-.. slug: using-memcached-with-mediawiki-and-wordpress
-.. date: 2011/02/03 15:13:29
-.. tags: memcached, cache, apc, emerge, gentoo, rhel, wordpress, pecl, w3tc, w3 total cache, sed, mediawiki
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using Memcached with MediaWiki and Wordpress
+tags: memcached, cache, apc, emerge, gentoo, rhel, wordpress, pecl, w3tc, w3 total cache, sed, mediawiki
+---
 
 Introduction
 ------------

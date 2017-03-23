@@ -1,10 +1,7 @@
-.. title: New Project: pclean
-.. slug: new-project-pclean
-.. date: 2010/11/07 09:53:34
-.. tags: pclean, gentoo, use flags, alunduil-overlay, bugzilla
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Project: pclean
+tags: pclean, gentoo, use flags, alunduil-overlay, bugzilla
+---
 
 I've often gotten frustrated with my /etc/portage/package.* files when they
 become massive and full of crud that I don't even have installed any longer.

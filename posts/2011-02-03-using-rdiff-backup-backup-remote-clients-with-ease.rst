@@ -1,10 +1,7 @@
-.. title: Using rdiff-backup: Backup Remote Clients With Ease
-.. slug: using-rdiff-backup-backup-remote-clients-with-ease
-.. date: 2011/02/03 11:10:47
-.. tags: backups, rdiff-backup, ssh, incremental backups, cron
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using rdiff-backup: Backup Remote Clients With Ease
+tags: backups, rdiff-backup, ssh, incremental backups, cron
+---
 
 Introduction
 ------------

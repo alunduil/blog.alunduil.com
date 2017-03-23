@@ -1,10 +1,7 @@
-.. title: New Overlay Members: openstack and holland
-.. slug: new-overlay-members-openstack-and-holland
-.. date: 2012/04/08 17:27:38
-.. tags: alunduil-overlay, repoman, python, distutils, eclass, gentoo, holland, openstack, nova
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Overlay Members: openstack and holland
+tags: alunduil-overlay, repoman, python, distutils, eclass, gentoo, holland, openstack, nova
+---
 
 I've recently made a push to clean the packages provided by `my overlay
 </posts/alunduil-overlay.html>`_.  I've purged older packages and re-visited

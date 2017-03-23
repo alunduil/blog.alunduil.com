@@ -1,10 +1,7 @@
-.. title: Disable KScreenSaver Using DBUS
-.. slug: disable-kscreensaver-using-dbus
-.. date: 2011/02/03 14:30:44
-.. tags: kde 4, kde, powerdevil, kscreensaver, screensaver, dbus, qdbusviewer, python, subversion, xkcd
-.. link: 
-.. description: 
-.. type: text
+---
+title: Disable KScreenSaver Using DBUS
+tags: kde 4, kde, powerdevil, kscreensaver, screensaver, dbus, qdbusviewer, python, subversion, xkcd
+---
 
 KDE 4 has some major improvements over older versions, but it also seems to
 have gone backwards in places.  The new libraries probably contribute to this

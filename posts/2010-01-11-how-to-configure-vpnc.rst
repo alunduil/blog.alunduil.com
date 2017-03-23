@@ -1,10 +1,7 @@
-.. title: How To: Configure vpnc
-.. slug: how-to-configure-vpnc
-.. date: 2010/01/11 22:43:19
-.. tags: vpnc, cisco, vpn, virtual private network, tun/tap, tun, tap, ipsec, xauth, alias, sudo
-.. link: 
-.. description: 
-.. type: text
+---
+title: How To: Configure vpnc
+tags: vpnc, cisco, vpn, virtual private network, tun/tap, tun, tap, ipsec, xauth, alias, sudo
+---
 
 Introduction
 ------------

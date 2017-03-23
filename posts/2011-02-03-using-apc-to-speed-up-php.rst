@@ -1,10 +1,7 @@
-.. title: Using APC to Speed Up PHP
-.. slug: using-apc-to-speed-up-php
-.. date: 2011/02/03 11:05:04
-.. tags: php, lamp, mysql, apache, apc, cache, wordpress, w3tc, w3 total cache, pecl, shm, shared memory
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using APC to Speed Up PHP
+tags: php, lamp, mysql, apache, apc, cache, wordpress, w3tc, w3 total cache, pecl, shm, shared memory
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: Optimizing Gentoo: CFLAGS
-.. slug: optimizing-gentoo-cflags
-.. date: 2011/02/02 16:04:30
-.. tags: cflags, gentoo, isa, instruction set architecture, optimization, gcc
-.. link: 
-.. description: 
-.. type: text
+---
+title: Optimizing Gentoo: CFLAGS
+tags: cflags, gentoo, isa, instruction set architecture, optimization, gcc
+---
 
 Introduction
 ------------

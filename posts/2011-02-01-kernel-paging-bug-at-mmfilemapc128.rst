@@ -1,10 +1,7 @@
-.. title: Kernel Paging Bug at mm/filemap.c:128
-.. slug: kernel-paging-bug-at-mmfilemapc128
-.. date: 2011/02/01 15:20:19
-.. tags: kernel, kernel panic, kernel bug, mm, memory management, apache2, remove_from_page_cache, truncate_inode_page, truncate_inode_pages_range, truncate_inode_pages, ext4_evict_inode, evict, iput, d_kill, dput, fput, remove_vma, __do_munmap, sys_munmap, syscall_call
-.. link: 
-.. description: 
-.. type: text
+---
+title: Kernel Paging Bug at mm/filemap.c:128
+tags: kernel, kernel panic, kernel bug, mm, memory management, apache2, remove_from_page_cache, truncate_inode_page, truncate_inode_pages_range, truncate_inode_pages, ext4_evict_inode, evict, iput, d_kill, dput, fput, remove_vma, __do_munmap, sys_munmap, syscall_call
+---
 
 In the last couple of months, I've been plagued by a problem with the system
 that hosts this website.  A nice kernel panic followed by a random uptime and

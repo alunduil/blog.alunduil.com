@@ -1,10 +1,7 @@
-.. title: Extending Android Battery Life
-.. slug: extending-android-battery-life
-.. date: 2011/03/06 09:47:09
-.. tags: android, juice defender, power, power management, juice plotter
-.. link: 
-.. description: 
-.. type: text
+---
+title: Extending Android Battery Life
+tags: android, juice defender, power, power management, juice plotter
+---
 
 Recently, I've stumbled across an application in the android market, `Juice
 Devender <http://latedroid.com/juicedefender>`_, that does exactly what it

@@ -1,10 +1,7 @@
-.. title: Optimizing Gentoo: Vacuum Portage Configurations
-.. slug: optimizing-gentoo-vacuum-portage-configurations
-.. date: 2011/02/03 14:36:46
-.. tags: gentoo, portage, use flags, portageq
-.. link: 
-.. description: 
-.. type: text
+---
+title: Optimizing Gentoo: Vacuum Portage Configurations
+tags: gentoo, portage, use flags, portageq
+---
 
 All systems collect dust but with the configurability of Gentoo, we tend to
 collect a bit more dust in our world than other distributions.  This will be a

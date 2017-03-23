@@ -1,10 +1,7 @@
-.. title: RPM Build: Gearman-0.14 for CentOS-5.5
-.. slug: rpm-build-gearman-014-for-centos-55
-.. date: 2010/08/08 13:49:25
-.. tags: php, gearman, centos, rpm, rpms, rhel, ius, epel, yum, fedora, rhell, pecl
-.. link: 
-.. description: 
-.. type: text
+---
+title: RPM Build: Gearman-0.14 for CentOS-5.5
+tags: php, gearman, centos, rpm, rpms, rhel, ius, epel, yum, fedora, rhell, pecl
+---
 
 Introduction
 ------------

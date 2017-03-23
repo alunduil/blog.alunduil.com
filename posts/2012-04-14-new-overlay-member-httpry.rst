@@ -1,10 +1,7 @@
-.. title: New Overlay Member: httpry
-.. slug: new-overlay-member-httpry
-.. date: 2012/04/14 23:25:47
-.. tags: httpry, gentoo, alunduil-overlay, overlay
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Overlay Member: httpry
+tags: httpry, gentoo, alunduil-overlay, overlay
+---
 
 I've spent a few moments and added a live ebuild of httpry (an HTTP traffic
 analyzer) to `my overlay </posts/alunduil-overlay.html>`_.  This utility prints

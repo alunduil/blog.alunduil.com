@@ -1,10 +1,7 @@
-.. title: New Project: alunduil-overlay
-.. slug: new-project-alunduil-overlay
-.. date: 2012/04/08 13:47:39
-.. tags: overlay, gentoo, eix-remote, layman, alunduil-overlay
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Project: alunduil-overlay
+tags: overlay, gentoo, eix-remote, layman, alunduil-overlay
+---
 
 Introduction
 ------------

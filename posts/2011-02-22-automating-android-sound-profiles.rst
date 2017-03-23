@@ -1,10 +1,7 @@
-.. title: Automating Android Sound Profiles
-.. slug: automating-android-sound-profiles
-.. date: 2011/02/22 11:27:02
-.. tags: profile valet, android, getting things done, productivity
-.. link: 
-.. description: 
-.. type: text
+---
+title: Automating Android Sound Profiles
+tags: profile valet, android, getting things done, productivity
+---
 
 Recently, I've found the wonderful android application, `Profile Valet
 <http://www.appbrain.com/app/profile-valet/com.pushpin.profile>`_.  This

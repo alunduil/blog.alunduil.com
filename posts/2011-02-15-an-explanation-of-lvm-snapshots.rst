@@ -1,10 +1,7 @@
-.. title: An Explanation of LVM Snapshots
-.. slug: an-explanation-of-lvm-snapshots
-.. date: 2011/02/15 16:41:35 UTC
-.. tags: lvm, lvm snapshots, snapshots, san, partitions, physical volumes, volume groups, extents, logical volumes, database backups, backups
-.. link: 
-.. description: 
-.. type: text
+---
+title: An Explanation of LVM Snapshots
+tags: lvm, lvm snapshots, snapshots, san, partitions, physical volumes, volume groups, extents, logical volumes, database backups, backups
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: Optimizing Gentoo: Mailing Portage Messages
-.. slug: optimizing-gentoo-mailing-portage-messages
-.. date: 2011/01/18 10:10:35
-.. tags: portage, cron, puppet, make.conf, portage_elog_classes, portage_elog_system, portage_elog_command, portage_elog_mailuri, portage_elog_mailfrom, portage_elog_mailsubject
-.. link: 
-.. description: 
-.. type: text
+---
+title: Optimizing Gentoo: Mailing Portage Messages
+tags: portage, cron, puppet, make.conf, portage_elog_classes, portage_elog_system, portage_elog_command, portage_elog_mailuri, portage_elog_mailfrom, portage_elog_mailsubject
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: Using Dolphin as the Blueman File Browser
-.. slug: using-dolphin-as-the-blueman-file-browser
-.. date: 2010/06/27 12:05:31
-.. tags: draft, bluetooth, blueman, gnome-bluetooth, kbluetooth, kde, gtk, gnome, nautilus, obex ftp, obex, fuse, obexfs, dolphin 
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using Dolphin as the Blueman File Browser
+tags: draft, bluetooth, blueman, gnome-bluetooth, kbluetooth, kde, gtk, gnome, nautilus, obex ftp, obex, fuse, obexfs, dolphin 
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: How To: Setup a Symfony Development Environment
-.. slug: how-to-setup-a-symfony-development-environment
-.. date: 2011/02/02 15:30:37
-.. tags: symfony, mvc, framework, php, agile, use flags, apache, mysql, documentroot, docroot, virtualhost, virtual host
-.. link: 
-.. description: 
-.. type: text
+---
+title: How To: Setup a Symfony Development Environment
+tags: symfony, mvc, framework, php, agile, use flags, apache, mysql, documentroot, docroot, virtualhost, virtual host
+---
 
 Introduction
 ------------

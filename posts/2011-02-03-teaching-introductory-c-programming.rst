@@ -1,10 +1,7 @@
-.. title: Teaching: Introductory C++ Programming
-.. slug: teaching-introductory-c-programming
-.. date: 2011/02/03 12:55:22
-.. tags: tutor, computer science, students, programming, c-plus-plus, object-oriented programming, oop, functions, control structures, keywords, factorial, makefiles, header files, source files, compiling, array, structs, api, advanced programming interface, alice, education, java, c-sharp
-.. link: 
-.. description: 
-.. type: text
+---
+title: Teaching: Introductory C++ Programming
+tags: tutor, computer science, students, programming, c-plus-plus, object-oriented programming, oop, functions, control structures, keywords, factorial, makefiles, header files, source files, compiling, array, structs, api, advanced programming interface, alice, education, java, c-sharp
+---
 
 It's strange that I'm the only tutor for our Computer Science and Information
 Systems department, but I can live with that.  What irks me though, is how

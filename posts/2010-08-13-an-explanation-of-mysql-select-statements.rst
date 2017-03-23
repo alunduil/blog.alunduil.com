@@ -1,10 +1,7 @@
-.. title: An Explanation of MySQL SELECT Statements
-.. slug: an-explanation-of-mysql-select-statements
-.. date: 2010/08/13 12:25:11
-.. tags: sql, select, aliases, tables, columns, inner join, subquery, mysql
-.. link: 
-.. description: 
-.. type: text
+---
+title: An Explanation of MySQL SELECT Statements
+tags: sql, select, aliases, tables, columns, inner join, subquery, mysql
+---
 
 Introduction
 ------------

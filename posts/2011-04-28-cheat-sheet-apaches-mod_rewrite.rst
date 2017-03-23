@@ -1,10 +1,7 @@
-.. title: Cheat Sheet: Apache's mod_rewrite
-.. slug: cheat-sheet-apaches-mod_rewrite
-.. date: 2011/04/28 19:51:32
-.. tags: apache, mod_rewrite, http, rewrite, rewritecond, rewriterule, wordpress, drupal, .htaccess, rewritelog, rewriteloglevel, pcre, regex, regular expressions, curl
-.. link: 
-.. description: 
-.. type: text
+---
+title: Cheat Sheet: Apache's mod_rewrite
+tags: apache, mod_rewrite, http, rewrite, rewritecond, rewriterule, wordpress, drupal, .htaccess, rewritelog, rewriteloglevel, pcre, regex, regular expressions, curl
+---
 
 Introduction
 ------------

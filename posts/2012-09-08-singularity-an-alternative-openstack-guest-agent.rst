@@ -1,10 +1,7 @@
-.. title: Singularity, an Alternative Openstack Guest Agent
-.. slug: singularity-an-alternative-openstack-guest-agent
-.. date: 2012/09/08 11:33:50
-.. tags: openstack,openstack-guest-agent,nova-agent,gentoo,github,singularity
-.. link: 
-.. description:
-.. type: text
+---
+title: Singularity, an Alternative Openstack Guest Agent
+tags: openstack,openstack-guest-agent,nova-agent,gentoo,github,singularity
+---
 
 Introduction
 ------------

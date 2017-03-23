@@ -1,10 +1,7 @@
-.. title: Python Development: Writing Small Interpreters
-.. slug: python-development-writing-small-interpreters
-.. date: 2010/12/17 22:05:17
-.. tags: parser, interpreter, compiler, sql, context free grammar, grammar, lr parser, ll parser, pyparsing, python, readline, c, c-plus-plus, bison, lemon
-.. link: 
-.. description: 
-.. type: text
+---
+title: Python Development: Writing Small Interpreters
+tags: parser, interpreter, compiler, sql, context free grammar, grammar, lr parser, ll parser, pyparsing, python, readline, c, c-plus-plus, bison, lemon
+---
 
 Introduction
 ------------

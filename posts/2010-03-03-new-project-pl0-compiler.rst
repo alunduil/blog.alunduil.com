@@ -1,10 +1,7 @@
-.. title: New Project: PL/0 Compiler
-.. slug: new-project-pl0-compiler
-.. date: 2010/03/03 18:06:43
-.. tags: gpl-2, gpl, git, bison, flex, cmake, pl/0, pascal, sti
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Project: PL/0 Compiler
+tags: gpl-2, gpl, git, bison, flex, cmake, pl/0, pascal, sti
+---
 
 Information
 -----------

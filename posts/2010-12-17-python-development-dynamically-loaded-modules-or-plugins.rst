@@ -1,10 +1,7 @@
-.. title: Python Development: Dynamically Loaded Modules or Plugins
-.. slug: python-development-dynamically-loaded-modules-or-plugins
-.. date: 2010/12/17 22:24:46
-.. tags: modules, plugins, extensions, python, subcommands, eggs, entry points
-.. link: 
-.. description: 
-.. type: text
+---
+title: Python Development: Dynamically Loaded Modules or Plugins
+tags: modules, plugins, extensions, python, subcommands, eggs, entry points
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: How To: Boot Using GRUB from a Compaq Smart Array RAID Controller
-.. slug: how-to-boot-using-grub-from-a-compaq-smart-array-raid-controller
-.. date: 2010/03/03 14:32:15
-.. tags: grub, compaq smart array, gentoo, device map, mbr, master boot record
-.. link: 
-.. description: 
-.. type: text
+---
+title: How To: Boot Using GRUB from a Compaq Smart Array RAID Controller
+tags: grub, compaq smart array, gentoo, device map, mbr, master boot record
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: Using Special Keys in Zsh
-.. slug: using-special-keys-in-zsh
-.. date: 2011/01/27 20:27:40
-.. tags: zsh, bash, special keys, delete, home, page up, page down, inputrc, bindkeys
-.. link:
-.. description:
-.. type: text
+---
+title: Using Special Keys in Zsh
+tags: zsh, bash, special keys, delete, home, page up, page down, inputrc, bindkeys
+---
 
 I recently made the plunge and bagan using `Zsh <http://www.zsh.org/>`_ in
 lieu of `Bash <http://www.gnu.org/software/bash/>`_ .  I've not regretted the

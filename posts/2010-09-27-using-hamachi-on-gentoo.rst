@@ -1,10 +1,7 @@
-.. title: Using Hamachi on Gentoo
-.. slug: using-hamachi-on-gentoo
-.. date: 2010/09/27 16:11:12
-.. tags: gentoo, hamachi, vpn, ebuild, emerge, rc-update, tuncfg, tun, tun/tap, openvpn, lan
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using Hamachi on Gentoo
+tags: gentoo, hamachi, vpn, ebuild, emerge, rc-update, tuncfg, tun, tun/tap, openvpn, lan
+---
 
 Introduction
 ------------

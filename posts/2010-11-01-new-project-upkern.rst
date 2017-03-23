@@ -1,10 +1,7 @@
-.. title: New Project: upkern
-.. slug: new-project-upkern
-.. date: 2010/11/01 13:28:11
-.. tags: upkern, gpl-2, github, bugzilla, gentoo, kernel, linux
-.. link: 
-.. description: 
-.. type: text
+---
+title: New Project: upkern
+tags: upkern, gpl-2, github, bugzilla, gentoo, kernel, linux
+---
 
 Information
 -----------

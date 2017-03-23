@@ -1,10 +1,7 @@
-.. title: Using Holland to Backup PostgreSQL
-.. slug: using-holland-to-backup-postgresql
-.. date: 2011/02/02 19:04:39
-.. tags: backups, bacula, postgresql, postgres, database, holland, sqlite, mysql
-.. link: 
-.. description: 
-.. type: text
+---
+title: Using Holland to Backup PostgreSQL
+tags: backups, bacula, postgresql, postgres, database, holland, sqlite, mysql
+---
 
 Introduction
 ------------

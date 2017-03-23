@@ -1,10 +1,7 @@
-.. title: Optimizing LAMP: Apache and MySQL
-.. slug: optimizing-lamp-apache-and-mysql
-.. date: 2011/02/03 11:23:46
-.. tags: optimization, mysql, apache, apache mpm, mpm, apc, memcached, major hayden, racker hacker, mysqltuner, wget, perl, memory, connections, query cache, temporary tables, threads, gentoo, prefork, worker, peruser, event
-.. link: 
-.. description: 
-.. type: text
+---
+title: Optimizing LAMP: Apache and MySQL
+tags: optimization, mysql, apache, apache mpm, mpm, apc, memcached, major hayden, racker hacker, mysqltuner, wget, perl, memory, connections, query cache, temporary tables, threads, gentoo, prefork, worker, peruser, event
+---
 
 Introduction
 ------------

@@ -1,10 +1,7 @@
-.. title: Best Practices: Bind Mounts and chroots
-.. slug: best-practices-bind-mounts-and-chroots
-.. date: 2011/01/31 12:32:06
-.. tags: chroot, jail, chroot jail, bind mounts, autochroot, ldd, mount
-.. link: 
-.. description: 
-.. type: text
+---
+title: Best Practices: Bind Mounts and chroots
+tags: chroot, jail, chroot jail, bind mounts, autochroot, ldd, mount
+---
 
 Introduction
 ------------
