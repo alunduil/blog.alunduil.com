@@ -23,6 +23,7 @@ The `copyright` directory contains a list of contributors with their respective
 copyrights and other information.  If you submit a pull request and would like
 attribution; please, add yourself to the `copyright` directory.
 
+[git flow]: http://nvie.com/posts/a-successful-git-branching-model/
 [hakyll]: https://jaspervdj.be/hakyll/
 [issues]: https://github.com/alunduil/remotefs/issues
 [travis]: https://travis-ci.org/alunduil/alunduil-blog
