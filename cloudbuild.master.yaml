@@ -6,4 +6,4 @@ steps:
   - name: "haskell"
     args: [ "cabal", "run", "site", "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://d.blog.alunduil.com/" ]
+    args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://blog.alunduil.com/" ]
