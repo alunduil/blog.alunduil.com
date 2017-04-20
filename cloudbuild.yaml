@@ -1,13 +1,10 @@
 steps:
-  - name: "haskell"
-    args: [ "cabal", "sandbox", "init" ]
-  - name: "haskell"
-    args: [ "cabal", "update" ]
-  - name: "haskell"
-    args: [ "cabal", "install", "--only-dependencies", "--force-reinstalls", "--ghc-options=-O0", "--reorder-goals", "--max-backjumps=-1" ]
-  - name: "haskell"
-    args: [ "cabal", "configure", "--ghc-options", "\"-O0 -Werror\"" ]
-  - name: "haskell"
-    args: [ "cabal", "run", "site", "build" ]
+  - name: "gcr.io/cloud-builders/docker"
+    args: [ "build", "-t", "gcr.io/$PROJECT_ID/site", "." ]
+  - name: "gcr.io/$PROJECT_ID/site"
+    args: [ "build" ]
   - name: "gcr.io/cloud-builders/gsutil"
     args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://d.blog.alunduil.com/" ]
+timeout: "1800s"
+images:
+  - "gcr.io/$PROJECT_ID/site"
