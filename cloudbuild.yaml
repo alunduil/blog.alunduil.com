@@ -2,6 +2,8 @@ steps:
   - name: "haskell"
     args: [ "cabal", "sandbox", "init" ]
   - name: "haskell"
+    args: [ "cabal", "update" ]
+  - name: "haskell"
     args: [ "cabal", "install", "--only-dependencies", "--force-reinstalls", "--ghc-options=-O0", "--reorder-goals", "--max-backjumps=-1" ]
   - name: "haskell"
     args: [ "cabal", "configure", "--ghc-options", "\"-O0 -Werror\"" ]
