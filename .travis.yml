@@ -77,6 +77,6 @@ script:
  - if [ "x$TEST" = "x--enable-tests" ]; then cabal new-test -w ${HC} ${TEST} all; fi
  
  # build site
- - cabal new-run site build
+ - cabal new-run site -- rebuild
 
 # EOF
