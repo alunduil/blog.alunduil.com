@@ -1,10 +1,19 @@
 steps:
-  - name: "gcr.io/cloud-builders/docker"
-    args: [ "build", "-t", "gcr.io/$PROJECT_ID/site:$BRANCH_NAME", "." ]
-  - name: "gcr.io/$PROJECT_ID/site:$BRANCH_NAME"
-    args: [ "build" ]
+  - name: 'haskell:8.0'
+    args: [ 'cabal', 'update' ]
+    volumes:
+      - name: 'cabal-config'
+        path: '/builder/home/.cabal'
+  - name: 'haskell:8.0'
+    args: [ 'cabal', 'install', '-j', '--only-dependencies' ]
+    volumes:
+      - name: 'cabal-config'
+        path: '/builder/home/.cabal'
+  - name: 'haskell:8.0'
+    args: [ 'cabal', 'run', 'site', 'build' ]
+    volumes:
+      - name: 'cabal-config'
+        path: '/builder/home/.cabal'
+
   - name: "gcr.io/cloud-builders/gsutil"
     args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://d.blog.alunduil.com/" ]
-timeout: "3600s"
-images:
-  - "gcr.io/$PROJECT_ID/site:$BRANCH_NAME"
