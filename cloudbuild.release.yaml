@@ -17,3 +17,5 @@ steps:
 
   - name: "gcr.io/cloud-builders/gsutil"
     args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://r.blog.alunduil.com/" ]
+
+timeout: "60m"
