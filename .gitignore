@@ -1,8 +1,3 @@
-*.py[co]
-.doit.db
-cache/
-output/
-
 ### Hakyll ###
 
 _cache/
@@ -10,7 +5,6 @@ _site/
 
 ### Nix ###
 
-*.nix
 result
 
 # Created by https://www.gitignore.io/api/haskell
