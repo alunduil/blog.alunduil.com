@@ -19,10 +19,18 @@ increase concurrency is to read a section or chapter of one book and then read a
 section or chapter of the next and repeat until done reading for the session.
 
 I couple short reading bursts of an individual book with practised recall before
-continuing a book I read in a previous session.  By re-establishing reading
-context without re-reading the previous section before continuing a book, I
-ensure that I can keep the contents of a book relevant to some mnemonic.
-Usually the author, title, or cover if not all three.
+continuing a book I read in a previous session.  For example, in one session I
+might read "Type-Driven Development with Idris", "The Thirteen Books of the
+Elements", and "Abstract Algebra".  In my next reading session, I would take a
+moment before starting to recall the section or chapter I previously read of
+"Type-Driven Development with Idris".  Then I would read the next section or
+chapter before doing the same recall and reading of "The Thirteen Books of the
+Elements".
+
+By re-establishing reading context without re-reading the previous section
+before continuing a book, I ensure that I can keep the contents of a book
+relevant to some mnemonic.  Usually the author, title, or cover if not all
+three.
 
 The second idiosyncracy to my methodoloy is the way I sort my books and order my
 reading.  I sort books I am currently reading by a quality I've been calling
