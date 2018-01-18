@@ -12,7 +12,7 @@ COPY ./*.cabal ./
 RUN cabal install -j --only-dependencies
 
 COPY . ./
-RUN cabal install site
+RUN cabal build -j
 
-ENTRYPOINT [ "/usr/local/bin/site" ]
+ENTRYPOINT [ "/usr/local/src/blog.alunduil.com/dist/build/site/site" ]
 CMD [ "build" ]
