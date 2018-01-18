@@ -8,6 +8,12 @@ steps:
             '-t', 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com',
             '-f', 'Dockerfile', '.' ]
 
+  - name: 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com'
+    args: [ 'build' ]
+
+  - name: 'gcr.io/cloud-builders/gsutil'
+    args: [ '-m', 'rsync', '-r', '-d', '_site/', 'gs://$_DOMAIN/' ]
+
 images:
   - 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com'
 
