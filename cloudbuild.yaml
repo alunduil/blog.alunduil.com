@@ -11,7 +11,7 @@ steps:
       - name: 'cabal-config'
         path: '/builder/home/.cabal'
   - name: 'haskell:8.0'
-    args: [ 'cabal', 'install', '-j', '--only-dependencies', '--upgrade-dependencies' ]
+    args: [ 'cabal', 'install', '-j', '--only-dependencies' ]
     volumes:
       - name: 'cabal-config'
         path: '/builder/home/.cabal'
