@@ -1,33 +1,14 @@
 steps:
-  - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "-q", "cp", "-r", "gs://cache.alunduil.com/blog.alunduil.com", "/cabal" ]
-    volumes:
-      - name: 'cabal-config'
-        path: '/cabal'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'pull', 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com' ]
 
-  - name: 'haskell:8.0'
-    args: [ 'cabal', 'update' ]
-    volumes:
-      - name: 'cabal-config'
-        path: '/builder/home/.cabal'
-  - name: 'haskell:8.0'
-    args: [ 'cabal', 'install', '-j', '--only-dependencies', '--avoid-reinstalls' ]
-    volumes:
-      - name: 'cabal-config'
-        path: '/builder/home/.cabal'
-  - name: 'haskell:8.0'
-    args: [ 'cabal', 'run', 'site', 'build' ]
-    volumes:
-      - name: 'cabal-config'
-        path: '/builder/home/.cabal'
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build',
+            '--cache-from', 'gcr.io/$PROJECT_ID/builder-builder-blog.alunduil.com',
+            '-t', 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com',
+            '-f', 'Dockerfile', '.' ]
 
-  - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "-q", "rsync", "-r", "-d", "/cabal", "gs://cache.alunduil.com/blog.alunduil.com" ]
-    volumes:
-      - name: 'cabal-config'
-        path: '/cabal'
+images:
+  - 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com'
 
-  - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-r", "-d", "_site/", "gs://$_DOMAIN/" ]
-
-timeout: "60m"
+timeout: 60m
