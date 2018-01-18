@@ -1,6 +1,6 @@
 steps:
   - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-r", "-d", "gs://cache.alunduil.com/blog.alunduil.com", "/cabal" ]
+    args: [ "-m", "-q", "cp", "-r", "gs://cache.alunduil.com/blog.alunduil.com", "/cabal" ]
     volumes:
       - name: 'cabal-config'
         path: '/cabal'
@@ -11,7 +11,7 @@ steps:
       - name: 'cabal-config'
         path: '/builder/home/.cabal'
   - name: 'haskell:8.0'
-    args: [ 'cabal', 'install', '-j', '--only-dependencies' ]
+    args: [ 'cabal', 'install', '-j', '--only-dependencies', '--upgrade-dependencies' ]
     volumes:
       - name: 'cabal-config'
         path: '/builder/home/.cabal'
@@ -22,7 +22,7 @@ steps:
         path: '/builder/home/.cabal'
 
   - name: "gcr.io/cloud-builders/gsutil"
-    args: [ "-m", "rsync", "-r", "-d", "/cabal", "gs://cache.alunduil.com/blog.alunduil.com" ]
+    args: [ "-m", "-q", "rsync", "-r", "-d", "/cabal", "gs://cache.alunduil.com/blog.alunduil.com" ]
     volumes:
       - name: 'cabal-config'
         path: '/cabal'
