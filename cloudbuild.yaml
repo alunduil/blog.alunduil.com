@@ -4,7 +4,7 @@ steps:
 
   - name: 'gcr.io/cloud-builders/docker'
     args: [ 'build',
-            '--cache-from', 'gcr.io/$PROJECT_ID/builder-builder-blog.alunduil.com',
+            '--cache-from', 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com',
             '-t', 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com',
             '-f', 'Dockerfile', '.' ]
 
