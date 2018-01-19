@@ -17,4 +17,4 @@ steps:
 images:
   - 'gcr.io/$PROJECT_ID/builder-blog.alunduil.com'
 
-timeout: 60m
+timeout: 90m

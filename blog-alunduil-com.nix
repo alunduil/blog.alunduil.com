@@ -4,7 +4,7 @@ let
       haskellPackages = pkgs.haskellPackages.override {
         overrides = haskellPackagesNew: haskellPackagesOld: rec {
 
-          alunduil-blog =
+          blog-alunduil-com =
             haskellPackagesNew.callPackage ./default.nix { };
 
         };
@@ -14,5 +14,5 @@ let
 
   pkgs = import <nixpkgs> { inherit config; };
 in
-  { alunduil-blog = pkgs.haskellPackages.alunduil-blog;
+  { blog-alunduil-com = pkgs.haskellPackages.blog-alunduil-com;
   }
