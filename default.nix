@@ -8,6 +8,6 @@ mkDerivation {
   executableHaskellDepends = [ base hakyll ];
   homepage = "http://blog.alunduil.com";
   description = "Personal Blog";
-  license = stdenv.lib.licenses.unfree;
+  license = "unknown";
   hydraPlatforms = stdenv.lib.platforms.none;
 }
