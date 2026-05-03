@@ -1,29 +1,28 @@
-# Description
+# blog.alunduil.com
 
-Personal Blog
+Personal blog. Built with [Astro] and the [AstroPaper] theme. Deployed to
+GitHub Pages on push to `main`.
 
-Static website (blog) generated with [hakyll].
+## Local development
 
-# Getting Started
+```sh
+pnpm install
+pnpm dev      # http://localhost:4321
+pnpm build    # produces ./dist
+```
 
-The blog is available at <http://blog.alunduil.com>.
+## Posting flow
 
-# Reporting Issues
+1. Add a markdown file under `src/data/blog/`. AstroPaper's frontmatter
+   reference is in [`adding-new-post.md`](src/data/blog/adding-new-post.md).
+2. While drafting, set `draft: true` in frontmatter — drafts are excluded
+   from the build.
+3. Flip `draft: false` (or remove it) and merge to `main`. CI builds and
+   publishes.
 
-Any issues discovered should be recorded on [github][issues].  If you believe
-you've found an improvement or typo; please, ensure that it is reported.
+## Theme
 
-If you would like to contribute a fix or new content; please, submit a pull
-request.  This project follows [git flow] and utilizes [travis] to automatically
-check pull requests before a manual review.
+Theme is [AstroPaper] by Sat Naing, MIT-licensed. See [`LICENSE`](LICENSE).
 
-# Contributors
-
-The `copyright` directory contains a list of contributors with their respective
-copyrights and other information.  If you submit a pull request and would like
-attribution; please, add yourself to the `copyright` directory.
-
-[git flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[hakyll]: https://jaspervdj.be/hakyll/
-[issues]: https://github.com/alunduil/remotefs/issues
-[travis]: https://travis-ci.org/alunduil/blog.alunduil.com
+[Astro]: https://astro.build/
+[AstroPaper]: https://github.com/satnaing/astro-paper

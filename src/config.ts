@@ -1,0 +1,23 @@
+export const SITE = {
+  website: "https://blog.alunduil.com/",
+  author: "Alex Brandt",
+  profile: "https://github.com/alunduil",
+  desc: "Notes on production software engineering, reliability, observability, and feedback-loop systems.",
+  title: "alunduil",
+  ogImage: "astropaper-og.jpg",
+  lightAndDarkMode: true,
+  postPerIndex: 4,
+  postPerPage: 4,
+  scheduledPostMargin: 15 * 60 * 1000,
+  showArchives: true,
+  showBackButton: true,
+  editPost: {
+    enabled: false,
+    text: "Edit page",
+    url: "https://github.com/alunduil/blog.alunduil.com/edit/main/",
+  },
+  dynamicOgImage: true,
+  dir: "ltr",
+  lang: "en",
+  timezone: "Europe/London",
+} as const;

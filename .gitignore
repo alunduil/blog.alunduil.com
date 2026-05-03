@@ -1,39 +1,28 @@
-.direnv/
+# build output
+dist/
 
-### Hakyll ###
+# generated types
+.astro/
 
-_cache/
-_site/
+# dependencies
+node_modules/
 
-### Nix ###
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-result
+# environment variables
+.env
+.env.production
 
-# Created by https://www.gitignore.io/api/haskell
-# Edit at https://www.gitignore.io/?templates=haskell
+# macOS-specific files
+.DS_Store
 
-### Haskell ###
-dist
-dist-*
-cabal-dev
-*.o
-*.hi
-*.chi
-*.chs.h
-*.dyn_o
-*.dyn_hi
-.hpc
-.hsenv
-.cabal-sandbox/
-cabal.sandbox.config
-*.prof
-*.aux
-*.hp
-*.eventlog
-.stack-work/
-cabal.project.local
-cabal.project.local~
-.HTF/
-.ghc.environment.*
+# jetbrains setting folder
+.idea/
 
-# End of https://www.gitignore.io/api/haskell
+# pagefind
+
+public/pagefind
