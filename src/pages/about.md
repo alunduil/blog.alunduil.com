@@ -9,4 +9,4 @@ This is where I keep notes from that work: weekly learnings from projects, dev e
 
 The goal is a corpus rather than a publication — pieces are short, opinionated, and likely to evolve as I learn more.
 
-If something here is useful or off-base, [reach out](mailto:alunduil+blog@alunduil.com).
+If something here is useful or off-base, [reach out](mailto:alunduil@gmail.com).
