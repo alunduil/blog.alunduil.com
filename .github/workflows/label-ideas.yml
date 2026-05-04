@@ -1,0 +1,19 @@
+name: Label idea issues
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  label:
+    if: contains(github.event.issue.body, '## Spark')
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh issue edit "$NUMBER" --repo "$REPO" --add-label idea
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
