@@ -21,7 +21,8 @@ Capture stdout and parse as JSON:
 {
   "window": {"since": "YYYY-MM-DD", "now": "ISO-8601-UTC", "events_included": true},
   "commits": [...], "prs_opened": [...], "prs_reviewed": [...],
-  "issues_opened": [...], "commented": [...], "events": [...]
+  "issues_opened": [...], "issues_closed": [...],
+  "commented": [...], "events": [...]
 }
 ```
 

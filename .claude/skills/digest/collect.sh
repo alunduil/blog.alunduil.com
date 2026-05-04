@@ -69,6 +69,10 @@ filter_issues_opened() {
   jq "[.[] | {repo: $REPO_FROM_URL, n: .number, title, state, url, createdAt}]"
 }
 
+filter_issues_closed() {
+  jq "[.[] | {repo: $REPO_FROM_URL, n: .number, title, state, url, closedAt}]"
+}
+
 filter_commented() {
   jq "[.[] | {repo: $REPO_FROM_URL, n: .number, title, url, updatedAt}]"
 }
@@ -108,6 +112,11 @@ fetch_issues_opened() {
     --json number,title,state,url,createdAt 2>/dev/null | filter_issues_opened
 }
 
+fetch_issues_closed() {
+  gh search issues --author=@me --closed=">$1" --limit 100 \
+    --json number,title,state,url,closedAt 2>/dev/null | filter_issues_closed
+}
+
 fetch_commented() {
   gh search issues --commenter=@me --updated=">$1" --limit 100 \
     --json number,title,url,updatedAt 2>/dev/null | filter_commented
@@ -145,6 +154,7 @@ main() {
     --argjson prs_opened "$(fetch_prs_opened "$since")" \
     --argjson prs_reviewed "$(fetch_prs_reviewed "$since")" \
     --argjson issues_opened "$(fetch_issues_opened "$since")" \
+    --argjson issues_closed "$(fetch_issues_closed "$since")" \
     --argjson commented "$(fetch_commented "$since")" \
     --argjson events "$(fetch_events "$since" "$include_events")" \
     '{window: {since: $since, now: $now, events_included: $include_events},
@@ -152,6 +162,7 @@ main() {
       prs_opened: $prs_opened,
       prs_reviewed: $prs_reviewed,
       issues_opened: $issues_opened,
+      issues_closed: $issues_closed,
       commented: $commented,
       events: $events}'
 }

@@ -174,3 +174,10 @@ teardown() {
   result=$(echo '[{"number":7,"title":"x","state":"open","url":"https://github.com/owner/repo/issues/7","createdAt":"2026-04-26T00:00:00Z"}]' | filter_issues_opened)
   [ "$(jq -r '.[0].repo' <<<"$result")" = "owner/repo" ]
 }
+
+@test "filter_issues_closed projects closedAt and parses repo from URL" {
+  source "$SCRIPT"
+  result=$(echo '[{"number":7,"title":"x","state":"closed","url":"https://github.com/owner/repo/issues/7","closedAt":"2026-04-30T12:00:00Z"}]' | filter_issues_closed)
+  [ "$(jq -r '.[0].repo' <<<"$result")" = "owner/repo" ]
+  [ "$(jq -r '.[0].closedAt' <<<"$result")" = "2026-04-30T12:00:00Z" ]
+}
