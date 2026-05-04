@@ -74,9 +74,16 @@ Score each theme by signal-of-engagement-with-the-topic, present themes in desce
 - **Cross-project**: same theme across multiple repos = pattern at a higher altitude, often the post-worthy angle.
 - **Volume**: tiebreaker only. More items ≠ inherently more interesting.
 
+After scoring, tag each theme **short** or **long** by shape (independent of score):
+
+- **short** — single idea worth amplifying. External quote/highlight + a paragraph of own commentary. No narrative arc, no walk-through. Themes dominated by one strong cross-source link with little code activity usually land here.
+- **long** — multi-step narrative, how-to, tutorial, or explanation that names a pattern with a worked example. Themes with completion arcs, cross-project sweeps, or pipeline/architecture decisions usually land here.
+
+A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
+
 ## 5. Present + wait
 
-Print the themed digest to chat. Truncation warning (if any) above clusters. End with empty `## Idea kernels` section.
+Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
 
 Wait for a positive-value signal before writing `last-run`:
 
