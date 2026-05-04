@@ -11,7 +11,7 @@ labels: idea
 
 ## Why it could be interesting
 
-<!-- 1-2 sentences. The angle that isn't already obvious from existing writing on the topic. -->
+<!-- Push past the surface. The activity ("I migrated to Renovate") isn't the post — the underlying claim is ("dependency-update toil scales superlinearly with repo count, here's where the threshold sits"). 1-2 sentences on the actual claim, not the activity. -->
 
 ## Open questions
 

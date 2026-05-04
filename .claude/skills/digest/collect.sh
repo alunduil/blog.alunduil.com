@@ -153,6 +153,46 @@ detect_truncated() {
     '[to_entries[] | select(.value >= $limit) | .key] | sort'
 }
 
+# Reads {commits, prs_opened, prs_reviewed, issues_opened, issues_closed,
+# commented} mapped to filtered item arrays on stdin. Emits a per-repo
+# rollup: {"owner/repo": {commits: N, prs_opened: N, ..., days_active: [...]}}.
+# Items missing repo or date are dropped. days_active is unique-sorted.
+rollup_repos() {
+  jq '
+    def to_records(field; src; date_field):
+      (.[field] // []) | map({
+        repo,
+        source: src,
+        day: ((.[date_field] // "") | tostring | .[0:10])
+      });
+    [
+      to_records("commits"; "commits"; "date"),
+      to_records("prs_opened"; "prs_opened"; "createdAt"),
+      to_records("prs_reviewed"; "prs_reviewed"; "updatedAt"),
+      to_records("issues_opened"; "issues_opened"; "createdAt"),
+      to_records("issues_closed"; "issues_closed"; "closedAt"),
+      to_records("commented"; "commented"; "updatedAt")
+    ]
+    | add
+    | map(select(.repo != null and .day != ""))
+    | group_by(.repo)
+    | map({
+        key: .[0].repo,
+        value: (
+          reduce .[] as $i (
+            {commits: 0, prs_opened: 0, prs_reviewed: 0,
+             issues_opened: 0, issues_closed: 0, commented: 0,
+             days_active: []};
+            .[$i.source] += 1
+            | .days_active += [$i.day]
+          )
+          | .days_active |= (unique | sort)
+        )
+      })
+    | from_entries
+  '
+}
+
 fetch_events() {
   local since="$1" include="$2"
   if [[ "$include" != "true" ]]; then
@@ -186,7 +226,7 @@ main() {
   issues_closed_pkg=$(fetch_issues_closed "$since")
   commented_pkg=$(fetch_commented "$since")
 
-  local truncated
+  local truncated repos
   truncated=$(jq -nc \
     --argjson commits "$commits_pkg" \
     --argjson prs_opened "$prs_opened_pkg" \
@@ -201,12 +241,27 @@ main() {
       issues_closed: $issues_closed.raw_count,
       commented: $commented.raw_count}' | detect_truncated)
 
+  repos=$(jq -nc \
+    --argjson commits "$commits_pkg" \
+    --argjson prs_opened "$prs_opened_pkg" \
+    --argjson prs_reviewed "$prs_reviewed_pkg" \
+    --argjson issues_opened "$issues_opened_pkg" \
+    --argjson issues_closed "$issues_closed_pkg" \
+    --argjson commented "$commented_pkg" \
+    '{commits: $commits.items,
+      prs_opened: $prs_opened.items,
+      prs_reviewed: $prs_reviewed.items,
+      issues_opened: $issues_opened.items,
+      issues_closed: $issues_closed.items,
+      commented: $commented.items}' | rollup_repos)
+
   jq -n \
     --arg since "$since" \
     --arg now "$now" \
     --argjson include_events "$include_events" \
     --argjson limit "$LIMIT" \
     --argjson truncated "$truncated" \
+    --argjson repos "$repos" \
     --argjson commits "$commits_pkg" \
     --argjson prs_opened "$prs_opened_pkg" \
     --argjson prs_reviewed "$prs_reviewed_pkg" \
@@ -216,6 +271,7 @@ main() {
     --argjson events "$(fetch_events "$since" "$include_events")" \
     '{window: {since: $since, now: $now, events_included: $include_events,
                limit: $limit, truncated: $truncated},
+      repos: $repos,
       commits: $commits.items,
       prs_opened: $prs_opened.items,
       prs_reviewed: $prs_reviewed.items,

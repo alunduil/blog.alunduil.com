@@ -5,17 +5,17 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 # Digest
 
-## Flow
+Pipeline: **collect → analyze data → synthesize themes → analyze themes → present**. Each stage has a different owner; don't smear them.
 
-### 1. Collect GitHub data via the script
+## 1. Collect (script)
 
 ```bash
 bash .claude/skills/digest/collect.sh "$cadence"
 ```
 
-The script owns cadence parsing, `last-run` reads, the `gh` query fan-out, and heuristic filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches, URL→repo parsing, events-window-too-wide). It exits non-zero with a stderr message on invalid cadence.
+The script owns cadence parsing, `last-run` reads, the `gh` query fan-out, heuristic noise filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. Exits non-zero with a stderr message on invalid cadence.
 
-Capture stdout and parse as JSON:
+JSON shape:
 
 ```json
 {
@@ -24,39 +24,61 @@ Capture stdout and parse as JSON:
     "events_included": true,
     "limit": 300, "truncated": ["issues_opened", ...]
   },
+  "repos": {
+    "owner/repo": {
+      "commits": N, "prs_opened": N, "prs_reviewed": N,
+      "issues_opened": N, "issues_closed": N, "commented": N,
+      "days_active": ["YYYY-MM-DD", ...]
+    }
+  },
   "commits": [...], "prs_opened": [...], "prs_reviewed": [...],
   "issues_opened": [...], "issues_closed": [...],
   "commented": [...], "events": [...]
 }
 ```
 
-**If `window.truncated` is non-empty**, surface it in the digest output above the themed clusters: "⚠️ Truncated at limit (300): `<source>`. Narrow the window or raise `LIMIT` if completeness matters this week." The `commits` source often appears here even on light weeks because many raw commits are squash-merge dupes the filter strips — note this if commits is the only entry, since the items you'd be missing are likely also noise.
+## 2. Analyze data (Claude pre-synthesis)
 
-### 2. Fetch Readwise + Reader for the same window via MCP
-
-Use `window.since` (append `T00:00:00Z` for ISO-8601):
+Fetch Readwise + Reader for the same window via MCP, using `window.since` (append `T00:00:00Z`):
 
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
-- `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **No category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = read-with-intent.
+- `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **No category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
 
-If MCP tools are unavailable on this machine, note "Readwise/Reader unavailable — GitHub-only digest" and continue.
+If MCP unavailable, note "Readwise/Reader unavailable — GitHub-only digest" and continue.
 
-Cross-reference: for each archived doc, set `has_highlights = true` if any highlight's `url` matches the doc's `url`. Use as a soft signal in synthesis (highlighted reads weight higher than skim-and-archive).
+Mechanical patterns to extract before synthesis:
 
-### 3. Cluster thematically across all sources
+- **Cross-source links**: archived Reader docs whose `url` matches a Readwise highlight → tag `has_highlights = true`. A highlight is a stronger engagement signal than archive alone.
+- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window. Narrative-ready ("started and finished this week").
+- **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
+- **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — squash-dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
 
-Pick **4–8 themes** that might seed a blog post. Don't enumerate everything. Each theme:
+## 3. Synthesize themes (Claude)
 
-- 1–2 sentence summary of what's interesting.
-- Bullet list of supporting items (link + terse identifier).
-- Order items by engagement weight: direct-to-trunk commits > merged PRs > comments; highlighted Reader docs > unhighlighted articles > RSS items.
-- If a single theme's tail exceeds ~10 items, collapse with `+N more — see <gh query | url>`.
+Cluster items across all sources into **4–8 themes** that might seed a blog post. Don't enumerate everything. Each theme:
 
-### 4. Print the themed digest to chat
+- 1–2 sentence summary of what makes it interesting.
+- Bullet list of supporting items (link + terse identifier), ordered **neutrally** — date desc within the theme. **No engagement weighting at this layer.**
+- If a theme's tail exceeds ~10 items, collapse with `+N more — see <gh query | url>`.
 
-End with an empty `## Idea kernels` section.
+Direct-to-trunk commits and merged PRs are equivalent for clustering and ranking — pair-heavy repos use direct writes interchangeably with PRs.
 
-### 5. Wait for a positive-value signal before writing `last-run`
+## 4. Analyze themes (Claude)
+
+Score each theme by signal-of-engagement-with-the-topic, present themes in descending score. Engagement is at the topic layer, not the item layer:
+
+- **Source breadth**: how many of {commits, PRs, issues_opened, issues_closed, comments, highlights, archives} contribute. Theme spanning 4+ sources beats theme drawn from one.
+- **Cross-source resonance**: theme has both a GitHub item AND a Readwise highlight on the same topic. External validation. Heavy weight.
+- **Completion arc presence**: theme contains an opened+closed issue or merged PR-with-explicit-Closes. Narrative-ready, easier to write.
+- **Time span**: spans the whole window > single-day burst (sustained interest > momentary distraction).
+- **Cross-project**: same theme across multiple repos = pattern at a higher altitude, often the post-worthy angle.
+- **Volume**: tiebreaker only. More items ≠ inherently more interesting.
+
+## 5. Present + wait
+
+Print the themed digest to chat. Truncation warning (if any) above clusters. End with empty `## Idea kernels` section.
+
+Wait for a positive-value signal before writing `last-run`:
 
 - "no kernels here" / "nothing of interest" → write `window.now` to `.claude/skills/digest/last-run`.
 - "file idea X" (one or many) → file each via `gh issue create --template idea --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. Then write `last-run`.

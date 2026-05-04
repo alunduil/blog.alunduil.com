@@ -204,3 +204,67 @@ teardown() {
   result=$(echo '{"commits":350}' | detect_truncated)
   [ "$(jq -r '.[0]' <<<"$result")" = "commits" ]
 }
+
+# --- per-repo rollup ---
+
+@test "rollup_repos returns empty object on empty input" {
+  source "$SCRIPT"
+  result=$(echo '{"commits":[],"prs_opened":[],"prs_reviewed":[],"issues_opened":[],"issues_closed":[],"commented":[]}' | rollup_repos)
+  [ "$(jq 'length' <<<"$result")" -eq 0 ]
+}
+
+@test "rollup_repos counts a single commit and records day_active" {
+  source "$SCRIPT"
+  input='{"commits":[{"repo":"a/b","sha":"abc1234","subject":"x","date":"2026-04-27T22:00:00Z"}],"prs_opened":[],"prs_reviewed":[],"issues_opened":[],"issues_closed":[],"commented":[]}'
+  result=$(echo "$input" | rollup_repos)
+  [ "$(jq -r '."a/b".commits' <<<"$result")" = "1" ]
+  [ "$(jq -r '."a/b".days_active[0]' <<<"$result")" = "2026-04-27" ]
+}
+
+@test "rollup_repos sums across sources and unions days for one repo" {
+  source "$SCRIPT"
+  input='{
+    "commits":[{"repo":"a/b","sha":"x","subject":"y","date":"2026-04-27T10:00:00Z"}],
+    "prs_opened":[{"repo":"a/b","n":1,"title":"x","state":"open","url":"https://github.com/a/b/pull/1","createdAt":"2026-04-28T10:00:00Z"}],
+    "prs_reviewed":[],
+    "issues_opened":[{"repo":"a/b","n":2,"title":"x","state":"open","url":"https://github.com/a/b/issues/2","createdAt":"2026-04-27T11:00:00Z"}],
+    "issues_closed":[],
+    "commented":[]
+  }'
+  result=$(echo "$input" | rollup_repos)
+  [ "$(jq -r '."a/b".commits' <<<"$result")" = "1" ]
+  [ "$(jq -r '."a/b".prs_opened' <<<"$result")" = "1" ]
+  [ "$(jq -r '."a/b".issues_opened' <<<"$result")" = "1" ]
+  # Same-day items collapse; days_active sorted ascending.
+  [ "$(jq -r '."a/b".days_active | length' <<<"$result")" -eq 2 ]
+  [ "$(jq -r '."a/b".days_active[0]' <<<"$result")" = "2026-04-27" ]
+  [ "$(jq -r '."a/b".days_active[1]' <<<"$result")" = "2026-04-28" ]
+}
+
+@test "rollup_repos splits across multiple repos" {
+  source "$SCRIPT"
+  input='{
+    "commits":[
+      {"repo":"a/b","sha":"x","subject":"y","date":"2026-04-27T10:00:00Z"},
+      {"repo":"c/d","sha":"x","subject":"y","date":"2026-04-30T10:00:00Z"}
+    ],
+    "prs_opened":[],"prs_reviewed":[],"issues_opened":[],"issues_closed":[],"commented":[]
+  }'
+  result=$(echo "$input" | rollup_repos)
+  [ "$(jq 'length' <<<"$result")" -eq 2 ]
+  [ "$(jq -r '."a/b".commits' <<<"$result")" = "1" ]
+  [ "$(jq -r '."c/d".commits' <<<"$result")" = "1" ]
+}
+
+@test "rollup_repos drops items missing repo or date" {
+  source "$SCRIPT"
+  input='{
+    "commits":[
+      {"repo":null,"sha":"x","subject":"y","date":"2026-04-27T10:00:00Z"},
+      {"repo":"a/b","sha":"x","subject":"y","date":null}
+    ],
+    "prs_opened":[],"prs_reviewed":[],"issues_opened":[],"issues_closed":[],"commented":[]
+  }'
+  result=$(echo "$input" | rollup_repos)
+  [ "$(jq 'length' <<<"$result")" -eq 0 ]
+}
