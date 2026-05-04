@@ -1,0 +1,40 @@
+---
+# Pre-commit hooks for code quality and consistency.
+# See https://pre-commit.com for usage.
+
+repos:
+  # Shell linting and formatting (digest skill collect.sh and any future scripts)
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.11.0.1
+    hooks:
+      - id: shellcheck
+        types: [shell]
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.12.0-2
+    hooks:
+      - id: shfmt
+        args: [-i, "2", -ci]
+        types: [shell]
+
+  # Baseline file hygiene
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [--fix=lf]
+      - id: check-json
+        # AstroPaper ships JSONC files in .vscode/ and .devcontainer/.
+        exclude: ^(\.vscode/|\.devcontainer/)
+      - id: check-yaml
+        exclude: ^\.github/workflows/
+      - id: check-merge-conflict
+      - id: check-case-conflict
+      - id: check-added-large-files
+        args: [--maxkb=1024]
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: detect-private-key
