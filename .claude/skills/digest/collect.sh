@@ -104,47 +104,21 @@ package() {
     '{raw_count: $n, items: $i}'
 }
 
-fetch_commits() {
+# Generic search wrapper: gh_search SUBCMD QUAL DATE_FLAG SINCE FIELDS FILTER_FN
+gh_search() {
+  local subcmd=$1 qual=$2 date_flag=$3 since=$4 fields=$5 filter_fn=$6
   local raw
-  raw=$(gh search commits --author=@me --author-date=">$1" --limit "$LIMIT" \
-    --json repository,sha,commit 2>/dev/null)
-  package "$raw" "$(filter_commits <<<"$raw")"
+  raw=$(gh search "$subcmd" "$qual=@me" "$date_flag=>$since" \
+    --limit "$LIMIT" --json "$fields" 2>/dev/null)
+  package "$raw" "$("$filter_fn" <<<"$raw")"
 }
 
-fetch_prs_opened() {
-  local raw
-  raw=$(gh search prs --author=@me --created=">$1" --limit "$LIMIT" \
-    --json number,title,state,url,createdAt 2>/dev/null)
-  package "$raw" "$(filter_prs_opened <<<"$raw")"
-}
-
-fetch_prs_reviewed() {
-  local raw
-  raw=$(gh search prs --reviewed-by=@me --updated=">$1" --limit "$LIMIT" \
-    --json number,title,url,author,updatedAt 2>/dev/null)
-  package "$raw" "$(filter_prs_reviewed <<<"$raw")"
-}
-
-fetch_issues_opened() {
-  local raw
-  raw=$(gh search issues --author=@me --created=">$1" --limit "$LIMIT" \
-    --json number,title,state,url,createdAt 2>/dev/null)
-  package "$raw" "$(filter_issues_opened <<<"$raw")"
-}
-
-fetch_issues_closed() {
-  local raw
-  raw=$(gh search issues --author=@me --closed=">$1" --limit "$LIMIT" \
-    --json number,title,state,url,closedAt 2>/dev/null)
-  package "$raw" "$(filter_issues_closed <<<"$raw")"
-}
-
-fetch_commented() {
-  local raw
-  raw=$(gh search issues --commenter=@me --updated=">$1" --limit "$LIMIT" \
-    --json number,title,url,updatedAt 2>/dev/null)
-  package "$raw" "$(filter_commented <<<"$raw")"
-}
+fetch_commits()       { gh_search commits --author      --author-date "$1" repository,sha,commit             filter_commits; }
+fetch_prs_opened()    { gh_search prs     --author      --created     "$1" number,title,state,url,createdAt  filter_prs_opened; }
+fetch_prs_reviewed()  { gh_search prs     --reviewed-by --updated     "$1" number,title,url,author,updatedAt filter_prs_reviewed; }
+fetch_issues_opened() { gh_search issues  --author      --created     "$1" number,title,state,url,createdAt  filter_issues_opened; }
+fetch_issues_closed() { gh_search issues  --author      --closed      "$1" number,title,state,url,closedAt   filter_issues_closed; }
+fetch_commented()     { gh_search issues  --commenter   --updated     "$1" number,title,url,updatedAt        filter_commented; }
 
 # Reads {name: raw_count, ...} on stdin, emits sorted array of names
 # whose count saturated the limit.
