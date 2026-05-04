@@ -181,3 +181,26 @@ teardown() {
   [ "$(jq -r '.[0].repo' <<<"$result")" = "owner/repo" ]
   [ "$(jq -r '.[0].closedAt' <<<"$result")" = "2026-04-30T12:00:00Z" ]
 }
+
+# --- truncation detection ---
+
+@test "detect_truncated lists keys whose count saturated the limit" {
+  source "$SCRIPT"
+  input='{"commits":300,"prs_opened":50,"issues_opened":300,"issues_closed":42}'
+  result=$(echo "$input" | detect_truncated)
+  [ "$(jq 'length' <<<"$result")" -eq 2 ]
+  [ "$(jq -r '.[0]' <<<"$result")" = "commits" ]
+  [ "$(jq -r '.[1]' <<<"$result")" = "issues_opened" ]
+}
+
+@test "detect_truncated returns empty array when nothing saturated" {
+  source "$SCRIPT"
+  result=$(echo '{"commits":9,"prs_opened":83,"issues_opened":100}' | detect_truncated)
+  [ "$(jq 'length' <<<"$result")" -eq 0 ]
+}
+
+@test "detect_truncated treats counts above the limit as truncated too" {
+  source "$SCRIPT"
+  result=$(echo '{"commits":350}' | detect_truncated)
+  [ "$(jq -r '.[0]' <<<"$result")" = "commits" ]
+}

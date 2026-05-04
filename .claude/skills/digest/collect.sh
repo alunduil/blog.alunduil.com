@@ -10,6 +10,9 @@ set -euo pipefail
 SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 LAST_RUN_FILE="$SCRIPT_DIR/last-run"
 LOGIN=alunduil
+# gh's search API hard-caps at 1000; 300 covers observed spiky weeks
+# (~100s of PRs/issues) without ballooning synthesis-pass tokens.
+LIMIT=300
 
 SQUASH_MERGE_RE=' \(#[0-9]+\)$'
 SYNC_NOISE_REPO='alunduil/alunduil-claustre-state'
@@ -92,34 +95,62 @@ filter_events() {
     ]'
 }
 
+# Each fetch_* returns {raw_count, items} so main() can detect whether
+# a query saturated the limit (silent truncation is the worst failure).
+package() {
+  local raw="$1" filtered="$2"
+  jq -n --argjson n "$(jq 'length // 0' <<<"$raw")" \
+    --argjson i "$filtered" \
+    '{raw_count: $n, items: $i}'
+}
+
 fetch_commits() {
-  gh search commits --author=@me --author-date=">$1" --limit 100 \
-    --json repository,sha,commit 2>/dev/null | filter_commits
+  local raw
+  raw=$(gh search commits --author=@me --author-date=">$1" --limit "$LIMIT" \
+    --json repository,sha,commit 2>/dev/null)
+  package "$raw" "$(filter_commits <<<"$raw")"
 }
 
 fetch_prs_opened() {
-  gh search prs --author=@me --created=">$1" --limit 100 \
-    --json number,title,state,url,createdAt 2>/dev/null | filter_prs_opened
+  local raw
+  raw=$(gh search prs --author=@me --created=">$1" --limit "$LIMIT" \
+    --json number,title,state,url,createdAt 2>/dev/null)
+  package "$raw" "$(filter_prs_opened <<<"$raw")"
 }
 
 fetch_prs_reviewed() {
-  gh search prs --reviewed-by=@me --updated=">$1" --limit 100 \
-    --json number,title,url,author,updatedAt 2>/dev/null | filter_prs_reviewed
+  local raw
+  raw=$(gh search prs --reviewed-by=@me --updated=">$1" --limit "$LIMIT" \
+    --json number,title,url,author,updatedAt 2>/dev/null)
+  package "$raw" "$(filter_prs_reviewed <<<"$raw")"
 }
 
 fetch_issues_opened() {
-  gh search issues --author=@me --created=">$1" --limit 100 \
-    --json number,title,state,url,createdAt 2>/dev/null | filter_issues_opened
+  local raw
+  raw=$(gh search issues --author=@me --created=">$1" --limit "$LIMIT" \
+    --json number,title,state,url,createdAt 2>/dev/null)
+  package "$raw" "$(filter_issues_opened <<<"$raw")"
 }
 
 fetch_issues_closed() {
-  gh search issues --author=@me --closed=">$1" --limit 100 \
-    --json number,title,state,url,closedAt 2>/dev/null | filter_issues_closed
+  local raw
+  raw=$(gh search issues --author=@me --closed=">$1" --limit "$LIMIT" \
+    --json number,title,state,url,closedAt 2>/dev/null)
+  package "$raw" "$(filter_issues_closed <<<"$raw")"
 }
 
 fetch_commented() {
-  gh search issues --commenter=@me --updated=">$1" --limit 100 \
-    --json number,title,url,updatedAt 2>/dev/null | filter_commented
+  local raw
+  raw=$(gh search issues --commenter=@me --updated=">$1" --limit "$LIMIT" \
+    --json number,title,url,updatedAt 2>/dev/null)
+  package "$raw" "$(filter_commented <<<"$raw")"
+}
+
+# Reads {name: raw_count, ...} on stdin, emits sorted array of names
+# whose count saturated the limit.
+detect_truncated() {
+  jq --argjson limit "$LIMIT" \
+    '[to_entries[] | select(.value >= $limit) | .key] | sort'
 }
 
 fetch_events() {
@@ -146,24 +177,51 @@ main() {
     include_events=false
   fi
 
+  local commits_pkg prs_opened_pkg prs_reviewed_pkg
+  local issues_opened_pkg issues_closed_pkg commented_pkg
+  commits_pkg=$(fetch_commits "$since")
+  prs_opened_pkg=$(fetch_prs_opened "$since")
+  prs_reviewed_pkg=$(fetch_prs_reviewed "$since")
+  issues_opened_pkg=$(fetch_issues_opened "$since")
+  issues_closed_pkg=$(fetch_issues_closed "$since")
+  commented_pkg=$(fetch_commented "$since")
+
+  local truncated
+  truncated=$(jq -nc \
+    --argjson commits "$commits_pkg" \
+    --argjson prs_opened "$prs_opened_pkg" \
+    --argjson prs_reviewed "$prs_reviewed_pkg" \
+    --argjson issues_opened "$issues_opened_pkg" \
+    --argjson issues_closed "$issues_closed_pkg" \
+    --argjson commented "$commented_pkg" \
+    '{commits: $commits.raw_count,
+      prs_opened: $prs_opened.raw_count,
+      prs_reviewed: $prs_reviewed.raw_count,
+      issues_opened: $issues_opened.raw_count,
+      issues_closed: $issues_closed.raw_count,
+      commented: $commented.raw_count}' | detect_truncated)
+
   jq -n \
     --arg since "$since" \
     --arg now "$now" \
     --argjson include_events "$include_events" \
-    --argjson commits "$(fetch_commits "$since")" \
-    --argjson prs_opened "$(fetch_prs_opened "$since")" \
-    --argjson prs_reviewed "$(fetch_prs_reviewed "$since")" \
-    --argjson issues_opened "$(fetch_issues_opened "$since")" \
-    --argjson issues_closed "$(fetch_issues_closed "$since")" \
-    --argjson commented "$(fetch_commented "$since")" \
+    --argjson limit "$LIMIT" \
+    --argjson truncated "$truncated" \
+    --argjson commits "$commits_pkg" \
+    --argjson prs_opened "$prs_opened_pkg" \
+    --argjson prs_reviewed "$prs_reviewed_pkg" \
+    --argjson issues_opened "$issues_opened_pkg" \
+    --argjson issues_closed "$issues_closed_pkg" \
+    --argjson commented "$commented_pkg" \
     --argjson events "$(fetch_events "$since" "$include_events")" \
-    '{window: {since: $since, now: $now, events_included: $include_events},
-      commits: $commits,
-      prs_opened: $prs_opened,
-      prs_reviewed: $prs_reviewed,
-      issues_opened: $issues_opened,
-      issues_closed: $issues_closed,
-      commented: $commented,
+    '{window: {since: $since, now: $now, events_included: $include_events,
+               limit: $limit, truncated: $truncated},
+      commits: $commits.items,
+      prs_opened: $prs_opened.items,
+      prs_reviewed: $prs_reviewed.items,
+      issues_opened: $issues_opened.items,
+      issues_closed: $issues_closed.items,
+      commented: $commented.items,
       events: $events}'
 }
 

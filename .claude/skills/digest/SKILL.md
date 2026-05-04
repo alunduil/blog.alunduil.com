@@ -19,12 +19,18 @@ Capture stdout and parse as JSON:
 
 ```json
 {
-  "window": {"since": "YYYY-MM-DD", "now": "ISO-8601-UTC", "events_included": true},
+  "window": {
+    "since": "YYYY-MM-DD", "now": "ISO-8601-UTC",
+    "events_included": true,
+    "limit": 300, "truncated": ["issues_opened", ...]
+  },
   "commits": [...], "prs_opened": [...], "prs_reviewed": [...],
   "issues_opened": [...], "issues_closed": [...],
   "commented": [...], "events": [...]
 }
 ```
+
+**If `window.truncated` is non-empty**, surface it in the digest output above the themed clusters: "⚠️ Truncated at limit (300): `<source>`. Narrow the window or raise `LIMIT` if completeness matters this week." The `commits` source often appears here even on light weeks because many raw commits are squash-merge dupes the filter strips — note this if commits is the only entry, since the items you'd be missing are likely also noise.
 
 ### 2. Fetch Readwise + Reader for the same window via MCP
 
