@@ -104,7 +104,7 @@ It's important to keep all the files which have been already updated. These file
   code {
     white-space: pre;
     overflow: scroll;
-  } 
+  }
   */
 
   /* New code */
