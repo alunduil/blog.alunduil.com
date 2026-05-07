@@ -15,7 +15,7 @@ pnpm build    # produces ./dist
 
 1. Add a markdown file under `src/data/blog/`. AstroPaper's frontmatter
    reference is in [`adding-new-post.md`](src/data/blog/adding-new-post.md).
-2. While drafting, set `draft: true` in frontmatter — drafts are excluded
+2. While drafting, set `draft: true` in frontmatter—drafts are excluded
    from the build.
 3. Flip `draft: false` (or remove it) and merge to `main`. CI builds and
    publishes.
