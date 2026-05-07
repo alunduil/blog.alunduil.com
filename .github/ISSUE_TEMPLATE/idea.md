@@ -1,6 +1,6 @@
 ---
 name: Idea
-about: A spark for a future blog post — not yet ready to draft.
+about: A spark for a future blog post—not yet ready to draft.
 title: ""
 labels: idea
 ---
