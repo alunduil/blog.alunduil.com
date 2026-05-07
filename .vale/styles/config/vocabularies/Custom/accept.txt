@@ -1,0 +1,69 @@
+# Project-specific terms accepted by Vale.
+
+# Brand and theme.
+# Case-insensitive so domain names (blog.alunduil.com) and file
+# extensions (.astro) don't trip Vale.Terms.
+(?i)AstroPaper
+(?i)Astro
+(?i)Alunduil
+Naing
+
+# Tooling and platforms
+GitHub
+TypeScript
+JavaScript
+DevContainer
+devcontainer
+ESLint
+markdownlint
+pre-commit
+Pre-commit
+Renovate
+TrueNAS
+Cloudflare
+Grafana
+Alloy
+Readwise
+Bluesky
+Mastodon
+LinkedIn
+Threads
+POSSE
+
+# Common abbreviations
+API
+CLI
+URL
+JSON
+YAML
+TOML
+HTTP
+HTTPS
+DOM
+HTML
+CSS
+RSS
+LLM
+LLMs
+PR
+PRs
+CI
+
+# Operating systems and editors
+macOS
+Linux
+Windows
+VSCode
+
+# Documentation conventions
+README
+CHANGELOG
+TODO
+WIP
+FIXME
+
+# Common writing terms
+frontmatter
+learnings
+dev
+LaTeX
