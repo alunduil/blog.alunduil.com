@@ -2,6 +2,10 @@
 # Pre-commit hooks for code quality and consistency.
 # See https://pre-commit.com for usage.
 
+# Vale ships its style packages under .vale/styles/ as upstream content.
+# No hook should touch them.
+exclude: ^\.vale/styles/
+
 repos:
   # Shell linting and formatting (digest skill collect.sh and any future scripts)
   - repo: https://github.com/shellcheck-py/shellcheck-py
@@ -38,3 +42,29 @@ repos:
       - id: check-executables-have-shebangs
       - id: check-shebang-scripts-are-executable
       - id: detect-private-key
+
+  # Prose linting with Vale.
+  # Skips AstroPaper-shipped tutorial posts (upstream content) and AI-targeted
+  # markdown (CLAUDE.md, .claude/) where terseness beats prose conventions.
+  - repo: https://github.com/vale-cli/vale
+    rev: v3.14.1
+    hooks:
+      - id: vale
+        name: Lint prose with Vale
+        args: ["--config=.vale.ini"]
+        types: [markdown]
+        exclude: |
+          (?x)^(
+            CLAUDE\.md|
+            \.claude/.*|
+            src/data/blog/(
+              _releases/.*|
+              examples/.*|
+              adding-new-post\.md|
+              customizing-.*\.md|
+              dynamic-og-images\.md|
+              how-to-.*\.md|
+              predefined-color-schemes\.md|
+              setting-dates-via-git-hooks\.md
+            )
+          )$
