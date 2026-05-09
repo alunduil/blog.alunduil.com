@@ -25,9 +25,8 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 
 ## Branches and deploy
 
-- Default branch: `develop`. PRs target `develop`.
-- Deploy runs on push to `main` (`.github/workflows/deploy.yml`). `main`
-  doesn't exist yet — first publish creates it from `develop`.
+- Default branch: `main`. PRs target `main`.
+- Deploy runs on push to `main` (`.github/workflows/deploy.yml`).
 
 ## Digest skill
 
