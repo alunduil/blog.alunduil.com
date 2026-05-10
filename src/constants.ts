@@ -1,4 +1,5 @@
 import type { Props } from "astro";
+import IconBluesky from "@/assets/icons/IconBluesky.svg";
 import IconMail from "@/assets/icons/IconMail.svg";
 import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
@@ -23,6 +24,12 @@ export const SOCIALS: Social[] = [
     href: "https://www.linkedin.com/in/albrandt/",
     linkTitle: `${SITE.author} on LinkedIn`,
     icon: IconLinkedin,
+  },
+  {
+    name: "Bluesky",
+    href: "https://bsky.app/profile/alunduil.bsky.social",
+    linkTitle: `${SITE.author} on Bluesky`,
+    icon: IconBluesky,
   },
   {
     name: "Mail",
