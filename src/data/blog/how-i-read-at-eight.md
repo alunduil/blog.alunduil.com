@@ -47,10 +47,21 @@ then sat untouched for eight years.
 
 <!-- Kernel hint: specific predictions or recommendations that didn't pan out.
      Concrete candidates from the 2018 post:
-       - Twitter as the suggested discussion venue (the platform's collapse
-         and migration to Bluesky/Mastodon makes that pointer archaeology).
-       - The "readability" formula — did the age term actually prevent
-         book-stranding, or was it ornamental?
+       - Twitter as the suggested discussion venue. The platform's collapse
+         and migration to Bluesky / Mastodon makes that pointer archaeology.
+       - The "readability" formula is mathematically inverted relative to
+         its stated purpose. Three of its four operative factors are
+         backwards: Age in the denominator means older books rank LOWER
+         (opposite the stated "ensure books aren't stuck at the bottom"
+         goal); Pages Remaining in the numerator means longer books rank
+         higher (despite taking longer to finish); Completion Percentage
+         in the denominator means mostly-read books rank lower (despite
+         finishing soonest). Identified during the archive's copyedit
+         pass; preserved in the archive verbatim. The companion is the
+         right venue to surface the bug.
+       - The "(references)" parenthetical in the long-term-memory paragraph
+         was an unfilled placeholder for citations that never landed. The
+         method gestured at evidence but never grounded it.
        - The implicit assumption that reading methodology generalises
          (the post pitched it for "others"; eight years of conversations
          likely complicate that). -->
