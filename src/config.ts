@@ -20,4 +20,5 @@ export const SITE = {
   dir: "ltr",
   lang: "en",
   timezone: "Europe/London",
+  cloudflareWebAnalyticsToken: "",
 } as const;

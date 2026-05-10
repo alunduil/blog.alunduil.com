@@ -139,6 +139,16 @@ const structuredData = {
       )
     }
 
+    {
+      SITE.cloudflareWebAnalyticsToken && import.meta.env.PROD && (
+        <script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={`{"token": "${SITE.cloudflareWebAnalyticsToken}"}`}
+        />
+      )
+    }
+
     <ClientRouter />
 
     <script is:inline src="/toggle-theme.js"></script>
