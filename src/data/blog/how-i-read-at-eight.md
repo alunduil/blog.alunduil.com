@@ -17,7 +17,7 @@ highlights. The mechanism outlasted them all.
 
 Concurrent reading. The number has settled at nine—one screen-glanceable
 set in Google Play Books—but the principle is the same: read in short
-bursts, leave space between sessions for the chapter to consolidate, return
+bursts, leave space between sessions for the chapter to condense, return
 with practised recall rather than skimming back to where I left off. The
 cap exists for a different reason than I knew to articulate in 2018: more
 than nine books in flight kills the feeling of progress even when progress
@@ -50,21 +50,20 @@ lands on the right next read most of the time.
 Pocket is gone, replaced by Reader. The deciding factor wasn't features
 but integration: Reader handles RSS feeds and arbitrary articles in one
 place and connects to the rest of my workflow in ways Pocket didn't.
-Reading on the tube, during downtime, before bed for feed-triage—Reader
-is what made those routines coherent.
+I read on the tube and during downtime, and my bedtime routine includes
+triaging new feed content. Reader is what made those routines coherent.
 
-Practised recall has shifted shape. The 2018 ritual was scoped and
+Practised recall works differently now. The 2018 ritual was scoped and
 situational: pause before resuming a specific book, recall the last
 section. The current practice routes through Readwise: fifteen highlights
 from past reading delivered as a morning notification. Different mechanism,
 different scope. The original required discipline; the algorithmic version
 doesn't. What that swaps in terms of depth versus frequency, I'm not sure.
 
-Twitter is gone, or at least the Twitter I pointed readers to is. The post
-invited discussion there, but there's no clean replacement and not much
-conversation about my reading beyond the occasional coworker. Reviving
-this blog is partly an attempt to rebuild that—broadcast first,
-conversation second.
+The 2018 post invited Twitter discussion that never really took off;
+there's not much conversation about my reading beyond the occasional
+coworker. Reviving this blog is partly an attempt to rebuild that—broadcast
+first, conversation second.
 
 ## What was wrong
 
@@ -81,7 +80,7 @@ The `(references)` parenthetical in the long-term-memory paragraph was an
 unfilled placeholder. I gestured at evidence—knowledge consolidating into
 long-term memory—without grounding the claim. Cognitive-science writing on
 consolidation and Readwise's own material on spaced repetition and active
-recall would have given the post the citations it pretended to have.
+recall would have served as the citations.
 
 The pitch "for others" assumed the methodology generalises. Eight years
 on, I can verify that it works for one person—me—but I can't separate the
