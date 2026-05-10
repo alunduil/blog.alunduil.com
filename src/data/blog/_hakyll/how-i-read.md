@@ -2,7 +2,7 @@
 pubDatetime: 2018-01-21T15:51:20Z
 modDatetime: 2026-05-10T00:00:00Z
 title: How I Read
-description: Codifying a high-concurrency, spaced-recall reading method, including a formula for sorting books by "readability."
+description: Codifying how I read several books concurrently—short bursts per book with practised recall between sessions, plus a 'readability' formula for ordering the stack.
 tags:
   - reading
   - archive
