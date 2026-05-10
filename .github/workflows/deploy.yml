@@ -6,14 +6,11 @@ on:
   pull_request:
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       # Cancel superseded PR runs; never cancel main so each commit's build completes.
@@ -29,6 +26,10 @@ jobs:
     needs: build
     if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch') && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     concurrency:
       group: pages
       cancel-in-progress: false
