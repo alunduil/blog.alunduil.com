@@ -4,7 +4,7 @@ title: How I Read
 description: Codifying how I read several books concurrently—short bursts per book with practised recall between sessions, plus a 'readability' formula for ordering the stack.
 tags:
   - reading
-  - archive
+  - methodology
 timezone: America/Chicago
 hideEditPost: true
 ---
