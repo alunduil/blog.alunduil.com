@@ -49,13 +49,12 @@ place and connects to the rest of my workflow in ways Pocket didn't.
 I read on the tube and during downtime, and my bedtime routine includes
 triaging new feed content. Reader is what made those routines coherent.
 
-Practised recall works differently now. The 2018 ritual was scoped and
-situational: pause before resuming a specific book, recall the last
-section. The current practice routes through Readwise: fifteen highlights
-from past reading delivered as a morning notification. The 2018 ritual
-happened only when I chose to do it; Readwise's notification arrives
-whether I think about it or not. What that swaps in
-terms of depth versus frequency, I'm not sure.
+Practised recall hasn't changed; Readwise added a layer on top. The 2018
+ritual still fires when I resume a book—pause, recall the last section,
+then read. Readwise adds a broader scan: fifteen highlights from past
+reading delivered every morning as a notification. The 2018 ritual happens
+when I pick up a book; Readwise's notification arrives whether I think
+about it or not. Whether that adds depth or just frequency, I'm not sure.
 
 The 2018 post invited Twitter discussion that never really took off;
 there's not much conversation about my reading beyond the occasional
