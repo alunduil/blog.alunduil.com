@@ -30,11 +30,15 @@ discipline holds, sometimes I get caught up and read several chapters at a
 stretch. The 2018 post didn't make this distinction explicit.
 
 The mechanism—short bursts, practised recall, and consolidation across
-days—still describes how I retain material. Cognitive-science writing on
-consolidation and active recall has caught up to the intuition the 2018
-post gestured at: spaced retrieval strengthens retention, and rest periods
-between sessions matter for consolidation. I can recall books I read nearly
-a decade ago.
+days—still describes how I retain material. Cognitive-science writing has
+caught up to the intuition the 2018 post gestured at: [the spacing
+effect][spacing] describes how distributed sessions strengthen retention,
+and cognitive neuroscientist [Dr. Julie Fratantoni's advice][fratantoni]
+to "close down and repeat back what you learned" maps almost exactly onto
+the practised-recall ritual. I can recall books I read nearly a decade ago.
+
+[spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
+[fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation
 
 ## What's changed
 
