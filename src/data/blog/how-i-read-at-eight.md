@@ -25,8 +25,7 @@ cap, not a memory limit.
 I still read non-fiction one chapter at a time, setting the book down and
 picking up the next. Fiction is more situational; sometimes the sectional
 discipline holds, sometimes I get caught up and read several chapters at a
-stretch. The 2018 post didn't make this distinction explicit; I should have
-made it explicit at the time.
+stretch. The 2018 post didn't make this distinction explicit.
 
 The mechanism—short bursts plus practised recall plus consolidation across
 days—still describes how I retain material. I can recall books I read
@@ -75,15 +74,14 @@ internally consistent given the ascending sort I actually used. The
 publication just never said which sort.
 
 I left a `(references)` placeholder in the long-term-memory paragraph and
-never filled it. I gestured at evidence—knowledge consolidating into
-long-term memory—without grounding the claim. Cognitive-science writing on
-consolidation and Readwise's own material on spaced repetition and active
-recall would have served as the citations.
+never filled it. The post gestured at evidence—knowledge consolidating
+into long-term memory—without citing a source. Cognitive-science writing
+on consolidation and Readwise's own material on spaced repetition and
+active recall fit there now.
 
-I pitched the method "for others" without testing whether it generalises.
-Eight years on, I can verify that it works for one person—me—but I can't
-separate the methodology from the underlying memory. I made the pitch
-anyway.
+I pitched the method "for others" in 2018. Eight years on, I can verify it
+works for one person—me—but I can't separate the methodology from the
+underlying memory.
 
 <!--
   Frontmatter / title / slug deferred until after voicing pass.
