@@ -1,0 +1,24 @@
+---
+# markdownlint rules tuned for this repo's content.
+# See https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+config:
+  # Use ATX-style headings (# Heading) consistently.
+  MD003:
+    style: atx
+  # Long lines are fine inside code blocks, headings, and tables.
+  MD013:
+    code_blocks: false
+    headings: false
+    tables: false
+  # Allow repeated headings at different nesting levels.
+  MD024:
+    siblings_only: true
+  # AstroPaper posts may use a small set of inline HTML for typography.
+  MD033:
+    allowed_elements:
+      - br
+      - kbd
+      - sub
+      - sup
+  # Posts start with frontmatter, not an H1.
+  MD041: false
