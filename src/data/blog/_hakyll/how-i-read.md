@@ -1,18 +1,18 @@
 ---
-pubDatetime: 2018-01-21T15:51:20Z
+pubDatetime: 2018-01-21T14:00:00Z
 title: How I Read
 description: Codifying how I read several books concurrently—short bursts per book with practised recall between sessions, plus a 'readability' formula for ordering the stack.
 tags:
   - reading
   - archive
-draft: true
+timezone: America/Chicago
 ---
 
 > **2018 archive.** This is the original "How I Read" post from January 2018,
 > restored verbatim after the Hakyll → AstroPaper migration that dropped the
-> pre-2026 archive. Nothing below has been edited. The companion piece [How I
-> Read at Eight](/posts/how-i-read-at-eight) revisits each claim — what's still
-> true, what's been displaced, what was wrong — eight years on.
+> pre-2026 archive. Nothing below has been edited. A companion piece revisits
+> each claim — what's still true, what's been displaced, what was wrong —
+> eight years on.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
