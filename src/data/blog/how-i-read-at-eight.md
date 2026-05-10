@@ -17,7 +17,7 @@ draft: true
   shape carry it implicitly.
 -->
 
-The original [How I Read](/posts/2018/how-i-read) went up in January 2018 and
+The original [How I Read](/posts/how-i-read) went up in January 2018 and
 then sat untouched for eight years.
 
 <!-- TODO: continue the opener. Why revisit now? Surface the format meta-claim,
@@ -61,7 +61,7 @@ then sat untouched for eight years.
   Open questions from #130 still to resolve in writing or punt to follow-ups:
     - Form factor: this draft assumes a standalone companion piece (option 1
       from the kernel). The original is restored as an archive entry at
-      /posts/2018/how-i-read.
+      /posts/how-i-read.
     - Is the post's revision arc (draft → example → feedback → conclusion,
       all visible in git history) worth surfacing, or noise?
     - Is "at Eight" a strong enough hook? Anniversaries earn attention at
