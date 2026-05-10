@@ -2,16 +2,17 @@ name: Build
 
 on:
   pull_request:
-  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
-      cancel-in-progress: true
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: withastro/action@b7d53628f8b666036b0238aadb0b984a2a489f26 # v6
