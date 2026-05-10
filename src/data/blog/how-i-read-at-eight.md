@@ -35,8 +35,8 @@ have a good memory is an honest open question; I haven't run the experiment.
 ## What's changed
 
 I dropped the spreadsheet when I went all-digital. In 2018 I kept
-readability scores in Google Sheets, sorted ascending—lowest score at the
-top, read from there. Google Play Books provides a facsimile: its
+readability scores in Google Sheets, sorted ascending—lowest score first.
+Google Play Books provides a facsimile: its
 in-progress list sorts by completion percentage descending, surfacing the
 most-complete books first. That's the dominant factor of the original
 formula recovered as a built-in sort. The other factors—page area, pages
