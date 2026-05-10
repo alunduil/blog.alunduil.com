@@ -14,19 +14,20 @@ Pocket by Reader, and the recall ritual by Readwise's daily highlights.
 
 ## What's still true
 
-Concurrent reading. The number has settled at nine—one screen-glanceable
-set in Google Play Books—but the principle is the same: read in short
-bursts, leave space between sessions for the chapter to condense, return
-with practised recall rather than skimming back to where I left off. The
-cap exists for a different reason than I knew to articulate in 2018: more
-than nine books in flight kills the feeling of progress even when progress
-is happening. It's a sanity cap, not a memory limit.
+Eight years on, I'm still reading nine books at a time. The 2018 "five to
+ten" settled into a hard nine—one screen-glanceable set in Google Play
+Books—but the mechanism is the same: read in short bursts, leave space
+between sessions for the chapter to condense, return with practised recall
+rather than skimming back to where I left off. The cap exists for a
+different reason than I knew to articulate in 2018: more than nine books in
+flight kills the feeling of progress even when progress is happening. It's
+a sanity cap, not a memory limit.
 
-Sectional reading. For non-fiction this is the default: read a chapter, set
-the book down, pick up the next book. Fiction is more situational; sometimes
-the sectional discipline holds, sometimes I get caught up and read several
-chapters at a stretch. The 2018 post didn't make this distinction explicit;
-I should have made it explicit at the time.
+I still read non-fiction one chapter at a time, setting the book down and
+picking up the next. Fiction is more situational; sometimes the sectional
+discipline holds, sometimes I get caught up and read several chapters at a
+stretch. The 2018 post didn't make this distinction explicit; I should have
+made it explicit at the time.
 
 The mechanism—short bursts plus practised recall plus consolidation across
 days—still describes how I retain material. I can recall books I read
