@@ -11,6 +11,12 @@ const formatDate = (date, timezone) =>
     timeZone: timezone,
   }).format(date);
 
+const TAG_LIMIT = 3;
+const TAG_CHAR_LIMIT = 12;
+
+const truncate = tag =>
+  tag.length > TAG_CHAR_LIMIT ? tag.slice(0, TAG_CHAR_LIMIT - 1) + "…" : tag;
+
 export default async post => {
   const hostname = new URL(SITE.website).hostname;
   const pubDate = formatDate(
@@ -18,6 +24,7 @@ export default async post => {
     post.data.timezone ?? SITE.timezone
   );
   const titleSize = post.data.title.length > 60 ? 64 : 84;
+  const tags = post.data.tags.slice(0, TAG_LIMIT).map(truncate);
 
   return satori(
     {
@@ -106,7 +113,30 @@ export default async post => {
                 height: 132,
               },
               children: [
-                block(COLORS.yellow, { width: 96 }),
+                {
+                  type: "div",
+                  props: {
+                    style: {
+                      width: 200,
+                      background: COLORS.yellow,
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      gap: 6,
+                      padding: "0 20px",
+                      fontSize: 22,
+                      color: COLORS.black,
+                      overflow: "hidden",
+                    },
+                    children: tags.map(tag => ({
+                      type: "div",
+                      props: {
+                        style: { whiteSpace: "nowrap" },
+                        children: `#${tag}`,
+                      },
+                    })),
+                  },
+                },
                 {
                   type: "div",
                   props: {
@@ -146,7 +176,9 @@ export default async post => {
       width: 1200,
       height: 630,
       embedFont: true,
-      fonts: await loadGoogleFonts(post.data.title + pubDate + hostname),
+      fonts: await loadGoogleFonts(
+        post.data.title + pubDate + hostname + tags.join("") + "#…"
+      ),
     }
   );
 };
