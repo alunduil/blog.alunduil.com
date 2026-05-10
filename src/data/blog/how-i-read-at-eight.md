@@ -56,11 +56,6 @@ reading delivered every morning as a notification. The 2018 ritual happens
 when I pick up a book; Readwise's notification arrives whether I think
 about it or not. Whether that adds depth or just frequency, I'm not sure.
 
-The 2018 post invited Twitter discussion that never really took off;
-there's not much conversation about my reading beyond the occasional
-coworker. Reviving this blog is partly an attempt to rebuild that—broadcast
-first, conversation second.
-
 ## What was wrong
 
 Looking back, the formula wasn't broken; the article was. I wrote the
