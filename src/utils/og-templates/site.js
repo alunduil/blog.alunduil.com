@@ -1,21 +1,7 @@
 import satori from "satori";
 import { SITE } from "@/config";
 import loadGoogleFonts from "../loadGoogleFont";
-
-const COLORS = {
-  cream: "#F4EFE6",
-  black: "#0A0A0A",
-  red: "#D5232A",
-  blue: "#1E4FA1",
-  yellow: "#F1C232",
-};
-
-const STROKE = 8;
-
-const block = (background, extra = {}) => ({
-  type: "div",
-  props: { style: { background, display: "flex", ...extra } },
-});
+import { COLORS, STROKE, block } from "./mondrian";
 
 export default async () => {
   const hostname = new URL(SITE.website).hostname;
