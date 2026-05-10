@@ -22,7 +22,7 @@ importers:
         version: 4.2.4(vite@7.3.3(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(yaml@2.8.4))
       astro:
         specifier: ^6.1.6
-        version: 6.3.0(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4)
+        version: 6.3.1(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4)
       dayjs:
         specifier: ^1.11.19
         version: 1.11.20
@@ -1204,8 +1204,8 @@ packages:
     resolution: {integrity: sha512-+QDcgc7e+au6EZ0YjMmRRjNoQo5bDMlaR45aWDoFsuxQTCM9qmCHRoiKJPELgckJ8Wmr7vcfpa9eCDHBFh6G4w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  astro@6.3.0:
-    resolution: {integrity: sha512-yhDelVblNzQE4mjS0s27T9BZuAlfRCy+qHk6IlMgSr+ADG5QNpyPkroJAVCFRH08Nf2VhDM5dz6n4GWiTB9TlQ==}
+  astro@6.3.1:
+    resolution: {integrity: sha512-atz6dmkE3Gu24bDgb7g2RE/BYnKqPYIHd6hTUM1UXvu/i7qNZOKLAqEHvgYpv9PQVcgWsXpk4/OOXZ0E/FzvSQ==}
     engines: {node: '>=22.12.0', npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -3812,7 +3812,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  astro@6.3.0(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4):
+  astro@6.3.1(@types/node@24.12.3)(jiti@2.7.0)(lightningcss@1.32.0)(rollup@4.60.3)(yaml@2.8.4):
     dependencies:
       '@astrojs/compiler': 4.0.0
       '@astrojs/internal-helpers': 0.9.0
