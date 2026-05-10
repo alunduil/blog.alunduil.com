@@ -9,7 +9,7 @@ timezone: America/Chicago
 hideEditPost: true
 ---
 
-> **Archival republish.** Restored verbatim from the pre-2026 archive.
+> **Archival republish.** From this blog's Hakyll era; body unchanged.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
