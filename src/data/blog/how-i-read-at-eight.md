@@ -28,9 +28,11 @@ discipline holds, sometimes I get caught up and read several chapters at a
 stretch. The 2018 post didn't make this distinction explicit.
 
 The mechanism—short bursts plus practised recall plus consolidation across
-days—still describes how I retain material. I can recall books I read
-nearly a decade ago. Whether that proves the method works or just proves I
-have a good memory is an honest open question; I haven't run the experiment.
+days—still describes how I retain material. Cognitive-science writing on
+consolidation and active recall has caught up to the intuition the 2018
+post gestured at: spaced retrieval strengthens retention, and rest periods
+between sessions matter for consolidation. I can recall books I read nearly
+a decade ago.
 
 ## What's changed
 
@@ -56,26 +58,11 @@ reading delivered every morning as a notification. The 2018 ritual happens
 when I pick up a book; Readwise's notification arrives whether I think
 about it or not. Whether that adds depth or just frequency, I'm not sure.
 
-## What was wrong
-
-Looking back, the formula wasn't broken; the article was. I wrote the
-formula and the prose but never disclosed the sort direction—and the sort
-direction is half the algorithm. A reader applying it from the post would
-default to descending sort (highest score = top priority) and get the
-opposite of intended behaviour: older books rank lower, mostly read books
-rank lower, books with more pages remaining rank higher. The maths was
-internally consistent given the ascending sort I actually used. The
-publication just never said which sort.
-
-I left a `(references)` placeholder in the long-term-memory paragraph and
-never filled it. The post gestured at evidence—knowledge consolidating
-into long-term memory—without citing a source. Cognitive-science writing
-on consolidation and Readwise's own material on spaced repetition and
-active recall fit there now.
-
 I pitched the method "for others" in 2018. Eight years on, I can verify it
 works for one person—me—but I can't separate the methodology from the
-underlying memory.
+underlying memory. Whether the method generalises or I just have an
+unusually good memory remains an open question; I haven't run the
+experiment.
 
 <!--
   Frontmatter / title / slug deferred until after voicing pass.
