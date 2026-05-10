@@ -6,6 +6,7 @@ tags:
   - reading
   - archive
 timezone: America/Chicago
+hideEditPost: true
 ---
 
 > **2018 archive.** This is the original "How I Read" post from January 2018,
