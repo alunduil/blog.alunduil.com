@@ -5,5 +5,14 @@
   "reviewers": ["alunduil"],
   "pre-commit": {
     "enabled": true
-  }
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/workflows/deploy\\.yml$/"],
+      "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
+      "depNameTemplate": "pnpm",
+      "datasourceTemplate": "npm"
+    }
+  ]
 }
