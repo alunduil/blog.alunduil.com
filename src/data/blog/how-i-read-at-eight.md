@@ -8,10 +8,9 @@ draft: true
 ---
 
 In 2018 I wrote about how I read. Eight years later, the practice is mostly
-unchanged; the substrate around it has been entirely replaced. Spreadsheet,
+unchanged; the tools around it have been entirely replaced. Spreadsheet,
 Pocket, Twitter—all gone or displaced. Google Play Books, Reader,
-Readwise—all added since. The mechanism survived its tools; the tools
-didn't survive the decade.
+Readwise—all added since. The mechanism outlasted them all.
 
 ## What's still true
 
