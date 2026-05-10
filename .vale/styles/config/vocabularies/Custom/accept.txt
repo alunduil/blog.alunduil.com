@@ -72,3 +72,8 @@ LaTeX
 # Add as Custom.Spelling surfaces them.
 observability
 triaging
+
+# Traditional possessive forms (singular noun ending in s + 's per
+# CMOS). Hunspell affix rules don't generate these; add each variant
+# as it surfaces. AP/journalistic style drops the second s; we don't.
+Books's
