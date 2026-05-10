@@ -18,9 +18,9 @@ I'm still reading nine books at a time. The 2018 "five to ten" settled
 into a hard nine—one screen-glanceable set in Google Play Books—but the
 mechanism is the same: read in short bursts, leave space
 between sessions for the chapter to condense, return with practised recall
-rather than skimming back to where I left off. More than nine in flight
-kills the feeling of progress even when progress is happening. It's a
-sanity cap, not a memory limit.
+rather than skimming back to where I left off. Without a cap, the in-flight
+set grows unbounded and the sense of progress disappears. It's a sanity
+cap, not a memory limit.
 
 I still read non-fiction one chapter at a time, setting the book down and
 picking up the next. Fiction is more situational; sometimes the sectional
@@ -53,8 +53,9 @@ triaging new feed content. Reader is what made those routines coherent.
 Practised recall works differently now. The 2018 ritual was scoped and
 situational: pause before resuming a specific book, recall the last
 section. The current practice routes through Readwise: fifteen highlights
-from past reading delivered as a morning notification. The original
-required discipline; the algorithmic version doesn't. What that swaps in
+from past reading delivered as a morning notification. The 2018 ritual
+happened only when I chose to do it; Readwise's notification arrives
+whether I think about it or not. What that swaps in
 terms of depth versus frequency, I'm not sure.
 
 The 2018 post invited Twitter discussion that never really took off;
