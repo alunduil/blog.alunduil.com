@@ -9,7 +9,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/(astro|deploy)\\.yml$/"],
+      "managerFilePatterns": ["/^\\.github/workflows/(astro|pages)\\.yml$/"],
       "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
       "depNameTemplate": "pnpm",
       "datasourceTemplate": "npm"
