@@ -9,7 +9,7 @@
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/deploy\\.yml$/"],
+      "managerFilePatterns": ["/^\\.github/workflows/(build|deploy)\\.yml$/"],
       "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
       "depNameTemplate": "pnpm",
       "datasourceTemplate": "npm"
