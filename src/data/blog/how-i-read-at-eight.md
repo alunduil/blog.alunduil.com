@@ -8,9 +8,10 @@ draft: true
 ---
 
 In 2018 I wrote about how I read. Eight years later, the practice is mostly
-unchanged; the tools around it have been entirely replaced. Spreadsheet,
-Pocket, Twitter—all gone or displaced. Google Play Books, Reader,
-Readwise—all added since. The mechanism outlasted them all.
+unchanged; the tools around it have been entirely replaced. Google Sheets
+for tracking, replaced by Google Play Books' In Progress sorting. Pocket,
+replaced by Reader. The recall ritual, replaced by Readwise's daily
+highlights. The mechanism outlasted them all.
 
 ## What's still true
 
