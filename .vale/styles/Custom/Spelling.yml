@@ -1,0 +1,18 @@
+# en_GB-ise Hunspell dict vendored from wooorm/dictionaries (MIT AND
+# BSD AND public domain — see en_GB.LICENSE). Upstream SCOWL cadence
+# is years, so refresh by hand when a real spelling gap surfaces:
+#
+#   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/index.aff \
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.aff
+#   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/index.dic \
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.dic
+#   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/license \
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.LICENSE
+
+extends: spelling
+message: "Did you really mean '%s'?"
+level: error
+append: false
+dicpath: Custom
+dictionaries:
+  - en_GB
