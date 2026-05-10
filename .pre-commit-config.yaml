@@ -59,7 +59,7 @@ repos:
         name: Lint prose with Vale
         args: ["--config=.vale.ini"]
         types: [markdown]
-        exclude: |
+        exclude: &upstream_md_exclude |
           (?x)^(
             CLAUDE\.md|
             \.claude/.*|
@@ -74,3 +74,12 @@ repos:
               setting-dates-via-git-hooks\.md
             )
           )$
+
+  # Markdown structure linting with markdownlint-cli2.
+  # Same exclude as Vale: AstroPaper upstream content + AI-targeted markdown.
+  - repo: https://github.com/DavidAnson/markdownlint-cli2
+    rev: v0.22.1
+    hooks:
+      - id: markdownlint-cli2
+        args: [--fix]
+        exclude: *upstream_md_exclude
