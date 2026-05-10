@@ -7,21 +7,21 @@ tags:
 draft: true
 ---
 
-In 2018 I wrote about how I read. Eight years later, the practice is
-unchanged in shape; the substrate around it has been entirely replaced.
-Spreadsheet, Pocket, Twitter—all gone or displaced. Google Play Books,
-Reader, Readwise—all added since. The mechanism survived its tools; the
-tools didn't survive the decade.
+In 2018 I wrote about how I read. Eight years later, the practice is mostly
+unchanged; the substrate around it has been entirely replaced. Spreadsheet,
+Pocket, Twitter—all gone or displaced. Google Play Books, Reader,
+Readwise—all added since. The mechanism survived its tools; the tools
+didn't survive the decade.
 
 ## What's still true
 
 Concurrent reading. The number has settled at nine—one screen-glanceable
 set in Google Play Books—but the principle is the same: read in short
 bursts, leave space between sessions for the chapter to consolidate, return
-with practised recall rather than skim-back-to-where-I-left-off. The cap
-exists for a different reason than I knew to articulate in 2018: more than
-nine books in flight kills the feeling of progress even when progress is
-happening. It's a sanity cap, not a memory-bandwidth constraint.
+with practised recall rather than skimming back to where I left off. The
+cap exists for a different reason than I knew to articulate in 2018: more
+than nine books in flight kills the feeling of progress even when progress
+is happening. It's a sanity cap, not a memory limit.
 
 Sectional reading. For non-fiction this is the default: read a chapter, set
 the book down, pick up the next book. Fiction is more situational; sometimes
@@ -71,11 +71,11 @@ conversation second.
 The readability formula wasn't broken; the article was. I wrote the
 formula and the prose but never disclosed the sort direction—and the sort
 direction is half the algorithm. A reader applying it from the post would
-default to descending sort (highest score = top priority, the conventional
-reading) and get the opposite of intended behaviour: older books rank
-lower, mostly read books rank lower, books with more pages remaining rank
-higher. The maths was internally consistent given the ascending sort I
-actually used. The publication just never said which sort.
+default to descending sort (highest score = top priority) and get the
+opposite of intended behaviour: older books rank lower, mostly read books
+rank lower, books with more pages remaining rank higher. The maths was
+internally consistent given the ascending sort I actually used. The
+publication just never said which sort.
 
 The `(references)` parenthetical in the long-term-memory paragraph was an
 unfilled placeholder. I gestured at evidence—knowledge consolidating into
@@ -85,8 +85,7 @@ recall would have given the post the citations it pretended to have.
 
 The pitch "for others" assumed the methodology generalises. Eight years
 on, I can verify that it works for one person—me—but I can't separate the
-methodology from the underlying memory. The post wrote past that
-uncertainty.
+methodology from the underlying memory. I made the pitch anyway.
 
 <!--
   Frontmatter / title / slug deferred until after voicing pass.
