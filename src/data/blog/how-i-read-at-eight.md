@@ -14,9 +14,9 @@ Pocket by Reader, and the recall ritual by Readwise's daily highlights.
 
 ## What's still true
 
-Eight years on, I'm still reading nine books at a time. The 2018 "five to
-ten" settled into a hard nine—one screen-glanceable set in Google Play
-Books—but the mechanism is the same: read in short bursts, leave space
+I'm still reading nine books at a time. The 2018 "five to ten" settled
+into a hard nine—one screen-glanceable set in Google Play Books—but the
+mechanism is the same: read in short bursts, leave space
 between sessions for the chapter to condense, return with practised recall
 rather than skimming back to where I left off. The cap exists for a
 different reason than I knew to articulate in 2018: more than nine books in
@@ -65,7 +65,7 @@ first, conversation second.
 
 ## What was wrong
 
-Eight years later, the formula wasn't broken; the article was. I wrote the
+Looking back, the formula wasn't broken; the article was. I wrote the
 formula and the prose but never disclosed the sort direction—and the sort
 direction is half the algorithm. A reader applying it from the post would
 default to descending sort (highest score = top priority) and get the
