@@ -7,10 +7,12 @@ tags:
 draft: true
 ---
 
-In 2018 I wrote about how I read. Eight years later, the practice is mostly
-unchanged; the tools around it have been entirely replaced. Google Sheets
-for tracking was replaced by Google Play Books's In Progress sorting,
-Pocket by Reader, and the recall ritual by Readwise's daily highlights.
+In 2018 I wrote about how I read. Eight years later, the practice is
+mostly unchanged; the tools around it have been entirely replaced.
+[Google Sheets](https://www.google.com/sheets/about/) for tracking was
+replaced by [Google Play Books](https://play.google.com/store/books)'s
+In Progress sorting, Pocket by [Reader](https://readwise.io/read), and
+the recall ritual by [Readwise](https://readwise.io)'s daily highlights.
 
 ## What's still true
 
