@@ -9,11 +9,7 @@ timezone: America/Chicago
 hideEditPost: true
 ---
 
-> **2018 archive.** This is the original "How I Read" post from January 2018,
-> restored verbatim after the Hakyll → AstroPaper migration that dropped the
-> pre-2026 archive. Nothing below has been edited. A companion piece revisits
-> each claim — what's still true, what's been displaced, what was wrong —
-> eight years on.
+> **Archival republish.** Restored verbatim from the pre-2026 archive.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
