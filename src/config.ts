@@ -4,7 +4,7 @@ export const SITE = {
   profile: "https://github.com/alunduil",
   desc: "Notes on production software engineering, reliability, observability, and feedback-loop systems.",
   title: "alunduil",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
