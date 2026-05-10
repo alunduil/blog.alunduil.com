@@ -27,7 +27,7 @@ Sectional reading. For non-fiction this is the default: read a chapter, set
 the book down, pick up the next book. Fiction is more situational; sometimes
 the sectional discipline holds, sometimes I get caught up and read several
 chapters at a stretch. The 2018 post didn't make this distinction explicit;
-eight years says it should have.
+I should have made it explicit at the time.
 
 The mechanism—short bursts plus practised recall plus consolidation across
 days—still describes how I retain material. I can recall books I read
@@ -35,8 +35,6 @@ nearly a decade ago. Whether that proves the method works or just proves I
 have a good memory is an honest open question; I haven't run the experiment.
 
 ## What's changed
-
-Everything between me and the books.
 
 The spreadsheet is gone. In 2018 I kept readability scores in Google
 Sheets, sorted ascending—lowest score at the top, read from there. Google
@@ -56,9 +54,9 @@ triaging new feed content. Reader is what made those routines coherent.
 Practised recall works differently now. The 2018 ritual was scoped and
 situational: pause before resuming a specific book, recall the last
 section. The current practice routes through Readwise: fifteen highlights
-from past reading delivered as a morning notification. Different mechanism,
-different scope. The original required discipline; the algorithmic version
-doesn't. What that swaps in terms of depth versus frequency, I'm not sure.
+from past reading delivered as a morning notification. The original
+required discipline; the algorithmic version doesn't. What that swaps in
+terms of depth versus frequency, I'm not sure.
 
 The 2018 post invited Twitter discussion that never really took off;
 there's not much conversation about my reading beyond the occasional
