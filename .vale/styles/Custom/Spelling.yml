@@ -1,0 +1,7 @@
+extends: spelling
+message: "Did you really mean '%s'?"
+level: error
+append: false
+dicpath: Custom
+dictionaries:
+  - en_GB
