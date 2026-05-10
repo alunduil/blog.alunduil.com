@@ -27,7 +27,7 @@ picking up the next. Fiction is more situational; sometimes the sectional
 discipline holds, sometimes I get caught up and read several chapters at a
 stretch. The 2018 post didn't make this distinction explicit.
 
-The mechanism—short bursts plus practised recall plus consolidation across
+The mechanism—short bursts, practised recall, and consolidation across
 days—still describes how I retain material. Cognitive-science writing on
 consolidation and active recall has caught up to the intuition the 2018
 post gestured at: spaced retrieval strengthens retention, and rest periods
