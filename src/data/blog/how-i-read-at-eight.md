@@ -18,10 +18,9 @@ I'm still reading nine books at a time. The 2018 "five to ten" settled
 into a hard nine—one screen-glanceable set in Google Play Books—but the
 mechanism is the same: read in short bursts, leave space
 between sessions for the chapter to condense, return with practised recall
-rather than skimming back to where I left off. The cap exists for a
-different reason than I knew to articulate in 2018: more than nine books in
-flight kills the feeling of progress even when progress is happening. It's
-a sanity cap, not a memory limit.
+rather than skimming back to where I left off. More than nine in flight
+kills the feeling of progress even when progress is happening. It's a
+sanity cap, not a memory limit.
 
 I still read non-fiction one chapter at a time, setting the book down and
 picking up the next. Fiction is more situational; sometimes the sectional
