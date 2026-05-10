@@ -21,6 +21,12 @@ repos:
         args: [-i, "2", -ci]
         types: [shell]
 
+  # YAML linting (workflows, frontmatter, pre-commit config itself)
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint
+
   # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
