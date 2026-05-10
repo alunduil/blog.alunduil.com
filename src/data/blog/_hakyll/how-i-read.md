@@ -9,7 +9,7 @@ timezone: America/Chicago
 hideEditPost: true
 ---
 
-> **Archival republish.** From this blog's Hakyll era; body unchanged.
+> **Archival republish.** From this blog's Hakyll era; lightly copyedited.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
@@ -40,7 +40,7 @@ By re-establishing reading context without re-reading the previous section
 before continuing a book, I ensure that I can keep the contents of a book
 relevant to some mnemonic (e.g., author, title, or cover).
 
-The second idiosyncracy to my methodoloy is the way I sort my books and order my
+The second idiosyncrasy to my methodology is the way I sort my books and order my
 reading.  I sort books I am currently reading by a quality I've been calling
 readability.  Loosely, readability is a multiple of the approximate word density,
 age (time since added to the reading list), and completion.  This sorts my
@@ -56,5 +56,5 @@ Formally, I currently define readability as:
 I hope this method provides an alternative mindset for reading and allows more
 people to read more of the things they want to.  If you have any feedback on the
 method or would like to share your experience, please reach out to me on one of
-my various communication channels.  The easiest would probably to start a small
-discussion on twitter and escalate as necessary.
+my various communication channels.  The easiest would probably be to start a small
+discussion on Twitter and escalate as necessary.
