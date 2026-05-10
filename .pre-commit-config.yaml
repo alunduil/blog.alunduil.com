@@ -66,6 +66,7 @@ repos:
             src/data/blog/(
               _releases/.*|
               examples/.*|
+              2018/.*|
               adding-new-post\.md|
               customizing-.*\.md|
               dynamic-og-images\.md|
