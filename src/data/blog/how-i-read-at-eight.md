@@ -36,17 +36,17 @@ have a good memory is an honest open question; I haven't run the experiment.
 
 ## What's changed
 
-The spreadsheet is gone. In 2018 I kept readability scores in Google
-Sheets, sorted ascending—lowest score at the top, read from there. Google
-Play Books killed the spreadsheet workflow but provides a facsimile: its
+I dropped the spreadsheet when I went all-digital. In 2018 I kept
+readability scores in Google Sheets, sorted ascending—lowest score at the
+top, read from there. Google Play Books provides a facsimile: its
 in-progress list sorts by completion percentage descending, surfacing the
 most-complete books first. That's the dominant factor of the original
 formula recovered as a built-in sort. The other factors—page area, pages
 remaining, font size, age—are gone, but in practice the completion sort
 lands on the right next read most of the time.
 
-Pocket is gone, replaced by Reader. The deciding factor wasn't features
-but integration: Reader handles RSS feeds and arbitrary articles in one
+I moved from Pocket to Reader. The deciding factor wasn't features but
+integration: Reader handles RSS feeds and arbitrary articles in one
 place and connects to the rest of my workflow in ways Pocket didn't.
 I read on the tube and during downtime, and my bedtime routine includes
 triaging new feed content. Reader is what made those routines coherent.
@@ -65,7 +65,7 @@ first, conversation second.
 
 ## What was wrong
 
-The readability formula wasn't broken; the article was. I wrote the
+Eight years later, the formula wasn't broken; the article was. I wrote the
 formula and the prose but never disclosed the sort direction—and the sort
 direction is half the algorithm. A reader applying it from the post would
 default to descending sort (highest score = top priority) and get the
@@ -74,15 +74,16 @@ rank lower, books with more pages remaining rank higher. The maths was
 internally consistent given the ascending sort I actually used. The
 publication just never said which sort.
 
-The `(references)` parenthetical in the long-term-memory paragraph was an
-unfilled placeholder. I gestured at evidence—knowledge consolidating into
+I left a `(references)` placeholder in the long-term-memory paragraph and
+never filled it. I gestured at evidence—knowledge consolidating into
 long-term memory—without grounding the claim. Cognitive-science writing on
 consolidation and Readwise's own material on spaced repetition and active
 recall would have served as the citations.
 
-The pitch "for others" assumed the methodology generalises. Eight years
-on, I can verify that it works for one person—me—but I can't separate the
-methodology from the underlying memory. I made the pitch anyway.
+I pitched the method "for others" without testing whether it generalises.
+Eight years on, I can verify that it works for one person—me—but I can't
+separate the methodology from the underlying memory. I made the pitch
+anyway.
 
 <!--
   Frontmatter / title / slug deferred until after voicing pass.
