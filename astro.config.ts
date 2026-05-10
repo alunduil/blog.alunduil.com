@@ -55,6 +55,11 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      PUBLIC_WEBMENTION_IO_USERNAME: envField.string({
+        access: "public",
+        context: "client",
+        optional: true,
+      }),
     },
   },
 });

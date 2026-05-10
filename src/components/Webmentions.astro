@@ -1,0 +1,174 @@
+---
+import { getWebmentions, type WebmentionEntry } from "@/utils/getWebmentions";
+
+type Props = { target: string };
+
+const { target } = Astro.props;
+
+const { likes, reposts, replies, mentions } = await getWebmentions(target);
+
+const visible = (e: WebmentionEntry) => !e["wm-private"];
+const visibleLikes = likes.filter(visible);
+const visibleReposts = reposts.filter(visible);
+const visibleReplies = replies.filter(visible);
+const visibleMentions = mentions.filter(visible);
+
+const total =
+  visibleLikes.length +
+  visibleReposts.length +
+  visibleReplies.length +
+  visibleMentions.length;
+
+const facepileTitle = (e: WebmentionEntry) =>
+  e.author?.name ? e.author.name : e["wm-source"];
+---
+
+{
+  total > 0 && (
+    <section
+      aria-labelledby="webmentions-heading"
+      class="mt-8"
+      data-pagefind-ignore
+    >
+      <h2 id="webmentions-heading" class="text-xl font-semibold">
+        Webmentions
+      </h2>
+
+      {(visibleLikes.length > 0 || visibleReposts.length > 0) && (
+        <div class="mt-4 flex flex-wrap items-start gap-x-8 gap-y-4">
+          {visibleLikes.length > 0 && (
+            <div>
+              <p class="text-sm opacity-80">
+                {visibleLikes.length}{" "}
+                {visibleLikes.length === 1 ? "like" : "likes"}
+              </p>
+              <ul class="mt-2 flex flex-wrap -space-x-2">
+                {visibleLikes.map(like => (
+                  <li>
+                    <a
+                      href={like["wm-source"]}
+                      title={facepileTitle(like)}
+                      rel="nofollow ugc"
+                    >
+                      {like.author?.photo ? (
+                        <img
+                          src={like.author.photo}
+                          alt={facepileTitle(like)}
+                          loading="lazy"
+                          class="size-8 rounded-full ring-2 ring-background"
+                        />
+                      ) : (
+                        <span class="inline-block size-8 rounded-full bg-muted ring-2 ring-background" />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {visibleReposts.length > 0 && (
+            <div>
+              <p class="text-sm opacity-80">
+                {visibleReposts.length}{" "}
+                {visibleReposts.length === 1 ? "repost" : "reposts"}
+              </p>
+              <ul class="mt-2 flex flex-wrap -space-x-2">
+                {visibleReposts.map(repost => (
+                  <li>
+                    <a
+                      href={repost["wm-source"]}
+                      title={facepileTitle(repost)}
+                      rel="nofollow ugc"
+                    >
+                      {repost.author?.photo ? (
+                        <img
+                          src={repost.author.photo}
+                          alt={facepileTitle(repost)}
+                          loading="lazy"
+                          class="size-8 rounded-full ring-2 ring-background"
+                        />
+                      ) : (
+                        <span class="inline-block size-8 rounded-full bg-muted ring-2 ring-background" />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
+      {visibleReplies.length > 0 && (
+        <ol class="mt-6 space-y-4">
+          {visibleReplies.map(reply => (
+            <li class="flex gap-3">
+              {reply.author?.photo ? (
+                <img
+                  src={reply.author.photo}
+                  alt=""
+                  loading="lazy"
+                  class="size-8 flex-none rounded-full"
+                />
+              ) : (
+                <span class="size-8 flex-none rounded-full bg-muted" />
+              )}
+              <div class="min-w-0 flex-1">
+                <p class="text-sm">
+                  {reply.author?.url ? (
+                    <a
+                      href={reply.author.url}
+                      class="font-medium hover:text-accent"
+                      rel="nofollow ugc"
+                    >
+                      {reply.author.name ?? reply["wm-source"]}
+                    </a>
+                  ) : (
+                    <span class="font-medium">
+                      {reply.author?.name ?? reply["wm-source"]}
+                    </span>
+                  )}
+                  <a
+                    href={reply["wm-source"]}
+                    class="ms-2 text-xs opacity-70 hover:text-accent"
+                    rel="nofollow ugc"
+                  >
+                    <time datetime={reply.published ?? reply["wm-received"]}>
+                      {new Date(
+                        reply.published ?? reply["wm-received"]
+                      ).toLocaleDateString()}
+                    </time>
+                  </a>
+                </p>
+                {reply.content?.html && (
+                  <div
+                    class="mt-1 text-sm opacity-90"
+                    set:html={reply.content.html}
+                  />
+                )}
+              </div>
+            </li>
+          ))}
+        </ol>
+      )}
+
+      {visibleMentions.length > 0 && (
+        <ul class="mt-6 space-y-2 text-sm">
+          {visibleMentions.map(mention => (
+            <li>
+              <a
+                href={mention["wm-source"]}
+                class="hover:text-accent"
+                rel="nofollow ugc"
+              >
+                {mention.author?.name ?? mention["wm-source"]}
+              </a>{" "}
+              <span class="opacity-70">linked to this post.</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
+}

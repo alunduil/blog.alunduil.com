@@ -1,6 +1,9 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import { PUBLIC_GOOGLE_SITE_VERIFICATION } from "astro:env/client";
+import {
+  PUBLIC_GOOGLE_SITE_VERIFICATION,
+  PUBLIC_WEBMENTION_IO_USERNAME,
+} from "astro:env/client";
 import { SITE } from "@/config";
 import "@/styles/global.css";
 
@@ -61,6 +64,21 @@ const structuredData = {
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    {
+      PUBLIC_WEBMENTION_IO_USERNAME && (
+        <>
+          <link
+            rel="webmention"
+            href={`https://webmention.io/${PUBLIC_WEBMENTION_IO_USERNAME}/webmention`}
+          />
+          <link
+            rel="pingback"
+            href={`https://webmention.io/${PUBLIC_WEBMENTION_IO_USERNAME}/xmlrpc`}
+          />
+        </>
+      )
+    }
 
     <!-- General Meta Tags -->
     <title>{title}</title>
