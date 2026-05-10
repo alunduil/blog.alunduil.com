@@ -4,10 +4,10 @@ import loadGoogleFonts from "../loadGoogleFont";
 import { COLORS, STROKE, block } from "./mondrian";
 
 const formatDate = (date, timezone) =>
-  new Intl.DateTimeFormat("en-GB", {
+  new Intl.DateTimeFormat("sv-SE", {
     year: "numeric",
-    month: "short",
-    day: "numeric",
+    month: "2-digit",
+    day: "2-digit",
     timeZone: timezone,
   }).format(date);
 
