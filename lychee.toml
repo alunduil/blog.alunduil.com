@@ -1,0 +1,12 @@
+cache = true
+max_cache_age = "14d"
+retry_wait_time = 5
+include_fragments = "full"
+
+# Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
+# .vale/styles/ are upstream Vale style packages.
+exclude_path = [
+  "(^|/)\\.vale/styles/",
+  "(^|/)src/data/blog/(_releases|examples)/",
+  "(^|/)src/data/blog/(adding-new-post|customizing-.*|dynamic-og-images|how-to-.*|predefined-color-schemes|setting-dates-via-git-hooks)\\.md$",
+]

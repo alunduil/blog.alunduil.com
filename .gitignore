@@ -26,3 +26,6 @@ pnpm-debug.log*
 # pagefind
 
 public/pagefind
+
+# lychee link-checker cache
+.lycheecache
