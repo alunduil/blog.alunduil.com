@@ -7,12 +7,23 @@ tags:
 draft: true
 ---
 
-In 2018 I wrote about how I read. Eight years later, the practice is
-mostly unchanged; the tools around it have been entirely replaced.
+In 2018 I wrote about [how I read](/posts/how-i-read). Eight years later,
+the practice is mostly unchanged; the tools around it have been entirely
+replaced.
 [Google Sheets](https://www.google.com/sheets/about/) for tracking was
 replaced by [Google Play Books](https://play.google.com/store/books)'s
-In Progress sorting, Pocket by [Reader](https://readwise.io/read), and
-the recall ritual by [Readwise](https://readwise.io)'s daily highlights.
+In Progress sorting, [Pocket](https://getpocket.com) by
+[Reader](https://readwise.io/read), and the recall ritual by
+[Readwise](https://readwise.io)'s daily highlights.
+
+## How I read now
+
+I read nine books at a time in Google Play Books, sorted by completion
+percentage. Non-fiction goes a chapter at a time; fiction varies. Before
+resuming any book I pause and recall the last section. Reader handles
+everything outside Google Play Books: RSS feeds (triaged at bedtime),
+articles on the tube, downtime reading otherwise. Readwise delivers
+fifteen highlights from past reading every morning.
 
 ## What's still true
 
@@ -51,9 +62,10 @@ formula recovered as a built-in sort. The other factors—page area, pages
 remaining, font size, age—are gone, but in practice the completion sort
 lands on the right next read most of the time.
 
-I moved from Pocket to Reader. The deciding factor wasn't features but
-integration: Reader handles RSS feeds and arbitrary articles in one
-place and connects to the rest of my workflow in ways Pocket didn't.
+Pocket's shutdown pushed me to look for an alternative. The deciding
+factor for Reader wasn't features but integration: Reader handles RSS
+feeds and arbitrary articles in one place and connects to the rest of my
+workflow in ways Pocket didn't.
 I read on the tube and during downtime, and my bedtime routine includes
 triaging new feed content. Reader is what made those routines coherent.
 
@@ -65,7 +77,7 @@ when I pick up a book; Readwise's notification arrives whether I think
 about it or not. Whether that adds depth or just frequency, I'm not sure.
 
 I pitched the method "for others" in 2018. Eight years on, I can verify it
-works for one person—me—but I can't separate the methodology from the
+works for one person but I can't separate the methodology from the
 underlying memory. Whether the method generalises or I just have an
 unusually good memory remains an open question; I haven't run the
 experiment.
