@@ -27,13 +27,15 @@ fifteen highlights from past reading every morning.
 
 ## What's still true
 
-I'm still reading nine books at a time. The 2018 "five to ten" settled
-into a hard nine—one screen-glanceable set in Google Play Books—but the
-mechanism is the same: read in short bursts, leave space
-between sessions for the chapter to condense, return with practised recall
-rather than skimming back to where I left off. Without a cap, the in-flight
-set grows unbounded and the sense of progress disappears. It's a sanity
-cap, not a memory limit.
+I'm still reading multiple books concurrently, though the count has
+changed. The 2018 "five to ten" grew to twenty at the physical peak, then
+to over forty when going digital removed the physical limit. At
+forty-plus, the in-flight set was effectively unbounded and the sense of
+progress disappeared. The hard nine—one screen-glanceable set in Google
+Play Books—is what settled out. The mechanism is the same: read in short
+bursts, leave space between sessions for the chapter to condense, return
+with practised recall rather than skimming back to where I left off. It's
+a sanity cap, not a memory limit.
 
 I still read non-fiction one chapter at a time, setting the book down and
 picking up the next. Fiction is more situational; sometimes the sectional
