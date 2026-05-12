@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2026-05-10T00:00:00Z
+pubDatetime: 2026-05-18T07:00:00Z
 title: How I Read at Eight
 description: Eight years on from the 2018 "How I Read" post—what's still true, what Readwise and Reader displaced, what was wrong from the start.
 tags:
