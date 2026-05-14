@@ -6,7 +6,6 @@ tags:
   - reading
   - methodology
   - memory
-draft: true
 ---
 
 In 2018 I wrote about [how I read](/posts/how-i-read). Eight years later,
