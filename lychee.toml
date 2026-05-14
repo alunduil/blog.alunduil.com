@@ -13,5 +13,5 @@ exclude_path = [
   # link that lychee can't resolve against source files. Remove once
   # lychee runs against the Astro build output instead of source.
   # Tracking: #160.
-  "(^|/)src/data/blog/how-i-read-at-eight\\.md$",
+  "(^|/)src/data/blog/how-i-read-eight-years-on\\.md$",
 ]
