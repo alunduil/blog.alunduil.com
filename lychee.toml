@@ -7,11 +7,13 @@ include_fragments = true
 # some sites; a friendlier UA reduces false-failures.
 user_agent = "Mozilla/5.0 (compatible; lychee link checker)"
 
-# Resolve root-relative URLs (`/posts/...`) against the production site
-# URL. Without this, lychee fails to build a URI from root-paths before
-# the exclude list is consulted. Combined with the /posts/ exclude
-# below, root-relative internal routes get normalised and then skipped.
-base_url = "https://blog.alunduil.com"
+# Only check HTTP/HTTPS URLs. Lychee otherwise tries to resolve
+# root-relative paths (`/posts/...`) against a root_dir, which doesn't
+# work pre-Astro-build, and resolves filesystem-relative README links
+# (`LICENSE`, `src/data/blog/...`) the same way. Restricting to web
+# URLs sidesteps both. Internal Astro routes are caught at build time;
+# README filesystem links resolve on GitHub.
+include = ["^https?://"]
 
 # Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
 # .vale/styles/ are upstream Vale style packages.
@@ -23,12 +25,6 @@ exclude_path = [
 
 # Skip URLs that lychee can't or shouldn't validate.
 exclude = [
-  # Internal Astro routes (`/posts/<slug>`) resolve at build time, not
-  # at lychee-against-source time. After `base` resolution they look
-  # like https://blog.alunduil.com/posts/... — skip both forms in case
-  # lychee normalises differently across versions.
-  "^/posts/",
-  "^https://blog\\.alunduil\\.com/posts/",
   # Substack and Medium consistently 403 lychee regardless of UA.
   # Skip their domains; manually verify these in browser when adding
   # citations.
