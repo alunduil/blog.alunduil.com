@@ -46,8 +46,8 @@ a sanity cap, not a memory limit.
 
 I still read non-fiction one chapter at a time, setting the book down and
 picking up the next. Fiction is more situational; sometimes the sectional
-discipline holds, sometimes I get caught up and read several chapters at a
-stretch. The 2018 post didn't make this distinction explicit.
+discipline holds, sometimes I get caught up and read several chapters at
+a stretch—a distinction the 2018 post didn't make explicit.
 
 The mechanism—short bursts, practised recall, and consolidation across
 days—still describes how I retain material. Cognitive-science writing has
@@ -55,7 +55,9 @@ caught up to the intuition the 2018 post gestured at: [the spacing
 effect][spacing] describes how distributed sessions strengthen retention,
 and cognitive neuroscientist [Dr. Julie Fratantoni's advice][fratantoni]
 to "close down and repeat back what you learned" maps almost exactly onto
-the practised-recall ritual. I can recall books I read nearly a decade ago.
+the practised-recall ritual. I can recall books I read nearly a decade
+ago—which is what keeps me confident in the practice, even when I can't
+prove it's the practice doing the work.
 
 [spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
 [fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation
