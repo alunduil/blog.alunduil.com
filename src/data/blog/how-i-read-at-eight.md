@@ -18,21 +18,19 @@ In Progress sorting, [Pocket](https://getpocket.com) by
 
 ## How I read now
 
-I keep nine books in Google Play Books's In Progress shelf, sorted by
-completion percentage. Books I'm interested in go on a wishlist; when
-they're 50% off or better, they move to my Google Play Books library as
-available-but-not-started. When I finish one of the nine and pick a new
-one, I take the most recent library addition I haven't started. Papers I
-can get as PDF go directly to Google Play Books, skipping the wishlist.
-Within In Progress I read in short bursts—a chapter at a time for
-non-fiction, situational for fiction. Before resuming any book I pause and
-recall the last section.
+Books I'm interested in go on a wishlist. When they're 50% off or better,
+they move to my Google Play Books library as available-but-not-started.
+Papers I can get as PDF skip the wishlist and go directly to the library.
+The In Progress shelf is sorted by completion percentage; when I finish
+one and pick a new one, I take the most recent library addition I haven't
+started. Within In Progress I read in short bursts—a chapter at a time
+for non-fiction, situational for fiction. Before resuming any book I
+pause and recall the last section.
 
-Reader handles everything outside Google Play Books. I scan RSS feeds in
-Reader's Feeds view at bedtime: save to later or ignore. Saved items get
-read and highlighted on the tube or during downtime, sorted most-recently
-published first. Readwise delivers fifteen highlights from past reading
-every morning.
+Articles arrive in Reader's Feeds view. I scan at bedtime: save to later
+or ignore. Saved items get read and highlighted on the tube or during
+downtime, sorted most-recently published first. Readwise pulls fifteen
+highlights from past reading into a morning notification.
 
 ## What's still true
 
