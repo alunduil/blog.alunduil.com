@@ -71,3 +71,16 @@ LaTeX
 # Technical terms not in the en_GB-ise dictionary (SCOWL size 60).
 # Add as Custom.Spelling surfaces them.
 observability
+triaging
+neuroscientist
+wishlist
+
+# Traditional possessive forms (singular noun ending in s + 's per
+# CMOS). Hunspell affix rules don't generate these; add each variant
+# as it surfaces. AP/journalistic style drops the second s; we don't.
+Books's
+
+# Proper names of cited authors / experts. Hunspell can't derive
+# possessives from base forms it doesn't know.
+Fratantoni
+Fratantoni's

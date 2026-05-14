@@ -66,6 +66,7 @@ repos:
             src/data/blog/(
               _releases/.*|
               examples/.*|
+              _hakyll/.*|
               adding-new-post\.md|
               customizing-.*\.md|
               dynamic-og-images\.md|
