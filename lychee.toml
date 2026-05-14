@@ -11,7 +11,7 @@ user_agent = "Mozilla/5.0 (compatible; lychee link checker)"
 # URL. Without this, lychee fails to build a URI from root-paths before
 # the exclude list is consulted. Combined with the /posts/ exclude
 # below, root-relative internal routes get normalised and then skipped.
-base = "https://blog.alunduil.com"
+base_url = "https://blog.alunduil.com"
 
 # Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
 # .vale/styles/ are upstream Vale style packages.
