@@ -73,6 +73,7 @@ LaTeX
 observability
 triaging
 neuroscientist
+wishlist
 
 # Traditional possessive forms (singular noun ending in s + 's per
 # CMOS). Hunspell affix rules don't generate these; add each variant
