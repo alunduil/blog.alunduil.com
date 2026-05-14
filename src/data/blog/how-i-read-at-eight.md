@@ -85,11 +85,11 @@ reading delivered every morning as a notification. The 2018 ritual happens
 when I pick up a book; Readwise's notification arrives whether I think
 about it or not. Whether that adds depth or just frequency, I'm not sure.
 
-I pitched the method "for others" in 2018. Eight years on, I can verify it
-works for one person but I can't separate the methodology from the
-underlying memory. Whether the method generalises or I just have an
-unusually good memory remains an open question; I haven't run the
-experiment.
+I pitched the method "for others" in 2018. Eight years on, I can verify
+it works for one person but I can't separate the methodology from the
+underlying memory. If you try it—or already have—you'd be answering
+something I can't: whether the method works because of what I do, or
+just because of who I am.
 
 <!--
   Frontmatter / title / slug deferred until after voicing pass.
