@@ -4,6 +4,8 @@ title: How I Read, Eight Years On
 description: "Eight years on from the 2018 \"How I Read\" post: same practice, different tools, and still no way to prove which one's doing the work."
 tags:
   - reading
+  - methodology
+  - memory
 draft: true
 ---
 
