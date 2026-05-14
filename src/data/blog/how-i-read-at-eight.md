@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-05-18T07:00:00Z
-title: How I Read at Eight
-description: Eight years on from the 2018 "How I Read" post—what's still true, what Readwise and Reader displaced, what was wrong from the start.
+title: How I Read, Eight Years On
+description: "Eight years on from the 2018 \"How I Read\" post: same practice, different tools, and still no way to prove which one's doing the work."
 tags:
   - reading
 draft: true
@@ -16,8 +16,6 @@ In Progress sorting, [Pocket](https://getpocket.com) by
 [Reader](https://readwise.io/read), and the recall ritual by
 [Readwise](https://readwise.io)'s daily highlights.
 
-## How I read now
-
 Books I'm interested in go on a wishlist. When they're 50% off or better,
 they move to my Google Play Books library as available-but-not-started.
 Papers I can get as PDF skip the wishlist and go directly to the library.
@@ -31,8 +29,6 @@ Articles arrive in Reader's Feeds view. I scan at bedtime: save to later
 or ignore. Saved items get read and highlighted on the tube or during
 downtime, sorted most-recently published first. Readwise pulls fifteen
 highlights from past reading into a morning notification.
-
-## What's still true
 
 I'm still reading multiple books concurrently, though the count has
 changed. The 2018 "five to ten" grew to twenty at the physical peak, then
@@ -59,33 +55,30 @@ the practised-recall ritual. I can recall books I read nearly a decade
 ago—which is what keeps me confident in the practice, even when I can't
 prove it's the practice doing the work.
 
-[spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
-[fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation
-
-## What's changed
-
-I dropped the spreadsheet when I went all-digital. In 2018 I kept
-readability scores in Google Sheets, sorted ascending—lowest score first.
-Google Play Books provides a facsimile: its
-in-progress list sorts by completion percentage descending, surfacing the
-most-complete books first. That's the dominant factor of the original
-formula recovered as a built-in sort. The other factors—page area, pages
-remaining, font size, age—are gone, but in practice the completion sort
-lands on the right next read most of the time.
+The tools, on the other hand, have all moved. I dropped the spreadsheet
+when I went all-digital. In 2018 I kept readability scores in Google
+Sheets, sorted ascending—lowest score first. Google Play Books provides
+a facsimile: its in-progress list sorts by completion percentage
+descending, surfacing the most-complete books first. That's the dominant
+factor of the original formula recovered as a built-in sort. The other
+factors—page area, pages remaining, font size, age—are gone, but in
+practice the completion sort lands on the right next read most of the
+time.
 
 Pocket's shutdown pushed me to look for an alternative. The deciding
 factor for Reader wasn't features but integration: Reader handles RSS
 feeds and arbitrary articles in one place and connects to the rest of my
-workflow in ways Pocket didn't.
-I read on the tube and during downtime, and my bedtime routine includes
-triaging new feed content. Reader is what made those routines coherent.
+workflow in ways Pocket didn't. I read on the tube and during downtime,
+and my bedtime routine includes triaging new feed content. Reader is what
+made those routines coherent.
 
 Practised recall hasn't changed; Readwise added a layer on top. The 2018
 ritual still fires when I resume a book—pause, recall the last section,
 then read. Readwise adds a broader scan: fifteen highlights from past
-reading delivered every morning as a notification. The 2018 ritual happens
-when I pick up a book; Readwise's notification arrives whether I think
-about it or not. Whether that adds depth or just frequency, I'm not sure.
+reading delivered every morning as a notification. The 2018 ritual
+happens when I pick up a book; Readwise's notification arrives whether I
+think about it or not. Whether that adds depth or just frequency, I'm
+not sure.
 
 I pitched the method "for others" in 2018. Eight years on, I can verify
 it works for one person but I can't separate the methodology from the
@@ -93,11 +86,5 @@ underlying memory. If you try it—or already have—you'd be answering
 something I can't: whether the method works because of what I do, or
 just because of who I am.
 
-<!--
-  Frontmatter / title / slug deferred until after voicing pass.
-  Kernel open questions still to address:
-    - Surface the post's revision arc (draft → example → feedback → conclusion
-      visible in git history), or leave as noise?
-    - Title contenders: "How I Read, Eight Years On" / "How I Read, Revisited" /
-      "How I Read After Readwise" — choose after the voice settles.
--->
+[spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
+[fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation
