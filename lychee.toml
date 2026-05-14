@@ -3,10 +3,28 @@ max_cache_age = "14d"
 retry_wait_time = 5
 include_fragments = true
 
+# Use a browser-style User-Agent. Lychee's default bot UA gets 403s from
+# some sites; a friendlier UA reduces false-failures.
+user_agent = "Mozilla/5.0 (compatible; lychee link checker)"
+
 # Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
 # .vale/styles/ are upstream Vale style packages.
 exclude_path = [
   "(^|/)\\.vale/styles/",
   "(^|/)src/data/blog/(_releases|examples)/",
   "(^|/)src/data/blog/(adding-new-post|customizing-.*|dynamic-og-images|how-to-.*|predefined-color-schemes|setting-dates-via-git-hooks)\\.md$",
+]
+
+# Skip URLs that lychee can't or shouldn't validate.
+exclude = [
+  # Internal Astro routes (`/posts/<slug>`) resolve at build time, not
+  # at lychee-against-source time. Astro's collection refs catch broken
+  # internals during the build.
+  "^/posts/",
+  # Substack and Medium consistently 403 lychee regardless of UA.
+  # Skip their domains; manually verify these in browser when adding
+  # citations.
+  "(^|//)[a-z0-9-]+\\.substack\\.com/",
+  "(^|//)[a-z0-9-]+\\.medium\\.com/",
+  "(^|//)medium\\.com/",
 ]
