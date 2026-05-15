@@ -41,7 +41,8 @@ issues with the `idea` template.
 post — scans the corpus's existing tag inventory, prioritises reuse
 over invention, flags morphological near-duplicates. Invoke via
 `/tag-suggest <path>` (defaults to the currently staged post).
-Read-only; the author pastes the recommendation in.
+Proposes first, then applies to the file only after the author
+confirms.
 
 ## Idea issues
 
