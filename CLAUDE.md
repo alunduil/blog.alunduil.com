@@ -35,6 +35,15 @@ highlights, and Reader archives into themes that might seed posts.
 Invoke via `/digest [Nd|Nw|Nm|Ny|last]`. Promising kernels file as
 issues with the `idea` template.
 
+## Tag-suggest skill
+
+`.claude/skills/tag-suggest/` proposes frontmatter tags for a draft
+post — scans the corpus's existing tag inventory, prioritises reuse
+over invention, flags morphological near-duplicates. Invoke via
+`/tag-suggest <path>` (defaults to the currently staged post).
+Proposes first, then applies to the file only after the author
+confirms.
+
 ## Idea issues
 
 `.github/workflows/labels.yml` auto-applies the `idea` label to any
