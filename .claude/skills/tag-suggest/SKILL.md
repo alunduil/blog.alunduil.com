@@ -15,16 +15,14 @@ Pipeline: **resolve target → enumerate corpus → propose → confirm → appl
 ## 2. Enumerate corpus
 
 ```bash
-find src/data/blog -name '*.md' -type f -exec awk '
-  /^tags:/ { in_tags=1; next }
-  in_tags && /^  - / { sub(/^  - /,""); print; next }
-  in_tags && /^[^ ]/ { in_tags=0 }
-' {} + | sort | uniq -c | sort -rn
+find src/data/blog -name '*.md' -type f \
+  | while read -r f; do yq --front-matter=extract '.tags[]' "$f" 2>/dev/null; done \
+  | sort | uniq -c | sort -rn
 ```
 
-Scan the full corpus including `_<engine>/` archives and `examples/`. AstroPaper's loader excludes `_`-prefixed *filenames*, not directory descendants, so archived posts still contribute tags to `/tags/<tag>` pages. Filtering would lose signal about which topics already cluster.
+`yq --front-matter=extract` reads only the YAML between the opening and closing `---` lines, so a `tags:` block appearing in the post body (e.g. inside a documentation code example) is correctly ignored. The query handles both list-form (`tags:\n  - foo`) and inline (`tags: [a, b]`) without case-splitting.
 
-Assumes list-form YAML (`tags:\n  - foo`). Inline `tags: [a, b]` is not used in this repo.
+Scan the full corpus including `_<engine>/` archives and `examples/`. AstroPaper's loader excludes `_`-prefixed *filenames*, not directory descendants, so archived posts still contribute tags to `/tags/<tag>` pages. Filtering would lose signal about which topics already cluster.
 
 ## 3. Propose
 
@@ -59,10 +57,11 @@ End with: **"Apply to `<path>`? [y/N]"** Wait for the author's response.
 
 Only after an affirmative response (`y`, `yes`, `apply`, "go ahead", etc.):
 
-- Replace the post's existing `tags:` block in-place. Preserve frontmatter order and surrounding fields.
-- If no `tags:` block exists, insert one after `title:` (or after `pubDatetime:` if title is absent — pick the first field present in the order: `title`, `pubDatetime`, `author`).
-- Use list-form YAML (`tags:\n  - foo`) to match the repo convention.
-- Don't touch any other frontmatter field; don't reflow unrelated whitespace.
+```bash
+yq --front-matter=process -i '.tags = ["tag-one", "tag-two", "tag-three"]' <path>
+```
+
+`yq --front-matter=process` rewrites only the frontmatter block, preserves key order, retains list-form output, and leaves the body untouched. If `tags:` is absent, yq appends a list-form block at the end of frontmatter. Quoted/escaped scalars in other fields (e.g. `description: "…\""`) are preserved verbatim.
 
 On a non-affirmative or absent response, leave the file alone and end. Author can rerun later with edits to the proposal.
 
