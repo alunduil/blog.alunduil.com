@@ -32,8 +32,8 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 
 `.claude/skills/digest/` clusters a window of GitHub activity, Readwise
 highlights, and Reader archives into themes that might seed posts.
-Invoke via `/digest [Nd|Nw|Nm|Ny|last]`. Promising kernels file as
-issues with the `idea` template.
+Invoke via `/digest [Nd|Nw|Nm|Ny]` (defaults to `7d`). Promising
+kernels file as issues with the `idea` template.
 
 ## Tag-suggest skill
 

@@ -3,12 +3,10 @@
 # filters, and emits structured JSON to stdout.
 #
 # Usage: collect.sh [cadence]
-# Cadence: last (default) | Nd | Nw | Nm | Ny
+# Cadence: Nd | Nw | Nm | Ny  (default: 7d)
 
 set -euo pipefail
 
-SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
-LAST_RUN_FILE="$SCRIPT_DIR/last-run"
 LOGIN=alunduil
 # gh's search API hard-caps at 1000; 300 covers observed spiky weeks
 # (~100s of PRs/issues) without ballooning synthesis-pass tokens.
@@ -26,20 +24,12 @@ REPO_FROM_URL='(.url | split("/") | .[3] + "/" + .[4])'
 resolve_since() {
   local cadence="$1"
   case "$cadence" in
-    last)
-      if [[ -s "$LAST_RUN_FILE" ]]; then
-        date -d "$(head -n 1 "$LAST_RUN_FILE")" -u +%Y-%m-%d
-      else
-        echo "warn: $LAST_RUN_FILE empty; falling back to 1w" >&2
-        date -d "1 week ago" -u +%Y-%m-%d
-      fi
-      ;;
     [1-9]*[0-9]*d | [1-9]d) date -d "${cadence%d} days ago" -u +%Y-%m-%d ;;
     [1-9]*[0-9]*w | [1-9]w) date -d "${cadence%w} weeks ago" -u +%Y-%m-%d ;;
     [1-9]*[0-9]*m | [1-9]m) date -d "${cadence%m} months ago" -u +%Y-%m-%d ;;
     [1-9]*[0-9]*y | [1-9]y) date -d "${cadence%y} years ago" -u +%Y-%m-%d ;;
     *)
-      echo "error: invalid cadence '$cadence'. Expected: last | Nd | Nw | Nm | Ny" >&2
+      echo "error: invalid cadence '$cadence'. Expected: Nd | Nw | Nm | Ny" >&2
       return 2
       ;;
   esac
@@ -178,7 +168,7 @@ fetch_events() {
 }
 
 main() {
-  local cadence="${1:-last}"
+  local cadence="${1:-7d}"
   local since now since_epoch now_epoch days include_events
   since=$(resolve_since "$cadence")
   now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
