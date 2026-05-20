@@ -29,6 +29,11 @@ Mastodon
 LinkedIn
 Threads
 POSSE
+rclone
+borg
+restic
+Nabu
+Casa
 
 # Common abbreviations
 API
@@ -74,6 +79,9 @@ observability
 triaging
 neuroscientist
 wishlist
+cron
+hostname
+NAT'd
 
 # Traditional possessive forms (singular noun ending in s + 's per
 # CMOS). Hunspell affix rules don't generate these; add each variant
