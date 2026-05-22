@@ -93,11 +93,11 @@ Apply codified conventions:
 - `description`: derived from the final body shape, ~120–150 chars. Avoid stale references to sections that got cut during voicing.
 - `tags`: 2–3 content topics, soft cap ~3. No categorical labels (archive / era / format) — those belong in directory structure or schema fields.
 - `title`: anniversary frame ("Eight Years On"), revision frame ("Revisited"), substrate-shift frame ("After X"), or freeform — pick what the body actually argues.
-- `draft: true` while body review is ongoing; drop when scheduling against a future `pubDatetime` (AstroPaper's `SITE.scheduledPostMargin` keeps future-dated posts hidden until the moment).
+- **Never** set `draft: true`. Publication is gated by a future `pubDatetime` and AstroPaper's `SITE.scheduledPostMargin`; the GitHub PR's draft state gates the editorial work. See `feedback_drafts_via_date_not_flag.md`.
 - `hideEditPost: true` for archival republishes or verbatim-immutable content.
 - For archival republishes: lives under `src/data/blog/_<engine>/` (engine-of-origin grouping); opens with the stock stanza per `project_archive_stanza.md`.
 
-**Don't pin** `pubDatetime` or `modDatetime` to local-branch commits — both are live-site moments. See `feedback_post_datetime_semantics.md`. Use placeholders + `draft: true` while drafting; finalise the timestamp when scheduling.
+**Don't pin** `pubDatetime` or `modDatetime` to local-branch commits — both are live-site moments. See `feedback_post_datetime_semantics.md`. Use a future `pubDatetime` (the scheduled-publication target) as both the gate and the placeholder; bump it if the PR slips.
 
 ## When to invoke
 
@@ -109,11 +109,10 @@ Apply codified conventions:
 
 Iterate in the file directly. User reviews in place. Commit incrementally — each substantive change as its own commit with the reasoning in the body.
 
-Final state before un-drafting:
+Final state before promoting the PR out of draft:
 
 - Title, description, slug match the body.
 - `pubDatetime` set to a future Tuesday or Sunday at 08:00 local.
-- `draft: true` removed.
 - Vale + markdownlint pass via `pre-commit run --files <path>`.
 - `pnpm build` clean.
 - No links in body point at private Reader URLs.

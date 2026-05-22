@@ -1,8 +1,16 @@
 # CLAUDE.md
 
-Repo-local guide for Claude Code. See `README.md` for the human-facing
-posting flow (frontmatter, `pnpm dev`/`pnpm build`, `draft: true → false`
-publish flip).
+Repo-local guide for Claude Code on this personal blog (AstroPaper +
+GitHub Pages deploy on push to `main`).
+
+## Posting convention
+
+New posts live under `src/data/blog/`; archival republishes under
+`src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
+future date keeps the post hidden via AstroPaper's
+`SITE.scheduledPostMargin`. **Never** set `draft: true` — the GitHub
+PR's draft state gates editorial work, the future date gates
+publication.
 
 ## AstroPaper upstream
 
