@@ -5,7 +5,6 @@ description: "The 2011 architecture for backing up NAT'd hosts survived. I no lo
 tags:
   - backups
   - methodology
-draft: true
 ---
 
 In 2011 I [posted a cron entry][2011] that pushed `rdiff-backup` over
