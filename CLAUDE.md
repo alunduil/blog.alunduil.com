@@ -8,9 +8,8 @@ GitHub Pages deploy on push to `main`).
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
 future date keeps the post hidden via AstroPaper's
-`SITE.scheduledPostMargin`. **Never** set `draft: true` — the GitHub
-PR's draft state gates editorial work, the future date gates
-publication.
+`SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
+PR accepts the editorial work, the future date defers publication.
 
 ### "How I X" series
 

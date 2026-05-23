@@ -93,7 +93,7 @@ Apply codified conventions:
 - `description`: derived from the final body shape, ~120–150 chars. Avoid stale references to sections that got cut during voicing.
 - `tags`: 2–3 content topics, soft cap ~3. No categorical labels (archive / era / format) — those belong in directory structure or schema fields.
 - `title`: anniversary frame ("Eight Years On"), revision frame ("Revisited"), substrate-shift frame ("After X"), or freeform — pick what the body actually argues.
-- **Never** set `draft: true`. Publication is gated by a future `pubDatetime` and AstroPaper's `SITE.scheduledPostMargin`; the GitHub PR's draft state gates the editorial work. See `feedback_drafts_via_date_not_flag.md`.
+- **Never** set `draft: true`. Publication is gated by a future `pubDatetime` and AstroPaper's `SITE.scheduledPostMargin`; merging the PR accepts the editorial work. See `feedback_drafts_via_date_not_flag.md`.
 - `hideEditPost: true` for archival republishes or verbatim-immutable content.
 - For archival republishes: lives under `src/data/blog/_<engine>/` (engine-of-origin grouping); opens with the stock stanza per `project_archive_stanza.md`.
 
