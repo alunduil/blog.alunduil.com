@@ -10,10 +10,10 @@ tags:
 In 2011 I wrote up the [cron entry][2011] that pushed `rdiff-backup`
 from my laptop. Here's what runs in its place.
 
-## TrueNAS Mini
+## TrueNAS
 
-A TrueNAS Mini 3.0-E holds about 2.5 TiB of my household's data on
-a 10-TiB pool. The biggest dataset is `takeout`—1.3 TiB of Google
+A TrueNAS holds about 2.5 TiB of my household's data on a 10-TiB
+pool. The biggest dataset is `takeout`—1.3 TiB of Google
 Takeout pulled down on a daily 02:00 cadence, so the cloud data I
 care about most has a local mirror I can fall back on. After that
 come `media` (a terabyte of video and music), smaller `plex` and
@@ -40,10 +40,10 @@ box and [Scrutiny] watches the disks, but Cloud Sync failures
 aren't on either dashboard. That's the gap I know I have and
 haven't closed.
 
-## Home Assistant on a Beelink
+## Home Assistant
 
-[Home Assistant][ha] runs as HAOS on a [Beelink] mini PC—dedicated
-hardware for a single service, which is bulky but uncomplicated.
+[Home Assistant][ha] runs as HAOS on a mini PC—dedicated hardware
+for a single service, which is bulky but uncomplicated.
 [Nabu Casa] does the backups: daily, plus an automatic one before
 every version update. Destination, transport, and retention all
 come bundled with the subscription; [their docs][nabu-backups]
@@ -82,7 +82,6 @@ architecture. Everything above is the implementation.
 [Netdata]: https://www.netdata.cloud/
 [Scrutiny]: https://github.com/AnalogJ/scrutiny
 [ha]: https://www.home-assistant.io/
-[Beelink]: https://www.bee-link.com/
 [Nabu Casa]: https://www.nabucasa.com/
 [nabu-backups]: https://www.home-assistant.io/integrations/cloud/#backups
 [chezmoi]: https://www.chezmoi.io/
