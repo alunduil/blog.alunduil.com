@@ -13,12 +13,12 @@ hideEditPost: true
 
 ## Introduction
 
-Backups are awesome! Unless, you don't have any. Also, it's hard to find
+Backups are awesome! Unless you don't have any. Also, it's hard to find
 space for them and setting them up isn't always fun. Without backups the
 day will come when we lose data and need to get it back and can't. Whether
 it's an accidental delete of the project you've been working hard on; a
 disk issue resulting in partial or complete data loss; or something
-completely different, data loss is only a matter of when not if.
+completely different, data loss is only a matter of when, not if.
 
 ## The Problem
 
@@ -62,10 +62,10 @@ Breaking this down, we have a few things that require explanation:
   called by rdiff-backup, allowing particular control over the SSH tunnel
   used to communicate with the server.
 - **`--exclude-other-filesystems`** — don't cross filesystem boundaries
-  when finding files to backup.
+  when finding files to back up.
 - **`--print-statistics`** — print a nice report of the files uploaded,
   &c when finished.
-- **`/home/alunduil`** — the local directory to backup.
+- **`/home/alunduil`** — the local directory to back up.
 - **`daneel.alunduil.com::elijah-backup`** — the remote host and
   directory to backup into.
 - **`--remove-older-than`** — remove any backups older than the time
