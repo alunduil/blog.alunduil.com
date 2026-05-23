@@ -21,17 +21,19 @@ usually has nothing to do. After that come `media` (a terabyte of
 video and music), smaller `plex` and `scans` datasets, and a couple
 of utility datasets I leave alone.
 
-Backups all run as Cloud Sync tasks, six of them on different
-cadences. Three push my data out for durability: `media` every six
-hours, `plex` every two, `scans` every fifteen minutes (since the
-flow is scan, drop, walk away). Three pull data home for custody:
-Takeout from Google Drive nightly, and Xbox screenshots and game
-DVR clips from [OneDrive] every fifteen minutes—same idea as
-Takeout, just for the cloud Microsoft makes me use.
+Cloud Sync runs six tasks on the box. The Takeout flow above is
+one of them. The other five fall into two shapes. Two are sync
+tasks, with the NAS as the master and Drive holding a stay-in-step
+copy: `media` every six hours, `plex` every two. Three are move
+tasks—a file produced at one end gets relocated to where it
+permanently lives: `scans` from the NAS into Drive every fifteen
+minutes, Xbox screenshots and Game DVR clips from [OneDrive] into
+the NAS every fifteen minutes. Source gets emptied once the file
+lands.
 
-The asymmetry is the shape. My data pushes out so it survives a NAS
-failure. Data that's only ever in someone else's cloud pulls down
-so it survives a vendor decision.
+The sync tasks hedge against losing the NAS. The move tasks aren't
+backup at all; they're routing. The files they route end up
+somewhere that itself gets backed up.
 
 [Plex] is the only application I treat as a service rather than
 data; its app data rides in the same Cloud Sync flow as
