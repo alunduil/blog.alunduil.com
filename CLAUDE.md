@@ -12,6 +12,15 @@ future date keeps the post hidden via AstroPaper's
 PR's draft state gates editorial work, the future date gates
 publication.
 
+### "How I X" series
+
+Future entries title as `How I X (YYYY)` — year-stamped scales without
+anniversary arithmetic. Cadence ties to substantive change in the
+practice, not the calendar; the next entry is ready when reading the
+prior one prompts "that's not how I do it any more." Don't add series
+infrastructure (index page, schema field, milestone) until there are
+3+ entries.
+
 ## AstroPaper upstream
 
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
