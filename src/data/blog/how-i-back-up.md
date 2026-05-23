@@ -13,11 +13,13 @@ from my laptop. Here's what runs in its place.
 ## TrueNAS
 
 A TrueNAS holds about 2.5 TiB of my household's data on a 10-TiB
-pool. The biggest dataset is `takeout`—1.3 TiB of Google
-Takeout pulled down on a daily 02:00 cadence, so the cloud data I
-care about most has a local mirror I can fall back on. After that
-come `media` (a terabyte of video and music), smaller `plex` and
-`scans` datasets, and a couple of utility datasets I leave alone.
+pool. The biggest dataset is `takeout`—1.3 TiB accumulated from a
+Google Takeout that runs every two months. When a new generation
+lands in Drive, a Cloud Sync job extracts and prunes it locally; I
+confirm the result and bin the Drive copy, so the daily 02:00 sync
+usually has nothing to do. After that come `media` (a terabyte of
+video and music), smaller `plex` and `scans` datasets, and a couple
+of utility datasets I leave alone.
 
 Backups all run as Cloud Sync tasks, six of them on different
 cadences. Three push my data out for durability: `media` every six
