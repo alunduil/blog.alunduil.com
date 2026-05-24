@@ -78,7 +78,7 @@ which local copy. I haven't tested it.
 [grafana]: https://grafana.com/products/cloud/
 [ha]: https://www.home-assistant.io/
 [Nabu Casa]: https://www.nabucasa.com/
-[nabu-backups]: https://www.home-assistant.io/integrations/cloud/#backups
+[nabu-backups]: https://www.home-assistant.io/integrations/cloud/
 [chezmoi]: https://www.chezmoi.io/
 [alunduil-chezmoi]: https://github.com/alunduil/alunduil-chezmoi
-[boox]: https://onyxboox.com/boox_taburtrac
+[boox]: https://onyxboox.com/boox_tabultrac
