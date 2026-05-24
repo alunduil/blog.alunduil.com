@@ -50,9 +50,6 @@ every version update. Destination, transport, and retention all
 come bundled with the subscription; [their docs][nabu-backups]
 cover the specifics.
 
-The integration cost was selecting the plan. That's the entire
-backup story for this machine.
-
 ## Chromebook
 
 I'm typing this on a Chromebook. Browser state lives in my Google
