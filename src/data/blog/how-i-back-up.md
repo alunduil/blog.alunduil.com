@@ -5,6 +5,7 @@ description: "How a TrueNAS, a Home Assistant box, and a Chromebook back themsel
 tags:
   - backups
   - methodology
+  - cloud
 ---
 
 In 2011 I wrote up the [cron entry][2011] that pushed `rdiff-backup`
