@@ -65,14 +65,12 @@ same Google account. None of the devices lock me in; the account
 does. The hardware stays replaceable; the substrate underneath
 doesn't.
 
-## What I'm signing up for
+---
 
 Cloud-first by choice, because doing otherwise would cost more
-time than I'm willing to spend. Not a tight recovery plan—no
-measured RPO, no measured RTO, no rehearsal cadence. What I do
-have is a disaster plan: if a cloud vendor stops working, what I'd
-restore from, in what order, from which local copy. That's the
-architecture. Everything above is the implementation.
+time than I'm willing to spend. The disaster plan: if a cloud
+vendor stops working, what I'd restore from, in what order, from
+which local copy. I haven't tested it.
 
 [2011]: /posts/using-rdiff-backup-backup-remote-clients-with-ease
 [OneDrive]: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
