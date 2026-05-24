@@ -1,8 +1,24 @@
 # CLAUDE.md
 
-Repo-local guide for Claude Code. See `README.md` for the human-facing
-posting flow (frontmatter, `pnpm dev`/`pnpm build`, `draft: true → false`
-publish flip).
+Repo-local guide for Claude Code on this personal blog (AstroPaper +
+GitHub Pages deploy on push to `main`).
+
+## Posting convention
+
+New posts live under `src/data/blog/`; archival republishes under
+`src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
+future date keeps the post hidden via AstroPaper's
+`SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
+PR accepts the editorial work, the future date defers publication.
+
+### "How I X" series
+
+Future entries title as `How I X (YYYY)` — year-stamped scales without
+anniversary arithmetic. Cadence ties to substantive change in the
+practice, not the calendar; the next entry is ready when reading the
+prior one prompts "that's not how I do it any more." Don't add series
+infrastructure (index page, schema field, milestone) until there are
+3+ entries.
 
 ## AstroPaper upstream
 
