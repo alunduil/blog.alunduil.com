@@ -52,13 +52,13 @@ cover the specifics.
 
 ## Chromebook
 
-Browser state lives in my Google account by default. The Linux dev
-environment, where anything I edit locally lives, I used to dump
-into Google Drive once a month.
-That cadence has been lapsing on purpose: I'm moving my Linux
-configuration into [chezmoi] under [alunduil-chezmoi], and the
-plan is that a clean DR run from chezmoi should restore the
-environment from scratch. Confirming that works is on the list.
+Recovery for the Chromebook is signing back into a Google account.
+The one exception is the Linux dev environment, where anything I
+edit locally lives. I used to dump it into Google Drive monthly;
+that cadence has been lapsing on purpose as I move my Linux
+configuration into [chezmoi] under [alunduil-chezmoi]. A clean DR
+run from chezmoi should restore the environment from scratch.
+Confirming that works is on the list.
 
 My phone and an [Onyx Boox Tab Ultra C][boox] both sign in to the
 same Google account. None of the devices lock me in; the account
