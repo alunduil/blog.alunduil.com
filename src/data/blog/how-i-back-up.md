@@ -52,9 +52,9 @@ cover the specifics.
 
 ## Chromebook
 
-I'm typing this on a Chromebook. Browser state lives in my Google
-account by default. The Linux dev environment, where anything I
-edit locally lives, I used to dump into Google Drive once a month.
+Browser state lives in my Google account by default. The Linux dev
+environment, where anything I edit locally lives, I used to dump
+into Google Drive once a month.
 That cadence has been lapsing on purpose: I'm moving my Linux
 configuration into [chezmoi] under [alunduil-chezmoi], and the
 plan is that a clean DR run from chezmoi should restore the
