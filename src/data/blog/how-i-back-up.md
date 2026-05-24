@@ -35,14 +35,11 @@ The sync tasks hedge against losing the NAS. The move tasks aren't
 backup at all; they're routing. The files they route end up
 somewhere that itself gets backed up.
 
-[Plex] is the only application I treat as a service rather than
-data; its app data rides in the same Cloud Sync flow as
-everything else.
-
-I haven't wired any of these to a loud alert. [Netdata] watches the
-box and [Scrutiny] watches the disks, but Cloud Sync failures
-aren't on either dashboard. That's the gap I know I have and
-haven't closed.
+Two gaps I know about. Alloy's configuration should be in the
+Cloud Sync flow alongside [Plex] but isn't yet. And nothing surfaces
+Cloud Sync failures to me—not my weekly [Grafana Cloud][grafana]
+triage, not TrueNAS's email alerts. I notice eventually, when
+something I expected to be there isn't.
 
 ## Home Assistant
 
@@ -83,8 +80,7 @@ architecture. Everything above is the implementation.
 [2011]: /posts/using-rdiff-backup-backup-remote-clients-with-ease
 [OneDrive]: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
 [Plex]: https://www.plex.tv/
-[Netdata]: https://www.netdata.cloud/
-[Scrutiny]: https://github.com/AnalogJ/scrutiny
+[grafana]: https://grafana.com/products/cloud/
 [ha]: https://www.home-assistant.io/
 [Nabu Casa]: https://www.nabucasa.com/
 [nabu-backups]: https://www.home-assistant.io/integrations/cloud/#backups
