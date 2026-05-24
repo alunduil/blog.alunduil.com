@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-06-02T07:00:00Z
 title: "How I Back Up"
-description: "Six Cloud Sync tasks, a Nabu Casa subscription, and a Google account: the actual shape of my backups in 2026."
+description: "How a TrueNAS, a Home Assistant box, and a Chromebook back themselves up—delegated to Cloud Sync, Nabu Casa, and a Google account."
 tags:
   - backups
   - methodology
