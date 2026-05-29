@@ -10,6 +10,7 @@ interface Social {
   href: string;
   linkTitle: string;
   icon: (_props: Props) => Element;
+  rel?: string;
 }
 
 export const SOCIALS: Social[] = [
@@ -18,6 +19,7 @@ export const SOCIALS: Social[] = [
     href: "https://github.com/alunduil",
     linkTitle: `${SITE.author} on GitHub`,
     icon: IconGitHub,
+    rel: "me",
   },
   {
     name: "LinkedIn",
