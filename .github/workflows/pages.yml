@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      # Public by design (Astro PUBLIC_ prefix; emitted in the page's
+      # rel="webmention" link). Committed here rather than an Actions
+      # Variable so the webmention receiver is configured as IaC. See #148.
+      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
