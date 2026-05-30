@@ -30,11 +30,11 @@
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@pagefind/default-ui": "1.5.2",
-    "@shikijs/transformers": "4.0.2",
+    "@shikijs/transformers": "4.1.0",
     "@tailwindcss/typography": "0.5.19",
     "@types/lodash.kebabcase": "4.1.9",
-    "@typescript-eslint/parser": "8.59.2",
-    "eslint": "10.3.0",
+    "@typescript-eslint/parser": "8.60.0",
+    "eslint": "10.4.0",
     "eslint-plugin-astro": "1.7.0",
     "globals": "17.6.0",
     "pagefind": "1.5.2",
@@ -42,9 +42,6 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.2"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp"]
+    "typescript-eslint": "8.60.0"
   }
 }

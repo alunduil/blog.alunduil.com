@@ -5,11 +5,6 @@ bats_require_minimum_version 1.5.0
 
 setup() {
   SCRIPT="$BATS_TEST_DIRNAME/collect.sh"
-  TMP_DIR="$(mktemp -d)"
-}
-
-teardown() {
-  rm -rf "$TMP_DIR"
 }
 
 # --- Cadence grammar ---
@@ -65,28 +60,11 @@ teardown() {
   [ "$status" -eq 2 ]
 }
 
-# --- last-run fallback ---
-
-@test "last with empty state file warns and falls back to 1w" {
+@test "invalid cadence: last rejected (state file dropped)" {
   source "$SCRIPT"
-  LAST_RUN_FILE="$TMP_DIR/last-run"
-  : >"$LAST_RUN_FILE"
-
-  run --separate-stderr resolve_since last
-  [ "$status" -eq 0 ]
-  [[ "$stderr" == *"falling back to 1w"* ]]
-  expected=$(date -d "1 week ago" -u +%Y-%m-%d)
-  [ "$output" = "$expected" ]
-}
-
-@test "last with date in state file uses that date" {
-  source "$SCRIPT"
-  LAST_RUN_FILE="$TMP_DIR/last-run"
-  echo "2026-01-15T00:00:00Z" >"$LAST_RUN_FILE"
-
   run resolve_since last
-  [ "$status" -eq 0 ]
-  [ "$output" = "2026-01-15" ]
+  [ "$status" -eq 2 ]
+  [[ "$output" == *"invalid cadence"* ]]
 }
 
 # --- filter_commits heuristics ---

@@ -1,6 +1,6 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`) or `last` (default — reads `.claude/skills/digest/last-run`, falls back to `1w` with a warning if absent). Output is chat-only, thematically clustered. Promising kernels → `gh issue create --template idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is chat-only, thematically clustered. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
@@ -13,7 +13,7 @@ Pipeline: **collect → analyze data → synthesize themes → analyze themes �
 bash .claude/skills/digest/collect.sh "$cadence"
 ```
 
-The script owns cadence parsing, `last-run` reads, the `gh` query fan-out, heuristic noise filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. Exits non-zero with a stderr message on invalid cadence.
+The script owns cadence parsing, the `gh` query fan-out, heuristic noise filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. Exits non-zero with a stderr message on invalid cadence. The digest is stateless: each run resolves `since` from the cadence alone, so a few days of boundary overlap between back-to-back digests is expected and fine.
 
 JSON shape:
 
@@ -85,12 +85,10 @@ A theme can warrant both — a short signal-boost now and a long synthesis later
 
 Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
 
-Wait for a positive-value signal before writing `last-run`:
+Wait for the author's call on each theme:
 
-- "no kernels here" / "nothing of interest" → write `window.now` to `.claude/skills/digest/last-run`.
-- "file idea X" (one or many) → file each via `gh issue create --template idea --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. Then write `last-run`.
-- Anything else (silence, "let me think", "re-run") → don't write.
+- "file idea X" (one or many) → file each via `gh issue create --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; don't pass `--template` alongside `--body` (gh rejects the combination).
+- Themes that map to an existing open `idea`-labeled issue (check `gh issue list --label idea --state open`) → add a comment with the new material rather than filing a duplicate.
+- Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
-After writing, end with one line: `last-run updated to <now> — git add/commit when ready.`
-
-`last-run` is tracked so a fresh checkout or worktree shares it.
+Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
