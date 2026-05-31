@@ -47,9 +47,13 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 ## Digest skill
 
 `.claude/skills/digest/` clusters a window of GitHub activity, Readwise
-highlights, and Reader archives into themes that might seed posts.
-Invoke via `/digest [Nd|Nw|Nm|Ny]` (defaults to `7d`). Promising
-kernels file as issues with the `idea` template.
+highlights, and Reader archives into themes that might seed posts. It
+also runs an interactive Notion Media Log check-in: it asks what you're
+currently reading/playing, infers completions from whatever dropped off
+the active list, and writes the status changes back — surfacing each
+completion as a review kernel. Invoke via
+`/digest [Nd|Nw|Nm|Ny]` (defaults to `7d`). Promising kernels file as
+issues with the `idea` template.
 
 ## Tag-suggest skill
 
