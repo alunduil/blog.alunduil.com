@@ -3,6 +3,10 @@ name: Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Rebuild to refresh webmentions from webmention.io; the static
+    # display is otherwise frozen at the last content push. See #148.
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
