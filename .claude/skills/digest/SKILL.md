@@ -1,6 +1,6 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (prompts for finished/started books & games and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat; the only side effects are Media Log status updates you confirm and idea issues on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat; the only side effects are Media Log status updates you confirm and idea issues on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
@@ -49,16 +49,17 @@ Fetch Readwise + Reader for the same window via MCP (using `window.since`, appen
 - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
 - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-Don't try to *detect* completions by querying — **ask the author**; that's the completion edge, and it sidesteps any enumerate-at-scale gap, so the trackers can grow unbounded. Before synthesis:
+Don't *detect* completions by querying — derive them from one "what's active now?" answer per source. The author keeps the active list current; whatever dropped off since the tracker last saw it has been finished. Before synthesis:
 
-1. **Surface Active context** (best-effort, to prime the prompt): per source, `notion-search` `data_source_url=<collection>`, `query="currently reading"`/`"currently playing"`, then `notion-fetch` hits and keep `Status = Active`. The Active set is small by nature; recall gaps here are harmless.
-2. **Prompt the author** (free-form): which tracked books/games did you **finish** this window (title + date), and what did you newly **start**? Offer the surfaced Active items as the obvious finish candidates, but accept anything.
-3. **Write back** per answer with `notion-update-page` (`command="update_properties"`):
-   - Finished → locate the row (`notion-search` the source by exact title → `notion-fetch` for its `page_id`); set `"Status":"Finished"`, `"date:Finished:start":"<YYYY-MM-DD>"`, `"date:Finished:is_datetime":0`. No matching row? `notion-create-pages` under the `data_source_id` with those same properties.
-   - Started → locate or create the row, set `"Status":"Active"` (`Added` auto-stamps).
-4. Confirm what was written in one line.
+1. **Read current Active** (best-effort): per source, `notion-search` `data_source_url=<collection>` (`query` a domain term like `"book"`/`"video game"`), `notion-fetch` the hits, keep `Status = Active` → the *known-active* set. This read can't filter on `Status` server-side, so recall is best-effort — a row it misses just won't be offered this run (stays Active until it surfaces). Self-healing gap, never silent data loss.
+2. **Prompt** (one question per source, free-form): show the known-active titles and ask "what are you actually reading/playing right now?" The author replies with the true current set.
+3. **Diff and write back** (`notion-update-page`, `command="update_properties"`):
+   - known-active **dropped** from the answer → **Finished**: set `"Status":"Finished"`, `"date:Finished:start":"<run date>"`, `"date:Finished:is_datetime":0`. Run date is the default; take an explicit date if the author offers one. If a drop was abandoned rather than finished and they say so → `"Status":"Abandoned"` instead.
+   - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
+   - in both → unchanged.
+4. Show the derived diff (finished / started / unchanged) and confirm in one line before moving on.
 
-Each finish recorded this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). Newly-started / still-Active items are light "currently reading/playing" context, not kernels alone, but they color adjacent themes (e.g. a game whose mechanics echo a work post).
+Each item marked Finished this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). Still-active and newly-started items are light "currently reading/playing" context, not kernels alone, but they color adjacent themes (e.g. a game whose mechanics echo a work post).
 
 If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
 
