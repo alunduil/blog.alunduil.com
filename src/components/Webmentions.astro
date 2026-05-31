@@ -1,0 +1,123 @@
+---
+import dayjs from "dayjs";
+import utc from "dayjs/plugin/utc";
+import timezone from "dayjs/plugin/timezone";
+import { getWebmentions, type WebmentionEntry } from "@/utils/getWebmentions";
+import { SITE } from "@/config";
+import Facepile from "@/components/Facepile.astro";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+type Props = { target: string };
+
+const { target } = Astro.props;
+
+const { likes, reposts, replies, mentions } = await getWebmentions(target);
+
+const visible = (e: WebmentionEntry) => !e["wm-private"];
+const visibleLikes = likes.filter(visible);
+const visibleReposts = reposts.filter(visible);
+const visibleReplies = replies.filter(visible);
+const visibleMentions = mentions.filter(visible);
+
+const total =
+  visibleLikes.length +
+  visibleReposts.length +
+  visibleReplies.length +
+  visibleMentions.length;
+---
+
+{
+  total > 0 && (
+    <section
+      aria-labelledby="webmentions-heading"
+      class="mt-8"
+      data-pagefind-ignore
+    >
+      <h2 id="webmentions-heading" class="text-xl font-semibold">
+        Webmentions
+      </h2>
+
+      {(visibleLikes.length > 0 || visibleReposts.length > 0) && (
+        <div class="mt-4 flex flex-wrap items-start gap-x-8 gap-y-4">
+          <Facepile items={visibleLikes} singular="like" plural="likes" />
+          <Facepile items={visibleReposts} singular="repost" plural="reposts" />
+        </div>
+      )}
+
+      {visibleReplies.length > 0 && (
+        <ol class="mt-6 space-y-4">
+          {visibleReplies.map(reply => {
+            const replyDate = reply.published ?? reply["wm-received"];
+            return (
+              <li class="flex gap-3">
+                {reply.author?.photo ? (
+                  <img
+                    src={reply.author.photo}
+                    alt=""
+                    loading="lazy"
+                    class="size-8 flex-none rounded-full"
+                  />
+                ) : (
+                  <span class="size-8 flex-none rounded-full bg-muted" />
+                )}
+                <div class="min-w-0 flex-1">
+                  <p class="text-sm">
+                    {reply.author?.url ? (
+                      <a
+                        href={reply.author.url}
+                        class="font-medium hover:text-accent"
+                        rel="nofollow ugc"
+                      >
+                        {reply.author.name ?? reply["wm-source"]}
+                      </a>
+                    ) : (
+                      <span class="font-medium">
+                        {reply.author?.name ?? reply["wm-source"]}
+                      </span>
+                    )}
+                    <a
+                      href={reply["wm-source"]}
+                      class="ms-2 text-xs opacity-70 hover:text-accent"
+                      rel="nofollow ugc"
+                    >
+                      <time datetime={replyDate}>
+                        {dayjs(replyDate)
+                          .tz(SITE.timezone)
+                          .format("D MMM, YYYY")}
+                      </time>
+                    </a>
+                  </p>
+                  {reply.content?.html && (
+                    <div
+                      class="mt-1 text-sm opacity-90"
+                      set:html={reply.content.html}
+                    />
+                  )}
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      )}
+
+      {visibleMentions.length > 0 && (
+        <ul class="mt-6 space-y-2 text-sm">
+          {visibleMentions.map(mention => (
+            <li>
+              <a
+                href={mention["wm-source"]}
+                class="hover:text-accent"
+                rel="nofollow ugc"
+              >
+                {mention.author?.name ?? mention["wm-source"]}
+              </a>{" "}
+              <span class="opacity-70">linked to this post.</span>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
+}

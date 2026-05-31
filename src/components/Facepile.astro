@@ -1,0 +1,46 @@
+---
+import type { WebmentionEntry } from "@/utils/getWebmentions";
+
+type Props = {
+  items: WebmentionEntry[];
+  singular: string;
+  plural: string;
+};
+
+const { items, singular, plural } = Astro.props;
+
+const facepileTitle = (e: WebmentionEntry) =>
+  e.author?.name ? e.author.name : e["wm-source"];
+---
+
+{
+  items.length > 0 && (
+    <div>
+      <p class="text-sm opacity-80">
+        {items.length} {items.length === 1 ? singular : plural}
+      </p>
+      <ul class="mt-2 flex flex-wrap -space-x-2">
+        {items.map(item => (
+          <li>
+            <a
+              href={item["wm-source"]}
+              title={facepileTitle(item)}
+              rel="nofollow ugc"
+            >
+              {item.author?.photo ? (
+                <img
+                  src={item.author.photo}
+                  alt={facepileTitle(item)}
+                  loading="lazy"
+                  class="size-8 rounded-full ring-2 ring-background"
+                />
+              ) : (
+                <span class="inline-block size-8 rounded-full bg-muted ring-2 ring-background" />
+              )}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

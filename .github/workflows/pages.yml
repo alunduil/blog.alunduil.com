@@ -3,6 +3,16 @@ name: Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # Refresh webmentions from webmention.io through the day; the static
+    # display is otherwise frozen between builds. See #148.
+    - cron: "0 */6 * * *"
+    # Publish posts dated 08:00 Europe/London (see CLAUDE.md posting
+    # convention). Fires at 07:50 so scheduledPostMargin (15 min) reveals
+    # the post and build + deploy lands it by ~08:00 even if Actions
+    # delays the run.
+    - cron: "50 7 * * *"
+      timezone: "Europe/London"
   workflow_dispatch:
 
 jobs:
@@ -10,6 +20,11 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      # Public by design (Astro PUBLIC_ prefix; emitted in the page's
+      # rel="webmention" link). Committed here rather than an Actions
+      # Variable so the webmention receiver is configured as IaC. See #148.
+      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
