@@ -27,6 +27,13 @@ repos:
     hooks:
       - id: yamllint
 
+  # GitHub Actions workflow linting. v1.7.12+ validates the schedule
+  # `timezone:` key used in pages.yml.
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+
   # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
