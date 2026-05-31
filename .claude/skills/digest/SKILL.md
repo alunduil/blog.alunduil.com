@@ -1,11 +1,11 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, Reader archives, and Notion Media Log completions (books/games finished) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is chat-only, thematically clustered. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (prompts for finished/started books & games and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat; the only side effects are Media Log status updates you confirm and idea issues on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
 
-Pipeline: **collect → analyze data → synthesize themes → analyze themes → present**. Each stage has a different owner; don't smear them.
+Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; don't smear them. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
 ## 1. Collect (script)
 
@@ -39,21 +39,28 @@ JSON shape:
 
 ## 2. Analyze data (Claude pre-synthesis)
 
-Fetch Readwise + Reader + Notion Media Log for the same window via MCP, using `window.since` (append `T00:00:00Z`):
+Fetch Readwise + Reader for the same window via MCP (using `window.since`, append `T00:00:00Z`), then run the Media Log check-in:
 
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
 - `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **No category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
-- **Notion Media Log** — two trackers the author maintains, schema `Title` / `Status` / `Finished` / `Added` (`Added` = auto-stamped creation date). Both grow unbounded, so never trust a semantic sweep to enumerate them — drive off `Added`.
-  - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
-  - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-  Per source, `notion-search` with `data_source_url=<collection>`, `query` a domain term (`"book"` / `"video game"`), `max_highlight_length=0`:
-  - **Started**: pass `filters.created_date_range={start_date: <since>}` — a server-side filter on `Added`, so it returns exactly the rows added in-window at any table size. `notion-fetch` each to read `Status`. → "started reading/playing this week" context.
-  - **Finished**: this MCP exposes **no** filter on the `Finished` property (`created_date_range` keys off `Added`, not `Finished`), so a completion on a row added in an earlier window can't be enumerated server-side. Best-effort: search with `query="finished"`, `page_size=25`, `notion-fetch` the candidates, keep `Status = Finished` with `Finished` in `[since, now]`. Reliable while lifetime finishes stay ≲25; past that a recent finish on an old row may fall outside the top-25 — say so in the digest rather than imply the sweep is exhaustive. Robust finished-at-scale needs Notion's native data-source query, not exposed here.
+**Notion Media Log check-in** — the one place the digest *writes*. Two trackers, schema `Title` / `Status` / `Finished` / `Added` (`Added` auto-stamps creation):
 
-  Classify: a finish → **completion** kernel (review/commentary, almost always `[short]` — see §4). A start or `Status = Active` → light "currently reading/playing" context; not a kernel alone, but colors adjacent themes (e.g. a game whose mechanics echo a work post).
+- Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
+- Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable") and continue with the rest.
+Don't try to *detect* completions by querying — **ask the author**; that's the completion edge, and it sidesteps any enumerate-at-scale gap, so the trackers can grow unbounded. Before synthesis:
+
+1. **Surface Active context** (best-effort, to prime the prompt): per source, `notion-search` `data_source_url=<collection>`, `query="currently reading"`/`"currently playing"`, then `notion-fetch` hits and keep `Status = Active`. The Active set is small by nature; recall gaps here are harmless.
+2. **Prompt the author** (free-form): which tracked books/games did you **finish** this window (title + date), and what did you newly **start**? Offer the surfaced Active items as the obvious finish candidates, but accept anything.
+3. **Write back** per answer with `notion-update-page` (`command="update_properties"`):
+   - Finished → locate the row (`notion-search` the source by exact title → `notion-fetch` for its `page_id`); set `"Status":"Finished"`, `"date:Finished:start":"<YYYY-MM-DD>"`, `"date:Finished:is_datetime":0`. No matching row? `notion-create-pages` under the `data_source_id` with those same properties.
+   - Started → locate or create the row, set `"Status":"Active"` (`Added` auto-stamps).
+4. Confirm what was written in one line.
+
+Each finish recorded this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). Newly-started / still-Active items are light "currently reading/playing" context, not kernels alone, but they color adjacent themes (e.g. a game whose mechanics echo a work post).
+
+If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
 
 Mechanical patterns to extract before synthesis:
 
