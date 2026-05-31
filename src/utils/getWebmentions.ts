@@ -22,8 +22,7 @@ export type WebmentionEntry = {
     | "mention-of"
     | "bookmark-of";
   "wm-private": boolean;
-  content?: { html?: string; text?: string };
-  name?: string;
+  content?: { html?: string };
 };
 
 export type Webmentions = {
