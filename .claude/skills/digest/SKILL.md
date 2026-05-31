@@ -43,15 +43,15 @@ Fetch Readwise + Reader + Notion Media Log for the same window via MCP, using `w
 
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
 - `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **No category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
-- **Notion Media Log** — two lightweight tracker data sources the author maintains by hand (`Title` / `Status` / `Finished`):
+- **Notion Media Log** — two trackers the author maintains, schema `Title` / `Status` / `Finished` / `Added` (`Added` = auto-stamped creation date). Both grow unbounded, so never trust a semantic sweep to enumerate them — drive off `Added`.
   - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
   - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-  No Notion tool filters on a property's date, so query then post-filter. Per source: `notion-search` with `data_source_url=<collection>`, a domain `query` (`"book"` / `"video game"`), `page_size=25`, `max_highlight_length=0`. Search returns each row's title, url, and last-edited `timestamp` — **not** its properties. Keep rows with `timestamp >= <since>`, then `notion-fetch` each kept row by `id` to read `Status` + `Finished`. Classify:
-  - `Status = Finished` **and** `Finished` in `[since, now]` → **completion**: a review/commentary kernel (almost always `[short]` — see §4).
-  - `Status = Active` touched in-window → light "currently reading/playing" context. Not a kernel alone, but colors adjacent themes (e.g. a game whose mechanics echo a work post).
+  Per source, `notion-search` with `data_source_url=<collection>`, `query` a domain term (`"book"` / `"video game"`), `max_highlight_length=0`:
+  - **Started**: pass `filters.created_date_range={start_date: <since>}` — a server-side filter on `Added`, so it returns exactly the rows added in-window at any table size. `notion-fetch` each to read `Status`. → "started reading/playing this week" context.
+  - **Finished**: this MCP exposes **no** filter on the `Finished` property (`created_date_range` keys off `Added`, not `Finished`), so a completion on a row added in an earlier window can't be enumerated server-side. Best-effort: search with `query="finished"`, `page_size=25`, `notion-fetch` the candidates, keep `Status = Finished` with `Finished` in `[since, now]`. Reliable while lifetime finishes stay ≲25; past that a recent finish on an old row may fall outside the top-25 — say so in the digest rather than imply the sweep is exhaustive. Robust finished-at-scale needs Notion's native data-source query, not exposed here.
 
-  Low-volume tracker, so a `page_size=25` semantic sweep effectively enumerates each source; if either ever exceeds that, narrow the query or note possible misses.
+  Classify: a finish → **completion** kernel (review/commentary, almost always `[short]` — see §4). A start or `Status = Active` → light "currently reading/playing" context; not a kernel alone, but colors adjacent themes (e.g. a game whose mechanics echo a work post).
 
 If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable") and continue with the rest.
 
