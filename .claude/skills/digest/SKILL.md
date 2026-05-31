@@ -1,6 +1,6 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is chat-only, thematically clustered. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, Reader archives, and Notion Media Log completions (books/games finished) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is chat-only, thematically clustered. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
@@ -39,17 +39,26 @@ JSON shape:
 
 ## 2. Analyze data (Claude pre-synthesis)
 
-Fetch Readwise + Reader for the same window via MCP, using `window.since` (append `T00:00:00Z`):
+Fetch Readwise + Reader + Notion Media Log for the same window via MCP, using `window.since` (append `T00:00:00Z`):
 
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
 - `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **No category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
+- **Notion Media Log** — two lightweight tracker data sources the author maintains by hand (`Title` / `Status` / `Finished`):
+  - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
+  - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-If MCP unavailable, note "Readwise/Reader unavailable — GitHub-only digest" and continue.
+  No Notion tool filters on a property's date, so query then post-filter. Per source: `notion-search` with `data_source_url=<collection>`, a domain `query` (`"book"` / `"video game"`), `page_size=25`, `max_highlight_length=0`. Search returns each row's title, url, and last-edited `timestamp` — **not** its properties. Keep rows with `timestamp >= <since>`, then `notion-fetch` each kept row by `id` to read `Status` + `Finished`. Classify:
+  - `Status = Finished` **and** `Finished` in `[since, now]` → **completion**: a review/commentary kernel (almost always `[short]` — see §4).
+  - `Status = Active` touched in-window → light "currently reading/playing" context. Not a kernel alone, but colors adjacent themes (e.g. a game whose mechanics echo a work post).
+
+  Low-volume tracker, so a `page_size=25` semantic sweep effectively enumerates each source; if either ever exceeds that, narrow the query or note possible misses.
+
+If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable") and continue with the rest.
 
 Mechanical patterns to extract before synthesis:
 
 - **Cross-source links**: archived Reader docs whose `url` matches a Readwise highlight → tag `has_highlights = true`. A highlight is a stronger engagement signal than archive alone.
-- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window. Narrative-ready ("started and finished this week").
+- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log rows that reached `Status = Finished` in-window. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
 - **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
 - **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — squash-dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
 
@@ -69,14 +78,14 @@ Score each theme by signal-of-engagement-with-the-topic, present themes in desce
 
 - **Source breadth**: how many of {commits, PRs, issues_opened, issues_closed, comments, highlights, archives} contribute. Theme spanning 4+ sources beats theme drawn from one.
 - **Cross-source resonance**: theme has both a GitHub item AND a Readwise highlight on the same topic. External validation. Heavy weight.
-- **Completion arc presence**: theme contains an opened+closed issue or merged PR-with-explicit-Closes. Narrative-ready, easier to write.
+- **Completion arc presence**: theme contains an opened+closed issue, a merged PR-with-explicit-Closes, or a finished book/game. Narrative-ready, easier to write.
 - **Time span**: spans the whole window > single-day burst (sustained interest > momentary distraction).
 - **Cross-project**: same theme across multiple repos = pattern at a higher altitude, often the post-worthy angle.
 - **Volume**: tiebreaker only. More items ≠ inherently more interesting.
 
 After scoring, tag each theme **short** or **long** by shape (independent of score):
 
-- **short** — single idea worth amplifying. External quote/highlight + a paragraph of own commentary. No narrative arc, no walk-through. Themes dominated by one strong cross-source link with little code activity usually land here.
+- **short** — single idea worth amplifying. External quote/highlight + a paragraph of own commentary. No narrative arc, no walk-through. Themes dominated by one strong cross-source link with little code activity usually land here, as do most finished-book/game reviews.
 - **long** — multi-step narrative, how-to, tutorial, or explanation that names a pattern with a worked example. Themes with completion arcs, cross-project sweeps, or pipeline/architecture decisions usually land here.
 
 A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
