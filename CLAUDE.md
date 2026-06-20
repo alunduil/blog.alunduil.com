@@ -1,8 +1,24 @@
 # CLAUDE.md
 
-Repo-local guide for Claude Code. See `README.md` for the human-facing
-posting flow (frontmatter, `pnpm dev`/`pnpm build`, `draft: true → false`
-publish flip).
+Repo-local guide for Claude Code on this personal blog (AstroPaper +
+GitHub Pages deploy on push to `main`).
+
+## Posting convention
+
+New posts live under `src/data/blog/`; archival republishes under
+`src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
+future date keeps the post hidden via AstroPaper's
+`SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
+PR accepts the editorial work, the future date defers publication.
+
+### "How I X" series
+
+Future entries title as `How I X (YYYY)` — year-stamped scales without
+anniversary arithmetic. Cadence ties to substantive change in the
+practice, not the calendar; the next entry is ready when reading the
+prior one prompts "that's not how I do it any more." Don't add series
+infrastructure (index page, schema field, milestone) until there are
+3+ entries.
 
 ## AstroPaper upstream
 
@@ -31,9 +47,22 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 ## Digest skill
 
 `.claude/skills/digest/` clusters a window of GitHub activity, Readwise
-highlights, and Reader archives into themes that might seed posts.
-Invoke via `/digest [Nd|Nw|Nm|Ny|last]`. Promising kernels file as
+highlights, and Reader archives into themes that might seed posts. It
+also runs an interactive Notion Media Log check-in: it asks what you're
+currently reading/playing, infers completions from whatever dropped off
+the active list, and writes the status changes back — surfacing each
+completion as a review kernel. Invoke via
+`/digest [Nd|Nw|Nm|Ny]` (defaults to `7d`). Promising kernels file as
 issues with the `idea` template.
+
+## Tag-suggest skill
+
+`.claude/skills/tag-suggest/` proposes frontmatter tags for a draft
+post — scans the corpus's existing tag inventory, prioritises reuse
+over invention, flags morphological near-duplicates. Invoke via
+`/tag-suggest <path>` (defaults to the currently staged post).
+Proposes first, then applies to the file only after the author
+confirms.
 
 ## Idea issues
 

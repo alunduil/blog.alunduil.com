@@ -27,6 +27,13 @@ repos:
     hooks:
       - id: yamllint
 
+  # GitHub Actions workflow linting. v1.7.12+ validates the schedule
+  # `timezone:` key used in pages.yml.
+  - repo: https://github.com/rhysd/actionlint
+    rev: v1.7.12
+    hooks:
+      - id: actionlint
+
   # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -53,7 +60,7 @@ repos:
   # Skips AstroPaper-shipped tutorial posts (upstream content) and AI-targeted
   # markdown (CLAUDE.md, .claude/) where terseness beats prose conventions.
   - repo: https://github.com/vale-cli/vale
-    rev: v3.14.1
+    rev: v3.14.2
     hooks:
       - id: vale
         name: Lint prose with Vale
@@ -66,6 +73,7 @@ repos:
             src/data/blog/(
               _releases/.*|
               examples/.*|
+              _hakyll/.*|
               adding-new-post\.md|
               customizing-.*\.md|
               dynamic-og-images\.md|

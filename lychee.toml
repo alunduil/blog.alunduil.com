@@ -9,4 +9,10 @@ exclude_path = [
   "(^|/)\\.vale/styles/",
   "(^|/)src/data/blog/(_releases|examples)/",
   "(^|/)src/data/blog/(adding-new-post|customizing-.*|dynamic-og-images|how-to-.*|predefined-color-schemes|setting-dates-via-git-hooks)\\.md$",
+  # TEMPORARY: companion pieces have root-relative /posts/... links
+  # that lychee can't resolve against source files. Remove once
+  # lychee runs against the Astro build output instead of source.
+  # Tracking: #160.
+  "(^|/)src/data/blog/how-i-read-eight-years-on\\.md$",
+  "(^|/)src/data/blog/how-i-back-up\\.md$",
 ]
