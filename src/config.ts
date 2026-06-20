@@ -20,4 +20,9 @@ export const SITE = {
   dir: "ltr",
   lang: "en",
   timezone: "Europe/London",
+  // Public per-site Cloudflare Web Analytics beacon ID. Created once by
+  // hand (dashboard → Analytics & Logs → Web Analytics → add blog.alunduil.com).
+  // Leave Cloudflare's automatic injection off: the beacon ships from
+  // Layout.astro, so edge injection would double-count every pageview.
+  cloudflareWebAnalyticsToken: "3cda180b29054d619e163d6cafee3119",
 } as const;
