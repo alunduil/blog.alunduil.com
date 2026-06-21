@@ -1,0 +1,11 @@
+# Flesch-Kincaid grade-level ceiling, keeping posts accessible to a
+# wide audience. Document-level (scores the whole file, one finding).
+# Enabled only for src/data/blog/*.md in .vale.ini; retune the ceiling
+# by editing `condition` below.
+extends: metric
+message: "Reading level is grade %s; keep posts at grade 10 or below."
+link: https://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_tests
+level: error
+formula: |
+  (0.39 * (words / sentences)) + (11.8 * (syllables / words)) - 15.59
+condition: "> 10.0"
