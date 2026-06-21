@@ -1,5 +1,5 @@
 ---
-pubDatetime: 2026-07-07T07:00:00Z
+pubDatetime: 2026-06-30T07:00:00Z
 title: The Tool Was Never the Lever
 description: "Replacing Hakyll with AstroPaper wasn't about a better static site generator. The generator was always downstream—of cadence, then of maintenance."
 tags:

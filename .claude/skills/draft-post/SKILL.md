@@ -97,7 +97,7 @@ Apply codified conventions:
 - `hideEditPost: true` for archival republishes or verbatim-immutable content.
 - For archival republishes: lives under `src/data/blog/_<engine>/` (engine-of-origin grouping); opens with the stock stanza per `project_archive_stanza.md`.
 
-**Don't pin** `pubDatetime` or `modDatetime` to local-branch commits — both are live-site moments. See `feedback_post_datetime_semantics.md`. Use a future `pubDatetime` (the scheduled-publication target) as both the gate and the placeholder; bump it if the PR slips.
+**Don't pin** `pubDatetime` or `modDatetime` to local-branch commits — both are live-site moments. See `feedback_post_datetime_semantics.md`. Use a future `pubDatetime` (the scheduled-publication target) as both the gate and the placeholder; bump it if the PR slips. Pick the *nearest* cadence-appropriate publication day (Tuesday / Sunday), not a padded-out one — `SITE.scheduledPostMargin` is ~15 minutes, so the date is the actual publish target and earns no review buffer.
 
 ## When to invoke
 
