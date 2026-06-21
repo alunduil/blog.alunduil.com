@@ -18,18 +18,19 @@ carries each post's title, `description` (the hook), and canonical link,
 and `postFilter` excludes future-dated posts, so nothing syndicates
 before its `pubDatetime`. What is unsettled is what turns a feed item
 into a post—and the surfaces share no API: Bluesky speaks atproto,
-Threads needs Meta's Graph API (sixty-day tokens, a registered app,
-periodic refresh), the rest differ again. A self-hosted poster is
+Threads goes through Meta's Threads API (sixty-day tokens, a registered
+app, periodic refresh), the rest differ again. A self-hosted poster is
 therefore one integration per surface, each with its own credentials
-and failure handling—disproportionate against two posts in the first
-half of 2026, and compounding with every channel added.
+and failure handling—a standing build-and-maintain cost that falls on a
+single author and compounds with every channel added.
 
 ## Decision drivers
 
 - **Cross-surface leverage**: one mechanism that spans every automated
   surface, rather than a separate integration built and maintained per
   platform API.
-- **Maintenance burden** relative to a low, irregular posting cadence.
+- **Maintenance burden**: standing upkeep that stays near zero for a
+  single author.
 - **Security and credential exposure**: where the posting credential
   lives and what a compromise reaches.
 - **Community and ecosystem fit** with POSSE and IndieWeb norms, plus
@@ -43,8 +44,8 @@ half of 2026, and compounding with every channel added.
 
 - **dlvr.it**—a third-party forwarder that reads the RSS feed and posts
   to each connected platform.
-- **Self-hosted posters**—a GitHub Action per platform API (Meta Graph
-  for Threads, atproto for Bluesky, and the rest) reading the feed.
+- **Self-hosted posters**—a GitHub Action per platform API (the Threads
+  API for Threads, atproto for Bluesky, and the rest) reading the feed.
 - **Echofeed or atproto-native tooling**—the IndieWeb-favoured feed
   forwarders.
 - **Stay manual**—no automation; post by hand.
@@ -68,10 +69,10 @@ and the how-to under `docs/how-to/`.
   automated surface; no secret lives in the repository or CI; the feed
   already supplies format and excludes scheduled posts.
 - Bad: a vendor in the publish path—an outage or shutdown stops
-  syndication silently, so observability leans on the vendor's failure
-  email plus a periodic manual check; opaque token storage; less format
-  control than a hand-rolled poster; a mild step away from IndieWeb
-  self-hosting.
+  syndication silently, so observability leans on dlvr.it's failure
+  alerts (configurable once the route is established), backed by a manual
+  check until they are; opaque token storage; less format control than a
+  hand-rolled poster; a mild step away from IndieWeb self-hosting.
 - Neutral: reversible—nothing in the repository depends on dlvr.it, so
   swapping to self-hosted posters later is clean. Revisit when cadence
   makes format control matter, when dlvr.it degrades or drops a
@@ -81,9 +82,11 @@ and the how-to under `docs/how-to/`.
 
 ### dlvr.it
 
-- Good: no token-refresh upkeep; built-in failure dashboard and email
-  cover observability; one account reaches every automated surface; the
-  free tier covers this cadence; established vendor (since 2009).
+- Good: no token-refresh upkeep; built-in failure alerts cover
+  observability; one account reaches every automated surface; the free
+  tier (one feed, three socials) covers the plan, with a paid tier
+  triggered only by a fourth automated surface or a second feed;
+  long-established vendor (since 2009).
 - Bad: a commercial dependency in the publish path; format limited to
   vendor templates; the token sits with a third party whose storage is
   opaque.
@@ -92,12 +95,12 @@ and the how-to under `docs/how-to/`.
 
 - Good: no vendor in the trust path; full control over post format; no
   recurring cost.
-- Bad: one integration per platform—Meta Graph's sixty-day token forces
-  a refresh job and a self-renewing CI secret, atproto needs its own;
-  each pipeline must track what it already sent to avoid double-posting;
-  observability built from scratch. The cost repeats per surface and is
-  heavy at low cadence, where a token expires idle more often than it
-  serves a post.
+- Bad: one integration per platform—the Threads API's sixty-day token
+  forces a refresh job and a renewing CI secret, while atproto needs a
+  separate integration with its own static credential; each pipeline
+  must track what it already sent to avoid double-posting; observability
+  built from scratch. The cost repeats per surface and lands on one
+  maintainer.
 
 ### Echofeed or atproto-native tooling
 
@@ -128,8 +131,9 @@ blog's blast radius is unwanted posts on the connected accounts,
 revocable in one action per platform. The cost is opaque vendor storage.
 
 Self-hosting keeps the tokens out of any third party but puts a
-long-lived, self-renewing secret per platform in GitHub Actions—a wider
-window, reachable by anyone with workflow write access or a malicious
+long-lived secret per platform in GitHub Actions—Meta's on a sixty-day
+refresh treadmill, Bluesky's a static app password—widening the window:
+reachable by anyone with workflow write access or a malicious
 dependency. For a low-stakes, revocable capability, keeping those
 secrets off CI is the better trade.
 
@@ -137,7 +141,7 @@ secrets off CI is the better trade.
 
 POSSE is an IndieWeb practice, and the grain there leans self-hosted. A
 commercial forwarder cuts mildly against it, accepted for the
-maintenance saving across several surfaces at low cadence. Lock-in stays
+maintenance saving across several surfaces. Lock-in stays
 bounded: the blog stays canonical, so each network is a reach channel
 pointing home, not the home itself.
 
