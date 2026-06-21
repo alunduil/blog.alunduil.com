@@ -98,6 +98,8 @@ observability
 triaging
 agentic
 linters
+worktrees
+homelab
 neuroscientist
 wishlist
 cron
