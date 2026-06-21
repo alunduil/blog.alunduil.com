@@ -30,16 +30,16 @@ If picking up an idea issue (`gh issue view #N`), use `## Spark` + `## Why it co
 
 Before drafting, build a structural outline in `outlines/<post-slug>.md` (tracked; outside `src/`, so not published, and excluded from the prose linters and lychee). Confirm it with the author before writing the body.
 
-For narrative / personal posts, shape it as a **story, not a pitch**. Duarte's *what-is / what-could-be* sparkline is built for persuasion — don't reach for it on a personal story; it bends the piece toward influence. Use the story-craft model instead (from Lorin Hochstein's "The Power of Stories", SREcon Americas 2026 — Matthew Dicks' *Storyworthy*, Jack Hart's *Storycraft*):
+For narrative / personal posts, shape it as a story, using the story-craft model (from Lorin Hochstein's "The Power of Stories", SREcon Americas 2026 — Matthew Dicks' *Storyworthy*, Jack Hart's *Storycraft*):
 
 - **Build to the one moment of change** (Dicks' "five-second moment") — the single thing that shifted. The whole story aims at it.
 - **Start at its opposite** — open furthest from where you land, so the change shows by contrast.
-- **Write scenes, not summaries** — put the reader in concrete moments; documentary detail (dates, names, what actually happened) over abstraction.
-- **Weave fact and feeling** — each beat carries something concrete and something felt; don't let a beat be pure report.
+- **Write in scenes** — put the reader in concrete moments, with documentary detail: dates, names, what actually happened.
+- **Weave fact and feeling** — every beat carries something concrete and something felt.
 
-Per beat, record the scene (the concrete moment) and its story points. Lived scenes are the author's to supply — anchor what's provable, mark what you need, never invent a moment ([[feedback_post_claims_provable]]).
+Per beat, record the scene (the concrete moment) and its story points. Lived scenes are the author's to supply — anchor what's provable and ask for the rest ([[feedback_post_claims_provable]]).
 
-(How-to / reference / explainer posts may not fit a story arc — outline by the reader's task or the logical structure instead.)
+For how-to / reference / explainer posts, outline by the reader's task or the logical structure.
 
 ## 3. Body (Claude drafts, user iterates)
 
