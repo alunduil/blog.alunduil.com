@@ -26,16 +26,20 @@ For tooling / decision posts:
 
 If picking up an idea issue (`gh issue view #N`), use `## Spark` + `## Why it could be interesting` as the kernel; open questions become discovery anchors.
 
-## 2. Outline (Duarte)
+## 2. Outline (story method)
 
 Before drafting, build a structural outline in `outlines/<post-slug>.md` (tracked; outside `src/`, so not published, and excluded from the prose linters and lychee). Confirm it with the author before writing the body.
 
-Two axes, both from Duarte's *Resonate*:
+For narrative / personal posts, shape it as a **story, not a pitch**. Duarte's *what-is / what-could-be* sparkline is built for persuasion — don't reach for it on a personal story; it bends the piece toward influence. Use the story-craft model instead (from Lorin Hochstein's "The Power of Stories", SREcon Americas 2026 — Matthew Dicks' *Storyworthy*, Jack Hart's *Storycraft*):
 
-- **Content contrast (the arc).** Order sections as a sparkline: *what is* ↔ *what could be*, resolving to a *new bliss*. Name the hero, the gap, and the new bliss in a line each.
-- **Emotional contrast (the braid).** Each section carries *both* an analytical beat (data, facts) and an emotional beat (story, metaphor, surprise, confession) — emotion gives the data meaning. Track a continuous feeling-spine beside the informational one.
+- **Build to the one moment of change** (Dicks' "five-second moment") — the single thing that shifted. The whole story aims at it.
+- **Start at its opposite** — open furthest from where you land, so the change shows by contrast.
+- **Write scenes, not summaries** — put the reader in concrete moments; documentary detail (dates, names, what actually happened) over abstraction.
+- **Weave fact and feeling** — each beat carries something concrete and something felt; don't let a beat be pure report.
 
-Per section, record: content-contrast position, analytical beat, emotional beat, and the handoff. Sections should **end on emotion, not information**, to pull the reader forward. An all-analytical section reads as a report — that's the failure to catch here.
+Per beat, record the scene (the concrete moment) and its story points. Lived scenes are the author's to supply — anchor what's provable, mark what you need, never invent a moment ([[feedback_post_claims_provable]]).
+
+(How-to / reference / explainer posts may not fit a story arc — outline by the reader's task or the logical structure instead.)
 
 ## 3. Body (Claude drafts, user iterates)
 
