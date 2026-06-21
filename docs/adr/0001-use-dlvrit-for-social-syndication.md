@@ -48,6 +48,8 @@ single author and compounds with every channel added.
   API for Threads, atproto for Bluesky, and the rest) reading the feed.
 - **Echofeed or atproto-native tooling**—the IndieWeb-favoured feed
   forwarders.
+- **Jetpack Social (Automattic)**—WordPress's built-in Publicize,
+  sharing on publish to eight platforms; presupposes running WordPress.
 - **Stay manual**—no automation; post by hand.
 
 ## Decision outcome
@@ -109,6 +111,14 @@ and the how-to under `docs/how-to/`.
 - Bad: Echofeed has no Threads (its targets are Bluesky, Mastodon,
   Micro.blog, Discord, and similar); atproto-native tooling is
   Bluesky-only. Neither spans the surfaces the strategy needs.
+
+### Jetpack Social
+
+- Good: free tier with unlimited shares, and native reach across every
+  surface this blog would automate.
+- Bad: it runs only as a WordPress plugin, hooking the publish action
+  with no feed path. This blog is a static Astro site, so it does not
+  apply without migrating the whole blog to WordPress.
 
 ### Stay manual
 

@@ -91,6 +91,10 @@ atproto
 OAuth
 IndieWeb
 IFTTT
+WordPress
+Jetpack
+Automattic
+Publicize
 
 # Common writing terms
 frontmatter
