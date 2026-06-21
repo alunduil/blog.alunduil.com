@@ -1,17 +1,10 @@
 # The Tool Was Never the Lever — outline
 
-A revival story. Built from **scenes** — put the reader in the moment,
-don't summarise — and aimed at the one thing that changed: agentic coding
-left me wanting to share. Start at the opposite of the ending: dead and
-archived.
+Revival story. Moment of change: agentic coding left me wanting to share.
+Opens at its opposite — dead and archived. The dead years are context,
+not the subject.
 
-Method drawn from Lorin Hochstein's "The Power of Stories" (SREcon
-Americas 2026): Matthew Dicks (*Storyworthy* — build to the moment of
-change; start at its opposite), Jack Hart (*Storycraft* — scene), and
-the idea that a story lets the reader live the moment.
-
-Rules: every claim git-provable or author-confirmed; plain diction; no
-melodrama; the dead years are context, not the subject.
+(Story method lives in the draft-post skill's outline stage.)
 
 ## Beats
 
