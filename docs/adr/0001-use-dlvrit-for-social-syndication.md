@@ -7,16 +7,13 @@ Accepted
 ## Context and problem statement
 
 The blog follows [POSSE]: it stays canonical, and each social platform
-is a channel pointing back to it. Syndication is tiered:
-
-- **Automated**—Bluesky and Threads, driven from the feed.
-- **Hand-crafted**—Instagram and Facebook, which punish bare link
-  shares (Instagram also needs a per-post image the feed cannot
-  supply).
-- **Deferred**—LinkedIn and a newsletter, until they earn their place.
+is a channel pointing back to it. Several surfaces are syndicated
+automatically—Bluesky and Threads now, LinkedIn and other text-friendly
+networks as the strategy turns them on. (Instagram and Facebook are
+hand-crafted per post and sit outside this decision.)
 
 So the decision is not how to reach one network but which *mechanism*
-drives syndication. For every automated surface the aim is identical: a
+drives the automated surfaces. For each the aim is identical: a
 published post appears on its own—title, one-line hook, canonical
 link—with no manual step and with failures left observable.
 
@@ -33,9 +30,9 @@ half of 2026, and compounding with every channel added.
 
 ## Decision drivers
 
-- **Cross-surface leverage**: one mechanism that spans the strategy's
-  platforms, rather than a separate integration built and maintained
-  per platform API.
+- **Cross-surface leverage**: one mechanism that spans every automated
+  surface, rather than a separate integration built and maintained per
+  platform API.
 - **Maintenance burden** relative to a low, irregular posting cadence.
 - **Security and credential exposure**: where the posting credential
   lives and what a compromise reaches.
