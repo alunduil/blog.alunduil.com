@@ -28,7 +28,7 @@ If picking up an idea issue (`gh issue view #N`), use `## Spark` + `## Why it co
 
 ## 2. Outline (Duarte)
 
-Before drafting, build a structural outline in `outlines/<post-slug>.md` (tracked; not published, not linted — see `outlines/README.md`). Confirm it with the author before writing the body.
+Before drafting, build a structural outline in `outlines/<post-slug>.md` (tracked; outside `src/`, so not published, and excluded from the prose linters and lychee). Confirm it with the author before writing the body.
 
 Two axes, both from Duarte's *Resonate*:
 
