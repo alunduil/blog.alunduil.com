@@ -8,9 +8,9 @@ Accepted
 
 The blog follows [POSSE]: it stays canonical, and each social platform
 is a channel pointing back to it. Several surfaces are syndicated
-automatically—Bluesky and Threads now, LinkedIn and other text-friendly
-networks as the strategy turns them on. (Instagram and Facebook are
-hand-crafted per post and sit outside this decision.)
+automatically—Bluesky and Threads now, LinkedIn and others as the
+strategy turns them on. (Instagram and Facebook are hand-crafted per
+post and sit outside this decision.)
 
 So the decision is not how to reach one network but which *mechanism*
 drives the automated surfaces. For each the aim is identical: a
