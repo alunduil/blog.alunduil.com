@@ -39,8 +39,7 @@ intent rather than the exact wording.
 Match the canonical shape: title, the one-line hook, and the link back.
 In the route's post template, build the message from the feed's title
 and description fields, and let dlvr.it append the canonical link. Keep
-the message lean and add nothing more unless a later review shows it
-earns its place.
+the message short; add to it only when a later review shows the need.
 
 ## Verify
 

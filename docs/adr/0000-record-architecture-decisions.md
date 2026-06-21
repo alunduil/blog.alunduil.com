@@ -8,7 +8,7 @@ Accepted
 
 Architecturally significant choices (picking between non-trivial
 alternatives, locking in a dependency, accepting a one-way door) need a
-durable home. Commit messages cover *what* changed; PR bodies cover the
+durable record. Commit messages cover *what* changed; PR bodies cover the
 merge state. Neither survives well as the rationale a future reader
 needs when challenging or revisiting the decision. `CLAUDE.md` files
 hold rules-for-AI, not project decisions.

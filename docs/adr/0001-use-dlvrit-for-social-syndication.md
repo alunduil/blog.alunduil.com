@@ -17,10 +17,10 @@ stay visible.
 The feed already solves format. `https://blog.alunduil.com/rss.xml`
 carries each post's title, `description` (the hook), and canonical link.
 `postFilter` excludes future-dated posts, so nothing syndicates before
-its `pubDatetime`. What is unsettled is what turns a feed item
-into a post—and the surfaces share no API: Bluesky speaks atproto,
-Threads goes through Meta's Threads API (sixty-day tokens, a registered
-app, periodic refresh), the rest differ again. A self-hosted poster is
+its `pubDatetime`. The undecided step is turning a feed item into a
+post. The surfaces share no API: Bluesky speaks atproto, Threads goes
+through Meta's Threads API (sixty-day tokens, a registered app, periodic
+refresh), and the rest differ again. A self-hosted poster is
 therefore one integration per surface, each with its own credentials
 and failure handling—a standing build-and-maintain cost that falls on a
 single author and compounds with every channel added.
@@ -58,7 +58,7 @@ single author and compounds with every channel added.
 Chosen: **dlvr.it**. One account forwards the feed to Bluesky and
 Threads now, and to LinkedIn and the rest whenever the strategy turns
 them on—same feed, same credential model, no per-platform integration.
-It hits the automated-surface aim with near-zero maintenance, keeps no
+It meets the automated-surface aim with near-zero maintenance, keeps no
 secret in the repository or CI, and pushes each platform's API churn
 onto the vendor.
 
@@ -125,8 +125,8 @@ and the how-to under `docs/how-to/`.
 
 - Good: nothing to build, no dependency, full editorial control per
   post.
-- Bad: fails the no-manual-step aim; relies on the author
-  remembering—the thing POSSE automation exists to remove.
+- Bad: fails the no-manual-step aim; relies on the author remembering
+  to post each time.
 
 ## Security and credential exposure
 
@@ -142,25 +142,24 @@ blog's blast radius is unwanted posts on the connected accounts,
 revocable in one action per platform. The cost is opaque vendor storage.
 
 Self-hosting keeps the tokens out of any third party but puts a
-long-lived secret per platform in GitHub Actions—Meta's on a sixty-day
-refresh treadmill, Bluesky's a static app password—widening the window:
-reachable by anyone with workflow write access or a malicious
-dependency. For a low-stakes, revocable capability, keeping those
-secrets off CI is the better trade.
+long-lived secret per platform in GitHub Actions—Meta's token needs a
+refresh every sixty days, Bluesky's is a static app password—which
+widens the exposure window: reachable by anyone with workflow write
+access or a malicious dependency. For a low-stakes, revocable
+capability, keeping those secrets off CI is the better trade.
 
 ## Community and ecosystem
 
-POSSE is an IndieWeb practice, and the grain there leans self-hosted. A
-commercial forwarder cuts mildly against it, accepted for the
-maintenance saving across several surfaces. Lock-in stays
-bounded: the blog stays canonical, so each network is a reach channel
-pointing home, not the home itself.
+POSSE is an IndieWeb practice, and IndieWeb tooling is usually
+self-hosted. A commercial forwarder departs from that, accepted here for
+the maintenance saving across several surfaces. The lock-in is limited:
+the blog stays canonical, so each network is only a link back to it.
 
-Threads is a proprietary Meta silo—syndicating there is a reach
-concession regardless of mechanism. Bluesky, on the open atproto
-protocol, is more community-aligned; routing it through the same vendor
-is convenient, with Echofeed as the vendor-neutral fallback if that
-matters later.
+Threads is a proprietary Meta platform, so syndicating there trades
+independence for reach no matter the mechanism. Bluesky runs on the open
+atproto protocol and fits the community better; routing it through the
+same vendor is convenient, and Echofeed stays available as a
+vendor-neutral option later.
 
 ## More information
 
