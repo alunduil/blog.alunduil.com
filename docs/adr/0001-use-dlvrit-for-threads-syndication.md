@@ -6,7 +6,7 @@ Accepted
 
 ## Context and problem statement
 
-The blog follows POSSE (Publish on your Own Site, Syndicate Elsewhere):
+The blog follows [POSSE] (Publish on your Own Site, Syndicate Elsewhere):
 the blog stays canonical and social platforms are notification channels
 that point back to it. Issue #78 asks for Threads to receive a post
 automatically—title, a one-line hook, and the canonical link—with
@@ -159,10 +159,11 @@ upkeep in the chosen one.
 
 ## More information
 
-- POSSE (Publish on your Own Site, Syndicate Elsewhere):
-  <https://indieweb.org/POSSE>.
+- [POSSE], the IndieWeb pattern this strategy follows.
 - Issue #78 (Threads syndication) and #77 (Bluesky), part of the tiered
   strategy in #55 and #79–#81.
 - Setup steps: `docs/how-to/syndicate-posts-to-threads.md`.
 - Format and scheduling guarantees come from `src/pages/rss.xml.ts` and
   `src/utils/postFilter.ts`.
+
+[POSSE]: https://indieweb.org/POSSE
