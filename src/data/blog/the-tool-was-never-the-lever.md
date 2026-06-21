@@ -15,9 +15,10 @@ file—and thirty-eight posts with it. The commit message gives a reason:
 > …the blog has been dormant since 2018 and the toolchain no longer
 > fits.
 
-That's the tempting version: a tool stopped fitting, so I replaced it.
-It's also the third time I've replaced it. The git log tells a less
-flattering story, and that one's true.
+That's the tempting version: a tool stopped fitting, so I replaced it. I
+wrote that line myself, and I believed about half of it. It was the
+third time I'd replaced the tool, and the git log keeps a less
+flattering record than the message does.
 
 ## How it works now
 
@@ -30,8 +31,9 @@ attention. Claude drafts beside me and runs the toolchain when I'd
 rather not.
 
 The distance between having something to say and having it live is a
-text file and a `git push`. That's the present. The rest of this is why
-the blog spent years short of it, and what I was doing instead.
+text file and a `git push`. It's light enough now to make me wary. For
+years it was anything but—and the rest of this is why, and what I was
+doing instead.
 
 ## Three generators, one post
 
@@ -47,9 +49,9 @@ In March 2017 I added a Cloud Build pipeline and a Travis CI file. Days
 later I tore out Nikola and stood up Hakyll—a Haskell generator, with
 the GHC, Cabal, and Nix scaffolding that comes with it. I changed themes
 more than once. The log remembers a zen-ipython theme, then a switch to
-material. Each change felt like momentum. A `default.nix` and a `.cabal`
-file followed in 2018, then version-cap bumps and direnv commits into
-2020.
+material. Each one felt like a fresh start that would finally take. A
+`default.nix` and a `.cabal` file followed in 2018, then version-cap
+bumps and direnv commits into 2020.
 
 Across twelve years I published one new post: [How I
 Read](/posts/how-i-read), in 2018. I started one more, a 2017 draft on
@@ -87,8 +89,8 @@ That's the cage door swinging open. The pull was never toward the
 writing, or toward the programming under my software—it was toward
 building the system for the writing, the system for the software. The
 machinery was the part I enjoyed, so the machinery was where I went.
-When agents made it cheap, the thing I'd been avoiding was the only
-thing left to do.
+When agents made it cheap, the fun drained out of the fiddling, and the
+only thing left worth doing was the writing.
 
 ---
 
