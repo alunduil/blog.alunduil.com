@@ -7,15 +7,11 @@ Accepted
 ## Context and problem statement
 
 The blog follows [POSSE]: it stays canonical, and each social platform
-is a channel pointing back to it. Several surfaces are syndicated
-automatically—Bluesky and Threads now, LinkedIn and others as the
-strategy turns them on. (Instagram and Facebook are hand-crafted per
-post and sit outside this decision.)
-
-So the decision is not how to reach one network but which *mechanism*
-drives the automated surfaces. For each the aim is identical: a
-published post appears on its own—title, one-line hook, canonical
-link—with no manual step and with failures left observable.
+is a channel pointing back to it. Several platforms are syndicated
+automatically; the open question is not which networks to reach but the
+*mechanism* that drives them. For each the aim is identical: a published
+post appears on its own—title, one-line hook, canonical link—with no
+manual step, and failures stay observable.
 
 The feed already solves format. `https://blog.alunduil.com/rss.xml`
 carries each post's title, `description` (the hook), and canonical link,
