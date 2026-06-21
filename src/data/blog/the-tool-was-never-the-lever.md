@@ -17,7 +17,7 @@ and the dates say so.
 ## How it works now
 
 A post is a Markdown file with a frontmatter block. I write it, commit
-it, and push to `main`; a GitHub Actions workflow builds the site and
+it, and push to `main`. A GitHub Actions workflow builds the site and
 publishes to GitHub Pages. [Renovate] opens pull requests when
 dependencies drift. Claude drafts alongside me and runs the toolchain
 when I'd rather not. The in-loop cost of publishing—the work between
@@ -54,10 +54,10 @@ blog that isn't publishing, and a few seconds of `cabal build` was
 never what stood between me and a post.
 
 What the migration bought was a substrate I don't maintain alone. The
-old stack was bespoke—a `.cabal` only I built against, a Cloud Build
+old stack was bespoke—a `.cabal` only I compiled, a Cloud Build
 pipeline only I ran, a Nix derivation pinning a compiler only I
 upgraded. [AstroPaper] is a maintained theme with a community around
-it; the parts I used to own now arrive as someone else's pull requests.
+it. The parts I used to own now arrive as someone else's pull requests.
 What carried forward is everything that was never the problem: it's
 still git-backed, still static HTML, still served from my own domain.
 The migration kept those and swapped out the part I'd been carrying by
@@ -68,7 +68,7 @@ myself.
 Here is where the tidy version of the argument gets complicated. The
 story so far is *lower friction won*—Markdown beat Haskell because the
 in-loop cost is smaller. But the in-loop cost isn't mine to pay
-anymore. Claude runs the toolchain now; it could run Hakyll as well as
+anymore. Claude runs the toolchain now. It could run Hakyll as well as
 it runs Astro. A `cabal build` I'd have to remember is, to Claude, the
 same shape as a `pnpm build`. If friction is the whole argument, it has
 mostly evaporated, and with it the case for migrating at all.
@@ -80,7 +80,7 @@ hygiene, the accumulated improvements of everyone running the same
 code. On a bespoke stack I inherit nothing, because no one else runs
 it. Staying on the less-ergonomic generator would have been the wrong
 call here—but not because it's slow. Because it's solo. The cost that
-matters isn't the keystrokes to publish; it's the keystrokes to keep
+matters isn't the keystrokes to publish. It's the keystrokes to keep
 the thing alive, and those don't disappear when Claude joins the loop.
 They move to whoever maintains the stack.
 
