@@ -8,7 +8,7 @@ tags:
 ---
 
 Commit `b7f806c` deletes a Haskell toolchain—a `.cabal` file, a Nix
-derivation, a Cloud Build pipeline, a Dockerfile, a Travis config. It
+derivation, a Cloud Build pipeline, a Dockerfile, a Travis configuration. It
 deletes thirty-eight posts too, and replaces it all with [Astro],
 pnpm, and GitHub Pages. The message says what changed. It doesn't say why. The
 tempting story is that Astro is better than [Hakyll]. That story is wrong,

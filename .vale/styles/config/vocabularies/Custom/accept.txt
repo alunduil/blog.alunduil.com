@@ -15,7 +15,6 @@ Dockerfile
 pnpm
 toolchain
 direnv
-config
 TypeScript
 JavaScript
 DevContainer
