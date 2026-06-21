@@ -55,18 +55,13 @@ platforms but stalls on the gated ones.
 
 ## Decision outcome
 
-Chosen: **dlvr.it**. The decisive reason is reachability. A self-hosted
-poster handles the open platforms—Bluesky and Mastodon—at no cost, but
-stalls on the gated ones: Facebook bans personal-profile posting,
-LinkedIn gates its API behind an app review a personal blog may not
-pass, and Threads needs a Meta app and a sixty-day token refresh.
-dlvr.it already holds those integrations, so one account reaches the
-whole set from one feed with near-zero maintenance and no secret in the
-repository or CI. The cost is honest: the free tier holds three
-profiles, so the realistic set runs on a paid tier at around $10–15 a
-month. A lower-cost variant stays open—self-host the open platforms and
-route only the gated ones through dlvr.it, whose free tier covers
-three.
+Chosen: **dlvr.it**. It already holds the gated integrations a
+self-hosted poster cannot reach, so one account covers the whole set from
+one feed—near-zero maintenance, no secret in the repository or CI. The
+cost is honest: the free tier holds three profiles, so the realistic set
+runs on a paid tier, around $10–15 a month. A lower-cost variant stays
+open—self-host the open platforms, and route only the gated ones through
+dlvr.it's free three profiles.
 
 Setup is account configuration in dlvr.it (connect each platform, add
 the RSS source), not repository code. The only artefacts are this ADR
@@ -141,23 +136,20 @@ and the how-to under `docs/how-to/`.
 
 ## Security and credential exposure
 
-Both automated options delegate one narrow capability: create posts on
-the connected accounts. Neither reaches the blog, the repository, or any
-infrastructure, and the source RSS is public, so nothing sensitive
-enters the pipeline. The routes differ only in where the credential
-sits.
+Both automated options delegate one narrow capability: posting to the
+connected accounts. Neither reaches the blog, the repository, or any
+infrastructure, and the source feed is public—nothing sensitive enters
+the pipeline. They differ only in where the credential sits.
 
-With dlvr.it the tokens live with the vendor, not in the repository or
-CI. A dlvr.it compromise exposes posting across its customers; this
-blog's blast radius is unwanted posts on the connected accounts,
-revocable in one action per platform. The cost is opaque vendor storage.
+With dlvr.it the tokens live with the vendor. A breach there exposes
+posting across its customers, but this blog's blast radius is unwanted
+posts on the connected accounts, revocable per platform in one action.
+The cost is opaque storage.
 
-Self-hosting keeps the tokens out of any third party but puts a
-long-lived secret per platform in GitHub Actions—Meta's token needs a
-refresh every sixty days, Bluesky's is a static app password—which
-widens the exposure window: reachable by anyone with workflow write
-access or a malicious dependency. For a low-stakes, revocable
-capability, keeping those secrets off CI is the better trade.
+Self-hosting keeps the tokens off any third party but puts a long-lived
+secret per platform in GitHub Actions, reachable by anyone with workflow
+write access or a malicious dependency. For a low-stakes, revocable
+capability, keeping the secrets off CI is the better trade.
 
 ## Community and ecosystem
 
