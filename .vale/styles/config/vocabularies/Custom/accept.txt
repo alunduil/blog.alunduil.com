@@ -29,6 +29,7 @@ Mastodon
 LinkedIn
 Threads
 POSSE
+Meta
 rclone
 borg
 restic
@@ -77,6 +78,18 @@ CHANGELOG
 TODO
 WIP
 FIXME
+ADR
+ADRs
+MADR
+Nygard
+
+# Syndication tooling and protocols
+(?i)dlvr
+Echofeed
+atproto
+OAuth
+IndieWeb
+IFTTT
 
 # Common writing terms
 frontmatter
