@@ -64,6 +64,17 @@ over invention, flags morphological near-duplicates. Invoke via
 Proposes first, then applies to the file only after the author
 confirms.
 
+## Syndicate skill
+
+`.claude/skills/syndicate/` turns one published post into crafted,
+platform-native drafts for Bluesky, Threads, Instagram, and Facebook —
+the blog stays canonical, each surface gets a derivative that links
+back. Generation is automated; posting stays manual (drafts in chat,
+nothing committed). Invoke via `/syndicate [path|slug|url]` (defaults
+to the most recently published post). Covers the social-syndication
+strategy's per-post pass (issues #77–#79); auto-posting the friendly
+APIs is a deliberate later add-on.
+
 ## Idea issues
 
 `.github/workflows/labels.yml` auto-applies the `idea` label to any
