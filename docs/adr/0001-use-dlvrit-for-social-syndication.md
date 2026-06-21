@@ -25,8 +25,21 @@ therefore one integration per surface, each with its own credentials
 and failure handling—a standing build-and-maintain cost that falls on a
 single author and compounds with every channel added.
 
+They differ in access, not just protocol. Bluesky and Mastodon are
+open—an app password or token and a short script reach them at no cost.
+The rest are gated: Threads needs a registered Meta app and a sixty-day
+token refresh; Facebook bans posting to personal profiles, leaving only
+Pages, and only through a Meta app; LinkedIn's posting API sits behind an
+app review that wants a business use case a personal blog may not be
+granted. Self-hosting therefore covers the open platforms cleanly but
+stalls on the gated ones, where a forwarder that already holds those
+integrations is the only practical path.
+
 ## Decision drivers
 
+- **Platform reachability**: whether a self-hosted poster can reach a
+  platform at all—some gate their posting API behind app review or ban
+  it outright.
 - **Cross-surface leverage**: one mechanism that spans every automated
   surface, rather than a separate integration built and maintained per
   platform API.
@@ -55,12 +68,18 @@ single author and compounds with every channel added.
 
 ## Decision outcome
 
-Chosen: **dlvr.it**. One account forwards the feed to Bluesky and
-Threads now, and to LinkedIn and the rest whenever the strategy turns
-them on—same feed, same credential model, no per-platform integration.
-It meets the automated-surface aim with near-zero maintenance, keeps no
-secret in the repository or CI, and pushes each platform's API churn
-onto the vendor.
+Chosen: **dlvr.it**. The decisive reason is reachability. A self-hosted
+poster handles the open platforms—Bluesky and Mastodon—at no cost, but
+stalls on the gated ones: Facebook bans personal-profile posting,
+LinkedIn gates its API behind an app review a personal blog may not
+pass, and Threads needs a Meta app and a sixty-day token refresh.
+dlvr.it already holds those integrations, so one account reaches the
+whole set from one feed with near-zero maintenance and no secret in the
+repository or CI. The cost is honest: the free tier holds three
+profiles, so the realistic set runs on a paid tier at around $10–15 a
+month. A lower-cost variant stays open—self-host the open platforms and
+route only the gated ones through dlvr.it, whose free tier covers
+three.
 
 Setup is account configuration in dlvr.it (connect each platform, add
 the RSS source), not repository code. The only artefacts are this ADR
@@ -86,10 +105,12 @@ and the how-to under `docs/how-to/`.
 ### dlvr.it
 
 - Good: no token-refresh upkeep; built-in failure alerts cover
-  observability; one account reaches every automated surface; the free
-  tier (one feed, three socials) covers the plan, with a paid tier
-  triggered only by a fourth automated surface or a second feed;
-  long-established vendor (since 2009).
+  observability; one account reaches every automated surface, including
+  the gated ones a self-hosted poster cannot; long-established vendor
+  (since 2009).
+- Mixed: the free tier is small—three social profiles, about ten posts
+  per social a month, six-hour feed checks—so the realistic
+  multi-platform set runs on a paid tier (around $10–15 a month).
 - Bad: a commercial dependency in the publish path; format limited to
   vendor templates; the token sits with a third party whose storage is
   opaque.
@@ -103,7 +124,10 @@ and the how-to under `docs/how-to/`.
   separate integration with its own static credential; each pipeline
   must track what it already sent to avoid double-posting; observability
   built from scratch. The cost repeats per surface and lands on one
-  maintainer.
+  maintainer. It also cannot reach some targets at all: Facebook bans
+  personal-profile posting (Pages only), and LinkedIn gates its API
+  behind an app review a personal blog may not pass, so the gated
+  platforms can stall or fail outright.
 
 ### Echofeed or atproto-native tooling
 
