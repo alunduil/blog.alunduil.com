@@ -8,9 +8,9 @@ Accepted
 
 The blog follows [POSSE] (Publish on your Own Site, Syndicate Elsewhere):
 the blog stays canonical and social platforms are notification channels
-that point back to it. Issue #78 asks for Threads to receive a post
-automatically—title, a one-line hook, and the canonical link—with
-no manual step, and for pipeline or token failures to be observable.
+that point back to it. The aim for Threads: a published post appears
+there automatically—title, a one-line hook, and the canonical link—with
+no manual step, and pipeline or token failures stay observable.
 
 Two facts narrow the problem. The RSS feed at
 `https://blog.alunduil.com/rss.xml` already carries each post's title,
@@ -55,8 +55,8 @@ Chosen option: **dlvr.it**, because it satisfies the acceptance
 criteria with near-zero standing maintenance, keeps the posting
 credential off the repository and CI, and absorbs Threads-API churn on
 vendor's side. dlvr.it also forwards to Bluesky, so the same account
-and feed carry #77 (Bluesky) too; this ADR scopes the record to Threads,
-but the chosen mechanism covers both tier-one channels.
+and feed drive the sibling Bluesky channel too; this record is framed
+around Threads, but the mechanism covers both tier-one channels.
 
 The work is account setup in dlvr.it (connect the Threads account, add
 the RSS source), not repository code. The only artefacts are this ADR
@@ -65,7 +65,7 @@ and the setup how-to under `docs/how-to/`.
 ### Consequences
 
 - Good: near-zero maintenance, with the vendor owning token refresh;
-  one account can also cover Bluesky (#77); no secret lives in the
+  one account can also cover the Bluesky channel; no secret lives in the
   repository or CI; the existing feed supplies the format and already
   excludes
   scheduled posts.
@@ -108,9 +108,9 @@ and the setup how-to under `docs/how-to/`.
 - Good: the IndieWeb-favoured path for feed syndication; Echofeed is
   inexpensive and well regarded for Bluesky.
 - Bad: Echofeed does not support Threads (its targets are Bluesky,
-  Mastodon, Micro.blog, Discord, and similar), so it cannot satisfy
-  this issue; atproto-native tooling is Bluesky-only by construction.
-  Relevant to #77, not to Threads.
+  Mastodon, Micro.blog, Discord, and similar), so it cannot serve
+  Threads; atproto-native tooling is Bluesky-only by construction,
+  relevant to the Bluesky channel, not Threads.
 
 ### Stay manual
 
@@ -160,8 +160,6 @@ upkeep in the chosen one.
 ## More information
 
 - [POSSE], the IndieWeb pattern this strategy follows.
-- Issue #78 (Threads syndication) and #77 (Bluesky), part of the tiered
-  strategy in #55 and #79–#81.
 - Setup steps: `docs/how-to/syndicate-posts-to-threads.md`.
 - Format and scheduling guarantees come from `src/pages/rss.xml.ts` and
   `src/utils/postFilter.ts`.
