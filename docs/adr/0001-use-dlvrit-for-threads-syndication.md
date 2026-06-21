@@ -159,6 +159,8 @@ upkeep in the chosen one.
 
 ## More information
 
+- POSSE (Publish on your Own Site, Syndicate Elsewhere):
+  <https://indieweb.org/POSSE>.
 - Issue #78 (Threads syndication) and #77 (Bluesky), part of the tiered
   strategy in #55 and #79–#81.
 - Setup steps: `docs/how-to/syndicate-posts-to-threads.md`.
