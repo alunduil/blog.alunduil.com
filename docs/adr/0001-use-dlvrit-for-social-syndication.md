@@ -14,9 +14,9 @@ post appears on its own—title, one-line hook, canonical link—with no
 manual step, and failures stay observable.
 
 The feed already solves format. `https://blog.alunduil.com/rss.xml`
-carries each post's title, `description` (the hook), and canonical link,
-and `postFilter` excludes future-dated posts, so nothing syndicates
-before its `pubDatetime`. What is unsettled is what turns a feed item
+carries each post's title, `description` (the hook), and canonical link.
+`postFilter` excludes future-dated posts, so nothing syndicates before
+its `pubDatetime`. What is unsettled is what turns a feed item
 into a post—and the surfaces share no API: Bluesky speaks atproto,
 Threads goes through Meta's Threads API (sixty-day tokens, a registered
 app, periodic refresh), the rest differ again. A self-hosted poster is
