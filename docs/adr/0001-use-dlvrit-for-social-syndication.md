@@ -18,16 +18,14 @@ future-dated posts, so nothing syndicates early. The open question is
 what turns a feed item into a post—and the platforms differ in access.
 Bluesky and Mastodon are open: a
 token and a short script reach them at no cost. The rest are gated:
-Threads needs a Meta app and sixty-day token refresh; Facebook bans
-personal-profile posting (Pages only); LinkedIn's API sits behind an app
-review a personal blog may not pass. So self-hosting covers the open
+Threads and a Facebook Page each need a Meta app; LinkedIn's API sits
+behind an app review a personal blog may not pass. So self-hosting covers the open
 platforms but stalls on the gated ones.
 
 ## Decision drivers
 
 - **Platform reachability**: whether a self-hosted poster can reach a
-  platform at all—some gate their posting API behind app review or ban
-  it outright.
+  platform at all—some gate their posting API behind an app review.
 - **Cross-surface leverage**: one mechanism that spans every automated
   surface, rather than a separate integration built and maintained per
   platform API.
@@ -107,10 +105,9 @@ and the how-to under `docs/how-to/`.
   separate integration with its own static credential; each pipeline
   must track what it already sent to avoid double-posting; observability
   built from scratch. The cost repeats per surface and lands on one
-  maintainer. It also cannot reach some targets at all: Facebook bans
-  personal-profile posting (Pages only), and LinkedIn gates its API
-  behind an app review a personal blog may not pass, so the gated
-  platforms can stall or fail outright.
+  maintainer. LinkedIn is the hard case: its API sits behind an app
+  review a personal blog may not pass, so self-hosting it may fail
+  outright.
 
 ### Echofeed or atproto-native tooling
 
