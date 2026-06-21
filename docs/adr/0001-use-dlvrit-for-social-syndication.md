@@ -18,9 +18,9 @@ future-dated posts, so nothing syndicates early. The open question is
 what turns a feed item into a post—and the platforms differ in access.
 Bluesky and Mastodon are open: a
 token and a short script reach them at no cost. The rest are gated:
-Threads and a Facebook Page each need a Meta app; LinkedIn's API sits
-behind an app review a personal blog may not pass. So self-hosting covers the open
-platforms but stalls on the gated ones.
+Threads and a Facebook Page each need a registered Meta app; LinkedIn
+needs one too, plus an app review a personal blog may not pass. So
+self-hosting covers the open platforms but stalls on the gated ones.
 
 ## Decision drivers
 
@@ -54,9 +54,10 @@ platforms but stalls on the gated ones.
 
 ## Decision outcome
 
-Chosen: **dlvr.it**. It already holds the gated integrations a
-self-hosted poster cannot reach, so one account covers the whole set from
-one feed—near-zero maintenance, no secret in the repository or CI. The
+Chosen: **dlvr.it**. It already holds the gated integrations, sparing a
+registered Meta app per platform and the LinkedIn approval a self-hosted
+poster may never get. One account covers the whole set from one feed—near-zero
+maintenance, no secret in the repository or CI. The
 cost is honest: the free tier holds three profiles, so the realistic set
 runs on a paid tier, around $10–15 a month. A lower-cost variant stays
 open—self-host the open platforms, and route only the gated ones through
@@ -100,14 +101,14 @@ and the how-to under `docs/how-to/`.
 
 - Good: no vendor in the trust path; full control over post format; no
   recurring cost.
-- Bad: one integration per platform—the Threads API's sixty-day token
-  forces a refresh job and a renewing CI secret, while atproto needs a
-  separate integration with its own static credential; each pipeline
-  must track what it already sent to avoid double-posting; observability
-  built from scratch. The cost repeats per surface and lands on one
-  maintainer. LinkedIn is the hard case: its API sits behind an app
-  review a personal blog may not pass, so self-hosting it may fail
-  outright.
+- Bad: one integration per platform. Threads and a Facebook Page each
+  need a registered Meta app and a token in CI; the Threads token
+  refreshes every sixty days. Bluesky and Mastodon need only a static
+  credential. Each pipeline tracks what it sent to avoid double-posting,
+  and observability is built from scratch—repeated per surface, on one
+  maintainer. LinkedIn is the hard case: beyond a registered app, its API
+  sits behind an app review a personal blog may not pass, so self-hosting
+  it may fail outright.
 
 ### Echofeed or atproto-native tooling
 
