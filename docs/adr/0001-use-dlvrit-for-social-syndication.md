@@ -6,12 +6,13 @@ Accepted
 
 ## Context and problem statement
 
-The blog follows [POSSE]: it stays canonical, and each social platform
-is a channel pointing back to it. Several platforms are syndicated
-automatically; the open question is not which networks to reach but the
-*mechanism* that drives them. For each the aim is identical: a published
-post appears on its own—title, one-line hook, canonical link—with no
-manual step, and failures stay observable.
+The blog follows [POSSE]: it stays canonical, and each syndicated post
+links back to it. Some platforms are syndicated automatically. The
+syndication strategy decides which platforms to automate. This ADR
+decides the *mechanism* that drives them. Each automated platform has
+the same goal: a published post reaches it with no manual step, carrying
+the title, a one-line hook, and the canonical link. Pipeline failures
+stay visible.
 
 The feed already solves format. `https://blog.alunduil.com/rss.xml`
 carries each post's title, `description` (the hook), and canonical link.
