@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-06-30T07:00:00Z
 title: The Tool Was Never the Lever
-description: "Replacing Hakyll with AstroPaper wasn't about a better static site generator. The generator was always downstream of something else: first cadence, then maintenance."
+description: "Three site generators in twelve years, one new post. Building the machinery was always easier than writing—until agents made it cheap enough to stop hiding in."
 tags:
   - tooling
   - methodology
@@ -16,8 +16,8 @@ file—and thirty-eight posts with it. The commit message gives a reason:
 > fits.
 
 That's the tempting version: a tool stopped fitting, so I replaced it.
-I could leave it there. But the dates don't agree, and the tool was
-never really the problem.
+It's also the third time I've replaced it. The git log tells a less
+flattering story, and that one's true.
 
 ## How it works now
 
@@ -31,83 +31,81 @@ rather not.
 
 The distance between having something to say and having it live is a
 text file and a `git push`. That's the present. The rest of this is why
-the blog spent years short of it—and why the toolchain underneath turned
-out to be the wrong place to look.
+the blog spent years short of it, and what I was doing instead.
 
-## What stopped the writing
+## Three generators, one post
 
-The posts cluster between 2010 and 2012—Gentoo, running servers,
-the early OpenStack work I was doing then. Then they stop. One post
-landed in 2018, [How I Read](/posts/how-i-read), and then silence
-closed back over the blog for another seven years.
+The repository begins in 2014, on [Nikola]. The early posts—Gentoo,
+running servers, the OpenStack work—didn't start life in 2014. They're
+imports, written years earlier on something I genuinely can't recall.
+Long ago there was a hand-rolled HTML site with a bit of PHP. Once
+static site generators arrived, that's where my head went, and the path
+before them has gone hazy. The 2014 commit just gathered the old posts
+into Nikola.
 
-Hakyll can't be the reason. The version-cap bumps and the Nix and
-direnv commits are all 2018 to 2020—the toolchain fuss happened during
-the silence, not before it. A generator I was barely touching couldn't
-have caused a gap that started six years before I started fighting with
-it.
+In March 2017 I added a Cloud Build pipeline and a Travis CI file. Days
+later I tore out Nikola and stood up Hakyll—a Haskell generator, with
+the GHC, Cabal, and Nix scaffolding that comes with it. I changed themes
+more than once. The log remembers a zen-ipython theme, then a switch to
+material. Each change felt like momentum. A `default.nix` and a `.cabal`
+file followed in 2018, then version-cap bumps and direnv commits into
+2020.
 
-Two things actually stopped the writing. The smaller was friction at
-the margin: GHC upgrades broke dependencies, and Cabal and Stack
-drifted apart. Getting back to a building site was its own small
-project each time I sat down. That was real, and it cost me the handful
-of attempts I did make. The larger was a broken loop: no habit holding
-the next post in place, and no readers on the other end making the next
-one worth the activation energy. The generator was never the
-binding constraint. Whatever rendered the HTML, the blog would have sat
-just as quiet.
+Across twelve years I published one new post: [How I
+Read](/posts/how-i-read), in 2018. I started one more, a 2017 draft on
+backing up with Bacula, and never shipped it. Two engine migrations, a
+from-scratch deploy pipeline, and a single post to show for the
+machinery.
 
-## What the migration bought
+## What I was doing instead
 
-It wasn't speed. Rendering time has never been the bottleneck for a
-blog that isn't publishing, and a few seconds of `cabal build` was
-never what stood between me and a post.
+I told myself the blog was between tools. That wasn't it. I no longer
+wanted to manage the machinery of a blog, and I didn't have a stack that
+stayed out of the way. So I let the machinery stand in for the work.
+Configuring Hakyll, picking a theme, getting it to look right—that felt
+like progress on the blog. It was the part of blogging that isn't
+writing, and I did it instead of writing.
 
-What the migration bought was a substrate I don't maintain alone. The
-old stack was bespoke—a `.cabal` only I compiled, a Cloud Build
-pipeline only I ran, a Nix derivation pinning a compiler only I
-upgraded. [AstroPaper] is a maintained theme with a community around
-it. The parts I used to own now arrive as someone else's pull requests.
-What carried forward is everything that was never the problem: it's
-still git-backed, still static HTML, still served from my own domain.
-The migration kept those and swapped out the part I'd been carrying by
-myself.
+There was a plainer reason underneath. I was writing a great deal for
+work in those years, and the personal posts never got the energy left
+over. After a day of writing for someone else, the blog asked for the
+one resource I'd already spent. The stack made a convenient alibi—more
+interesting to fix than a blank page, and never finished. A blog I'm
+forever about to relaunch is a blog I never have to write for.
 
-## The part that bends this
+## What changed
 
-Here is where the tidy version of the argument gets complicated. The
-story so far is *lower friction won*—Markdown beat Haskell because the
-in-loop cost is smaller. But the in-loop cost isn't mine to pay
-anymore. Claude runs the toolchain now. It could run Hakyll as well as
-it runs Astro. A `cabal build` I'd have to remember is, to Claude, the
-same shape as a `pnpm build`. If friction is the whole argument, it has
-mostly evaporated, and with it the case for migrating at all.
+What changed last year wasn't a better generator. It was how I work. I
+moved most of my programming to agentic tools, and—as Martin Fowler has
+put it—they put the fun back in. The machinery I used to disappear into
+got cheap. Claude builds the design around the content, where I once
+spent a week on a generator's theme. The theme is someone else's to
+maintain now, not mine. The operational work that used to be a project
+is a prompt.
 
-So why be on AstroPaper rather than a Hakyll I no longer have to
-operate by hand? Not ergonomics—maintenance leverage. On a popular
-theme I inherit other people's fixes: security patches, dependency
-hygiene, the accumulated improvements of everyone running the same
-code. On a bespoke stack I inherit nothing, because no one else runs
-it. Staying on the less-ergonomic generator would have been the wrong
-call here—but not because it's slow. Because it's solo. The cost that
-matters isn't the keystrokes to publish. It's the keystrokes to keep
-the thing alive, and those don't disappear when Claude joins the loop.
-They move to whoever maintains the stack.
+That's the cage door swinging open. The pull was never toward the
+writing, or toward the programming under my software—it was toward
+building the system for the writing, the system for the software. The
+machinery was the part I enjoyed, so the machinery was where I went.
+When agents made it cheap, the thing I'd been avoiding was the only
+thing left to do.
 
 ---
 
-The generator was always downstream. In 2012 it sat below a question
-about cadence—a question the build was never going to answer, because
-the silence wasn't about the build. Now it sits below a question about
-maintenance—which code I want to own and which I'd rather inherit. Both
-times the mistake was the same: treating the tool as the lever, the
-thing you pull to make the writing happen or the blog survive.
+There's a catch to all this. Look at what I did with the fun agents
+handed back: I built a pipeline. A writing pipeline—reading-level
+linters, a drafting routine, a ghostwriter. This post came out of it.
+From one angle that's the same move again, the machinery in fresh paint,
+and I'd be a fool to miss it.
 
-What the migration actually did wasn't fix publishing. It deleted
-enough scaffolding that I could finally see the constraint had been
-somewhere else the whole time.
+I've run enough production systems to have the SRE line reflexive: hope
+is not a strategy. I'll say it anyway. This time the machine produced
+the thing instead of deferring it—you're reading the output, not the
+scaffolding. With no strategy and a sample size of one, I'm hopeful it's
+different this time.
 
 [Hakyll]: https://jaspervdj.be/hakyll/
 [AstroPaper]: https://github.com/satnaing/astro-paper
 [migration]: https://github.com/alunduil/blog.alunduil.com/pull/49
 [Renovate]: https://docs.renovatebot.com/
+[Nikola]: https://getnikola.com/
