@@ -1,59 +1,71 @@
-# The Tool Was Never the Lever — working outline
+# The Tool Was Never the Lever — outline
 
-Planning doc for `src/data/blog/the-tool-was-never-the-lever.md`. Lives
-in `outlines/` — outside the Astro content tree (not published) and
-excluded from the prose linters and lychee. Tracked alongside the post
-as a record of its structure.
+A revival story. Built from **scenes** — put the reader in the moment,
+don't summarise — and aimed at the one moment things changed: agentic
+coding left me wanting to share. Start at the opposite of the ending:
+dead and archived.
 
-## Duarte model (synced)
+Method drawn from Lorin Hochstein's "The Power of Stories" (SREcon
+Americas 2026): Matthew Dicks (*Storyworthy* — build to the moment of
+change; start at its opposite), Jack Hart (*Storycraft* — scene), and
+the idea that a story lets the reader live the moment.
 
-Three contrasts woven together (Resonate):
+Rules: every claim git-provable or author-confirmed; plain diction; no
+melodrama; the dead years are context, not the subject.
 
-1. **Content contrast** — what is ↔ what could be (the sparkline; macro order).
-2. **Emotional contrast** — analytical (data/facts) ↔ emotional (story,
-   metaphor, surprise, confession). The braid. Emotion gives the data meaning.
-3. **Delivery contrast** — N/A for prose.
+## Beats
 
-Per-section rubric:
+### 1. Dead and buried — *start at the opposite*
 
-- (a) right what-is / what-could-be position;
-- (b) carries BOTH an analytical and an emotional beat;
-- (c) hands off on emotion, not information.
+- **Scene** — [AUTHOR: the death. A real moment or trigger to archiving
+  it, or did it just fade and get archived later?] Documentary anchor:
+  the last activity was a version-cap bump in 2020; then silence; archived,
+  expecting never to return.
+- **Story points** — a past life of building, not writing: a couple of
+  generators (Nikola 2014, Hakyll 2017), theme churn (zen-ipython →
+  material), pipelines (Cloud Build, Travis, Docker, Nix); one new post in
+  the whole git era ([How I Read](/posts/how-i-read), 2018). Clean break,
+  no guilt.
+- Keep tight — context, not autopsy.
 
-## Spine
+### 2. What changed — *the moment (the heart)*
 
-- **Hero:** me-the-writer. **Gap:** the story I tell myself (the tool is the
-  problem) vs the truth (I hide in the machinery instead of writing).
-- **Obstacle:** I'd rather build the system than do the thing.
-- **New bliss:** agents made the machine cheap, so content is the only thing
-  left — wary hope.
+- **Scene** — [AUTHOR: the specific moment agentic coding put the fun back
+  and a story felt worth sharing. A session? a project? a realisation at a
+  particular point?] This is the five-second moment the whole story builds
+  to; it has to be true and specific.
+- **Story points** — moved most of my work to agentic coding last year;
+  the work got fun again (Martin Fowler's "fun back in" — citation TBD);
+  found myself with things I wanted to tell.
 
-## Two arcs
+### 3. Why I came back — *the reopening*
 
-**Informational:** commit + tidy reason → frictionless present → git log
-(three engines, one post) → diagnosis (avoidance + work) → agentic shift →
-built another pipeline.
+- **Scene** — reopening the blog: May 2026, scaffolding AstroPaper, the
+  migration ([PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49),
+  commit `b7f806c`) that deleted the old toolchain and 38 posts.
+- **Story points** — I came back because I wanted a place to share from.
+  AstroPaper was the reopening, not the reason. The tool was never the
+  lever.
 
-**Feeling-spine:** unease (the story's off) → suspicious lightness (it's this
-easy?) → sinking recognition (motion was never progress) → honest
-self-knowledge (I was hiding) → relief/joy (the hiding place is gone) → wary
-hope (I caught myself again).
+### 4. Not just the blog — *the spillover*
 
-## Sections
+- **Scene** — the queue of ideas piling up: worktrees (#254), documenting
+  the homelab (#251), the AI-coding bill coming due (#232), incident-search
+  notes (#210), book and game reviews (#250, #243, #233)…
+- **Story points** — the same wanting spilled into a stack of dormant
+  projects; more queued now than I've published in fifteen years. Tees up
+  the other posts.
 
-| # | Section | Content-contrast | Analytical beat | Emotional beat | Handoff (on emotion) |
-|---|---------|------------------|-----------------|----------------|----------------------|
-| 1 | Opener | what is (lie), cracked | commit, deleted list, quote | half-believed my own reason; third time | discomfort → want the true story |
-| 2 | How it works now | what could be (glimpse) | the mechanics | suspicious lightness | this easy now — why the silence? |
-| 3 | Three generators, one post | what is (evidence) | timeline, "one post" | each change felt like a fresh start; deflation | so what was I doing? |
-| 4 | What I was doing instead | what is (interior) | work drained the energy (anchor) | hiding in the machinery; the alibi | what broke it? |
-| 5 | What changed | the turn | agentic tools, Claude, prompt | fun returned; the inversion (machinery dull) | isn't this the same move? |
-| 6 | Close | new bliss (wary) | pipeline, SRE, sample-of-one | caught myself; hope is not a strategy; hopeful | lands |
+### 5. The catch — *the wary landing*
 
-## Constraints
+- **Scene** — building the writing pipeline: a reading-level gate, a
+  drafting routine, an agent ghostwriting beside me. This post came out of
+  it.
+- **Story points** — I built another machine to do it. Same old move?
+  Maybe. Hope is not a strategy. But this post shipped and the queue is
+  real — hopeful it's different this time.
 
-- FRE ≥ 70 (plain, short sentences).
-- No blame/regret: ownership ("I did X") OK; "I should have" / apology OUT.
-- Dry register; emotion restrained, no melodrama.
-- Past tense for history; present for now and standing claims.
-- Open citation: Martin Fowler "fun back in programming" — source TBD.
+## Open
+
+- AUTHOR scenes for beats 1 and 2 (the death; the moment of change).
+- Martin Fowler "fun back in" citation source.
