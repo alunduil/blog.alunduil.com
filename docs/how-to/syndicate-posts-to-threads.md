@@ -38,8 +38,18 @@ intent rather than the exact wording.
 
 Match the canonical shape: title, the one-line hook, and the link back.
 In the route's post template, build the message from the feed's title
-and description fields, and let dlvr.it append the canonical link. Keep
-the message short; add to it only when a later review shows the need.
+and description fields, and let dlvr.it append the canonical link. A
+finished post reads roughly:
+
+```text
+How I Back Up — <the post's one-line description>
+https://blog.alunduil.com/posts/how-i-back-up
+```
+
+Threads allows 500 characters, and the link counts against that, so a
+title, hook, and canonical URL still fit with room to spare. Keep the
+message lean for the reader, not the limit, and add to it only when a
+later review shows the need.
 
 ## Verify
 
