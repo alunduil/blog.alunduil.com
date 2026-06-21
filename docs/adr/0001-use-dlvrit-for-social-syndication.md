@@ -13,9 +13,10 @@ published post appears with no manual step—title, one-line hook,
 canonical link—and failures stay visible.
 
 Format is already solved. The feed (`https://blog.alunduil.com/rss.xml`)
-carries the title, `description` (the hook), and link, and excludes
-future-dated posts. The open question is what turns a feed item into a
-post—and the platforms differ in access. Bluesky and Mastodon are open: a
+carries the title, `description` (the hook), and link. It excludes
+future-dated posts, so nothing syndicates early. The open question is
+what turns a feed item into a post—and the platforms differ in access.
+Bluesky and Mastodon are open: a
 token and a short script reach them at no cost. The rest are gated:
 Threads needs a Meta app and sixty-day token refresh; Facebook bans
 personal-profile posting (Pages only); LinkedIn's API sits behind an app
