@@ -8,7 +8,7 @@ tags:
 ---
 
 Commit `b7f806c` deletes a Haskell toolchain—a `.cabal` file, a Nix
-derivation, a Cloud Build pipeline, a Dockerfile, a Travis configuration. It
+derivation, a Cloud Build pipeline, a Dockerfile, a Travis CI file. It
 deletes thirty-eight posts too, and replaces it all with [Astro],
 pnpm, and GitHub Pages. The message says what changed. It doesn't say why. The
 tempting story is that Astro is better than [Hakyll]. That story is wrong,
@@ -26,7 +26,7 @@ having something to say and having it live—is a text file and a
 
 ## What stopped the writing
 
-The posts cluster between 2010 and 2012—Gentoo, system administration,
+The posts cluster between 2010 and 2012—Gentoo, running servers,
 the early OpenStack work I was doing then. Then they stop. One post
 landed in 2018, [How I Read](/posts/how-i-read), and then silence
 closed back over the blog for another seven years.
