@@ -76,9 +76,8 @@ and the how-to under `docs/how-to/`.
   - the feed already supplies format and excludes scheduled posts
 - Bad:
   - a vendor in the publish path—an outage or shutdown stops syndication
-    silently, so observability leans on dlvr.it's failure alerts
-    (configurable once the route is established), backed by a manual check
-    until they are
+    silently, caught only by dlvr.it's failure alerts and a periodic
+    manual check
   - opaque token storage
   - less format control than a hand-rolled poster
   - a mild step away from IndieWeb self-hosting
