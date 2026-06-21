@@ -49,6 +49,7 @@ Xbox
 
 # Common abbreviations
 API
+APIs
 CLI
 URL
 JSON

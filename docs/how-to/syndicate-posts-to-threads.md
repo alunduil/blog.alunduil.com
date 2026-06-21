@@ -3,7 +3,7 @@
 This guide wires the blog's RSS feed to Threads through dlvr.it, so a
 published post reaches Threads with no manual step. The reasoning behind
 the mechanism is recorded in
-[ADR 0001](../adr/0001-use-dlvrit-for-threads-syndication.md).
+[ADR 0001](../adr/0001-use-dlvrit-for-social-syndication.md).
 
 ## Before you start
 
