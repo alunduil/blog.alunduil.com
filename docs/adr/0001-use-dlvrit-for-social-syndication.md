@@ -69,14 +69,19 @@ and the how-to under `docs/how-to/`.
 
 ### Consequences
 
-- Good: the vendor owns token refresh; one account spans every
-  automated surface; no secret lives in the repository or CI; the feed
-  already supplies format and excludes scheduled posts.
-- Bad: a vendor in the publish path—an outage or shutdown stops
-  syndication silently, so observability leans on dlvr.it's failure
-  alerts (configurable once the route is established), backed by a manual
-  check until they are; opaque token storage; less format control than a
-  hand-rolled poster; a mild step away from IndieWeb self-hosting.
+- Good:
+  - the vendor owns token refresh
+  - one account spans every automated surface
+  - no secret lives in the repository or CI
+  - the feed already supplies format and excludes scheduled posts
+- Bad:
+  - a vendor in the publish path—an outage or shutdown stops syndication
+    silently, so observability leans on dlvr.it's failure alerts
+    (configurable once the route is established), backed by a manual check
+    until they are
+  - opaque token storage
+  - less format control than a hand-rolled poster
+  - a mild step away from IndieWeb self-hosting
 - Neutral: reversible—nothing in the repository depends on dlvr.it, so
   swapping to self-hosted posters later is clean. Revisit when cadence
   makes format control matter, when dlvr.it degrades or drops a
@@ -86,37 +91,47 @@ and the how-to under `docs/how-to/`.
 
 ### dlvr.it
 
-- Good: no token-refresh upkeep; built-in failure alerts cover
-  observability; one account reaches every automated surface, including
-  the gated ones a self-hosted poster cannot; long-established vendor
-  (since 2009).
+- Good:
+  - no token-refresh upkeep
+  - built-in failure alerts cover observability
+  - one account reaches every automated surface, including the gated ones
+    a self-hosted poster cannot
+  - long-established vendor (since 2009)
 - Mixed: the free tier is small—three social profiles, about ten posts
   per social a month, six-hour feed checks—so the realistic
   multi-platform set runs on a paid tier (around $10–15 a month).
-- Bad: a commercial dependency in the publish path; format limited to
-  vendor templates; the token sits with a third party whose storage is
-  opaque.
+- Bad:
+  - a commercial dependency in the publish path
+  - format limited to vendor templates
+  - the token sits with a third party whose storage is opaque
 
 ### Self-hosted posters
 
-- Good: no vendor in the trust path; full control over post format; no
-  recurring cost.
-- Bad: one integration per platform. Threads and a Facebook Page each
-  need a registered Meta app and a token in CI; the Threads token
-  refreshes every sixty days. Bluesky and Mastodon need only a static
-  credential. Each pipeline tracks what it sent to avoid double-posting,
-  and observability is built from scratch—repeated per surface, on one
-  maintainer. LinkedIn is the hard case: beyond a registered app, its API
-  sits behind an app review a personal blog may not pass, so self-hosting
-  it may fail outright.
+- Good:
+  - no vendor in the trust path
+  - full control over post format
+  - no recurring cost
+- Bad:
+  - one integration per platform
+  - the gated platforms each need a registered Meta app and a token in CI
+    (the Threads token refreshes every sixty days)
+  - each pipeline tracks what it sent to avoid double-posting
+  - observability is built from scratch
+  - the cost repeats per surface, on one maintainer
+  - LinkedIn is the hard case: beyond a registered app, its API sits
+    behind an app review a personal blog may not pass, so self-hosting it
+    may fail outright
 
 ### Echofeed or atproto-native tooling
 
-- Good: the IndieWeb-favoured feed path; Echofeed is cheap and well
-  regarded for Bluesky.
-- Bad: Echofeed has no Threads (its targets are Bluesky, Mastodon,
-  Micro.blog, Discord, and similar); atproto-native tooling is
-  Bluesky-only. Neither spans the surfaces the strategy needs.
+- Good:
+  - the IndieWeb-favoured feed path
+  - Echofeed is cheap and well regarded for Bluesky
+- Bad:
+  - Echofeed has no Threads (its targets are Bluesky, Mastodon,
+    Micro.blog, Discord, and similar)
+  - atproto-native tooling is Bluesky-only
+  - neither spans the surfaces the strategy needs
 
 ### Jetpack Social
 
@@ -128,10 +143,13 @@ and the how-to under `docs/how-to/`.
 
 ### Stay manual
 
-- Good: nothing to build, no dependency, full editorial control per
-  post.
-- Bad: fails the no-manual-step aim; relies on the author remembering
-  to post each time.
+- Good:
+  - nothing to build
+  - no dependency
+  - full editorial control per post
+- Bad:
+  - fails the no-manual-step aim
+  - relies on the author remembering to post each time
 
 ## Security and credential exposure
 
