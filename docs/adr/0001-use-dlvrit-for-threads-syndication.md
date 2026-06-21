@@ -55,8 +55,8 @@ Chosen option: **dlvr.it**, because it satisfies the acceptance
 criteria with near-zero standing maintenance, keeps the posting
 credential off the repository and CI, and absorbs Threads-API churn on
 vendor's side. dlvr.it also forwards to Bluesky, so the same account
-and feed could serve #77 (Bluesky), whose mechanism is still open; this
-ADR scopes the decision to Threads and only notes the potential reuse.
+and feed carry #77 (Bluesky) too; this ADR scopes the record to Threads,
+but the chosen mechanism covers both tier-one channels.
 
 The work is account setup in dlvr.it (connect the Threads account, add
 the RSS source), not repository code. The only artefacts are this ADR
