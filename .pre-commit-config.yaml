@@ -57,8 +57,9 @@ repos:
       - id: detect-private-key
 
   # Prose linting with Vale.
-  # Skips AstroPaper-shipped tutorial posts (upstream content) and AI-targeted
-  # markdown (CLAUDE.md, .claude/) where terseness beats prose conventions.
+  # Skips AstroPaper-shipped tutorial posts (upstream content), AI-targeted
+  # markdown (CLAUDE.md, .claude/), and planning docs (outlines/) where
+  # terseness beats prose conventions.
   - repo: https://github.com/vale-cli/vale
     rev: v3.15.1
     hooks:
@@ -70,6 +71,7 @@ repos:
           (?x)^(
             CLAUDE\.md|
             \.claude/.*|
+            outlines/.*|
             src/data/blog/(
               _releases/.*|
               examples/.*|

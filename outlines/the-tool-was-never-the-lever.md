@@ -1,8 +1,9 @@
 # The Tool Was Never the Lever — working outline
 
-Scratch reference for the section-by-section braid pass. Not published
-(lives in `.claude/`, outside the Astro content tree; excluded from the
-prose linters). Untracked working doc — delete when the post lands.
+Planning doc for `src/data/blog/the-tool-was-never-the-lever.md`. Lives
+in `outlines/` — outside the Astro content tree (not published) and
+excluded from the prose linters and lychee. Tracked alongside the post
+as a record of its structure.
 
 ## Duarte model (synced)
 

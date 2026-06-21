@@ -4,9 +4,11 @@ retry_wait_time = 5
 include_fragments = true
 
 # Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
-# .vale/styles/ are upstream Vale style packages.
+# .vale/styles/ are upstream Vale style packages; outlines/ are planning
+# scaffolding, not published content.
 exclude_path = [
   "(^|/)\\.vale/styles/",
+  "(^|/)outlines/",
   "(^|/)src/data/blog/(_releases|examples)/",
   "(^|/)src/data/blog/(adding-new-post|customizing-.*|dynamic-og-images|how-to-.*|predefined-color-schemes|setting-dates-via-git-hooks)\\.md$",
   # TEMPORARY: companion pieces have root-relative /posts/... links

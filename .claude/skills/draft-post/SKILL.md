@@ -5,7 +5,7 @@ description: Draft a new blog post from an idea kernel (issue) or freeform pitch
 
 # Draft post
 
-Pipeline: **substance → body → voice → citations → frontmatter**. Each stage has different ownership; don't conflate them.
+Pipeline: **substance → outline → body → voice → citations → frontmatter**. Each stage has different ownership; don't conflate them.
 
 ## 1. Substance (user input)
 
@@ -26,7 +26,18 @@ For tooling / decision posts:
 
 If picking up an idea issue (`gh issue view #N`), use `## Spark` + `## Why it could be interesting` as the kernel; open questions become discovery anchors.
 
-## 2. Body (Claude drafts, user iterates)
+## 2. Outline (Duarte)
+
+Before drafting, build a structural outline in `outlines/<post-slug>.md` (tracked; not published, not linted — see `outlines/README.md`). Confirm it with the author before writing the body.
+
+Two axes, both from Duarte's *Resonate*:
+
+- **Content contrast (the arc).** Order sections as a sparkline: *what is* ↔ *what could be*, resolving to a *new bliss*. Name the hero, the gap, and the new bliss in a line each.
+- **Emotional contrast (the braid).** Each section carries *both* an analytical beat (data, facts) and an emotional beat (story, metaphor, surprise, confession) — emotion gives the data meaning. Track a continuous feeling-spine beside the informational one.
+
+Per section, record: content-contrast position, analytical beat, emotional beat, and the handoff. Sections should **end on emotion, not information**, to pull the reader forward. An all-analytical section reads as a report — that's the failure to catch here.
+
+## 3. Body (Claude drafts, user iterates)
 
 Draft the body before locking title or description. Both derive from what the post argues — front-loading them locks in framing the body may not honour.
 
@@ -43,7 +54,7 @@ Avoid:
 - Summary-statement closers ("X outlasted Y all")
 - Section-label fragments ("Concurrent reading.")
 
-## 3. Voice (Claude, iterative)
+## 4. Voice (Claude, iterative)
 
 Apply codified voice principles. Cross-reference memory:
 
@@ -65,7 +76,7 @@ Voice pass:
 
 Iterate in the file. User reviews in place; apply principles confidently, surface only genuine judgement calls.
 
-## 4. Citations (Claude searches)
+## 5. Citations (Claude searches)
 
 Ground claims in the user's actual reading where applicable:
 
@@ -84,7 +95,7 @@ the [spacing effect][spacing] describes how distributed sessions
 
 If the archive lacks canonical-research citations, surface what's actually there honestly (pop-science, podcasts, blog posts). Don't fabricate citations to works the user hasn't engaged with.
 
-## 5. Frontmatter (Claude proposes, user confirms)
+## 6. Frontmatter (Claude proposes, user confirms)
 
 Apply codified conventions:
 
