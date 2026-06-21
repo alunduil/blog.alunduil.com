@@ -7,22 +7,32 @@ tags:
   - methodology
 ---
 
-Commit `b7f806c` deletes a Haskell toolchain—a `.cabal` file, a Nix
-derivation, a Cloud Build pipeline, a Dockerfile, a Travis CI file. It
-deletes thirty-eight posts too, and replaces it all with [Astro],
-pnpm, and GitHub Pages. The message says what changed. It doesn't say why. The
-tempting story is that Astro is better than [Hakyll]. That story is wrong,
-and the dates say so.
+In May 2026 I replaced [Hakyll] with [AstroPaper] in [one pull
+request][migration]. It deleted a whole toolchain—a `.cabal` file, a
+Nix derivation, a Cloud Build pipeline, a Dockerfile, a Travis CI
+file—and thirty-eight posts with it. The commit message gives a reason:
+
+> …the blog has been dormant since 2018 and the toolchain no longer
+> fits.
+
+That's the tempting version: a tool stopped fitting, so I replaced it.
+I could leave it there. But the dates don't agree, and the tool was
+never really the problem.
 
 ## How it works now
 
-A post is a Markdown file with a frontmatter block. I write it, commit
-it, and push to `main`. A GitHub Actions workflow builds the site and
-publishes to GitHub Pages. [Renovate] opens pull requests when
-dependencies drift. Claude drafts alongside me and runs the toolchain
-when I'd rather not. The in-loop cost of publishing—the work between
-having something to say and having it live—is a text file and a
-`git push`.
+Today a post is a Markdown file. I open it, write, and add a few lines
+of frontmatter at the top—a title, a date, a tag or two. When it's done
+I commit it and push to `main`, and a GitHub Actions workflow builds the
+site and puts it live. [Renovate] watches the dependencies and opens a
+pull request whenever one drifts, so the stack stays current without my
+attention. Claude drafts beside me and runs the toolchain when I'd
+rather not.
+
+The distance between having something to say and having it live is a
+text file and a `git push`. That's the present. The rest of this is why
+the blog spent years short of it—and why the toolchain underneath turned
+out to be the wrong place to look.
 
 ## What stopped the writing
 
@@ -97,7 +107,7 @@ What the migration actually did wasn't fix publishing. It deleted
 enough scaffolding that I could finally see the constraint had been
 somewhere else the whole time.
 
-[Astro]: https://astro.build/
 [Hakyll]: https://jaspervdj.be/hakyll/
-[Renovate]: https://docs.renovatebot.com/
 [AstroPaper]: https://github.com/satnaing/astro-paper
+[migration]: https://github.com/alunduil/blog.alunduil.com/pull/49
+[Renovate]: https://docs.renovatebot.com/
