@@ -6,36 +6,30 @@ Accepted
 
 ## Context and problem statement
 
-The blog follows [POSSE] (Publish on your Own Site, Syndicate
-Elsewhere): the blog stays canonical and social platforms are
-notification channels that point back to it. The syndication strategy
-is tiered across several surfaces—Bluesky and Threads posted
-automatically, Instagram and Facebook hand-crafted per post, LinkedIn
-and a newsletter deferred until they earn their place. So the decision
-is not how to reach one network but which *mechanism* drives
-syndication across the surfaces the strategy turns on.
+The blog follows [POSSE]: it stays canonical, and each social platform
+is a channel pointing back to it. Syndication is tiered:
 
-For the automated surfaces the aim is the same on each: a published
-post appears there on its own—title, a one-line hook, and the canonical
-link—with no manual step, and pipeline or token failures stay
-observable.
+- **Automated**—Bluesky and Threads, driven from the feed.
+- **Hand-crafted**—Instagram and Facebook, which punish bare link
+  shares (Instagram also needs a per-post image the feed cannot
+  supply).
+- **Deferred**—LinkedIn and a newsletter, until they earn their place.
 
-Format is already solved for any feed-driven consumer. The RSS feed at
-`https://blog.alunduil.com/rss.xml` carries each post's title,
-`description` (the hook), and canonical link, and `postFilter` keeps
-future-dated (scheduled) posts out of the feed, so a feed-driven
-pipeline cannot post anything before its `pubDatetime`. The open
-question is the mechanism that turns a feed item into a post.
+So the decision is not how to reach one network but which *mechanism*
+drives syndication. For every automated surface the aim is identical: a
+published post appears on its own—title, one-line hook, canonical
+link—with no manual step and with failures left observable.
 
-The surfaces do not share an API. Bluesky speaks atproto; Threads goes
-through Meta's Graph API, whose long-lived tokens expire at roughly
-sixty days and need a registered Meta app and periodic refresh; the
-others differ again. A self-hosted poster is therefore not one
-integration but one per surface, each with its own credentials, token
-life cycle, and failure handling. Against the blog's low posting cadence
-(two author posts in the first half of 2026), that per-surface
-machinery is disproportionate, and it compounds with every channel the
-strategy adds.
+The feed already solves format. `https://blog.alunduil.com/rss.xml`
+carries each post's title, `description` (the hook), and canonical link,
+and `postFilter` excludes future-dated posts, so nothing syndicates
+before its `pubDatetime`. What is unsettled is what turns a feed item
+into a post—and the surfaces share no API: Bluesky speaks atproto,
+Threads needs Meta's Graph API (sixty-day tokens, a registered app,
+periodic refresh), the rest differ again. A self-hosted poster is
+therefore one integration per surface, each with its own credentials
+and failure handling—disproportionate against two posts in the first
+half of 2026, and compounding with every channel added.
 
 ## Decision drivers
 
@@ -64,113 +58,101 @@ strategy adds.
 
 ## Decision outcome
 
-Chosen option: **dlvr.it**, because one account spans the strategy's
-surfaces. It forwards to Bluesky and Threads today, and to LinkedIn and
-other networks the strategy may turn on later, so the same feed and
-credential model scale across channels with no integration built per
-platform. It meets the automated-surface aim with near-zero standing
-maintenance, keeps the posting credential off the repository and CI,
-and absorbs each platform's API churn on the vendor's side.
+Chosen: **dlvr.it**. One account forwards the feed to Bluesky and
+Threads now, and to LinkedIn and the rest whenever the strategy turns
+them on—same feed, same credential model, no per-platform integration.
+It hits the automated-surface aim with near-zero maintenance, keeps no
+secret in the repository or CI, and pushes each platform's API churn
+onto the vendor.
 
-The work is account setup in dlvr.it (connect each platform, add the
-RSS source), not repository code. The only artefacts are this ADR and
-the setup how-to under `docs/how-to/`.
+Setup is account configuration in dlvr.it (connect each platform, add
+the RSS source), not repository code. The only artefacts are this ADR
+and the how-to under `docs/how-to/`.
 
 ### Consequences
 
-- Good: near-zero maintenance, with the vendor owning token refresh;
-  one account spans every surface the strategy automates; no secret
-  lives in the repository or CI; the existing feed supplies the format
-  and already excludes scheduled posts.
-- Bad: a vendor dependency whose outage or shutdown stops syndication
-  quietly, so observability rests on the vendor's failure email plus a
-  periodic manual check; dlvr.it's token storage cannot be audited;
-  less format control than a hand-rolled poster; a mild departure from
-  IndieWeb self-hosting norms.
-- Neutral: the choice is reversible—nothing in the repository depends on
-  dlvr.it, so moving to self-hosted posters later is a clean swap.
-  Revisit when posting cadence rises enough that format control matters,
-  when dlvr.it degrades or drops a platform, or when failures slip past
-  the vendor's alerting often enough to justify owned observability.
+- Good: the vendor owns token refresh; one account spans every
+  automated surface; no secret lives in the repository or CI; the feed
+  already supplies format and excludes scheduled posts.
+- Bad: a vendor in the publish path—an outage or shutdown stops
+  syndication silently, so observability leans on the vendor's failure
+  email plus a periodic manual check; opaque token storage; less format
+  control than a hand-rolled poster; a mild step away from IndieWeb
+  self-hosting.
+- Neutral: reversible—nothing in the repository depends on dlvr.it, so
+  swapping to self-hosted posters later is clean. Revisit when cadence
+  makes format control matter, when dlvr.it degrades or drops a
+  platform, or when failures slip past its alerting.
 
 ## Pros and cons of the options
 
 ### dlvr.it
 
-- Good: zero token-refresh upkeep; built-in failure dashboard and email
-  satisfy the observability driver; one account reaches every surface
-  the strategy automates; the free tier comfortably covers this cadence;
-  long-established vendor (operating since 2009).
-- Bad: a commercial dependency in the publish path; format control is
-  limited to the vendor's templates; the access token sits with a third
-  party whose storage cannot be inspected.
+- Good: no token-refresh upkeep; built-in failure dashboard and email
+  cover observability; one account reaches every automated surface; the
+  free tier covers this cadence; established vendor (since 2009).
+- Bad: a commercial dependency in the publish path; format limited to
+  vendor templates; the token sits with a third party whose storage is
+  opaque.
 
 ### Self-hosted posters
 
 - Good: no vendor in the trust path; full control over post format; no
   recurring cost.
-- Bad: each platform is a separate integration—Meta Graph's sixty-day
-  token forces a standing refresh job and a self-renewing secret in CI,
-  atproto needs its own; each pipeline must track which posts
-  it already sent to avoid double-posting; observability must be built
-  from scratch. The cost repeats per surface and is heavy against a low
-  cadence, where a token is likelier to expire idle than to serve a
-  post.
+- Bad: one integration per platform—Meta Graph's sixty-day token forces
+  a refresh job and a self-renewing CI secret, atproto needs its own;
+  each pipeline must track what it already sent to avoid double-posting;
+  observability built from scratch. The cost repeats per surface and is
+  heavy at low cadence, where a token expires idle more often than it
+  serves a post.
 
 ### Echofeed or atproto-native tooling
 
-- Good: the IndieWeb-favoured path for feed syndication; Echofeed is
-  inexpensive and well regarded for Bluesky.
-- Bad: Echofeed does not support Threads (its targets are Bluesky,
-  Mastodon, Micro.blog, Discord, and similar), and atproto-native
-  tooling is Bluesky-only by construction. Neither spans the surfaces
-  the strategy needs.
+- Good: the IndieWeb-favoured feed path; Echofeed is cheap and well
+  regarded for Bluesky.
+- Bad: Echofeed has no Threads (its targets are Bluesky, Mastodon,
+  Micro.blog, Discord, and similar); atproto-native tooling is
+  Bluesky-only. Neither spans the surfaces the strategy needs.
 
 ### Stay manual
 
 - Good: nothing to build, no dependency, full editorial control per
   post.
-- Bad: fails the aim of no manual intervention; relies on the author
-  remembering, which is exactly what POSSE automation is meant to
-  remove.
+- Bad: fails the no-manual-step aim; relies on the author
+  remembering—the thing POSSE automation exists to remove.
 
 ## Security and credential exposure
 
-Both automated options delegate the same narrow capability: create
-posts on the connected accounts. Neither can reach the blog, the
-repository, or any infrastructure, and the source RSS is public, so
-nothing sensitive flows into the pipeline.
+Both automated options delegate one narrow capability: create posts on
+the connected accounts. Neither reaches the blog, the repository, or any
+infrastructure, and the source RSS is public, so nothing sensitive
+enters the pipeline. The routes differ only in where the credential
+sits.
 
-The routes differ in where the credential lives. With dlvr.it the
-delegated tokens are held by the vendor, not by the repository or CI; a
-compromise of dlvr.it exposes posting capability across its customers,
-with this blog's blast radius bounded to unwanted posts on the
-connected accounts, and revocation is a single action in each
-platform's account settings. The cost is opaque vendor storage.
+With dlvr.it the tokens live with the vendor, not in the repository or
+CI. A dlvr.it compromise exposes posting across its customers; this
+blog's blast radius is unwanted posts on the connected accounts,
+revocable in one action per platform. The cost is opaque vendor storage.
 
-The self-hosted route keeps the tokens out of any third party but
-places a long-lived, self-renewing secret per platform in GitHub
-Actions, widening the exposure window: anyone with write access to the
-workflow, or a malicious dependency pulled into it, could extract them.
-Given the capability is low-stakes and revocable, moving the secrets
-off our own CI is the better trade for this blog.
+Self-hosting keeps the tokens out of any third party but puts a
+long-lived, self-renewing secret per platform in GitHub Actions—a wider
+window, reachable by anyone with workflow write access or a malicious
+dependency. For a low-stakes, revocable capability, keeping those
+secrets off CI is the better trade.
 
 ## Community and ecosystem
 
-POSSE is an IndieWeb practice, and the IndieWeb grain leans toward
-self-hosted or community tooling. A commercial forwarder cuts mildly
-against that grain, accepted here for the maintenance saving at low
-cadence across several surfaces. The lock-in stays bounded because the
-blog remains canonical: each network is a reach channel pointing home,
-not the home itself.
+POSSE is an IndieWeb practice, and the grain there leans self-hosted. A
+commercial forwarder cuts mildly against it, accepted for the
+maintenance saving across several surfaces at low cadence. Lock-in stays
+bounded: the blog stays canonical, so each network is a reach channel
+pointing home, not the home itself.
 
-Threads is a proprietary Meta silo, so syndicating to it is a reach
-concession regardless of mechanism. Bluesky, built on the open atproto
-protocol, is the more community-aligned channel; routing it through the
-same vendor is convenient, though Echofeed remains the vendor-neutral
-Bluesky path if that matters later. The platform APIs are young and
-still shifting; both routes inherit that churn, but the vendor absorbs
-the upkeep in the chosen one.
+Threads is a proprietary Meta silo—syndicating there is a reach
+concession regardless of mechanism. Bluesky, on the open atproto
+protocol, is more community-aligned; routing it through the same vendor
+is convenient, with Echofeed as the vendor-neutral fallback if that
+matters later.
 
 ## More information
 
