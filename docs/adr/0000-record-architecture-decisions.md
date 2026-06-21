@@ -9,8 +9,8 @@ Accepted
 Architecturally significant choices (picking between non-trivial
 alternatives, locking in a dependency, accepting a one-way door) need a
 durable record. Commit messages cover *what* changed; PR bodies cover the
-merge state. Neither survives well as the rationale a future reader
-needs when challenging or revisiting the decision. `CLAUDE.md` files
+merge state. Neither preserves the rationale a future reader needs to
+challenge or revisit the decision. `CLAUDE.md` files
 hold rules-for-AI, not project decisions.
 
 ## Decision
@@ -21,10 +21,9 @@ numbered sequentially from `0000`.
 
 Pick the format per ADR. Default to Nygard (Title, Status, Context,
 Decision, Consequences) for a single decision. Reach for MADR when the
-record turns on a load-bearing comparison: three or more options worth
-weighing across several drivers, where MADR's Decision Drivers and
-per-option pros and cons surface the trade-off better than Nygard
-prose.
+record turns on a load-bearing comparison: three or more options weighed
+across several drivers, where its drivers and per-option pros and cons
+surface the trade-off better than Nygard prose.
 
 New ADRs land with `Status: Accepted`—the PR review that merges them
 sets the acceptance. Later transitions to `Superseded by NNNN` or
