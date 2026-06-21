@@ -7,33 +7,20 @@ Accepted
 ## Context and problem statement
 
 The blog follows [POSSE]: it stays canonical, and each syndicated post
-links back to it. Some platforms are syndicated automatically. The
-syndication strategy decides which platforms to automate. This ADR
-decides the *mechanism* that drives them. Each automated platform has
-the same goal: a published post reaches it with no manual step, carrying
-the title, a one-line hook, and the canonical link. Pipeline failures
-stay visible.
+links back to it. The strategy decides which platforms to automate; this
+ADR decides the *mechanism*. The aim per platform is the same: a
+published post appears with no manual step—title, one-line hook,
+canonical link—and failures stay visible.
 
-The feed already solves format. `https://blog.alunduil.com/rss.xml`
-carries each post's title, `description` (the hook), and canonical link.
-`postFilter` excludes future-dated posts, so nothing syndicates before
-its `pubDatetime`. The undecided step is turning a feed item into a
-post. The surfaces share no API: Bluesky speaks atproto, Threads goes
-through Meta's Threads API (sixty-day tokens, a registered app, periodic
-refresh), and the rest differ again. A self-hosted poster is
-therefore one integration per surface, each with its own credentials
-and failure handling—a standing build-and-maintain cost that falls on a
-single author and compounds with every channel added.
-
-They differ in access, not just protocol. Bluesky and Mastodon are
-open—an app password or token and a short script reach them at no cost.
-The rest are gated: Threads needs a registered Meta app and a sixty-day
-token refresh; Facebook bans posting to personal profiles, leaving only
-Pages, and only through a Meta app; LinkedIn's posting API sits behind an
-app review that wants a business use case a personal blog may not be
-granted. Self-hosting therefore covers the open platforms cleanly but
-stalls on the gated ones, where a forwarder that already holds those
-integrations is the only practical path.
+Format is already solved. The feed (`https://blog.alunduil.com/rss.xml`)
+carries the title, `description` (the hook), and link, and excludes
+future-dated posts. The open question is what turns a feed item into a
+post—and the platforms differ in access. Bluesky and Mastodon are open: a
+token and a short script reach them at no cost. The rest are gated:
+Threads needs a Meta app and sixty-day token refresh; Facebook bans
+personal-profile posting (Pages only); LinkedIn's API sits behind an app
+review a personal blog may not pass. So self-hosting covers the open
+platforms but stalls on the gated ones.
 
 ## Decision drivers
 
