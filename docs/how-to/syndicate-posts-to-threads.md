@@ -56,6 +56,9 @@ later review shows the need.
 1. Trigger a manual check, or wait for the next post to publish.
 2. Confirm a Threads post appears that points at the canonical URL.
 
+On the free tier, dlvr.it polls the feed every six hours, so a new post
+can take that long to appear—a short delay is not a failure.
+
 ## Notice when it breaks
 
 This pipeline has to make breakage observable. Two layers cover it:

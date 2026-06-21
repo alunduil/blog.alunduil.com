@@ -57,11 +57,10 @@ self-hosting covers the open platforms but stalls on the gated ones.
 Chosen: **dlvr.it**. It already holds the gated integrations, sparing a
 registered Meta app per platform and the LinkedIn approval a self-hosted
 poster may never get. One account covers the whole set from one feed—near-zero
-maintenance, no secret in the repository or CI. The
-cost is honest: the free tier holds three profiles, so the realistic set
-runs on a paid tier, around $10–15 a month. A lower-cost variant stays
-open—self-host the open platforms, and route only the gated ones through
-dlvr.it's free three profiles.
+maintenance, no secret in the repository or CI. The plan: start on the
+free tier (three social profiles), then move to the annual paid
+tier—about $10 a month billed yearly—once a fourth platform earns its
+place.
 
 Setup is account configuration in dlvr.it (connect each platform, add
 the RSS source), not repository code. The only artefacts are this ADR
