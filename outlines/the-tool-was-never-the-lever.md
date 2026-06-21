@@ -10,10 +10,11 @@ not the subject.
 
 ### 1. Dead and buried — *start at the opposite*
 
-- **Scene** — I archived it during a general GitHub cleanup: using the
-  place less and less, clearing out cruft. By then the blog was dead
-  weight, so it got swept up and filed away. No ceremony. (Documentary
-  anchor: last activity a version-cap bump in 2020, then silence.)
+- **Scene** — I archived it in a routine GitHub cleanup: by then the blog
+  was just cruft, so it got swept up and filed away. No ceremony. (The
+  casualness is the point — it died as collateral, not as a decision.
+  Documentary anchor: last activity a version-cap bump in 2020, then
+  silence.)
 - **Story points** — it had a past life of building, not writing: a couple
   of generators (Nikola 2014, Hakyll 2017), theme churn (zen-ipython →
   material), pipelines (Cloud Build, Travis, Docker, Nix); one new post in
