@@ -99,6 +99,20 @@ Apply codified conventions:
 
 **Don't pin** `pubDatetime` or `modDatetime` to local-branch commits — both are live-site moments. See `feedback_post_datetime_semantics.md`. Use a future `pubDatetime` (the scheduled-publication target) as both the gate and the placeholder; bump it if the PR slips.
 
+## 6. Instagram syndication check (Claude flags)
+
+dlvr.it auto-syndicates each post to the text/link surfaces from the RSS feed
+(`docs/adr/0001-use-dlvrit-for-social-syndication.md`) — no action needed.
+Instagram is the hand-crafted exception. Once the body is settled, judge
+image-fit: does the post carry genuine visual material (book covers,
+screenshots, diagrams, a visual-native topic like a game or book review), or is
+it text-heavy engineering prose?
+
+If image-prone, flag it — tell the author this is a blog post *and* a strong
+Instagram post, and to run `/syndicate-instagram <slug>` once it's live (the IG
+post links back, so it needs the published canonical URL). If text-heavy, stay
+quiet; most engineering posts skip Instagram.
+
 ## When to invoke
 
 - New post from a `## Spark` idea issue: `/draft-post #N` (reads the issue, treats Spark/open-questions as the kernel).
