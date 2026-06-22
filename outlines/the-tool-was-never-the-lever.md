@@ -23,26 +23,27 @@ not the subject.
   it went. Clean, no guilt.
 - Keep tight — context, not autopsy.
 
-### 2. What changed — *the buildup (the output)*
+### 2. What changed — *the moment (the heart)*
 
-- **Scene** — agentic coding changed how I work; I was building at a pace
-  I hadn't hit in years, ideas and workflows piling up faster than I could
-  use them. End on the heatmap: 2026 caught fire.
-- **Story points** — the work got fun again (Martin Fowler's "fun back in"
-  — citation TBD). This beat builds to the output; the wanting-to-share is
-  held back for the swing in beat 3.
+- **Scene** — agentic coding changed how I work and made me prolific
+  again: ideas and workflows piling up. And I started wanting to know
+  whether any of it lands for anyone else.
+- **Story points** — I want to see if others find the ideas and workflows
+  I'm building useful. The blog is the easiest way to write them down and
+  put them where people can find them (reach, not engagement). Social media
+  never clicked and I'm unsure how to start, so the blog is where I begin.
+  (Martin Fowler's "fun back in" — citation TBD.)
 
-### 3. Why I came back — *the swing (the heart)*
+### 3. Why I came back — *the reopening*
 
-- **Scene** — the wanting is the hinge: producing wasn't the whole of it —
-  I wanted to show the work to someone, and that wanting is what dug the
-  blog out of the archive. Then the reopening (May 2026, AstroPaper,
-  [PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49)).
-- **Story points** — the AI turn's real product was wanting to share, and
-  that — not a better tool — guided the resurrection. Earn the thesis with
-  the prior swap (Nikola for Hakyll, blog stayed silent): the tool was
-  never the lever, the wanting was. Reach over engagement (where people can
-  find it); social never clicked, so I'm starting here.
+- **Scene** — reopening the blog: May 2026, scaffolding AstroPaper, the
+  migration ([PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49),
+  commit `b7f806c`) that deleted the old toolchain and 38 posts.
+- **Story points** — I came back because I wanted a place to share from.
+  Earn the thesis with the prior swap: I'd swapped Nikola for Hakyll and
+  the blog stayed silent, so a new generator was never what started the
+  writing. AstroPaper was the reopening, not the reason. The tool was
+  never the lever; the wanting walked me through.
 
 ### 4. Not just the blog — *the spillover*
 
