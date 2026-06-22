@@ -40,8 +40,10 @@ not the subject.
   migration ([PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49),
   commit `b7f806c`) that deleted the old toolchain and 38 posts.
 - **Story points** — I came back because I wanted a place to share from.
-  AstroPaper was the reopening, not the reason. The tool was never the
-  lever.
+  Earn the thesis with the prior swap: I'd swapped Nikola for Hakyll and
+  the blog stayed silent, so a new generator was never what started the
+  writing. AstroPaper was the reopening, not the reason. The tool was
+  never the lever; the wanting walked me through.
 
 ### 4. Not just the blog — *the spillover*
 
