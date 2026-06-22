@@ -45,8 +45,8 @@ stood up [AstroPaper] in [one pull request][migration].
 
 The same change has me building everywhere again. A stack of small
 Haskell libraries. A fleet of machines run from one set of dotfiles.
-Tooling to run several coding agents at once. Composable backup services.
-After years of a near-empty calendar, the doing came back first.
+Tooling to run several coding agents at once. A set of composable backup
+services. After years of a near-empty calendar, the doing came back first.
 
 Each piece wants writing up, too, and the blog is where it lands. Notes
 on living in git worktrees. Documenting the homelab as a system. What the
