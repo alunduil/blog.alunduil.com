@@ -28,11 +28,11 @@ not the subject.
 - **Scene** — agentic coding changed how I work and made me prolific
   again: ideas and workflows piling up. And I started wanting to know
   whether any of it lands for anyone else.
-- **Story points** — I want to see if others like the ideas and workflows
-  I'm building. The blog is the easiest way to codify them and turn them
-  into something I can spread. I don't do well on social media; I'm hoping
-  this becomes the on-ramp that spurs a little engagement. (Martin Fowler's
-  "fun back in" — citation TBD.)
+- **Story points** — I want to see if others find the ideas and workflows
+  I'm building useful. The blog is the easiest way to write them down and
+  put them where people can find them (reach, not engagement). Social media
+  never clicked and I'm unsure how to start, so the blog is where I begin.
+  (Martin Fowler's "fun back in" — citation TBD.)
 
 ### 3. Why I came back — *the reopening*
 

@@ -34,9 +34,9 @@ spike.*
 
 And I started wanting to show the work to someone. Not to prove
 anything—just to find out whether the things I build are useful to anyone
-besides me. The blog was the easiest way to write them down and put them
-somewhere people could find them. I'm no natural on social media, so I'm
-hoping this is the on-ramp.
+besides me. The blog was the easiest way to write the work down and put
+it where people could find it. Social media never clicked for me, and
+I've never been sure how to start—so I'm starting here instead.
 
 ## Why I came back
 
