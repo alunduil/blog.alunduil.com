@@ -64,16 +64,17 @@ over invention, flags morphological near-duplicates. Invoke via
 Proposes first, then applies to the file only after the author
 confirms.
 
-## Syndicate skill
+## Syndicate-Instagram skill
 
-`.claude/skills/syndicate/` turns one published post into crafted,
-platform-native drafts for Bluesky, Threads, Instagram, and Facebook —
-the blog stays canonical, each surface gets a derivative that links
-back. Generation is automated; posting stays manual (drafts in chat,
-nothing committed). Invoke via `/syndicate [path|slug|url]` (defaults
-to the most recently published post). Covers the social-syndication
-strategy's per-post pass (issues #77–#79); auto-posting the friendly
-APIs is a deliberate later add-on.
+`.claude/skills/syndicate-instagram/` crafts an Instagram post from a
+published post — caption hook, image or carousel guidance, link-in-bio
+handling, hashtag set. Instagram is the hand-crafted exception: Bluesky,
+Threads, Facebook, and LinkedIn auto-syndicate through dlvr.it (ADR
+0001), but Instagram is image-first and link-hostile, so the uniform
+feed hook fits worst there. Generation is automated; posting stays
+manual (draft in chat, nothing committed). Invoke via
+`/syndicate-instagram [path|slug|url]` (defaults to the most recently
+published post). Covers issue #79.
 
 ## Idea issues
 
