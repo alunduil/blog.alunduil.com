@@ -26,9 +26,9 @@ tools, and the fun came back—Martin Fowler has made the same point. I was
 building at a pace I hadn't hit in years: ideas and workflows piling up
 faster than I could use them.
 
-![A grid of monthly GitHub contributions from 2010 to 2026: light but steady through the 2010s, then 2026 far darker than any year before it, peaking in May.](/assets/the-tool-was-never-the-lever-contributions.svg)
+![A grid of weekly GitHub contributions from 2010 to 2026: light but steady through the 2010s, then a dark streak across spring 2026, far darker than any week before it.](/assets/the-tool-was-never-the-lever-contributions.svg)
 
-*My GitHub contributions by month, 2010–2026. The colour runs on a
+*My GitHub contributions by week, 2010–2026. The colour runs on a
 square-root scale, so the steady years stay visible next to 2026's
 spike.*
 
