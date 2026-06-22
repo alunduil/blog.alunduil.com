@@ -36,14 +36,18 @@ not the subject.
   it (reach, not engagement); social never clicked, so I'm starting here.
   Keep the reopening to a line — the *why* lands in beat 4.
 
-### 3. Not just the blog — *the overflow*
+### 3. Not just the blog — *the overflow (doing → sharing)*
 
-- **Scene** — the queue of ideas piling up: worktrees (#254), documenting
-  the homelab (#251), the AI-coding bill coming due (#232), incident-search
-  notes (#210), book and game reviews (#250, #243, #233)…
-- **Story points** — the same wanting spilled into a stack of dormant
-  projects; more queued now than I've published in fifteen years. Tees up
-  the other posts.
+- **Scene** — two paragraphs. **Doing:** real project work proliferating
+  (a stack of Haskell libraries, the chezmoi fleet, tooling to run agents
+  in parallel [`claustre`], composable backup services) — the doing came
+  back first. **Sharing:** each piece wants writing up; the blog is the
+  engine (worktrees #254, homelab #251, AI-coding bill #232, reviews
+  #250/#243/#233).
+- **Story points** — the doing came back first; the blog turns it into
+  posts; more queued than published in fifteen years. The parallel-agent
+  tooling glances at the genshin → Copilot → Claude → parallel-working
+  story, which is a separate post (backlog: #232, #231, #96), not told here.
 
 ### 4. The tool was never the lever — *the point*
 

@@ -100,6 +100,8 @@ agentic
 linters
 worktrees
 homelab
+dotfiles
+composable
 neuroscientist
 wishlist
 cron

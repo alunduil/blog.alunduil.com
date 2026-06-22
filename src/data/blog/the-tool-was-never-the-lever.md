@@ -43,11 +43,15 @@ stood up [AstroPaper] in [one pull request][migration].
 
 ## Not just the blog
 
-It didn't stop at the blog. The same urge has me opening other things I'd
-let lapse. Notes on living in git worktrees. Documenting the homelab as a
-system. What the AI-coding bills come to. A backlog of book and game
-reviews. There are more posts queued now than I have published in fifteen
-years.
+The same change has me building everywhere again. A stack of small
+Haskell libraries. A fleet of machines run from one set of dotfiles.
+Tooling to run several coding agents at once. Composable backup services.
+After years of a near-empty calendar, the doing came back first.
+
+Each piece wants writing up, too, and the blog is where it lands. Notes
+on living in git worktrees. Documenting the homelab as a system. What the
+AI-coding bills come to. A backlog of book and game reviews. There are
+more posts queued now than I have published in fifteen years.
 
 ## The real lever
 
