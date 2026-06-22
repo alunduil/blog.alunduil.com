@@ -14,7 +14,5 @@ export default [
     },
   },
   { rules: { "no-console": "error" } },
-  // CI scripts report progress to the workflow log; console is the interface.
-  { files: ["scripts/**"], rules: { "no-console": "off" } },
   { ignores: ["dist/**", ".astro", "public/pagefind/**"] },
 ];
