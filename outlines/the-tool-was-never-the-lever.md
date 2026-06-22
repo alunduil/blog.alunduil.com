@@ -23,29 +23,20 @@ not the subject.
   it went. Clean, no guilt.
 - Keep tight — context, not autopsy.
 
-### 2. What changed — *the moment (the heart)*
+### 2. What changed — *the lift*
 
-- **Scene** — agentic coding changed how I work and made me prolific
-  again: ideas and workflows piling up. And I started wanting to know
-  whether any of it lands for anyone else.
-- **Story points** — I want to see if others find the ideas and workflows
-  I'm building useful. The blog is the easiest way to write them down and
-  put them where people can find them (reach, not engagement). Social media
-  never clicked and I'm unsure how to start, so the blog is where I begin.
-  (Martin Fowler's "fun back in" — citation TBD.)
+- **Scene** — agentic coding changed how I work; building at a pace I
+  hadn't hit in years, ideas and workflows piling up. The heatmap: 2026
+  caught fire. Then the wanting — I started wanting to show the work to
+  someone, so I reopened the blog (May 2026, AstroPaper,
+  [PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49)).
+- **Story points** — the fun came back (Martin Fowler's "fun back in" —
+  citation TBD). I want to see whether the work is useful to anyone
+  besides me; the blog is the easiest way to put it where people can find
+  it (reach, not engagement); social never clicked, so I'm starting here.
+  Keep the reopening to a line — the *why* lands in beat 4.
 
-### 3. Why I came back — *the reopening*
-
-- **Scene** — reopening the blog: May 2026, scaffolding AstroPaper, the
-  migration ([PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49),
-  commit `b7f806c`) that deleted the old toolchain and 38 posts.
-- **Story points** — I came back because I wanted a place to share from.
-  Earn the thesis with the prior swap: I'd swapped Nikola for Hakyll and
-  the blog stayed silent, so a new generator was never what started the
-  writing. AstroPaper was the reopening, not the reason. The tool was
-  never the lever; the wanting walked me through.
-
-### 4. Not just the blog — *the spillover*
+### 3. Not just the blog — *the overflow*
 
 - **Scene** — the queue of ideas piling up: worktrees (#254), documenting
   the homelab (#251), the AI-coding bill coming due (#232), incident-search
@@ -53,6 +44,16 @@ not the subject.
 - **Story points** — the same wanting spilled into a stack of dormant
   projects; more queued now than I've published in fifteen years. Tees up
   the other posts.
+
+### 4. The tool was never the lever — *the point*
+
+- **Scene** — reflective, not mechanical: step back from the reopening and
+  name what it wasn't. I'd swapped generators before, Nikola for Hakyll,
+  and the blog stayed just as silent — a new generator never once started
+  the writing.
+- **Story points** — AstroPaper only unlocked the door; the wanting walked
+  me through. The tool was never the lever; the wanting was. Lands right
+  before the catch, which plays off it.
 
 ### 5. The catch — *the wary landing*
 
