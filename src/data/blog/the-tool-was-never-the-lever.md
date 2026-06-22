@@ -32,23 +32,22 @@ faster than I could use them.
 square-root scale, so the steady years stay visible next to 2026's
 spike.*
 
-And I started wanting to show the work to someone. Not to prove
-anything—just to find out whether the things I build are useful to anyone
-besides me. The blog was the easiest way to write the work down and put
-it where people could find it. Social media never clicked for me, and
-I've never been sure how to start—so I'm starting here instead.
-
 ## Why I came back
 
-So I came back. In May 2026 I reopened the repository, tore out the
-Haskell stack, and stood up [AstroPaper] in [one pull request][migration].
+I started wanting to show the work to someone. Not to prove anything—just
+to find out whether the things I build are useful to anyone besides me.
+That wanting is what dug the blog out of the archive.
 
-It's tempting to call that the turn—a better tool, at last. It wasn't.
-I'd swapped generators before, Nikola for Hakyll, and the blog stayed just
-as silent. A new generator had never once started the writing. The tool
-was never the lever. What changed this time had nothing to do with the
-tools: I had something to say, and I wanted to say it. AstroPaper only
-unlocked the door. The wanting walked me through.
+In May 2026 I reopened the repository, tore out the Haskell stack, and
+stood up [AstroPaper] in [one pull request][migration]. It's tempting to
+call that the turn—a better tool, at last. It wasn't. I'd swapped
+generators before, Nikola for Hakyll, and the blog stayed just as silent.
+A new generator had never once started the writing. The tool was never
+the lever. The wanting was.
+
+The blog was the easiest way to write the work down and put it where
+people could find it. Social media never clicked for me, and I've never
+been sure how to start—so I'm starting here instead.
 
 ## Not just the blog
 
