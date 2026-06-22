@@ -62,5 +62,6 @@ bio-link note. Write nothing to the repo.
   alunduil's own surface.
 - **Canonical-first.** The post links back to the blog; the derivative never
   replaces it.
-- **Trigger.** Manual. dlvr.it covers the auto surfaces on publish; Instagram
-  is the one done by hand.
+- **Trigger.** `/draft-post` flags image-prone posts as Instagram candidates;
+  run this once the post is live (the link-back needs the published URL).
+  dlvr.it covers the auto surfaces on publish.
