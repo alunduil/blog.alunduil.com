@@ -42,9 +42,13 @@ I've never been sure how to start—so I'm starting here instead.
 
 So I came back. In May 2026 I reopened the repository, tore out the
 Haskell stack, and stood up [AstroPaper] in [one pull request][migration].
+
 It's tempting to call that the turn—a better tool, at last. It wasn't.
-The migration only unlocked the door. What walked me through it was having
-something to say and wanting to say it. The tool was never the lever.
+I'd swapped generators before, Nikola for Hakyll, and the blog stayed just
+as silent. A new generator had never once started the writing. The tool
+was never the lever. What changed this time had nothing to do with the
+tools: I had something to say, and I wanted to say it. AstroPaper only
+unlocked the door. The wanting walked me through.
 
 ## Not just the blog
 
