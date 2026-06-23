@@ -4,8 +4,9 @@ Revival story. Moment of change: agentic coding left me wanting to share.
 Opens at its opposite — dead and archived. The dead years are context,
 not the subject.
 
-(Method: the `outline` skill. Beats are one unit of change per line;
-anchors ride as parentheticals; read top to bottom to feel the flow.)
+(Method: the `outline-draft` skill. Beats are one unit of change per
+line; anchors ride as parentheticals; read top to bottom to feel the
+flow.)
 
 ## 1. Dead and buried — *start at the opposite*
 
