@@ -63,13 +63,14 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
 ## 5. The tool was never the lever — *the point (the turn)*
 
 1. None of it came from a better tool.
-2. A tool does have to fit the hand — AstroPaper suits mine (Markdown, no
-   build, low bar to publish), and that part is real. *(Fowler, "Internal
+2. AstroPaper is just another generator — widely used and contributed,
+   but generic; out of the box it fits no one in particular.
+3. The fit was the scaffolding I built around it — deploy on every push,
+   DNS as code. *That's* internal reprogrammability. *(Fowler, "Internal
    Reprogrammability" — craft your tools to fit your metaphorical hand)*
-3. But fitting the hand was never the same as filling the page — I'd
-   swapped generators before (Nikola → Hakyll) and the blog stayed silent.
-4. The migration lowered the cost of a post; it never made me want to
-   write one.
+4. But I'd done it before — the Haskell blog's Cloud Build, Nix, and
+   Docker scaffolding sat silent for years. Shaping the tool was never the
+   same as filling the page.
 5. The tool was never the lever. The desire was.
 
 ## 6. The catch — *the wary landing*

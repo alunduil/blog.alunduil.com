@@ -49,15 +49,16 @@ on living in git worktrees. Documenting the homelab as a system. What the
 AI-coding bills come to. A backlog of book and game reviews. There are
 more posts queued now than I have published in fifteen years.
 
-None of it came from a better tool. A tool does have to suit the hand—Martin
-Fowler writes about crafting your tools to
-[fit your metaphorical hand][reprogrammability]—and AstroPaper suits mine:
-Markdown, no build to babysit, a low bar to publish. That part is real. But
-suiting the hand was
-never the same as filling the page. I'd swapped generators before—Nikola for
-Hakyll—and the blog stayed just as silent. The migration lowered the cost of
-a post; it never made me want to write one. The tool was never the lever.
-The desire was.
+None of it came from a better tool. AstroPaper is just another static-site
+generator—widely used, widely forked, dozens of hands on it—and out of the
+box it fits no one in particular. What fit it to my hand was the scaffolding
+I built around it: a deploy that runs on every push, the DNS kept as code.
+That shaping is the real thing—it's what Fowler means by crafting your tools
+to [fit your metaphorical hand][reprogrammability]. But I'd done all this
+before. The Haskell blog had a Cloud Build pipeline, a Nix file, a Docker
+image—scaffolding I tended for years while the blog stayed silent. Shaping
+the tool was never the same as filling the page. The tool was never the
+lever. The desire was.
 
 There's a catch, and I'd be a fool to miss it. To do this I built another
 machine—a writing pipeline, a reading-level check, an agent drafting
