@@ -25,7 +25,8 @@ flow.)
 1. Agentic coding changed how I work (last year).
 2. Building at a pace I hadn't hit in years — ideas and workflows piling
    up faster than I could use them.
-3. The fun came back. *(Martin Fowler "fun back in" — citation TBD)*
+3. The fun came back. *(Fowler, Fragments May 5 2026 — agents let us
+   rediscover the "Great Lost Joys of software development")*
 4. Heatmap: 2026 caught fire.
 
 ## 3. The wanting — *the moment of change*
@@ -62,10 +63,14 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
 ## 5. The tool was never the lever — *the point (the turn)*
 
 1. None of it came from a better tool.
-2. I'd swapped generators before — Nikola for Hakyll — and the blog
-   stayed just as silent; a new generator never once started the writing.
-3. AstroPaper only unlocked the door; the wanting walked me through.
-4. The tool was never the lever. The wanting was.
+2. A tool does have to fit the hand — AstroPaper suits mine (Markdown, no
+   build, low bar to publish), and that part is real. *(Fowler, "Internal
+   Reprogrammability" — craft your tools to fit your metaphorical hand)*
+3. But fitting the hand was never the same as filling the page — I'd
+   swapped generators before (Nikola → Hakyll) and the blog stayed silent.
+4. The migration lowered the cost of a post; it never made me want to
+   write one.
+5. The tool was never the lever. The wanting was.
 
 ## 6. The catch — *the wary landing*
 
@@ -81,7 +86,3 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
    reflexive). I'm going to hope anyway.
 7. The post shipped, the queue is real — this time it points at sharing,
    not hiding.
-
-## Open
-
-- Martin Fowler "fun back in" citation source.
