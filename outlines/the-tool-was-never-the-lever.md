@@ -1,6 +1,6 @@
 # The Tool Was Never the Lever — outline
 
-Revival story. Moment of change: agentic coding left me wanting to share.
+Revival story. Moment of change: agentic coding left me with a desire to share.
 Opens at its opposite — dead and archived. The dead years are context,
 not the subject.
 
@@ -29,9 +29,9 @@ flow.)
    rediscover the "Great Lost Joys of software development")*
 4. Heatmap: 2026 caught fire.
 
-## 3. The wanting — *the moment of change*
+## 3. The desire — *the moment of change*
 
-1. Then the wanting — I started wanting to show the work to someone.
+1. Then the desire — I wanted to show the work to someone.
 2. Not to prove anything; to find out whether it's useful to anyone
    besides me.
 3. Reach, not engagement — the blog is the easiest way to put the work
@@ -39,7 +39,7 @@ flow.)
 4. Social never clicked, so I'm starting here.
 5. So I reopened the blog — May 2026, AstroPaper, one
    [PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49).
-   *(the consequence of the wanting, not the cause)*
+   *(the consequence of the desire, not the cause)*
 
 ## 4. Not just the blog — *the overflow (doing → sharing)*
 
@@ -70,7 +70,7 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
    swapped generators before (Nikola → Hakyll) and the blog stayed silent.
 4. The migration lowered the cost of a post; it never made me want to
    write one.
-5. The tool was never the lever. The wanting was.
+5. The tool was never the lever. The desire was.
 
 ## 6. The catch — *the wary landing*
 

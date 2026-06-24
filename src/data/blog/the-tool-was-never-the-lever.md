@@ -30,7 +30,7 @@ up faster than I could use them.
 square-root scale, so the steady years stay visible next to 2026's
 spike.*
 
-And I started wanting to show the work to someone. Not to prove
+And then I wanted to show the work to someone. Not to prove
 anything—just to find out whether the things I build are useful to anyone
 besides me. The blog was the easiest way to write the work down and put
 it where people could find it. Social media never clicked for me, and
@@ -57,7 +57,7 @@ suiting the hand was
 never the same as filling the page. I'd swapped generators before—Nikola for
 Hakyll—and the blog stayed just as silent. The migration lowered the cost of
 a post; it never made me want to write one. The tool was never the lever.
-The wanting was.
+The desire was.
 
 There's a catch, and I'd be a fool to miss it. To do this I built another
 machine—a writing pipeline, a reading-level check, an agent drafting
