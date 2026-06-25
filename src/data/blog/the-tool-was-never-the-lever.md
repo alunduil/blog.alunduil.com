@@ -7,17 +7,17 @@ tags:
   - writing
 ---
 
-I archived this blog in a cleanup. I was tidying my GitHub, closing out
-repositories I no longer touched, and this one was cruft like the
-rest—so it got filed away, read-only, done. No eulogy. I expected never
-to open it again.
-
-It had a past life, mostly of building rather than writing. It ran on
-[Nikola], then [Hakyll], with a Cloud Build pipeline, a Nix file, and a
-couple of theme changes along the way. In the twelve years the repository
-existed I had published one new post, [How I Read](/posts/how-i-read).
-I'm prolific when something has hold of me. This didn't, so when I tidied
-up, it went.
+The blog had been quiet a long time before I archived it. Its last sign
+of life was a pair of dutiful version bumps—small commits to keep the
+Haskell build from falling over, one in 2018 and one in 2020—and after
+that, nothing. It had been busy enough once, though busy with building
+more than writing: it ran on [Nikola], and then on [Hakyll], and gathered
+up a Cloud Build pipeline, a Nix file, and a theme change or two along the
+way. In all of twelve years, that machinery had carried just one new
+post, [How I Read](/posts/how-i-read). So when I went through my GitHub,
+closing out the projects I no longer worked on, I came to this one and
+barely paused—it was cruft like the rest, and it went without ceremony,
+and I did not expect to open it again.
 
 The work changed. Last year I moved most of my programming to agentic
 tools, and the fun came back—Martin Fowler has made [the same point][fowler].
