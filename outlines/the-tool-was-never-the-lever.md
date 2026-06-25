@@ -79,9 +79,10 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
 2. I built more tooling to do this — an outline-and-draft pipeline, a
    reading-level check, an agent drafting beside me; this post ran through
    it.
-3. The worry: tooling I tend instead of writing I finish — the pattern
-   I'm prone to.
-4. The difference is the output — this machine's product is published
-   posts, not a tidier setup; it produces the writing instead of standing
-   in for it.
-5. This post shipped through it; the queue is real.
+3. I love system-building for its own sake, and that's the trap: one
+   improvement leads to the next and I rabbit-hole away from the goal —
+   shipping the post.
+4. What's different this time is focus — I'm aimed at delivering the
+   posts, and the building serves that, not the reverse.
+5. The pull to twiddle is still there; I just keep it pointed at shipping.
+6. This post shipped through it; the queue is real.
