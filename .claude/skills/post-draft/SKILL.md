@@ -64,9 +64,13 @@ Principles, each with the criterion that confirms it:
 - **Land on substance.** *Confirmed when:* the last line says something
   rather than restating the post or drumrolling toward it.
 
-Draft **paragraph by paragraph**, reviewing each before the next — flow
-and direction shift as the prose takes form. Watch the back half:
-unattended, long stretches drift toward generic prose.
+Draft and lock **one scene at a time, with the author.** Source each
+scene's concrete moment before staging it — provable facts where they
+exist, and ask the author for the lived specifics rather than inventing
+them ([[feedback_post_claims_provable]]). Stage the scene, refine the
+wording together, lock it, move to the next. Flow and direction shift as
+the prose takes form; watch the back half, where unattended stretches
+drift toward generic prose.
 
 ## 2. Voice
 
@@ -81,6 +85,19 @@ reference memory:
   quote-punctuation.
 - [[project_possessive_convention]] — singular *s*-ending nouns take
   *'s* (Books's, Charles's).
+
+**Register — poetic without being poetry** (Tolkien/Carroll touchstone),
+the house voice for story posts:
+
+- **Latch first.** Open each scene on something concrete the reader can
+  hold — never on context-free abstraction.
+- **Flow, don't snap.** Carry weight in cadence and image, not in clipped
+  fragments stacked for drama; a running "and … and" suits it.
+- **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
+  simile usually wants toning down, not up.
+- **Watch personification.** It creeps in ("a busy place", "a last sign
+  of life") — keep it light.
+- Plain, warm words: punch without the snap, music without verse.
 
 Pass:
 
