@@ -74,17 +74,21 @@ drift toward generic prose.
 
 ## 2. Voice
 
-Sentence-level conventions, applied across the drafted body. Cross-
-reference memory:
+Sentence-level conventions, applied across the drafted body. Stated in
+full here so the skill stands alone on the web, where local memory isn't
+present; the bracketed names are local-only see-alsos.
 
-- [[feedback_no_blame_in_retrospect]] — ownership OK; regret goes.
-- [[feedback_causal_narrative_over_contrast]] — "Without X, Y happens"
-  beats "X required Z; Y doesn't".
-- [[feedback_tags_are_content_only]] — tags are content topics.
-- [[project_grammar_lean]] — CMOS for structure, en_GB for spelling and
-  quote-punctuation.
-- [[project_possessive_convention]] — singular *s*-ending nouns take
-  *'s* (Books's, Charles's).
+- **No blame in retrospect.** Ownership ("I did X") is fine; regret ("I
+  should have", confession closers) goes. ([[feedback_no_blame_in_retrospect]])
+- **Causal over contrast.** "Without X, Y happens" beats "X required Z; Y
+  doesn't" — show the mechanism. ([[feedback_causal_narrative_over_contrast]])
+- **Tags are content topics,** not archive / era / format labels.
+  ([[feedback_tags_are_content_only]])
+- **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
+  unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
+  punctuation outside the quotes. ([[project_grammar_lean]])
+- **Possessives:** singular *s*-ending nouns take *'s* — Books's,
+  Charles's (CMOS, not AP). ([[project_possessive_convention]])
 
 **Register — poetic without being poetry** (Tolkien/Carroll touchstone),
 the house voice for story posts:
