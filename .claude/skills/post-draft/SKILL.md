@@ -10,6 +10,10 @@ Consumes an approved outline (`outlines/<slug>.md`, the artefact
 Refuses to start without an approved outline — if there isn't one, run
 `outline-draft` first.
 
+The outline is the source of truth and is never edited from here. If the
+prose needs a structural change, change the outline first (via
+`outline-draft`), then bring the post back in line.
+
 Pipeline: **body → voice → citations → frontmatter.** Each stage has
 different ownership; don't conflate them.
 

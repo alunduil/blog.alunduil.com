@@ -73,17 +73,15 @@ Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)
    same as filling the page.
 5. The tool was never the lever. The desire was.
 
-## 6. The catch — *the wary landing*
+## 6. The catch — *the clear-eyed landing*
 
-1. There's a catch, and I'd be a fool to miss it.
-2. To do this I built another machine — reading-level gate, drafting
-   routine, an agent beside me.
-3. This post came out of it.
-4. From one angle: same old move, build the thing instead of doing the
-   thing.
-5. But this machine points outward — the old ones were places to hide;
-   same shape, opposite purpose.
-6. Hope is not a strategy (enough production systems to have the line
-   reflexive). I'm going to hope anyway.
-7. The post shipped, the queue is real — this time it points at sharing,
-   not hiding.
+1. There's a catch, and I see it.
+2. I built more tooling to do this — an outline-and-draft pipeline, a
+   reading-level check, an agent drafting beside me; this post ran through
+   it.
+3. The worry: tooling I tend instead of writing I finish — the pattern
+   I'm prone to.
+4. The difference is the output — this machine's product is published
+   posts, not a tidier setup; it produces the writing instead of standing
+   in for it.
+5. This post shipped through it; the queue is real.

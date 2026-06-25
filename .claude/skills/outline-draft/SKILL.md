@@ -75,7 +75,7 @@ are the author's to supply — anchor the provable, ask for the rest.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the seven
+Before approval, read the beats top to bottom and check the eight
 failure signatures:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
@@ -88,6 +88,10 @@ failure signatures:
 6. **Unanchored claim** — a factual beat with no parenthetical and not
    marked TBD.
 7. **Topic-naming** — a scene named like a section → drifting to essay.
+8. **Amorphous phrase** — a beat that gestures abstractly ("the thing,"
+   "points outward," "opposite purpose," "push the work out," "places to
+   hide") instead of naming something concrete → ground it: say *which*
+   machine, *what* output, *what* it actually does.
 
 ## Shape
 
@@ -116,6 +120,11 @@ Iterate in `outlines/<slug>.md` (tracked; outside `src/`, so unpublished
 and excluded from the prose linters and lychee). Run the Diagnose pass.
 Confirm with the author. The skill ends at approval — hand to
 `post-draft`.
+
+The outline drives the post, one direction only: after approval,
+structural changes originate here and flow forward to the post. Never
+back-port post edits into the outline — the outline is the source of
+truth.
 
 Provenance: Jack Hart, *Storycraft* (arc, scene); Matthew Dicks,
 *Storyworthy* (the one moment of change); Lorin Hochstein, "The Power of
