@@ -19,9 +19,18 @@ different ownership; don't conflate them.
 
 ## 1. Body — write the scenes
 
-Turn the outline's beats into prose, scene by scene. Draft the body
-before locking title or description — both derive from what the post
-argues, and front-loading them locks in framing the body may not honour.
+Render the outline's beats as story, scene by scene. The outline is the
+skeleton, not the script: **a beat is not a sentence.** Each beat becomes
+lived prose — a moment to stand in, fact braided with feeling,
+transitions that carry the reader from one beat to the next. The post
+reads as *more* than its outline; *confirmed when* every paragraph
+carries something the outline can't (a scene, the braid, a transition),
+not just its beat reworded. If a paragraph reads straight off the
+outline, it isn't written yet.
+
+Draft the body before locking title or description — both derive from
+what the post argues, and front-loading them locks in framing the body
+may not honour.
 
 A story is **lived in scenes** and **built to one moment of change**;
 the reader feels the change by contrast with where it began.

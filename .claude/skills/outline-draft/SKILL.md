@@ -52,6 +52,10 @@ A story is a sequence of **scenes** (concrete moments); each scene is a
 sequence of **beats**. A **beat is one unit of change, on one line.** If
 a line needs comma-spliced clauses to hold together, it is two beats.
 
+Beats are the skeleton, deliberately terse: capture the change, not the
+prose. `post-draft` renders them into story — scenes, the braid, flow.
+Keep the outline a skeleton so that craft has somewhere to go.
+
 The outline's whole job: read the beats top to bottom and feel the story
 move. A stall, leap, or doubling-back shows here — fixable for the price
 of a line.
