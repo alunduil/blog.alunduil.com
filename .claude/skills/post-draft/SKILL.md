@@ -63,6 +63,11 @@ Principles, each with the criterion that confirms it:
   not confession.
 - **Land on substance.** *Confirmed when:* the last line says something
   rather than restating the post or drumrolling toward it.
+- **Tense — a story may glance forward, sparingly.** "Document only what
+  exists at HEAD" is a docs rule, not a narrative one; a story can use the
+  future tense for a grounded, stated direction. *Confirmed when:* any
+  forward glance is a real plan you're on, used once or twice at most —
+  never idle speculation ("someday maybe").
 
 Draft and lock **one scene at a time, with the author.** Source each
 scene's concrete moment before staging it — provable facts where they
