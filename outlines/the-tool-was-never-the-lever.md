@@ -22,12 +22,21 @@ flow.)
 
 ## 2. The lift — *the work caught fire*
 
-1. Agentic coding changed how I work (last year).
-2. Building at a pace I hadn't hit in years — ideas and workflows piling
+1. January 2026: started building genshin.dungeon.studio from scratch,
+   pair-programming with an agent — the energy came back almost at once.
+   *(repo created 2026-01-26; link the public repo, the site isn't served)*
+2. The same total-absorption flow as university — a whole Saturday lost to
+   World of Warcraft flipping to a whole Sunday lost to programming, both
+   in flow.
+3. The fun came back too. *(Fowler, Fragments May 5 2026 — the return of
+   the fun)*
+4. Building at a pace I hadn't hit in years; ideas and workflows stacking
    up faster than I could use them.
-3. The fun came back. *(Fowler, Fragments May 5 2026 — agents let us
-   rediscover the "Great Lost Joys of software development")*
-4. Heatmap: 2026 caught fire.
+5. Heatmap: 2026 caught fire; building since (personal-repo burst
+   April–June).
+
+*(Tooling genealogy — Copilot → Claude → parallel agents — stays out;
+its own post, filed as #283.)*
 
 ## 3. The desire — *the moment of change*
 
