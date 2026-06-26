@@ -71,12 +71,14 @@ None of it came from a better tool. AstroPaper is just another static-site
 generator—widely used, widely forked, dozens of hands on it—and out of the
 box it fits no one in particular. What fit it to my hand was the scaffolding
 I built around it: a deploy that runs on every push, the DNS kept as code.
-That shaping is the real thing. It's what Fowler means by crafting your
-tools to [fit your metaphorical hand][reprogrammability]. But I'd done all this
-before. The Haskell blog had a Cloud Build pipeline, a Nix file, a Docker
-image—scaffolding I tended for years while the blog stayed silent. Shaping
-the tool was never the same as filling the page. The tool was never the
-lever. The drive was.
+That shaping is the work that makes a generic thing yours, what Fowler
+means by crafting your tools to [fit your metaphorical hand][reprogrammability].
+
+Yet I'd done it all before. The Haskell blog had its own Cloud Build
+pipeline, its own Nix file, its own Docker image—the same hand-shaping,
+tended for years while the page stayed empty. I built the machine twice,
+and the first time it published nothing. The tool was never the lever.
+Neither was the scaffolding. The drive was.
 
 There's a catch, and I see it. This post didn't come straight from me. It
 came through a machine I built to write it: an outline step, a draft step,
