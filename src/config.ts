@@ -2,7 +2,7 @@ export const SITE = {
   website: "https://blog.alunduil.com/",
   author: "Alex Brandt",
   profile: "https://github.com/alunduil",
-  desc: "Notes on production software engineering, reliability, observability, and feedback-loop systems.",
+  desc: "Working notes from a production software engineer on reliability, observability, and feedback-loop systems.",
   title: "alunduil",
   ogImage: "og.png",
   lightAndDarkMode: true,

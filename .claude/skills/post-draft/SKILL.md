@@ -178,6 +178,20 @@ future `pubDatetime` as both gate and placeholder; pick the *nearest*
 cadence-appropriate day, since `SITE.scheduledPostMargin` is ~15 minutes
 and the date is the real publish target.
 
+## 5. Instagram syndication check
+
+dlvr.it auto-syndicates each post to the text and link surfaces from the
+RSS feed (`docs/adr/0001-use-dlvrit-for-social-syndication.md`) — no
+action needed. Instagram is the hand-crafted exception. Once the post is
+settled, judge image-fit: does it carry genuine visual material (book
+covers, screenshots, diagrams, a visual-native topic like a game or book
+review), or is it text-heavy engineering prose?
+
+If image-prone, flag it — tell the author this is a blog post *and* a
+strong Instagram post, and to run `/syndicate-instagram <slug>` once it's
+live (the Instagram post links back, so it needs the published canonical
+URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
+
 ## When to invoke
 
 - `/post-draft <slug>` once `outline-draft` has produced an approved

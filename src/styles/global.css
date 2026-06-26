@@ -7,7 +7,7 @@
 html[data-theme="light"] {
   --background: #fdfdfd;
   --foreground: #282728;
-  --accent: #006cac;
+  --accent: #1e4fa1;
   --muted: #e6e6e6;
   --border: #ece9e9;
 }
@@ -15,9 +15,9 @@ html[data-theme="light"] {
 html[data-theme="dark"] {
   --background: #212737;
   --foreground: #eaedf3;
-  --accent: #ff6b01;
+  --accent: #d5232a;
   --muted: #343f60;
-  --border: #ab4b08;
+  --border: #8e171c;
 }
 
 @theme inline {

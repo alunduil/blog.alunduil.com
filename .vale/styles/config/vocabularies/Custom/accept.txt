@@ -36,6 +36,7 @@ Mastodon
 LinkedIn
 Threads
 POSSE
+Meta
 rclone
 borg
 restic
@@ -55,6 +56,7 @@ Xbox
 
 # Common abbreviations
 API
+APIs
 CLI
 URL
 DNS
@@ -86,6 +88,22 @@ CHANGELOG
 TODO
 WIP
 FIXME
+ADR
+ADRs
+MADR
+Nygard
+
+# Syndication tooling and protocols
+(?i)dlvr
+Echofeed
+atproto
+OAuth
+IndieWeb
+IFTTT
+WordPress
+Jetpack
+Automattic
+Publicize
 
 # Common writing terms
 frontmatter
@@ -103,6 +121,8 @@ agent
 # Technical terms not in the en_GB-ise dictionary (SCOWL size 60).
 # Add as Custom.Spelling surfaces them.
 observability
+integrations
+reachability
 triaging
 agentic
 linters

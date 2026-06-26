@@ -74,6 +74,18 @@ over invention, flags morphological near-duplicates. Invoke via
 Proposes first, then applies to the file only after the author
 confirms.
 
+## Syndicate-Instagram skill
+
+`.claude/skills/syndicate-instagram/` crafts an Instagram post from a
+published post — caption hook, image or carousel guidance, link-in-bio
+handling, hashtag set. Instagram is the hand-crafted exception: Bluesky,
+Threads, Facebook, and LinkedIn auto-syndicate through dlvr.it (ADR
+0001), but Instagram is image-first and link-hostile, so the uniform
+feed hook fits worst there. Generation is automated; posting stays
+manual (draft in chat, nothing committed). Invoke via
+`/syndicate-instagram [path|slug|url]` (defaults to the most recently
+published post). Covers issue #79.
+
 ## Idea issues
 
 `.github/workflows/labels.yml` auto-applies the `idea` label to any
