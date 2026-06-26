@@ -57,15 +57,15 @@ on. My machine's setup lives in [alunduil-chezmoi] now, with the rest of
 my hosts to follow. I'm improving [zfs-replicate], which I no longer run
 myself, but the NixOS community still packages. I'm standing up
 [alunduil-infrastructure] as the code behind my whole home network and
-personal services. None of this was new ground for me. After years of a
-near-empty calendar I was building again, well before I was
+personal services. I build like this whenever a passion takes hold. After
+years of a near-empty calendar I was at it again, well before I was
 writing.
 
 And every piece of it wants writing up. There are notes on living in git
 worktrees day to day, the homelab set down as a system instead of a pile
 of services, a reckoning of what the AI-coding bills actually come to, and
 a backlog of book and game reviews I keep meaning to clear. There are more
-posts queued now than I've published in fifteen years.
+posts queued now than I've published in two decades.
 
 None of it came from a better tool. AstroPaper is just another static-site
 generator—widely used, widely forked, dozens of hands on it—and out of the
