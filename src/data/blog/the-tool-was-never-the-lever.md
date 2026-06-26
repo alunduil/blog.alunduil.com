@@ -13,11 +13,11 @@ Haskell build from falling over, one in 2018 and one in 2020—and after
 that, nothing. It had been busy enough once, though busy with building
 more than writing: it ran on [Nikola], and then on [Hakyll], and gathered
 up a Cloud Build pipeline, a Nix file, and a theme change or two along the
-way. In all of twelve years, that machinery had carried just one new
+way. In all twelve years, that machinery had carried just one new
 post, [How I Read](/posts/how-i-read). So when I went through my GitHub,
 closing out the projects I no longer worked on, I came to this one and
 barely paused—it was cruft like the rest, and it went without ceremony,
-and I did not expect to open it again.
+and I didn't expect to open it again.
 
 In January I started building [genshin.dungeon.studio][genshin] from
 scratch, pair-programming with an agent, and the energy came back almost
@@ -68,7 +68,7 @@ There's a catch, and I see it. This post didn't come straight from me—it
 came through a machine I built to write it: an outline step, a draft step,
 a reading-level check, an agent at my shoulder. I sat down to write one
 post and built the pipeline first. Building it was a pleasure; writing the
-post it was meant to produce was the slower, harder thing—which is the
+post it existed to produce was the slower, harder thing—which is the
 whole trap. I love making systems for their own sake, and that love
 doesn't know where to stop: one improvement opens onto the next, and
 before long I'm down the rabbit hole, polishing the machine instead of

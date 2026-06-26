@@ -57,6 +57,7 @@ Xbox
 API
 CLI
 URL
+DNS
 GHC
 JSON
 YAML
@@ -94,6 +95,19 @@ LaTeX
 
 # Games
 Warcraft
+
+# Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
+# about AI coding agents).
+agent
+
+# Common words alex's profanity rules misflag in their innocent senses.
+# Accept the specific word so the rule still catches genuine profanity
+# and slurs — ignore the token, don't disable the rule.
+desire
+harder
+hole
+tinker
+trap
 
 # Technical terms not in the en_GB-ise dictionary (SCOWL size 60).
 # Add as Custom.Spelling surfaces them.
