@@ -62,21 +62,20 @@ to [fit your metaphorical hand][reprogrammability]. But I'd done all this
 before. The Haskell blog had a Cloud Build pipeline, a Nix file, a Docker
 image—scaffolding I tended for years while the blog stayed silent. Shaping
 the tool was never the same as filling the page. The tool was never the
-lever. The desire was.
+lever. The drive was.
 
 There's a catch, and I see it. This post didn't come straight from me—it
 came through a machine I built to write it: an outline step, a draft step,
 a reading-level check, an agent at my shoulder. I sat down to write one
 post and built the pipeline first. Building it was a pleasure; writing the
-post it existed to produce was the slower, harder thing—which is the
-whole trap. I love making systems for their own sake, and that love
-doesn't know where to stop: one improvement opens onto the next, and
-before long I'm down the rabbit hole, polishing the machine instead of
-feeding it.
+post it existed to produce was the slow, grinding work. And the pleasure
+is the problem: I love making systems for their own sake, and that love
+doesn't know where to stop—one improvement opens onto the next, and
+before long I'm polishing the machine instead of feeding it.
 
-What's different now is that I feel the pull and turn back. The machine
+What's different now is that I see it happening and turn back. The machine
 points at the work getting out, not at being a finer machine. The urge to
-tinker hasn't gone quiet; I just keep aiming it at the page. The post is
+fiddle hasn't gone quiet; I just keep aiming it at the page. The post is
 out, and the queue behind it is real.
 
 [Nikola]: https://getnikola.com/
