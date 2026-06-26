@@ -60,8 +60,10 @@ its own post, filed as #283.)*
 Doing:
 
 1. The same change has me building everywhere again.
-2. A stack of small Haskell libraries; the chezmoi fleet; tooling to run
-   agents in parallel (`claustre`); composable backup services.
+2. Small Haskell libraries (a shared shape, in progress); alunduil-chezmoi
+   (primary machine now, more hosts to come); zfs-replicate (improving it
+   for the NixOS community that still packages it); alunduil-infrastructure
+   (IaC for the whole home network and personal services).
 3. The doing came back first.
 
 Sharing:
@@ -71,8 +73,8 @@ Sharing:
    (#232), book/game reviews (#250 / #243 / #233).
 6. More queued now than I've published in fifteen years.
 
-*(Aside, not told here: the parallel-agent tooling glances at genshin →
-Copilot → Claude → parallel working — a separate post, #232 / #231 / #96.)*
+*(Aside, not told here: the parallel-agent tooling and the Copilot →
+Claude → parallel-working genealogy — its own post, #283.)*
 
 ## 5. The tool was never the lever — *the point (the turn)*
 

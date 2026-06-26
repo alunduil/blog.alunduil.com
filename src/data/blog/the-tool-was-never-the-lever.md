@@ -51,15 +51,21 @@ set the work down and let people find it. So in May I reopened the
 repository, tore out the Haskell stack, and stood up [AstroPaper] in
 [one pull request][migration].
 
-The same change has me building everywhere again. A stack of small
-Haskell libraries. A fleet of machines run from one set of dotfiles.
-Tooling to run several coding agents at once. A set of composable backup
-services. After years of a near-empty calendar, the doing came back first.
+The same energy spread past the blog into everything else. I'm writing
+small Haskell libraries again, working out a shared shape to build them
+on. My machine's setup lives in [alunduil-chezmoi] now, with the rest of
+my hosts to follow. I'm improving [zfs-replicate], which I no longer run
+myself but the NixOS community still packages. I'm standing up
+[alunduil-infrastructure] as the code behind my whole home network and
+personal services. None of this was new ground for me. After years of a
+near-empty calendar I was building again, well before I was
+writing.
 
-Each piece wants writing up, too—a whole queue, not just this post. Notes
-on living in git worktrees. Documenting the homelab as a system. What the
-AI-coding bills come to. A backlog of book and game reviews. There are
-more posts queued now than I have published in fifteen years.
+And every piece of it wants writing up. There are notes on living in git
+worktrees day to day, the homelab set down as a system instead of a pile
+of services, a reckoning of what the AI-coding bills actually come to, and
+a backlog of book and game reviews I keep meaning to clear. There are more
+posts queued now than I've published in fifteen years.
 
 None of it came from a better tool. AstroPaper is just another static-site
 generator—widely used, widely forked, dozens of hands on it—and out of the
@@ -93,3 +99,6 @@ out, and the queue behind it is real.
 [reprogrammability]: https://martinfowler.com/bliki/InternalReprogrammability.html
 [AstroPaper]: https://github.com/satnaing/astro-paper
 [migration]: https://github.com/alunduil/blog.alunduil.com/pull/49
+[alunduil-chezmoi]: https://github.com/alunduil/alunduil-chezmoi
+[zfs-replicate]: https://github.com/alunduil/zfs-replicate
+[alunduil-infrastructure]: https://github.com/alunduil/alunduil-infrastructure
