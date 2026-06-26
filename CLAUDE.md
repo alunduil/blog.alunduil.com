@@ -3,6 +3,16 @@
 Repo-local guide for Claude Code on this personal blog (AstroPaper +
 GitHub Pages deploy on push to `main`).
 
+## Portability
+
+This repo is used from Claude Code on the web, where host-local config
+isn't present: the global `~/.claude/CLAUDE.md` and the per-project memory
+directory don't travel — only the checkout does. Keep durable conventions
+(voice, process, project rules) in the repo: `.claude/skills/`, this file,
+or `docs/`. Skills must stand alone — state what they rely on inline, and
+treat host memory as local reinforcement, never the sole home for anything
+the work needs.
+
 ## Posting convention
 
 New posts live under `src/data/blog/`; archival republishes under

@@ -10,6 +10,13 @@ Naing
 
 # Tooling and platforms
 GitHub
+Hakyll
+Dockerfile
+pnpm
+toolchain
+direnv
+Nikola
+Bacula
 TypeScript
 JavaScript
 DevContainer
@@ -52,6 +59,8 @@ API
 APIs
 CLI
 URL
+DNS
+GHC
 JSON
 YAML
 TOML
@@ -102,12 +111,25 @@ learnings
 dev
 LaTeX
 
+# Games
+Warcraft
+
+# Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
+# about AI coding agents).
+agent
+
 # Technical terms not in the en_GB-ise dictionary (SCOWL size 60).
 # Add as Custom.Spelling surfaces them.
 observability
 integrations
 reachability
 triaging
+agentic
+linters
+worktrees
+homelab
+dotfiles
+composable
 neuroscientist
 wishlist
 cron
