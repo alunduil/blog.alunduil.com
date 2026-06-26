@@ -16,7 +16,9 @@ reason zero have shipped yet.
 Sequel to [I Built the Machine Twice](/posts/i-built-the-machine-twice)
 (pub 2026-06-30): that post = why I came back and built the machine; this =
 the part of the machine that finds what to write. The coauthoring premise
-is established there; pick it up, don't re-argue it.
+is established there; pick it up, don't re-argue it. Coauthoring stays a
+plain, unhidden *nod* — threaded through scenes 1 and 4, never the subject
+(coauthoring-as-focus is #73/#67). The forest/discovery reframe is the story.
 
 The honesty line: discovery is *proven* (the idea backlog keeps filling),
 the publishing payoff is *unproven* (zero posts shipped yet — the craft
@@ -60,6 +62,5 @@ discovery is the filling backlog, full stop.
 
 - **Digest attribution:** 51 idea issues carry the `idea` label, but not every one is necessarily digest-sourced (some may be hand-filed). Confirm before implying the digest produced all 51 — safest to frame as "the idea backlog" / "kernels filed" rather than "the digest filed 51."
 - **Title/slug:** working "The Bottleneck Isn't the Blank Page" — finalised after the prose exists (post-draft derives title from the body), not now.
-- **Coauthoring candour:** the post says outright that Claude coauthors/ghost-writes the prose. Confirm that's the register you want stated plainly (it's the spine of the whole reframe), vs. left implicit.
 - **Scope guard:** keep on the discovery-then-publishing-bottleneck angle; don't drift into architecture (#67) or the Claude-native-flow umbrella (#73).
 - **Sources concrete vs abstract:** scene 3 names sources explicitly; confirm that's the right altitude vs. keeping "exhaust" abstract until the close.
