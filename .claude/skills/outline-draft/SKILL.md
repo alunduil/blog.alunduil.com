@@ -97,10 +97,15 @@ failure signatures:
    hide") instead of naming something concrete → ground it: say *which*
    machine, *what* output, *what* it actually does.
 
+The title in the header is a **working title** — a handle for the file
+and the angle, not a commitment. The real title is chosen in `post-draft`
+once the prose exists and the body settles what it argues; don't burn
+approval cycles refining it here.
+
 ## Shape
 
 ```markdown
-# <Title> — outline
+# <Working title> — outline
 
 <Logline: the one moment of change, where the story opens (its
 opposite), the surrounding years as context, open questions to confirm.>
