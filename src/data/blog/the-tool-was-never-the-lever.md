@@ -8,22 +8,22 @@ tags:
 ---
 
 The blog had been quiet a long time before I archived it. Its last sign
-of life was a pair of dutiful version bumps—small commits to keep the
-Haskell build from falling over, one in 2018 and one in 2020—and after
-that, nothing. It had been busy enough once, though busy with building
-more than writing: it ran on [Nikola], and then on [Hakyll], and gathered
-up a Cloud Build pipeline, a Nix file, and a theme change or two along the
-way. In all twelve years, that machinery had carried just one new
-post, [How I Read](/posts/how-i-read). So when I went through my GitHub,
-closing out the projects I no longer worked on, I came to this one and
-barely paused—it was cruft like the rest, and it went without ceremony,
-and I didn't expect to open it again.
+of life was a pair of dutiful version bumps to keep the Haskell build from
+falling over, one in 2018 and one in 2020. After that, nothing. It had
+been busy enough once, though busy with building more than writing. It ran
+on [Nikola], then [Hakyll], gathering up a Cloud Build pipeline, a Nix
+file, and a couple of theme changes along the way. In all twelve years,
+that machinery had carried just one new post, [How I
+Read](/posts/how-i-read). So when I went through my GitHub, closing out
+projects I no longer worked on, I came to this one and barely paused. It
+was cruft like the rest, and it went without ceremony. I didn't expect to
+open it again.
 
 In January I started building [genshin.dungeon.studio][genshin] from
 scratch, pair-programming with an agent, and the energy came back almost
-at once—the kind of total absorption I hadn't felt since university, when
-a whole Saturday spent on World of Warcraft flipped into a whole Sunday
-spent on programming, both days deep in flow. And it was fun again, the
+at once. It was the kind of total absorption I hadn't felt since
+university, when a whole Saturday on World of Warcraft flipped into a whole
+Sunday on programming, both days deep in flow. And it was fun again, the
 kind Martin Fowler calls [a great lost joy of software development][fowler].
 I was building at a pace I hadn't touched in years, ideas and workflows
 stacking up faster than I could use them.
@@ -55,7 +55,7 @@ The same energy spread past the blog into everything else. I'm writing
 small Haskell libraries again, working out a shared shape to build them
 on. My machine's setup lives in [alunduil-chezmoi] now, with the rest of
 my hosts to follow. I'm improving [zfs-replicate], which I no longer run
-myself but the NixOS community still packages. I'm standing up
+myself, but the NixOS community still packages. I'm standing up
 [alunduil-infrastructure] as the code behind my whole home network and
 personal services. None of this was new ground for me. After years of a
 near-empty calendar I was building again, well before I was
@@ -71,20 +71,20 @@ None of it came from a better tool. AstroPaper is just another static-site
 generator—widely used, widely forked, dozens of hands on it—and out of the
 box it fits no one in particular. What fit it to my hand was the scaffolding
 I built around it: a deploy that runs on every push, the DNS kept as code.
-That shaping is the real thing—it's what Fowler means by crafting your tools
-to [fit your metaphorical hand][reprogrammability]. But I'd done all this
+That shaping is the real thing. It's what Fowler means by crafting your
+tools to [fit your metaphorical hand][reprogrammability]. But I'd done all this
 before. The Haskell blog had a Cloud Build pipeline, a Nix file, a Docker
 image—scaffolding I tended for years while the blog stayed silent. Shaping
 the tool was never the same as filling the page. The tool was never the
 lever. The drive was.
 
-There's a catch, and I see it. This post didn't come straight from me—it
+There's a catch, and I see it. This post didn't come straight from me. It
 came through a machine I built to write it: an outline step, a draft step,
 a reading-level check, an agent at my shoulder. I sat down to write one
 post and built the pipeline first. Building it was a pleasure; writing the
 post it existed to produce was the slow, grinding work. And the pleasure
 is the problem: I love making systems for their own sake, and that love
-doesn't know where to stop—one improvement opens onto the next, and
+doesn't know where to stop. One improvement opens onto the next, and
 before long I'm polishing the machine instead of feeding it.
 
 What's different now is that I see it happening and turn back. The machine
