@@ -19,10 +19,14 @@ closing out the projects I no longer worked on, I came to this one and
 barely paused—it was cruft like the rest, and it went without ceremony,
 and I did not expect to open it again.
 
-The work changed. Last year I moved most of my programming to agentic
-tools, and the fun came back—Martin Fowler has made [the same point][fowler].
-I was building at a pace I hadn't hit in years: ideas and workflows piling
-up faster than I could use them.
+In January I started building [genshin.dungeon.studio][genshin] from
+scratch, pair-programming with an agent, and the energy came back almost
+at once—the kind of total absorption I hadn't felt since university, when
+a whole Saturday spent on World of Warcraft flipped into a whole Sunday
+spent on programming, both days deep in flow. And it was fun again, the
+kind Martin Fowler calls [a great lost joy of software development][fowler].
+I was building at a pace I hadn't touched in years, ideas and workflows
+stacking up faster than I could use them.
 
 ![A grid of weekly GitHub contributions from 2010 to 2026: light but steady through the 2010s, then a dark streak across spring 2026, far darker than any week before it.](/assets/the-tool-was-never-the-lever-contributions.svg)
 
@@ -77,6 +81,7 @@ out, and the queue behind it is real.
 
 [Nikola]: https://getnikola.com/
 [Hakyll]: https://jaspervdj.be/hakyll/
+[genshin]: https://github.com/dungeon-studio/genshin.dungeon.studio
 [fowler]: https://martinfowler.com/fragments/2026-05-05.html
 [reprogrammability]: https://martinfowler.com/bliki/InternalReprogrammability.html
 [AstroPaper]: https://github.com/satnaing/astro-paper
