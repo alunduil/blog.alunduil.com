@@ -30,7 +30,7 @@ YEAR_START = 2010
 YEAR_END = 2026
 DATA_THROUGH = datetime.date(2026, 6, 30)  # weeks after this render blank
 GAMMA = 0.45  # square-root-ish colour scale: decade stays visible vs 2026
-OUTPUT = "public/assets/the-tool-was-never-the-lever-contributions.svg"
+OUTPUT = "public/assets/i-built-the-machine-twice-contributions.svg"
 
 QUERY = (
     "query($login:String!,$from:DateTime!,$to:DateTime!){"
