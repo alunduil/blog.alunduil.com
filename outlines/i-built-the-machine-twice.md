@@ -1,6 +1,6 @@
-# The Tool Was Never the Lever — outline
+# I Built the Machine Twice — outline
 
-Revival story. Moment of change: agentic coding left me with a desire to share.
+Revival story. Moment of change: agentic coding left me with a drive to share.
 Opens at its opposite — dead and archived. The dead years are context,
 not the subject.
 
@@ -76,7 +76,7 @@ Sharing:
 *(Aside, not told here: the parallel-agent tooling and the Copilot →
 Claude → parallel-working genealogy — its own post, #283.)*
 
-## 5. The tool was never the lever — *the point (the turn)*
+## 5. I built the machine twice — *the point (the turn)*
 
 1. None of it came from a better tool.
 2. AstroPaper is just another generator — widely used and contributed,
@@ -84,10 +84,10 @@ Claude → parallel-working genealogy — its own post, #283.)*
 3. The fit was the scaffolding I built around it — deploy on every push,
    DNS as code. *That's* internal reprogrammability. *(Fowler, "Internal
    Reprogrammability" — craft your tools to fit your metaphorical hand)*
-4. But I'd done it before — the Haskell blog's Cloud Build, Nix, and
-   Docker scaffolding sat silent for years. Shaping the tool was never the
-   same as filling the page.
-5. The tool was never the lever. The desire was.
+4. But I'd done it all before — the Haskell blog's Cloud Build, Nix, and
+   Docker scaffolding, tended for years. I built the machine twice; the
+   first time it published nothing.
+5. The tool never filled the page, nor the scaffolding. The drive did.
 
 ## 6. The catch — *the clear-eyed landing*
 
