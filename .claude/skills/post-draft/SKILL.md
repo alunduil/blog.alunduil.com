@@ -96,7 +96,13 @@ the house voice for story posts:
 - **Latch first.** Open each scene on something concrete the reader can
   hold — never on context-free abstraction.
 - **Flow, don't snap.** Carry weight in cadence and image, not in clipped
-  fragments stacked for drama; a running "and … and" suits it.
+  fragments stacked for drama.
+- **Punctuation marks structure, not pauses.** Let the period carry the
+  load. A comma only for a grammatical job (clause join, serial list,
+  trailing absolute), never a mid-clause interrupter for emphasis.
+  Colons, semicolons, and em-dashes earn their place only by doing real
+  structural work, not as dressing. A plain serial list (a, b, and c)
+  beats polysyndeton (a and b and c).
 - **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
   simile usually wants toning down, not up.
 - **Watch personification.** It creeps in ("a busy place", "a last sign

@@ -34,14 +34,22 @@ stacking up faster than I could use them.
 square-root scale, so the steady years stay visible next to 2026's
 spike.*
 
-And then I wanted to show the work to someone. Not to prove
-anything—just to find out whether the things I build are useful to anyone
-besides me. The blog was the easiest way to write the work down and put
-it where people could find it. Social media never clicked for me, and
-I've never been sure how to start—so I'm starting here instead.
+Around then I was building a harness for my whole setup, the agents,
+dotfiles, and skills wired into one loop that fed itself. I'd built it for
+reuse on purpose. Each piece was written once and meant to drop unchanged
+into the next thing. What I hadn't expected was how much it paid off. The
+reused parts compounded, each carrying into the next. Seeing that is what
+turned me toward sharing. Parts that did this much for me weren't only
+mine to keep. Someone else could lift one out, or someone had already
+built a better version I'd never see unless I shared mine.
 
-In May 2026 I reopened the repository, tore out the Haskell stack, and
-stood up [AstroPaper] in [one pull request][migration].
+I wasn't trying to build an audience, only to reach the few people who'd
+find a useful part and the few who'd show me a better one. The usual road
+there is social media, which has never taken for me. I've never been sure
+how to start or how to keep it up. A blog asked less. It was somewhere to
+set the work down and let people find it. So in May I reopened the
+repository, tore out the Haskell stack, and stood up [AstroPaper] in
+[one pull request][migration].
 
 The same change has me building everywhere again. A stack of small
 Haskell libraries. A fleet of machines run from one set of dotfiles.

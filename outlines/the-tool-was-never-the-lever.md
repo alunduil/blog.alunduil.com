@@ -38,17 +38,22 @@ flow.)
 *(Tooling genealogy — Copilot → Claude → parallel agents — stays out;
 its own post, filed as #283.)*
 
-## 3. The desire — *the moment of change*
+## 3. The drive — *the moment of change*
 
-1. Then the desire — I wanted to show the work to someone.
-2. Not to prove anything; to find out whether it's useful to anyone
-   besides me.
-3. Reach, not engagement — the blog is the easiest way to put the work
-   where people can find it.
-4. Social never clicked, so I'm starting here.
+1. Built an AI harness for the whole setup, for reuse on purpose
+   (experienced, intentional) — skills, reusable parts, a loop that fed
+   itself.
+2. The surprise was the impact: how the reuse compounded, each part
+   carrying into the next. Seeing that payoff is what turned me toward
+   sharing — these weren't only mine to keep. *(bidirectional — others
+   lift the useful bits; I learn from better versions)*
+3. Not to prove anything; to find out whether what I make is any use to
+   anyone but me.
+4. Reach, not engagement — the blog is the easiest way to set the work
+   where people find it; social never clicked, so I'm starting here.
 5. So I reopened the blog — May 2026, AstroPaper, one
    [PR #49](https://github.com/alunduil/blog.alunduil.com/pull/49).
-   *(the consequence of the desire, not the cause)*
+   *(the consequence of the drive, not the cause)*
 
 ## 4. Not just the blog — *the overflow (doing → sharing)*
 
