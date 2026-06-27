@@ -8,7 +8,7 @@ tags:
   - methodology
 ---
 
-The hard part of keeping a blog is supposed to be the writing. You picture
+The hard part of keeping a blog looks like the writing. You picture
 the blank page, the cursor blinking in an empty file late on a Sunday, the
 long hunt for something worth saying. That's the wall you brace for, the one
 people blame when a blog goes quiet.
@@ -36,14 +36,14 @@ nothing. I only review what I lived but couldn't hold.
 
 It isn't only me. Ashley Willis [wrote
 about](https://github.blog/developer-skills/github/i-automated-my-job-and-it-made-me-a-better-leader/)
-wiring up the same habit: an evening "Daily Wins Recap" that gathers what she
-got done each day, so the small wins don't slip past unnoticed.
+the same habit: an evening "Daily Wins Recap" that gathers each day's work,
+so the wins don't slip past unnoticed.
 
 The blog was the same shape of problem, pointed at a different end. If
 looking back could find my impact at work, it could find my stories here.
 
 So I built a tool to do it for me. The raw material was already there.
-Everything I do leaves a trace: a commit lands in a repository, a pull
+Everything I do leaves a trace. A commit lands in a repository, a pull
 request collects a review, a line gets highlighted in whatever I'm reading, a
 book gets marked finished. The trail piles up even when I forget it. I only
 needed a way to gather it back up.
@@ -90,7 +90,7 @@ become posts.
 That's where the real wall turned out to be. Not the blank page, and not the
 finding. The writing is the slow part, and the real bottleneck. The honest
 scoreboard shows it. Of those fifty-one kernels, the number that have grown
-into published posts is, so far, zero. The one you're reading is nearly the
+into published posts is, so far, zero. The one you're reading is one of the
 first.
 
 None of that makes me want to stop running it. The digest costs me next to
