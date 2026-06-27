@@ -41,6 +41,12 @@ Picking up an idea issue (`gh issue view #N`): use `## Spark` + `## Why
 it could be interesting` as the kernel; open questions become discovery
 anchors.
 
+The moment of change and the feeling around it are claims too, not just
+the dates. State the inferred climax and any inferred motivation back to
+the author as assumptions to confirm or kill *before* building the arc on
+them — a wrong peak or a wrong emotional thread costs scenes to unwind,
+where a wrong fact costs a parenthetical.
+
 Substance lands as the outline file's **header**: the logline (the one
 moment of change), where the story opens (its opposite), and the open
 questions / anchors still to confirm. That header is phase 1's output
@@ -79,7 +85,7 @@ are the author's to supply — anchor the provable, ask for the rest.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the eight
+Before approval, read the beats top to bottom and check the nine
 failure signatures:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
@@ -90,17 +96,28 @@ failure signatures:
 5. **Flat arc** — the first scene isn't the opposite of the last, so
    there's no contrast to feel.
 6. **Unanchored claim** — a factual beat with no parenthetical and not
-   marked TBD.
+   marked TBD. Includes false precision: a beat asserting a count or
+   certainty ("the one story") the subject doesn't bear → state the real
+   range ("zero or more").
 7. **Topic-naming** — a scene named like a section → drifting to essay.
 8. **Amorphous phrase** — a beat that gestures abstractly ("the thing,"
    "points outward," "opposite purpose," "push the work out," "places to
    hide") instead of naming something concrete → ground it: say *which*
    machine, *what* output, *what* it actually does.
+9. **Double climax** — the arc builds to two different moments of change,
+   so the peak is split and the title points at only one. Demote one to
+   setup or to the landing. Test (mirrors `post-draft`): state the single
+   moment in one sentence, and only one.
+
+The title in the header is a **working title** — a handle for the file
+and the angle, not a commitment. The real title is chosen in `post-draft`
+once the prose exists and the body settles what it argues; don't burn
+approval cycles refining it here.
 
 ## Shape
 
 ```markdown
-# <Title> — outline
+# <Working title> — outline
 
 <Logline: the one moment of change, where the story opens (its
 opposite), the surrounding years as context, open questions to confirm.>
