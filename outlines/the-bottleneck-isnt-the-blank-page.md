@@ -51,16 +51,15 @@ discovery is the filling backlog, full stop.
 
 ## 4. The bet — *the landing*
 
-1. Discovery is the solved part: a run reliably turns the week into post-shaped kernels — the backlog keeps filling *(51 idea issues filed / 46 open as of 2026-06)*
-2. Honestly, only ~60% are arcs worth recording, and they filter further from there *(author: ~60%; still too early to guess the fill rate)*
+1. Discovery is the solved part: I run it every Saturday, and the backlog fills in weekly waves *(51 idea issues / 46 open across 8 weeks; ~90% filed Sat–Mon — the weekend tail of a Saturday run — as of 2026-06)*
+2. Some weeks a run surfaces nothing worth keeping; usually it's more — a handful, ~60% of them arcs worth recording, filtering further from there *(author: could be zero, usually more; ~60%; too early to guess the post fill rate)*
 3. What the kernels look like — a 49-PR week braided with reading Flow; a short-game review off the media log *(#231, #250 — concrete output)*
 4. The unsolved part is publishing: review, craft, coauthoring is the real bottleneck — and the honest reason posts actually shipped is still zero, this nearly the first *(Machine Twice #260, pub 2026-06-30)*
-5. Cheap to keep the bet open — digest is fire-and-forget, value almost immediately, the tuning since is minor friction *(author)*
+5. Cheap to keep the bet open — the weekly run is fire-and-forget, value almost immediately, the tuning since is minor friction *(author)*
 6. And the bet is only as good as your exhaust — my work leaves clean logs; yours might be Todoist, a calendar, whatever trail you already leave *(author)*
 
 ## Open
 
-- **Digest attribution:** 51 idea issues carry the `idea` label, but not every one is necessarily digest-sourced (some may be hand-filed). Confirm before implying the digest produced all 51 — safest to frame as "the idea backlog" / "kernels filed" rather than "the digest filed 51."
 - **Title/slug:** working "The Bottleneck Isn't the Blank Page" — finalised after the prose exists (post-draft derives title from the body), not now.
 - **Scope guard:** keep on the discovery-then-publishing-bottleneck angle; don't drift into architecture (#67) or the Claude-native-flow umbrella (#73).
 - **Sources concrete vs abstract:** scene 3 names sources explicitly; confirm that's the right altitude vs. keeping "exhaust" abstract until the close.
