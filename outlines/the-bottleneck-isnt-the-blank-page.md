@@ -47,8 +47,8 @@ discovery is the filling backlog, full stop.
 1. The week is exhaust — commits, reviews, highlights, a finished book — produced whether or not I remember it
 2. Build the digest: fan out across the sources for one window and summarise the week *(GitHub, Readwise, Reader, Notion Media Log; link "the digest" → github.com/alunduil/blog.alunduil.com/tree/main/.claude/skills/digest)*
 3. Throw out the noise that isn't signal — squash-merge dupes, agent-branch churn *(collect.sh heuristics)*
-4. Cluster the forest into a handful of themes — each a story-shaped leaf made visible *(4–8 themes; SKILL.md §3)*
-5. Watch one Saturday land it: this week's exhaust → these named themes *(TBD — anchor to the live run in progress; documentary, watching it happen, NOT a stage-by-stage walkthrough)*
+4. Watch one Saturday: a ~24-PR, ~60-issue week across 13 repos — the forest, in numbers *(run of 2026-06-27)*
+5. It comes back as six named, story-shaped themes — an LLM-to-rules ratchet, the good death of a deprecated library, an Earthsea review — the leaves made visible *(4–8 themes per SKILL.md §3; four filed as kernels that morning — #287, #288, #290)*
 6. It feeds the pipeline, doesn't replace it — the kernels still go to review, craft, coauthoring *(digest builds publications, not finished posts)*
 
 ## 4. The bet — *the landing*
@@ -62,7 +62,7 @@ discovery is the filling backlog, full stop.
 
 ## Open
 
-- **Live-run grounding (scene 3, beat 5):** awaiting the output of the Saturday run in progress — fold in one or two real named themes so the turn is watched, not told. Keep it a scene, not a pipeline walkthrough.
+- **Featured themes (scene 3, beat 5):** the 2026-06-27 run surfaced six themes; I featured three for range (ratchet #287, good-death-of-a-library #288, Earthsea review #290). Swap freely — agent-readiness #289, the collection-json revival (#98 comment), or zellij-claude-pair (#227 comment) are alternates. Don't list all six; that tips into a feature tour.
 - **Title/slug:** working "The Bottleneck Isn't the Blank Page" — finalised after the prose exists (post-draft derives title from the body), not now.
 - **Scope guard:** keep on the discovery-then-publishing-bottleneck angle; don't drift into architecture (#67) or the Claude-native-flow umbrella (#73).
 - **Sources concrete vs abstract:** scene 3 names sources explicitly; confirm that's the right altitude vs. keeping "exhaust" abstract until the close.
