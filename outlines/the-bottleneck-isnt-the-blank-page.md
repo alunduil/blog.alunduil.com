@@ -6,7 +6,8 @@ Claude was always the plan. Real title settled in post-draft.
 
 Logline: the moment the bottleneck is relocated — the hard part of the
 blog was never the writing (that's coauthored with Claude); it's that the
-week is a forest I've forgotten by Friday, and the story is one leaf in it.
+week is a forest I've forgotten by Friday, and the stories worth telling are
+leaves I can't pick out of the blur.
 Opens at its opposite — the universal assumption that a blog stalls on the
 blank page and the discipline to fill it. Builds to the bet: digest solves
 *discovery* (the backlog fills), but *publishing* each kernel — review,
@@ -32,7 +33,7 @@ discovery is the filling backlog, full stop.
 2. I never planned to fill it by hand — coauthoring with Claude was the plan from the first *(premise carried from /posts/i-built-the-machine-twice)*
 3. So the page was never my problem; mine is the opposite of empty
 4. The week is a forest I've forgotten by Friday — a hundred small things that add up to something chunky, invisible one at a time *(author: I forget the week; small things sum)*
-5. Finding the one story-shaped leaf in that forest is the actual hard part *(forest/leaf)*
+5. The hard part isn't writing them up — it's seeing which ones were worth telling in the first place *(synthesis, not scarcity; zero-or-more, no count)*
 
 ## 2. The lookback I already run — *the lift*
 
