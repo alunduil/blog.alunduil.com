@@ -35,7 +35,7 @@
     "@types/lodash.kebabcase": "4.1.9",
     "@typescript-eslint/parser": "8.62.0",
     "eslint": "10.5.0",
-    "eslint-plugin-astro": "2.0.0",
+    "eslint-plugin-astro": "2.1.0",
     "globals": "17.6.0",
     "pagefind": "1.5.2",
     "prettier": "3.8.4",
