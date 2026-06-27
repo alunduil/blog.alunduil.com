@@ -114,6 +114,9 @@ LaTeX
 # Games
 Warcraft
 
+# Books and fiction
+Earthsea
+
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
 agent
