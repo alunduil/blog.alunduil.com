@@ -45,7 +45,7 @@ discovery is the filling backlog, full stop.
 ## 3. Point it at the blog — *the turn*
 
 1. The week is exhaust — commits, reviews, highlights, a finished book — produced whether or not I remember it
-2. Build the digest: fan out across the sources for one window and summarise the week *(GitHub, Readwise, Reader, Notion Media Log; .claude/skills/digest)*
+2. Build the digest: fan out across the sources for one window and summarise the week *(GitHub, Readwise, Reader, Notion Media Log; link "the digest" → github.com/alunduil/blog.alunduil.com/tree/main/.claude/skills/digest)*
 3. Throw out the noise that isn't signal — squash-merge dupes, agent-branch churn *(collect.sh heuristics)*
 4. Cluster the forest into a handful of themes — each a story-shaped leaf made visible *(4–8 themes; SKILL.md §3)*
 5. It feeds the pipeline, doesn't replace it — the kernels still go to review, craft, coauthoring *(digest builds publications, not finished posts)*
