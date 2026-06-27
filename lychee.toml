@@ -18,4 +18,5 @@ exclude_path = [
   "(^|/)src/data/blog/how-i-read-eight-years-on\\.md$",
   "(^|/)src/data/blog/how-i-back-up\\.md$",
   "(^|/)src/data/blog/i-built-the-machine-twice\\.md$",
+  "(^|/)src/data/blog/the-bottleneck-isnt-the-blank-page\\.md$",
 ]
