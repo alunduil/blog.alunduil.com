@@ -48,19 +48,21 @@ discovery is the filling backlog, full stop.
 2. Build the digest: fan out across the sources for one window and summarise the week *(GitHub, Readwise, Reader, Notion Media Log; link "the digest" → github.com/alunduil/blog.alunduil.com/tree/main/.claude/skills/digest)*
 3. Throw out the noise that isn't signal — squash-merge dupes, agent-branch churn *(collect.sh heuristics)*
 4. Cluster the forest into a handful of themes — each a story-shaped leaf made visible *(4–8 themes; SKILL.md §3)*
-5. It feeds the pipeline, doesn't replace it — the kernels still go to review, craft, coauthoring *(digest builds publications, not finished posts)*
+5. Watch one Saturday land it: this week's exhaust → these named themes *(TBD — anchor to the live run in progress; documentary, watching it happen, NOT a stage-by-stage walkthrough)*
+6. It feeds the pipeline, doesn't replace it — the kernels still go to review, craft, coauthoring *(digest builds publications, not finished posts)*
 
 ## 4. The bet — *the landing*
 
 1. Discovery is the solved part: I run it every Saturday, and the backlog fills in weekly waves *(51 idea issues / 46 open across 8 weeks; ~90% filed Sat–Mon — the weekend tail of a Saturday run — as of 2026-06)*
 2. Some weeks a run surfaces nothing worth keeping; usually it's more — a handful, ~60% of them arcs worth recording, filtering further from there *(author: could be zero, usually more; ~60%; too early to guess the post fill rate)*
-3. What the kernels look like — a 49-PR week braided with reading Flow; a short-game review off the media log *(#231, #250 — concrete output)*
+3. What the kernels look like — a 49-PR week braided with reading Flow; a short-game review off the media log *(link #231, #250 → their idea issues; clickable receipts)*
 4. The unsolved part is publishing: review, craft, coauthoring is the real bottleneck — and the honest reason posts actually shipped is still zero, this nearly the first *(Machine Twice #260, pub 2026-06-30)*
 5. Cheap to keep the bet open — the weekly run is fire-and-forget, value almost immediately, the tuning since is minor friction *(author)*
 6. And the bet is only as good as your exhaust — my work leaves clean logs; yours might be Todoist, a calendar, whatever trail you already leave *(author)*
 
 ## Open
 
+- **Live-run grounding (scene 3, beat 5):** awaiting the output of the Saturday run in progress — fold in one or two real named themes so the turn is watched, not told. Keep it a scene, not a pipeline walkthrough.
 - **Title/slug:** working "The Bottleneck Isn't the Blank Page" — finalised after the prose exists (post-draft derives title from the body), not now.
 - **Scope guard:** keep on the discovery-then-publishing-bottleneck angle; don't drift into architecture (#67) or the Claude-native-flow umbrella (#73).
 - **Sources concrete vs abstract:** scene 3 names sources explicitly; confirm that's the right altitude vs. keeping "exhaust" abstract until the close.
