@@ -4,15 +4,16 @@
 problem because writing was handed off from the start — coauthoring with
 Claude was always the plan. Real title settled in post-draft.
 
-Logline: the moment the bottleneck is relocated — the hard part of the
-blog was never the writing (that's coauthored with Claude); it's that the
-week is a forest I've forgotten by Friday, and the stories worth telling are
-leaves I can't pick out of the blur.
-Opens at its opposite — the universal assumption that a blog stalls on the
-blank page and the discipline to fill it. Builds to the bet: digest solves
-*discovery* (the backlog fills), but *publishing* each kernel — review,
-craft, coauthoring — is the remaining bottleneck, which is the honest
-reason zero have shipped yet.
+Logline — the one moment of change: the bottleneck was never the writing
+(that's coauthored with Claude) but *seeing* — the week is a forest I've
+forgotten by Friday, and the stories worth telling are leaves I can't pick
+out of the blur. Opens at its opposite — the universal assumption that a
+blog stalls on the blank page and the discipline to fill it.
+
+The publishing bet (discovery is solved, the backlog fills; publishing each
+kernel through review/craft/coauthoring is the slow part — the honest reason
+zero have shipped) is the *landing*, not a second climax. Hold scene 4 as
+resolution; the single peak is the *seeing* reframe.
 
 Sequel to [I Built the Machine Twice](/posts/i-built-the-machine-twice)
 (pub 2026-06-30): that post = why I came back and built the machine; this =
@@ -39,7 +40,7 @@ discovery is the filling backlog, full stop.
 
 1. I already fight this forgetting at work — a regular lookback over my activity to see where I had impact and where I didn't *(author)*
 2. That material is never invented; it's reviewed — the week already happened, I just couldn't hold it
-3. Same move elsewhere — Ashley Willis's evening "Daily Wins Recap," the lookback that catches the wins you'd check off and forget *(github.blog, "I automated my job (and it made me a better leader)")*
+3. Same move elsewhere — Ashley Willis's evening "Daily Wins Recap," the lookback that catches the wins you'd check off and forget *(cite canonical, not the private Reader URL: https://github.blog/developer-skills/github/i-automated-my-job-and-it-made-me-a-better-leader/)*
 4. If a lookback finds my impact at work, it can find my stories on the blog
 
 ## 3. Point it at the blog — *the turn*
