@@ -25,14 +25,14 @@ finished. Each one is forgettable on its own, and by Friday I've forgotten
 most of them. Together they add up to something worth sharing. But I can't
 hold the whole untidy pile in my head long enough to find its shape.
 
-And the shape was always the hard part. Not the writing, but the seeing:
-which of those hundred small things was worth telling in the first place.
+And the shape was always the hard part. Not how to write a post, but how to
+find the one worth telling.
 
 I'd seen this problem before, because I'd already solved it once at work.
 There I keep a habit of looking back over the week, not to relive it but to
 find the signal in it. I look for where I made a difference, and where my
-effort went nowhere. The week already happened by the time I look. I'm not
-inventing anything. I'm reviewing something I lived but couldn't hold.
+effort went nowhere. The week already happened by the time I look. I invent
+nothing. I only review what I lived but couldn't hold.
 
 It isn't only me. Ashley Willis [wrote
 about](https://github.blog/developer-skills/github/i-automated-my-job-and-it-made-me-a-better-leader/)
@@ -42,8 +42,8 @@ got done each day, so the small wins don't slip past unnoticed.
 The blog was the same shape of problem, pointed at a different end. If
 looking back could find my impact at work, it could find my stories here.
 
-So I built a tool to do the looking for me. The raw material was already
-there. Everything I do leaves a trace: a commit lands in a repository, a pull
+So I built a tool to do it for me. The raw material was already there.
+Everything I do leaves a trace: a commit lands in a repository, a pull
 request collects a review, a line gets highlighted in whatever I'm reading, a
 book gets marked finished. The trail piles up even when I forget it. I only
 needed a way to gather it back up.
@@ -52,9 +52,9 @@ I call it [the
 digest](https://github.com/alunduil/blog.alunduil.com/tree/main/.claude/skills/digest).
 Once a week it gathers everything I touched—what I did on GitHub, what I
 highlighted while reading, the books and games I marked finished—into one
-place. Then it clears out the noise: the
-duplicate commits a squash-merge leaves behind, and the churn from branches
-the agents opened and closed on their own.
+place. Then it clears out the noise: the duplicate commits a squash-merge
+leaves behind, and the churn from branches the agents opened and closed on
+their own.
 
 On Saturday, 2026-06-27, it ran across the previous seven days. The raw
 count was its own kind of answer: about two dozen pull requests and sixty-odd
@@ -71,10 +71,10 @@ four of the six as kernels that same morning, the stories pulled out of the
 blur at last.
 
 The digest writes none of this. It finds it. Each theme is still only a
-kernel, a candidate, a place to start. Turning one into a post is its own
-work: the reviewing, the shaping, the long back-and-forth with Claude until
-the thing reads well to me. What it leaves me is the candidate, kept as an
-issue I can pick up and work from.
+kernel, a candidate, a place to start. To turn one into a post is separate
+work: the review, the revision, the long back-and-forth with Claude until it
+reads well to me. What it leaves me is the candidate, kept as an issue I can
+pick up and work from.
 
 So the finding works. I run the digest every Saturday, and the kernels pile
 up in weekly waves. By the time I'm writing this, fifty-one have gathered in
@@ -88,15 +88,15 @@ file. It's still too early to know how many of the filed ones will ever
 become posts.
 
 That's where the real wall turned out to be. Not the blank page, and not the
-finding. The writing is the slow part: the drafting, the shaping, the long
-passes until a draft is good enough to publish. The honest scoreboard shows
-it. Of those fifty-one kernels, the number that have grown into published
-posts is, so far, zero. The one you're reading is nearly the first.
+finding. The writing is the slow part, and the real bottleneck. The honest
+scoreboard shows it. Of those fifty-one kernels, the number that have grown
+into published posts is, so far, zero. The one you're reading is nearly the
+first.
 
 None of that makes me want to stop running it. The digest costs me next to
 nothing: a job that runs on its own each Saturday, and a few minutes to skim
-what it found. The finding was always going to outrun the writing. I'd rather
-carry the backlog than face the blank week.
+what it found. The finding will always outrun the writing. I'd rather carry
+the backlog than face the blank week.
 
 There's one catch worth naming. The digest works because I leave a trail
 worth reading. My weeks happen in public, in commits and issues and reviews,
