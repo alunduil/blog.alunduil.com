@@ -88,7 +88,7 @@ repos:
   # Markdown structure linting with markdownlint-cli2.
   # Same exclude as Vale: AstroPaper upstream content + AI-targeted markdown.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.22.1
+    rev: v0.23.0
     hooks:
       - id: markdownlint-cli2
         args: [--fix]
