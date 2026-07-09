@@ -81,7 +81,9 @@ Criteria:
 - **Each scene earns its place.** One scene, one job.
 
 Build to the one moment of change; start at its opposite. Lived beats
-are the author's to supply — anchor the provable, ask for the rest.
+are the author's to supply — anchor the provable, ask for the rest. The
+corpus lands on an admitted gap, not a triumph (`.claude/voice.md`) —
+the last scene's role is usually the honest limitation, not the win.
 
 ## 3. Diagnose
 
