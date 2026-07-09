@@ -15,11 +15,11 @@ the work needs.
 
 ## Tooling
 
-This repo already wires the tooling below; check here first so the
-first move is discovery, not reinvention.
+This repo already wires the tooling below; consult it before adding or
+scripting your own.
 
-- Package manager: pnpm. Version pinned as `package-manager: pnpm@X` in
-  the withastro/action step of `.github/workflows/astro.yml` and
+- Package manager: pnpm. Version pinned in the withastro/action
+  `package-manager:` field of `.github/workflows/astro.yml` and
   `pages.yml`, kept current by the Renovate custom manager in
   `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
@@ -37,14 +37,14 @@ first move is discovery, not reinvention.
 ## Scope discipline
 
 Web sessions load neither the global guide nor the `issue-work` skill,
-so the essentials, calibrated to this repo:
+so the repo-relevant essentials:
 
 - Keep each PR to its issue. Check scope against sibling and linked
   issues before opening; when unsure, ask.
 - If an issue is blocked by an unshipped prerequisite, propose deferral
   with a `blocked-by` edge rather than writing premature code.
-- Revert incidental out-of-scope edits before review — easy to make
-  accidentally against the AstroPaper upstream files listed below.
+- Revert incidental out-of-scope edits before review, especially to the
+  AstroPaper upstream files listed below.
 
 ## Posting convention
 
