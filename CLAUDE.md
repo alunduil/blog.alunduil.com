@@ -63,6 +63,16 @@ prior one prompts "that's not how I do it any more." Don't add series
 infrastructure (index page, schema field, milestone) until there are
 3+ entries.
 
+## Voice
+
+`.claude/voice.md` is the descriptive fingerprint of the blog's
+published voice, calibrated against the author-written posts in
+`src/data/blog/`. Read it before drafting or editing any post — story,
+methodology, or freeform. It complements `post-draft/SKILL.md` §2 (the
+prescriptive story register) and is distinct from the host
+`~/.claude/voice.md`, which profiles the author's external PR/issue
+voice against a different corpus.
+
 ## AstroPaper upstream
 
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as

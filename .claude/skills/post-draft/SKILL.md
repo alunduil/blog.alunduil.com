@@ -83,6 +83,12 @@ Sentence-level conventions, applied across the drafted body. Stated in
 full here so the skill stands alone on the web, where local memory isn't
 present; the bracketed names are local-only see-alsos.
 
+These are the *prescriptive* rules. `.claude/voice.md` is the
+*descriptive* fingerprint measured from the published corpus (hedging
+cadence, formatting density, the honest-limitation closer, the
+narrative-vs-methodology registers) — read it alongside this section to
+calibrate against what the blog actually does.
+
 - **No blame in retrospect.** Ownership ("I did X") is fine; regret ("I
   should have", confession closers) goes. ([[feedback_no_blame_in_retrospect]])
 - **Causal over contrast.** "Without X, Y happens" beats "X required Z; Y
