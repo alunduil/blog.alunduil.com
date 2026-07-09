@@ -13,6 +13,39 @@ or `docs/`. Skills must stand alone — state what they rely on inline, and
 treat host memory as local reinforcement, never the sole home for anything
 the work needs.
 
+## Tooling
+
+This repo already wires the tooling below; check here first so the
+first move is discovery, not reinvention.
+
+- Package manager: pnpm. Version pinned as `package-manager: pnpm@X` in
+  the withastro/action step of `.github/workflows/astro.yml` and
+  `pages.yml`, kept current by the Renovate custom manager in
+  `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
+- Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
+  `astro check` and pagefind). AstroPaper theme — treat as upstream
+  (see below).
+- Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
+  (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
+  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, and baseline
+  file hygiene. ESLint and Prettier run as npm scripts (`pnpm lint`,
+  `pnpm format`), not pre-commit. lychee link-checking is CI-only
+  (`.github/workflows/lychee.yml`, `lychee.toml`).
+- Custom skills under `.claude/skills/`: digest, tag-suggest,
+  outline-draft, post-draft, syndicate-instagram (detailed below).
+
+## Scope discipline
+
+Web sessions load neither the global guide nor the `issue-work` skill,
+so the essentials, calibrated to this repo:
+
+- Keep each PR to its issue. Check scope against sibling and linked
+  issues before opening; when unsure, ask.
+- If an issue is blocked by an unshipped prerequisite, propose deferral
+  with a `blocked-by` edge rather than writing premature code.
+- Revert incidental out-of-scope edits before review — easy to make
+  accidentally against the AstroPaper upstream files listed below.
+
 ## Posting convention
 
 New posts live under `src/data/blog/`; archival republishes under
@@ -52,7 +85,7 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 ## Branches and deploy
 
 - Default branch: `main`. PRs target `main`.
-- Deploy runs on push to `main` (`.github/workflows/deploy.yml`).
+- Deploy runs on push to `main` (`.github/workflows/pages.yml`).
 
 ## Digest skill
 
