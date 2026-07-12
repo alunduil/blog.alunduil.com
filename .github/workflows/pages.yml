@@ -33,7 +33,7 @@ jobs:
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
           node-version: "22"
-          package-manager: pnpm@11.10.0
+          package-manager: pnpm@11.11.0
 
   publish:
     needs: build
