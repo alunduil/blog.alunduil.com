@@ -28,12 +28,13 @@ never executed.
 1. NanoPi-NEO3: one job, a Tailscale exit node — nothing else *(single purpose)*
 2. It lives in the US Midwest; I live in London *(the distance, planted but not yet the problem)*
 3. Built for hands-off: autoupdates and Grafana Alloy telemetry so I never think about it
-4. It backs itself up every hour to Google Drive — package selections, `/etc`, `/home` *(`rclone-backup.service` + `.timer`, `OnCalendar=hourly`, `Persistent=true`; `dpkg --get-selections` + three `rclone sync` to `Google Drive:NanoPi-NEO3/`)*
-5. So I'm covered. The data is safe. Recovery feels like a solved problem.
+4. A UptimeRobot heartbeat is the outage alarm — the box checks in, and its silence is the signal, because a dead box (and its telemetry) can't report itself *(HEARTBEAT monitor "NanoPi-NEO3")*
+5. It backs itself up every hour to Google Drive — package selections, `/etc`, `/home` *(`rclone-backup.service` + `.timer`, `OnCalendar=hourly`, `Persistent=true`; `dpkg --get-selections` + three `rclone sync` to `Google Drive:NanoPi-NEO3/`)*
+6. So I'm covered. The data is safe. Recovery feels like a solved problem.
 
 ## 2. Reflash from another continent — *the complication*
 
-1. What kills it: SD-card corruption or an OS upgrade gone wrong *(bridge: why recovery ever comes up)*
+1. It goes quiet — the heartbeat stops. SD-card corruption or an OS upgrade gone wrong *(the alarm from 1.4 firing is how recovery ever comes up)*
 2. Either one means reflash — and I cannot touch the card *(no physical access)*
 3. I have hands on-site, but lay ones: their whole job is insert a freshly-flashed card and power it on — so the plan has to be that simple for them *(design constraint)*
 4. Everything after boot is mine over SSH — and the easy 90% comes back in a few commands: packages via `dpkg --set-selections` + `apt dselect-upgrade`, `/home` via `rclone`, Alloy reinstalled from Grafana's repo
