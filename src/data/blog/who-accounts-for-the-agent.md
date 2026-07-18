@@ -44,10 +44,10 @@ the one set of eyes that can't be.
 
 When it writes its own review, it doesn't fill that role, though it looks
 like it does. And the low-effort path, the one I'm built to prefer, is to
-take the account and move on. Writing up Shaw and Nave,
-[Martin Fowler][fowler] flagged a name for that slide: cognitive surrender,
-trusting a machine's reasoning without checking it. They set it apart from
-cognitive offloading, where you hand off the work but keep
+take the account and move on. [Shaw and Nave][shaw] have a name for that
+slide: cognitive surrender, trusting a machine's reasoning without checking
+it. They set it apart from cognitive offloading, where you hand off the work
+but keep
 thinking it through. Handing off the review is fine, as long as I stay
 accountable for it. Surrender, and the only thing watching the work is the
 thing that made it.
@@ -117,4 +117,4 @@ it was built to do, not a phase it will grow out of.
 [willison]: https://simonwillison.net/2026/May/25/encyclical-on-ai/
 [bobbit]: https://www.npmjs.com/package/bobbit
 [backwards]: https://hazelweakly.me/blog/stop-building-ai-tools-backwards/
-[fowler]: https://martinfowler.com/fragments/2026-04-02.html
+[shaw]: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6097646
