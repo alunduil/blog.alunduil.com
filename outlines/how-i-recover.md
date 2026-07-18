@@ -44,11 +44,11 @@ never executed.
 
 1. The tempting move: `rsync` the backed-up `/etc` straight over the fresh image — and that's the failure mode
 2. Wrong root `fstab` UUID → it won't boot → no SSH → box gone *(new card = new filesystem UUID)*
-3. Wrong network/interface config → no route home → box gone
+3. Networking could strand me the same way — except I run DHCP precisely so a fresh image gets a route home with nothing to merge *(a lockout risk designed out)*
 4. And the fresh image won't even be the same base as what's running now, so its `/etc` defaults differ further — more reason not to blind-copy *(reflash lands on a different base than the current upgraded one)*
-5. On a box across an ocean, those aren't inconveniences; they're unrecoverable without another on-site trip
-6. The data was never the hard part. The three-way `/etc` merge is — and remoteness makes it unforgiving
-7. The discipline: keep the *new* base image's root `fstab` UUID, hand-diff network config and hostname, `rsync` only the "safe" application configs
+5. On a box across an ocean, a break like that isn't an inconvenience; it's unrecoverable without another on-site trip
+6. The data was never the hard part. The `/etc` merge is — and remoteness makes it unforgiving
+7. So the discipline shrinks to almost one file: leave the fresh `fstab` and (thanks to DHCP) the network untouched, restore the hostname, `rsync` only the "safe" application configs
 
 ## 4. The access I didn't back up — *the twist / deepen*
 
@@ -62,11 +62,13 @@ never executed.
 1. All of this is written down; none of it is tested *(paper plan — same admission as How I Back Up)*
 2. The only real test is a real restore, and that risks bricking a working box I can't reach
 3. The distance that makes the plan worth writing is the distance that makes me refuse to run it
-4. Hands-off operation was the goal; an untested recovery plan is the tax I pay for it
+4. The better fix is future work: bake my config into a recovery image so a reflash lands closer to turnkey — smaller merge, simpler for the hands on-site *(on the list)*
+5. Hands-off operation was the goal; an untested recovery plan is the tax I pay for it
 
 ## Open
 
-- Resolved: cadence (hourly), on-site path (lay hands, physical steps only), base image (keep generic), access gap (Tailscale state, folded into scene 4).
+- Resolved: cadence (hourly), on-site path (lay hands, physical steps only), base image (keep generic), access gap (Tailscale state, folded into scene 4), networking (DHCP by design, so no network merge — scene 3), UptimeRobot heartbeat as outage alarm (scene 1).
 - Follow-up to file separately after approval: improve the DR setup so the Tailscale/remote-access substrate is captured or reproducible — the scene-4 gap. Not in scope for this post.
+- Future consideration (a quick mention in scene 5, not a section): a prebaked recovery-image build so a reflash lands turnkey. Kept light in the post; may file as its own idea issue later.
 
 [How I Back Up]: /posts/how-i-back-up
