@@ -3,6 +3,14 @@ max_cache_age = "14d"
 retry_wait_time = 5
 include_fragments = true
 
+# Live URLs that 403 automated checkers (bot protection) while serving
+# fine in a browser. Excluded so lychee doesn't fail on good links.
+exclude = [
+  "papers\\.ssrn\\.com",
+  "npmjs\\.com",
+  "reddit\\.com",
+]
+
 # Skip vendored upstream content. AstroPaper tutorials per CLAUDE.md;
 # .vale/styles/ are upstream Vale style packages; outlines/ are planning
 # scaffolding, not published content.
