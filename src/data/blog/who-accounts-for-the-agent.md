@@ -88,11 +88,11 @@ Hazel Weakly calls the opposite move [building AI tools backwards][backwards]:
 aiming the machine at the work people most need to keep. The self-written
 post-mortem is that mistake in its purest form. Hand the agent the account,
 the one thing that has to stay human, and you're left to nod along. Turned
-the right way round, the agent gathers the material and I stay the loop, not
-just a step inside it.
+the right way round, the agent gathers the material and I answer for the
+result.
 
 None of this makes me safe. When I'm unsure, I keep probing until I
-understand, so the evidence I know I can't judge isn't really the danger. The
+understand, so the evidence I know I can't judge isn't the danger. The
 danger is the evidence that looks right and isn't: the log I read, that seems
 to settle the claim, that I accept while I'm wrong and nothing tells me
 otherwise. I miss it the way the agent missed it, confident. Even then, the
