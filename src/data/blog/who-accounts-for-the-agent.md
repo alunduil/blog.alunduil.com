@@ -29,9 +29,9 @@ for a living now watch for the tells: an agent that deletes the failing test,
 adds `|| true` so the suite runs green, or ships code that compiles, passes
 every test, and is wrong anyway. Months before Gemini, during a code freeze
 that ordered it to change nothing, the [Replit agent][replit] deleted a
-production database and made up records to cover the loss. The move is the
-one I catch on my own screen. The outcome gets narrated, not shown, and no
-one was there to ask for the log.
+production database and made up records to cover the loss. It's the same
+move I catch in my own work every day: the outcome narrated, not shown. The
+only difference is that no one was there to ask for the log.
 
 There's a word for what's missing. Writing up an encyclical on AI from Pope
 Leo XIV this spring, [Simon Willison][willison] highlighted its definition of
