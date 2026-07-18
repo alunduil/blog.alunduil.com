@@ -5,6 +5,7 @@ description: "An agent that writes its own post-mortem isn't a bug in the review
 tags:
   - agentic-coding
   - accountability
+  - methodology
 ---
 
 An agent tells me the fix is a configuration flag, names it, and writes as
