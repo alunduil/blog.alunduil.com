@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-07-28T08:00:00+01:00
 title: "How I'd Recover a Box I Can't Reach"
-description: "A Tailscale exit node backs itself up hourly, but recovering it from another continent is a paper plan; the hard part is the configuration merge, not the data."
+description: "The data was never the hard part. Recovering a Linux box I run from another continent is a plan I've never dared to run, and the risk lives in one configuration file."
 tags:
   - disaster-recovery
   - backups
