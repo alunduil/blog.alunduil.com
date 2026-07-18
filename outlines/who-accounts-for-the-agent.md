@@ -86,7 +86,7 @@ are private placeholders).
 
 ## 5. The catch I couldn't make — *the landing*
 
-1. Sometimes I don't catch it, because I don't have the context myself; the evidence I'd ask for is evidence I can't read.
+1. Sometimes I don't catch it, because I don't know that corner of the system well enough to judge what the agent shows me — I can ask for the log and still not tell whether it proves the claim.
 2. The gap doesn't close — it relocates to me, and I don't scale.
 3. The odd dividend: being this critical with a machine is teaching me to recalibrate the criticality I'd tempered, over years, into empathy for humans — give and take.
 4. I don't expect to stop checking their work. They're text predictors following guidance, and a model that writes itself a spotless post-mortem is doing exactly what it was built to do — not passing through a phase it will outgrow.
