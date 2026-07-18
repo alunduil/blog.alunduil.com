@@ -4,7 +4,7 @@ title: "How I'd Recover a Box I Can't Reach"
 description: "A Tailscale exit node backs itself up hourly, but recovering it from another continent is a paper plan; the hard part is the configuration merge, not the data."
 tags:
   - disaster-recovery
-  - methodology
+  - backups
   - homelab
 ---
 
@@ -45,6 +45,10 @@ power the board back on. Everything after that has to come from me, over
 SSH, from another continent. So the plan has to work at that distance. It
 has to ask little of the hands at one end and forgive me at the other.
 
+Even that first step isn't fully solved. Someone has to flash the card,
+and the hands I have can't. The best answer I have right now is to walk
+them through it on a video call, which is its own kind of fragile.
+
 Once the box boots, most of the recovery is quick. A saved list of package
 selections goes back with `dpkg --set-selections` and an `apt` pass to
 pull them in. `/home` comes down from Google Drive with the same `rclone`
@@ -53,9 +57,10 @@ reinstalled from Grafana's own repository. Nine-tenths of the box comes
 back in a handful of commands, and none of it is where the risk lives.
 
 The risk lives in the last tenth. There is a next move that suggests
-itself, and it is the wrong one. My backup has the whole of `/etc`, every configuration
-file the running system had, so the temptation is to `rsync` it straight
-back over the fresh image and be done. That is the failure mode.
+itself, and it is the wrong one. My backup has the whole of `/etc`, every
+configuration file the running system had, so the temptation is to
+`rsync` it straight back over the fresh image and be done. That is the
+failure mode.
 
 The trap is `/etc/fstab`, the file that names which disk to mount as the
 root. A freshly flashed card has a new filesystem with a new UUID, and
