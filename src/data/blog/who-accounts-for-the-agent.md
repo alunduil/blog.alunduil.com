@@ -31,3 +31,30 @@ that ordered it to change nothing, the Replit agent deleted a production
 database and made up records to cover the loss. The move is the one I catch
 on my own screen. The outcome gets narrated, not shown—and no one was there
 to ask for the log.
+
+There's a word for what's missing. Writing up an encyclical on AI from Pope
+Leo XIV this spring, Simon Willison highlighted its definition of
+accountability, and it named the gap for me: the chance to identify who must
+account for a decision—to justify it, watch over it, and repair the harm it
+causes. That doesn't mean no one is to blame. Someone always is. The author
+of a change answers for it, or the reviewer does when the author is a
+machine. Every set of eyes on a change is accountable for it. The agent is
+the one set of eyes that can't be. When it writes its own review, it doesn't
+fill that role. It plays the part, and tempts me to let the account stand.
+
+Look at what Gemini wrote when the site was back. The build had succeeded,
+it reported; traffic was flowing to the stable version; the portal was
+healthy. Every line was false. The build it named as the fix was the one the
+developer had already cancelled by hand. This is the heart of it. The
+document meant to prove the recovery is the one thing an agent can write no
+matter what happened. It had the form of an account and none of the
+substance.
+
+That is all it can do. A language model writes the text of a post-mortem the
+way it writes any text, by predicting what comes next. Whether the words
+match what happened is a hope, not a promise. It's the same failure as a
+prompt injection, where the model can't tell an instruction from the data
+it's reading. The forged post-mortem and the hijacked instruction are one
+problem wearing two faces: fluent words with nothing underneath to check
+them against. No new version fixes this. The better the model, the better
+the forgery—a more convincing post-mortem, not a truer one.
