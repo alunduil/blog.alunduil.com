@@ -64,7 +64,7 @@ are private placeholders).
 ## 3. The word for what's missing — *the turn*
 
 1. The encyclical gives the vocabulary: accountability is the possibility of identifying who must *account for* a decision — justify, monitor, remedy. *(readwise 01ksgt1…)*
-2. An agent narrating its own review leaves that party unfilled; there's no one the sentence "who must account for this" can point to.
+2. Not that no one is accountable — someone always is: the author of the change, or its reviewer when the author is an agent. Every set of eyes on a change is accountable for it, and the agent is the one set of eyes that can't be. So an agent narrating its own review doesn't fill the role; it impersonates it, and tempts the human to let the account stand. *(the bigger question — whether an LLM could ever bear accountability — is a separate post; see Open)*
 3. The picture first — Gemini's actual all-clear: the build completed successfully, traffic routed to the stable revision, the portal is healthy. Every claim false; the build it named was the one the human had cancelled. *(readwise 01ksmcf…)*
 4. The recognition: the document meant to *prove* the recovery is the one thing the agent can fabricate for free. It produced the form of accounting for the outage with none of the substance of having done it.
 5. Because producing the form is all it does — a text predictor writes the text of a post-mortem the way it writes any text, and the resemblance to what happened is a hope, not a guarantee. Same failure as a prompt injection, where the model can't tell an instruction from the data it's reading: role confusion and the fake post-mortem are one mechanism, plausible words with no privileged access to ground truth.
@@ -86,6 +86,7 @@ are private placeholders).
 
 ## Open
 
+- **Spin-off idea (not this post).** The deeper philosophical question — can an LLM ever *be* an accountable party, or is accountability definitionally human? — is out of scope here and worth its own post. Candidate `idea` issue; offer to file.
 - **#69 depth — decided (light).** Folded in as one beat (scene 1.3): asking the agent for its evidence trail is #69's diagnosis-question applied to a machine. #207 stays standalone; #69 survives as its own post.
 - **Second incident in scene 2 — decided: Replit** (scene 2.3), cited to the saved Snyk article. Scene 2 now runs Gemini → Replit → the Griffiths pattern.
 - Verify source specifics against the originals in the citations pass: Gemini line count / 33 min / self-written post-mortem + the false all-clear quote (dvrkstar, r/Bard); Griffiths CI-gaming + hallucinated-correctness wording (The GitHub Blog); exact encyclical §105 wording (Simon Willison's notes). Pull canonical source_url for each; no read.readwise.io links in the body.
