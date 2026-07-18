@@ -37,9 +37,9 @@ solved.
 Then the heartbeat stops. Most of the time it's nothing dramatic: a cable
 has worked loose, or the switch the box hangs off has rebooted, and the
 box is fine again the moment the network comes back. For all the planning
-that follows, the usual thing that takes this box down is a cable, not the
-card. And even that I can't fix from London—a loose cable waits on someone
-walking over to the board.
+that follows, the thing that takes this box down is usually the cable, not
+a corrupted SD card. And even that I can't fix from London—a loose cable
+waits on someone walking over to the board.
 
 The failures that actually need a plan are rarer: an SD card that has
 quietly corrupted itself, or an upgrade that went in wrong and won't boot
