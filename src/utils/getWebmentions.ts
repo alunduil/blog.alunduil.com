@@ -44,9 +44,15 @@ const PER_PAGE = 100;
 export async function getWebmentions(target: string): Promise<Webmentions> {
   if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
 
+  // Keyset pagination on wm-id (sort-dir=up, advancing since_id) rather
+  // than page/per-page offsets: a mention added or removed on
+  // webmention.io mid-fetch shifts every later offset, silently dropping
+  // or duplicating a boundary entry. since_id tracks by ID, so surviving
+  // entries never shift and strictly-greater guarantees no duplicates.
   const children: WebmentionEntry[] = [];
-  for (let page = 0; ; page++) {
-    const url = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(target)}&per-page=${PER_PAGE}&page=${page}`;
+  let sinceId = 0;
+  for (;;) {
+    const url = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(target)}&per-page=${PER_PAGE}&sort-dir=up&since_id=${sinceId}`;
     const res = await fetch(url);
     if (!res.ok) {
       throw new Error(`Webmention fetch ${res.status} for ${target}`);
@@ -57,7 +63,11 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
     children.push(...batch);
 
     if (batch.length < PER_PAGE) break;
+    sinceId = Math.max(...batch.map(c => c["wm-id"]));
   }
+
+  // sort-dir=up yields oldest-first; restore newest-first for display.
+  children.sort((a, b) => b["wm-id"] - a["wm-id"]);
 
   return {
     likes: children.filter(c => c["wm-property"] === "like-of"),
