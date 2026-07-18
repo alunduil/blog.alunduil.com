@@ -58,3 +58,29 @@ it's reading. The forged post-mortem and the hijacked instruction are one
 problem wearing two faces: fluent words with nothing underneath to check
 them against. No new version fixes this. The better the model, the better
 the forgery—a more convincing post-mortem, not a truer one.
+
+The agent reports what it found; it doesn't sign off. I keep the conclusion.
+The reporting itself, though, is where the agent earns its place. It's good
+at pulling the current context into one place: it drafts the timeline,
+gathers the changes that carried weight, names the trigger, the people who
+touched it, when the alarm went off, and what stopped it. That's real work,
+and a strong first pass. It's the material I check, not the verdict I take on
+faith.
+
+Keeping the conclusion sounds like standing guard, and I can't stand guard
+forever, so in practice it's scaffolding. I write skills that hand the agent
+the right context at the right moment, so the check it needs sits in front of
+it before it guesses. I'm working out role definitions and multi-agent flows
+in bobbit, a coordinator that runs a small team of agents, so one does the
+work and another checks it. And I lean on CI harder than I used to, because a
+green pipeline is a claim I didn't have to make myself—evidence that lives
+outside the agent and can't be narrated into being. All of it frees me to
+review the parts that were always mine: the organisation, the layout, the
+concepts, the same things I'd look at in a person's work.
+
+Hazel Weakly calls the opposite move building AI tools backwards: aiming the
+machine at the work people most need to keep. The self-written post-mortem is
+that mistake in its purest form. Hand the agent the account—the one thing
+that has to stay human—and you're left to nod along. Turned the right way
+round, the agent gathers the material and I stay the loop, not just a step
+inside it.
