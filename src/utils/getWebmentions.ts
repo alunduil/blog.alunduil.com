@@ -39,17 +39,25 @@ const empty: Webmentions = {
   mentions: [],
 };
 
+const PER_PAGE = 100;
+
 export async function getWebmentions(target: string): Promise<Webmentions> {
   if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
 
-  const url = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(target)}&per-page=100`;
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Webmention fetch ${res.status} for ${target}`);
-  }
+  const children: WebmentionEntry[] = [];
+  for (let page = 0; ; page++) {
+    const url = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(target)}&per-page=${PER_PAGE}&page=${page}`;
+    const res = await fetch(url);
+    if (!res.ok) {
+      throw new Error(`Webmention fetch ${res.status} for ${target}`);
+    }
 
-  const data = (await res.json()) as { children?: WebmentionEntry[] };
-  const children = data.children ?? [];
+    const data = (await res.json()) as { children?: WebmentionEntry[] };
+    const batch = data.children ?? [];
+    children.push(...batch);
+
+    if (batch.length < PER_PAGE) break;
+  }
 
   return {
     likes: children.filter(c => c["wm-property"] === "like-of"),
