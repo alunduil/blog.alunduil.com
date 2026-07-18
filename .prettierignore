@@ -1,3 +1,7 @@
+# Prettier owns web source code: .ts / .js / .astro / .css / .json.
+# Markdown is linted by markdownlint + Vale; YAML by yamllint + actionlint.
+# Keeping those out avoids two formatters fighting over the same files.
+
 # Ignore everything
 /*
 
@@ -11,4 +15,8 @@
 !package.json
 !.prettierrc
 !eslint.config.js
-!README.md
+
+# But never markdown or YAML — those have dedicated linters above.
+*.md
+*.yml
+*.yaml

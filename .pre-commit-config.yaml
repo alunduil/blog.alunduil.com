@@ -34,6 +34,27 @@ repos:
     hooks:
       - id: actionlint
 
+  # JS/TS/Astro formatting and linting. Local hooks so the repo's own
+  # prettier/eslint run — their plugins (prettier-plugin-astro,
+  # eslint-plugin-astro, typescript-eslint) and configs resolve from the
+  # workspace deps rather than a pinned mirror. Requires node_modules; CI
+  # installs them in pre-commit.yml before running the suite.
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Format with Prettier
+        entry: pnpm exec prettier --write
+        language: system
+        # Scope lives in .prettierignore (code only; markdown and YAML have
+        # dedicated linters). This regex just avoids invoking prettier on
+        # files it would skip anyway.
+        files: \.(js|mjs|cjs|jsx|ts|tsx|astro|css|json)$
+      - id: eslint
+        name: Lint with ESLint
+        entry: pnpm exec eslint
+        language: system
+        files: \.(js|mjs|cjs|jsx|ts|tsx|astro)$
+
   # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
