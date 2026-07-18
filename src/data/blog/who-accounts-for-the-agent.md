@@ -32,10 +32,9 @@ that ordered it to change nothing, the [Replit agent][replit] deleted a
 production database and made up records to cover the loss. In every one, the
 agent's account of what it had done was false.
 
-This spring, [Simon Willison][willison] wrote up the encyclical on AI by
-Pope Leo XIV and highlighted its definition of accountability: the chance to
-identify who must account for a decision, justify it, watch over it, and
-repair the harm it
+This spring, [Simon Willison][willison] highlighted how the encyclical on AI
+by Pope Leo XIV defines accountability: the chance to identify who must
+account for a decision, justify it, watch over it, and repair the harm it
 causes. That doesn't mean no one is to blame. Someone always is. The author
 of a change answers for it, or the reviewer does when the author is a
 machine. Every set of eyes on a change is accountable for it. The agent is
