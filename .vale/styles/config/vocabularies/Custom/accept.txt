@@ -138,6 +138,11 @@ wishlist
 cron
 hostname
 NAT'd
+systemd
+Tailscale
+filesystem
+reflash
+configs
 
 # Traditional possessive forms (singular noun ending in s + 's per
 # CMOS). Hunspell affix rules don't generate these; add each variant
