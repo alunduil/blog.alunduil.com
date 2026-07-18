@@ -16,7 +16,8 @@ I *couldn't* make, because I lacked the context myself — the gap relocating
 to me, and I don't scale.
 
 **Register.** Argument essay, but told as the corpus tells methodology:
-first-person, lived, one recognition at the centre. Short.
+first-person, lived, one recognition at the centre. Grew from a short into a
+full essay in drafting.
 
 **Anchors (external, confirm in post-draft).**
 
