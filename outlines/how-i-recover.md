@@ -34,11 +34,14 @@ never executed.
 
 ## 2. Reflash from another continent — *the complication*
 
-1. It goes quiet — the heartbeat stops. SD-card corruption or an OS upgrade gone wrong *(the alarm from 1.4 firing is how recovery ever comes up)*
-2. Either one means reflash — and I cannot touch the card *(no physical access)*
-3. I have hands on-site, but lay ones: their whole job is insert a freshly-flashed card and power it on — so the plan has to be that simple for them *(design constraint)*
-4. Everything after boot is mine over SSH — and the easy 90% comes back in a few commands: packages via `dpkg --set-selections` + `apt dselect-upgrade`, `/home` via `rclone`, Alloy reinstalled from Grafana's repo
-5. Every one of those runs on a box that will drop me the moment I get boot or networking wrong
+1. The heartbeat stops — but most of the time it's mundane: a cable worked loose, or the switch it hangs off rebooted, and the box is fine once the network is back *(the common real-world outage — networking/cabling, not the card)*
+2. Even that I can't fix from London; a loose cable still waits on someone walking to the box *(remoteness bites even the trivial case)*
+3. The failures that actually need this plan are rarer — a corrupted SD card, or an upgrade gone wrong — and those mean a reflash *(the serious case; the alarm from 1.4 is how it surfaces)*
+4. Either one means reflash — and I cannot touch the card *(no physical access)*
+5. I have hands on-site, but lay ones: their whole job is insert a freshly-flashed card and power it on — so the plan has to be that simple for them *(design constraint)*
+6. Even that first step isn't solved — someone has to flash the card, and lay hands can't; the current fallback is a video-call walkthrough *(unsolved seam — card provenance)*
+7. Everything after boot is mine over SSH — and the easy 90% comes back in a few commands: packages via `dpkg --set-selections` + `apt dselect-upgrade`, `/home` via `rclone`, Alloy reinstalled from Grafana's repo
+8. Every one of those runs on a box that will drop me the moment I get boot or networking wrong
 
 ## 3. The file that locks the door — *the turn*
 
