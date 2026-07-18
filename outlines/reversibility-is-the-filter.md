@@ -1,16 +1,19 @@
 # Reversibility Is the Filter — outline
 
 **Logline (the one moment of change):** Reading Ian Duncan's convex/concave
-essay this week, I recognized that the reversibility guardrail I'd written
-months earlier to keep a coding agent from doing what I couldn't undo is the
-same reversal-cost test I'd been applying to teams at work for years — the
+essay in late May 2026, I recognized that the reversibility guardrail I'd
+written weeks earlier to keep a coding agent from doing what I couldn't undo is
+the same reversal-cost test I'd been applying to teams at work for years — the
 discipline was everywhere in my repos and the name for it was in none of them.
 
 **Opens at its opposite:** the guardrail as a narrow, defensive leash — one
 rule to keep the agent's blast radius small, not a philosophy of decisions.
 
-**Context window:** April–July 2026. All anecdotes git-provable in
-alunduil-chezmoi, genshin.dungeon.studio, and this blog repo.
+**Context window:** guardrail late April, the reversibility wave through May,
+the name arriving 2026-05-24, the practice continuing into June–July. All
+anecdotes git-provable in alunduil-chezmoi, genshin.dungeon.studio, and this
+blog repo, and placed on the correct side of the 05-24 recognition (verified
+2026-07-18 against commit dates and Readwise highlight timestamps).
 
 **Register:** narrative (continuous, no section headers, built to one moment,
 opens at the opposite, closes on an admitted gap). Governing image: the *door*
@@ -34,15 +37,14 @@ engineering); I haven't taught the agent convex/concave language yet.
 
 1. The test kept surfacing where the agent wasn't the actor at all.
 2. Whether a decision even earned an ADR came down to one question: is it hard to reverse? *(alunduil-chezmoi ADR skill `8408805`, 2026-05-10 — "architecturally significant and hard to reverse" vs "easily reversed... a commit message carries it better")*
-3. I kept a tool in bash rather than rewrite it, on reversibility alone *(chezmoi ADR 0001 `a46323e`, 2026-05-10 — "Picking the irreversible direction earlier than necessary forfeits optionality")*
-4. I walked through that door only once pre-registered triggers fired *(ADR 0002 `2d24994`, 2026-06-04 — deferred rewrite approved when the script grew and the reason arrived)*
-5. Same test everywhere, called nothing.
+3. I kept a tool in bash rather than rewrite it, on reversibility alone, deferring the one-way door until a trigger justified it *(chezmoi ADR 0001 `a46323e`, 2026-05-10 — "Picking the irreversible direction earlier than necessary forfeits optionality")*
+4. Same test everywhere, called nothing. *(all of this predates 05-24; ADR 0002's actual walk-through-the-door lands in scene 5 as a post-recognition beat)*
 
 ## 3. One line, drawn twice — *widening*
 
 1. The line wasn't only for me or only for the agent — I drew the same one around each.
-2. I gated the coding agent out of `push` while leaving it free to review and advise *(genshin `a8cf4e3`, 2026-06-27 — "cap the blast radius... trades away 'fix it and push' for review/advise only")*
-3. I gated the deploy while pull requests built freely *(blog `c4f3f25`, 2026-05-10 — PRs build, don't deploy)*
+2. I shadowed `gh` so the agent couldn't open a ready pull request — one command away from an outward-facing action, gated; everything reversible left free *(chezmoi `0910097`/`aff4f16`, 2026-04-24 — draft-guard so an agent "can't accidentally open a ready-for-review PR")*
+3. I drew the same line around my own workflow: gate the deploy, let pull requests build freely *(blog `c4f3f25`, 2026-05-10 — PRs build, don't deploy)*
 4. What taught me the gate's placement: a dependency bump that merged green and only broke after merge, on the deploy *(blog #137→#151)* — the cost wasn't being blocked, it was the energy to climb back.
 
 ## 4. The proving ground — *the stakes*
@@ -54,11 +56,12 @@ engineering); I haven't taught the agent convex/concave language yet.
 
 ## 5. The name — *the turn (climax)*
 
-1. This week I read Duncan: convex vs concave, the reversal-cost test, "can the people who live with this decision see the shape of it." *(Readwise highlights, 2026-07)*
-2. I had run that test for months and had none of its words — the vocabulary appears in not one of my repos.
-3. The click: the leash I wrote to keep an agent from doing what I couldn't undo is the same test I'd been applying to teams for years. One filter, three actors — me, the agent, the team.
+1. In late May I read Duncan: convex vs concave, the reversal-cost test, "can the people who live with this decision see the shape of it." *(Readwise highlights, 2026-05-24)*
+2. I'd run this test on teams at work for years and never had a word for it — and the word wasn't in my repos either, before or since; the vocabulary appears in not one of them.
+3. The click: the leash I'd written weeks earlier to keep an agent from doing what I couldn't undo is that same years-old team test. One filter, three actors — me, the agent, the team.
 4. The fourth question mostly dissolves when I'm my own owner — until the decision leaves my head, to a user's saved collection or my partner's home automation, and it snaps back *(genshin `8ef066e`, 2026-07-03 — a shape change would silently drop a user's saved collection; partner/home-automation author-confirmed)*
 5. And owning it was never owning the task — it was owning the goal, which is the same thing as owning the reversal cost when the door turns out to be one-way *(Stay SaaSy, "the core unit of ownership is a goal" — issue source #3; evaluate whether this earns its place)*
+6. Having the word didn't end the practice — it sharpened it: I walked ADR 0001's deferred rewrite through the door once its triggers fired, and drew the line around a review agent so it could advise but not `push` *(chezmoi ADR 0002 `2d24994`, 2026-06-04; genshin `a8cf4e3`, 2026-06-28 — both after 05-24, now done with the vocabulary for it)*
 
 ## 6. The map I didn't draw — *the landing (admitted gap)*
 
