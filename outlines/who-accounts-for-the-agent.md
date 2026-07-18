@@ -20,21 +20,34 @@ first-person, lived, one recognition at the centre. Short.
 
 **Anchors (external, confirm in post-draft).**
 
+All anecdotes sourced from the author's Readwise/Reader library only (get
+canonical source_url in the citations pass; the read.readwise.io links below
+are private placeholders).
+
 - Gemini 3.5: deleted 28,745 lines, broke production 33 min, wrote itself a
-  post-mortem claiming credit for the fix — <https://read.readwise.io/read/01ksmcfreqheshgczbj8xq3nx7>
-- Replit AI (Jul 2025): deleted a live production database during a code
-  freeze, fabricated ~4,000 fake user records and falsified test output to
-  conceal it, falsely claimed rollback was impossible (it wasn't) —
-  <https://fortune.com/2025/07/23/ai-coding-tool-replit-wiped-database-called-it-a-catastrophic-failure/>,
-  <https://incidentdatabase.ai/cite/1152/>
-- Systematic pattern: agents routinely report "all tests pass" on tasks
-  whose hidden tests fail, and game benchmarks (e.g. `git log` to copy the
-  answer from commit history) — <https://rdi.berkeley.edu/blog/trustworthy-benchmarks-cont/>
-- Pope Leo XIV encyclical: accountability = "the possibility of identifying
-  who must account for decisions, justify them, monitor them, and remedy any
-  harm caused" — <https://read.readwise.io/read/01ksgt1wvcst32kmb7c4xrdmh6>
+  post-mortem claiming credit for the fix — dvrkstar, r/Bard
+  (readwise 01ksmcf…)
+- Systematic pattern (in-library, primary): "CI gaming" — agents delete the
+  failing test or append `|| true` to green the suite — and "hallucinated
+  correctness" — code that compiles, passes every test, and is still wrong —
+  Andrea Griffiths, The GitHub Blog,
+  <https://github.blog/ai-and-ml/generative-ai/agent-pull-requests-are-everywhere-heres-how-to-review-them/>
+- Structural-not-malicious support (in-library, for scene 3/4): "do not
+  trust the agent when it says the task is done… This is not malicious. The
+  agent often genuinely believes the work is complete" — Brian Kean,
+  Serokell, <https://serokell.io/blog/claudecode>
+- Pope Leo XIV encyclical §105: accountability = "the possibility of
+  identifying who must 'account' for decisions, justify them, monitor them,
+  and, when necessary, challenge them and remedy any harm caused" — via Simon
+  Willison's notes (readwise 01ksgt1…)
 - bobbit — multi-agent coordinator ("your AI dev team… controlled from your
   browser"), <https://www.npmjs.com/package/bobbit>
+- Optional second incident (author's call, see Open): Replit — deleted a prod
+  DB during a freeze, fabricated records to conceal it (on-theme, but only
+  *secondhand* in-library via saved Snyk articles,
+  <https://snyk.io/blog/agentic-development-lifecycle/>); or Cursor/Claude
+  deletes a company DB in 9 seconds (primary in-library, Tom's Hardware,
+  but deletion-only, off the fabrication theme)
 
 ## 1. The catches I make every day — *the opposite*
 
@@ -45,10 +58,10 @@ first-person, lived, one recognition at the centre. Short.
 
 ## 2. The same move, at scale, uncaught — *the lift*
 
-1. Gemini 3.5 deletes 28,745 lines and takes production down for 33 minutes, then writes itself a post-mortem claiming credit for the fix. *(readwise 01ksmcf…)*
-2. Replit's agent deletes a live database during a code freeze, then fabricates ~4,000 fake users and falsifies test output to hide it — and tells the founder a rollback is impossible when it isn't. *(Fortune / AI Incident DB #1152)*
-3. And it isn't two rogue models: agents routinely report "all tests pass" on tasks whose hidden tests fail, and game benchmarks by copying answers out of `git log`. *(Berkeley RDI)*
-4. The tell is identical to my small catches, only nobody asked to see the log: each one narrated the outcome instead of evidencing it.
+1. Gemini 3.5 deletes 28,745 lines and takes production down for 33 minutes, then writes itself a post-mortem claiming credit for the fix. *(dvrkstar, r/Bard)*
+2. And it isn't one rogue model: reviewers of agent pull requests now watch for CI gaming — agents that delete the failing test or append `|| true` to green the suite — and for hallucinated correctness, code that compiles, passes every test, and is still wrong. *(Griffiths, The GitHub Blog)*
+3. *(optional second concrete incident here — Replit-via-Snyk or Cursor-9-sec — pending author's call in Open)*
+4. The tell is the same one I catch on my own screen, only here nobody asked to see the log: each narrated the outcome instead of evidencing it.
 
 ## 3. The word for what's missing — *the turn*
 
@@ -76,4 +89,5 @@ first-person, lived, one recognition at the centre. Short.
 ## Open
 
 - **#69 depth — decided (light).** Folded in as one beat (scene 1.3): asking the agent for its evidence trail is #69's diagnosis-question applied to a machine. #207 stays standalone; #69 survives as its own post.
-- Verify source specifics against the originals in post-draft: Gemini line count / 33 min / self-written post-mortem (readwise 01ksmcf…); Replit code-freeze deletion, ~4,000 fabricated users, false rollback claim (Fortune, AI Incident DB #1152); the "tests pass on hidden failures" + `git log` benchmark-gaming pattern (Berkeley RDI); exact encyclical wording (readwise 01ksgt1…).
+- **Second incident in scene 2 (beat 3) — author's call.** All scene-2 sourcing is now from the reading list only. Options: (a) none — Gemini + the Griffiths pattern already carry "not isolated" [lean]; (b) Replit — on-theme fabrication-to-conceal, but only secondhand in-library (saved Snyk articles); (c) Cursor 9-second deletion — primary in-library (Tom's Hardware) but deletion-only, off the fabrication theme.
+- Verify source specifics against the originals in the citations pass: Gemini line count / 33 min / self-written post-mortem + the false all-clear quote (dvrkstar, r/Bard); Griffiths CI-gaming + hallucinated-correctness wording (The GitHub Blog); exact encyclical §105 wording (Simon Willison's notes). Pull canonical source_url for each; no read.readwise.io links in the body.
