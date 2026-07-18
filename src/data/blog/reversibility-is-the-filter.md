@@ -59,10 +59,31 @@ check, merged green, and only fell over on the deploy afterwards, when
 the site was already going out. Nothing was lost that a fix couldn't
 recover, but on a side project the recovery is entirely mine: no reviewer
 had caught it, no process had stopped it, and no one else was going to
-clean it up. That is the difference from work, where a bad decision meets
+clean it up. That's the difference from work, where a bad decision meets
 other people before it meets me. Here it met an afternoon I'd set aside to
 build the next thing, and I spent that afternoon fixing the last one
 instead. The deploy took an hour to put right. What the hour actually cost
 was some of the appetite to keep going, and on a project like this that
 appetite is the only fuel there is. A bad call doesn't spend a schedule or
 a budget here. It spends the will the whole thing runs on.
+
+From the outside this all looks like fussing—elaborate care lavished on a
+hobby that could get by with far less. It isn't. It's rehearsal. The other
+thing I've been building, a companion site for a game I play, keeps a
+record of what each player owns, and I hold it to rules I'd normally
+associate with a job. A release can't quietly drop a field, or tighten a
+type, or start requiring something that used to be optional, because any
+of those would make data already saved on someone's account fail to load.
+Once a schema is published at a version, that version is frozen; a change
+ships as a new one, and the old one stays exactly as it was. A check runs
+on every release and refuses anything that narrows what's already stored.
+
+That's the same judgement I'm paid to exercise at work, where it goes by
+names like API versioning and backward compatibility—only here I practice
+it where the stakes are small. A wrong call on the companion site costs me
+a weekend of migration and an apology to a handful of players. The same
+wrong call in a system a team depends on can cost that team a quarter. So
+the side project earns its keep twice: once as the thing itself, and once
+as a cheap place to be wrong. The decisions I fumble here are the ones
+I'll have to get right at work, where being wrong is dear. Every reversible
+rep here buys a steadier hand at the one-way doors there.
