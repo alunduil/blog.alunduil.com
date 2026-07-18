@@ -22,3 +22,22 @@ and doesn't feel the drop the way I do, and a fast thing kept close stays
 clear of the ledges. I wasn't naming a principle that afternoon—I
 was closing off one particular way of getting hurt, and then I went back
 to the actual work.
+
+The rule was for the agent, but the test inside it wasn't. I kept meeting
+it where the agent never reached. In May I had a small tool of my own, a
+bash script for moving between git worktrees, growing steadily toward the
+size where you reach for a real language. I could see the Rust rewrite
+coming and nearly started it. Instead I wrote the choice down and made
+myself argue the other side: bash to Rust is a walk you can take at any
+time, and Rust to bash is one almost nobody makes. Rewriting early would
+carry me through a one-way door before I had a reason to. So I kept the
+script, and wrote down the conditions that would tell me when to port it.
+
+The same question sat one level up, in the rule I use to decide what even
+earns an architecture decision record. Most choices don't earn one; they
+come apart cleanly, and a sentence in a commit message keeps them. The
+ones worth the ceremony set a precedent, pin a dependency, or otherwise
+cost too much to take back. Hard to reverse was the whole test. I was
+running it on the agent's actions, on my own tools, and on which of my
+decisions were worth writing down. I still hadn't seen it was one test,
+or thought to give it a name.
