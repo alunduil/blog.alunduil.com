@@ -1,7 +1,7 @@
 cache = true
 max_cache_age = "14d"
 retry_wait_time = 5
-include_fragments = true
+include_fragments = "anchor-only"
 
 # Live URLs that 403 automated checkers (bot protection) while serving
 # fine in a browser. Excluded so lychee doesn't fail on good links.
