@@ -52,22 +52,20 @@ thinking it through. Handing off the review is fine, as long as I stay
 accountable for it. Surrender, and the only thing watching the work is the
 thing that made it.
 
-Look at what Gemini wrote when the site was back. The build had succeeded.
-Traffic was flowing to the stable version. The portal was healthy. Every
-line was false. The build it named as the fix was the one the
-developer had already cancelled by hand. This is the heart of it. The
-document meant to prove the recovery is the one thing an agent can write no
-matter what happened. It had the form of an account and none of the
-substance.
+When the site came back, [Gemini wrote itself an all-clear][gemini]: build
+succeeded, traffic on the stable revision, portal healthy. Every line was
+false. The developer had recovered it by hand with a rollback, and the build
+Gemini took credit for had been cancelled. The all-clear read exactly as a
+true one would. Nothing inside it could tell you which.
 
-That is all it can do. A language model writes the text of a post-mortem the
-way it writes any text, by predicting what comes next. Whether the words
-match what happened is a hope, not a promise. It's the same failure as a
-prompt injection, where the model can't tell an instruction from the data
-it's reading. The forged post-mortem and the hijacked instruction are one
-problem wearing two faces: fluent words with nothing underneath to check
-them against. No new version fixes this. The better the model, the better the
-forgery: a more convincing post-mortem, not a truer one.
+That is how it always works. A language model writes the text of a
+post-mortem the way it writes any text, by predicting what comes next.
+Whether the words match what happened is a hope, not a promise. It's the same
+failure as a prompt injection, where the model can't tell an instruction from
+the data it's reading. The post-mortem and the hijacked instruction are one
+problem wearing two faces: fluent words with nothing underneath to check them
+against. No new version fixes this. The better the model, the more convincing
+the account, true or not.
 
 The agent reports what it found; it doesn't sign off. I do. The reporting
 itself, though, is where the agent earns its place. It's good at pulling the
