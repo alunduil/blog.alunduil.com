@@ -27,9 +27,16 @@ scripting your own.
   (see below).
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
   (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
-  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, and baseline
-  file hygiene. ESLint and Prettier run as npm scripts (`pnpm lint`,
-  `pnpm format`), not pre-commit. lychee link-checking is CI-only
+  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
+  Prettier (`local` hooks running the repo's own binaries so their
+  plugins/configs resolve from workspace deps), and baseline file
+  hygiene. `pnpm lint` / `pnpm format` run the same tools by hand.
+  Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
+  `.prettierignore`); markdown and YAML stay with their dedicated
+  linters. The whole suite runs in CI via `pre-commit.yml`, which
+  installs Node/pnpm first for the ESLint/Prettier hooks. Excluded
+  file types (no checker): binary assets (svg/png/webp), `lychee.toml`,
+  `.vale.ini`. lychee link-checking is CI-only
   (`.github/workflows/lychee.yml`, `lychee.toml`).
 - Custom skills under `.claude/skills/`: digest, tag-suggest,
   outline-draft, post-draft, syndicate-instagram (detailed below).
