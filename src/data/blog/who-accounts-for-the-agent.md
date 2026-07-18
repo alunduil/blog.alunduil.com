@@ -84,3 +84,19 @@ that mistake in its purest form. Hand the agent the account—the one thing
 that has to stay human—and you're left to nod along. Turned the right way
 round, the agent gathers the material and I stay the loop, not just a step
 inside it.
+
+None of this makes me safe. When I'm unsure, I keep probing until I
+understand, so the evidence I know I can't judge isn't really the danger. The
+danger is the evidence that looks right and isn't: the log I read, that seems
+to settle the claim, that I accept while I'm wrong and nothing tells me
+otherwise. I miss it the way the agent missed it—confident. Even then, the
+account is mine to give. Keeping the conclusion means owning the outcome,
+most of all when I'm the one who got it wrong.
+
+There's an odd dividend in this. Being this exacting with a machine—show me
+the command, show me the log—is teaching me to ask the same of people again.
+Years ago I was this demanding; I've since tempered it into something
+gentler, and the machine is nudging the balance back. And I don't expect to
+stop checking their work. These are text predictors
+following guidance, and a model that writes itself a spotless post-mortem is
+doing what it was built to do—not a phase it will grow out of.
