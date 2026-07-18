@@ -7,6 +7,8 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; don't smear them. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
+**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Do not synthesize, score, or print a single theme until the author has answered — completions from the check-in add and reshape themes, so any themes shown first are wrong and bury the questions the author needs to see.
+
 ## 1. Collect (script)
 
 ```bash
@@ -49,15 +51,17 @@ Fetch Readwise + Reader for the same window via MCP (using `window.since`, appen
 - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
 - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-Don't *detect* completions by querying — derive them from one "what's active now?" answer per source. The author keeps the active list current; whatever dropped off since the tracker last saw it has been finished. Before synthesis:
+Don't *detect* completions by querying — derive them from one "what's active now?" answer per source. But a drop is not automatically a completion: a title the author put down to resume later is on **hiatus** and stays Active. Never auto-Finish a drop — confirm its disposition first. Before synthesis:
 
 1. **Read current Active** (best-effort): per source, `notion-search` `data_source_url=<collection>` (`query` a domain term like `"book"`/`"video game"`), `notion-fetch` the hits, keep `Status = Active` → the *known-active* set. This read can't filter on `Status` server-side, so recall is best-effort — a row it misses just won't be offered this run (stays Active until it surfaces). Self-healing gap, never silent data loss.
-2. **Prompt** (one question per source, free-form): show the known-active titles and ask "what are you actually reading/playing right now?" The author replies with the true current set.
-3. **Diff and write back** (`notion-update-page`, `command="update_properties"`):
-   - known-active **dropped** from the answer → set `"Status":"Finished"` (no date — Status is the whole record). If the author says a drop was abandoned rather than finished → `"Status":"Abandoned"` instead.
+2. **Prompt and stop** (one question per source, free-form): show the known-active titles and ask "what are you actually engaged with right now — and did you finish, abandon, or set aside for later any of the rest?" These two questions are the *entire* message — no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
+3. **Classify drops, then write back** (`notion-update-page`, `command="update_properties"`). Every known-active title absent from the answer is a **drop** — but a "currently reading/playing" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert):
+   - **finished** → `"Status":"Finished"` (no date — Status is the whole record).
+   - **abandoned** → `"Status":"Abandoned"`.
+   - **hiatus** (put down, will resume) → **leave Active, no write.**
    - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
    - in both → unchanged.
-4. Show the derived diff (finished / started / unchanged) and confirm in one line before moving on.
+4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
 
 Each item marked **Finished** this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context, not kernels alone, but they color adjacent themes (e.g. a game whose mechanics echo a work post).
 
@@ -100,7 +104,7 @@ A theme can warrant both — a short signal-boost now and a long synthesis later
 
 ## 5. Present + wait
 
-Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
+Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
 
 Wait for the author's call on each theme:
 
