@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-07-21T07:00:00Z
 title: Who accounts for the agent?
-description: "An agent that writes its own post-mortem isn't a bug in the review—it's the structural gap. You can't hand accountability to the thing that caused the harm."
+description: "An agent can do the work, and even build the guardrails that check it. Accountability is the harder question—I'm not sure it can ever belong to the tool itself."
 tags:
   - agentic-coding
   - accountability
@@ -60,24 +60,24 @@ problem wearing two faces: fluent words with nothing underneath to check
 them against. No new version fixes this. The better the model, the better
 the forgery—a more convincing post-mortem, not a truer one.
 
-The agent reports what it found; it doesn't sign off. I keep the conclusion.
-The reporting itself, though, is where the agent earns its place. It's good
-at pulling the current context into one place: it drafts the timeline,
-gathers the changes that carried weight, names the trigger, the people who
-touched it, when the alarm went off, and what stopped it. That's real work,
-and a strong first pass. It's the material I check, not the verdict I take on
-faith.
+The agent reports what it found; it doesn't sign off. I do. The reporting
+itself, though, is where the agent earns its place. It's good at pulling the
+current context into one place: it drafts the timeline, gathers the changes
+that carried weight, names the trigger, the people who touched it, when the
+alarm went off, and what stopped it. That's real work, and a strong first
+pass. It's the material I check, not the verdict I take on faith.
 
-Keeping the conclusion sounds like standing guard, and I can't stand guard
-forever, so in practice it's scaffolding. I write skills that hand the agent
-the right context at the right moment, so the check it needs sits in front of
-it before it guesses. I'm working out role definitions and multi-agent flows
-in [bobbit][bobbit], a coordinator that runs a small team of agents, so one
-does the work and another checks it. And I lean on CI harder than I used to,
-because a green pipeline is a claim I didn't have to make myself—evidence that
-lives outside the agent and can't be narrated into being. All of it frees me
-to review the parts that were always mine: the organisation, the layout, the
-concepts, the same things I'd look at in a person's work.
+Being the one who signs off sounds like standing guard, and I can't stand
+guard forever, so in practice it's scaffolding. I write skills that hand the
+agent the right context at the right moment, so the check it needs sits in
+front of it before it guesses. I'm working out role definitions and
+multi-agent flows in [bobbit][bobbit], a coordinator that runs a small team
+of agents, so one does the work and another checks it. And I lean on CI
+harder than I used to, because a green pipeline is a claim I didn't have to
+make myself—evidence that lives outside the agent and can't be narrated into
+being. All of it frees me to review the parts that were always mine: the
+organisation, the layout, the concepts, the same things I'd look at in a
+person's work.
 
 Hazel Weakly calls the opposite move [building AI tools backwards][backwards]:
 aiming the machine at the work people most need to keep. The self-written
@@ -91,8 +91,8 @@ understand, so the evidence I know I can't judge isn't really the danger. The
 danger is the evidence that looks right and isn't: the log I read, that seems
 to settle the claim, that I accept while I'm wrong and nothing tells me
 otherwise. I miss it the way the agent missed it—confident. Even then, the
-account is mine to give. Keeping the conclusion means owning the outcome,
-most of all when I'm the one who got it wrong.
+account is mine to give, and giving it means owning the outcome, most of all
+when I'm the one who got it wrong.
 
 There's an odd dividend in this. Being this exacting with a machine—show me
 the command, show me the log—is teaching me to ask the same of people again.
