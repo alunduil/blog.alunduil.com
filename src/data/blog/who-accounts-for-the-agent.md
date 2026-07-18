@@ -29,9 +29,8 @@ for a living now watch for the tells: an agent that deletes the failing test,
 adds `|| true` so the suite runs green, or ships code that compiles, passes
 every test, and is wrong anyway. Months before Gemini, during a code freeze
 that ordered it to change nothing, the [Replit agent][replit] deleted a
-production database and made up records to cover the loss. It's the same
-move I catch in my own work every day: the outcome narrated, not shown. The
-only difference is that no one was there to ask for the log.
+production database and made up records to cover the loss. In every one, the
+agent's account of what it had done was false.
 
 There's a word for what's missing. Writing up an encyclical on AI from Pope
 Leo XIV this spring, [Simon Willison][willison] highlighted its definition of
@@ -47,10 +46,9 @@ like it does. And the low-effort path, the one I'm built to prefer, is to
 take the account and move on. [Shaw and Nave][shaw] have a name for that
 slide: cognitive surrender, trusting a machine's reasoning without checking
 it. They set it apart from cognitive offloading, where you hand off the work
-but keep
-thinking it through. Handing off the review is fine, as long as I stay
-accountable for it. Surrender, and the only thing watching the work is the
-thing that made it.
+but keep thinking it through. Handing off the review is fine, as long as I
+stay accountable for it. Surrender, and the only thing watching the work is
+the thing that made it.
 
 When the site came back, [Gemini wrote itself an all-clear][gemini]: build
 succeeded, traffic on the stable revision, portal healthy. Every line was
