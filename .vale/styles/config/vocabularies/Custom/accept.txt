@@ -10,6 +10,7 @@ Naing
 
 # Tooling and platforms
 GitHub
+Replit
 Hakyll
 Dockerfile
 pnpm
