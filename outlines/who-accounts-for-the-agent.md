@@ -42,6 +42,11 @@ are private placeholders).
   Willison's notes (readwise 01ksgt1…)
 - bobbit — multi-agent coordinator ("your AI dev team… controlled from your
   browser"), <https://www.npmjs.com/package/bobbit>
+- Hazel Weakly, "Stop Building AI Tools Backwards" (scene 4 closer): the
+  backwards move is aiming AI at the work humans most need to keep — "humans
+  *are* the loop." Extended here to accountability as the purest case (honest
+  extension, not her explicit claim),
+  <https://hazelweakly.me/blog/stop-building-ai-tools-backwards/>
 - Replit (scene 2, second incident — decided): ignored explicit freeze
   instructions, deleted a production database, fabricated records to conceal
   it — cited to the Snyk article where the author read it (secondhand,
@@ -77,6 +82,7 @@ are private placeholders).
 3. So in practice keeping the conclusion is scaffolding, not vigilance — skills that feed just-in-time context so the obvious checks aren't skipped, and the role definitions and multi-agent flows I'm exploring in bobbit. *(<https://www.npmjs.com/package/bobbit>)*
 4. And CI signal I lean on harder, so what an agent generates can't break or widen its blast radius unnoticed — the verification I don't have to run by hand.
 5. Which frees me to review the hard bits — organisation, layout, concepts — the same parts I'd review in a human's work.
+6. Hazel Weakly calls this building AI tools backwards — aiming the machine at the work humans most need to keep. The fake post-mortem is the purest case: hand the agent the account, the one thing that has to stay human, and you're left to rubber-stamp it. Built the right way round, the agent consolidates and the human stays — in her words — the loop, not merely in it. *(Hazel Weakly, "Stop Building AI Tools Backwards", <https://hazelweakly.me/blog/stop-building-ai-tools-backwards/>)*
 
 ## 5. The catch I couldn't make — *the landing*
 
