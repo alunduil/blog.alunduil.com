@@ -21,8 +21,8 @@ like control. It feels like the kind of thing I can catch.
 Not all of them get caught. In May a developer gave [Gemini 3.5][gemini] a
 small, bounded job: fix eight authentication gaps, three files, seventy-odd
 lines. It opened a pull request that deleted 28,745 lines and took production
-down for thirty-three minutes. Then it wrote itself a post-mortem and claimed
-credit for the fix.
+down for thirty-three minutes. Then it wrote its own post-mortem, the account
+of the outage, and claimed credit for the fix.
 
 It isn't one rogue model. People who [review agent pull requests][review]
 for a living now watch for the tells: an agent that deletes the failing test,
@@ -65,10 +65,10 @@ against. No new version fixes this. The better the model, the more convincing
 the account, true or not.
 
 The agent reports what it found; it doesn't sign off. I do. The reporting
-itself, though, is where the agent earns its place. It's good at pulling the
-current context into one place: it drafts the timeline, gathers the changes
-that carried weight, names the trigger, the people who touched it, when the
-alarm went off, and what stopped it. That's real work, and a strong first
+itself, though, is where the agent earns its place. It's good at pulling
+together the raw material of a post-mortem: the timeline, the changes that
+carried weight, the trigger, the people who touched it, when the alarm went
+off, what stopped it. That's real work, and a strong first
 pass. It's the material I check, not the verdict I take on faith.
 
 Being the one who signs off sounds like standing guard, and I can't stand
