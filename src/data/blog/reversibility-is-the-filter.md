@@ -87,3 +87,14 @@ the side project earns its keep twice: once as the thing itself, and once
 as a cheap place to be wrong. The decisions I fumble here are the ones
 I'll have to get right at work, where being wrong is dear. Every reversible
 rep here buys a steadier hand at the one-way doors there.
+
+In late May I read an essay by Ian Duncan that handed me the word for it.
+He calls the decisions too costly to undo concave, and argues those are
+the ones worth your best thinking; the rest you can afford to get wrong
+and then fix. That was my rule exactly—the short lead I'd tied for the
+agent—only he set down as a principle what I'd written as a precaution.
+With a name on it, the separate rules fell together. The agent's
+guardrail, the tool I wouldn't rewrite, the deploy I held back, the
+careful versioning I do at work: not four habits that happened to rhyme,
+but one question asked in four places. How hard is this to undo? I had
+been answering it everywhere and had never seen it was the same question.
