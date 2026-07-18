@@ -98,3 +98,25 @@ guardrail, the tool I wouldn't rewrite, the deploy I held back, the
 careful versioning I do at work: not four habits that happened to rhyme,
 but one question asked in four places. How hard is this to undo? I had
 been answering it everywhere and had never seen it was the same question.
+
+Duncan's fourth question asks whether the people who live with a decision
+can see its shape the way you do. On a project that's mostly me and a
+machine, it bends into a stranger one: whether the shape I see is real.
+Before I commit to something hard to undo, I lean on the agent to tell me
+how hard—what the migration takes, who else depends on this, whether the
+thing I'm touching is load-bearing. The gate only works if that reading is
+right. And the agent that makes me fast is the one I trust to draw the map.
+
+Two things vary, on their own: whether the agent's read is right, and
+whether I can tell. Three of the four I can live with. If it reads right
+and I know it, we go. If it reads wrong and I catch it, we fix it. If it
+reads right and I doubt it, the doubt costs me only time. The fourth is the
+one that bites. The map is wrong and I can't tell. It's a one-way door
+drawn as a two-way one, and I walk through it sure I can come back.
+
+Teaching the agent Duncan's words would sharpen the map. It wouldn't close
+the gap, because a sharper wrong map still reads as right. And some of what
+I can't tell is no one's fault—the ground is rougher than any honest map
+can show. So the hole in the method is every case where I can't tell, and I
+have no reliable way out. The test sizes how much I should deliberate. It
+can't tell me when the shape itself is the thing I've got wrong.
