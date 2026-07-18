@@ -16,11 +16,7 @@ export type WebmentionEntry = {
   "wm-source": string;
   "wm-target": string;
   "wm-property":
-    | "in-reply-to"
-    | "like-of"
-    | "repost-of"
-    | "mention-of"
-    | "bookmark-of";
+    "in-reply-to" | "like-of" | "repost-of" | "mention-of" | "bookmark-of";
   "wm-private": boolean;
   content?: { html?: string };
 };
