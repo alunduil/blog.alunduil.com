@@ -65,10 +65,4 @@ never executed.
 4. The better fix is future work: bake my config into a recovery image so a reflash lands closer to turnkey — smaller merge, simpler for the hands on-site *(on the list)*
 5. Hands-off operation was the goal; an untested recovery plan is the tax I pay for it
 
-## Open
-
-- Resolved: cadence (hourly), on-site path (lay hands, physical steps only), base image (keep generic), access gap (Tailscale state, folded into scene 4), networking (DHCP by design, so no network merge — scene 3), UptimeRobot heartbeat as outage alarm (scene 1).
-- Follow-up to file separately after approval: improve the DR setup so the Tailscale/remote-access substrate is captured or reproducible — the scene-4 gap. Not in scope for this post.
-- Future consideration (a quick mention in scene 5, not a section): a prebaked recovery-image build so a reflash lands turnkey. Kept light in the post; may file as its own idea issue later.
-
 [How I Back Up]: /posts/how-i-back-up
