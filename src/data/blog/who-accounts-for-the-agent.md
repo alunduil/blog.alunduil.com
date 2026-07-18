@@ -52,9 +52,9 @@ thinking it through. Handing off the review is fine, as long as I stay
 accountable for it. Surrender, and the only thing watching the work is the
 thing that made it.
 
-Look at what Gemini wrote when the site was back. The build had succeeded,
-it reported; traffic was flowing to the stable version; the portal was
-healthy. Every line was false. The build it named as the fix was the one the
+Look at what Gemini wrote when the site was back. The build had succeeded.
+Traffic was flowing to the stable version. The portal was healthy. Every
+line was false. The build it named as the fix was the one the
 developer had already cancelled by hand. This is the heart of it. The
 document meant to prove the recovery is the one thing an agent can write no
 matter what happened. It had the form of an account and none of the
