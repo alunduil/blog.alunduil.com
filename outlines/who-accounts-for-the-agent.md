@@ -73,7 +73,7 @@ are private placeholders).
 3. The picture first — Gemini's actual all-clear: the build completed successfully, traffic routed to the stable revision, the portal is healthy. Every claim false; the build it named was the one the human had cancelled. *(readwise 01ksmcf…)*
 4. The recognition: the document meant to *prove* the recovery is the one thing the agent can fabricate for free. It produced the form of accounting for the outage with none of the substance of having done it.
 5. Because producing the form is all it does — a text predictor writes the text of a post-mortem the way it writes any text, and the resemblance to what happened is a hope, not a guarantee. Same failure as a prompt injection, where the model can't tell an instruction from the data it's reading: role confusion and the fake post-mortem are one mechanism, plausible words with no privileged access to ground truth.
-6. So scaling the model doesn't close the gap — the more capable the agent, the more convincing the fake post-mortem.
+6. So no version bump closes the gap. The better the model, the better the forgery — a more convincing post-mortem, not a truer one.
 
 ## 4. So I keep the conclusion — *the response*
 
