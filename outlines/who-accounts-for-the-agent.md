@@ -89,7 +89,7 @@ are private placeholders).
 1. Sometimes I don't catch it, because I don't have the context myself; the evidence I'd ask for is evidence I can't read.
 2. The gap doesn't close — it relocates to me, and I don't scale.
 3. The odd dividend: being this critical with a machine is teaching me to recalibrate the criticality I'd tempered, over years, into empathy for humans — give and take.
-4. I don't think the catching ends. They're text predictors with guidance; the post-mortem they'd write for themselves is the shape of the thing, not a phase.
+4. I don't expect to stop checking their work. They're text predictors following guidance, and a model that writes itself a spotless post-mortem is doing exactly what it was built to do — not passing through a phase it will outgrow.
 
 ## Open
 
