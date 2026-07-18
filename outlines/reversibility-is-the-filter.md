@@ -56,19 +56,17 @@ language yet.
 
 ## 5. The name — *the turn (climax)*
 
-1. In late May I read Duncan: convex vs concave, the reversal-cost test, "can the people who live with this decision see the shape of it." *(Readwise highlights, 2026-05-24)*
-2. I'd run this test on teams at work for years and never had a word for it — and the word wasn't in my repos either, before or since; the vocabulary appears in not one of them.
-3. The click: the leash I'd written weeks earlier to keep an agent from doing what I couldn't undo is that same years-old team test. One filter, three actors — me, the agent, the team.
-4. The fourth question mostly dissolves when I'm my own owner — until the decision leaves my head to someone else who has to live with it, like a user's saved collection, and it snaps back *(genshin `8ef066e`, 2026-07-03 — a shape change would silently drop a user's saved collection)*
-5. And owning it was never owning the task — it was owning the goal, which is the same thing as owning the reversal cost when the door turns out to be one-way *(Stay SaaSy, "the core unit of ownership is a goal" — issue source #3; evaluate whether this earns its place)*
-6. Having the word didn't end the practice — it sharpened it: I walked ADR 0001's deferred rewrite through the door once its triggers fired, and drew the line around a review agent so it could advise but not `push` *(chezmoi ADR 0002 `2d24994`, 2026-06-04; genshin `a8cf4e3`, 2026-06-28 — both after 05-24, now done with the vocabulary for it)*
+Keep Duncan the spark, not the subject — compress, don't recap the framework. No years-of-conscious-team-practice claim: without the name it wasn't consciously done. The fourth question is not here; it opens scene 6.
+
+1. In late May, Duncan's essay hands me the word: the decisions too costly to undo are concave, and those are the ones worth the best thinking; the rest you get wrong and fix *(Ian Duncan, "Your Best Thinking Is Wasted on the Wrong Decisions," read 2026-05-24)*
+2. That was my rule exactly — the short lead I'd tied for the agent — only he set it down as a principle where I'd written it as a precaution.
+3. With a name on it the separate rules fall together: the agent guardrail, the tool I wouldn't rewrite, the deploy I held back, the versioning I do at work — not four habits but one question, *how hard is this to undo*, answered everywhere without my seeing it was one.
 
 ## 6. The map I didn't draw — *the landing (admitted gap); flow the 2×2 as prose, never a table*
 
-1. The gate only works if I read the door right — and the agent that makes me fast is the same tool I read it with.
-2. Two things vary on their own: whether the agent's read is right, and whether I can tell.
-3. Three of the four pairings survive — right and I know it; wrong and I catch it; right and I only over-deliberate, paying wasted caution.
-4. The fourth is the one that bites: the map's wrong and I can't tell — a concave decision drawn convex, and I walk the one-way door sure it swings both ways.
-5. Naming the shapes in the agent's config sharpens the read; it won't close that cell, because a sharper wrong map still reads as right.
-6. And part of "can't tell" is no one's error — the territory turns out gnarlier than any map, however honest, could show.
-7. So the gap is the whole can't-tell column, and I've no reliable way to move myself out of it: the test sizes how much I deliberate, but it can't flag the one case that matters — when my read of the door is the thing that's wrong.
+1. Duncan's fourth question — can the people who live with a decision see its shape the way you do — bends, in a mostly-me-and-a-machine loop, into a stranger one: is the shape I see even real, when I read it through the agent?
+2. Before an irreversible call I lean on the agent to show me how hard to undo; the gate only works if that reading is right, and the agent that makes me fast is the tool I read the map with.
+3. Two things vary on their own: whether the agent's read is right, and whether I can tell. Three of the four pairings survive — right and I know it; wrong and I catch it; right and I distrust it, paying only wasted time.
+4. The fourth bites: the map's wrong and I can't tell — a one-way door drawn as a two-way one, walked through certain I can come back.
+5. Naming convex/concave in the agent's config sharpens the map; it won't close that cell, because a sharper wrong map still reads as right — and part of "can't tell" is no one's error, the ground rougher than any honest map could show.
+6. So the gap is the whole can't-tell column, with no reliable way out: the test sizes how much I deliberate, but can't flag the one case that matters — when my read of the shape is the thing that's wrong.
