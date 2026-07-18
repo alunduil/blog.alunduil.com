@@ -10,6 +10,8 @@ Naing
 
 # Tooling and platforms
 GitHub
+Replit
+bobbit
 Hakyll
 Dockerfile
 pnpm
@@ -154,3 +156,4 @@ else's
 # possessives from base forms it doesn't know.
 Fratantoni
 Fratantoni's
+Willison
