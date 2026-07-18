@@ -15,6 +15,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.1",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "@resvg/resvg-js": "^2.6.2",
@@ -31,7 +32,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@pagefind/default-ui": "1.5.2",
-    "@shikijs/transformers": "4.3.0",
+    "@shikijs/transformers": "4.3.1",
     "@tailwindcss/typography": "0.5.20",
     "@types/lodash.kebabcase": "4.1.9",
     "@typescript-eslint/parser": "8.64.0",
