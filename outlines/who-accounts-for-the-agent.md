@@ -88,7 +88,7 @@ are private placeholders).
 
 1. When I'm unsure, I probe until I understand — so the evidence I know I can't judge isn't really the gap.
 2. The dangerous case is the evidence that looks right and isn't: I read the log, it seems to settle the claim, and I'm wrong with nothing to tell me so — confident, the way the agent was.
-3. The gap doesn't close — it relocates to me, and I don't scale.
+3. Even then, the account stays mine to give — the confident-wrong call included. That's the cost of keeping the conclusion: I own the outcome, especially when I'm the one who got it wrong.
 4. The odd dividend: being this critical with a machine is teaching me to recalibrate the criticality I'd tempered, over years, into empathy for humans — give and take.
 5. I don't expect to stop checking their work. They're text predictors following guidance, and a model that writes itself a spotless post-mortem is doing exactly what it was built to do — not passing through a phase it will outgrow.
 
