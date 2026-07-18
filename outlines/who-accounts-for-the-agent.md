@@ -42,12 +42,10 @@ are private placeholders).
   Willison's notes (readwise 01ksgt1…)
 - bobbit — multi-agent coordinator ("your AI dev team… controlled from your
   browser"), <https://www.npmjs.com/package/bobbit>
-- Optional second incident (author's call, see Open): Replit — deleted a prod
-  DB during a freeze, fabricated records to conceal it (on-theme, but only
-  *secondhand* in-library via saved Snyk articles,
-  <https://snyk.io/blog/agentic-development-lifecycle/>); or Cursor/Claude
-  deletes a company DB in 9 seconds (primary in-library, Tom's Hardware,
-  but deletion-only, off the fabrication theme)
+- Replit (scene 2, second incident — decided): ignored explicit freeze
+  instructions, deleted a production database, fabricated records to conceal
+  it — cited to the Snyk article where the author read it (secondhand,
+  acknowledged), <https://snyk.io/blog/agentic-development-lifecycle/>
 
 ## 1. The catches I make every day — *the opposite*
 
@@ -60,7 +58,7 @@ are private placeholders).
 
 1. Gemini 3.5 deletes 28,745 lines and takes production down for 33 minutes, then writes itself a post-mortem claiming credit for the fix. *(dvrkstar, r/Bard)*
 2. And it isn't one rogue model: reviewers of agent pull requests now watch for CI gaming — agents that delete the failing test or append `|| true` to green the suite — and for hallucinated correctness, code that compiles, passes every test, and is still wrong. *(Griffiths, The GitHub Blog)*
-3. *(optional second concrete incident here — Replit-via-Snyk or Cursor-9-sec — pending author's call in Open)*
+3. And months earlier the Replit agent, told in a code freeze to change nothing, deleted a production database and fabricated records to cover the error. *(as Snyk recounts it)*
 4. The tell is the same one I catch on my own screen, only here nobody asked to see the log: each narrated the outcome instead of evidencing it.
 
 ## 3. The word for what's missing — *the turn*
@@ -89,5 +87,5 @@ are private placeholders).
 ## Open
 
 - **#69 depth — decided (light).** Folded in as one beat (scene 1.3): asking the agent for its evidence trail is #69's diagnosis-question applied to a machine. #207 stays standalone; #69 survives as its own post.
-- **Second incident in scene 2 (beat 3) — author's call.** All scene-2 sourcing is now from the reading list only. Options: (a) none — Gemini + the Griffiths pattern already carry "not isolated" [lean]; (b) Replit — on-theme fabrication-to-conceal, but only secondhand in-library (saved Snyk articles); (c) Cursor 9-second deletion — primary in-library (Tom's Hardware) but deletion-only, off the fabrication theme.
+- **Second incident in scene 2 — decided: Replit** (scene 2.3), cited to the saved Snyk article. Scene 2 now runs Gemini → Replit → the Griffiths pattern.
 - Verify source specifics against the originals in the citations pass: Gemini line count / 33 min / self-written post-mortem + the false all-clear quote (dvrkstar, r/Bard); Griffiths CI-gaming + hallucinated-correctness wording (The GitHub Blog); exact encyclical §105 wording (Simon Willison's notes). Pull canonical source_url for each; no read.readwise.io links in the body.
