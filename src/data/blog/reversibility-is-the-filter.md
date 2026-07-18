@@ -41,3 +41,28 @@ cost too much to take back. Hard to reverse was the whole test. I was
 running it on the agent's actions, on my own tools, and on which of my
 decisions were worth writing down. I still hadn't seen it was one test,
 or thought to give it a name.
+
+I shadowed the `gh` command on my own machine so a coding agent couldn't
+open a pull request for review. It could draft one all day; the version
+that pings a human and starts the clock needed my hand on it. Drafting is
+reversible—you close the tab and it's gone. A pull request marked ready
+has already reached someone, and you can't call it back. The agent worked
+right up to the edge of the outward-facing thing and stopped there. It was
+the short lead again, tied off at the same place.
+
+Then I drew the same line around myself. The blog deploys on every push
+to its main branch, so I split the work in two: pull requests build and
+check and prove themselves, and only the push that lands ever ships to
+anyone. I didn't lay it out that cleanly at the start. I found where the
+line belonged the hard way, from a dependency bump that passed every
+check, merged green, and only fell over on the deploy afterwards, when
+the site was already going out. Nothing was lost that a fix couldn't
+recover, but on a side project the recovery is entirely mine: no reviewer
+had caught it, no process had stopped it, and no one else was going to
+clean it up. That is the difference from work, where a bad decision meets
+other people before it meets me. Here it met an afternoon I'd set aside to
+build the next thing, and I spent that afternoon fixing the last one
+instead. The deploy took an hour to put right. What the hour actually cost
+was some of the appetite to keep going, and on a project like this that
+appetite is the only fuel there is. A bad call doesn't spend a schedule or
+a budget here. It spends the will the whole thing runs on.
