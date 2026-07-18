@@ -49,6 +49,11 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
   // webmention.io mid-fetch shifts every later offset, silently dropping
   // or duplicating a boundary entry. since_id tracks by ID, so surviving
   // entries never shift and strictly-greater guarantees no duplicates.
+  // Terminate on an empty batch, not a short one: a short page would
+  // assume the server honours our requested per-page, so a server-side
+  // cap below PER_PAGE would silently stop us after the first batch.
+  // per-page only bounds the request count; keep it high to minimise
+  // build-time round-trips on posts with many mentions.
   const children: WebmentionEntry[] = [];
   let sinceId = 0;
   for (;;) {
@@ -60,9 +65,9 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
 
     const data = (await res.json()) as { children?: WebmentionEntry[] };
     const batch = data.children ?? [];
-    children.push(...batch);
+    if (batch.length === 0) break;
 
-    if (batch.length < PER_PAGE) break;
+    children.push(...batch);
     sinceId = Math.max(...batch.map(c => c["wm-id"]));
   }
 
