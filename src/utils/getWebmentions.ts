@@ -44,16 +44,9 @@ const PER_PAGE = 100;
 export async function getWebmentions(target: string): Promise<Webmentions> {
   if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
 
-  // Keyset pagination on wm-id (sort-dir=up, advancing since_id) rather
-  // than page/per-page offsets: a mention added or removed on
-  // webmention.io mid-fetch shifts every later offset, silently dropping
-  // or duplicating a boundary entry. since_id tracks by ID, so surviving
-  // entries never shift and strictly-greater guarantees no duplicates.
-  // Terminate on an empty batch, not a short one: a short page would
-  // assume the server honours our requested per-page, so a server-side
-  // cap below PER_PAGE would silently stop us after the first batch.
-  // per-page only bounds the request count; keep it high to minimise
-  // build-time round-trips on posts with many mentions.
+  // webmention.io's since_id is a forward-only cursor (returns wm-id
+  // strictly greater, with no descending equivalent), so we fetch
+  // oldest-first and advance since_id past each batch.
   const children: WebmentionEntry[] = [];
   let sinceId = 0;
   for (;;) {
@@ -65,13 +58,15 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
 
     const data = (await res.json()) as { children?: WebmentionEntry[] };
     const batch = data.children ?? [];
+    // End of data is an empty batch, not a short one: the server may cap
+    // per-page, so a short page isn't a reliable end signal.
     if (batch.length === 0) break;
 
     children.push(...batch);
     sinceId = Math.max(...batch.map(c => c["wm-id"]));
   }
 
-  // sort-dir=up yields oldest-first; restore newest-first for display.
+  // The cursor forced oldest-first; restore newest-first for display.
   children.sort((a, b) => b["wm-id"] - a["wm-id"]);
 
   return {
