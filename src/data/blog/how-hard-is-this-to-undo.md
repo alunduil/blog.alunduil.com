@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-08-02T07:00:00Z
-title: Reversibility Is the Filter
-description: "A guardrail I wrote to keep a coding agent from doing what I couldn't undo turned out to be the decision test I'd used on teams for years."
+title: How Hard Is This to Undo
+description: "A rule I gave a coding agent, to keep it off the moves I couldn't undo, turned out to be one question—how hard is this to undo—sizing every decision I make."
 tags:
   - agentic-coding
   - decision-making
@@ -88,7 +88,8 @@ as a cheap place to be wrong. The decisions I fumble here are the ones
 I'll have to get right at work, where being wrong is dear. Every reversible
 rep here buys a steadier hand at the one-way doors there.
 
-In late May I read an essay by Ian Duncan that handed me the word for it.
+In late May I read an [essay][duncan] by Ian Duncan that handed me the
+word for it.
 He calls the decisions too costly to undo concave, and argues those are
 the ones worth your best thinking; the rest you can afford to get wrong
 and then fix. That was my rule exactly—the short lead I'd tied for the
@@ -120,3 +121,5 @@ I can't tell is no one's fault—the ground is rougher than any honest map
 can show. So the hole in the method is every case where I can't tell, and I
 have no reliable way out. The test sizes how much I should deliberate. It
 can't tell me when the shape itself is the thing I've got wrong.
+
+[duncan]: https://www.iankduncan.com/engineering/2026-02-07-your-best-thinking-is-wasted-on-the-wrong-decisions/
