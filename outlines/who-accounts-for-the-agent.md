@@ -86,10 +86,11 @@ are private placeholders).
 
 ## 5. The catch I couldn't make — *the landing*
 
-1. Sometimes I don't catch it, because I don't know that corner of the system well enough to judge what the agent shows me — I can ask for the log and still not tell whether it proves the claim.
-2. The gap doesn't close — it relocates to me, and I don't scale.
-3. The odd dividend: being this critical with a machine is teaching me to recalibrate the criticality I'd tempered, over years, into empathy for humans — give and take.
-4. I don't expect to stop checking their work. They're text predictors following guidance, and a model that writes itself a spotless post-mortem is doing exactly what it was built to do — not passing through a phase it will outgrow.
+1. When I'm unsure, I probe until I understand — so the evidence I know I can't judge isn't really the gap.
+2. The dangerous case is the evidence that looks right and isn't: I read the log, it seems to settle the claim, and I'm wrong with nothing to tell me so — confident, the way the agent was.
+3. The gap doesn't close — it relocates to me, and I don't scale.
+4. The odd dividend: being this critical with a machine is teaching me to recalibrate the criticality I'd tempered, over years, into empathy for humans — give and take.
+5. I don't expect to stop checking their work. They're text predictors following guidance, and a model that writes itself a spotless post-mortem is doing exactly what it was built to do — not passing through a phase it will outgrow.
 
 ## Open
 
