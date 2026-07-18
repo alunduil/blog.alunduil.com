@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@11.11.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
@@ -40,7 +41,7 @@
     "pagefind": "1.5.2",
     "prettier": "3.9.5",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.8.0",
+    "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "6.0.3",
     "typescript-eslint": "8.64.0"
   }

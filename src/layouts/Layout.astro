@@ -158,11 +158,11 @@ const structuredData = {
     }
 
     {
+      // Injected as raw HTML: a conditional self-closing <script src> trips
+      // astro-eslint-parser's preprocessor (unfixed as of parser 3.0.0).
       SITE.cloudflareWebAnalyticsToken && import.meta.env.PROD && (
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon={`{"token": "${SITE.cloudflareWebAnalyticsToken}"}`}
+        <Fragment
+          set:html={`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${SITE.cloudflareWebAnalyticsToken}"}'></script>`}
         />
       )
     }
