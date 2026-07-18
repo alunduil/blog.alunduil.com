@@ -63,7 +63,7 @@ language yet.
 5. And owning it was never owning the task — it was owning the goal, which is the same thing as owning the reversal cost when the door turns out to be one-way *(Stay SaaSy, "the core unit of ownership is a goal" — issue source #3; evaluate whether this earns its place)*
 6. Having the word didn't end the practice — it sharpened it: I walked ADR 0001's deferred rewrite through the door once its triggers fired, and drew the line around a review agent so it could advise but not `push` *(chezmoi ADR 0002 `2d24994`, 2026-06-04; genshin `a8cf4e3`, 2026-06-28 — both after 05-24, now done with the vocabulary for it)*
 
-## 6. The map I didn't draw — *the landing (admitted gap)*
+## 6. The map I didn't draw — *the landing (admitted gap); flow the 2×2 as prose, never a table*
 
 1. The gate only works if I read the door right — and the agent that makes me fast is the same tool I read it with.
 2. Two things vary on their own: whether the agent's read is right, and whether I can tell.
@@ -72,10 +72,3 @@ language yet.
 5. Naming the shapes in the agent's config sharpens the read; it won't close that cell, because a sharper wrong map still reads as right.
 6. And part of "can't tell" is no one's error — the territory turns out gnarlier than any map, however honest, could show.
 7. So the gap is the whole can't-tell column, and I've no reliable way to move myself out of it: the test sizes how much I deliberate, but it can't flag the one case that matters — when my read of the door is the thing that's wrong.
-
-## Open
-
-- **"People who live with the decision" (beat 5.4)** — the partner/home-automation reference was cut (it read as the partner owning home automation; the author meant the colloquial "partner test," and judged the point bad). The beat now rests on the git-provable user's-saved-collection anchor alone. If a second example is wanted, it needs one that genuinely fits, not the partner test.
-- **Stay SaaSy "ownership = a goal" (beat 5.5)** — added for the author to evaluate in place; cut in post-draft if it dilutes the peak rather than deepening it.
-- **Scene 6 renders as prose, not a matrix** — the landing walks a 2×2 (agent's read right/wrong × I can tell / can't), but the corpus is list-free narrative. post-draft must flow the four cells through sentences that build to the one that bites, never a table or a bulleted grid.
-- **Title** — working title only; real title chosen in post-draft once the prose settles what it argues.
