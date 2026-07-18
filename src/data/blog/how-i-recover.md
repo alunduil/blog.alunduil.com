@@ -28,7 +28,7 @@ Every hour, the box also backs itself up. A systemd timer fires an
 Google Drive: the list of every installed package, the whole of `/etc`,
 and the whole of `/home`. Configuration, package selection, and my
 files—everything a working system is made of, copied off the board and
-out of the house before anything can happen to the card it lives on.
+out of the house before anything can happen to the SD card it lives on.
 
 So I'm covered. The data is safe, an hour old at worst, sitting somewhere
 I trust. Recovery, if it ever came to it, felt like a problem I'd already
@@ -38,7 +38,7 @@ Then the heartbeat stops. Most of the time it's nothing dramatic: a cable
 has worked loose, or the switch the box hangs off has rebooted, and the
 box is fine again the moment the network comes back. For all the planning
 that follows, the thing that takes this box down is usually the cable, not
-a corrupted SD card. And even that I can't fix from London—a loose cable
+the card. And even that I can't fix from London—a loose cable
 waits on someone walking over to the board.
 
 The failures that actually need a plan are rarer: an SD card that has
