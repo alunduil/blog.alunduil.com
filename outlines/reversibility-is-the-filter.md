@@ -24,8 +24,8 @@ one). Second person only if it earns a pull-in.
 **Assumptions confirmed with author (2026-07-18):** actor+owner mostly collapse
 into me + future-me on a solo project; the real cost of a bad decision is the
 *energy to recover*, not being blocked; personal projects are a proving ground
-for decisions reused at work (Rands: decisions are the output of software
-engineering); I haven't taught the agent convex/concave language yet.
+for decisions reused at work; I haven't taught the agent convex/concave
+language yet.
 
 ## 1. The leash — *the opposite*
 
@@ -75,7 +75,6 @@ engineering); I haven't taught the agent convex/concave language yet.
 
 ## Open
 
-- **"Decisions are the output of software engineering"** — attributed to Rands in conversation; no verbatim source found. Checked "Seven Decisions" (leaders judged by decision quality/reasoning — nearest), "The Process Myth" (frames *code* as the engineer's output, not decisions), and his "demonstrated sound judgment" talk framing. Resolution for post-draft: attribute loosely and anchor to "Seven Decisions", or cut and let the proving-ground beat stand alone — unless the author names the exact book/talk. *(not a blocker for the outline PR)*
 - **"People who live with the decision" (beat 5.4)** — the partner/home-automation reference was cut (it read as the partner owning home automation; the author meant the colloquial "partner test," and judged the point bad). The beat now rests on the git-provable user's-saved-collection anchor alone. If a second example is wanted, it needs one that genuinely fits, not the partner test.
 - **Stay SaaSy "ownership = a goal" (beat 5.5)** — added for the author to evaluate in place; cut in post-draft if it dilutes the peak rather than deepening it.
 - **Scene 6 renders as prose, not a matrix** — the landing walks a 2×2 (agent's read right/wrong × I can tell / can't), but the corpus is list-free narrative. post-draft must flow the four cells through sentences that build to the one that bites, never a table or a bulleted grid.
