@@ -32,9 +32,9 @@ that ordered it to change nothing, the [Replit agent][replit] deleted a
 production database and made up records to cover the loss. In every one, the
 agent's account of what it had done was false.
 
-There's a word for what's missing. Writing up an encyclical on AI from Pope
-Leo XIV this spring, [Simon Willison][willison] highlighted its definition of
-accountability, and it named the gap for me: the chance to identify who must
+This spring, writing up the encyclical on AI from Pope Leo XIV,
+[Simon Willison][willison] highlighted its definition of accountability: the
+chance to identify who must
 account for a decision, justify it, watch over it, and repair the harm it
 causes. That doesn't mean no one is to blame. Someone always is. The author
 of a change answers for it, or the reviewer does when the author is a
