@@ -4,7 +4,7 @@
 what it argues.)*
 
 **Logline.** Copilot's per-request billing had grown tighter than even
-the hundred-a-month budget I was glad to pay, so at GrafanaCON I tried the
+the budget I was glad to pay, so at GrafanaCON I tried the
 Claude subscription only because I used the Claude models anyway — and on
 the plane home, planning projects from my phone through Claude chats, I
 realised it wasn't a cheaper Copilot but a different medium: the work had
@@ -37,7 +37,7 @@ Simon's math, the Apr-27 usage-based announcement) is ambient backdrop.
 ## 2. The budget that ran tight — *the forcing function*
 
 1. Copilot billed by the premium request — a set number each month, then a charge past that *(github.blog changelog 2025-06-18; $0.04/request)*.
-2. The models I leaned on burned that number fast, so my own cap was the real limit: a hundred dollars a month, which I was glad to pay *(lived; Claude models carried high request-multipliers — the no-allowance, pure-per-token move is dated 2026-06-01, after the switch)*.
+2. The models I leaned on burned that number fast, so my own cap was the real limit — a monthly budget I was glad to pay *(lived; keep the figure out; Claude models carried high request-multipliers — the no-allowance, pure-per-token move is dated 2026-06-01, after the switch)*.
 3. At my pace even that ran tight, and by spring it wasn't enough.
 
 ## 3. GrafanaCON, on low expectations — *the reluctant step*
