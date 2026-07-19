@@ -8,10 +8,11 @@ tags:
 ---
 
 For the first months of this year I built genshin.dungeon.studio with GitHub
-Copilot. I used its chat far more than its autocomplete. There I kept a page of
-instructions and a set of prompt files. They told it how I wanted things done,
-down to commit messages and reviews. I asked, it answered, and the work moved
-fast. Some months ran to the better part of a hundred commits, and that one
+Copilot. I used its chat far more than its autocomplete. I'd tuned it into my
+own tool: standing instructions, a library of prompts for the jobs I ran most
+often, and conventions for how it wrote code, commits, and reviews. I asked, it
+answered, and the work moved fast. Some months ran to the better part of a
+hundred commits, and that one
 project took most of them. The chat sat in a panel next to the code, in the
 editor, on my desk.
 
