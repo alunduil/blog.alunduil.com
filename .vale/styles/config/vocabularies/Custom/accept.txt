@@ -118,6 +118,7 @@ Warcraft
 
 # Books and fiction
 Earthsea
+Guiliano
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
