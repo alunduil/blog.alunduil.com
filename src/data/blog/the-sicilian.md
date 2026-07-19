@@ -15,45 +15,42 @@ The book strands Michael Corleone between two ways of living: a belief that
 turns a bandit into a legend, and the Mafia that outlasts legends.
 
 Salvatore Guiliano, Puzo's folk hero, loses his fear of death early. He doesn't
-court it. The fear the rest of us carry has left him, and everyone near him can
-feel the absence. They follow a man who has stopped flinching and robs the
-barons to feed them, and a whole island builds a myth on one. Belief like that
-moves people, and it moves them wherever it points, which isn't always
-somewhere good.
+court it. The fear the rest of us carry has left him. Everyone near him feels
+the absence. They follow a man who has stopped flinching and robs the barons to
+feed them. A whole island builds a myth on one. Belief like that moves people.
+It moves them wherever it points, which isn't always somewhere good.
 
 Michael's own family lives the other way, the Corleones among the wider
 Sicilian Mafia. Not lawlessness but a rival law: silence before the state,
 loyalty to the family, respect paid and debts kept, every quarrel settled
 inside the code instead of a courtroom. Don Croce, the boss who shadows
-Guiliano, goes by the Don of Peace, and keeps it on the Mafia's terms, for the
+Guiliano, goes by the Don of Peace. He keeps it on the Mafia's terms, for the
 Mafia's gain. It has no use for a man who fights for anyone but its own.
 
 Michael is a Corleone. Blood and name hold him on the family's side. But
-Guiliano pulls at him the whole way, a believer he half-wishes he could be, and
-the book never makes him choose. That's the
-middle: not neutral ground between two sides, but a man of one side who can't
-stop wanting the other. It has an old name, practical wisdom, the mean that
-reaches for the right thing rather than the pure one or the safe one.
+Guiliano pulls at him the whole way, a believer he half-wishes he could be. The
+book never makes him choose. That's the middle: not neutral ground between two
+sides, but a man of one side who can't stop wanting the other. It has an old
+name, practical wisdom, the mean that reaches for the right thing rather than
+the pure one or the safe one.
 
 The bind is mine as much as Michael's. I lean the pragmatist's way: sceptical
 judgement over ideology, nothing believed that I can't check. But pragmatism
-with nothing above it becomes Don Croce: he keeps a peace that answers to no
+with nothing above it becomes Don Croce. He keeps a peace that answers to no
 one, long past serving anyone but himself. I don't want that. And I can't move
-anyone from the clean middle either. People don't move on what checks out; they
-move on belief, on a story that makes the facts mean something, and to move
-them I'd have to hand them one. Doing that on purpose sits closer to the Prince
-than to anything I'd say aloud, and I'd be running on borrowed belief while I
-did it, the same as the people I hoped to reach. So the middle sees straight
-and shifts no one, while the Mafia shifts everyone and believes in nothing past
-its own hold. I'd rather be realistic enough to last and principled enough to
-matter.
+anyone from the clean middle either. People don't move on what checks out. They
+move on belief, on a story that makes the facts mean something. To move them,
+I'd have to hand them one. Doing that on purpose sits closer to the Prince than
+to anything I'd say aloud. I'd be running on borrowed belief the whole time,
+the same as the people I hoped to reach. The middle sees straight and shifts no
+one. The Mafia shifts everyone and believes in nothing past its own hold. I'd
+rather be realistic enough to last and principled enough to matter.
 
-The rest is texture, and Puzo's is rich: villages and vendettas, a Sicily
-where the state is a rumour and the bandit is the closest thing to a
-government. I can't vouch for any of it. I've never been, and it reaches me
-twice removed, one novelist's romance with a place I only know through him. It
-held me while I was inside it, which is most of what I ask of a book like
-this.
+The rest is texture. Puzo's is rich: villages and vendettas, a Sicily where the
+state is a rumour and the bandit is the closest thing to a government. I can't
+vouch for any of it. I've never been. It reaches me twice removed, one
+novelist's romance with a place I only know through him. It held me while I was
+inside it, which is most of what I ask of a book like this.
 
 Then the book leaves its man in the middle without an answer. It shows him what
 each side costs and stops there, before saying what he makes of it. I finished
