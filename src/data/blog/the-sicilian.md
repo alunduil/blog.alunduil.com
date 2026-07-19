@@ -9,9 +9,8 @@ tags:
 ---
 
 I read *The Sicilian* in June. It's well written and a fun read, another Puzo
-Godfather novel, and mostly that's all it is. What stuck with me past that is a
-tug-of-war the book stages and never settles, and the man it catches in the
-middle.
+Godfather novel, and mostly that's all it is. There's more to it, though: a
+tug-of-war it stages and never settles, and a man caught in the middle.
 
 On one side is Salvatore Guiliano, Puzo's folk hero. Early on he stops being
 afraid to die. He doesn't court death; the fear the rest of us carry has just
