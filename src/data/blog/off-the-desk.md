@@ -25,3 +25,13 @@ In April I was at GrafanaCON in Barcelona, and I tried the Claude subscription.
 I was on the Claude models anyway, so it was a small thing to try. A flat rate
 put the per-token charge out of my life, and that relief was all I'd come for. I
 expected a cheaper version of what I already had, and little more.
+
+Then I flew home. On the plane, over the wifi, I opened the chats on my phone
+and planned projects. I wasn't writing code, only thinking through what to build
+and how. I had never done that away from my desk. Copilot had lived in the
+editor, so my work had lived there too.
+
+It took a few minutes to see that I hadn't bought a cheaper Copilot. I'd bought
+a different way to work. From a seat on a plane I could hand Claude Code a task
+and drive it by remote, with nothing in front of me but a phone. The work had
+left the desk.
