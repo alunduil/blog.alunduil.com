@@ -9,17 +9,16 @@ tags:
 ---
 
 I read *The Sicilian* in June. It's well written and a fun read, another Puzo
-Godfather novel, and mostly that's all it is. There's more to it, though: a
-tug-of-war it stages and never settles, and a man caught in the middle.
+Godfather novel.
 
-On one side is Salvatore Guiliano, Puzo's folk hero. Early on he stops being
+The exception is Salvatore Guiliano, Puzo's folk hero. Early on he stops being
 afraid to die. He doesn't court death; the fear the rest of us carry has just
 left him, and everyone around him can feel the gap where it used to be. That
 gap is what makes him. People follow a man who has stopped flinching, and a
 whole island builds a myth on one. Belief like that moves people—and it moves
 them wherever it's pointed, which isn't always somewhere good.
 
-On the other side is the world Michael Corleone belongs to, the Corleone
+Set against him is the world Michael Corleone belongs to, the Corleone
 family and the Mafia it moves among, living by the reverse creed: stay alive
 first, honour second, the cause a distant third. It isn't warm and it isn't
 heroic, and the book never pretends it is. But it's clear-eyed, and it's the
