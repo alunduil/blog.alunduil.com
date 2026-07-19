@@ -28,10 +28,12 @@ settled inside the code instead of a courtroom. Don Croce, the boss who shadows
 Guiliano, goes by the Don of Peace, and keeps it on the Mafia's terms, for the
 Mafia's gain. It has no use for a man who fights for anyone but its own.
 
-Michael takes neither side. Guiliano pulls at him, a believer he half-wishes he
-could be, while blood and name bind him to the order he comes from. The seat
-between them has an old name: practical wisdom, the mean that reaches for the
-right thing rather than the pure thing or the safe one.
+Michael is a Corleone. Blood and name put him on the order's side, and that's
+the side he serves. But Guiliano pulls at him the whole way, a believer he
+half-wishes he could be. He isn't standing free between them. He's the order's
+man who can't stop looking at the other. The seat that would stand free has an
+old name: practical wisdom, the mean that reaches for the right thing rather
+than the pure one or the safe one.
 
 The bind is mine as much as Michael's. I lean the pragmatist's way: sceptical
 judgement over ideology, nothing believed that I can't check. But pragmatism
