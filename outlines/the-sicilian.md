@@ -5,91 +5,84 @@
 > fence; this drawer doesn't.
 
 **Object:** book. **Issue:** #233. **Slug:** `the-sicilian`.
+**Working title:** The Man in the Middle.
 
-**Thesis:** *The Sicilian* is worth reading for an argument it stages
-without resolving — that sincere belief is what actually moves people,
-and cold pragmatism is what survives, and you rarely get both. Puzo sets
-Guiliano and Michael Corleone on either side of that line, and the book
-turns out more honest than its own romanticism: it lets you want to be
-the pragmatist while admitting you're built like the believer.
+**Thesis:** *The Sicilian* stages a tug-of-war it never settles — a
+belief that moves people (Guiliano) against a cold machine that outlasts
+them (the Corleone family and the Mafia it moves among) — and strands a
+man in the middle. That middle has an old name, practical wisdom: the
+mean that reaches for the right thing rather than the pure thing or the
+safe one. It's the seat the reviewer recognises as his own. The book's
+honest move is to show what each side costs and stop before saying what
+its man does with it.
 
-**Register constraint:** this is a review, not a belief essay. The
-author's philosophy enters only as the *lens* on the contrast — how
-belief moves people — never as a creed or a stance broadcast. No
-anti-ideology / anti-religion declaration; discuss the mechanics of
-belief, don't plant a flag. Keep the book load-bearing: roughly four
-parts argument to one part summary, and the two scenes below are the
-summary's whole budget.
+**Register constraint:** a review, not a belief essay. The author's
+philosophy enters only as the *lens* on the contrast — never a creed or
+a stance broadcast, no anti-ideology / anti-religion flag. One light nod
+to Aristotle's mean / practical wisdom, a clause deep, never the frame:
+the moment the book becomes a hook to hang philosophy on, it stops being
+a review. Keep the book load-bearing, ~4:1 argument to summary.
 
 ## Supporting points (thematic, not chronological)
 
-1. **Belief is what moves people — Guiliano's fearlessness.** Sincere
-   belief transfigures him; the first time he feels no fear of death is
-   the moment he becomes a symbol others will follow. It's genuinely
-   magnetic — and it's the same quality that dooms him.
-   *Evidence:* Guiliano's first moment of no fear of death.
+1. **Belief moves people — Guiliano.** His fearlessness (early,
+   character-establishing) makes him a folk hero a whole island follows.
+   Double-edged: belief moves people wherever it's pointed, not always
+   somewhere good. Rendered spoiler-free — disposition, not the plot that
+   the real cost rides on (the massacre, the ruin).
 
-2. **Pragmatism is what survives — the Corleone creed.** The counter-pole
-   is the Corleone survival ethic: stay alive first, ahead of honour and
-   the cause. The book states it most plainly as Vito's closing lesson to
-   Michael (better alive at any cost than a dead hero) — but that's the
-   ending, so the **post keeps it spoiler-free**: frame it as the family's
-   known worldview, the pole set against Guiliano's belief, without
-   locating it in the plot. Michael embodies the creed as a Corleone; he
-   doesn't perform it in the story.
-   *Evidence:* the Corleone creed itself — survival over heroism — carried
-   by Michael, not any single scene.
+2. **The machine — the Corleone/Mafia cold survival.** The opposite pole:
+   stay alive first, honour second, the cause a distant third. The book
+   never pretends it's admirable (Don Croce is institutional evil; Vito's
+   closing lesson is framed as *dubious*), but it's the thing that
+   endures. Kept to the known worldview, spoiler-free — not Vito's
+   end-of-book lesson scene.
 
-3. **The catch — pragmatism still needs belief to move anyone.** The
-   pragmatist's problem is that people, and the pragmatist himself, run
-   on belief; moving them means deploying the very thing pragmatism is
-   skeptical of. Puzo romanticizes Guiliano into a folk hero partly to
-   dodge this, and the book is more honest than its author about the
-   cost. This is the lens, kept to the mechanics of motivation — not a
-   verdict on belief itself.
+3. **Michael is the middle.** Neither pole: sent into Guiliano's orbit,
+   drawn to the believer he half-wishes he could be, but bound by blood
+   and name to the cold world. He's *used* by the machine and taught its
+   lesson — but the book stops at what he learns, never what he does. The
+   seat of practical wisdom, pressed from both sides.
+
+4. **The catch (the lens).** The reviewer would live in that middle —
+   sceptical judgement over ideology. But people move on belief, not
+   evidence, and so does whoever's asking. Practical wisdom sees; it
+   can't make anyone follow. The machine wins by shedding the belief and
+   honour that make the middle worth holding. So the middle can't move
+   people like the zealot and can't win like the machine.
 
 ## Honest tail
 
-- Aspire to Corleone's lead; built like Guiliano. Belief motivates, and
-  you can't opt out of that — the book doesn't resolve the tension and
-  neither does the author.
-- The Sicily-of-the-era texture is vivid and convincing second-hand, but
-  unverifiable — an honest limit on what the book can actually teach.
+- The book leaves its man in the middle without an answer — shows what
+  each side costs, stops before what he makes of it. Finished sure of
+  where I'd stand, no clearer on what I'd do there. Unresolved by design;
+  that's the honest close, not a verdict.
+- The Sicily-of-the-era texture is vivid and convincing second-hand but
+  unverifiable — an honest limit on what the book can teach.
 
 ## Spoiler approach
 
-Trade on the ideas and the texture, never on the turns. The
-recommendation is built entirely from spoiler-free currency — the
-unresolved idealism/pragmatism question, the Sicilian period texture,
-the propulsive read — so the story still surprises after the review.
+Trade on ideas and texture, never the turns. The recommendation is built
+from spoiler-free currency — the unresolved belief/machine tension, the
+Sicilian period texture, the propulsive read — so the story still
+surprises after the review.
 
-- **Recast beats as dispositions, not events.** Guiliano's fearlessness
-  is character-establishing and early — render it fairly concretely.
-  Corleone's withheld promise sits next to an outcome — keep it at the
-  level of disposition ("survival caps his promises"), never the
-  resolution it's embedded in.
-- **Fence once, honestly.** One early line: staying above the plot's
-  turns; the two moments are character, not destination.
-- **Surprise as a question.** Pull on "the book won't settle it," which
-  reveals nothing, plus the taste-fit pitch — not on any outcome.
-- **The test:** for any sentence, could a reader who then picks up the
-  novel still be surprised by the plot? If its pull depends on already
-  knowing an outcome, cut it or lift it to disposition / theme.
+- **Dispositions and worldviews, not events.** Guiliano's fearlessness as
+  character; the Corleone creed as known worldview. No massacre, no
+  betrayal, no death, no Testament, no Vito lesson-scene.
+- **The unresolved close is thematic, not a plot reveal.** "The book
+  leaves its man in the middle" characterises the ending's posture, not
+  its events.
+- **The test:** could a reader who then picks up the novel still be
+  surprised by the plot? If a sentence's pull needs a known outcome, cut
+  it or lift it to theme.
 
-## Draft notes (for the draft stage, not commitments)
+## Draft notes
 
-- **Latch the opener** on the Guiliano fearlessness moment — it delivers
-  the thesis in a concrete beat.
-- **Firm claim, honest tail:** state "worth reading, for X" flat; close
-  on the unresolved tension, not a triumph.
-- **Cadence:** Sunday 08:00 local `pubDatetime`; tags are the work's
-  subjects (idealism, pragmatism, belief / myth-making), never `review`.
-- Spoiler-conscious on both scenes.
-
-## Open
-
-- Confirm the thesis wording and the register constraint hold.
-- Confirm both evidence beats are characterised correctly (esp. the
-  Corleone promise — which promise, and that survival is the stated
-  value driving the refusal).
-- Working title only so far; real title lands in the draft.
+- **Open understated:** enjoyed it as a Puzo Godfather novel, one thing
+  stuck — no manufactured hook, no invented motivation (the digest
+  surfaced a filed completion; that's the real provenance).
+- **Firm on the contrast, unresolved on the verdict.** State the poles
+  plainly; close on the open question.
+- **Cadence:** Sunday 08:00 local `pubDatetime`; tags are subjects
+  (idealism, pragmatism, belief), never `review`.
