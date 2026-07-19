@@ -49,7 +49,7 @@ trigger; that instinct pays off in scene 6's edge.
 ## 3. GrafanaCON, on low expectations — *the reluctant step*
 
 1. That same week I was at GrafanaCON in Barcelona and tried the Claude subscription — the model I already used, bought straight from its makers *(GrafanaCON 2026-04-20/22, same week as the plan change)*.
-2. The Claude models sat inside one flat monthly price again, and that relief was all I'd come for.
+2. It put my model back at one flat monthly price — the sensible swap.
 3. I expected a cheaper version of what I already had, nothing more.
 
 ## 4. On the plane home — *the turn (the one moment of change)*

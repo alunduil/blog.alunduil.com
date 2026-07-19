@@ -24,9 +24,9 @@ stopped making sense. If I was buying those tokens anyway, I could buy them from
 the people who made the model.
 
 That same week I was at GrafanaCON in Barcelona, and I tried the Claude
-subscription. It was the model I already used, so it was a small thing to try. On
-the subscription it came at one flat price a month, and that relief was all I'd
-come for. I expected a cheaper version of what I already had, and little more.
+subscription. It was the model I already used, so it was a small thing to try. It
+came at one flat price a month. I expected a cheaper version of what I had, and
+little more.
 
 Then I flew home. On the plane, over the wifi, I opened the chats on my phone
 and planned projects. I wasn't writing code, only thinking through what to build
