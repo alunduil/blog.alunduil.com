@@ -135,6 +135,14 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   verdict is not the place to be wishy-washy. The *close* still lands on the
   admitted gap, not a triumph. This is how a clear recommendation and the
   corpus's honest-limitation signature coexist: confident spine, honest ending.
+- **Don't manufacture stakes.** Motivation and feeling are claims like any
+  other ([[feedback_post_claims_provable]]). Don't invent why the author read
+  it, that it haunted them, or a dramatic inner bind — the honest provenance is
+  usually mundane (the digest surfaced a finished book) and the real take is
+  often plain ("I come down pragmatic"); state it understated, never inflated
+  into agonising the author wouldn't write. Same for the work's characters:
+  render only inner states the text supports, never invented ones ("never looks
+  at home there").
 - **Spoilers — trade on ideas and texture, never the turns.** A review spoils
   by revealing what *happens*; it stays clean revealing what the work is *about*
   and how it feels. Build the recommendation from spoiler-free currency: the
