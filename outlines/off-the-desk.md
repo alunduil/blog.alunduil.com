@@ -3,20 +3,20 @@
 *(Working title — real title chosen in post-draft once the prose settles
 what it argues.)*
 
-**Logline.** GitHub's April change to its individual Copilot plans capped
-my weekly usage below the pace I was glad to pay for, so that same week at
-GrafanaCON I tried the Claude subscription only because I used the Claude
-models anyway — and on
-the plane home, planning projects from my phone through Claude chats, I
-realised it wasn't a cheaper Copilot but a different medium: the work had
-left the editor, and I could spin many plates again instead of pouring
-everything into one. The one moment of change is that recognition on the
-plane. It opens at its opposite: productive but desk-bound, one project
-soaking up everything, on a meter.
+**Logline.** GitHub's April change to its individual Copilot plans stopped
+including the Claude models I used — every token now came out of budget —
+so rather than pay for a plan without my one model, that same week at
+GrafanaCON I tried the Claude subscription. On the plane home, planning
+projects from my phone through Claude chats, I realised it wasn't a cheaper
+Copilot but a different medium: the work had left the editor, and I could
+spin many plates again instead of pouring everything into one. The one
+moment of change is that recognition on the plane. It opens at its
+opposite: productive but desk-bound, one project soaking up everything.
 
 **How it discharges #232.** The issue's frame is "cost as the constraint
-nobody budgeted." Cost is the *push* (GitHub's April cap on individual
-plans, which throttled the pace I was glad to pay for) and, at the close, the *real* bill nobody
+nobody budgeted." Cost is the *push* (GitHub's April change dropped the
+Claude models from what my plan included, so paying Copilot for a plan
+without my one model stopped making sense) and, at the close, the *real* bill nobody
 budgets: not dollars but capacity. The meter came off the money and
 reattached to me — I live at the edge of what I can handle, and the toil I
 meant to reduce just expanded to fill it. The durable claim under the news
@@ -28,9 +28,11 @@ on an invoice.
 built to the one moment on the plane. The cost discourse (Uber caps,
 Simon's math) is ambient backdrop, referenced without a timeline claim.
 The forcing function is dated and cited: GitHub's 2026-04-20 changes to
-individual Copilot plans (weekly token caps; Opus pulled from Pro but kept
-in Pro+). The author was on Pro+, so the weekly cap is the beat, not the
-Opus removal.
+individual Copilot plans. Author was on Pro+; the beat is that the change
+left the Claude models out of what the plan included (all budget), so
+paying for a plan without his one model made no sense — go to the model's
+own plan. The cap he'd always hit was welcome back-pressure, not the
+trigger; that instinct pays off in scene 6's edge.
 
 ## 1. One plate, at the desk — *the opposite*
 
@@ -38,16 +40,16 @@ Opus removal.
 2. It was genuinely productive — but that one project soaked up nearly all of it *(~85–97 commits/month, Feb–Apr)*.
 3. It lived at the desk, in the IDE's chat panel, and my attention lived on that one plate.
 
-## 2. The weekly cap — *the forcing function*
+## 2. Why pay for a plan without my model — *the forcing function*
 
-1. GitHub changed its individual Copilot plans, putting a weekly cap on how much I could run *(github.blog, changes-to-github-copilot-individual-plans, 2026-04-20; weekly token-consumption caps)*.
-2. I was on the top tier and glad to pay for it, but at my pace the cap ran out well before the week did *(Pro+; keep the budget figure out)*.
-3. That change was the trigger; it sent me looking for another way to work.
+1. GitHub changed its individual Copilot plans; even on the top tier, the Claude models were no longer included — every token I spent on them came out of budget *(github.blog, changes-to-github-copilot-individual-plans, 2026-04-20; author's Pro+ billing)*.
+2. Claude was the only model I reached for, so paying for a plan that no longer covered it stopped making sense.
+3. If I was buying those tokens anyway, I could buy them from the people who made the model — the nudge to try something else.
 
 ## 3. GrafanaCON, on low expectations — *the reluctant step*
 
-1. That same week I was at GrafanaCON in Barcelona and tried the Claude subscription — I used the Claude models anyway *(GrafanaCON 2026-04-20/22, same week as the plan change)*.
-2. A flat rate put the per-token charge out of my life, and that relief alone was what I'd come for.
+1. That same week I was at GrafanaCON in Barcelona and tried the Claude subscription — the model I already used, bought straight from its makers *(GrafanaCON 2026-04-20/22, same week as the plan change)*.
+2. The Claude models sat inside one flat monthly price again, and that relief was all I'd come for.
 3. I expected a cheaper version of what I already had, nothing more.
 
 ## 4. On the plane home — *the turn (the one moment of change)*
