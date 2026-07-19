@@ -16,17 +16,16 @@ hundred commits, and that one
 project took most of them. The chat sat in a panel next to the code, in the
 editor, on my desk.
 
-Then, in April, GitHub [changed its individual Copilot plans][copilot-plans].
-Even on the top tier, none of the Claude models were included any more; every
-token I spent on them came out of my own budget. And Claude was the only model I
-reached for. Paying GitHub for a plan that no longer covered the one model I used
-stopped making sense. If I was buying those tokens anyway, I could buy them from
-the people who made the model.
+Then, in April, GitHub [changed its individual Copilot plans][copilot-plans], and
+the Claude models were no longer part of what the top tier included. But Claude
+was the only model I ever reached for. Copilot's value was the spread of models
+it offered, and I only wanted one of them. Once that one dropped out of the plan,
+there was no reason left to go through it. I could get Claude straight from
+Anthropic.
 
 That same week I was at GrafanaCON in Barcelona, and I tried the Claude
-subscription. It was the model I already used, so it was a small thing to try. It
-came at one flat price a month. I expected a cheaper version of what I had, and
-little more.
+subscription. It came at one flat price a month. I expected a cheaper version of
+what I had, and little more.
 
 Then I flew home. On the plane, over the wifi, I opened the chats on my phone
 and planned projects. I wasn't writing code, only thinking through what to build

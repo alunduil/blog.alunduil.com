@@ -12,6 +12,7 @@ Naing
 GitHub
 Claude
 Copilot
+Anthropic
 GrafanaCON
 Replit
 bobbit
