@@ -39,7 +39,8 @@ scripting your own.
   `.vale.ini`. lychee link-checking is CI-only
   (`.github/workflows/lychee.yml`, `lychee.toml`).
 - Custom skills under `.claude/skills/`: digest, tag-suggest,
-  outline-draft, post-draft, syndicate-instagram (detailed below).
+  outline-draft, post-draft, review-draft, syndicate-instagram
+  (detailed below).
 
 ## Scope discipline
 
@@ -123,6 +124,19 @@ over invention, flags morphological near-duplicates. Invoke via
 `/tag-suggest <path>` (defaults to the currently staged post).
 Proposes first, then applies to the file only after the author
 confirms.
+
+## Review-draft skill
+
+`.claude/skills/review-draft/` drafts a review post — book, paper, or
+video game — from the one question a review answers: recommend it or
+not, and why. It gates first on whether there's a real argument (the
+"it was fine, nothing to see here" answer is a no-go, not a review),
+then lands the thesis, confirms a spine in `outlines/<slug>.md`, and
+builds argument-not-summary prose in the blog voice. A sibling of the
+story pipeline (`outline-draft` → `post-draft`), not a caller: reviews
+are a style of article, so they carry a claim and its evidence, not a
+scene arc. Voice, citations, and frontmatter reuse `post-draft` §2–5.
+Invoke via `/review-draft [#N|title|path]`.
 
 ## Syndicate-Instagram skill
 
