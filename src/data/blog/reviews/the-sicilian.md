@@ -2,6 +2,7 @@
 pubDatetime: 2026-08-16T07:00:00Z
 title: The Man in the Middle
 description: "Puzo's The Sicilian sets a bandit's belief against the law of the Mafia, with Michael Corleone caught in the middle."
+ogImage: ../../../assets/images/the-sicilian-cover.jpg
 tags:
   - idealism
   - pragmatism

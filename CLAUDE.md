@@ -57,10 +57,14 @@ so the repo-relevant essentials:
 ## Posting convention
 
 New posts live under `src/data/blog/`; archival republishes under
-`src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
-future date keeps the post hidden via AstroPaper's
-`SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
-PR accepts the editorial work, the future date defers publication.
+`src/data/blog/_<engine>/`. Reviews live under `src/data/blog/reviews/`
+(a `/posts/reviews/<slug>/` URL — the theme keeps non-`_` folders in the
+path) and carry the reviewed work's cover as `ogImage`, the one post type
+that does; the cover file goes in `src/assets/images/<slug>-cover.jpg`.
+Publication is gated by `pubDatetime`: a future date keeps the post
+hidden via AstroPaper's `SITE.scheduledPostMargin`. **Never** set
+`draft: true` — merging the PR accepts the editorial work, the future
+date defers publication.
 
 ### Scheduling
 
