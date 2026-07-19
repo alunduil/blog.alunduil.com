@@ -58,3 +58,20 @@ The speed the agents gave me wasn't in tension with the slow work of
 building the checks. It was the payoff. The checks were the smoothness, and
 smoothness is what lets the work run fast. The week that looked like a
 flood from outside was that slow work, finally paying out.
+
+The reason any of it exists is that I can't leave the toil alone, and I
+never could. Reliability is my work, and it's also the thing I reach for
+when the workday is done. The evening bursts are exactly that, the
+rabbit-holing and the yak-shaving I've learned to keep to my own time so
+it feeds the job instead of eating it.
+
+It works out better than it sounds. An evening spent teaching my own
+repositories to check themselves keeps me fluent in the thing I'm paid to
+do all day; the play and the work are the same muscle, and using it after
+hours means it's warm by nine the next morning. The tinkering isn't a
+break from the job. It's what keeps my head in the game.
+
+The catch is that a reflex like that doesn't clock out. It's the same
+drive whether I'm being paid for it or not, and it has no off switch; it
+finds the nearest pile of toil and starts in. Most of the time that's a
+gift. I've learned it isn't always.
