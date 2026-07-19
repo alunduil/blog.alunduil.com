@@ -28,12 +28,10 @@ Guiliano, goes by the Don of Peace. He keeps it on the Mafia's terms, for the
 Mafia's gain. It has no use for a man who fights for anyone but its own.
 
 Michael is a Corleone. Blood and name hold him on the family's side. But
-Guiliano pulls at him the whole way, a believer he half-wishes he could be. The
-book never makes him choose. That's the middle: not neutral ground between two
-sides, but a man of one side who can't stop wanting the other. It has an old
-name: practical wisdom, the mean between the pure thing and the safe one.
+Guiliano pulls at him the whole way, a believer he half-wishes he could be.
+That puts him in the middle. The old name for it is practical wisdom, the mean
+between the pure thing and the safe one.
 
-Then the book leaves its man in the middle without an answer. It shows him what
-each side costs and stops there, before saying what he makes of it. I finished
-it sure of where I'd stand and no clearer on what I'd do there, which is the
-truest thing a book like this could leave me holding.
+The book sets all this up and then stands back. I finished it sure of where I'd
+stand and no clearer on what I'd do there, which is the truest thing a book
+like this could leave me holding.
