@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-07-26T07:00:00Z
 title: The Man in the Middle
-description: "Puzo's The Sicilian strands a man between a belief that moves people and an order that outlasts them. I recognised the seat, and how little the book will tell me to do from it."
+description: "Puzo's The Sicilian strands a man between a belief that moves people and a Mafia that outlasts them. I recognised the seat, and how little the book will tell me to do from it."
 tags:
   - idealism
   - pragmatism
@@ -12,7 +12,7 @@ I read [*The Sicilian*](https://www.goodreads.com/book/show/826446) in June.
 It's well written and a fun read, another Puzo Godfather novel.
 
 The book strands Michael Corleone between two ways of living: a belief that
-turns a bandit into a legend, and an order old enough to outlast one.
+turns a bandit into a legend, and the Mafia that outlasts legends.
 
 Salvatore Guiliano, Puzo's folk hero, loses his fear of death early. He doesn't
 court it. The fear the rest of us carry has left him, and everyone near him can
@@ -21,32 +21,32 @@ barons to feed them, and a whole island builds a myth on one. Belief like that
 moves people, and it moves them wherever it points, which isn't always
 somewhere good.
 
-Michael's own family keeps a different order—the Corleones, and the Sicilian
-Mafia they move among. Not lawlessness but a rival law: silence before the
-state, loyalty to the family, respect paid and debts kept, every quarrel
-settled inside the code instead of a courtroom. Don Croce, the boss who shadows
+Michael's own family lives the other way, the Corleones among the wider
+Sicilian Mafia. Not lawlessness but a rival law: silence before the state,
+loyalty to the family, respect paid and debts kept, every quarrel settled
+inside the code instead of a courtroom. Don Croce, the boss who shadows
 Guiliano, goes by the Don of Peace, and keeps it on the Mafia's terms, for the
 Mafia's gain. It has no use for a man who fights for anyone but its own.
 
-Michael is a Corleone. Blood and name hold him on the order's side, but he
+Michael is a Corleone. Blood and name hold him on the family's side, but he
 never looks at home there. Guiliano pulls at him the whole way, a believer he
 half-wishes he could be, and the book never makes him choose. That's the
-middle: not neutral ground between two camps, but a man of one camp who can't
+middle: not neutral ground between two sides, but a man of one side who can't
 stop wanting the other. It has an old name, practical wisdom, the mean that
 reaches for the right thing rather than the pure one or the safe one.
 
 The bind is mine as much as Michael's. I lean the pragmatist's way: sceptical
 judgement over ideology, nothing believed that I can't check. But pragmatism
-with nothing above it becomes Don Croce: an order that keeps its own peace,
-answerable to no one, long past serving anyone but itself. I don't want that.
-And I can't move anyone from the clean middle either. People don't move on what
-checks out; they move on belief, on a story that makes the facts mean
-something, and to move them I'd have to hand them one. Doing that on purpose
-sits closer to the Prince than to anything I'd say aloud, and I'd be running on
-borrowed belief while I did it, the same as the people I hoped to reach. So the
-middle sees straight and shifts no one, while the order shifts everyone and
-believes in nothing past its own hold. I'd rather be realistic enough to last
-and principled enough to matter.
+with nothing above it becomes Don Croce: he keeps a peace that answers to no
+one, long past serving anyone but himself. I don't want that. And I can't move
+anyone from the clean middle either. People don't move on what checks out; they
+move on belief, on a story that makes the facts mean something, and to move
+them I'd have to hand them one. Doing that on purpose sits closer to the Prince
+than to anything I'd say aloud, and I'd be running on borrowed belief while I
+did it, the same as the people I hoped to reach. So the middle sees straight
+and shifts no one, while the Mafia shifts everyone and believes in nothing past
+its own hold. I'd rather be realistic enough to last and principled enough to
+matter.
 
 The rest is texture, and Puzo's is rich: villages and vendettas, a Sicily
 where the state is a rumour and the bandit is the closest thing to a
