@@ -28,9 +28,9 @@ inside the code instead of a courtroom. Don Croce, the boss who shadows
 Guiliano, goes by the Don of Peace, and keeps it on the Mafia's terms, for the
 Mafia's gain. It has no use for a man who fights for anyone but its own.
 
-Michael is a Corleone. Blood and name hold him on the family's side, but he
-never looks at home there. Guiliano pulls at him the whole way, a believer he
-half-wishes he could be, and the book never makes him choose. That's the
+Michael is a Corleone. Blood and name hold him on the family's side. But
+Guiliano pulls at him the whole way, a believer he half-wishes he could be, and
+the book never makes him choose. That's the
 middle: not neutral ground between two sides, but a man of one side who can't
 stop wanting the other. It has an old name, practical wisdom, the mean that
 reaches for the right thing rather than the pure one or the safe one.
