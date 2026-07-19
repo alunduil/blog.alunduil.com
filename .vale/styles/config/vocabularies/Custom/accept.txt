@@ -10,6 +10,9 @@ Naing
 
 # Tooling and platforms
 GitHub
+Claude
+Copilot
+GrafanaCON
 Replit
 bobbit
 Hakyll

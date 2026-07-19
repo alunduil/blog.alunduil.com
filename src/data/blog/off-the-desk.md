@@ -17,6 +17,11 @@ editor, on my desk.
 
 By the time I was building this way, GitHub billed Copilot by the premium
 request. Each plan came with a set number every month, and past that they
-charged for each one. The models I leaned on spent that number quickly, so the
+charged for each one. The models I leaned on burned through that number, so the
 real limit was the budget I set for myself. I was glad to pay it. At my pace
 even that ran tight, and by the spring it wasn't enough.
+
+In April I was at GrafanaCON in Barcelona, and I tried the Claude subscription.
+I was on the Claude models anyway, so it was a small thing to try. A flat rate
+put the per-token charge out of my life, and that relief was all I'd come for. I
+expected a cheaper version of what I already had, and little more.
