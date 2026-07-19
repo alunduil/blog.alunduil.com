@@ -64,12 +64,3 @@ Simon's math, the Apr-27 usage-based announcement) is ambient backdrop.
 2. Starting a new plate is frictionless now — from a phone, a plane, a queue.
 3. I don't drop them: I circle back and check, and that check keeps me at the edge of what I can handle, never past it.
 4. But the edge is where I now live — the meter came off the money and reattached to me; the toil I meant to reduce just expanded to fill everything I can hold.
-
-## Open
-
-- Confirm scene 6's honest gap — the meter reattaching to *you* (permanent
-  edge; reduced toil that never arrived because the work expands to fill
-  capacity). Is that the true limitation, or does it overreach?
-- Resolved from review: scene 1 is the realistic chat + prompt-library
-  opposite; the switch was a clean break (no lingering-Copilot beat);
-  genshin.dungeon.studio named in-body.
