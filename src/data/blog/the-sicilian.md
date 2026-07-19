@@ -1,7 +1,7 @@
 ---
-pubDatetime: 2026-07-26T07:00:00Z
+pubDatetime: 2026-08-16T07:00:00Z
 title: The Man in the Middle
-description: "Puzo's The Sicilian strands a man between a belief that moves people and a Mafia that outlasts them. I recognised the seat, and how little the book will tell me to do from it."
+description: "Puzo's The Sicilian sets a bandit's belief against the law of the Mafia, with Michael Corleone caught in the middle."
 tags:
   - idealism
   - pragmatism
