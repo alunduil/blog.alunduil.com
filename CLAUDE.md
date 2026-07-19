@@ -61,6 +61,15 @@ future date keeps the post hidden via AstroPaper's
 `SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
 PR accepts the editorial work, the future date defers publication.
 
+### Scheduling
+
+`pubDatetime` is 08:00 local — `Europe/London` currently; override the
+per-post `timezone:` for archival posts authored in another zone. The
+weekday carries content type: Tuesday for tech / methodology, Sunday
+for personal / reflective (skip Monday and Friday). No two posts share
+a `pubDatetime`. When a date collides or a post slips its slot, move it
+to the next open date on its own weekday — not the next calendar day.
+
 ### "How I X" series
 
 Future entries title as `How I X (YYYY)` — year-stamped scales without
