@@ -35,3 +35,17 @@ It took a few minutes to see that I hadn't bought a cheaper Copilot. I'd bought
 a different way to work. From a seat on a plane I could hand Claude Code a task
 and drive it by remote, with nothing in front of me but a phone. The work had
 left the desk.
+
+What changed after that wasn't how much I got done. It was how many things I
+could keep moving at once. Under Copilot, one project had taken most of what I
+had. Now the work spread out. Projects I'd left for dead started moving again.
+This blog was one of them, quiet since 2020 and now taking over a hundred
+commits in a month.
+
+The cost of the change was real, but it wasn't money. It was the tooling. I
+rebuilt the way I worked around Claude: the instructions, the skills, the small
+configurations. I've written before about [shaping a generic tool until it fits
+your hand](/posts/i-built-the-machine-twice); this time the tool helped shape
+itself. Claude built most of that scaffolding with me, and each piece made the
+next thing quicker to start. You can watch it go up in the history, a few days
+after I got home.
