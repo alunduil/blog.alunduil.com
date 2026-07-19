@@ -100,6 +100,12 @@ calibrate against what the blog actually does.
   punctuation outside the quotes. ([[project_grammar_lean]])
 - **Possessives:** singular *s*-ending nouns take *'s* — Books's,
   Charles's (CMOS, not AP). ([[project_possessive_convention]])
+- **One independent clause per sentence.** Split every `, and`, semicolon,
+  or comma-splice that hooks two complete thoughts together. Length comes
+  from subordinate clauses (`which…`, `while…`, `that…`) and cadence, not
+  from chaining independents. Compound predicates on one subject are fine
+  ("he shows X and stops there"); this reinforces *flow, don't snap* below
+  — flow through subordination, never through a pile-up of independents.
 
 **Register — poetic without being poetry** (Tolkien/Carroll touchstone),
 the house voice for story posts:
