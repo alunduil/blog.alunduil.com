@@ -36,12 +36,6 @@ name: practical wisdom, the mean between the pure thing and the safe one.
 The bind is mine as much as Michael's. I land pragmatic: sceptical judgement
 over ideology, nothing believed that I can't check.
 
-The rest is texture. Puzo's is rich: villages and vendettas, a Sicily where the
-state is a rumour and the bandit is the closest thing to a government. I can't
-vouch for any of it. I've never been. It reaches me twice removed, one
-novelist's romance with a place I only know through him. It held me while I was
-inside it, which is most of what I ask of a book like this.
-
 Then the book leaves its man in the middle without an answer. It shows him what
 each side costs and stops there, before saying what he makes of it. I finished
 it sure of where I'd stand and no clearer on what I'd do there, which is the
