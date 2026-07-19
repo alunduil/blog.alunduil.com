@@ -80,6 +80,17 @@ Picking up an idea issue (`/review-draft #N`): `## Spark` is the kernel, the
 open questions are the discovery anchors, and the object type comes from the
 issue. Infer the object type when obvious; ask when not.
 
+**Get the work right — the take is the author's, the facts are the work's.**
+The reviewer supplies the opinion; the work supplies the plot, the characters,
+and what each pole *actually is*, and those must be accurate. Don't build a
+pole from a single beat (one line about survival is not the whole Mafia), and
+don't infer a character's position or inner life from the argument you want
+(a son of the family is not neutral). Before the spine, ground the work in
+real sources — the author's read plus a plot summary or reference — and check
+each pole and each named character against them. This is the most expensive
+error to get wrong: a mischaracterised pole collapses the whole spine, not a
+line, and costs a full re-draft.
+
 ## 3. Spine — the approval gate
 
 Write the review spine to `outlines/<slug>.md` (tracked, outside `src/`, so
@@ -143,6 +154,11 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   into agonising the author wouldn't write. Same for the work's characters:
   render only inner states the text supports, never invented ones ("never looks
   at home there").
+- **A light frame is enough.** A plain stance in a thin first-person frame ("I
+  read it… I came down…") is a real review, often stronger than a heavyweight
+  personal thesis. If a personal paragraph reads thin, cut it and let the
+  analysis carry — the take survives in the frame and the argument. Don't force
+  depth the take doesn't have.
 - **Spoilers — trade on ideas and texture, never the turns.** A review spoils
   by revealing what *happens*; it stays clean revealing what the work is *about*
   and how it feels. Build the recommendation from spoiler-free currency: the
@@ -151,7 +167,13 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   one concretely, gesture the outcome-adjacent one. Fence once, early and
   honestly. Sell the surprise as a question the reader gets to sit in. The test:
   could a reader who then picks up the work still be surprised by the plot? If a
-  sentence's pull needs a known outcome, cut it or lift it to theme.
+  sentence's pull needs a known outcome, cut it or lift it to theme. The
+  **frontmatter description** is the strictest surface — a pre-read teaser,
+  tighter than the body — so give away nothing there. Two quiet leaks recur:
+  "the book leaves it unresolved" is itself an ending-reveal (pitch it at the
+  work's *stance*, poses-and-steps-back, not the plot's end), and fate words
+  like "outlasts" or "never chooses" reveal outcomes. Softened, those can stay
+  in the body as thematic analysis; the description can't carry them.
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
   (`post-draft` §2, `.claude/voice.md`).
