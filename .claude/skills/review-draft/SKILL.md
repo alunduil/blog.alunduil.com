@@ -13,7 +13,17 @@ contents is a book report; the review is the take on top of it.
 Reviews are a **style of article**, not a scene-built story. This skill is a
 sibling of the story pipeline (`outline-draft` → `post-draft`), not a caller of
 it: the scene→beat arc doesn't apply, and the spine is a claim with its
-evidence, not a moment of change. Voice, citations, frontmatter, and Instagram
+evidence, not a moment of change.
+
+A review is a **short article** — argued and evidenced, but small. That makes
+it distinct from a **note**: it syndicates today as a title-and-link teaser via
+dlvr.it, and an argued review is too long for full-body syndication on the
+character-limited networks (Bluesky, Threads) regardless. A note-length
+*micro-review* — an aphoristic verdict in a sentence or two — is a different
+artefact and belongs to `note-draft` (#323) and the note pipeline (#321/#322),
+not here.
+
+Voice, citations, frontmatter, and Instagram
 syndication are shared — apply `post-draft` §2–5 and `.claude/voice.md` for
 those; only the review-specific deltas live here.
 
