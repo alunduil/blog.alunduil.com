@@ -75,3 +75,26 @@ The catch is that a reflex like that doesn't clock out. It's the same
 drive whether I'm being paid for it or not, and it has no off switch; it
 finds the nearest pile of toil and starts in. Most of the time that's a
 gift. I've learned it isn't always.
+
+It's failed me once. Not by running too hot, but by going out altogether.
+
+It didn't start with the pandemic. The side projects had been thinning for
+a long time before that, the urge to build anything for its own sake going
+quiet so slowly I never caught it leaving. By the time the pandemic came,
+it was already gone. What a year and a half of working from home did,
+alone in a room with the days folding into each other, was take the last
+of the energy I had for the job itself.
+
+I didn't burn out in a week, or under a last straw. I burned out by
+degrees. Losing the wish to do a thing doesn't feel like a loss; it feels
+like not today. Day after day it was not today, and I called that fine.
+
+It took years to come back, to get to where I had this much energy again,
+where the wish to build returned and an evening of it feels like play
+instead of nothing at all. I still manage depression and anxiety; that
+part hasn't left. I watch myself more closely now than I did then, keeping
+half an eye on my mood and on how much energy is really there. But
+watching isn't the same as reading it right. Last time the ground went
+soft slowly, and I stood on it the whole while, calling it solid. So I try
+not to overdo it. It's the only gauge I have, and it's never quite
+calibrated.
