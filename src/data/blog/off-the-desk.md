@@ -15,16 +15,17 @@ fast. Some months ran to the better part of a hundred commits, and that one
 project took most of them. The chat sat in a panel next to the code, in the
 editor, on my desk.
 
-By the time I was building this way, GitHub billed Copilot by the premium
-request. Each plan came with a set number every month, and past that they
-charged for each one. The models I leaned on burned through that number, so the
-real limit was the budget I set for myself. I was glad to pay it. At my pace
-even that ran tight, and by the spring it wasn't enough.
+Then, in April, GitHub [changed its individual Copilot plans][copilot-plans].
+Even on the top tier, none of the Claude models were included any more; every
+token I spent on them came out of my own budget. And Claude was the only model I
+reached for. Paying GitHub for a plan that no longer covered the one model I used
+stopped making sense. If I was buying those tokens anyway, I could buy them from
+the people who made the model.
 
-In April I was at GrafanaCON in Barcelona, and I tried the Claude subscription.
-I was on the Claude models anyway, so it was a small thing to try. A flat rate
-put the per-token charge out of my life, and that relief was all I'd come for. I
-expected a cheaper version of what I already had, and little more.
+That same week I was at GrafanaCON in Barcelona, and I tried the Claude
+subscription. It was the model I already used, so it was a small thing to try. On
+the subscription it came at one flat price a month, and that relief was all I'd
+come for. I expected a cheaper version of what I already had, and little more.
 
 Then I flew home. On the plane, over the wifi, I opened the chats on my phone
 and planned projects. I wasn't writing code, only thinking through what to build
@@ -49,3 +50,17 @@ your hand](/posts/i-built-the-machine-twice); this time the tool helped shape
 itself. Claude built most of that scaffolding with me, and each piece made the
 next thing quicker to start. You can watch it go up in the history, a few days
 after I got home.
+
+The talk now is all about the cost: what these tools run, who can afford to keep
+them going, where the spending stops. A bill came due for me too, only not in
+dollars. Starting something costs next to nothing now. I can open a chat from a
+queue or a train and have a project underway before I reach the front. I don't
+lose track of them; I come back, look, and pull things along. That keeps me at
+the edge of what I can carry, and never quite past it.
+
+The edge is just where I live now. The meter I ran from was measured in money,
+and I got out from under it. The one that replaced it is measured in me. I set
+out to spend less effort, and instead the work grew until it filled everything I
+had to give.
+
+[copilot-plans]: https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/
