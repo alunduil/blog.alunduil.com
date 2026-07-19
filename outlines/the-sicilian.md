@@ -34,7 +34,7 @@ summary's whole budget.
    the cause. The book states it most plainly as Vito's closing lesson to
    Michael (better alive at any cost than a dead hero) — but that's the
    ending, so the **post keeps it spoiler-free**: frame it as the family's
-   known worldview, the book's answer to Guiliano's belief, without
+   known worldview, the pole set against Guiliano's belief, without
    locating it in the plot. Michael embodies the creed as a Corleone; he
    doesn't perform it in the story.
    *Evidence:* the Corleone creed itself — survival over heroism — carried

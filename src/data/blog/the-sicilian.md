@@ -22,8 +22,8 @@ myth on one.
 The other pole is Michael Corleone, and the cold calculus of the family he
 belongs to. The Corleone creed puts survival first, ahead of honour, ahead of
 the cause, ahead of almost everything. It isn't warm and it isn't heroic, but
-it's clear-eyed, and it lasts. That creed is the book's answer to Guiliano's
-belief.
+it's clear-eyed, and it lasts. That creed is what the book sets against
+Guiliano's belief.
 
 Here's the catch. I'd rather be Michael. I trust scepticism
 over ideology and try not to believe what I can't check. But people don't move
