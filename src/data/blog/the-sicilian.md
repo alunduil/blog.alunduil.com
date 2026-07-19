@@ -19,11 +19,11 @@ around him can feel the gap where it used to be. That gap is what makes him.
 People follow a man who has stopped flinching, and a whole island builds a
 myth on one.
 
-Michael Corleone, in exile on Sicily, understands his father well enough to
-know a promise is only as good as it is survivable.
-When keeping his word would cost more than the word is worth, he doesn't keep
-it, not from fear but from the one value that always wins for him: you live.
-It's the clearest-eyed thing in the book, and it works.
+The survival isn't Michael's doing. He's mostly a witness here, sent to carry
+Guiliano to safety, and the ethic arrives only at the end, as the lesson his
+father hands him once he's home: better to stay alive at any cost than to be a
+dead hero. That's the Corleone answer to Guiliano, and it's the one that
+lasts.
 
 Here's the catch. I'd rather be Michael. I trust scepticism
 over ideology and try not to believe what I can't check. But people don't move
