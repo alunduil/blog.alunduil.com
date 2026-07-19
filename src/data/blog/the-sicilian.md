@@ -19,11 +19,11 @@ around him can feel the gap where it used to be. That gap is what makes him.
 People follow a man who has stopped flinching, and a whole island builds a
 myth on one.
 
-The survival isn't Michael's doing. He's mostly a witness here, sent to carry
-Guiliano to safety, and the ethic arrives only at the end, as the lesson his
-father hands him once he's home: better to stay alive at any cost than to be a
-dead hero. That's the Corleone answer to Guiliano, and it's the one that
-lasts.
+The other pole is Michael Corleone, and the cold calculus of the family he
+belongs to. The Corleone creed puts survival first, ahead of honour, ahead of
+the cause, ahead of almost everything. It isn't warm and it isn't heroic, but
+it's clear-eyed, and it lasts. That creed is the book's answer to Guiliano's
+belief.
 
 Here's the catch. I'd rather be Michael. I trust scepticism
 over ideology and try not to believe what I can't check. But people don't move

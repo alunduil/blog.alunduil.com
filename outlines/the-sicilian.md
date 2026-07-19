@@ -29,14 +29,16 @@ summary's whole budget.
    magnetic — and it's the same quality that dooms him.
    *Evidence:* Guiliano's first moment of no fear of death.
 
-2. **Pragmatism is what survives — the Corleone lesson at the end.**
-   Survival isn't Michael's action; he's mostly a witness, sent to bring
-   Guiliano out. The ethic arrives as the book's closing verdict, the
-   lesson Vito hands Michael once he's home: better to stay alive at any
-   cost than to be a dead hero. Cold, and it's the one that lasts.
-   *Evidence:* Vito's closing lesson to Michael on his return — better
-   alive at any cost than a dead hero. (Note: this is the ending; keep it
-   to the stated moral, not the plot mechanics that deliver it.)
+2. **Pragmatism is what survives — the Corleone creed.** The counter-pole
+   is the Corleone survival ethic: stay alive first, ahead of honour and
+   the cause. The book states it most plainly as Vito's closing lesson to
+   Michael (better alive at any cost than a dead hero) — but that's the
+   ending, so the **post keeps it spoiler-free**: frame it as the family's
+   known worldview, the book's answer to Guiliano's belief, without
+   locating it in the plot. Michael embodies the creed as a Corleone; he
+   doesn't perform it in the story.
+   *Evidence:* the Corleone creed itself — survival over heroism — carried
+   by Michael, not any single scene.
 
 3. **The catch — pragmatism still needs belief to move anyone.** The
    pragmatist's problem is that people, and the pragmatist himself, run
