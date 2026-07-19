@@ -88,6 +88,12 @@ unpublished and excluded from the prose linters and lychee):
 <what it left unresolved / where the read might be wrong>
 ```
 
+The `outlines/` dir is unpublished to the site but **public in the repo**. Open
+a spine that names plot beats with a one-line `> **Spoilers.** …` marker; keep
+the beats concrete regardless — the spine needs them to drive the draft, and a
+reader in the notes drawer is opt-in. The spoiler *fence* is the published
+post's job (§4), not the outline's.
+
 This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
 Confirm the thesis and the points with the author before drafting prose. The
@@ -104,6 +110,11 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   carries a specific moment from the work as its evidence. A paragraph that
   recounts without judging is summary — cut it or turn it into evidence for a
   claim.
+- **The object stays load-bearing.** The reviewer's own ideas enter as the
+  *lens* on the work, not a creed the work is a springboard for. If the draft
+  would survive deleting the object, it has drifted into a personal essay — a
+  different post, not this review. Keep the philosophy at the mechanics of the
+  work, never a stance broadcast.
 - **Thematic order, never the work's chronology.** Organise by the spine's
   points. Walking the reader through the plot or the table of contents in order
   is the surest tell that the draft has slid back into report.
@@ -114,7 +125,15 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   verdict is not the place to be wishy-washy. The *close* still lands on the
   admitted gap, not a triumph. This is how a clear recommendation and the
   corpus's honest-limitation signature coexist: confident spine, honest ending.
-- **Spoiler-conscious.** Keep the summary minimal and mark what would spoil.
+- **Spoilers — trade on ideas and texture, never the turns.** A review spoils
+  by revealing what *happens*; it stays clean revealing what the work is *about*
+  and how it feels. Build the recommendation from spoiler-free currency: the
+  unresolved question, the texture, the reading experience. Recast plot beats as
+  *dispositions* (who a character is), not events — show the early/establishing
+  one concretely, gesture the outcome-adjacent one. Fence once, early and
+  honestly. Sell the surprise as a question the reader gets to sit in. The test:
+  could a reader who then picks up the work still be surprised by the plot? If a
+  sentence's pull needs a known outcome, cut it or lift it to theme.
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
   (`post-draft` §2, `.claude/voice.md`).
