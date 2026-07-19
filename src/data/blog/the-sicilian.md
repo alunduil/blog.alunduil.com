@@ -33,17 +33,8 @@ book never makes him choose. That's the middle: not neutral ground between two
 sides, but a man of one side who can't stop wanting the other. It has an old
 name: practical wisdom, the mean between the pure thing and the safe one.
 
-The bind is mine as much as Michael's. I lean the pragmatist's way: sceptical
-judgement over ideology, nothing believed that I can't check. But pragmatism
-with nothing above it becomes Don Croce. He keeps a peace that answers to no
-one, long past serving anyone but himself. I don't want that. And I can't move
-anyone from the clean middle either. People don't move on what checks out. They
-move on belief, on a story that makes the facts mean something. To move them,
-I'd have to hand them one. Doing that on purpose sits closer to the Prince than
-to anything I'd say aloud. I'd be running on borrowed belief the whole time,
-the same as the people I hoped to reach. The middle sees straight and shifts no
-one. The Mafia shifts everyone and believes in nothing past its own hold. I'd
-rather be realistic enough to last and principled enough to matter.
+The bind is mine as much as Michael's. I land pragmatic: sceptical judgement
+over ideology, nothing believed that I can't check.
 
 The rest is texture. Puzo's is rich: villages and vendettas, a Sicily where the
 state is a rumour and the bandit is the closest thing to a government. I can't
