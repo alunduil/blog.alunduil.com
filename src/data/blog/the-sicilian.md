@@ -33,9 +33,6 @@ book never makes him choose. That's the middle: not neutral ground between two
 sides, but a man of one side who can't stop wanting the other. It has an old
 name: practical wisdom, the mean between the pure thing and the safe one.
 
-The bind is mine as much as Michael's. I land pragmatic: sceptical judgement
-over ideology, nothing believed that I can't check.
-
 Then the book leaves its man in the middle without an answer. It shows him what
 each side costs and stops there, before saying what he makes of it. I finished
 it sure of where I'd stand and no clearer on what I'd do there, which is the
