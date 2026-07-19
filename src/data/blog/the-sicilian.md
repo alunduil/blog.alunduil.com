@@ -33,5 +33,4 @@ That puts him in the middle. The old name for it is practical wisdom, the mean
 between the pure thing and the safe one.
 
 The book sets all this up and then stands back. I finished it sure of where I'd
-stand and no clearer on what I'd do there, which is the truest thing a book
-like this could leave me holding.
+stand and no clearer on what I'd do there.
