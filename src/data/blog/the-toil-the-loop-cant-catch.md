@@ -98,3 +98,27 @@ watching isn't the same as reading it right. Last time the ground went
 soft slowly, and I stood on it the whole while, calling it solid. So I try
 not to overdo it. It's the only gauge I have, and it's never quite
 calibrated.
+
+The engineer in me can't leave a gauge that far out of calibration.
+Everything
+else I've built this year exists to catch what I'd otherwise miss: the
+check on every pull request, the test that shows its work, the gate that
+stops what shouldn't merge. The whole point of them is that they don't
+depend on how I feel. There's a system watching the code now. There isn't
+one watching me.
+
+So I've thought about building one. The reflex doesn't stop at
+the repositories; it finds the one part of the setup with no telemetry and
+reaches for the instruments. Quantified self: resting heart rate, sleep,
+the hours I keep, some read on mood I could chart the way I chart
+everything else. Give it enough bricks and the operator becomes another
+monitored subsystem, watched the same as the rest.
+
+The trouble is that a dashboard measures what you think to measure, and
+the thing that took me last time never showed up as a number. It showed
+up as not today. It came in under the instruments, through the part of me
+that does the
+noticing, and that part is the first to go. If I ever need the readout to
+tell me I'm going out, the going-out will already have started. Slow is
+smooth, smooth is fast. And smooth is also when I stop being able to feel
+the cost.
