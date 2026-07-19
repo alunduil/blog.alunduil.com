@@ -12,7 +12,7 @@ I read [*The Sicilian*](https://www.goodreads.com/book/show/826446) in June.
 It's well written and a fun read, another Puzo Godfather novel.
 
 The book strands Michael Corleone between two ways of living: a belief that
-turns a bandit into a legend, and the Mafia that outlasts legends.
+turns a bandit into a legend, and the older law of the Mafia.
 
 Salvatore Guiliano, Puzo's folk hero, loses his fear of death early. He doesn't
 court it. The fear the rest of us carry has left him. Everyone near him feels
