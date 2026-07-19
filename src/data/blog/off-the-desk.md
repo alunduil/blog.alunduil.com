@@ -1,10 +1,11 @@
 ---
 pubDatetime: 2026-07-26T07:00:00Z
 title: Off the Desk
-description: "Provisional; finalised at the frontmatter stage once the body settles what it argues."
+description: "GitHub dropped my one model from Copilot. I went to Claude, and the work left the desk, run from my phone."
 tags:
   - agentic-coding
-  - methodology
+  - tooling
+  - decision-making
 ---
 
 For the first months of this year I built genshin.dungeon.studio with GitHub
