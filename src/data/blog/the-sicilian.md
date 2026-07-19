@@ -15,7 +15,7 @@ The book strands Michael Corleone between two ways of living: a belief that
 turns a bandit into a legend, and an order old enough to outlast one.
 
 Salvatore Guiliano, Puzo's folk hero, loses his fear of death early. He doesn't
-court it—the fear the rest of us carry has left him, and everyone near him can
+court it. The fear the rest of us carry has left him, and everyone near him can
 feel the absence. They follow a man who has stopped flinching and robs the
 barons to feed them, and a whole island builds a myth on one. Belief like that
 moves people, and it moves them wherever it points, which isn't always
@@ -33,7 +33,7 @@ could be, while blood and name bind him to the order he comes from. The seat
 between them has an old name: practical wisdom, the mean that reaches for the
 right thing rather than the pure thing or the safe one.
 
-The bind is mine as much as Michael's. I lean the pragmatist's way—sceptical
+The bind is mine as much as Michael's. I lean the pragmatist's way: sceptical
 judgement over ideology, nothing believed that I can't check. But pragmatism
 with nothing above it becomes Don Croce: an order that keeps its own peace,
 answerable to no one, long past serving anyone but itself. I don't want that.
@@ -55,5 +55,5 @@ this.
 
 Then the book leaves its man in the middle without an answer. It shows him what
 each side costs and stops there, before saying what he makes of it. I finished
-it sure of where I'd stand and no clearer on what I'd do there—which is the
+it sure of where I'd stand and no clearer on what I'd do there, which is the
 truest thing a book like this could leave me holding.
