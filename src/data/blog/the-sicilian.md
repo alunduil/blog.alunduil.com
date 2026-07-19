@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-07-26T07:00:00Z
 title: The Man in the Middle
-description: "Puzo's The Sicilian catches a man between a belief that moves people and a machine that outlasts them. I recognised the seat, and how little the book will tell me to do from it."
+description: "Puzo's The Sicilian strands a man between a belief that moves people and a machine that outlasts them. I recognised the seat, and how little the book will tell me to do from it."
 tags:
   - idealism
   - pragmatism
@@ -11,34 +11,35 @@ tags:
 I read *The Sicilian* in June. It's well written and a fun read, another Puzo
 Godfather novel.
 
-The exception is Salvatore Guiliano, Puzo's folk hero. Early on he stops being
-afraid to die. He doesn't court death; the fear the rest of us carry has just
-left him, and everyone around him can feel the gap where it used to be. That
-gap is what makes him. People follow a man who has stopped flinching, and a
-whole island builds a myth on one. Belief like that moves people—and it moves
-them wherever it's pointed, which isn't always somewhere good.
+The book strands Michael Corleone between two ways of living: a belief that
+turns a bandit into a legend, and the cold survival that keeps a family alive.
 
-Set against him is the world Michael Corleone belongs to, the Corleone
-family and the Mafia it moves among, living by the reverse creed: stay alive
-first, honour second, the cause a distant third. It isn't warm and it isn't
-heroic, and the book never pretends it is. But it's clear-eyed, and it's the
-thing that endures.
+Salvatore Guiliano, Puzo's folk hero, stops being afraid to die early on. He
+doesn't court death; the fear the rest of us carry has just left him, and
+everyone around him can feel the gap where it used to be. That gap makes him.
+People follow a man who has stopped flinching, and a whole island builds a myth
+on one. Belief like that moves people—and it moves them wherever it's pointed,
+which isn't always somewhere good.
 
-Michael is neither. He's sent into Guiliano's orbit and finds himself drawn to
-the man, a believer he half-wishes he could be, while he belongs by blood and
-name to the cold world on the other side. He's the one caught between them,
-and that middle has an old name: practical wisdom, the mean that reaches for
-the right thing here instead of the pure thing or the safe one.
+Michael's own family lives the other way—the Corleones, and the Mafia they move
+among. Stay alive first, honour second, the cause a distant third. It isn't
+warm and it isn't heroic, and the book never pretends it is. But it stays
+clear-eyed, and it endures.
 
-Here's the catch, and it's mine as much as his. I'd rather live in that
-middle. I trust sceptical judgement over ideology and try not to believe what I
-can't check. But people don't move on evidence. They move on belief, on the
-values and the story that make the evidence mean anything, and so, most of the
-time, does the person doing the asking, without ever noticing it in himself.
-Practical wisdom can see what's right; it can't make anyone follow. Belief
-can. And the cold world wins by shedding the belief and honour that make the
-middle worth standing in. So the middle gets pressed from both sides: it can't
-move people like the zealot, and it can't win like the machine.
+Michael takes neither side. Guiliano pulls at him, a believer he half-wishes he
+could be, while blood and name bind him to the cold world he comes from. The
+seat between them has an old name: practical wisdom, the mean that reaches for
+the right thing rather than the pure thing or the safe one.
+
+Here's the catch, and it's mine as much as his. I'd rather live in that middle.
+I trust sceptical judgement over ideology and try not to believe what I can't
+check. But people don't move on evidence. They move on belief, on the values
+and the story that make the evidence mean anything, and so, most of the time,
+does the person doing the asking, without ever noticing it in himself.
+Practical wisdom can see what's right; it can't make anyone follow. Belief can.
+And the cold world wins by shedding the belief and honour that make the middle
+worth standing in. So both sides press the middle: it can't move people like
+the zealot, and it can't win like the machine.
 
 The rest is texture, and Puzo's is rich: villages and vendettas, a Sicily
 where the state is a rumour and the bandit is the closest thing to a
