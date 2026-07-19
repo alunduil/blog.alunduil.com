@@ -100,6 +100,12 @@ calibrate against what the blog actually does.
   punctuation outside the quotes. ([[project_grammar_lean]])
 - **Possessives:** singular *s*-ending nouns take *'s* — Books's,
   Charles's (CMOS, not AP). ([[project_possessive_convention]])
+- **One independent clause per sentence.** Split every `, and`, semicolon,
+  or comma-splice that hooks two complete thoughts together. Length comes
+  from subordinate clauses (`which…`, `while…`, `that…`) and cadence, not
+  from chaining independents. Compound predicates on one subject are fine
+  ("he shows X and stops there"); this reinforces *flow, don't snap* below
+  — flow through subordination, never through a pile-up of independents.
 
 **Register — poetic without being poetry** (Tolkien/Carroll touchstone),
 the house voice for story posts:
@@ -112,8 +118,9 @@ the house voice for story posts:
   load. A comma only for a grammatical job (clause join, serial list,
   trailing absolute), never a mid-clause interrupter for emphasis.
   Colons, semicolons, and em-dashes earn their place only by doing real
-  structural work, not as dressing. A plain serial list (a, b, and c)
-  beats polysyndeton (a and b and c).
+  structural work, not as dressing. A colon that tacks a list onto a weak
+  phrase ("Puzo's is rich: …") is a smell — rewrite so a verb carries it. A
+  plain serial list (a, b, and c) beats polysyndeton (a and b and c).
 - **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
   simile usually wants toning down, not up.
 - **Watch personification.** It creeps in ("a busy place", "a last sign
@@ -128,6 +135,14 @@ Pass:
   always…") rather than fragment-label openers.
 - Don't repeat temporal anchors; book-end them.
 - Em-dashes only for information asides, not drama.
+- No announced transitions: cut any sentence whose only job is to signal a
+  pivot ("There's more to it, though:", "I'll keep this above the plot");
+  state the next thing and let the paragraph break carry the turn.
+- No editorialising tail on a close that already lands ("…which is the truest
+  thing a book like this could leave me"), and no weak trailing cliffhanger
+  ("mostly that's all it is").
+- Active verbs over dead linking: an agent doing something beats "X is Y's",
+  and never force a verb onto an abstraction ("the mean that reaches").
 - Strip blame: no "I should have", no confession closers.
 - CMOS-style possessives; add new variants to
   `.vale/styles/config/vocabularies/Custom/accept.txt` as
