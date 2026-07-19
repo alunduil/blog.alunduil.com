@@ -3,10 +3,10 @@
 *(Working title — real title chosen in post-draft once the prose settles
 what it argues.)*
 
-**Logline.** Copilot's premium-request meter had been pricing me out at
-the rate I wanted to build, so at GrafanaCON I tried the Claude
-subscription only because I used the Claude models anyway — and on the
-plane home, planning projects from my phone through Claude chats, I
+**Logline.** Copilot's per-request billing had grown tighter than even
+the hundred-a-month budget I was glad to pay, so at GrafanaCON I tried the
+Claude subscription only because I used the Claude models anyway — and on
+the plane home, planning projects from my phone through Claude chats, I
 realised it wasn't a cheaper Copilot but a different medium: the work had
 left the editor, and I could spin many plates again instead of pouring
 everything into one. The one moment of change is that recognition on the
@@ -14,7 +14,7 @@ plane. It opens at its opposite: productive but desk-bound, one project
 soaking up everything, on a meter.
 
 **How it discharges #232.** The issue's frame is "cost as the constraint
-nobody budgeted." Cost is the *push* (Copilot's premium-request overages)
+nobody budgeted." Cost is the *push* (the per-request budget that ran tight)
 and, at the close, the dollar bill I *dodged* (Copilot went fully
 per-token days after I left — the bill the whole discourse now argues
 about) sets up the real bill nobody budgets: not dollars but capacity.
@@ -34,16 +34,17 @@ Simon's math, the Apr-27 usage-based announcement) is ambient backdrop.
 2. It was genuinely productive — but that one project soaked up nearly all of it *(~85–97 commits/month, Feb–Apr)*.
 3. It lived at the desk, in the IDE's chat panel, and my attention lived on that one plate.
 
-## 2. The meter I couldn't afford — *the forcing function*
+## 2. The budget that ran tight — *the forcing function*
 
-1. Copilot billed premium requests — a monthly allowance, then per-request overage *(github.blog changelog 2025-06-18; $0.04/request)*.
-2. At the rate I built, the allowance vanished and the overages made it a meter I couldn't afford.
-3. I wasn't going to pay by the request to work at the pace I wanted.
+1. Copilot billed by the premium request — a set number each month, then a charge past that *(github.blog changelog 2025-06-18; $0.04/request)*.
+2. The models I leaned on burned that number fast, so my own cap was the real limit: a hundred dollars a month, which I was glad to pay *(lived; Claude models carried high request-multipliers — the no-allowance, pure-per-token move is dated 2026-06-01, after the switch)*.
+3. At my pace even that ran tight, and by spring it wasn't enough.
 
 ## 3. GrafanaCON, on low expectations — *the reluctant step*
 
-1. At GrafanaCON in Barcelona I tried the Claude subscription *(2026-04-20/22)*.
-2. I only used the Claude models anyway — a lateral, cost-driven move, expecting a cheaper version of what I had.
+1. At GrafanaCON in Barcelona I tried the Claude subscription — I used the Claude models anyway *(2026-04-20/22)*.
+2. A flat rate put the per-token charge out of my life, and that relief alone was what I'd come for.
+3. I expected a cheaper version of what I already had, nothing more.
 
 ## 4. On the plane home — *the turn (the one moment of change)*
 
