@@ -1,11 +1,11 @@
 ---
-# FRONTMATTER PLACEHOLDER — finalised in stage 4 (title/description/pubDatetime/tags)
-title: The Toil the Loop Can't Catch
-author: Alex Brandt
-pubDatetime: 2030-01-01T08:00:00-05:00
-description: PLACEHOLDER
+pubDatetime: 2026-07-26T07:00:00Z
+title: Under the Instruments
+description: "I merged sixty-odd agent-written pull requests in a week, and it barely felt like work. The checks I built watch the code. Nothing watches the operator."
 tags:
-  - PLACEHOLDER
+  - agentic-coding
+  - reliability
+  - burnout
 ---
 
 On the fourth of June I woke to a handful of branches that had gone green
@@ -47,9 +47,9 @@ a model make the good-enough calls that don't reduce to a green tick. I
 don't have that yet. It comes one brick at a time, and you can't lay the
 hard one first.
 
-That week I'd been reading a piece from Meta's engineering blog about
-testing for sudden, total power loss in a data centre, the kind where you
-cut the power to a whole region and see whether it comes back. The section
+That week I'd been reading a [piece from Meta's engineering blog][power-loss]
+about testing for sudden, total power loss in a data centre, the kind where
+you cut the power to a whole region and see whether it comes back. The section
 that stayed with me carried the title Slow is Smooth, Smooth is Fast, and
 under it a single claim: reliability and velocity are two facets of the
 same coin. You cannot have one without the other.
@@ -122,3 +122,5 @@ noticing, and that part is the first to go. If I ever need the readout to
 tell me I'm going out, the going-out will already have started. Slow is
 smooth, smooth is fast. And smooth is also when I stop being able to feel
 the cost.
+
+[power-loss]: https://engineering.fb.com/2026/06/03/data-center-engineering/lights-out-systems-on-validating-instant-power-loss-readiness/
