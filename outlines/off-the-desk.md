@@ -19,9 +19,9 @@ plans: it dropped the Claude models from what the plan covered, and since
 Claude was the only model I used, the plan had become a middle layer I no
 longer needed — so I went direct. That's the cost reckoning landing on an
 individual, but the *real* bill nobody budgets, at the close, isn't dollars
-— it's capacity. The meter came off the money and reattached to me: I live
-at the edge of what I can handle, and the toil I meant to reduce just
-expanded to fill it. The durable claim under the news hook isn't the cost
+— it's capacity. Money was never my constraint; the bill nobody budgets,
+for me, is how much I can hold at once — I live at the edge of it, and the
+toil I meant to reduce just expanded to fill it. The durable claim under the news hook isn't the cost
 thesis everyone's writing; it's that the change pushed me off the desk into
 a way of working whose true cost never shows up on an invoice.
 
@@ -71,7 +71,7 @@ edge.
 
 ## 6. The bill I didn't budget — *the honest gap*
 
-1. The talk now is all about the cost — what these tools run, who can afford them *(ambient discourse: Uber caps, Willison; no timeline claim)*.
-2. A bill came due for me too, but not in dollars: starting anything is frictionless now — a chat from a queue or a train.
-3. I don't drop them; I come back and check, and that keeps me at the edge of what I can carry, never past it.
-4. The meter I ran from was money; the one that replaced it is me — I set out to spend less effort, and the work grew to fill all I had.
+1. The talk is all about the dollar cost — what these tools run, who can afford them *(ambient discourse: Uber caps, Willison; no timeline claim)*.
+2. I watch what I spend, but money was never my limit; my limit is how much I can hold at once *(the #232 discharge: the constraint nobody budgets, for me, is capacity — not dollars)*.
+3. Starting is frictionless now — a project going from a queue or a train, in idle time; I keep track of them, come back and check, and that holds me at the edge of what I can carry, never quite past it.
+4. The edge is where I live: I meant for the work to take less out of me; instead it grew to fill whatever I could give it.

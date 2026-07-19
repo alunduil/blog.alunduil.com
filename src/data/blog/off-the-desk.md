@@ -52,15 +52,13 @@ next thing quicker to start. You can watch it go up in the history, a few days
 after I got home.
 
 The talk now is all about the cost: what these tools run, who can afford to keep
-them going, where the spending stops. A bill came due for me too, only not in
-dollars. Starting something costs next to nothing now. I can open a chat from a
-queue or a train and have a project underway before I reach the front. I don't
-lose track of them; I come back, look, and pull things along. That keeps me at
-the edge of what I can carry, and never quite past it.
+them going, where the spending stops. I watch what I spend, but money was never
+my limit. My limit is how much I can hold at once. I can set a new project going
+from a queue or a train, in the time I'd have spent waiting. I don't lose track
+of them; I come back, look, and pull each one along. That keeps me at the edge of
+what I can carry, and never quite past it.
 
-The edge is just where I live now. The meter I ran from was measured in money,
-and I got out from under it. The one that replaced it is measured in me. I set
-out to spend less effort, and instead the work grew until it filled everything I
-had to give.
+The edge is where I live now. I meant for the work to take less out of me;
+instead it grew to fill whatever I could give it.
 
 [copilot-plans]: https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/
