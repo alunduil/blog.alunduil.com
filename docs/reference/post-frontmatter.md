@@ -1,72 +1,72 @@
 # Post frontmatter and scheduling
 
-Reference for the frontmatter fields, scheduling rules, and file
-locations of a blog post. The schema lives in
-`src/content.config.ts`; this page documents the fields and the
-conventions layered on top of them.
+The frontmatter fields, scheduling rules, and file locations of a blog
+post. The schema is `src/content.config.ts`; this page adds the
+conventions layered on it.
 
 ## Fields
 
-Each post opens with a YAML frontmatter block. Fields, in schema order:
+Fields, in schema order:
 
-| Field | Required | Type | Notes |
+| Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
-| `author` | no | string | Defaults to `SITE.author`; set only to override. |
-| `pubDatetime` | yes | date | Publication moment. Gates visibility (see [Scheduling](#scheduling)). |
-| `modDatetime` | no | date \| null | Last substantive edit. A live-site moment, not a branch commit. |
+| `author` | no | string | Defaults to `SITE.author`. |
+| `pubDatetime` | yes | date | Publication moment; gates visibility (see [Scheduling](#scheduling)). |
+| `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
-| `draft` | no | boolean | **Never set.** A future date gates publication, not this flag (see [Scheduling](#scheduling)). |
-| `tags` | no | string[] | Content topics; defaults to `["others"]`. See [Tags](#tags). |
-| `ogImage` | no | image \| string | Overrides the dynamic OG card. Set for reviews (see [Locations](#locations-and-urls)). |
-| `description` | yes | string | ~120–150 chars. Becomes `og:description` and the dlvr.it syndication text; state the thesis plainly. |
-| `canonicalURL` | no | string | Points elsewhere when the post is canonical off-site. |
-| `hideEditPost` | no | boolean | Hides the "edit this page" link. Set for archival or immutable content. |
-| `timezone` | no | string | IANA zone for interpreting `pubDatetime`/`modDatetime`; defaults to `SITE.timezone`. |
+| `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
+| `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
+| `ogImage` | no | image \| string | Overrides the dynamic OG card; reviews set it (see [Locations](#locations)). |
+| `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
+| `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
+| `hideEditPost` | no | boolean | Hides the "edit this page" link. |
+| `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `SITE.timezone`. |
 
-`pubDatetime` and `modDatetime` are live-site moments. Don't pin them to
-a local-branch commit time; a future `pubDatetime` doubles as the
-publication gate and a placeholder.
+`pubDatetime` and `modDatetime` are live-site moments, independent of
+branch commit time.
 
 ## Scheduling
 
-`pubDatetime` is **08:00 local**, where "local" is the post's
-`timezone` (`Europe/London` currently, so 08:00 British Summer Time
-serialises as `07:00:00Z`). The weekday carries content type:
+`pubDatetime` is 08:00 in the post's `timezone` (`Europe/London`
+currently, so 08:00 British Summer Time is `07:00:00Z`). The weekday
+encodes content type:
 
-- **Tuesday**—tech / methodology.
-- **Sunday**—personal / reflective (reviews included).
-- Skip Monday and Friday unless there's a specific reason.
+| Weekday | Content |
+| --- | --- |
+| Tuesday | Tech / methodology |
+| Sunday | Personal / reflective, including reviews |
 
-No two posts share a `pubDatetime`. When a date collides or a post slips
-its slot, move it to the next open date **on its own weekday**—not the
-next calendar day.
+Monday and Friday are unused. Each `pubDatetime` is unique; a collision
+or a slipped slot moves to the next open date on the same weekday.
 
-A future `pubDatetime` gates publication entirely: it keeps the post
-hidden via AstroPaper's `SITE.scheduledPostMargin` (~15 minutes), so the
-date is the real publish target. Merging a post's PR accepts the
-editorial work; the future date defers publication. Nothing sets
-`draft: true`.
+A future `pubDatetime` gates publication: AstroPaper's
+`SITE.scheduledPostMargin` (~15 minutes) hides the post until the date
+passes. Publication is independent of the merge; the date is the trigger.
+No post sets `draft: true`.
 
-## Locations and URLs
+## Locations
 
-The blog collection loads `**/[^_]*.md` under `src/data/blog`; the build
-skips files and directories prefixed with `_`.
+The blog collection loads `**/[^_]*.md` under `src/data/blog`, skipping
+`_`-prefixed files and directories.
 
-| Content | Path | Served at |
+| Content | Path | URL |
 | --- | --- | --- |
-| New post | `src/data/blog/<slug>.md` | `/posts/<slug>/` |
+| Post | `src/data/blog/<slug>.md` | `/posts/<slug>/` |
 | Review | `src/data/blog/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
 | Archival republish | `src/data/blog/_<engine>/<slug>.md` | `/posts/<slug>/` |
 
-The theme keeps non-`_` folders (like `reviews/`) in the URL path and
-strips `_`-prefixed folders (`_hakyll/`, `_releases/`), so archival posts
-still serve at `/posts/<slug>/`.
+Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
+(`_hakyll/`, `_releases/`) are stripped, so archival posts serve at
+`/posts/<slug>/`.
 
-Reviews carry the reviewed work's cover as `ogImage`, the one post type
-that overrides the dynamic OG card. The cover file goes in
-`src/assets/images/<slug>-cover.jpg`, referenced with three `../` from
-the deeper `reviews/` folder:
+Draft outlines live in `outlines/<slug>.md`: tracked, outside `src/`,
+unpublished, and excluded from the linters. Public in the repository.
+
+Reviews set `ogImage` to the reviewed work's cover, the only post type
+that overrides the dynamic OG card. The file is
+`src/assets/images/<slug>-cover.jpg`, referenced from the deeper
+`reviews/` folder with three `../`:
 
 ```yaml
 ogImage: ../../../assets/images/<slug>-cover.jpg
@@ -74,27 +74,18 @@ ogImage: ../../../assets/images/<slug>-cover.jpg
 
 ## Archival republishes
 
-Restored posts live under `src/data/blog/_<engine>/` (the engine of
-origin: `_hakyll/`, `_nikola/`). They set `hideEditPost: true`, carry a
-`timezone` matching the zone of authorship, and open with the stock
-stanza before the body:
+Restored posts live under `src/data/blog/_<engine>/` (`_hakyll/`,
+`_nikola/`). They set `hideEditPost: true`, set `timezone` to the zone of
+original authorship, and open with the stanza:
 
 ```markdown
 > **Archival republish.** From this blog's <engine> era; lightly copyedited.
 ```
 
-`<engine>` matches the source directory ("Hakyll" for `_hakyll/`).
+`<engine>` names the source ("Hakyll" for `_hakyll/`).
 
 ## Tags
 
-Tags answer "what is this post *about*?"—content topics only. Archive,
-era, format, and draft-state signals live in directory structure or
-schema fields, never in tags. Soft cap of ~3; drop a marginal tag rather
-than padding.
-
-## Drafting artefacts
-
-Story and review drafts iterate in `outlines/<slug>.md` before the post
-exists. The `outlines/` directory is tracked but sits outside `src/`, so
-it stays unpublished and out of the prose linters and link checker. It's
-public in the repository.
+Tags name what a post is about—content topics. Archive, era, format,
+and draft-state belong to directory structure or schema fields, not tags.
+The soft cap is ~3.
