@@ -1,20 +1,96 @@
 # Blog voice
 
-Descriptive fingerprint of this blog's published voice, calibrated
-against the author-written posts in `src/data/blog/` (not the AstroPaper
-upstream tutorial posts). Use it when Claude drafts or edits any post —
-story, methodology, or freeform.
+The blog's voice home. Two halves, kept distinct but co-located:
 
-Two companions, kept distinct:
+- **Prescriptive rules** (below) — the sentence-level conventions and
+  story register to *apply* when drafting or editing a post.
+- **Descriptive fingerprint** (further down) — what the published posts
+  measurably *do*, calibrated from the corpus. When the two overlap they
+  agree; when in doubt, the corpus is the evidence.
 
-- `post-draft/SKILL.md` §2 is the *prescriptive* story register — rules
-  to apply (CMOS grammar, latch-first, no blame in retrospect). This
-  file is the *descriptive* corpus fingerprint — what the published
-  posts measurably do. When they overlap they agree; when in doubt,
-  the corpus here is the evidence.
+Read this before drafting or editing any post — story, review,
+methodology, or freeform. `post-draft` and `review-draft` apply it; they
+don't restate it.
+
+Companions, kept separate:
+
 - The host `~/.claude/voice.md` profiles the author's *external* voice
   (PR/issue comments, calibrated against pre-2025 GitHub). Different
   corpus, different surface — don't apply it to blog posts.
+- Frontmatter, scheduling, tags, and locations live in
+  `docs/reference/post-frontmatter.md`, not here.
+
+Stated in full so the skills stand alone on the web, where host memory
+isn't present; bracketed `[[names]]` are local-only see-alsos.
+
+## Sentence-level rules
+
+- **No blame in retrospect.** Ownership ("I did X") is fine; regret ("I
+  should have", confession closers) goes.
+  ([[feedback_no_blame_in_retrospect]])
+- **Causal over contrast.** "Without X, Y happens" beats "X required Z; Y
+  doesn't" — show the mechanism. ([[feedback_causal_narrative_over_contrast]])
+- **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
+  unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
+  punctuation outside the quotes. ([[project_grammar_lean]])
+- **Possessives:** singular *s*-ending nouns take *'s* — Books's,
+  Charles's (CMOS, not AP). Add new variants to
+  `.vale/styles/config/vocabularies/Custom/accept.txt` as Custom.Spelling
+  surfaces them. ([[project_possessive_convention]])
+- **One independent clause per sentence.** Split every `, and`, semicolon,
+  or comma-splice that hooks two complete thoughts together. Length comes
+  from subordinate clauses (`which…`, `while…`, `that…`) and cadence, not
+  from chaining independents. Compound predicates on one subject are fine
+  ("he shows X and stops there"); this reinforces *flow, don't snap* below
+  — flow through subordination, never through a pile-up of independents.
+
+## Register: poetic without being poetry
+
+The house register for story posts (Tolkien/Carroll touchstone):
+
+- **Latch first.** Open each scene on something concrete the reader can
+  hold — never on context-free abstraction.
+- **Flow, don't snap.** Carry weight in cadence and image, not in clipped
+  fragments stacked for drama.
+- **Punctuation marks structure, not pauses.** Let the period carry the
+  load. A comma only for a grammatical job (clause join, serial list,
+  trailing absolute), never a mid-clause interrupter for emphasis.
+  Colons, semicolons, and em-dashes earn their place only by doing real
+  structural work, not as dressing. A colon that tacks a list onto a weak
+  phrase ("Puzo's is rich: …") is a smell — rewrite so a verb carries it. A
+  plain serial list (a, b, and c) beats polysyndeton (a and b and c).
+- **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
+  simile usually wants toning down, not up.
+- **Watch personification.** It creeps in ("a busy place", "a last sign
+  of life") — keep it light.
+- Plain, warm words: punch without the snap, music without verse.
+
+## Revision pass
+
+- Drop summary-as-flourish ("outlasted them all", "Everything between me
+  and the books").
+- Ease in via personal continuity ("I'm still…", "Since college I've
+  always…") rather than fragment-label openers.
+- Don't repeat temporal anchors; book-end them.
+- Em-dashes only for information asides, not drama.
+- No announced transitions: cut any sentence whose only job is to signal a
+  pivot ("There's more to it, though:", "I'll keep this above the plot");
+  state the next thing and let the paragraph break carry the turn.
+- No editorialising tail on a close that already lands ("…which is the truest
+  thing a book like this could leave me"), and no weak trailing cliffhanger
+  ("mostly that's all it is").
+- Active verbs over dead linking: an agent doing something beats "X is Y's",
+  and never force a verb onto an abstraction ("the mean that reaches").
+- Strip blame: no "I should have", no confession closers.
+
+Iterate in the file; apply the rules confidently, surface only genuine
+judgement calls.
+
+---
+
+The rest of this file is the **descriptive fingerprint** — measured from
+the corpus, not rules to apply. Recalibrate by re-reading the posts, not
+by editing numbers here from memory.
 
 ## Corpus
 
@@ -22,8 +98,7 @@ Four current author posts as of 2026-07: `how-i-back-up`,
 `how-i-read-eight-years-on` (methodology); `i-built-the-machine-twice`,
 `the-bottleneck-isnt-the-blank-page` (narrative). The archival
 restorations under `_hakyll/` are an older, lightly-copyedited era —
-weak calibration; weight the four current posts. Recalibrate by
-re-reading the corpus, not by editing numbers here from memory.
+weak calibration; weight the four current posts.
 
 ## Shared DNA — every post
 
@@ -71,8 +146,7 @@ re-reading the corpus, not by editing numbers here from memory.
 - Second person to pull the reader in, sparingly ("You picture the blank
   page"). Narrative-only; the methodology posts stay first-person.
 - Restrained figuration — a governing image ("the machine", "the wall")
-  worked lightly, never purple. See `post-draft/SKILL.md` §2 for the
-  full "poetic without being poetry" register.
+  worked lightly, never purple. See the poetic register above.
 - Scene and contrast: opens at the opposite of where it lands.
 
 ## Register: methodology / reference
