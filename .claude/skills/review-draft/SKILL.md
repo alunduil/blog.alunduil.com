@@ -23,9 +23,11 @@ character-limited networks (Bluesky, Threads) regardless. A note-length
 artefact and belongs to `note-draft` (#323) and the note pipeline (#321/#322),
 not here.
 
-Voice, citations, frontmatter, and Instagram
-syndication are shared — apply `post-draft` §2–5 and `.claude/voice.md` for
-those; only the review-specific deltas live here.
+Voice, citations, frontmatter, and the Instagram check are shared. Apply
+them from their single homes — voice (`.claude/voice.md`), citations
+(`.claude/citations.md`), frontmatter and scheduling
+(`docs/reference/post-frontmatter.md`); only the review-specific deltas
+live here.
 
 Pipeline: **gate → substance → spine (approval) → draft → frontmatter.**
 
@@ -125,7 +127,7 @@ originate here and flow forward, never back-ported from the draft
 ## 4. Draft — argument, not summary
 
 Render the spine into `src/data/blog/reviews/<slug>.md`, one point at a time with the
-author. Review-specific rules, on top of `post-draft` §2 voice:
+author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 
 - **Argument outweighs summary, roughly four to one.** Every evaluative claim
   carries a specific moment from the work as its evidence. A paragraph that
@@ -176,11 +178,13 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   in the body as thematic analysis; the description can't carry them.
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
-  (`post-draft` §2, `.claude/voice.md`).
+  (`.claude/voice.md`).
 
 ## 5. Frontmatter, citations, syndication
 
-`post-draft` §3–5 apply unchanged, with review-specific notes:
+The shared conventions apply unchanged — citations (`.claude/citations.md`),
+frontmatter and scheduling (`docs/reference/post-frontmatter.md`), and the
+Instagram check — with review-specific notes:
 
 - **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
@@ -190,15 +194,17 @@ author. Review-specific rules, on top of `post-draft` §2 voice:
   `ogImage: ../../../assets/images/<slug>-cover.jpg` (three `../` from the
   deeper `reviews/` folder). It replaces the dynamic OG card.
 - **Cadence:** reviews are reflective — **Sunday** 08:00 local for `pubDatetime`
-  ([[project_publication_time_convention]]).
+  (`docs/reference/post-frontmatter.md`).
 - **Tags are the work's subject, not the format.** Tag what the review is
   *about* — the mafia, myth-making, whatever the argument engages — never
   `review` or `book`; those are format/era labels the taxonomy forbids
-  ([[feedback_tags_are_content_only]]).
+  (`docs/reference/post-frontmatter.md`).
 - **Instagram:** reviews are strongly image-prone (covers, screenshots, box
-  art). Flag `/syndicate-instagram <slug>` once live (`post-draft` §5).
+  art). dlvr.it covers the auto surfaces on publish
+  (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
+  `/syndicate-instagram <slug>` once live.
 - **Never** `draft: true`; a future `pubDatetime` gates publication
-  ([[feedback_drafts_via_date_not_flag]]).
+  (`docs/reference/post-frontmatter.md`).
 
 ## When to invoke
 
