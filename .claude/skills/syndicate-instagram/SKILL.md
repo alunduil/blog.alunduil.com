@@ -18,6 +18,8 @@ nothing is committed.
 Invoke: `/syndicate-instagram [path|slug|url]` — defaults to the newest post
 under `src/data/blog/`.
 
+Pipeline: **resolve → extract kernel → draft → present.**
+
 ## 1. Resolve the post
 
 Accept a file path, slug, or live URL. Default: the newest post by
