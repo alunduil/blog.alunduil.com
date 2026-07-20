@@ -11,6 +11,8 @@ that outline and refuses to start without it.
 
 Stories only. Technical posts outline by their subject, not by scene.
 
+Pipeline: **substance → outline → diagnose → approval.**
+
 ## Why this is its own step
 
 The outline-approval gate is the most important control point in the
@@ -136,6 +138,11 @@ opposite), the surrounding years as context, open questions to confirm.>
 
 - <unresolved thread: a citation to find, a fact to confirm>
 ```
+
+## When to invoke
+
+- `/outline-draft #N` — build the outline for an idea issue's story.
+- `/outline-draft` — freeform story, no issue.
 
 ## Output
 
