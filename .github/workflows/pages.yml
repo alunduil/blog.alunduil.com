@@ -25,6 +25,11 @@ jobs:
       # rel="webmention" link). Committed here rather than an Actions
       # Variable so the webmention receiver is configured as IaC. See #148.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
+      # Scoped Cloudflare token (Account Analytics → Read) for the
+      # build-time popular-posts ranking. Secret, unlike the public beacon
+      # from #141. Absent (unset secret) → the widget degrades to nothing.
+      # See #142.
+      CLOUDFLARE_ANALYTICS_API_TOKEN: ${{ secrets.CLOUDFLARE_ANALYTICS_API_TOKEN }}
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false

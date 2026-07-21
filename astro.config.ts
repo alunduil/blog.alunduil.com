@@ -60,6 +60,15 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      // Scoped Cloudflare token (Account Analytics → Read) used at build time
+      // to rank popular posts. Optional so builds without the secret — local
+      // dev, fork PRs, CI before it is provisioned — degrade to no widget
+      // instead of failing.
+      CLOUDFLARE_ANALYTICS_API_TOKEN: envField.string({
+        access: "secret",
+        context: "server",
+        optional: true,
+      }),
     },
   },
 });
