@@ -18,4 +18,4 @@ jobs:
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
           node-version: "22"
-          package-manager: pnpm@11.13.1
+          package-manager: pnpm@11.14.0
