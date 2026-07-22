@@ -22,9 +22,9 @@ without a paid migration tool. A periodic Takeout and a little `tar` and
 Takeout packages almost anything Google holds for you into a set of
 archives. I start one from [Google Takeout][takeout] and pick the
 products I want. On the next screen, I set the delivery to Add to Drive
-and the file type to `.tgz`. That last choice matters. The post-script
-below unpacks `gzip` archives, so a `.zip` export would need a different
-unpack step.
+and the file type to `.tgz`. That last choice matters. `tar` reads a
+`.tgz` straight through, so a `.zip` export would need a different unpack
+step.
 
 Google assembles the export over the next few hours. A large account can
 take most of a day. The result lands in a Takeout folder in Drive, split
@@ -51,9 +51,13 @@ on. As it stands now:
    want the copy to live in.
 8. Set a Schedule for how often the box checks Drive; mine runs daily at
    02:00.
-9. Expand Advanced Options and set Post-Script to the path of
-   `extract.sh`, below.
-10. Save, then use Run Now once to confirm the pull and the extract both
+9. Turn on Acknowledge Abuse. Drive flags Takeout archives—they're large
+   and machine-generated—and the pull fails outright without this.
+10. Turn on Fast List. It trades memory for far fewer listing calls
+    against Drive.
+11. Expand Advanced Options and set Post-Script to the path of
+    `extract.sh`, below.
+12. Save, then use Run Now once to confirm the pull and the extract both
     land where you expect.
 
 Because the task is a SYNC, that `tarballs/` directory mirrors Drive
@@ -90,7 +94,7 @@ extract_generation() {
   generation="${generation%%-*}"
 
   mkdir -p "${TAKEOUT_DIR}/${generation}"
-  tar -zxf "$tarball" -C "${TAKEOUT_DIR}/${generation}"
+  tar -xf "$tarball" -C "${TAKEOUT_DIR}/${generation}"
 }
 
 for tarball in "${TAKEOUT_DIR}"/tarballs/*.tgz; do
