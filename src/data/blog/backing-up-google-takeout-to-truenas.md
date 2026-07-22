@@ -97,7 +97,7 @@ for tarball in "${TAKEOUT_DIR}"/tarballs/*.tgz; do
   extract_generation "$tarball"
 done
 
-find "$TAKEOUT_DIR" -maxdepth 1 -type d -not -name tarballs \
+find "$TAKEOUT_DIR" -mindepth 1 -maxdepth 1 -type d -not -name tarballs \
   -mtime "+${KEEP_DAYS}" -execdir rm -rf {} +
 ```
 
