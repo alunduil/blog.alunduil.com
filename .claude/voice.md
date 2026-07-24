@@ -22,7 +22,9 @@ Four current author posts as of 2026-07: `how-i-back-up`,
 `how-i-read-eight-years-on` (methodology); `i-built-the-machine-twice`,
 `the-bottleneck-isnt-the-blank-page` (narrative). The archival
 restorations under `_hakyll/` are an older, lightly-copyedited era —
-weak calibration; weight the four current posts. Recalibrate by
+weak calibration; weight the four current posts. A fifth,
+`backing-up-google-takeout-to-truenas`, is the first how-to — a distinct
+instructional register (below), n=1 and provisional. Recalibrate by
 re-reading the corpus, not by editing numbers here from memory.
 
 ## Shared DNA — every post
@@ -88,6 +90,30 @@ re-reading the corpus, not by editing numbers here from memory.
   more authoritative. The admitted-gap closer holds here too.
 - Present tense for current practice, past tense for what changed.
 
+## Register: how-to / instructional
+
+`backing-up-google-takeout-to-truenas` (first as of 2026-07 — n=1, weak
+calibration; treat as provisional, recalibrate as more land).
+
+- A Diátaxis how-to: an ordered sequence to a goal the reader already
+  has, from a realistic precondition. Prerequisites, then imperative
+  steps.
+- Overrides the Shared DNA's "no lists / low formatting density" —
+  numbered steps are the format for an action sequence.
+- Cut explanation and completeness. Fold load-bearing background into a
+  step, or link it out (the reference, official docs, the exact
+  artefact). The primary failure is "documentation poetry": prose
+  wrapped around a code block that doesn't change what the reader types
+  — what the narrative register produces if applied here. Don't
+  alternate list / prose-note / list; the trailing notes are that
+  temptation.
+- Still first person and light. Keep one compressed honest-limit close
+  (a caveat, not the methodology posts' reflective essay). Where an
+  exact version exists, link it as the recovery reference.
+- Read <https://diataxis.fr/how-to-guides/> for the format; the host
+  `diataxis` skill carries fuller anti-patterns. Neither travels to web
+  sessions, so this section is the portable copy.
+
 ## Anti-tells — the generic-LLM markers to strip
 
 - Bold-for-emphasis and bulleted lists where prose would carry it.
@@ -95,3 +121,5 @@ re-reading the corpus, not by editing numbers here from memory.
 - Flat declaratives with no hedge; uniform medium sentence length.
 - Section headers on a reflective/narrative piece.
 - Abstraction where the corpus would name a date, a count, or a tool.
+- Applying the narrative flourish register to an instructional post —
+  aphorisms, scene-setting, explanation wrapped around steps.
