@@ -16,10 +16,11 @@ order.
 
 ## The Takeout export
 
-Start a [Google Takeout][takeout] and pick your products. On the delivery
-screen, choose Add to Drive and file type `.tgz`—`tar` reads `.tgz`
-directly, where a `.zip` would need a different unpack step. Export once by
-hand, or let Takeout schedule six exports a year.
+1. Start a [Google Takeout][takeout] and pick your products.
+2. On the delivery screen, set delivery to Add to Drive and file type to
+   `.tgz`—`tar` reads `.tgz` directly, where a `.zip` would need a
+   different unpack step.
+3. Start the export—once by hand, or set Takeout to schedule six a year.
 
 Google takes a few hours to assemble it, up to a day for a large account.
 It lands in a `Takeout` folder in Drive, split into numbered tarballs when
