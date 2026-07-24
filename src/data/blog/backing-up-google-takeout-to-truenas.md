@@ -117,7 +117,10 @@ I dropped two things from what actually runs on my box to make this
 portable: a hard-coded dataset path, now the first argument, and a `tar
 --exclude` for one large directory I keep in cloud storage but not
 locally. Add your own excludes there if a Takeout pulls down more than you
-want on the pool.
+want on the pool. The exact copy I run—those specifics still in—lives in my
+infrastructure repository, [documented as a how-to][runbook] for anyone
+reproducing it, me included. That's what I'd restore from, not the
+generalised script above.
 
 ---
 
@@ -131,3 +134,4 @@ guard. I just remember to look.
 
 [how-i-back-up]: /posts/how-i-back-up
 [takeout]: https://takeout.google.com
+[runbook]: https://github.com/alunduil/alunduil-infrastructure/blob/main/docs/how-to/configure-truenas-takeout-backup.md
