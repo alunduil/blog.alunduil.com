@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-07-28T07:00:00Z
 title: "How to Back Up Google Takeout to TrueNAS"
-description: "One TrueNAS Cloud Sync task and a short extract-and-prune script that keep a local copy of your Google data from a periodic Takeout."
+description: "Keep a local copy of your Google data: one TrueNAS Cloud Sync task and a short script that unpacks and prunes each Takeout export."
 tags:
   - backups
   - cloud
