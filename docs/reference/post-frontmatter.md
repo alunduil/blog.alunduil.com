@@ -2,7 +2,8 @@
 
 The frontmatter fields, scheduling rules, and file locations of a blog
 post. The schema is `src/content.config.ts`; this page adds the
-conventions layered on it.
+conventions layered on it. For markup inside the post body, see
+[post body markup](post-body.md).
 
 ## Fields
 
@@ -57,8 +58,7 @@ The blog collection loads `**/[^_]*.md` under `src/data/blog`, skipping
 | Archival republish | `src/data/blog/_<engine>/<slug>.md` | `/posts/<slug>/` |
 
 Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
-(`_hakyll/`, `_releases/`) are stripped, so archival posts serve at
-`/posts/<slug>/`.
+(`_hakyll/`) are stripped, so archival posts serve at `/posts/<slug>/`.
 
 Draft outlines live in `outlines/<slug>.md`: tracked, outside `src/`,
 unpublished, and excluded from the linters. Public in the repository.

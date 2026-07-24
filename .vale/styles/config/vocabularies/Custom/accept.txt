@@ -28,6 +28,7 @@ JavaScript
 DevContainer
 devcontainer
 ESLint
+Shiki
 markdownlint
 pre-commit
 Pre-commit
