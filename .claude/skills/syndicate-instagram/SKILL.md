@@ -18,13 +18,14 @@ nothing is committed.
 Invoke: `/syndicate-instagram [path|slug|url]` — defaults to the newest post
 under `src/data/blog/`.
 
+Pipeline: **resolve → extract kernel → draft → present.**
+
 ## 1. Resolve the post
 
 Accept a file path, slug, or live URL. Default: the newest post by
-`pubDatetime` under `src/data/blog/` (skip `examples/`, `_releases/`, and
-upstream tutorials; a future `pubDatetime` is fine — Instagram can be drafted
-ahead of publication). Read frontmatter (`title`, `description`, `slug`,
-`pubDatetime`, `tags`) and the body.
+`pubDatetime` under `src/data/blog/` (a future `pubDatetime` is fine —
+Instagram can be drafted ahead of publication). Read frontmatter (`title`,
+`description`, `slug`, `pubDatetime`, `tags`) and the body.
 
 Derive:
 

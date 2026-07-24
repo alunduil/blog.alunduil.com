@@ -27,12 +27,20 @@ scripting your own.
   (see below).
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
   (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
-  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, and baseline
-  file hygiene. ESLint and Prettier run as npm scripts (`pnpm lint`,
-  `pnpm format`), not pre-commit. lychee link-checking is CI-only
+  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
+  Prettier (`local` hooks running the repo's own binaries so their
+  plugins/configs resolve from workspace deps), and baseline file
+  hygiene. `pnpm lint` / `pnpm format` run the same tools by hand.
+  Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
+  `.prettierignore`); markdown and YAML stay with their dedicated
+  linters. The whole suite runs in CI via `pre-commit.yml`, which
+  installs Node/pnpm first for the ESLint/Prettier hooks. Excluded
+  file types (no checker): binary assets (svg/png/webp), `lychee.toml`,
+  `.vale.ini`. lychee link-checking is CI-only
   (`.github/workflows/lychee.yml`, `lychee.toml`).
-- Custom skills under `.claude/skills/`: digest, tag-suggest,
-  outline-draft, post-draft, syndicate-instagram (detailed below).
+- Custom skills under `.claude/skills/` — catalogued in the Skills
+  section below; each SKILL.md frontmatter is the authoritative
+  description.
 
 ## Scope discipline
 
@@ -49,10 +57,13 @@ so the repo-relevant essentials:
 ## Posting convention
 
 New posts live under `src/data/blog/`; archival republishes under
-`src/data/blog/_<engine>/`. Publication is gated by `pubDatetime`: a
-future date keeps the post hidden via AstroPaper's
-`SITE.scheduledPostMargin`. **Never** set `draft: true` — merging the
-PR accepts the editorial work, the future date defers publication.
+`src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
+Publication is gated by a future `pubDatetime`, never `draft: true` —
+merging the PR accepts the editorial work, the date defers publication.
+
+Frontmatter fields, the Tuesday (tech) / Sunday (reflective) 08:00
+cadence, timezone, locations, cover images, and tags are documented in
+`docs/reference/post-frontmatter.md`.
 
 ### "How I X" series
 
@@ -65,13 +76,11 @@ infrastructure (index page, schema field, milestone) until there are
 
 ## Voice
 
-`.claude/voice.md` is the descriptive fingerprint of the blog's
-published voice, calibrated against the author-written posts in
-`src/data/blog/`. Read it before drafting or editing any post — story,
-methodology, or freeform. It complements `post-draft/SKILL.md` §2 (the
-prescriptive story register) and is distinct from the host
-`~/.claude/voice.md`, which profiles the author's external PR/issue
-voice against a different corpus.
+`.claude/voice.md` is the blog's voice home — the prescriptive rules to
+apply and the descriptive fingerprint measured from the corpus. Read it
+before drafting or editing any post. Distinct from the host
+`~/.claude/voice.md`, which profiles the author's external PR/issue voice
+against a different corpus.
 
 ## AstroPaper upstream
 
@@ -81,11 +90,10 @@ point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
   `src/utils/`, `src/content.config.ts` — theme code.
-- `src/data/blog/adding-new-post.md`, `customizing-*.md`,
-  `dynamic-og-images.md`, `how-to-*.md`, `predefined-color-schemes.md`,
-  `setting-dates-via-git-hooks.md` — upstream tutorial posts.
-- `src/data/blog/_releases/` — AstroPaper release notes.
-- `src/data/blog/examples/` — upstream example drafts.
+
+The theme's sample posts (tutorials, release notes, example drafts) are
+gone; `src/data/blog/` is all author content. What they documented about
+post bodies lives in `docs/reference/post-body.md`.
 
 Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 `astro.config.ts`, new posts in `src/data/blog/`.
@@ -97,37 +105,32 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/pages.yml`).
 
-## Digest skill
+## Skills
 
-`.claude/skills/digest/` clusters a window of GitHub activity, Readwise
-highlights, and Reader archives into themes that might seed posts. It
-also runs an interactive Notion Media Log check-in: it asks what you're
-currently reading/playing, infers completions from whatever dropped off
-the active list, and writes the status changes back — surfacing each
-completion as a review kernel. Invoke via
-`/digest [Nd|Nw|Nm|Ny]` (defaults to `7d`). Promising kernels file as
-issues with the `idea` template.
+Custom skills under `.claude/skills/`; each SKILL.md frontmatter is the
+authoritative description. The writing pipeline:
 
-## Tag-suggest skill
+- `outline-draft` → `post-draft` — story posts: a scene-and-beat outline
+  gated at approval, then prose. `/outline-draft [#N]`, `/post-draft <slug>`.
+- `review-draft` — book/paper/game reviews (a claim and its evidence, not
+  a scene arc), a sibling of the story pipeline.
+  `/review-draft [#N|title|path]`.
 
-`.claude/skills/tag-suggest/` proposes frontmatter tags for a draft
-post — scans the corpus's existing tag inventory, prioritises reuse
-over invention, flags morphological near-duplicates. Invoke via
-`/tag-suggest <path>` (defaults to the currently staged post).
-Proposes first, then applies to the file only after the author
-confirms.
+Utilities:
 
-## Syndicate-Instagram skill
+- `digest` — cluster a window of GitHub, Readwise, and Reader activity,
+  plus a Notion Media Log check-in, into post kernels.
+  `/digest [Nd|Nw|Nm|Ny]` (default `7d`).
+- `tag-suggest` — propose frontmatter tags for a draft; applies only
+  after confirmation. `/tag-suggest <path>`.
+- `syndicate-instagram` — hand-crafted Instagram post from a published
+  post (the one surface not auto-syndicated by dlvr.it).
+  `/syndicate-instagram [path|slug|url]`.
 
-`.claude/skills/syndicate-instagram/` crafts an Instagram post from a
-published post — caption hook, image or carousel guidance, link-in-bio
-handling, hashtag set. Instagram is the hand-crafted exception: Bluesky,
-Threads, Facebook, and LinkedIn auto-syndicate through dlvr.it (ADR
-0001), but Instagram is image-first and link-hostile, so the uniform
-feed hook fits worst there. Generation is automated; posting stays
-manual (draft in chat, nothing committed). Invoke via
-`/syndicate-instagram [path|slug|url]` (defaults to the most recently
-published post). Covers issue #79.
+Shared conventions the writing skills draw from: `.claude/voice.md`
+(voice), `.claude/citations.md` (citations),
+`docs/reference/post-frontmatter.md` (frontmatter, scheduling, tags), and
+`docs/reference/post-body.md` (images, table of contents, code blocks).
 
 ## Idea issues
 

@@ -34,6 +34,27 @@ repos:
     hooks:
       - id: actionlint
 
+  # JS/TS/Astro formatting and linting. Local hooks so the repo's own
+  # prettier/eslint run — their plugins (prettier-plugin-astro,
+  # eslint-plugin-astro, typescript-eslint) and configs resolve from the
+  # workspace deps rather than a pinned mirror. Requires node_modules; CI
+  # installs them in pre-commit.yml before running the suite.
+  - repo: local
+    hooks:
+      - id: prettier
+        name: Format with Prettier
+        entry: pnpm exec prettier --write
+        language: system
+        # Scope lives in .prettierignore (code only; markdown and YAML have
+        # dedicated linters). This regex just avoids invoking prettier on
+        # files it would skip anyway.
+        files: \.(js|mjs|cjs|jsx|ts|tsx|astro|css|json)$
+      - id: eslint
+        name: Lint with ESLint
+        entry: pnpm exec eslint
+        language: system
+        files: \.(js|mjs|cjs|jsx|ts|tsx|astro)$
+
   # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
@@ -57,39 +78,29 @@ repos:
       - id: detect-private-key
 
   # Prose linting with Vale.
-  # Skips AstroPaper-shipped tutorial posts (upstream content), AI-targeted
-  # markdown (CLAUDE.md, .claude/), and planning docs (outlines/) where
-  # terseness beats prose conventions.
+  # Skips AI-targeted markdown (CLAUDE.md, .claude/) and planning docs
+  # (outlines/) where terseness beats prose conventions, plus archival
+  # republishes (_<engine>/) which are historical text, not current writing.
   - repo: https://github.com/vale-cli/vale
-    rev: v3.15.1
+    rev: v3.15.2
     hooks:
       - id: vale
         name: Lint prose with Vale
         args: ["--config=.vale.ini"]
         types: [markdown]
-        exclude: &upstream_md_exclude |
+        exclude: &unlinted_md |
           (?x)^(
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
-            src/data/blog/(
-              _releases/.*|
-              examples/.*|
-              _hakyll/.*|
-              adding-new-post\.md|
-              customizing-.*\.md|
-              dynamic-og-images\.md|
-              how-to-.*\.md|
-              predefined-color-schemes\.md|
-              setting-dates-via-git-hooks\.md
-            )
+            src/data/blog/_hakyll/.*
           )$
 
   # Markdown structure linting with markdownlint-cli2.
-  # Same exclude as Vale: AstroPaper upstream content + AI-targeted markdown.
+  # Same exclude as Vale: AI-targeted markdown, planning docs, archival text.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.23.0
+    rev: v0.23.1
     hooks:
       - id: markdownlint-cli2
         args: [--fix]
-        exclude: *upstream_md_exclude
+        exclude: *unlinted_md

@@ -3,6 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
@@ -14,6 +15,7 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.1",
     "@astrojs/rss": "^4.0.14",
     "@astrojs/sitemap": "^3.6.0",
     "@resvg/resvg-js": "^2.6.2",
@@ -30,18 +32,18 @@
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@pagefind/default-ui": "1.5.2",
-    "@shikijs/transformers": "4.3.0",
+    "@shikijs/transformers": "4.3.1",
     "@tailwindcss/typography": "0.5.20",
     "@types/lodash.kebabcase": "4.1.9",
-    "@typescript-eslint/parser": "8.64.0",
+    "@typescript-eslint/parser": "8.65.0",
     "eslint": "10.7.0",
-    "eslint-plugin-astro": "3.0.0",
+    "eslint-plugin-astro": "3.0.1",
     "globals": "17.7.0",
     "pagefind": "1.5.2",
-    "prettier": "3.9.5",
+    "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
-    "prettier-plugin-tailwindcss": "0.8.0",
+    "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.64.0"
+    "typescript-eslint": "8.65.0"
   }
 }

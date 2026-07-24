@@ -10,6 +10,12 @@ Naing
 
 # Tooling and platforms
 GitHub
+Claude
+Copilot
+Anthropic
+GrafanaCON
+Replit
+bobbit
 Hakyll
 Dockerfile
 pnpm
@@ -22,6 +28,7 @@ JavaScript
 DevContainer
 devcontainer
 ESLint
+Shiki
 markdownlint
 pre-commit
 Pre-commit
@@ -116,6 +123,9 @@ Warcraft
 
 # Books and fiction
 Earthsea
+Guiliano
+Corleones
+Croce
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
@@ -138,6 +148,13 @@ wishlist
 cron
 hostname
 NAT'd
+systemd
+Tailscale
+filesystem
+reflash
+configs
+autocomplete
+wifi
 
 # Traditional possessive forms (singular noun ending in s + 's per
 # CMOS). Hunspell affix rules don't generate these; add each variant
@@ -149,3 +166,4 @@ else's
 # possessives from base forms it doesn't know.
 Fratantoni
 Fratantoni's
+Willison

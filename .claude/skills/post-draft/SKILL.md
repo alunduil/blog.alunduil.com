@@ -14,8 +14,9 @@ The outline is the source of truth and is never edited from here. If the
 prose needs a structural change, change the outline first (via
 `outline-draft`), then bring the post back in line.
 
-Pipeline: **body → voice → citations → frontmatter.** Each stage has
-different ownership; don't conflate them.
+Pipeline: **body → conventions → syndication check.** The body is the
+story-specific craft this skill owns; the conventions are shared and
+applied from their single homes.
 
 ## 1. Body — write the scenes
 
@@ -77,114 +78,27 @@ wording together, lock it, move to the next. Flow and direction shift as
 the prose takes form; watch the back half, where unattended stretches
 drift toward generic prose.
 
-## 2. Voice
+## 2. Conventions
 
-Sentence-level conventions, applied across the drafted body. Stated in
-full here so the skill stands alone on the web, where local memory isn't
-present; the bracketed names are local-only see-alsos.
+Voice, citations, and frontmatter are shared across every article type.
+Apply them from their single homes — don't restate them here:
 
-These are the *prescriptive* rules. `.claude/voice.md` is the
-*descriptive* fingerprint measured from the published corpus (hedging
-cadence, formatting density, the honest-limitation closer, the
-narrative-vs-methodology registers) — read it alongside this section to
-calibrate against what the blog actually does.
+- **Voice** → `.claude/voice.md`. Sentence-level rules and the
+  poetic-without-poetry register; apply across the drafted body, then run
+  its revision pass. The descriptive fingerprint in the same file
+  calibrates against what the corpus measurably does.
+- **Citations** → `.claude/citations.md`. Ground claims in the author's
+  actual reading; never link private Reader URLs.
+- **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
+  Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone,
+  never `draft: true`, tags, archival stanza.
 
-- **No blame in retrospect.** Ownership ("I did X") is fine; regret ("I
-  should have", confession closers) goes. ([[feedback_no_blame_in_retrospect]])
-- **Causal over contrast.** "Without X, Y happens" beats "X required Z; Y
-  doesn't" — show the mechanism. ([[feedback_causal_narrative_over_contrast]])
-- **Tags are content topics,** not archive / era / format labels.
-  ([[feedback_tags_are_content_only]])
-- **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
-  unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
-  punctuation outside the quotes. ([[project_grammar_lean]])
-- **Possessives:** singular *s*-ending nouns take *'s* — Books's,
-  Charles's (CMOS, not AP). ([[project_possessive_convention]])
+Story-specific: choose the title once the prose exists and the body has
+settled what it argues (anniversary / revision / substrate-shift /
+freeform); derive the description from the finished body. Draft both from
+the completed post, never front-load them.
 
-**Register — poetic without being poetry** (Tolkien/Carroll touchstone),
-the house voice for story posts:
-
-- **Latch first.** Open each scene on something concrete the reader can
-  hold — never on context-free abstraction.
-- **Flow, don't snap.** Carry weight in cadence and image, not in clipped
-  fragments stacked for drama.
-- **Punctuation marks structure, not pauses.** Let the period carry the
-  load. A comma only for a grammatical job (clause join, serial list,
-  trailing absolute), never a mid-clause interrupter for emphasis.
-  Colons, semicolons, and em-dashes earn their place only by doing real
-  structural work, not as dressing. A plain serial list (a, b, and c)
-  beats polysyndeton (a and b and c).
-- **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
-  simile usually wants toning down, not up.
-- **Watch personification.** It creeps in ("a busy place", "a last sign
-  of life") — keep it light.
-- Plain, warm words: punch without the snap, music without verse.
-
-Pass:
-
-- Drop summary-as-flourish ("outlasted them all", "Everything between me
-  and the books").
-- Ease in via personal continuity ("I'm still…", "Since college I've
-  always…") rather than fragment-label openers.
-- Don't repeat temporal anchors; book-end them.
-- Em-dashes only for information asides, not drama.
-- Strip blame: no "I should have", no confession closers.
-- CMOS-style possessives; add new variants to
-  `.vale/styles/config/vocabularies/Custom/accept.txt` as
-  Custom.Spelling surfaces them.
-
-Iterate in the file; apply principles confidently, surface only genuine
-judgement calls.
-
-## 3. Citations
-
-Ground claims in the author's actual reading where applicable:
-
-- `mcp__claude_ai_Readwise__readwise_search_highlights` — vector-search
-  the claim's topic.
-- `mcp__claude_ai_Readwise__reader_search_documents` — filter
-  `location_in=["archive"]`, vector-search.
-
-Get **original source URLs** from
-`mcp__claude_ai_Readwise__reader_list_documents` with
-`response_fields=["url", "source_url", "title", "source"]`. Never use the
-private `https://read.readwise.io/...` URLs — readers can't reach them.
-
-For long URLs, use reference-style links to stay within the 80-char
-source wrap. If the archive lacks canonical citations, surface what's
-actually there honestly; don't fabricate citations to works the author
-hasn't engaged with.
-
-## 4. Frontmatter
-
-Apply codified conventions:
-
-- `pubDatetime`: 08:00 in the author's period-appropriate IANA timezone.
-  **Tuesday** for tech / methodology, **Sunday** for casual /
-  reflective. Skip Monday and Friday unless there's a reason. See
-  [[project_publication_time_convention]].
-- `timezone`: per-post override when the authoring zone differs from
-  `SITE.timezone`.
-- `description`: derived from the final body, ~120–150 chars. No stale
-  references to cut sections.
-- `tags`: 2–3 content topics, soft cap ~3. No categorical labels
-  (archive / era / format).
-- `title`: anniversary / revision / substrate-shift / freeform — pick
-  what the body argues.
-- **Never** set `draft: true`. Publication is gated by a future
-  `pubDatetime` and `SITE.scheduledPostMargin`; merging the PR accepts
-  the work. See [[feedback_drafts_via_date_not_flag]].
-- `hideEditPost: true` for archival republishes or immutable content.
-- Archival republishes live under `src/data/blog/_<engine>/` and open
-  with the stock stanza ([[project_archive_stanza]]).
-
-**Don't pin** `pubDatetime` / `modDatetime` to local-branch commits —
-both are live-site moments ([[feedback_post_datetime_semantics]]). Use a
-future `pubDatetime` as both gate and placeholder; pick the *nearest*
-cadence-appropriate day, since `SITE.scheduledPostMargin` is ~15 minutes
-and the date is the real publish target.
-
-## 5. Instagram syndication check
+## 3. Instagram syndication check
 
 dlvr.it auto-syndicates each post to the text and link surfaces from the
 RSS feed (`docs/adr/0001-use-dlvrit-for-social-syndication.md`) — no
