@@ -28,10 +28,11 @@ it runs big.
 ## The Cloud Sync task
 
 The current TrueNAS (the SCALE line) puts these menus in different places
-than the older CORE layout:
+than the older CORE layout. These steps cover this recipe; the [Cloud Sync
+Tasks reference][truenas-cloudsync] lists every field:
 
 1. Under Credentials → Backup Credentials, add a Cloud Credential for
-   Google Drive and log in to authorise it.
+   Google Drive and [log in to authorise it][truenas-gdrive].
 2. Under Data Protection → Cloud Sync Tasks, click Add.
 3. Set Direction to PULL and Transfer Mode to SYNC.
 4. Set Credential to the one from step 1.
@@ -106,3 +107,5 @@ stopped it would delete its way down to nothing.
 [how-i-back-up]: /posts/how-i-back-up
 [takeout]: https://takeout.google.com
 [runbook]: https://github.com/alunduil/alunduil-infrastructure/blob/main/docs/how-to/configure-truenas-takeout-backup.md
+[truenas-cloudsync]: https://www.truenas.com/docs/scale/dataprotection/cloudsynctasks/
+[truenas-gdrive]: https://www.truenas.com/docs/scale/dataprotection/cloudsynctasks/cloudsynctaskgoogledrive/
