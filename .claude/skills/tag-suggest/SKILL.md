@@ -22,7 +22,7 @@ find src/data/blog -name '*.md' -type f \
 
 `yq --front-matter=extract` reads only the YAML between the opening and closing `---` lines, so a `tags:` block appearing in the post body (e.g. inside a documentation code example) is correctly ignored. The query handles both list-form (`tags:\n  - foo`) and inline (`tags: [a, b]`) without case-splitting.
 
-Scan the full corpus including `_<engine>/` archives and `examples/`. AstroPaper's loader excludes `_`-prefixed *filenames*, not directory descendants, so archived posts still contribute tags to `/tags/<tag>` pages. Filtering would lose signal about which topics already cluster.
+Scan the full corpus including `_<engine>/` archives. AstroPaper's loader excludes `_`-prefixed *filenames*, not directory descendants, so archived posts still contribute tags to `/tags/<tag>` pages. Filtering would lose signal about which topics already cluster.
 
 ## 3. Propose
 

@@ -90,11 +90,10 @@ point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
   `src/utils/`, `src/content.config.ts` — theme code.
-- `src/data/blog/adding-new-post.md`, `customizing-*.md`,
-  `dynamic-og-images.md`, `how-to-*.md`, `predefined-color-schemes.md`,
-  `setting-dates-via-git-hooks.md` — upstream tutorial posts.
-- `src/data/blog/_releases/` — AstroPaper release notes.
-- `src/data/blog/examples/` — upstream example drafts.
+
+The theme's sample posts (tutorials, release notes, example drafts) are
+gone; `src/data/blog/` is all author content. What they documented about
+post bodies lives in `docs/reference/post-body.md`.
 
 Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 `astro.config.ts`, new posts in `src/data/blog/`.
@@ -129,8 +128,9 @@ Utilities:
   `/syndicate-instagram [path|slug|url]`.
 
 Shared conventions the writing skills draw from: `.claude/voice.md`
-(voice), `.claude/citations.md` (citations), and
-`docs/reference/post-frontmatter.md` (frontmatter, scheduling, tags).
+(voice), `.claude/citations.md` (citations),
+`docs/reference/post-frontmatter.md` (frontmatter, scheduling, tags), and
+`docs/reference/post-body.md` (images, table of contents, code blocks).
 
 ## Idea issues
 
