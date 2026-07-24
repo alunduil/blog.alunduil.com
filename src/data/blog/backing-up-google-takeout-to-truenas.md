@@ -8,8 +8,8 @@ tags:
   - truenas
 ---
 
-In June I wrote up [how the household backs itself up][how-i-back-up].
-That post gave the shape. A [Google Takeout][takeout] runs every two
+In June I wrote up [how I back up][how-i-back-up]. That post gave the
+shape. A [Google Takeout][takeout] runs every two
 months. A Cloud Sync job on the TrueNAS extracts and prunes it when the
 new generation lands. This is the mechanism: the export, the task, and
 the twenty-odd lines of shell that turn a folder of tarballs into a local
