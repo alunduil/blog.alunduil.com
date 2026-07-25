@@ -1,5 +1,6 @@
 ---
 pubDatetime: 2026-05-18T07:00:00Z
+modDatetime: 2026-07-25T07:00:00Z
 title: How I Read, Eight Years On
 description: "Eight years on from the 2018 \"How I Read\" post: same practice, different tools, and still no way to prove which one's doing the work."
 tags:
