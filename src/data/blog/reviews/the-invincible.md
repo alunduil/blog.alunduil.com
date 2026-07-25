@@ -9,44 +9,40 @@ tags:
 ---
 
 Most of my time in [*The Invincible*](https://store.steampowered.com/app/731040/The_Invincible/)
-went on walking through metallic structures on a planet called Regis III,
-and the walk is the best thing in the game. It takes its time. The
-wrongness of the place
-accumulates while you're still deciding whether anything is wrong at all.
-I'd read [Lem's novel](https://www.goodreads.com/book/show/251633.The_Invincible)
-before I played, so I already knew what was down there. The game still
-made the place strange, which is the more difficult trick, and the reason
-I'd tell you to play it.
+went on walking through metallic structures on a planet called Regis III.
+The walk is the best thing in the game. It takes its time, letting the place
+turn wrong while you're still deciding whether anything is wrong at all. I'd
+read [Lem's novel](https://www.goodreads.com/book/show/251633.The_Invincible)
+before I played, so I already knew what was down there. The game made the
+place strange anyway, which is the better trick and the reason I'd tell you
+to play it.
 
-What the adaptation keeps is the discovery. Not the sequence of events but
-the experience of arriving somewhere that doesn't answer to you, learning
-by degrees how little your equipment counts for. The game gives you that as
-something you walk into rather than something a character explains to you.
-Knowing the answer in advance should have spoiled it. It came close.
+The adaptation keeps the discovery. Not the sequence of events, but arriving
+somewhere that doesn't answer to you, learning by degrees how little your
+equipment counts for. You walk into that rather than have a character
+explain it. Knowing the answer in advance should have spoiled it. It came
+close.
 
-It isn't a retelling, though, and that turns out to matter more than I
-expected. The novel's Rohan and the game's Yasna aren't the same person
-doing the same things. The events around them diverge early, the game
-working its way to endings of its own. So none of the pleasure of a
-faithful adaptation is on offer here, the kind where you know the story
-already and came for the telling. What the two versions genuinely share is
-the discovery itself. Only one of them gets to spend it.
+It isn't a retelling, though. I hadn't expected that to matter so much. The
+novel's Rohan and the game's Yasna aren't the same person doing the same
+things. The events around them diverge early, the game working its way to
+endings of its own. So you don't get the pleasure of a faithful adaptation,
+where you know the story already and came for the telling. Both versions are
+built on the same discovery.
 
-That's the part I keep turning over. Whichever of the two reaches you first
-is the one that gets it whole, and the other arrives with its strangeness
-already used. I came to the game second, so the game paid. Had I played
-first, the novel would have paid instead. No order saves both of them,
-which means the choice was never about sequence at all. You're picking
-which one you want at full strength.
+Whichever reaches you first gets it whole. The other arrives with its
+strangeness already used. I came to the game second, so the game paid. Had I
+played first, the novel would have paid instead. No order saves both. The
+choice was never about sequence. You're picking which one you want at full
+strength.
 
-The walk does go on. Somewhere in the middle of those structures the
-tension stops building and just sits there. The game never gets the
-grip on me that the novel got out of the same material. It's a drag rather
-than a fault, and nothing about it ruins the game. But all that accumulated
-atmosphere left me wanting more than it finally gave.
+The walk does go on. Somewhere in the middle of those structures the tension
+stops building and just sits there. The novel got more out of the same
+material. The drag is real, though it ruins nothing. But the atmosphere kept
+accumulating and left me wanting more than it gave.
 
 I can't separate that from the order I took them in. The novel came first,
-so whatever grip it had was a grip the game was never going to get twice. I
-don't know how much of the game's slack is the game and how much is me
-already knowing what was coming. I played it second, so that's the only
-version of it I can tell you about.
+so it had a hold the game was never going to get twice. I don't know how
+much of the game's slack is the game and how much is me already knowing what
+was coming. I played it second. That's the only version of it I can tell you
+about.
