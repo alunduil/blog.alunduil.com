@@ -20,7 +20,11 @@ a clause instead of assuming it. Two reference points catch more readers
 than one, which is what the Souls mention buys.
 
 The connection is the author's, not a pedigree — Double Fine and Playdead
-share no creators, so the post must not imply a lineage.
+share no creators. The first-person framing carries that on its own ("when I
+try to say what kind, I land on…", "I like that it never narrates"), so the
+post states no explicit disclaimer. An earlier draft spent a paragraph saying
+the comparison was personal rather than industrial; it was weak, and the
+framing had already done the work.
 
 ## Supporting points (thematic, not chronological)
 
