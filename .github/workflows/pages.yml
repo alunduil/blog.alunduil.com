@@ -17,6 +17,7 @@ on:
 
 jobs:
   build:
+    name: Build for deploy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -36,6 +37,7 @@ jobs:
           package-manager: pnpm@11.15.1
 
   publish:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     permissions:
