@@ -120,6 +120,8 @@ LaTeX
 
 # Games
 Warcraft
+Playdead
+Playdead's
 
 # Books and fiction
 Earthsea
