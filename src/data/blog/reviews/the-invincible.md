@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2026-08-23T07:00:00Z
 title: Whichever Comes Second
+ogImage: ../../../assets/images/the-invincible-cover.jpg
 description: "The Invincible works as a game and it works as a novel. It doesn't work as both, and whichever you come to second is the one that pays."
 tags:
   - adaptation
@@ -39,12 +40,13 @@ which means the choice was never about sequence at all. You're picking
 which one you want at full strength.
 
 The walk does go on. Somewhere in the middle of those structures the
-tension stops building and settles into persisting. The game never gets the
+tension stops building and just sits there. The game never gets the
 grip on me that the novel got out of the same material. It's a drag rather
 than a fault, and nothing about it ruins the game. But six and a half hours
 of accumulated atmosphere left me wanting more than it finally gave.
 
-I can't separate that cleanly from the order I took them in. The novel came
-first, so the grip it had was a grip the game was never going to get twice.
-How much of the game's slack belongs to the game, I've no way to tell. Pick
-one of them to have whole. I can only tell you how the second one felt.
+I can't separate that from the order I took them in. The novel came first,
+so whatever grip it had was a grip the game was never going to get twice. I
+don't know how much of the game's slack is the game and how much is me
+already knowing what was coming. I played it second, so that's the only
+version of it I can tell you about.
