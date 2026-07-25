@@ -126,6 +126,10 @@ Earthsea
 Guiliano
 Corleones
 Croce
+Lem's
+Regis
+Rohan
+Yasna
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
