@@ -19,7 +19,7 @@ This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
 - Package manager: pnpm. Version pinned in the withastro/action
-  `package-manager:` field of `.github/workflows/astro.yml` and
+  `package-manager:` field of `.github/workflows/ci.yml` and
   `pages.yml`, kept current by the Renovate custom manager in
   `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
@@ -111,8 +111,9 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 Workflow and job names read as "when / what":
 
 - Workflow `name:` is the when — the trigger or cadence (`CI`). A
-  single-purpose file may take its subject (`Astro`, `Pages`, `Labels`)
-  until something colocates with it.
+  single-purpose file may take its subject (`Pages`, `Labels`) until
+  something colocates with it. A file that can't take a cadence name
+  without colliding with another's is usually a job, not a file.
 - Job `name:` is the what — the outcome as a human-readable phrase
   (`Check links`, `Build the site`), legible standing alone in the
   required-checks picker.

@@ -1,10 +1,11 @@
 name: CI
 
-# These three sensors share a trigger, so they colocate as jobs rather than
-# separate files; `on:` is the only setting that can't be scoped per job.
+# Everything gating a pull request, colocated: `on:` is the only setting that
+# can't be scoped per job, so a shared trigger is what makes one file correct.
+# Nothing here repeats on push to main — main takes changes only through a PR
+# under a strict required-check rule, so these already ran against the tree
+# that lands, and pages.yml rebuilds the site on merge regardless.
 on:
-  push:
-    branches: [main]
   pull_request:
 
 permissions:
@@ -12,8 +13,7 @@ permissions:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  # Cancel superseded PR runs; never cancel main so each commit completes.
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: true
 
 jobs:
   pre-commit:
@@ -53,6 +53,16 @@ jobs:
       - name: Test
         # -r recurses; future skills with *.bats files are picked up automatically.
         run: bats -r .claude/skills
+
+  build:
+    name: Build the site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
+        with:
+          node-version: "22"
+          package-manager: pnpm@11.15.1
 
   lychee:
     name: Check links
