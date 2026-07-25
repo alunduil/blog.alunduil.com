@@ -77,6 +77,17 @@ Per object type:
 - **Video game** — evidence is a moment, mechanic, or system; measure against
   genre and comparable games; the tail is where the systems fall short. Systems
   and feedback loops are the author's native lens ([[user_self_sustaining_systems]]).
+  **Ask for the author's own snapshots and video captures**, every game, at the
+  same time as the take questions. A moment they chose to record is already the
+  concrete moment the argument needs, and reviews carry the work's art rather
+  than the dynamic OG card, so captures serve as evidence and image both.
+  Nothing else surfaces them — Media Log holds status only and Readwise holds
+  no game highlights. "None exist" is a real answer that settles the question.
+  **Keep length as a pacing claim rather than a number** — say the middle
+  drags, or that it ends before it wears out. Hours-to-credits is storefront
+  metadata that varies by player and evidences nothing, so it earns no space
+  in an argument. Media Log's `Main Story (hrs)` informs the read; it doesn't
+  reach the prose.
 
 Picking up an idea issue (`/review-draft #N`): `## Spark` is the kernel, the
 open questions are the discovery anchors, and the object type comes from the
