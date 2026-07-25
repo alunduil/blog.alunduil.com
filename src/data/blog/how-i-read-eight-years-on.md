@@ -21,7 +21,7 @@ Books I want go on a wishlist. When they drop to 50% off or better, they
 move into my Google Play Books library, where they sit unread until I
 pick one up. Papers I can get as PDF skip the wishlist and go straight
 to the library. The In Progress shelf sorts by how far along I am, and
-when I finish a book I start the newest one in the library. Within In
+when I finish a book I start the newest one I haven't opened. Within In
 Progress I read in short bursts—a chapter at a time for non-fiction,
 less strict for fiction. Before I pick a book back up I pause and recall
 the last section.

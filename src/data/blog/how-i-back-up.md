@@ -15,12 +15,12 @@ from my laptop. Here's what runs in its place.
 
 A TrueNAS holds about 2.5 TiB of my household's data on a 10-TiB
 pool. The biggest dataset is `takeout`, 1.3 TiB built up from a
-Google Takeout that runs every two months. When a new one lands in
-Drive, a Cloud Sync job pulls it out and prunes it here at home. I
-check the result and bin the Drive copy, so the daily 02:00 sync
-tends to have nothing left to do. After that come `media` (a
+Google Takeout that runs every two months. When a new generation
+lands in Drive, a Cloud Sync job pulls it out and prunes it on the
+box. I check the result and bin the Drive copy, so the daily 02:00
+sync tends to have nothing left to do. After that come `media` (a
 terabyte of video and music), the smaller `plex` and `scans`
-datasets, and a couple of odds and ends I leave alone.
+datasets, and a couple of utility datasets I leave alone.
 
 Cloud Sync runs six tasks on the box, and the Takeout flow above is
 one of them. The other five fall into two shapes. Two are sync
@@ -52,12 +52,12 @@ with the plan, and [their docs][nabu-backups] cover the rest.
 ## Chromebook
 
 To get the Chromebook back I sign into a Google account. The one
-exception is the Linux dev environment, where anything I edit at
-home lives. I used to dump it into Google Drive once a month,
+exception is the Linux dev environment, where anything I edit
+locally lives. I used to dump it into Google Drive once a month,
 and I've let that slip on purpose while I move my Linux setup
 into [chezmoi] under [alunduil-chezmoi]. A clean run from chezmoi
-should build the whole thing back from scratch. Proving that it
-does is on the list.
+should restore the environment from scratch. Proving that it does
+is on the list.
 
 My phone and an [Onyx Boox Tab Ultra C][boox] both sign in to the
 same Google account. None of the devices lock me in. The account
