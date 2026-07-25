@@ -8,10 +8,10 @@ tags:
   - discovery
 ---
 
-I reached the credits in [*The Invincible*](https://store.steampowered.com/app/731040/The_Invincible/)
-in about six and a half hours. A long stretch of that went on walking
-through metallic structures on a planet called Regis III, and the walk is
-the best thing in the game. It takes its time. The wrongness of the place
+Most of my time in [*The Invincible*](https://store.steampowered.com/app/731040/The_Invincible/)
+went on walking through metallic structures on a planet called Regis III,
+and the walk is the best thing in the game. It takes its time. The
+wrongness of the place
 accumulates while you're still deciding whether anything is wrong at all.
 I'd read [Lem's novel](https://www.goodreads.com/book/show/251633.The_Invincible)
 before I played, so I already knew what was down there. The game still
@@ -42,8 +42,8 @@ which one you want at full strength.
 The walk does go on. Somewhere in the middle of those structures the
 tension stops building and just sits there. The game never gets the
 grip on me that the novel got out of the same material. It's a drag rather
-than a fault, and nothing about it ruins the game. But six and a half hours
-of accumulated atmosphere left me wanting more than it finally gave.
+than a fault, and nothing about it ruins the game. But all that accumulated
+atmosphere left me wanting more than it finally gave.
 
 I can't separate that from the order I took them in. The novel came first,
 so whatever grip it had was a grip the game was never going to get twice. I

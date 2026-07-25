@@ -83,6 +83,11 @@ Per object type:
   than the dynamic OG card, so captures serve as evidence and image both.
   Nothing else surfaces them — Media Log holds status only and Readwise holds
   no game highlights. "None exist" is a real answer that settles the question.
+  **Keep length as a pacing claim rather than a number** — say the middle
+  drags, or that it ends before it wears out. Hours-to-credits is storefront
+  metadata that varies by player and evidences nothing, so it earns no space
+  in an argument. Media Log's `Main Story (hrs)` informs the read; it doesn't
+  reach the prose.
 
 Picking up an idea issue (`/review-draft #N`): `## Spark` is the kernel, the
 open questions are the discovery anchors, and the object type comes from the
