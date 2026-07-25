@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-08-23T07:00:00Z
-title: Inside, Without the Dread
-description: "Keeper has the wordless craft of Playdead's Inside and none of its dread—a romp that escalates by invention rather than threat."
+title: Told Without Telling
+description: "Keeper tells its story the way Inside and the Souls games do, with the history in the world rather than in dialogue—and none of the adrenaline."
 ogImage: ../../../assets/images/keeper-cover.jpg
 tags:
   - wordless-storytelling
@@ -13,13 +13,16 @@ A lighthouse pulls itself out of the ground and learns to walk. That's the
 first thing [*Keeper*][keeper] asks you to take on faith. It spends the next
 few hours earning it without once explaining itself.
 
-I played it in June and came away pleased in a way I had to reach for a
-comparison to place. The one I landed on was [*Inside*][inside], Playdead's
-wordless side-scroller from 2016—the same refusal of language, the same
-trust that an image carries what a sentence would flatten, and none of the
-adrenaline. The comparison is mine rather than the industry's, since Double
-Fine and Playdead share no creators. It's still the fastest way I know to say
-what sort of evening this is.
+I played it in June and had a good time. When I try to say what kind, I land
+on [*Inside*][inside], Playdead's wordless side-scroller from 2016. What I
+like about that game is that it never narrates and never needs to—the history
+sits in the world instead of in somebody's mouth, the way the Souls games do
+it, waiting for you to go and find it. Games built like that can look thin to
+a player who wants things said out loud. They aren't. *Keeper* works that
+way. It gets there without the adrenaline.
+
+The comparison is mine rather than the industry's, since Double Fine and
+Playdead share no creators. It's still the fastest handle I've got.
 
 The refusal is total. No dialogue, no text, no interface, nothing on screen
 keeping score. A game can only strip that much away when something else
@@ -33,9 +36,8 @@ said it.
 Where this kind of game usually puts pursuit, *Keeper* puts company. Twig is
 a seabird who reaches the levers, cranks, and vines a walking lighthouse
 can't. Most of what the island asks of you needs the two of them working it
-together. *Inside* spent its silence on a boy alone and hunted. This spends
-the same silence on collaboration. The technique is identical. The result is
-its opposite.
+together. The same silence that usually reads as loneliness reads here as
+partnership.
 
 What I didn't expect is that it escalates anyway. Somewhere near the middle
 the game changes what you are and how you move through the world, then, once
