@@ -14,64 +14,62 @@ from my laptop. Here's what runs in its place.
 ## TrueNAS
 
 A TrueNAS holds about 2.5 TiB of my household's data on a 10-TiB
-pool. The biggest dataset is `takeout`—1.3 TiB accumulated from a
-Google Takeout that runs every two months. When a new generation
-lands in Drive, a Cloud Sync job extracts and prunes it locally; I
-confirm the result and bin the Drive copy, so the daily 02:00 sync
-usually has nothing to do. After that come `media` (a terabyte of
-video and music), smaller `plex` and `scans` datasets, and a couple
-of utility datasets I leave alone.
+pool. The biggest dataset is `takeout`, 1.3 TiB built up from a
+Google Takeout that runs every two months. When a new one lands in
+Drive, a Cloud Sync job pulls it out and prunes it here at home. I
+check the result and bin the Drive copy, so the daily 02:00 sync
+tends to have nothing left to do. After that come `media` (a
+terabyte of video and music), the smaller `plex` and `scans`
+datasets, and a couple of odds and ends I leave alone.
 
-Cloud Sync runs six tasks on the box. The Takeout flow above is
+Cloud Sync runs six tasks on the box, and the Takeout flow above is
 one of them. The other five fall into two shapes. Two are sync
-tasks, with the NAS as the master and Drive holding a stay-in-step
-copy: `media` every six hours, `plex` every two. Three are move
-tasks—a file produced at one end gets relocated to where it
-permanently lives: `scans` from the NAS into Drive every fifteen
-minutes, Xbox screenshots and Game DVR clips from [OneDrive] into
-the NAS every fifteen minutes. Source gets emptied once the file
-lands.
+tasks, where the NAS leads and Drive keeps a copy in step: `media`
+every six hours, `plex` every two. Three are move tasks, taking a
+file made at one end and sending it where it will live for good.
+`scans` goes from the NAS into Drive every fifteen minutes. Xbox
+screenshots and Game DVR clips come from [OneDrive] into the NAS on
+the same clock. The source is emptied once the file lands.
 
 The sync tasks hedge against losing the NAS. The move tasks aren't
-backup at all; they're routing. The files they route end up
-somewhere that itself gets backed up.
+backup at all. They're routing, and the files they route end up
+somewhere that does get backed up.
 
-Two gaps I know about. Alloy's configuration should be in the
-Cloud Sync flow alongside [Plex] but isn't yet. And nothing surfaces
-Cloud Sync failures to me—not my weekly [Grafana Cloud][grafana]
-triage, not TrueNAS's email alerts. I notice eventually, when
-something I expected to be there isn't.
+Two gaps I know about. Alloy's configuration belongs in Cloud Sync
+next to [Plex], and it isn't there yet. Nothing tells me when a
+Cloud Sync task fails, either—not my weekly [Grafana Cloud][grafana]
+triage, not TrueNAS's email alerts. I find out late, when something
+I expected to be there isn't.
 
 ## Home Assistant
 
-[Home Assistant][ha] runs as HAOS on a mini PC—dedicated hardware
-for a single service, which is bulky but uncomplicated.
-[Nabu Casa] does the backups: daily, plus an automatic one before
-every version update. Destination, transport, and retention all
-come bundled with the subscription; [their docs][nabu-backups]
-cover the specifics.
+[Home Assistant][ha] runs as HAOS on a mini PC, a whole box given
+over to one service, which is bulky but uncomplicated. [Nabu Casa]
+does the backups: one a day, plus one before every update. Where
+they go, how they get there, and how long they're kept all come
+with the plan, and [their docs][nabu-backups] cover the rest.
 
 ## Chromebook
 
-Recovery for the Chromebook is signing back into a Google account.
-The one exception is the Linux dev environment, where anything I
-edit locally lives. I used to dump it into Google Drive monthly;
-that cadence has been lapsing on purpose as I move my Linux
-configuration into [chezmoi] under [alunduil-chezmoi]. A clean DR
-run from chezmoi should restore the environment from scratch.
-Confirming that works is on the list.
+To get the Chromebook back I sign into a Google account. The one
+exception is the Linux dev environment, where anything I edit at
+home lives. I used to dump it into Google Drive once a month,
+and I've let that slip on purpose while I move my Linux setup
+into [chezmoi] under [alunduil-chezmoi]. A clean run from chezmoi
+should build the whole thing back from scratch. Proving that it
+does is on the list.
 
 My phone and an [Onyx Boox Tab Ultra C][boox] both sign in to the
-same Google account. None of the devices lock me in; the account
-does. The hardware stays replaceable; the substrate underneath
+same Google account. None of the devices lock me in. The account
+does. The hardware stays replaceable. The substrate underneath
 doesn't.
 
 ---
 
-Cloud-first by choice, because doing otherwise would cost more
-time than I'm willing to spend. The disaster plan: if a cloud
-vendor stops working, what I'd restore from, in what order, from
-which local copy. I haven't tested it.
+Cloud-first by choice, because doing it any other way would cost
+more time than I want to spend. The disaster plan: if a cloud
+vendor stops working, what I'd rebuild from, in what order, and
+from which local copy. I haven't tested it.
 
 [2011]: /posts/using-rdiff-backup-backup-remote-clients-with-ease
 [OneDrive]: https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage
