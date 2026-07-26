@@ -34,6 +34,14 @@ repos:
     hooks:
       - id: actionlint
 
+  # A custom-manager regex that stops matching is indistinguishable from a
+  # dependency with no updates.
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 43.281.1
+    hooks:
+      - id: renovate-config-validator
+        args: [--strict, --no-global]
+
   # JS/TS/Astro formatting and linting. Local hooks so the repo's own
   # prettier/eslint run — their plugins (prettier-plugin-astro,
   # eslint-plugin-astro, typescript-eslint) and configs resolve from the

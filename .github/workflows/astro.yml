@@ -13,9 +13,12 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+      NODE_VERSION: "22"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
-          node-version: "22"
+          node-version: ${{ env.NODE_VERSION }}
           package-manager: pnpm@11.17.0
