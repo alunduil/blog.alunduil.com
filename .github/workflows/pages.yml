@@ -26,7 +26,7 @@ jobs:
       # Variable so the webmention receiver is configured as IaC. See #148.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
       # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
-      NODE_VERSION: "22"
+      NODE_VERSION: "24"
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
