@@ -34,6 +34,17 @@ repos:
     hooks:
       - id: actionlint
 
+  # Renovate config validation. A custom-manager regex that silently stops
+  # matching is indistinguishable from a dependency with no updates, so catch
+  # it here rather than as a Repository Problem on the next Renovate run.
+  # --strict also fails on configs needing migration; --no-global reads the
+  # file as repo config rather than self-hosted global config.
+  - repo: https://github.com/renovatebot/pre-commit-hooks
+    rev: 43.281.1
+    hooks:
+      - id: renovate-config-validator
+        args: [--strict, --no-global]
+
   # JS/TS/Astro formatting and linting. Local hooks so the repo's own
   # prettier/eslint run — their plugins (prettier-plugin-astro,
   # eslint-plugin-astro, typescript-eslint) and configs resolve from the
