@@ -107,7 +107,7 @@ repos:
   # Markdown structure linting with markdownlint-cli2.
   # Same exclude as Vale: AI-targeted markdown, planning docs, archival text.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.23.1
+    rev: v0.23.2
     hooks:
       - id: markdownlint-cli2
         args: [--fix]
