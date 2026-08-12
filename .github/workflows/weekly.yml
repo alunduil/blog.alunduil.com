@@ -1,0 +1,94 @@
+name: Weekly
+
+on:
+  schedule:
+    # Wednesdays at 07:00 Europe/London, clear of the Tuesday and Sunday
+    # publication slots. The timezone field handles BST/GMT.
+    - cron: '0 7 * * 3'
+      timezone: Europe/London
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Ref-less group so a manual dispatch and the schedule can't run
+  # concurrently and race on the shared report issue; cancel rather than
+  # queue so a fresh dispatch supersedes an in-flight run.
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  # External URLs rot from time and third parties, not from the diff, so
+  # checking them per-PR produces failures no author can act on. Check them
+  # weekly and open an issue instead of blocking the line. Never fails.
+  #
+  # --base-url resolves root-relative /posts/ and /assets/ links against the
+  # deployed site, which is what makes them checkable at all: they resolve
+  # against neither the source tree nor a local build without one.
+  links:
+    name: Check links against the deployed site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
+          restore-keys: lychee-cache-
+
+      # Both steps read lychee.toml from the repo root, so the exclude/retry/
+      # cache settings apply to each. They differ only in what links are
+      # relative to: posts address the site, docs address the repo, and
+      # --base-url is right for the first and wrong for the second.
+      #
+      # Neither scans with a glob: the action's shell expands '**/*.md' to
+      # '*/*.md' (one level deep), so a single one-level file would hijack it.
+      # lychee walks a directory for markdown/html; exclude_path filters.
+      - name: Check links in posts
+        id: posts
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: '--no-progress --base-url https://blog.alunduil.com src/data/blog'
+          output: ./lychee/posts.md
+          fail: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check links in docs
+        id: docs
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: '--no-progress --exclude-path (^|/)src/data/blog/ .'
+          output: ./lychee/docs.md
+          fail: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Combine reports
+        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        run: cat ./lychee/posts.md ./lychee/docs.md >./lychee/out.md
+
+      # Reuse the open report if one exists so repeated breakage updates a
+      # single issue instead of filing a new one every week.
+      - name: Find existing report issue
+        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        id: report
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          number=$(gh issue list --repo "${{ github.repository }}" --state open \
+            --search 'Link Checker Report in:title' --json number --jq '.[0].number // empty')
+          echo "number=${number}" >> "${GITHUB_OUTPUT}"
+
+      - name: Open or update issue on broken links
+        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
+        with:
+          title: Link Checker Report
+          content-filepath: ./lychee/out.md
+          issue-number: ${{ steps.report.outputs.number }}
+          labels: bug

@@ -34,6 +34,38 @@ repos:
     hooks:
       - id: actionlint
 
+  # Link checking. The system binary (scripts/install-lychee.sh, which CI runs
+  # before this suite) rather than the upstream auto-installing hook: one
+  # version pin, and the statically linked musl build runs on images whose
+  # GLIBC the upstream binary rejects.
+  #
+  # --offline restricts the gate to what resolves without a build — malformed
+  # URLs, fragments, links between source files — so it is fast and never
+  # flakes on a third party. External URLs and anything needing the deployed
+  # site are weekly.yml's job.
+  #
+  # Split by what a link is relative *to*. Posts address the site, so
+  # --base-url sends `/posts/...` to the deployed site (where --offline then
+  # skips it). Docs address the repo, so the same flag would misread a sibling
+  # `post-body.md` as a page on the site and stop checking it.
+  - repo: local
+    hooks:
+      - id: lychee-posts
+        name: Check links in posts with lychee
+        entry: >-
+          lychee --config lychee.toml --no-progress --offline
+          --base-url https://blog.alunduil.com
+        language: system
+        types: [markdown]
+        files: ^src/data/blog/
+
+      - id: lychee-docs
+        name: Check links in docs with lychee
+        entry: lychee --config lychee.toml --no-progress --offline
+        language: system
+        types: [markdown]
+        exclude: ^src/data/blog/
+
   # A custom-manager regex that stops matching is indistinguishable from a
   # dependency with no updates.
   - repo: https://github.com/renovatebot/pre-commit-hooks

@@ -30,6 +30,14 @@
   ],
   "customManagers": [
     {
+      "description": "Read `# renovate:` annotations above shell `*_VERSION=` pins so a new pin needs an annotation rather than a manager of its own.",
+      "customType": "regex",
+      "managerFilePatterns": ["scripts/*"],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION=\"(?<currentValue>.+?)\""
+      ]
+    },
+    {
       "description": "A withastro/action `with:` input, out of reach of the annotation-based githubActionsVersions preset.",
       "customType": "regex",
       "managerFilePatterns": ["/^\\.github/workflows/(astro|pages)\\.yml$/"],

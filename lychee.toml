@@ -1,14 +1,20 @@
 cache = true
-max_cache_age = "14d"
+# Shorter than the weekly.yml cadence, so every scheduled run re-checks the
+# whole site cold and only a same-week re-dispatch reuses the cache.
+max_cache_age = "6d"
+# A transient 5xx or a rate-limit is not link rot. Caching one would keep a
+# false report open for the life of the entry.
+cache_exclude_status = "429, 500.."
 retry_wait_time = 5
 include_fragments = "anchor-only"
 
-# Live URLs that 403 automated checkers (bot protection) while serving
+# Live URLs that 403 or 503 automated checkers (bot protection) while serving
 # fine in a browser. Excluded so lychee doesn't fail on good links.
 exclude = [
   "papers\\.ssrn\\.com",
   "npmjs\\.com",
   "reddit\\.com",
+  "goodreads\\.com",
 ]
 
 # Skip content that isn't ours to fix. .vale/styles/ are upstream Vale
@@ -17,14 +23,4 @@ exclude = [
 exclude_path = [
   "(^|/)\\.vale/styles/",
   "(^|/)outlines/",
-  # TEMPORARY: companion pieces have root-relative /posts/... links
-  # that lychee can't resolve against source files. Remove once
-  # lychee runs against the Astro build output instead of source.
-  # Tracking: #160.
-  "(^|/)src/data/blog/backing-up-google-takeout-to-truenas\\.md$",
-  "(^|/)src/data/blog/how-i-read-eight-years-on\\.md$",
-  "(^|/)src/data/blog/how-i-back-up\\.md$",
-  "(^|/)src/data/blog/i-built-the-machine-twice\\.md$",
-  "(^|/)src/data/blog/the-bottleneck-isnt-the-blank-page\\.md$",
-  "(^|/)src/data/blog/off-the-desk\\.md$",
 ]
