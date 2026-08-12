@@ -27,17 +27,6 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: '3.x'
-      # pre-commit/action's steps, inlined: the upstream composite calls
-      # actions/cache on a floating tag, which this repo's SHA-pinning
-      # policy rejects before the workflow starts.
-      - run: python -m pip install pre-commit
-      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
-        with:
-          path: ~/.cache/pre-commit
-          key: >-
-            pre-commit-3|${{ env.pythonLocation }}|${{
-            hashFiles('.pre-commit-config.yaml') }}
-      - run: pre-commit run --show-diff-on-failure --color=always --all-files
+      # uv supplies Python and caches the hook environments, so no
+      # separate setup-python step.
+      - uses: tox-dev/action-pre-commit-uv@e09b8958484dfe71f4ac3bc7afb230ba506402ec # v1.0.5
