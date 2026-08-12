@@ -27,6 +27,4 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      # uv supplies Python and caches the hook environments, so no
-      # separate setup-python step.
       - uses: tox-dev/action-pre-commit-uv@e09b8958484dfe71f4ac3bc7afb230ba506402ec # v1.0.5
