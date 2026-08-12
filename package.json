@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.15.1",
+  "packageManager": "pnpm@11.21.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
@@ -12,7 +12,8 @@
     "astro": "astro",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",
@@ -25,25 +26,26 @@
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "satori": "^0.28.0",
+    "satori": "^0.29.0",
     "sharp": "^0.35.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
-    "@astrojs/check": "0.9.9",
+    "@astrojs/check": "0.9.10",
     "@pagefind/default-ui": "1.5.2",
-    "@shikijs/transformers": "4.3.1",
+    "@shikijs/transformers": "4.4.2",
     "@tailwindcss/typography": "0.5.20",
     "@types/lodash.kebabcase": "4.1.9",
-    "@typescript-eslint/parser": "8.65.0",
-    "eslint": "10.7.0",
-    "eslint-plugin-astro": "3.0.1",
-    "globals": "17.7.0",
+    "@typescript-eslint/parser": "8.66.0",
+    "@typescript/native": "npm:typescript@7.0.2",
+    "eslint": "10.8.1",
+    "eslint-plugin-astro": "3.1.0",
+    "globals": "17.9.0",
     "pagefind": "1.5.2",
     "prettier": "3.9.6",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.1",
-    "typescript": "6.0.3",
-    "typescript-eslint": "8.65.0"
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "typescript-eslint": "8.66.0"
   }
 }
