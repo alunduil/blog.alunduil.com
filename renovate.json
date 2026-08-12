@@ -32,7 +32,7 @@
     {
       "description": "A withastro/action `with:` input, out of reach of the annotation-based githubActionsVersions preset.",
       "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/(astro|pages)\\.yml$/"],
+      "managerFilePatterns": ["/^\\.github/workflows/(ci|pages)\\.yml$/"],
       "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
       "depNameTemplate": "pnpm",
       "datasourceTemplate": "npm"

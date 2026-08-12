@@ -19,7 +19,7 @@ This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
 - Package manager: pnpm. Version pinned in the withastro/action
-  `package-manager:` field of `.github/workflows/astro.yml` and
+  `package-manager:` field of `.github/workflows/ci.yml` and
   `pages.yml`, kept current by the Renovate custom manager in
   `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
@@ -33,11 +33,12 @@ scripting your own.
   hygiene. `pnpm lint` / `pnpm format` run the same tools by hand.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
-  linters. The whole suite runs in CI via `pre-commit.yml`, which
-  installs Node/pnpm first for the ESLint/Prettier hooks. Excluded
-  file types (no checker): binary assets (svg/png/webp), `lychee.toml`,
-  `.vale.ini`. lychee link-checking is CI-only
-  (`.github/workflows/lychee.yml`, `lychee.toml`).
+  linters. The whole suite runs in CI via the `pre-commit` job in
+  `ci.yml`, which installs Node/pnpm first for the ESLint/Prettier
+  hooks. Excluded file types (no checker): binary assets
+  (svg/png/webp), `lychee.toml`, `.vale.ini`. lychee link-checking is
+  CI-only (the `lychee` job in `.github/workflows/ci.yml`,
+  `lychee.toml`).
 - Custom skills under `.claude/skills/` — catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.
@@ -104,6 +105,29 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/pages.yml`).
+
+## GitHub Actions
+
+Workflow and job names read as "when / what":
+
+- Workflow `name:` is the when — the trigger or cadence (`CI`). A
+  single-purpose file may take its subject (`Pages`, `Labels`) until
+  something colocates with it. A file that can't take a cadence name
+  without colliding with another's is usually a job, not a file.
+- Job `name:` is the what — the outcome as a human-readable phrase
+  (`Check links`, `Build the site`), legible standing alone in the
+  required-checks picker.
+- The job id (key under `jobs:`) is the kebab wiring identifier for
+  `needs:` and reuse; the job `name:` is the status-check context branch
+  protection matches. They differ by design.
+- Job names are the scarce namespace: keep them unique repo-wide.
+  `required_status_checks` in `alunduil/alunduil-infrastructure` pins
+  them by string, so renaming one is a coordinated change with that repo.
+- Split files on `on:` alone — the only setting that can't be scoped per
+  job. Permissions, concurrency, env, and defaults push down to the job,
+  so workflows sharing a trigger colocate as jobs in one file.
+- A matrix job expands one context per cell; when one must be required,
+  add a stable aggregator job and require that.
 
 ## Skills
 

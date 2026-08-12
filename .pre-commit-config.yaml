@@ -46,7 +46,7 @@ repos:
   # prettier/eslint run — their plugins (prettier-plugin-astro,
   # eslint-plugin-astro, typescript-eslint) and configs resolve from the
   # workspace deps rather than a pinned mirror. Requires node_modules; CI
-  # installs them in pre-commit.yml before running the suite.
+  # installs them in ci.yml before running the suite.
   - repo: local
     hooks:
       - id: prettier
