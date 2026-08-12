@@ -1,13 +1,36 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:best-practices"],
-  "baseBranchPatterns": ["main"],
+  "extends": [
+    "config:best-practices",
+    "security:openssf-scorecard",
+    "customManagers:githubActionsVersions"
+  ],
+  "timezone": "Europe/London",
   "reviewers": ["alunduil"],
   "pre-commit": {
     "enabled": true
   },
+  "minimumReleaseAge": "3 days",
+  "osvVulnerabilityAlerts": true,
+  "packageRules": [
+    {
+      "description": "These update types carry no release timestamp, so timestamp-required behaviour stalls them behind a stability check that never clears.",
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest",
+        "digest",
+        "lockFileMaintenance",
+        "lockfileUpdate",
+        "rollback",
+        "bump",
+        "replacement"
+      ],
+      "minimumReleaseAge": null
+    }
+  ],
   "customManagers": [
     {
+      "description": "A withastro/action `with:` input, out of reach of the annotation-based githubActionsVersions preset.",
       "customType": "regex",
       "managerFilePatterns": ["/^\\.github/workflows/(ci|pages)\\.yml$/"],
       "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],

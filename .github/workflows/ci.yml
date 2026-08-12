@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       # Node + pnpm so the local eslint/prettier hooks resolve the repo's
       # own toolchain. pnpm version comes from package.json packageManager.
-      - uses: pnpm/action-setup@0ebf47130e4866e96fce0953f49152a61190b271 # v6
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
           node-version: '24'
@@ -57,12 +57,15 @@ jobs:
   build:
     name: Build the site
     runs-on: ubuntu-latest
+    env:
+      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+      NODE_VERSION: "24"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
-          node-version: "22"
-          package-manager: pnpm@11.15.1
+          node-version: ${{ env.NODE_VERSION }}
+          package-manager: pnpm@11.21.0
 
   lychee:
     name: Check links

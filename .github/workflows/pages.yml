@@ -26,6 +26,8 @@ jobs:
       # rel="webmention" link). Committed here rather than an Actions
       # Variable so the webmention receiver is configured as IaC. See #148.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
+      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+      NODE_VERSION: "24"
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
@@ -33,8 +35,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
-          node-version: "22"
-          package-manager: pnpm@11.15.1
+          node-version: ${{ env.NODE_VERSION }}
+          package-manager: pnpm@11.21.0
 
   publish:
     name: Deploy to GitHub Pages
