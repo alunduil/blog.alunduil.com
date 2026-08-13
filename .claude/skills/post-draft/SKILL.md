@@ -85,7 +85,7 @@ Apply them from their single homes:
   its revision pass. The descriptive fingerprint in the same file
   calibrates against what the corpus measurably does.
 - **Citations** → `.claude/citations.md`. Ground claims in the author's
-  actual reading; never link private Reader URLs.
+  actual reading; cite the public source URL a reader can open.
 - **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
   Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone, the
   publication gate, tags, archival stanza.

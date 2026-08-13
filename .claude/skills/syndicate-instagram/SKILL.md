@@ -37,19 +37,18 @@ Derive:
 
 One sentence: what the post actually argues — its hook, not its summary. Plus
 2–3 *concrete, specific* details from the body (a number, a swap, a failure)
-that stop a scroll. Pull from the body, not the `description`: the description
-is the feed hook dlvr.it already posts elsewhere, so Instagram earns something
-richer.
+that stop a scroll. Pull from the body: the `description` is the feed hook
+dlvr.it already posts elsewhere, so Instagram earns something richer.
 
 ## 3. Draft the post
 
 - **Caption**: scroll-stopper first line, then 2–4 lines of value, then
-  `Link in bio.` No clickable links in captions.
+  `Link in bio.` — Instagram captions render links as plain text.
 - **Bio link**: points to the blog home; swap to the latest post around launch.
 - **Image**: default to the post's OG card. Flag when the post earns a bespoke
   image or carousel, and sketch the carousel beats — one idea per card.
 - **Hashtags**: 3–8 niche/topical tags — reuse the post's `tags` plus adjacent
-  ones, not generic mega-tags.
+  ones, kept as specific as the post.
 
 ## 4. Present
 
@@ -58,11 +57,11 @@ bio-link note. Write nothing to the repo.
 
 ## Notes
 
-- **Voice.** Match the post's own register — conversational, first-person, no
-  marketing-speak. The external-repo voice rules don't apply; this is
-  alunduil's own surface.
-- **Canonical-first.** The post links back to the blog; the derivative never
-  replaces it.
+- **Voice.** Match the post's own register — conversational and first-person.
+  This is alunduil's own surface, and the post it derives from sets the
+  register.
+- **Canonical-first.** The post links back to the blog, which stays the
+  canonical home.
 - **Trigger.** `/post-draft` flags image-prone posts as Instagram candidates;
   run this once the post is live (the link-back needs the published URL).
   dlvr.it covers the auto surfaces on publish.
