@@ -2,6 +2,7 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { getPath } from "@/utils/getPath";
 import getSortedPosts from "@/utils/getSortedPosts";
+import renderPostBody from "@/utils/renderPostBody";
 import { SITE } from "@/config";
 
 export async function GET() {
@@ -11,11 +12,20 @@ export async function GET() {
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
-    items: sortedPosts.map(({ data, id, filePath }) => ({
-      link: getPath(id, filePath),
-      title: data.title,
-      description: data.description,
-      pubDate: new Date(data.modDatetime ?? data.pubDatetime),
-    })),
+    items: await Promise.all(
+      sortedPosts.map(async post => {
+        const link = getPath(post.id, post.filePath);
+        // The trailing slash matches the item link `@astrojs/rss` emits, so
+        // fragment links in the body point at the same URL subscribers land on.
+        const canonicalURL = new URL(`${link}/`, SITE.website);
+        return {
+          link,
+          title: post.data.title,
+          description: post.data.description,
+          pubDate: new Date(post.data.modDatetime ?? post.data.pubDatetime),
+          content: await renderPostBody(post.body ?? "", canonicalURL),
+        };
+      })
+    ),
   });
 }

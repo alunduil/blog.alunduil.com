@@ -9,9 +9,9 @@ the mechanism is recorded in
 
 - A Threads account to post to.
 - The published feed at `https://blog.alunduil.com/rss.xml`. It already
-  carries each post's title, description, and canonical link, and it
-  excludes future-dated (scheduled) posts, so nothing syndicates before
-  its `pubDatetime`.
+  carries each post's title, description, full body, and canonical link,
+  and it excludes future-dated (scheduled) posts, so nothing syndicates
+  before its `pubDatetime`.
 - A dlvr.it account; the free tier covers this blog's volume.
 
 The dlvr.it labels below may shift as its interface changes; match the
@@ -33,6 +33,14 @@ intent rather than the exact wording.
 3. On the first sync, limit how many existing items post, so the back
    catalogue does not flood the timeline. Posting only new items from
    here on is the goal.
+
+## Choose the summary over the full body
+
+Set this feed to prefer summary content, under its advanced settings.
+Each item carries two blocks of text: `description`, the one-line hook,
+and `content:encoded`, the whole post rendered for feed readers. dlvr.it
+calls them Summary and Full Body. A route preferring full content posts
+the whole article, cut off at the character limit.
 
 ## Set the post format
 
