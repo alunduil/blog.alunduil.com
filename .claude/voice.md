@@ -9,58 +9,57 @@ The blog's voice home. Two halves, kept distinct but co-located:
   agree; when in doubt, the corpus is the evidence.
 
 Read this before drafting or editing any post — story, review,
-methodology, or freeform. `post-draft` and `review-draft` apply it; they
-don't restate it.
+methodology, or freeform. `post-draft` and `review-draft` apply it from
+here.
 
 Companions, kept separate:
 
 - The host `~/.claude/voice.md` profiles the author's *external* voice
-  (PR/issue comments, calibrated against pre-2025 GitHub). Different
-  corpus, different surface — don't apply it to blog posts.
+  (PR/issue comments, calibrated against pre-2025 GitHub). It governs that
+  surface; this file governs the blog.
 - Frontmatter, scheduling, tags, and locations live in
-  `docs/reference/post-frontmatter.md`, not here.
+  `docs/reference/post-frontmatter.md`.
 
 Stated in full so the skills stand alone on the web, where host memory
 isn't present; bracketed `[[names]]` are local-only see-alsos.
 
 ## Sentence-level rules
 
-- **No blame in retrospect.** Ownership ("I did X") is fine; regret ("I
-  should have", confession closers) goes.
+- **Retrospect observes.** Looking back is an account of what happened,
+  carried by ownership ("I did X") and stated flat.
   ([[feedback_no_blame_in_retrospect]])
-- **Causal over contrast.** "Without X, Y happens" beats "X required Z; Y
-  doesn't" — show the mechanism. ([[feedback_causal_narrative_over_contrast]])
+- **Show the mechanism.** "Without X, Y happens" — the sentence carries
+  how one thing led to another.
+  ([[feedback_causal_narrative_over_contrast]])
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
   punctuation outside the quotes. ([[project_grammar_lean]])
 - **Possessives:** singular *s*-ending nouns take *'s* — Books's,
-  Charles's (CMOS, not AP). Add new variants to
+  Charles's (CMOS). Add new variants to
   `.vale/styles/config/vocabularies/Custom/accept.txt` as Custom.Spelling
   surfaces them. ([[project_possessive_convention]])
 - **One independent clause per sentence.** Split every `, and`, semicolon,
   or comma-splice that hooks two complete thoughts together. Length comes
-  from subordinate clauses (`which…`, `while…`, `that…`) and cadence, not
-  from chaining independents. Compound predicates on one subject are fine
-  ("he shows X and stops there"); this reinforces *flow, don't snap* below
-  — flow through subordination, never through a pile-up of independents.
+  from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
+  Compound predicates on one subject are fine ("he shows X and stops
+  there"); this reinforces *flow* below — flow through subordination.
 
 ## Register: poetic without being poetry
 
 The house register for story posts (Tolkien/Carroll touchstone):
 
 - **Latch first.** Open each scene on something concrete the reader can
-  hold — never on context-free abstraction.
-- **Flow, don't snap.** Carry weight in cadence and image, not in clipped
-  fragments stacked for drama.
-- **Punctuation marks structure, not pauses.** Let the period carry the
-  load. A comma only for a grammatical job (clause join, serial list,
-  trailing absolute), never a mid-clause interrupter for emphasis.
-  Colons, semicolons, and em-dashes earn their place only by doing real
-  structural work, not as dressing. A colon that tacks a list onto a weak
-  phrase ("Puzo's is rich: …") is a smell — rewrite so a verb carries it. A
-  plain serial list (a, b, and c) beats polysyndeton (a and b and c).
+  hold.
+- **Flow.** Carry weight in cadence and image, in sentences that run
+  their full length.
+- **Punctuation marks structure.** Let the period carry the load. A comma
+  only for a grammatical job (clause join, serial list, trailing
+  absolute). Colons, semicolons, and em-dashes earn their place by doing
+  real structural work. A colon that tacks a list onto a weak phrase
+  ("Puzo's is rich: …") is a smell — rewrite so a verb carries it. Serial
+  lists take the plain form (a, b, and c).
 - **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
-  simile usually wants toning down, not up.
+  simile usually wants toning down.
 - **Watch personification.** It creeps in ("a busy place", "a last sign
   of life") — keep it light.
 - Plain, warm words: punch without the snap, music without verse.
@@ -88,9 +87,8 @@ judgement calls.
 
 ---
 
-The rest of this file is the **descriptive fingerprint** — measured from
-the corpus, not rules to apply. Recalibrate by re-reading the posts, not
-by editing numbers here from memory.
+The rest of this file is the **descriptive fingerprint** — what the
+corpus measurably does. Recalibrate by re-reading the posts.
 
 ## Corpus
 
@@ -105,8 +103,7 @@ instructional register (below), n=1 and provisional.
 ## Shared DNA — every post
 
 - **First person, throughout.** "I", "my" on nearly every paragraph
-  (16–47 per post). The author is always in the frame; no detached
-  third-person exposition.
+  (16–47 per post). The author is always in the frame.
 - **Ends on an admitted gap.** Every post's closer names a limitation
   rather than a triumph: "I haven't tested it"; "so far, zero"; "even
   when I can't prove it's the practice doing the work"; "the substrate
@@ -124,7 +121,7 @@ instructional register (below), n=1 and provisional.
   values as figures.
 - **Very low formatting density.** Zero bold, zero bullet lists in the
   body across all four posts — prose carries the structure. Links are
-  inline or reference-style, never decorative. Reach for a list or bold
+  inline or reference-style. Reach for a list or bold
   only when the content is genuinely tabular, and expect not to.
 - **Sentence length swings.** ~13–16 words average, but the real range
   runs 3→47: long flowing sentences that carry weight in cadence, then a
@@ -135,7 +132,7 @@ instructional register (below), n=1 and provisional.
 - **Openers latch on something concrete** — a callback to a prior post
   or year ("In 2011 I wrote up…", "In 2018 I wrote about…") or a
   concrete image ("The blog had been quiet a long time before I archived
-  it"). Never a context-free abstraction.
+  it").
 - **Em-dashes, unspaced, for asides** (CMOS). Present but not leaned on;
   a comma does most joins.
 
@@ -148,7 +145,7 @@ instructional register (below), n=1 and provisional.
 - Second person to pull the reader in, sparingly ("You picture the blank
   page"). Narrative-only; the methodology posts stay first-person.
 - Restrained figuration — a governing image ("the machine", "the wall")
-  worked lightly, never purple. See the poetic register above.
+  worked lightly. See the poetic register above.
 - Scene and contrast: opens at the opposite of where it lands.
 
 ## Register: methodology / reference
@@ -160,8 +157,8 @@ instructional register (below), n=1 and provisional.
   `---` divider is optional but recurs.
 - Plainer and denser with concrete operational detail (cadences, counts,
   dataset names). Expository rather than scene-built.
-- Still first-person and still hedged — the register is plainer, not
-  more authoritative. The admitted-gap closer holds here too.
+- Still first-person and still hedged — the register is plainer while the
+  confidence stays bounded. The admitted-gap closer holds here too.
 - Present tense for current practice, past tense for what changed.
 
 ## Register: how-to / instructional
@@ -178,11 +175,10 @@ calibration; treat as provisional, recalibrate as more land).
   step, or link it out (the reference, official docs, the exact
   artefact). The primary failure is "documentation poetry": prose
   wrapped around a code block that doesn't change what the reader types
-  — what the narrative register produces if applied here. Don't
-  alternate list / prose-note / list; the trailing notes are that
-  temptation.
+  — what the narrative register produces if applied here. Keep the steps
+  contiguous; the trailing notes are that temptation.
 - Still first person and light. Keep one compressed honest-limit close
-  (a caveat, not the methodology posts' reflective essay). Where an
+  (a caveat, sized to a sentence or two). Where an
   exact version exists, link it as the recovery reference.
 - Read <https://diataxis.fr/how-to-guides/> for the format; the host
   `diataxis` skill carries fuller anti-patterns. Neither travels to web

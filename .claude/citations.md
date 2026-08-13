@@ -9,8 +9,8 @@ Shared by `post-draft` and `review-draft`.
   fabricate citations to works they haven't read. If the archive holds no
   canonical source for a claim, surface what's there honestly rather than
   inventing one.
-- **Cite the original public source URL.** Never link the private
-  `https://read.readwise.io/...` URLs — readers can't reach them.
+- **Cite the original public source URL.** Resolve it from Reader's
+  `source_url` field (below) — that's the link a reader can open.
 - **Long URLs use reference-style links,** to stay within the 80-char
   source wrap.
 
@@ -25,4 +25,4 @@ The author's reading lives in Readwise and Reader; reach it via MCP:
   `location_in=["archive"]`, vector-search the topic.
 - `mcp__claude_ai_Readwise__reader_list_documents` with
   `response_fields=["url", "source_url", "title", "source"]` — resolve the
-  public source URL to cite (not the private Reader URL).
+  public source URL to cite.

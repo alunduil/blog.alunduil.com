@@ -9,9 +9,8 @@ This repo is used from Claude Code on the web, where host-local config
 isn't present: the global `~/.claude/CLAUDE.md` and the per-project memory
 directory don't travel — only the checkout does. Keep durable conventions
 (voice, process, project rules) in the repo: `.claude/skills/`, this file,
-or `docs/`. Skills must stand alone — state what they rely on inline, and
-treat host memory as local reinforcement, never the sole home for anything
-the work needs.
+or `docs/`. Skills must stand alone — state what they rely on inline, so
+host memory only reinforces what the repo already carries.
 
 ## Tooling
 
@@ -57,7 +56,7 @@ so the repo-relevant essentials:
 - Keep each PR to its issue. Check scope against sibling and linked
   issues before opening; when unsure, ask.
 - If an issue is blocked by an unshipped prerequisite, propose deferral
-  with a `blocked-by` edge rather than writing premature code.
+  with a `blocked-by` edge and let the prerequisite land first.
 - Revert incidental out-of-scope edits before review, especially to the
   AstroPaper upstream files listed below.
 
@@ -65,8 +64,8 @@ so the repo-relevant essentials:
 
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
-Publication is gated by a future `pubDatetime`, never `draft: true` —
-merging the PR accepts the editorial work, the date defers publication.
+A future `pubDatetime` is the publication gate: merging the PR accepts
+the editorial work, the date defers publication.
 
 Frontmatter fields, the Tuesday (tech) / Sunday (reflective) 08:00
 cadence, timezone, locations, cover images, and tags are documented in
@@ -74,12 +73,11 @@ cadence, timezone, locations, cover images, and tags are documented in
 
 ### "How I X" series
 
-Future entries title as `How I X (YYYY)` — year-stamped scales without
-anniversary arithmetic. Cadence ties to substantive change in the
-practice, not the calendar; the next entry is ready when reading the
-prior one prompts "that's not how I do it any more." Don't add series
-infrastructure (index page, schema field, milestone) until there are
-3+ entries.
+Future entries title as `How I X (YYYY)` — year-stamped titles scale as
+entries accumulate. Cadence ties to substantive change in the practice;
+the next entry is ready when reading the prior one prompts "that's not
+how I do it any more." Add series infrastructure (index page, schema
+field, milestone) once there are 3+ entries.
 
 ## Voice
 
@@ -92,8 +90,7 @@ against a different corpus.
 ## AstroPaper upstream
 
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
-upstream — don't refactor, rename, or reformat unless the change is the
-point:
+upstream — edit only when the change is the point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
   `src/utils/`, `src/content.config.ts` — theme code.
