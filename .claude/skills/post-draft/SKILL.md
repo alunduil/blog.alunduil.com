@@ -7,12 +7,12 @@ description: Draft a narrative blog post from an approved outline — body, voic
 
 Consumes an approved outline (`outlines/<slug>.md`, the artefact
 `outline-draft` produces) and turns it into the publishable post.
-Refuses to start without an approved outline — if there isn't one, run
-`outline-draft` first.
+Requires an approved outline; run `outline-draft` first if there isn't
+one.
 
-The outline is the source of truth and is never edited from here. If the
-prose needs a structural change, change the outline first (via
-`outline-draft`), then bring the post back in line.
+The outline is the source of truth. If the prose needs a structural
+change, change the outline first (via `outline-draft`), then bring the
+post back in line.
 
 Pipeline: **body → conventions → syndication check.** The body is the
 story-specific craft this skill owns; the conventions are shared and
@@ -21,7 +21,7 @@ applied from their single homes.
 ## 1. Body — write the scenes
 
 Render the outline's beats as story, scene by scene. The outline is the
-skeleton, not the script: **a beat is not a sentence.** Each beat becomes
+skeleton: **a beat expands into a passage.** Each beat becomes
 lived prose — a moment to stand in, fact braided with feeling,
 transitions that carry the reader from one beat to the next. The post
 reads as *more* than its outline; *confirmed when* every paragraph
@@ -30,8 +30,7 @@ not just its beat reworded. If a paragraph reads straight off the
 outline, it isn't written yet.
 
 Draft the body before locking title or description — both derive from
-what the post argues, and front-loading them locks in framing the body
-may not honour.
+what the post argues, so the finished body settles them.
 
 A story is **lived in scenes** and **built to one moment of change**;
 the reader feels the change by contrast with where it began.
@@ -59,16 +58,14 @@ Principles, each with the criterion that confirms it:
   the workshop.
 - **Causal narrative.** Show the mechanism — "Without X, Y happens."
   *Confirmed when:* a reader learns *how* one thing led to another.
-- **Observe, don't apologise.** Ownership ("I did X") without regret ("I
-  should have"). *Confirmed when:* the looking-back reads as account,
-  not confession.
+- **Observe.** Ownership ("I did X") carries the looking-back.
+  *Confirmed when:* it reads as an account of what happened.
 - **Land on substance.** *Confirmed when:* the last line says something
-  rather than restating the post or drumrolling toward it.
+  the post hasn't said yet.
 - **Tense — a story may glance forward, sparingly.** "Document only what
   exists at HEAD" is a docs rule, not a narrative one; a story can use the
   future tense for a grounded, stated direction. *Confirmed when:* any
-  forward glance is a real plan you're on, used once or twice at most —
-  never idle speculation ("someday maybe").
+  forward glance is a real plan you're on, used once or twice at most.
 
 Draft and lock **one scene at a time, with the author.** Source each
 scene's concrete moment before staging it — provable facts where they
@@ -81,7 +78,7 @@ drift toward generic prose.
 ## 2. Conventions
 
 Voice, citations, and frontmatter are shared across every article type.
-Apply them from their single homes — don't restate them here:
+Apply them from their single homes:
 
 - **Voice** → `.claude/voice.md`. Sentence-level rules and the
   poetic-without-poetry register; apply across the drafted body, then run
@@ -90,13 +87,13 @@ Apply them from their single homes — don't restate them here:
 - **Citations** → `.claude/citations.md`. Ground claims in the author's
   actual reading; never link private Reader URLs.
 - **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
-  Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone,
-  never `draft: true`, tags, archival stanza.
+  Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone, the
+  publication gate, tags, archival stanza.
 
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /
 freeform); derive the description from the finished body. Draft both from
-the completed post, never front-load them.
+the completed post.
 
 ## 3. Instagram syndication check
 
@@ -130,7 +127,7 @@ Final state before promoting the PR out of draft:
 - `pubDatetime` set to a future Tuesday or Sunday at 08:00 local.
 - Vale + markdownlint pass via `pre-commit run --files <path>`.
 - `pnpm build` clean.
-- No links in body point at private Reader URLs.
+- Body links point at public source URLs.
 
 Provenance: Matthew Dicks, *Storyworthy* (moment of change, start at its
 opposite); Jack Hart, *Storycraft* (scene, arc, story-versus-report);
