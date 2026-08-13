@@ -13,22 +13,15 @@ max_concurrency = 8
 timeout = 30
 include_fragments = "anchor-only"
 
-# Links a browser opens and an automated client is refused — every time, on
-# any user agent. One URL at a time, never a domain: a domain also stops
+# Earning a place here takes a weekly report showing the link fail, and then
+# proof it is good anyway — from somewhere other than the host doing the
+# blocking, which describes a URL that never existed in exactly the same words
+# as a real one. Record that proof beside the entry; it can't be re-derived
+# from the URL. One URL at a time, never a domain: a domain also stops
 # reporting the day that link truly breaks, and every future link to the same
-# site. An entry asserts the link is good, so prove that somewhere other than
-# the host doing the blocking, which will describe a URL that never existed in
-# exactly the same words. Absent proof the link stays in the report, and
-# retries won't help — lychee retries transport failures, never a refusal it
-# can read.
+# site. Retries are no help, either — lychee retries transport failures, never
+# a refusal it can read.
 exclude = [
-  # Serves 200 to a browser; LinkedIn answers 999 to everything else.
-  "^https://www\\.linkedin\\.com/in/alunduil/$",
-  # G-Research/bobbit, confirmed through registry.npmjs.org.
-  "^https://www\\.npmjs\\.com/package/bobbit$",
-  # Shaw and Nave, "Thinking—Fast, Slow, and Artificial"; SSRN sits behind a
-  # Cloudflare challenge.
-  "^https://papers\\.ssrn\\.com/sol3/papers\\.cfm\\?abstract_id=6097646$",
   # Not bot protection: the 404 page's own canonical URL, a 404 by design.
   "^https://blog\\.alunduil\\.com/404/$",
 ]
