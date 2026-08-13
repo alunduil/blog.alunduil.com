@@ -42,6 +42,10 @@ three from `src/data/blog/reviews/<slug>.md`:
 Optimised images resolve through markdown image syntax only. An `img`
 tag pointing at `@/assets/` or at a relative path doesn't resolve.
 
+They also stop at the site: the RSS feed renders post bodies outside the
+page build, so a `src/assets/` image reaches a feed reader as a broken
+path. Images under `public/` and on a remote host carry over intact.
+
 Astro serves files under `public/` untouched at an absolute path. They
 work in both markdown image syntax and an `img` tag:
 
