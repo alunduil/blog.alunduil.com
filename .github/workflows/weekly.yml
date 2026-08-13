@@ -35,14 +35,13 @@ jobs:
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
       # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
       NODE_VERSION: "24"
+      # The search below and the issue opened at the end have to agree on this
+      # exactly; if they drift, every run files a new issue instead of
+      # updating the standing one.
+      REPORT_TITLE: Link Checker Report
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
-        with:
-          path: .lycheecache
-          key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
-          restore-keys: lychee-cache-
 
       # The site is static, so every published page is a file under dist/ and
       # walking it reaches everything a crawler would: posts, tag pages,
@@ -54,10 +53,16 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           package-manager: pnpm@11.21.0
 
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
+          restore-keys: lychee-cache-
+
       # --root-dir is what resolves those root-relative links, so it has to be
       # the build output and an absolute path. Each page's canonical tag is an
       # absolute URL, so this checks the live deploy on the way past.
-      - name: Check links across the built site
+      - name: Check the built site
         id: site
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
@@ -68,7 +73,7 @@ jobs:
 
       # Repo docs never reach dist/, so nothing above sees their links. Post
       # sources are skipped here because the built pages already cover them.
-      - name: Check links in repo docs
+      - name: Check the repo docs
         id: docs
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
@@ -77,27 +82,38 @@ jobs:
           fail: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Combine reports
-        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
-        run: cat ./lychee/site.md ./lychee/docs.md >./lychee/out.md
-
-      # Reuse the open report if one exists so repeated breakage updates a
-      # single issue instead of filing a new one every week.
-      - name: Find existing report issue
-        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+      # One place decides whether anything is broken, and everything after it
+      # asks this step rather than re-deriving the answer. Adding a third scan
+      # above means adding its exit code here and nowhere else.
+      - name: Assemble the report
         id: report
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_EXIT: ${{ steps.site.outputs.exit_code }}
+          DOCS_EXIT: ${{ steps.docs.outputs.exit_code }}
         run: |
-          number=$(gh issue list --repo "${{ github.repository }}" --state open \
-            --search 'Link Checker Report in:title' --json number --jq '.[0].number // empty')
-          echo "number=${number}" >> "${GITHUB_OUTPUT}"
+          if [[ "${SITE_EXIT}" -eq 0 && "${DOCS_EXIT}" -eq 0 ]]; then
+            echo 'broken=false' >>"${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          cat ./lychee/site.md ./lychee/docs.md >./lychee/out.md
+
+          # Reuse the open report if one exists so repeated breakage updates a
+          # single issue instead of filing a new one every week.
+          number=$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open \
+            --search "${REPORT_TITLE} in:title" --json number --jq '.[0].number // empty')
+
+          {
+            echo "number=${number}"
+            echo 'broken=true'
+          } >>"${GITHUB_OUTPUT}"
 
       - name: Open or update issue on broken links
-        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        if: steps.report.outputs.broken == 'true'
         uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
         with:
-          title: Link Checker Report
+          title: ${{ env.REPORT_TITLE }}
           content-filepath: ./lychee/out.md
           issue-number: ${{ steps.report.outputs.number }}
           labels: bug

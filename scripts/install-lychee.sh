@@ -14,6 +14,8 @@ LYCHEE_VERSION="v0.24.2"
 ARCH="x86_64-unknown-linux-musl"
 
 ASSET="lychee-${ARCH}.tar.gz"
+# The tarball nests its contents under a target-named directory.
+MEMBER="lychee-${ARCH}/lychee"
 BASE="https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}"
 BIN_DIR="${HOME}/.local/bin"
 
@@ -31,10 +33,9 @@ curl_get "${ASSET}"
 curl_get "${ASSET}.sha256"
 (cd "${tmp}" && sha256sum --check --status "${ASSET}.sha256")
 
-# The tarball nests its contents under a target-named directory.
-tar -xzf "${tmp}/${ASSET}" -C "${tmp}" "lychee-${ARCH}/lychee"
+tar -xzf "${tmp}/${ASSET}" -C "${tmp}" "${MEMBER}"
 mkdir -p "${BIN_DIR}"
-install -m 0755 "${tmp}/lychee-${ARCH}/lychee" "${BIN_DIR}/lychee"
+install -m 0755 "${tmp}/${MEMBER}" "${BIN_DIR}/lychee"
 
 # Later steps in the same job resolve `lychee` from PATH.
 if [[ -n "${GITHUB_ACTIONS:-}" ]]; then
