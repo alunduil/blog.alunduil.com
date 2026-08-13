@@ -22,8 +22,6 @@ BIN_DIR="${HOME}/.local/bin"
 tmp="$(mktemp -d)"
 trap 'rm -rf "${tmp}"' EXIT
 
-# --retry alone covers transient HTTP status codes; --retry-all-errors is what
-# covers transport-level failures such as a mid-transfer connection reset.
 curl_get() {
   curl -fsSL --retry 5 --retry-delay 2 --retry-all-errors --connect-timeout 10 \
     -o "${tmp}/$1" "${BASE}/$1"

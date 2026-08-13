@@ -2,8 +2,8 @@ name: Weekly
 
 on:
   schedule:
-    # Wednesdays at 07:00 Europe/London, clear of the Tuesday and Sunday
-    # publication slots. The timezone field handles BST/GMT.
+    # Clear of the Tuesday and Sunday publication slots. The timezone field
+    # handles BST/GMT.
     - cron: '0 7 * * 3'
       timezone: Europe/London
   workflow_dispatch:
@@ -12,16 +12,14 @@ permissions:
   contents: read
 
 concurrency:
-  # Ref-less group so a manual dispatch and the schedule can't run
-  # concurrently and race on the shared report issue; cancel rather than
-  # queue so a fresh dispatch supersedes an in-flight run.
+  # Ref-less so a manual dispatch and the schedule can't race on the shared
+  # report issue.
   group: ${{ github.workflow }}
   cancel-in-progress: true
 
 jobs:
-  # External URLs rot from time and third parties, not from the diff, so
-  # checking them per-PR produces failures no author can act on. Check them
-  # weekly and open an issue instead of blocking the line. Never fails.
+  # External URLs rot from time and third parties, not from the diff, so a
+  # per-PR check fails on breakage no author can act on.
   links:
     name: Check links across the published site
     runs-on: ubuntu-24.04
@@ -35,19 +33,16 @@ jobs:
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
       # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
       NODE_VERSION: "24"
-      # The search below and the issue opened at the end have to agree on this
-      # exactly; if they drift, every run files a new issue instead of
-      # updating the standing one.
+      # The search and the issue title have to agree exactly; drift files a
+      # fresh report every run instead of updating the standing one.
       REPORT_TITLE: Link Checker Report
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       # The site is static, so every published page is a file under dist/ and
-      # walking it reaches everything a crawler would: posts, tag pages,
-      # pagination, archives, and the shared nav and footer on each. Building
-      # is what makes the site's own links checkable at all — `/posts/...`
-      # resolves against neither the source tree nor the markdown.
+      # walking it reaches what a crawler would. Building is also the only way
+      # `/posts/...` resolves — nothing in the source tree answers those.
       - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -59,9 +54,8 @@ jobs:
           key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
           restore-keys: lychee-cache-
 
-      # --root-dir is what resolves those root-relative links, so it has to be
-      # the build output and an absolute path. Each page's canonical tag is an
-      # absolute URL, so this checks the live deploy on the way past.
+      # --root-dir must be absolute. Each page's canonical tag is an absolute
+      # URL, so this exercises the live deploy on the way past.
       - name: Check the built site
         id: site
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
@@ -72,7 +66,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # Repo docs never reach dist/, so nothing above sees their links. Post
-      # sources are skipped here because the built pages already cover them.
+      # sources are skipped: the built pages already cover them.
       - name: Check the repo docs
         id: docs
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
@@ -82,9 +76,8 @@ jobs:
           fail: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # One place decides whether anything is broken, and everything after it
-      # asks this step rather than re-deriving the answer. Adding a third scan
-      # above means adding its exit code here and nowhere else.
+      # A scan added above needs its exit code in this condition, and nowhere
+      # else.
       - name: Assemble the report
         id: report
         env:
@@ -99,8 +92,6 @@ jobs:
 
           cat ./lychee/site.md ./lychee/docs.md >./lychee/out.md
 
-          # Reuse the open report if one exists so repeated breakage updates a
-          # single issue instead of filing a new one every week.
           number=$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open \
             --search "${REPORT_TITLE} in:title" --json number --jq '.[0].number // empty')
 

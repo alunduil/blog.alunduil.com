@@ -38,14 +38,13 @@ scripting your own.
   installs Node/pnpm for the ESLint/Prettier hooks and lychee via
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
-- Link checking runs in two tiers (`lychee.toml` configures both). The
+- Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
-  without a build. `.github/workflows/weekly.yml` builds the site and
-  checks every link on every published page, plus the repo docs that
-  never reach `dist/`. It never blocks a PR and reports breakage to a
-  single rolling issue. A link that is correct but unverifiable from a
-  CI runner (bot protection) belongs in `lychee.toml`'s `exclude`; a
-  link that is broken belongs fixed.
+  without a build. `weekly.yml` builds the site, checks every link on
+  every published page plus the repo docs that never reach `dist/`,
+  blocks nothing, and reports to one rolling issue. A correct link a CI
+  runner can't verify (bot protection) belongs in `exclude`; a broken
+  link belongs fixed.
 - Custom skills under `.claude/skills/` — catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.
