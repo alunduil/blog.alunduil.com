@@ -42,7 +42,8 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   or comma-splice that hooks two complete thoughts together. Length comes
   from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
   Compound predicates on one subject are fine ("he shows X and stops
-  there"); this reinforces *flow* below — flow through subordination.
+  there"); length rides on subordination, which is **Flow** in the
+  register below.
 
 ## Register: poetic without being poetry
 

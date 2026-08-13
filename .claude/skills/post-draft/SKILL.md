@@ -56,9 +56,9 @@ Principles, each with the criterion that confirms it:
 - **Plain diction.** *Confirmed when:* the prose names things the way
   you would aloud; craft vocabulary ("pull", "weight", "braid") stays in
   the workshop.
-- **Causal narrative.** Show the mechanism — "Without X, Y happens."
+- **Show the mechanism.** "Without X, Y happens."
   *Confirmed when:* a reader learns *how* one thing led to another.
-- **Observe.** Ownership ("I did X") carries the looking-back.
+- **Retrospect observes.** Ownership ("I did X") carries the looking-back.
   *Confirmed when:* it reads as an account of what happened.
 - **Land on substance.** *Confirmed when:* the last line says something
   the post hasn't said yet.
