@@ -7,6 +7,7 @@
   ],
   "timezone": "Europe/London",
   "reviewers": ["alunduil"],
+  "labels": ["dependencies"],
   "pre-commit": {
     "enabled": true
   },
@@ -26,16 +27,6 @@
         "replacement"
       ],
       "minimumReleaseAge": null
-    }
-  ],
-  "customManagers": [
-    {
-      "description": "A withastro/action `with:` input, out of reach of the annotation-based githubActionsVersions preset.",
-      "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/(astro|pages)\\.yml$/"],
-      "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
-      "depNameTemplate": "pnpm",
-      "datasourceTemplate": "npm"
     }
   ]
 }
