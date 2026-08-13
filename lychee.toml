@@ -1,14 +1,24 @@
 cache = true
-max_cache_age = "14d"
+# Shorter than the weekly.yml cadence, so every scheduled run re-checks the
+# whole site cold and only a same-week re-dispatch reuses the cache.
+max_cache_age = "6d"
+# A transient 5xx or a rate-limit is not link rot. Caching one would keep a
+# false report open for the life of the entry.
+cache_exclude_status = "429, 500.."
+# Reaches transport failures only. lychee never retries a status it can read,
+# however long it is given.
 retry_wait_time = 5
 include_fragments = "anchor-only"
 
-# Live URLs that 403 automated checkers (bot protection) while serving
-# fine in a browser. Excluded so lychee doesn't fail on good links.
+# Earning a place here takes a report showing the link fail, then proof it is
+# good anyway from somewhere other than the host doing the blocking — which
+# answers for a URL that never existed in the same words as for a real one.
+# Record that proof beside the entry; it can't be re-derived from the URL. One
+# URL at a time, never a domain: a domain also stops reporting the day that
+# link truly breaks, and every future link to the same site.
 exclude = [
-  "papers\\.ssrn\\.com",
-  "npmjs\\.com",
-  "reddit\\.com",
+  # Not bot protection: the 404 page's own canonical URL, a 404 by design.
+  "^https://blog\\.alunduil\\.com/404/$",
 ]
 
 # Skip content that isn't ours to fix. .vale/styles/ are upstream Vale
@@ -17,14 +27,4 @@ exclude = [
 exclude_path = [
   "(^|/)\\.vale/styles/",
   "(^|/)outlines/",
-  # TEMPORARY: companion pieces have root-relative /posts/... links
-  # that lychee can't resolve against source files. Remove once
-  # lychee runs against the Astro build output instead of source.
-  # Tracking: #160.
-  "(^|/)src/data/blog/backing-up-google-takeout-to-truenas\\.md$",
-  "(^|/)src/data/blog/how-i-read-eight-years-on\\.md$",
-  "(^|/)src/data/blog/how-i-back-up\\.md$",
-  "(^|/)src/data/blog/i-built-the-machine-twice\\.md$",
-  "(^|/)src/data/blog/the-bottleneck-isnt-the-blank-page\\.md$",
-  "(^|/)src/data/blog/off-the-desk\\.md$",
 ]

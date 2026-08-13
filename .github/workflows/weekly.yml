@@ -1,0 +1,109 @@
+name: Weekly
+
+on:
+  schedule:
+    # Clear of the Tuesday and Sunday publication slots. The timezone field
+    # handles BST/GMT.
+    - cron: '0 7 * * 3'
+      timezone: Europe/London
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  # Ref-less so a manual dispatch and the schedule can't race on the shared
+  # report issue.
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  # External URLs rot from time and third parties, not from the diff, so a
+  # per-PR check fails on breakage no author can act on.
+  links:
+    name: Check links across the published site
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      issues: write
+    env:
+      # Matches pages.yml so the tree built here carries the same webmention
+      # link as the deployed one.
+      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
+      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+      NODE_VERSION: "24"
+      # The search and the issue title have to agree exactly; drift files a
+      # fresh report every run instead of updating the standing one.
+      REPORT_TITLE: Link Checker Report
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      # The site is static, so every published page is a file under dist/ and
+      # walking it reaches what a crawler would. Building is also the only way
+      # `/posts/...` resolves — nothing in the source tree answers those.
+      - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
+        with:
+          path: .lycheecache
+          key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
+          restore-keys: lychee-cache-
+
+      # --root-dir must be absolute. Each page's canonical tag is an absolute
+      # URL, so this exercises the live deploy on the way past.
+      - name: Check the built site
+        id: site
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: '--no-progress --root-dir ${{ github.workspace }}/dist dist'
+          output: ./lychee/site.md
+          fail: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # Repo docs never reach dist/, so nothing above sees their links. Post
+      # sources are skipped: the built pages already cover them.
+      - name: Check the repo docs
+        id: docs
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          args: '--no-progress --exclude-path (^|/)(src/data/blog|dist)/ .'
+          output: ./lychee/docs.md
+          fail: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # A scan added above needs its exit code in this condition, and nowhere
+      # else.
+      - name: Assemble the report
+        id: report
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SITE_EXIT: ${{ steps.site.outputs.exit_code }}
+          DOCS_EXIT: ${{ steps.docs.outputs.exit_code }}
+        run: |
+          if [[ "${SITE_EXIT}" -eq 0 && "${DOCS_EXIT}" -eq 0 ]]; then
+            echo 'broken=false' >>"${GITHUB_OUTPUT}"
+            exit 0
+          fi
+
+          cat ./lychee/site.md ./lychee/docs.md >./lychee/out.md
+
+          number=$(gh issue list --repo "${GITHUB_REPOSITORY}" --state open \
+            --search "${REPORT_TITLE} in:title" --json number --jq '.[0].number // empty')
+
+          {
+            echo "number=${number}"
+            echo 'broken=true'
+          } >>"${GITHUB_OUTPUT}"
+
+      - name: Open or update issue on broken links
+        if: steps.report.outputs.broken == 'true'
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
+        with:
+          title: ${{ env.REPORT_TITLE }}
+          content-filepath: ./lychee/out.md
+          issue-number: ${{ steps.report.outputs.number }}
+          labels: bug

@@ -27,4 +27,6 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
+      # The lychee hook is `language: system`; runners ship no lychee.
+      - run: scripts/install-lychee.sh
       - uses: tox-dev/action-pre-commit-uv@e09b8958484dfe71f4ac3bc7afb230ba506402ec # v1.0.5
