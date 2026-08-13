@@ -1,27 +1,25 @@
 ---
 name: review-draft
-description: Draft a review post — book, paper, or video game — starting from the one question a review answers: recommend it or not, and why. Gates on whether there's a real argument (kills the "it was fine" non-review), lands the thesis, then builds argument-not-summary prose in the blog voice. Invoke via /review-draft [#N | title | path].
+description: Draft a review post — book, paper, or video game — starting from the one question a review answers: recommend it or not, and why. Gates on whether there's a real argument (kills the "it was fine" non-review), lands the thesis, then builds the argument in the blog voice, each claim carrying its evidence. Invoke via /review-draft [#N | title | path].
 ---
 
 # Review draft
 
-A review is an **argument, not a summary**. It answers one question — why
-should someone read, read, or play this, or not — and every claim it makes
-rides on a specific moment from the work. A recounting of the plot or the
-contents is a book report; the review is the take on top of it.
+A review is an **argument**. It answers one question — why should someone
+read, read, or play this, or not — and every claim rides on a specific
+moment from the work. The plot and the contents appear as evidence.
 
-Reviews are a **style of article**, not a scene-built story. This skill is a
-sibling of the story pipeline (`outline-draft` → `post-draft`), not a caller of
-it: the scene→beat arc doesn't apply, and the spine is a claim with its
-evidence, not a moment of change.
+Reviews are a **style of article** built on a claim and its evidence. This
+skill is a sibling of the story pipeline (`outline-draft` → `post-draft`) and
+runs start to finish here.
 
 A review is a **short article** — argued and evidenced, but small. That makes
 it distinct from a **note**: it syndicates today as a title-and-link teaser via
 dlvr.it, and an argued review is too long for full-body syndication on the
 character-limited networks (Bluesky, Threads) regardless. A note-length
 *micro-review* — an aphoristic verdict in a sentence or two — is a different
-artefact and belongs to `note-draft` (#323) and the note pipeline (#321/#322),
-not here.
+artefact and belongs to `note-draft` (#323) and the note pipeline
+(#321/#322).
 
 Voice, citations, frontmatter, and the Instagram check are shared. Apply
 them from their single homes — voice (`.claude/voice.md`), citations
@@ -61,7 +59,7 @@ object type, the shape doesn't:
    measure this against. This is the move a generic review can't make.
 3. **The evidence — one concrete moment.** The single scene, passage, result,
    mechanic, or system that made the thesis *felt*. This is the ~20% summary,
-   and it exists to do argument-work, not to recount.
+   and it exists to do argument-work.
 4. **The honest tail — the admitted gap.** What the work left unresolved, or
    where the author's read might be wrong. The corpus's honest-limitation close
    ([[feedback_no_blame_in_retrospect]], `.claude/voice.md`).
@@ -83,11 +81,9 @@ Per object type:
   than the dynamic OG card, so captures serve as evidence and image both.
   Nothing else surfaces them — Media Log holds status only and Readwise holds
   no game highlights. "None exist" is a real answer that settles the question.
-  **Keep length as a pacing claim rather than a number** — say the middle
-  drags, or that it ends before it wears out. Hours-to-credits is storefront
-  metadata that varies by player and evidences nothing, so it earns no space
-  in an argument. Media Log's `Main Story (hrs)` informs the read; it doesn't
-  reach the prose.
+  **Keep length as a pacing claim** — say the middle drags, or that it ends
+  before it wears out. Media Log's `Main Story (hrs)` informs the read and
+  stays in the notes; hours-to-credits varies by player.
 
 Picking up an idea issue (`/review-draft #N`): `## Spark` is the kernel, the
 open questions are the discovery anchors, and the object type comes from the
@@ -126,16 +122,15 @@ The `outlines/` dir is unpublished to the site but **public in the repo**. Open
 a spine that names plot beats with a one-line `> **Spoilers.** …` marker; keep
 the beats concrete regardless — the spine needs them to drive the draft, and a
 reader in the notes drawer is opt-in. The spoiler *fence* is the published
-post's job (§4), not the outline's.
+post's job (§4).
 
 This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
 Confirm the thesis and the points with the author before drafting prose. The
 spine drives the post one direction only — after approval, structural changes
-originate here and flow forward, never back-ported from the draft
-([[feedback_outline_drives_post]]).
+originate here and flow forward ([[feedback_outline_drives_post]]).
 
-## 4. Draft — argument, not summary
+## 4. Draft — build the argument
 
 Render the spine into `src/data/blog/reviews/<slug>.md`, one point at a time with the
 author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
@@ -145,20 +140,19 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   recounts without judging is summary — cut it or turn it into evidence for a
   claim.
 - **The object stays load-bearing.** The reviewer's own ideas enter as the
-  *lens* on the work, not a creed the work is a springboard for. If the draft
-  would survive deleting the object, it has drifted into a personal essay — a
-  different post, not this review. Keep the philosophy at the mechanics of the
-  work, never a stance broadcast.
-- **Thematic order, never the work's chronology.** Organise by the spine's
-  points. Walking the reader through the plot or the table of contents in order
-  is the surest tell that the draft has slid back into report.
+  *lens* on the work. If the draft would survive deleting the object, it has
+  drifted into a personal essay — a different post, not this review. Keep the
+  philosophy at the mechanics of the work.
+- **Thematic order.** Organise by the spine's points. Walking the reader
+  through the plot or the table of contents in order is the surest tell that
+  the draft has slid back into report.
 - **Open on the argument.** Latch the opener on a concrete moment that *delivers
-  the thesis* — same latch-first rule as a story, but here the hook carries the
-  claim, not just the mood.
-- **Firm claim, honest tail.** State the recommendation without hedging — the
-  verdict is not the place to be wishy-washy. The *close* still lands on the
-  admitted gap, not a triumph. This is how a clear recommendation and the
-  corpus's honest-limitation signature coexist: confident spine, honest ending.
+  the thesis* — same latch-first rule as a story, and here the hook carries the
+  claim.
+- **Firm claim, honest tail.** State the recommendation flat — the verdict is
+  where the review commits. The *close* still lands on the admitted gap. This
+  is how a clear recommendation and the corpus's honest-limitation signature
+  coexist: confident spine, honest ending.
 - **Don't manufacture stakes.** Motivation and feeling are claims like any
   other ([[feedback_post_claims_provable]]). Don't invent why the author read
   it, that it haunted them, or a dramatic inner bind — the honest provenance is
@@ -170,9 +164,9 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 - **A light frame is enough.** A plain stance in a thin first-person frame ("I
   read it… I came down…") is a real review, often stronger than a heavyweight
   personal thesis. If a personal paragraph reads thin, cut it and let the
-  analysis carry — the take survives in the frame and the argument. Don't force
-  depth the take doesn't have.
-- **Spoilers — trade on ideas and texture, never the turns.** A review spoils
+  analysis carry — the take survives in the frame and the argument. Let the
+  take stand at whatever depth it has.
+- **Spoilers — trade on ideas and texture.** A review spoils
   by revealing what *happens*; it stays clean revealing what the work is *about*
   and how it feels. Build the recommendation from spoiler-free currency: the
   unresolved question, the texture, the reading experience. Recast plot beats as
@@ -206,16 +200,14 @@ Instagram check — with review-specific notes:
   deeper `reviews/` folder). It replaces the dynamic OG card.
 - **Cadence:** reviews are reflective — **Sunday** 08:00 local for `pubDatetime`
   (`docs/reference/post-frontmatter.md`).
-- **Tags are the work's subject, not the format.** Tag what the review is
-  *about* — the mafia, myth-making, whatever the argument engages — never
-  `review` or `book`; those are format/era labels the taxonomy forbids
+- **Tags are the work's subject.** Tag what the review is *about* — the mafia,
+  myth-making, whatever the argument engages
   (`docs/reference/post-frontmatter.md`).
 - **Instagram:** reviews are strongly image-prone (covers, screenshots, box
   art). dlvr.it covers the auto surfaces on publish
   (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
   `/syndicate-instagram <slug>` once live.
-- **Never** `draft: true`; a future `pubDatetime` gates publication
-  (`docs/reference/post-frontmatter.md`).
+- A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
 
 ## When to invoke
 
@@ -228,7 +220,8 @@ Instagram check — with review-specific notes:
 Iterate in `outlines/<slug>.md` then `src/data/blog/reviews/<slug>.md`. Commit
 incrementally. Final state before promoting the PR: title/description/slug match
 the body, `pubDatetime` a future Sunday 08:00 local, Vale + markdownlint pass
-via `pre-commit run --files <path>`, `pnpm build` clean, no private Reader URLs.
+via `pre-commit run --files <path>`, `pnpm build` clean, body links pointing at
+public source URLs.
 
 Provenance: the UNC Writing Center handout (review is commentary not summary;
 ~80/20 evaluation to summary; thematic organisation); Parul Sehgal, *NYT* ("a

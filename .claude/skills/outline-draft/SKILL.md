@@ -9,7 +9,7 @@ The pre-step of the writing pipeline. It produces one artefact — an
 approved `outlines/<slug>.md` — and stops there. `post-draft` consumes
 that outline and refuses to start without it.
 
-Stories only. Technical posts outline by their subject, not by scene.
+Stories only. Technical posts outline by their subject.
 
 Pipeline: **substance → outline → diagnose → approval.**
 
@@ -18,12 +18,11 @@ Pipeline: **substance → outline → diagnose → approval.**
 The outline-approval gate is the most important control point in the
 pipeline: it catches a wrong angle, a missing scene, or a misjudged arc
 while the fix still costs a line, not 2,000 words. So this skill ends at
-an approved outline and hands off — it never drafts prose.
+an approved outline and hands the prose to `post-draft`.
 
 ## 1. Substance
 
-Don't draft from inference. Ask 3–5 anchor questions that ground the
-post in lived experience.
+Ground the post in lived experience. Ask 3–5 anchor questions.
 
 For methodology / practice posts:
 
@@ -60,8 +59,8 @@ A story is a sequence of **scenes** (concrete moments); each scene is a
 sequence of **beats**. A **beat is one unit of change, on one line.** If
 a line needs comma-spliced clauses to hold together, it is two beats.
 
-Beats are the skeleton, deliberately terse: capture the change, not the
-prose. `post-draft` renders them into story — scenes, the braid, flow.
+Beats are the skeleton, deliberately terse: capture the change.
+`post-draft` renders them into story — scenes, the braid, flow.
 Keep the outline a skeleton so that craft has somewhere to go.
 
 The outline's whole job: read the beats top to bottom and feel the story
@@ -74,9 +73,8 @@ Criteria:
   at a glance.
 - **Anchors as parentheticals.** Dates, PR and issue numbers, provable
   facts ride in `*(...)*` on the beat they support.
-- **Scenes are moments, not topics.** Name a scene for the moment it
-  drops the reader into; a section-label name ("What changed") has
-  drifted toward an essay.
+- **Scenes are moments.** Name a scene for the moment it drops the reader
+  into; a section-label name ("What changed") has drifted toward an essay.
 - **Arc in the scene order.** First scene furthest from the change, last
   arrives at it. Give each scene a one-line *role* — the opposite, the
   lift, the turn, the landing — so the arc reads in the headings alone.
@@ -114,9 +112,8 @@ failure signatures:
    moment in one sentence, and only one.
 
 The title in the header is a **working title** — a handle for the file
-and the angle, not a commitment. The real title is chosen in `post-draft`
-once the prose exists and the body settles what it argues; don't burn
-approval cycles refining it here.
+and the angle. The real title is chosen in `post-draft` once the prose
+exists and the body settles what it argues.
 
 ## Shape
 
@@ -152,9 +149,8 @@ Confirm with the author. The skill ends at approval — hand to
 `post-draft`.
 
 The outline drives the post, one direction only: after approval,
-structural changes originate here and flow forward to the post. Never
-back-port post edits into the outline — the outline is the source of
-truth.
+structural changes originate here and flow forward to the post. The
+outline is the source of truth.
 
 Provenance: Jack Hart, *Storycraft* (arc, scene); Matthew Dicks,
 *Storyworthy* (the one moment of change); Lorin Hochstein, "The Power of

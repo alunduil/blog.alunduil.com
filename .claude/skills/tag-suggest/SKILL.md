@@ -28,16 +28,14 @@ Scan the full corpus including `_<engine>/` archives. AstroPaper's loader exclud
 
 Read the target post — frontmatter + body. Then propose **2–3 tags** subject to:
 
-- **Existing matches win.** If `reading` covers the topic, propose `reading`. Don't coin `reads` or `reading-method`.
-- **Content topics only.** A tag answers "what is this post *about*?". Not category, era, format, draft state. See `feedback_tags_are_content_only.md`. Reject `archive`, `hakyll`, `2018`, `revisit`, `draft` — those signals live in directory structure (`_hakyll/`) or schema fields (`draft`, `featured`).
-- **Soft cap 3.** Drop a marginal tag rather than padding to fill the cap.
-- **Near-duplicate check.** Before proposing a net-new tag, scan the inventory for morphological neighbours: singular/plural (`book` vs `books`), gerund/noun (`reading` vs `reads`), hyphenation (`color-schemes` vs `colorschemes`), capitalisation (`Astro` vs `astro`). If a neighbour exists, justify why the new tag is meaningfully distinct or fold into the existing one.
-
-Upstream tutorial posts contribute tags like `docs`, `release`, `FAQ`, `configuration`, `color-schemes`. Treat them as part of the inventory — they're rendered on the live site — but don't propose them for user-authored content unless the post is genuinely about that topic.
+- **Existing matches win.** If `reading` covers the topic, propose `reading`.
+- **Content topics only.** A tag answers "what is this post *about*?". See `feedback_tags_are_content_only.md`. Category, era, format, and draft state live in directory structure (`_hakyll/`) and schema fields (`draft`, `featured`).
+- **Soft cap 3.** Propose only tags that earn their place; three is a ceiling.
+- **Near-duplicate check.** Before proposing a net-new tag, scan the inventory for morphological neighbours: singular/plural (`book` vs `books`), gerund/noun (`reading` vs `reads`), hyphenation (`decision-making` vs `decisionmaking`), capitalisation (`Astro` vs `astro`). If a neighbour exists, justify why the new tag is meaningfully distinct or fold into the existing one.
 
 ## 4. Report + confirm
 
-Output a chat-only report. **Do not write to the file yet.** Shape:
+Output a chat-only report; the file write happens in §5, after the author confirms. Shape:
 
 - **Target** — path + current `tags:` (if any).
 - **Existing tag inventory (top ~10)** — `tag (N)` per line. Surface enough to ground the proposal; the author can ask for the full list if needed.
@@ -69,4 +67,4 @@ On a non-affirmative or absent response, leave the file alone and end. Author ca
 
 - Corpus-wide tag audit (single-occurrence singletons, all near-duplicate pairs, drift across the whole inventory). File separately if it earns its place once the corpus grows past ~10 user-authored posts.
 - Deterministic hygiene (lowercase enforcement, duplicate-within-post, naming style). Pre-commit hook territory; defer until drift is observable.
-- Editing the body. The skill mutates `tags:` only — never paragraphs, never other frontmatter fields.
+- Editing the body. The skill mutates `tags:` only.
