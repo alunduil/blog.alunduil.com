@@ -13,17 +13,19 @@ max_concurrency = 8
 timeout = 30
 include_fragments = "anchor-only"
 
-# Links that are correct — they serve fine in a browser — but that a CI
-# runner's IP can't verify, so the checker meets bot protection instead.
-# Broken links do not belong here; they belong fixed.
+# Links a browser opens and an automated client is refused — every time, on
+# any user agent. One URL at a time, never a domain: a domain also stops
+# reporting the day that link truly breaks, and every future link to the same
+# site. Reproduce before adding, and don't reach for retries: lychee retries
+# transport failures, never a rejected status, so a refusal it can read is
+# one it will report however many attempts it gets. A refusal that comes and
+# goes is rate limiting, and at one request a week it should stay quiet.
 exclude = [
-  "papers\\.ssrn\\.com",
-  "npmjs\\.com",
-  "reddit\\.com",
-  "goodreads\\.com",
-  "linkedin\\.com",
-  "medium\\.com",
-  # The 404 page's own canonical URL, which is a 404 by design.
+  "^https://www\\.linkedin\\.com/in/alunduil/$",
+  "^https://www\\.npmjs\\.com/package/bobbit$",
+  "^https://papers\\.ssrn\\.com/sol3/papers\\.cfm\\?abstract_id=6097646$",
+  "^https://onyxboox\\.medium\\.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be$",
+  # Not bot protection: the 404 page's own canonical URL, a 404 by design.
   "^https://blog\\.alunduil\\.com/404/$",
 ]
 
