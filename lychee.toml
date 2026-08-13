@@ -6,15 +6,27 @@ max_cache_age = "6d"
 # false report open for the life of the entry.
 cache_exclude_status = "429, 500.."
 retry_wait_time = 5
+# The built site checks the same links from every page that shares a nav or
+# footer, so the default concurrency asks hosts for one URL dozens of times at
+# once. Slower and more patient than the defaults (14 / 20s), which timed out
+# on hosts that answer a lone request in under five seconds.
+max_concurrency = 8
+timeout = 30
 include_fragments = "anchor-only"
 
-# Live URLs that 403 or 503 automated checkers (bot protection) while serving
-# fine in a browser. Excluded so lychee doesn't fail on good links.
+# Links that are correct — they serve fine in a browser — but that a CI
+# runner's IP can't verify, so a checker sees bot protection instead. Listed
+# here to keep the weekly report free of failures nobody can act on. Broken
+# links do not belong in this list; they belong fixed.
 exclude = [
   "papers\\.ssrn\\.com",
   "npmjs\\.com",
   "reddit\\.com",
   "goodreads\\.com",
+  "linkedin\\.com",
+  "medium\\.com",
+  # The 404 page's own canonical URL, which is a 404 by design.
+  "^https://blog\\.alunduil\\.com/404/$",
 ]
 
 # Skip content that isn't ours to fix. .vale/styles/ are upstream Vale

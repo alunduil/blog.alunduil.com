@@ -22,17 +22,19 @@ jobs:
   # External URLs rot from time and third parties, not from the diff, so
   # checking them per-PR produces failures no author can act on. Check them
   # weekly and open an issue instead of blocking the line. Never fails.
-  #
-  # --base-url resolves root-relative /posts/ and /assets/ links against the
-  # deployed site, which is what makes them checkable at all: they resolve
-  # against neither the source tree nor a local build without one.
   links:
-    name: Check links against the deployed site
+    name: Check links across the published site
     runs-on: ubuntu-24.04
-    timeout-minutes: 10
+    timeout-minutes: 20
     permissions:
       contents: read
       issues: write
+    env:
+      # Matches pages.yml so the tree built here carries the same webmention
+      # link as the deployed one.
+      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
+      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+      NODE_VERSION: "24"
 
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -42,40 +44,47 @@ jobs:
           key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
           restore-keys: lychee-cache-
 
-      # Both steps read lychee.toml from the repo root, so the exclude/retry/
-      # cache settings apply to each. They differ only in what links are
-      # relative to: posts address the site, docs address the repo, and
-      # --base-url is right for the first and wrong for the second.
-      #
-      # Neither scans with a glob: the action's shell expands '**/*.md' to
-      # '*/*.md' (one level deep), so a single one-level file would hijack it.
-      # lychee walks a directory for markdown/html; exclude_path filters.
-      - name: Check links in posts
-        id: posts
+      # The site is static, so every published page is a file under dist/ and
+      # walking it reaches everything a crawler would: posts, tag pages,
+      # pagination, archives, and the shared nav and footer on each. Building
+      # is what makes the site's own links checkable at all — `/posts/...`
+      # resolves against neither the source tree nor the markdown.
+      - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          package-manager: pnpm@11.21.0
+
+      # --root-dir is what resolves those root-relative links, so it has to be
+      # the build output and an absolute path. Each page's canonical tag is an
+      # absolute URL, so this checks the live deploy on the way past.
+      - name: Check links across the built site
+        id: site
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: '--no-progress --base-url https://blog.alunduil.com src/data/blog'
-          output: ./lychee/posts.md
+          args: '--no-progress --root-dir ${{ github.workspace }}/dist dist'
+          output: ./lychee/site.md
           fail: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Check links in docs
+      # Repo docs never reach dist/, so nothing above sees their links. Post
+      # sources are skipped here because the built pages already cover them.
+      - name: Check links in repo docs
         id: docs
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: '--no-progress --exclude-path (^|/)src/data/blog/ .'
+          args: '--no-progress --exclude-path (^|/)(src/data/blog|dist)/ .'
           output: ./lychee/docs.md
           fail: false
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Combine reports
-        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
-        run: cat ./lychee/posts.md ./lychee/docs.md >./lychee/out.md
+        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        run: cat ./lychee/site.md ./lychee/docs.md >./lychee/out.md
 
       # Reuse the open report if one exists so repeated breakage updates a
       # single issue instead of filing a new one every week.
       - name: Find existing report issue
-        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
         id: report
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -85,7 +94,7 @@ jobs:
           echo "number=${number}" >> "${GITHUB_OUTPUT}"
 
       - name: Open or update issue on broken links
-        if: steps.posts.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
+        if: steps.site.outputs.exit_code != 0 || steps.docs.outputs.exit_code != 0
         uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
         with:
           title: Link Checker Report

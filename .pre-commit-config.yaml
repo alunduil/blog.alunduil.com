@@ -41,13 +41,15 @@ repos:
   #
   # --offline restricts the gate to what resolves without a build — malformed
   # URLs, fragments, links between source files — so it is fast and never
-  # flakes on a third party. External URLs and anything needing the deployed
-  # site are weekly.yml's job.
+  # flakes on a third party. Everything whose target has to exist is
+  # weekly.yml's job, against the built site.
   #
-  # Split by what a link is relative *to*. Posts address the site, so
-  # --base-url sends `/posts/...` to the deployed site (where --offline then
-  # skips it). Docs address the repo, so the same flag would misread a sibling
-  # `post-body.md` as a page on the site and stop checking it.
+  # The two hooks differ only in --base-url, and only because a post's
+  # `/posts/...` addresses the site rather than the repo: naming the site
+  # turns those into remote URLs, which --offline then skips instead of
+  # failing to resolve them. Docs address the repo, where the same flag would
+  # misread a sibling `post-body.md` as a page on the site and stop checking
+  # it. Neither hook is where root-relative links get verified.
   - repo: local
     hooks:
       - id: lychee-posts

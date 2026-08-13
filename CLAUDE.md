@@ -30,7 +30,7 @@ scripting your own.
   yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
   Prettier (`local` hooks running the repo's own binaries so their
   plugins/configs resolve from workspace deps), and baseline file
-  hygiene, and lychee link-checking. `pnpm lint` / `pnpm format` run the
+  hygiene, plus lychee link-checking. `pnpm lint` / `pnpm format` run the
   same tools by hand.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
@@ -39,10 +39,13 @@ scripting your own.
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
 - Link checking runs in two tiers (`lychee.toml` configures both). The
-  pre-commit hook is `--offline`: blocking, but only on what resolves
-  without a build. `.github/workflows/weekly.yml` checks external URLs
-  and root-relative links against the deployed site, never blocks a PR,
-  and reports breakage to a single rolling issue.
+  pre-commit hooks are `--offline`: blocking, but only on what resolves
+  without a build. `.github/workflows/weekly.yml` builds the site and
+  checks every link on every published page, plus the repo docs that
+  never reach `dist/`. It never blocks a PR and reports breakage to a
+  single rolling issue. A link that is correct but unverifiable from a
+  CI runner (bot protection) belongs in `lychee.toml`'s `exclude`; a
+  link that is broken belongs fixed.
 - Custom skills under `.claude/skills/` — catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.
