@@ -6,14 +6,12 @@ description: Draft a review post — book, paper, or video game — starting fro
 # Review draft
 
 A review is an **argument**. It answers one question — why should someone
-read, read, or play this, or not — and every claim it makes rides on a
-specific moment from the work. The take is what the review is; the plot or
-the contents appear as its evidence.
+read, read, or play this, or not — and every claim rides on a specific
+moment from the work. The plot and the contents appear as evidence.
 
 Reviews are a **style of article** built on a claim and its evidence. This
 skill is a sibling of the story pipeline (`outline-draft` → `post-draft`) and
-stands alone: the spine is a claim with its evidence, and the review runs
-start to finish here.
+runs start to finish here.
 
 A review is a **short article** — argued and evidenced, but small. That makes
 it distinct from a **note**: it syndicates today as a title-and-link teaser via
@@ -85,8 +83,7 @@ Per object type:
   no game highlights. "None exist" is a real answer that settles the question.
   **Keep length as a pacing claim** — say the middle drags, or that it ends
   before it wears out. Media Log's `Main Story (hrs)` informs the read and
-  stays in the notes; hours-to-credits varies by player, so pacing is the
-  form the argument can use.
+  stays in the notes; hours-to-credits varies by player.
 
 Picking up an idea issue (`/review-draft #N`): `## Spark` is the kernel, the
 open questions are the discovery anchors, and the object type comes from the
@@ -146,16 +143,16 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   *lens* on the work. If the draft would survive deleting the object, it has
   drifted into a personal essay — a different post, not this review. Keep the
   philosophy at the mechanics of the work.
-- **Thematic order.** Organise by the spine's
-  points. Walking the reader through the plot or the table of contents in order
-  is the surest tell that the draft has slid back into report.
+- **Thematic order.** Organise by the spine's points. Walking the reader
+  through the plot or the table of contents in order is the surest tell that
+  the draft has slid back into report.
 - **Open on the argument.** Latch the opener on a concrete moment that *delivers
   the thesis* — same latch-first rule as a story, and here the hook carries the
   claim.
 - **Firm claim, honest tail.** State the recommendation flat — the verdict is
-  where the review commits. The *close* still lands on the
-  admitted gap. This is how a clear recommendation and the
-  corpus's honest-limitation signature coexist: confident spine, honest ending.
+  where the review commits. The *close* still lands on the admitted gap. This
+  is how a clear recommendation and the corpus's honest-limitation signature
+  coexist: confident spine, honest ending.
 - **Don't manufacture stakes.** Motivation and feeling are claims like any
   other ([[feedback_post_claims_provable]]). Don't invent why the author read
   it, that it haunted them, or a dramatic inner bind — the honest provenance is
@@ -210,8 +207,7 @@ Instagram check — with review-specific notes:
   art). dlvr.it covers the auto surfaces on publish
   (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
   `/syndicate-instagram <slug>` once live.
-- A future `pubDatetime` gates publication
-  (`docs/reference/post-frontmatter.md`).
+- A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
 
 ## When to invoke
 

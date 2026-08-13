@@ -21,8 +21,8 @@ applied from their single homes.
 ## 1. Body — write the scenes
 
 Render the outline's beats as story, scene by scene. The outline is the
-skeleton: **a beat expands into a passage.** Each beat becomes
-lived prose — a moment to stand in, fact braided with feeling,
+skeleton: **a beat expands into a passage.** Each beat becomes lived
+prose — a moment to stand in, fact braided with feeling,
 transitions that carry the reader from one beat to the next. The post
 reads as *more* than its outline; *confirmed when* every paragraph
 carries something the outline can't (a scene, the braid, a transition),

@@ -58,10 +58,8 @@ bio-link note. Write nothing to the repo.
 ## Notes
 
 - **Voice.** Match the post's own register — conversational and first-person.
-  This is alunduil's own surface, and the post it derives from sets the
-  register.
-- **Canonical-first.** The post links back to the blog, which stays the
-  canonical home.
+  This is alunduil's own surface.
+- **Canonical-first.** The post links back to the blog, which stays canonical.
 - **Trigger.** `/post-draft` flags image-prone posts as Instagram candidates;
   run this once the post is live (the link-back needs the published URL).
   dlvr.it covers the auto surfaces on publish.

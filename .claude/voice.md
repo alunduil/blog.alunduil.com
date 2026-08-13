@@ -25,11 +25,9 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
 
 ## Sentence-level rules
 
-- **Retrospect observes.** Looking back is an account of what happened,
-  carried by ownership ("I did X") and stated flat.
+- **Retrospect observes.** Ownership ("I did X"), stated flat.
   ([[feedback_no_blame_in_retrospect]])
-- **Show the mechanism.** "Without X, Y happens" — the sentence carries
-  how one thing led to another.
+- **Show the mechanism.** "Without X, Y happens."
   ([[feedback_causal_narrative_over_contrast]])
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
@@ -42,8 +40,7 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   or comma-splice that hooks two complete thoughts together. Length comes
   from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
   Compound predicates on one subject are fine ("he shows X and stops
-  there"); length rides on subordination, which is **Flow** in the
-  register below.
+  there"); see **Flow** in the register below.
 
 ## Register: poetic without being poetry
 
@@ -122,8 +119,8 @@ instructional register (below), n=1 and provisional.
   values as figures.
 - **Very low formatting density.** Zero bold, zero bullet lists in the
   body across all four posts — prose carries the structure. Links are
-  inline or reference-style. Reach for a list or bold
-  only when the content is genuinely tabular, and expect not to.
+  inline or reference-style. Reach for a list or bold only when the
+  content is genuinely tabular, and expect not to.
 - **Sentence length swings.** ~13–16 words average, but the real range
   runs 3→47: long flowing sentences that carry weight in cadence, then a
   short declarative that lands it ("The drive did."; "It was never my
@@ -158,8 +155,8 @@ instructional register (below), n=1 and provisional.
   `---` divider is optional but recurs.
 - Plainer and denser with concrete operational detail (cadences, counts,
   dataset names). Expository rather than scene-built.
-- Still first-person and still hedged — the register is plainer while the
-  confidence stays bounded. The admitted-gap closer holds here too.
+- Still first-person and still hedged; only the register is plainer. The
+  admitted-gap closer holds here too.
 - Present tense for current practice, past tense for what changed.
 
 ## Register: how-to / instructional
@@ -177,10 +174,10 @@ calibration; treat as provisional, recalibrate as more land).
   artefact). The primary failure is "documentation poetry": prose
   wrapped around a code block that doesn't change what the reader types
   — what the narrative register produces if applied here. Keep the steps
-  contiguous; the trailing notes are that temptation.
-- Still first person and light. Keep one compressed honest-limit close
-  (a caveat, sized to a sentence or two). Where an
-  exact version exists, link it as the recovery reference.
+  contiguous; trailing notes are where that prose creeps back.
+- Still first person and light. Keep one compressed honest-limit close (a
+  caveat, sized to a sentence or two). Where an exact version exists, link
+  it as the recovery reference.
 - Read <https://diataxis.fr/how-to-guides/> for the format; the host
   `diataxis` skill carries fuller anti-patterns. Neither travels to web
   sessions, so this section is the portable copy.

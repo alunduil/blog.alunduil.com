@@ -117,8 +117,7 @@ authoritative description. The writing pipeline:
 - `outline-draft` → `post-draft` — story posts: a scene-and-beat outline
   gated at approval, then prose. `/outline-draft [#N]`, `/post-draft <slug>`.
 - `review-draft` — book/paper/game reviews (a claim and its evidence), a
-  sibling of the story pipeline.
-  `/review-draft [#N|title|path]`.
+  sibling of the story pipeline. `/review-draft [#N|title|path]`.
 
 Utilities:
 

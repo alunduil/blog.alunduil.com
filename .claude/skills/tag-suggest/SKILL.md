@@ -29,7 +29,7 @@ Scan the full corpus including `_<engine>/` archives. AstroPaper's loader exclud
 Read the target post — frontmatter + body. Then propose **2–3 tags** subject to:
 
 - **Existing matches win.** If `reading` covers the topic, propose `reading`.
-- **Content topics only.** A tag answers "what is this post *about*?" — the subject matter and nothing else. See `feedback_tags_are_content_only.md`. Category, era, format, and draft state live in directory structure (`_hakyll/`) and schema fields (`draft`, `featured`), so those signals reach the site from there.
+- **Content topics only.** A tag answers "what is this post *about*?". See `feedback_tags_are_content_only.md`. Category, era, format, and draft state live in directory structure (`_hakyll/`) and schema fields (`draft`, `featured`).
 - **Soft cap 3.** Propose only tags that earn their place; three is a ceiling.
 - **Near-duplicate check.** Before proposing a net-new tag, scan the inventory for morphological neighbours: singular/plural (`book` vs `books`), gerund/noun (`reading` vs `reads`), hyphenation (`decision-making` vs `decisionmaking`), capitalisation (`Astro` vs `astro`). If a neighbour exists, justify why the new tag is meaningfully distinct or fold into the existing one.
 

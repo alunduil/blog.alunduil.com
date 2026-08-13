@@ -22,8 +22,7 @@ an approved outline and hands the prose to `post-draft`.
 
 ## 1. Substance
 
-Ground the post in lived experience. Ask 3–5 anchor questions before
-building anything.
+Ground the post in lived experience. Ask 3–5 anchor questions.
 
 For methodology / practice posts:
 
@@ -74,9 +73,8 @@ Criteria:
   at a glance.
 - **Anchors as parentheticals.** Dates, PR and issue numbers, provable
   facts ride in `*(...)*` on the beat they support.
-- **Scenes are moments.** Name a scene for the moment it
-  drops the reader into; a section-label name ("What changed") has
-  drifted toward an essay.
+- **Scenes are moments.** Name a scene for the moment it drops the reader
+  into; a section-label name ("What changed") has drifted toward an essay.
 - **Arc in the scene order.** First scene furthest from the change, last
   arrives at it. Give each scene a one-line *role* — the opposite, the
   lift, the turn, the landing — so the arc reads in the headings alone.

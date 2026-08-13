@@ -7,7 +7,7 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
-**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, so the answer is what the themes get built from, and holding them back keeps the questions visible.
+**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
 ## 1. Collect (script)
 
@@ -76,7 +76,7 @@ Mechanical patterns to extract before synthesis:
 
 ## 3. Synthesize themes (Claude)
 
-Cluster items across all sources into **4–8 themes** that might seed a blog post. Select the strongest signals; the cap is the point. Each theme:
+Cluster items across all sources into **4–8 themes** that might seed a blog post. Select the strongest signals. Each theme:
 
 - 1–2 sentence summary of what makes it interesting.
 - Bullet list of supporting items (link + terse identifier), ordered **neutrally** — date desc within the theme. Engagement weighting happens in §4.
