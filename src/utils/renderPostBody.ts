@@ -1,8 +1,7 @@
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
-import type { CollectionEntry } from "astro:content";
 import { remarkPlugins } from "./markdownPlugins";
 
-const processor = createMarkdownProcessor({
+const processorPromise = createMarkdownProcessor({
   remarkPlugins,
   // Shiki carries its colours in CSS variables here (dual themes, no default
   // colour), and a feed reader supplies neither the stylesheet nor the
@@ -12,14 +11,17 @@ const processor = createMarkdownProcessor({
 
 const LINK_ATTRIBUTE = /(\s(?:href|src)=")([^"]*)(")/g;
 
+/** Root-relative, excluding protocol-relative, or a bare fragment. */
+const SITE_RELATIVE = /^(\/(?!\/)|#)/;
+
 /**
- * Resolve root-relative and fragment-only URLs against the post's canonical
- * URL. A feed reader renders the item outside the site, where such a URL would
- * otherwise resolve against the reader's own document.
+ * Resolve site-relative URLs against the post's canonical URL. A feed reader
+ * renders the item outside the site, where such a URL would otherwise resolve
+ * against the reader's own document.
  */
 function absolutizeLinks(html: string, canonicalURL: URL) {
   return html.replace(LINK_ATTRIBUTE, (attribute, prefix, url, suffix) =>
-    /^(\/(?!\/)|#)/.test(url)
+    SITE_RELATIVE.test(url)
       ? `${prefix}${new URL(url, canonicalURL).href}${suffix}`
       : attribute
   );
@@ -34,9 +36,10 @@ function absolutizeLinks(html: string, canonicalURL: URL) {
  * instead (see `docs/reference/post-body.md`).
  */
 export default async function renderPostBody(
-  post: CollectionEntry<"blog">,
+  body: string,
   canonicalURL: URL
-) {
-  const { code } = await (await processor).render(post.body ?? "");
+): Promise<string> {
+  const processor = await processorPromise;
+  const { code } = await processor.render(body);
   return absolutizeLinks(code, canonicalURL);
 }

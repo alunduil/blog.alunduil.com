@@ -23,7 +23,7 @@ export async function GET() {
           title: post.data.title,
           description: post.data.description,
           pubDate: new Date(post.data.modDatetime ?? post.data.pubDatetime),
-          content: await renderPostBody(post, canonicalURL),
+          content: await renderPostBody(post.body ?? "", canonicalURL),
         };
       })
     ),
