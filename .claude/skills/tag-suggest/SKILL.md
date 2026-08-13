@@ -31,9 +31,7 @@ Read the target post — frontmatter + body. Then propose **2–3 tags** subject
 - **Existing matches win.** If `reading` covers the topic, propose `reading`.
 - **Content topics only.** A tag answers "what is this post *about*?" — the subject matter and nothing else. See `feedback_tags_are_content_only.md`. Category, era, format, and draft state live in directory structure (`_hakyll/`) and schema fields (`draft`, `featured`), so those signals reach the site from there.
 - **Soft cap 3.** Propose only tags that earn their place; three is a ceiling.
-- **Near-duplicate check.** Before proposing a net-new tag, scan the inventory for morphological neighbours: singular/plural (`book` vs `books`), gerund/noun (`reading` vs `reads`), hyphenation (`color-schemes` vs `colorschemes`), capitalisation (`Astro` vs `astro`). If a neighbour exists, justify why the new tag is meaningfully distinct or fold into the existing one.
-
-Upstream tutorial posts contribute tags like `docs`, `release`, `FAQ`, `configuration`, `color-schemes`. Treat them as part of the inventory — they're rendered on the live site — and propose them for user-authored content only when the post is genuinely about that topic.
+- **Near-duplicate check.** Before proposing a net-new tag, scan the inventory for morphological neighbours: singular/plural (`book` vs `books`), gerund/noun (`reading` vs `reads`), hyphenation (`decision-making` vs `decisionmaking`), capitalisation (`Astro` vs `astro`). If a neighbour exists, justify why the new tag is meaningfully distinct or fold into the existing one.
 
 ## 4. Report + confirm
 
