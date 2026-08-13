@@ -42,10 +42,9 @@ scripting your own.
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on
   every published page plus the repo docs that never reach `dist/`,
-  blocks nothing, and reports to one rolling issue. `exclude` starts
-  empty of bot-blocked links and grows only from reports: a link earns a
-  place by failing a run and then proving good away from the host
-  refusing it. A broken link belongs fixed.
+  blocks nothing, and reports to one rolling issue. Adding to `exclude`
+  takes a failing run plus proof from off the blocking host; the rule
+  sits with the list.
 - Custom skills under `.claude/skills/` — catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.

@@ -47,6 +47,9 @@ repos:
   # remote URLs that --offline skips rather than fails to resolve. Docs
   # address the repo, where the same flag would misread a sibling
   # `post-body.md` as a page on the site and stop checking it.
+  #
+  # The two split the markdown between them on one pattern, shared so they
+  # can't drift apart and leave a file neither hook checks.
   - repo: local
     hooks:
       - id: lychee-posts
@@ -56,14 +59,14 @@ repos:
           --base-url https://blog.alunduil.com
         language: system
         types: [markdown]
-        files: ^src/data/blog/
+        files: &post_sources ^src/data/blog/
 
       - id: lychee-docs
         name: Check links in docs with lychee
         entry: lychee --config lychee.toml --no-progress --offline
         language: system
         types: [markdown]
-        exclude: ^src/data/blog/
+        exclude: *post_sources
 
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.

@@ -18,6 +18,7 @@ ASSET="lychee-${ARCH}.tar.gz"
 MEMBER="lychee-${ARCH}/lychee"
 BASE="https://github.com/lycheeverse/lychee/releases/download/lychee-${LYCHEE_VERSION}"
 BIN_DIR="${HOME}/.local/bin"
+BIN="${BIN_DIR}/lychee"
 
 tmp="$(mktemp -d)"
 trap 'rm -rf "${tmp}"' EXIT
@@ -33,11 +34,11 @@ curl_get "${ASSET}.sha256"
 
 tar -xzf "${tmp}/${ASSET}" -C "${tmp}" "${MEMBER}"
 mkdir -p "${BIN_DIR}"
-install -m 0755 "${tmp}/${MEMBER}" "${BIN_DIR}/lychee"
+install -m 0755 "${tmp}/${MEMBER}" "${BIN}"
 
 # Later steps in the same job resolve `lychee` from PATH.
 if [[ -n "${GITHUB_ACTIONS:-}" ]]; then
   echo "${BIN_DIR}" >>"${GITHUB_PATH}"
 fi
 
-"${BIN_DIR}/lychee" --version
+"${BIN}" --version
