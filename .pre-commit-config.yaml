@@ -48,8 +48,8 @@ repos:
   # address the repo, where the same flag would misread a sibling
   # `post-body.md` as a page on the site and stop checking it.
   #
-  # The two split the markdown between them on one pattern, shared so they
-  # can't drift apart and leave a file neither hook checks.
+  # They divide the markdown on one shared pattern. A file falling between two
+  # copies of it would be checked by neither hook, and nothing would say so.
   - repo: local
     hooks:
       - id: lychee-posts

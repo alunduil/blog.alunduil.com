@@ -5,22 +5,17 @@ max_cache_age = "6d"
 # A transient 5xx or a rate-limit is not link rot. Caching one would keep a
 # false report open for the life of the entry.
 cache_exclude_status = "429, 500.."
+# Reaches transport failures only. lychee never retries a status it can read,
+# however long it is given.
 retry_wait_time = 5
-# Every page carries the same nav and footer, so a handful of hosts get asked
-# for the same URLs dozens of times over. Fewer and more patient requests than
-# the defaults, which read a slow answer under that load as a dead link.
-max_concurrency = 8
-timeout = 30
 include_fragments = "anchor-only"
 
-# Earning a place here takes a weekly report showing the link fail, and then
-# proof it is good anyway — from somewhere other than the host doing the
-# blocking, which describes a URL that never existed in exactly the same words
-# as a real one. Record that proof beside the entry; it can't be re-derived
-# from the URL. One URL at a time, never a domain: a domain also stops
-# reporting the day that link truly breaks, and every future link to the same
-# site. Retries are no help, either — lychee retries transport failures, never
-# a refusal it can read.
+# Earning a place here takes a report showing the link fail, then proof it is
+# good anyway from somewhere other than the host doing the blocking — which
+# answers for a URL that never existed in the same words as for a real one.
+# Record that proof beside the entry; it can't be re-derived from the URL. One
+# URL at a time, never a domain: a domain also stops reporting the day that
+# link truly breaks, and every future link to the same site.
 exclude = [
   # Not bot protection: the 404 page's own canonical URL, a 404 by design.
   "^https://blog\\.alunduil\\.com/404/$",
