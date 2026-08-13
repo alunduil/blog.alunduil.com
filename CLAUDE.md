@@ -18,10 +18,10 @@ the work needs.
 This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
-- Package manager: pnpm. Version pinned in the withastro/action
-  `package-manager:` field of `.github/workflows/astro.yml` and
-  `pages.yml`, kept current by the Renovate custom manager in
-  `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
+- Package manager: pnpm, pinned once in `package.json`'s `packageManager`
+  field — Renovate tracks it there, and withastro/action reads it after
+  auto-detecting `pnpm-lock.yaml`. `pnpm-workspace.yaml` holds workspace
+  config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).

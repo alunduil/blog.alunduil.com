@@ -7,6 +7,7 @@
   ],
   "timezone": "Europe/London",
   "reviewers": ["alunduil"],
+  "labels": ["dependencies"],
   "pre-commit": {
     "enabled": true
   },
@@ -36,14 +37,6 @@
       "matchStrings": [
         "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION=\"(?<currentValue>.+?)\""
       ]
-    },
-    {
-      "description": "A withastro/action `with:` input, out of reach of the annotation-based githubActionsVersions preset.",
-      "customType": "regex",
-      "managerFilePatterns": ["/^\\.github/workflows/(astro|pages)\\.yml$/"],
-      "matchStrings": ["package-manager:\\s*pnpm@(?<currentValue>[\\d.]+)"],
-      "depNameTemplate": "pnpm",
-      "datasourceTemplate": "npm"
     }
   ]
 }
