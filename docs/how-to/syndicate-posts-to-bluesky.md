@@ -37,12 +37,11 @@ intent rather than the exact wording.
 
 ## Choose the summary over the full body
 
-Each feed item carries two blocks of text: `description`, the one-line
-hook, and `content:encoded`, the whole post rendered for feed readers.
-dlvr.it calls them Summary and Full Body, and the feed's advanced
-settings pick which one a route reaches for first. Set this feed to
-prefer summary content. Preferring full content posts the whole article,
-cut off at the character limit.
+Set this feed to prefer summary content, under its advanced settings.
+Each item carries two blocks of text: `description`, the one-line hook,
+and `content:encoded`, the whole post rendered for feed readers. dlvr.it
+calls them Summary and Full Body. A route preferring full content posts
+the whole article, cut off at the character limit.
 
 ## Set the post format
 

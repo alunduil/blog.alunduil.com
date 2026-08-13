@@ -3,10 +3,8 @@ import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 
 /**
- * Remark plugins applied to post bodies.
- *
- * Shared between the site build and the RSS feed's `content:encoded`, so a
- * table of contents renders the same way in a feed reader as on the page.
+ * The site build and the RSS feed share this list, so a table of contents
+ * renders the same in a feed reader as on the page.
  */
 export const remarkPlugins: RemarkPlugins = [
   remarkToc,

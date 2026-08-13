@@ -3,21 +3,19 @@ import { remarkPlugins } from "./markdownPlugins";
 
 const processorPromise = createMarkdownProcessor({
   remarkPlugins,
-  // Shiki carries its colours in CSS variables here (dual themes, no default
-  // colour), and a feed reader supplies neither the stylesheet nor the
-  // variables, so highlighting would arrive as markup around uncoloured text.
+  // The site's dual Shiki themes carry their colours in CSS variables a feed
+  // reader never loads, so highlighting arrives as markup around plain text.
   syntaxHighlight: false,
 });
 
 const LINK_ATTRIBUTE = /(\s(?:href|src)=")([^"]*)(")/g;
 
-/** Root-relative, excluding protocol-relative, or a bare fragment. */
+/** Root-relative or a bare fragment; a protocol-relative `//host` is absolute. */
 const SITE_RELATIVE = /^(\/(?!\/)|#)/;
 
 /**
- * Resolve site-relative URLs against the post's canonical URL. A feed reader
- * renders the item outside the site, where such a URL would otherwise resolve
- * against the reader's own document.
+ * A feed reader renders the item outside the site, so a site-relative URL
+ * would otherwise resolve against the reader's own document.
  */
 function absolutizeLinks(html: string, canonicalURL: URL) {
   return html.replace(LINK_ATTRIBUTE, (attribute, prefix, url, suffix) =>
@@ -30,10 +28,9 @@ function absolutizeLinks(html: string, canonicalURL: URL) {
 /**
  * Render a post body to HTML that stands alone outside the site.
  *
- * Images under `src/assets/` don't survive: they reach the image service
- * through the page build, not this processor, so their `@/assets/…` and
- * relative paths render unresolved. Post bodies use `public/` or remote images
- * instead (see `docs/reference/post-body.md`).
+ * Images under `src/assets/` render unresolved: they reach the image service
+ * through the page build, which this processor is no part of. See
+ * `docs/reference/post-body.md`.
  */
 export default async function renderPostBody(
   body: string,
