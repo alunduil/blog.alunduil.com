@@ -1,0 +1,30 @@
+# Replaces Microsoft.DateFormat, which mandates US "Month DD, YYYY".
+# Prose dates match the RFC 3339 frontmatter timestamps instead.
+#
+# Only capitalized month names match. A date in prose is always
+# capitalized, so requiring it keeps "may", "march", and "august" as
+# ordinary words out of the match space entirely. Both branches need a
+# day and a four-digit year, so a bare month or a bare number is never a
+# candidate either.
+#
+# `raw` rather than `tokens`: Vale concatenates raw entries into one
+# expression, which lets the two branches wrap across short lines.
+
+extends: existence
+message: "Use an RFC 3339 date (2016-07-31), not '%s'."
+level: error
+ignorecase: false
+nonword: true
+raw:
+  # Month DD, YYYY — comma and ordinal suffix optional, so "May 5 2026"
+  # and "June 4th, 2026" land alongside "July 31, 2016".
+  - '\b(?:'
+  - '(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|'
+  - 'Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|'
+  - 'Dec(?:ember)?)\.? \d{1,2}(?:st|nd|rd|th)?,? \d{4}'
+  # DD Month YYYY.
+  - '|\d{1,2}(?:st|nd|rd|th)? '
+  - '(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|'
+  - 'Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|'
+  - 'Dec(?:ember)?)\.? \d{4}'
+  - ')\b'
