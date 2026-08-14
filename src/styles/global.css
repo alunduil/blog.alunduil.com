@@ -26,6 +26,7 @@ html[data-theme="dark"] {
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  --font-wordmark: var(--font-ibm-plex-sans);
 }
 
 @layer base {

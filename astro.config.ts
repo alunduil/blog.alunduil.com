@@ -1,4 +1,4 @@
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
@@ -17,6 +17,19 @@ export default defineConfig({
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),
+  ],
+  // The header wordmark only; the OG card sets its own IBM Plex Sans at
+  // build time through src/utils/loadGoogleFont.ts.
+  fonts: [
+    {
+      name: "IBM Plex Sans",
+      cssVariable: "--font-ibm-plex-sans",
+      provider: fontProviders.google(),
+      weights: [700],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["sans-serif"],
+    },
   ],
   markdown: {
     remarkPlugins,
