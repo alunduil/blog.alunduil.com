@@ -38,8 +38,7 @@ const empty: Webmentions = {
 const PER_PAGE = 100;
 
 // webmention.io matches targets exactly, so a mention filed against one
-// spelling is invisible to a query for the other. Senders resolve to the
-// canonical trailing-slash URL, while getPath builds the bare path.
+// spelling of a URL is invisible to a query for the other.
 function targetSpellings(target: string): string[] {
   return target.endsWith("/")
     ? [target, target.slice(0, -1)]
