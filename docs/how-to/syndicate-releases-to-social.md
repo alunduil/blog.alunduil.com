@@ -14,27 +14,22 @@ for project news, the way the blog is for everything else.
 
 ## Before you start
 
-- A dlvr.it account with the blog's feed already routed to its socials,
-  set up per [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
-  or [Syndicate posts to Threads](syndicate-posts-to-threads.md).
+- A dlvr.it account with its socials connected, per
+  [Set up dlvr.it](set-up-dlvrit.md). This adds a source, not a
+  destination, so the socials need no further authorisation.
 - The project's releases feed. GitHub publishes one for every public
   repository at `https://github.com/<owner>/<repo>/releases.atom`, with
   no setting to enable. It carries the ten most recent releases, each
   entry holding the tag as its title, a link to the release page, and
   the rendered release notes.
-- Room on the plan for one more feed. This adds a source, not a social
-  profile, so the profile count is unchanged.
-
-The dlvr.it labels below may shift as its interface changes; match the
-intent rather than the exact wording.
 
 ## Add the releases feed
 
 1. Open the Feeds tab and add the URL, for example
    `https://github.com/alunduil/zfs-replicate/releases.atom`.
 2. Route the feed to the same socials the blog's feed already posts to.
-3. On the first sync, limit how many existing items post. The feed
-   arrives holding ten past releases, and every one of them is old news.
+3. Limit the first sync. The feed arrives holding ten past releases, and
+   every one of them is old news.
 
 ## Post the title and link, not the release notes
 
@@ -52,9 +47,6 @@ zfs-replicate v4.1.0
 https://github.com/alunduil/zfs-replicate/releases/tag/v4.1.0
 ```
 
-Anyone who wants the detail follows the link to the release page, where
-the notes already sit.
-
 ## Verify
 
 1. Cut a release, or trigger a manual feed check.
@@ -66,13 +58,10 @@ short delay is not a failure.
 
 ## Notice when it breaks
 
-Nothing announces a release that failed to announce itself, so breakage
-has to be observable:
-
-- dlvr.it emails on feed or posting errors and shows route health on its
-  dashboard. Keep those emails reaching an inbox you read.
-- After cutting a release, confirm it reached the socials. A missing
-  post is the signal that the route or the feed has stopped working.
+After cutting a release, confirm it reached the socials. A missing post
+is the signal that the route or the feed has stopped working. The
+standing alerts that catch the rest are in
+[Set up dlvr.it](set-up-dlvrit.md#notice-when-it-breaks).
 
 ## Add another project
 
