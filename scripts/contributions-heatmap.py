@@ -3,7 +3,8 @@
 
 Fetches the author's GitHub contribution calendar (GraphQL, one year per
 request), buckets it by week, and renders a weeks heatmap to the post's
-asset path.
+asset paths, one per site theme. The `-dark` filename is the pairing
+convention; see `docs/reference/post-body.md`.
 
 Run from the repo root:
 
@@ -16,6 +17,8 @@ matched to the post's fixed dates; bump DATA_THROUGH / YEAR_END to refresh.
 import datetime
 import json
 import subprocess
+from dataclasses import dataclass
+from typing import Optional, Sequence
 
 import matplotlib
 
@@ -23,14 +26,70 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import numpy.ma as ma  # noqa: E402
-from matplotlib.colors import PowerNorm  # noqa: E402
+from matplotlib.colors import LinearSegmentedColormap, PowerNorm  # noqa: E402
+
+# Element ids are salted per process unless pinned, so an unchanged figure
+# would otherwise rewrite the whole asset on every refresh.
+matplotlib.rcParams["svg.hashsalt"] = "contributions-heatmap"
 
 LOGIN = "alunduil"
 YEAR_START = 2010
 YEAR_END = 2026
 DATA_THROUGH = datetime.date(2026, 6, 30)  # weeks after this render blank
 GAMMA = 0.45  # square-root-ish colour scale: decade stays visible vs 2026
-OUTPUT = "public/assets/i-built-the-machine-twice-contributions.svg"
+ASSET_STEM = "public/assets/i-built-the-machine-twice-contributions"
+
+TICK_FONTSIZE = 8
+MONTH_INITIALS = "JFMAMJJASOND"
+# Week each month starts on, approximated at 52/12 weeks per month.
+MONTH_TICKS = (2, 6, 10, 15, 19, 24, 28, 32, 37, 41, 45, 50)
+# The scale is non-linear, so the bar has to name its own stops.
+SCALE_TICKS = (0, 50, 200, 500, 1000)
+
+
+@dataclass(frozen=True)
+class Theme:
+    """One rendering of the figure, matched to a site colour scheme."""
+
+    suffix: str
+    background: str  # --background; a blank week matches the page
+    foreground: str  # --foreground
+    edge: str  # cell borders, a shade off the background
+    colors: Optional[Sequence[str]]  # None keeps matplotlib's Greens
+
+    @property
+    def output(self) -> str:
+        return f"{ASSET_STEM}{self.suffix}.svg"
+
+    def colormap(self):
+        if self.colors is None:
+            cmap = plt.cm.Greens.copy()
+        else:
+            cmap = LinearSegmentedColormap.from_list("contributions", self.colors)
+        # A masked week hasn't happened yet; it should disappear.
+        cmap.set_bad(self.background)
+        return cmap
+
+
+THEMES = (
+    Theme(
+        suffix="",
+        background="#ffffff",
+        foreground="#000000",
+        edge="#e8e8e8",
+        colors=None,
+    ),
+    # Greens runs pale-to-dark, which inverts on a dark page: quiet weeks would
+    # glow and busy ones recede. This is GitHub's dark scale, anchored on the
+    # site background rather than GitHub's.
+    Theme(
+        suffix="-dark",
+        background="#212737",
+        foreground="#eaedf3",
+        edge="#343f60",
+        colors=("#212737", "#0e4429", "#006d32", "#26a641", "#39d353"),
+    ),
+)
 
 QUERY = (
     "query($login:String!,$from:DateTime!,$to:DateTime!){"
@@ -84,33 +143,57 @@ def build_grid(daily):
     return years, grid
 
 
-def render(years, grid):
-    cmap = plt.cm.Greens.copy()
-    cmap.set_bad("#ffffff")
-    norm = PowerNorm(gamma=GAMMA, vmin=0, vmax=ma.max(grid))
-    fig, ax = plt.subplots(figsize=(11, 5.4))
-    mesh = ax.pcolormesh(
-        grid, cmap=cmap, norm=norm, edgecolors="#e8e8e8", linewidth=0.4
-    )
+def style_axes(ax, years, theme):
+    """Lay the grid out as a calendar: years descending, months along the top."""
     ax.set_aspect("equal")
     ax.invert_yaxis()
     ax.set_yticks(np.arange(len(years)) + 0.5)
-    ax.set_yticklabels([str(y) for y in years], fontsize=8)
-    ax.set_xticks([2, 6, 10, 15, 19, 24, 28, 32, 37, 41, 45, 50])
-    ax.set_xticklabels(list("JFMAMJJASOND"), fontsize=8)
-    ax.tick_params(length=0)
+    ax.set_yticklabels([str(y) for y in years], fontsize=TICK_FONTSIZE)
+    ax.set_xticks(list(MONTH_TICKS))
+    ax.set_xticklabels(list(MONTH_INITIALS), fontsize=TICK_FONTSIZE)
+    ax.tick_params(length=0, colors=theme.foreground)
     ax.xaxis.tick_top()
     for spine in ax.spines.values():
         spine.set_visible(False)
-    ax.set_title("GitHub contributions by week, 2010–2026", pad=14, fontsize=11)
+
+
+def add_scale_bar(fig, ax, mesh, theme):
+    """Draw the colour key beneath the grid."""
     bar = fig.colorbar(
         mesh, ax=ax, orientation="horizontal", pad=0.05, fraction=0.04,
-        ticks=[0, 50, 200, 500, 1000],
+        ticks=list(SCALE_TICKS),
     )
-    bar.ax.set_xticklabels(["0", "50", "200", "500", "1000"], fontsize=8)
+    bar.ax.set_xticklabels(
+        [str(tick) for tick in SCALE_TICKS], fontsize=TICK_FONTSIZE
+    )
+    bar.ax.tick_params(colors=theme.foreground)
     bar.outline.set_visible(False)
+
+
+def render(years, grid, theme):
+    fig, ax = plt.subplots(figsize=(11, 5.4))
+    fig.patch.set_facecolor(theme.background)
+    ax.set_facecolor(theme.background)
+    mesh = ax.pcolormesh(
+        grid,
+        cmap=theme.colormap(),
+        norm=PowerNorm(gamma=GAMMA, vmin=0, vmax=ma.max(grid)),
+        edgecolors=theme.edge,
+        linewidth=0.4,
+    )
+    style_axes(ax, years, theme)
+    ax.set_title(
+        "GitHub contributions by week, 2010–2026", pad=14, fontsize=11,
+        color=theme.foreground,
+    )
+    add_scale_bar(fig, ax, mesh, theme)
     fig.tight_layout()
-    fig.savefig(OUTPUT, bbox_inches="tight")
+    # `Date: None` drops the generation timestamp, the other source of churn.
+    fig.savefig(
+        theme.output, bbox_inches="tight", facecolor=theme.background,
+        metadata={"Date": None},
+    )
+    plt.close(fig)
 
 
 def strip_trailing_whitespace(path):
@@ -124,9 +207,11 @@ def strip_trailing_whitespace(path):
 def main():
     daily = fetch_daily()
     years, grid = build_grid(daily)
-    render(years, grid)
-    strip_trailing_whitespace(OUTPUT)
-    print(f"wrote {OUTPUT} (weekly max {int(ma.max(grid))})")
+    for theme in THEMES:
+        render(years, grid, theme)
+        strip_trailing_whitespace(theme.output)
+        print(f"wrote {theme.output}")
+    print(f"weekly max {int(ma.max(grid))}")
 
 
 if __name__ == "__main__":

@@ -2,6 +2,7 @@ import { defineConfig, envField, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
+import rehypeThemeImages from "./src/utils/rehypeThemeImages";
 import {
   transformerNotationDiff,
   transformerNotationHighlight,
@@ -33,6 +34,9 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins,
+    // Page-only, unlike the shared `remarkPlugins`: a feed reader has no site
+    // theme, so it keeps the light variant.
+    rehypePlugins: [rehypeThemeImages],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
       themes: { light: "min-light", dark: "night-owl" },
