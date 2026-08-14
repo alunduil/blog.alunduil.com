@@ -1,3 +1,8 @@
+// The brand typeface. Read by both surfaces that render the wordmark —
+// the site header (astro.config.ts) and the OG card
+// (src/utils/loadGoogleFont.ts) — so the two cannot drift apart.
+export const BRAND_FONT = "IBM Plex Sans";
+
 export const SITE = {
   website: "https://blog.alunduil.com/",
   author: "Alex Brandt",

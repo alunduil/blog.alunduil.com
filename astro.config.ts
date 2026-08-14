@@ -8,7 +8,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
-import { SITE } from "./src/config";
+import { BRAND_FONT, SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,12 +18,12 @@ export default defineConfig({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),
   ],
-  // The header wordmark only; the OG card sets its own IBM Plex Sans at
-  // build time through src/utils/loadGoogleFont.ts.
+  // Serves the header wordmark alone, so it carries only the one weight the
+  // wordmark renders at. Body copy stays in the global mono.
   fonts: [
     {
-      name: "IBM Plex Sans",
-      cssVariable: "--font-ibm-plex-sans",
+      name: BRAND_FONT,
+      cssVariable: "--font-brand",
       provider: fontProviders.google(),
       weights: [700],
       styles: ["normal"],
