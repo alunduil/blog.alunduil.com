@@ -40,6 +40,13 @@ DATA_THROUGH = datetime.date(2026, 6, 30)  # weeks after this render blank
 GAMMA = 0.45  # square-root-ish colour scale: decade stays visible vs 2026
 ASSET_STEM = "public/assets/i-built-the-machine-twice-contributions"
 
+TICK_FONTSIZE = 8
+MONTH_INITIALS = "JFMAMJJASOND"
+# Week index each month starts on, near enough at 52/12 weeks per month.
+MONTH_TICKS = (2, 6, 10, 15, 19, 24, 28, 32, 37, 41, 45, 50)
+# The scale is non-linear, so the bar has to name its own stops.
+SCALE_TICKS = (0, 50, 200, 500, 1000)
+
 
 @dataclass(frozen=True)
 class Theme:
@@ -137,36 +144,50 @@ def build_grid(daily):
     return years, grid
 
 
-def render(years, grid, theme):
-    norm = PowerNorm(gamma=GAMMA, vmin=0, vmax=ma.max(grid))
-    fig, ax = plt.subplots(figsize=(11, 5.4))
-    fig.patch.set_facecolor(theme.background)
-    ax.set_facecolor(theme.background)
-    mesh = ax.pcolormesh(
-        grid, cmap=theme.colormap(), norm=norm, edgecolors=theme.edge,
-        linewidth=0.4,
-    )
+def style_axes(ax, years, theme):
+    """Years down the side, month initials across the top, no frame."""
     ax.set_aspect("equal")
     ax.invert_yaxis()
     ax.set_yticks(np.arange(len(years)) + 0.5)
-    ax.set_yticklabels([str(y) for y in years], fontsize=8)
-    ax.set_xticks([2, 6, 10, 15, 19, 24, 28, 32, 37, 41, 45, 50])
-    ax.set_xticklabels(list("JFMAMJJASOND"), fontsize=8)
+    ax.set_yticklabels([str(y) for y in years], fontsize=TICK_FONTSIZE)
+    ax.set_xticks(list(MONTH_TICKS))
+    ax.set_xticklabels(list(MONTH_INITIALS), fontsize=TICK_FONTSIZE)
     ax.tick_params(length=0, colors=theme.foreground)
     ax.xaxis.tick_top()
     for spine in ax.spines.values():
         spine.set_visible(False)
+
+
+def add_scale_bar(fig, ax, mesh, theme):
+    """Label the stops of the non-linear colour scale under the grid."""
+    bar = fig.colorbar(
+        mesh, ax=ax, orientation="horizontal", pad=0.05, fraction=0.04,
+        ticks=list(SCALE_TICKS),
+    )
+    bar.ax.set_xticklabels(
+        [str(tick) for tick in SCALE_TICKS], fontsize=TICK_FONTSIZE
+    )
+    bar.ax.tick_params(colors=theme.foreground)
+    bar.outline.set_visible(False)
+
+
+def render(years, grid, theme):
+    fig, ax = plt.subplots(figsize=(11, 5.4))
+    fig.patch.set_facecolor(theme.background)
+    ax.set_facecolor(theme.background)
+    mesh = ax.pcolormesh(
+        grid,
+        cmap=theme.colormap(),
+        norm=PowerNorm(gamma=GAMMA, vmin=0, vmax=ma.max(grid)),
+        edgecolors=theme.edge,
+        linewidth=0.4,
+    )
+    style_axes(ax, years, theme)
     ax.set_title(
         "GitHub contributions by week, 2010–2026", pad=14, fontsize=11,
         color=theme.foreground,
     )
-    bar = fig.colorbar(
-        mesh, ax=ax, orientation="horizontal", pad=0.05, fraction=0.04,
-        ticks=[0, 50, 200, 500, 1000],
-    )
-    bar.ax.set_xticklabels(["0", "50", "200", "500", "1000"], fontsize=8)
-    bar.ax.tick_params(colors=theme.foreground)
-    bar.outline.set_visible(False)
+    add_scale_bar(fig, ax, mesh, theme)
     fig.tight_layout()
     # `Date: None` drops the generation timestamp, the other source of churn.
     fig.savefig(

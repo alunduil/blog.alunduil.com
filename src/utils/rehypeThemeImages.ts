@@ -1,6 +1,3 @@
-import { existsSync } from "node:fs";
-import path from "node:path";
-
 /**
  * Render a post image that has a `-dark` sibling as a light and dark pair.
  *
@@ -13,9 +10,15 @@ import path from "node:path";
  * a feed reader can't see `data-theme` either, so the feed keeps the single
  * light image the body already describes.
  */
+import { existsSync } from "node:fs";
+import path from "node:path";
 
 /** The `-dark` sibling of `/assets/foo.svg` is `/assets/foo-dark.svg`. */
 const DARK_SUFFIX = "-dark";
+
+/** The other half of the contract with `src/styles/typography.css`. */
+const LIGHT_CLASS = "theme-image-light";
+const DARK_CLASS = "theme-image-dark";
 
 type HastProperties = Record<string, unknown> & {
   src?: unknown;
@@ -29,10 +32,23 @@ type HastNode = {
   children?: HastNode[];
 };
 
+/** An `img` whose `src` is known to be a string, so neither needs re-checking. */
+type ImageNode = HastNode & { properties: HastProperties & { src: string } };
+
+function asImageNode(node: HastNode): ImageNode | undefined {
+  const src = node.properties?.src;
+  if (node.tagName !== "img" || typeof src !== "string") return undefined;
+  return node as ImageNode;
+}
+
+/** Root-relative, so `public/`; a protocol-relative `//host` is remote. */
+function isPublicAsset(src: string): boolean {
+  return src.startsWith("/") && !src.startsWith("//");
+}
+
 /**
- * Only `public/` images resolve here. An image under `src/assets/` reaches the
- * page through Astro's image service, which rewrites its `src` to a hashed
- * build path this plugin has no way to pair.
+ * An image under `src/assets/` never reaches here: Astro's image service
+ * rewrites its `src` to a hashed build path with no predictable sibling.
  */
 function darkVariantPath(src: string): string | undefined {
   const extension = path.extname(src);
@@ -44,54 +60,50 @@ function darkVariantPath(src: string): string | undefined {
   return `${stem}${DARK_SUFFIX}${extension}`;
 }
 
-/** Root-relative, so `public/`; a protocol-relative `//host` is remote. */
-function isPublicAsset(src: string): boolean {
-  return src.startsWith("/") && !src.startsWith("//");
-}
-
-function withClass(
-  properties: HastProperties,
-  className: string
-): HastProperties {
-  const existing = Array.isArray(properties.className)
-    ? properties.className
-    : [];
-  return { ...properties, className: [...existing, className] };
-}
-
 /**
  * Astro bundles `astro.config.ts` and its imports into a single module at the
  * project root, so `import.meta.url` points there rather than at this file.
- * The working directory is the reliable anchor for the `public/` lookup.
+ * The working directory is the reliable anchor for the lookup.
  */
-function hasDarkVariant(darkSrc: string): boolean {
-  return existsSync(path.join(process.cwd(), "public", darkSrc));
+function existsInPublic(src: string): boolean {
+  return existsSync(path.join(process.cwd(), "public", src));
+}
+
+/** One half of the pair: the original image, reclassed and repointed. */
+function variantImage(
+  image: ImageNode,
+  className: string,
+  src: string
+): HastNode {
+  const { properties } = image;
+  const classNames = Array.isArray(properties.className)
+    ? properties.className
+    : [];
+
+  return {
+    ...image,
+    properties: { ...properties, className: [...classNames, className], src },
+  };
 }
 
 function themeImagePair(node: HastNode): HastNode[] | undefined {
-  if (node.tagName !== "img") return undefined;
+  const image = asImageNode(node);
+  if (!image) return undefined;
 
-  const properties = node.properties;
-  const src = properties?.src;
-  if (typeof src !== "string" || !isPublicAsset(src)) return undefined;
+  const { src } = image.properties;
+  if (!isPublicAsset(src)) return undefined;
 
   const darkSrc = darkVariantPath(src);
-  if (!darkSrc || !hasDarkVariant(darkSrc)) return undefined;
+  if (!darkSrc || !existsInPublic(darkSrc)) return undefined;
 
   return [
-    { ...node, properties: withClass(properties!, "theme-image-light") },
-    {
-      ...node,
-      properties: {
-        ...withClass(properties!, "theme-image-dark"),
-        src: darkSrc,
-      },
-    },
+    variantImage(image, LIGHT_CLASS, src),
+    variantImage(image, DARK_CLASS, darkSrc),
   ];
 }
 
 /** Reverse order so splicing a pair in doesn't shift the indices still to visit. */
-function transform(node: HastNode): void {
+function pairImagesIn(node: HastNode): void {
   const children = node.children;
   if (!children) return;
 
@@ -99,7 +111,7 @@ function transform(node: HastNode): void {
     const child = children[index];
     if (child.type !== "element") continue;
 
-    transform(child);
+    pairImagesIn(child);
 
     const pair = themeImagePair(child);
     if (pair) children.splice(index, 1, ...pair);
@@ -107,5 +119,5 @@ function transform(node: HastNode): void {
 }
 
 export default function rehypeThemeImages() {
-  return (tree: HastNode) => transform(tree);
+  return pairImagesIn;
 }
