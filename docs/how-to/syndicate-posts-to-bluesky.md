@@ -43,27 +43,28 @@ and `content:encoded`, the whole post rendered for feed readers. dlvr.it
 calls them Summary and Full Body. A route preferring full content posts
 the whole article, cut off at the character limit.
 
-## Set the post format
+## Keep the default post format
 
-Match the canonical shape: title, the one-line hook, and the link back.
-In the route's post template, build the message from the feed's title
-and description fields, and let dlvr.it append the canonical link. A
-finished post reads roughly:
+Leave the route's post template alone. By default it posts the item's
+title as the message and attaches a link card built from the post's
+`description` and social image:
 
 ```text
-How I Back Up — <the post's one-line description>
-https://blog.alunduil.com/posts/how-i-back-up
+How I Back Up
+[link card: title, the post's one-line hook, social image]
 ```
 
-Bluesky allows 300 characters, and the link counts against that, so keep
-the message lean—a title, hook, and canonical URL fit, but a long
-description may need trimming. Write for the reader, not the limit, and
-add to it only when a later review shows the need.
+Composing a richer message repeats what the card already shows. dlvr.it
+also shortens the link: the card points at a `dlvr.it` URL that
+redirects to the canonical one with `utm_source` and `utm_medium`
+appended.
 
 ## Verify
 
 1. Trigger a manual check, or wait for the next post to publish.
-2. Confirm a Bluesky post appears that points at the canonical URL.
+2. Confirm a Bluesky post appears for it. The visible link points at
+   `dlvr.it`, so follow the redirect to confirm it lands on the
+   canonical URL.
 
 On the free tier, dlvr.it polls the feed every six hours, so a new post
 can take that long to appear—a short delay is not a failure.
