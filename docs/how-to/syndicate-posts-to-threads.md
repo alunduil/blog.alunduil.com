@@ -63,10 +63,5 @@ later review shows the need.
 dlvr.it checks the feed on a schedule rather than on publish, so a new
 post appears at the next check—a short delay is not a failure.
 
-## Notice when it breaks
-
-Once a month, or after publishing, confirm the latest post reached
-Threads. A missing post is the signal that the route, the Threads
-authorisation, or the feed has stopped working. The standing alerts that
-catch the rest are in
-[Set up dlvr.it](set-up-dlvrit.md#notice-when-it-breaks).
+A post that never arrives points at the route, the Threads
+authorisation, or the feed.

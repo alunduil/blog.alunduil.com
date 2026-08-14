@@ -65,13 +65,5 @@ appended.
 dlvr.it checks the feed on a schedule rather than on publish, so a new
 post appears at the next check—a short delay is not a failure.
 
-## Notice when it breaks
-
-Once a month, or after publishing, confirm the latest post reached
-Bluesky. A missing post is the signal that the route, the Bluesky app
-password, or the feed has stopped working. The standing alerts that
-catch the rest are in
-[Set up dlvr.it](set-up-dlvrit.md#notice-when-it-breaks).
-
-Bluesky runs on the open atproto protocol, so a vendor-neutral forwarder
-or a small self-hosted poster can take over this route on its own.
+A post that never arrives points at the route, the Bluesky app password,
+or the feed.
