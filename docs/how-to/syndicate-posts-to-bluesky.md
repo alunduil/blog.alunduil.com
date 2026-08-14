@@ -12,10 +12,7 @@ the mechanism is recorded in
   carries each post's title, description, full body, and canonical link,
   and it excludes future-dated (scheduled) posts, so nothing syndicates
   before its `pubDatetime`.
-- A dlvr.it account; the free tier covers this blog's volume.
-
-The dlvr.it labels below may shift as its interface changes; match the
-intent rather than the exact wording.
+- A dlvr.it account, per [Set up dlvr.it](set-up-dlvrit.md).
 
 ## Connect Bluesky to dlvr.it
 
@@ -31,9 +28,8 @@ intent rather than the exact wording.
 1. Open the Feeds tab and add the URL
    `https://blog.alunduil.com/rss.xml`.
 2. Route the feed to the connected Bluesky social.
-3. On the first sync, limit how many existing items post, so the back
-   catalogue does not flood the timeline. Posting only new items from
-   here on is the goal.
+3. Limit the first sync, so the back catalogue does not flood the
+   timeline.
 
 ## Choose the summary over the full body
 
@@ -66,21 +62,8 @@ appended.
    `dlvr.it`, so follow the redirect to confirm it lands on the
    canonical URL.
 
-On the free tier, dlvr.it polls the feed every six hours, so a new post
-can take that long to appear—a short delay is not a failure.
+dlvr.it checks the feed on a schedule rather than on publish, so a new
+post appears at the next check—a short delay is not a failure.
 
-## Notice when it breaks
-
-This pipeline has to make breakage observable. Two layers cover it:
-
-- dlvr.it emails on feed or posting errors and shows route health on
-  its dashboard. Keep those emails reaching an inbox you read.
-- Once a month, or after publishing, confirm the latest post reached
-  Bluesky. A missing post is the signal that the route, the Bluesky app
-  password, or the feed has stopped working.
-
-If the pipeline needs replacing, nothing in this repository depends on
-dlvr.it. Bluesky runs on the open atproto protocol, so a vendor-neutral
-forwarder or a small self-hosted poster can take over its route later.
-ADR 0001 records that alternative and the triggers for revisiting the
-choice.
+A post that never arrives points at the route, the Bluesky app password,
+or the feed.
