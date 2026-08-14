@@ -183,6 +183,9 @@ vendor-neutral option later.
 
 - [POSSE], the IndieWeb pattern this strategy follows.
 - Setup steps: `docs/how-to/syndicate-posts-to-threads.md`.
+- The same account also forwards project release feeds, which are not
+  blog posts and stay canonical on GitHub:
+  `docs/how-to/syndicate-project-releases.md`.
 - Format and scheduling guarantees come from `src/pages/rss.xml.ts` and
   `src/utils/postFilter.ts`.
 
