@@ -1,6 +1,6 @@
 import satori from "satori";
 import { SITE } from "@/config";
-import loadGoogleFonts from "../loadGoogleFont";
+import loadBrandFonts from "../loadBrandFonts";
 import { COLORS, STROKE, block } from "./mondrian";
 
 export default async () => {
@@ -143,9 +143,7 @@ export default async () => {
       width: 1200,
       height: 630,
       embedFont: true,
-      fonts: await loadGoogleFonts(
-        SITE.title + SITE.desc + SITE.author + hostname
-      ),
+      fonts: await loadBrandFonts(),
     }
   );
 };

@@ -1,6 +1,6 @@
 import satori from "satori";
 import { SITE } from "@/config";
-import loadGoogleFonts from "../loadGoogleFont";
+import loadBrandFonts from "../loadBrandFonts";
 import { COLORS, STROKE, block } from "./mondrian";
 
 const formatDate = (date, timezone) =>
@@ -176,9 +176,7 @@ export default async post => {
       width: 1200,
       height: 630,
       embedFont: true,
-      fonts: await loadGoogleFonts(
-        post.data.title + pubDate + hostname + tags.join("") + "#…"
-      ),
+      fonts: await loadBrandFonts(),
     }
   );
 };
