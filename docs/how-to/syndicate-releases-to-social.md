@@ -2,9 +2,7 @@
 
 This guide wires a project's GitHub releases feed to dlvr.it, so cutting
 a release announces it on the connected socials with no manual step. The
-posts link back to the release page on GitHub, not to the blog; why that
-is so is covered in
-[Syndication is not blog-only](../explanation/syndication-sources.md).
+posts link back to the release page on GitHub, not to the blog.
 
 ## Before you start
 

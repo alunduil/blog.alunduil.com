@@ -8,9 +8,7 @@ syndication guide here builds on the account this page creates:
 - [Syndicate releases to social](syndicate-releases-to-social.md)
 
 Why dlvr.it rather than a self-hosted poster is recorded in
-[ADR 0001](../adr/0001-use-dlvrit-for-social-syndication.md). How its
-routes fit together, and what each one costs, is covered in
-[Syndication is not blog-only](../explanation/syndication-sources.md).
+[ADR 0001](../adr/0001-use-dlvrit-for-social-syndication.md).
 
 The dlvr.it labels in these guides may shift as its interface changes;
 match the intent rather than the exact wording.
