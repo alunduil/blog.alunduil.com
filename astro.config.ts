@@ -18,8 +18,8 @@ export default defineConfig({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),
   ],
-  // Serves the header wordmark alone, so it carries only the one weight the
-  // wordmark renders at. Body copy stays in the global mono.
+  // Only the header wordmark renders in this face, so the weight and subset
+  // lists stay narrow.
   fonts: [
     {
       name: BRAND_FONT,

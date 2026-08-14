@@ -1,6 +1,4 @@
-// The brand typeface. Read by both surfaces that render the wordmark —
-// the site header (astro.config.ts) and the OG card
-// (src/utils/loadGoogleFont.ts) — so the two cannot drift apart.
+// One name so the header and the OG card cannot drift onto different faces.
 export const BRAND_FONT = "IBM Plex Sans";
 
 export const SITE = {
