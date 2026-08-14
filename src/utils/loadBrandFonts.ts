@@ -4,15 +4,14 @@ import type { Font, FontWeight } from "satori";
 
 import { BRAND_FONT } from "@/config";
 
-// Fontsource package and file names are the family lowercased and hyphenated,
-// so a change of BRAND_FONT points at the package that has to be installed
-// alongside it.
+// Fontsource names its packages and files after the family, lowercased and
+// hyphenated.
 const FAMILY = BRAND_FONT.toLowerCase().replaceAll(" ", "-");
 
-// Satori reads WOFF but not WOFF2, and the latin subset covers everything the
-// OG templates can render.
 const WEIGHTS: FontWeight[] = [400, 700];
 
+// Satori reads WOFF but not the WOFF2 alongside it. The latin subset stops at
+// Latin-1 and general punctuation; anything wider needs latin-ext loaded too.
 function faceFile(weight: FontWeight): URL {
   return new URL(
     import.meta.resolve(
