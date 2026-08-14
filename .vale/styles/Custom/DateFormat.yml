@@ -7,24 +7,19 @@
 # day and a four-digit year, so a bare month or a bare number is never a
 # candidate either.
 #
-# `raw` rather than `tokens`: Vale concatenates raw entries into one
-# expression, which lets the two branches wrap across short lines.
+# The month list is spelled out twice on purpose. Vale compiles these
+# with RE2, which has no subroutine references, and writing the month
+# once with an optional day on either side would also match "Month
+# YYYY" — flagging "In June 2026", which is not a date to reformat.
 
 extends: existence
 message: "Use an RFC 3339 date (2016-07-31), not '%s'."
 level: error
 ignorecase: false
 nonword: true
-raw:
+tokens:
   # Month DD, YYYY — comma and ordinal suffix optional, so "May 5 2026"
   # and "June 4th, 2026" land alongside "July 31, 2016".
-  - '\b(?:'
-  - '(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|'
-  - 'Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|'
-  - 'Dec(?:ember)?)\.? \d{1,2}(?:st|nd|rd|th)?,? \d{4}'
+  - '\b(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}(?:st|nd|rd|th)?,? \d{4}\b'
   # DD Month YYYY.
-  - '|\d{1,2}(?:st|nd|rd|th)? '
-  - '(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|'
-  - 'Jul(?:y)?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|'
-  - 'Dec(?:ember)?)\.? \d{4}'
-  - ')\b'
+  - '\b\d{1,2}(?:st|nd|rd|th)? (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b'
