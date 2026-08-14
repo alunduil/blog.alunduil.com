@@ -45,29 +45,19 @@ the whole article, cut off at the character limit.
 
 ## Keep the default post format
 
-Leave the route's post template alone. Its default posts the item's
-title as the message and attaches a link card carrying that title, the
-one-line hook from the post's `description`, and the post's social
-image. dlvr.it shortens the link through its own `dlvr.it` domain, and
-that short link redirects to the canonical URL with
-`utm_source=dlvr.it&utm_medium=bluesky` appended, so referrals stay
-attributable. A finished post reads:
+Leave the route's post template alone. By default it posts the item's
+title as the message and attaches a link card built from the post's
+`description` and social image:
 
 ```text
-Off the Desk
-┌───────────────────────────────────────────────────────────┐
-│ [social image]                                            │
-│ Off the Desk                                              │
-│ GitHub dropped my one model from Copilot. I went to       │
-│ Claude, and the work came off the desk onto my phone.     │
-│ blog.alunduil.com                                         │
-└───────────────────────────────────────────────────────────┘
+How I Back Up
+[link card: title, the post's one-line hook, social image]
 ```
 
-Bluesky's 300-character limit applies to the message text, which a
-title alone barely touches; the card sits outside it. Repeating the
-hook in the message would duplicate the card, so change the template
-only when a later review shows the need.
+Composing a richer message repeats what the card already shows. dlvr.it
+also shortens the link: the card points at a `dlvr.it` URL that
+redirects to the canonical one with `utm_source` and `utm_medium`
+appended.
 
 ## Verify
 
