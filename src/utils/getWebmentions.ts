@@ -46,24 +46,27 @@ function targetSpellings(target: string): string[] {
     : [target, `${target}/`];
 }
 
-export async function getWebmentions(target: string): Promise<Webmentions> {
-  if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
+function mentionsUrl(spellings: string[], sinceId: number): string {
+  const params = new URLSearchParams(
+    spellings.map(spelling => ["target[]", spelling])
+  );
+  params.set("per-page", String(PER_PAGE));
+  params.set("sort-dir", "up");
+  params.set("since_id", String(sinceId));
 
-  // webmention.io's since_id is a forward-only cursor (returns wm-id
-  // strictly greater, with no descending equivalent), so we fetch
-  // oldest-first and advance since_id past each batch.
+  return `https://webmention.io/api/mentions.jf2?${params}`;
+}
+
+// webmention.io's since_id is a forward-only cursor (returns wm-id
+// strictly greater, with no descending equivalent), so we fetch
+// oldest-first and advance since_id past each batch.
+async function fetchMentions(target: string): Promise<WebmentionEntry[]> {
+  const spellings = targetSpellings(target);
   const children: WebmentionEntry[] = [];
   let sinceId = 0;
-  for (;;) {
-    const params = new URLSearchParams(
-      targetSpellings(target).map(spelling => ["target[]", spelling])
-    );
-    params.set("per-page", String(PER_PAGE));
-    params.set("sort-dir", "up");
-    params.set("since_id", String(sinceId));
 
-    const url = `https://webmention.io/api/mentions.jf2?${params}`;
-    const res = await fetch(url);
+  for (;;) {
+    const res = await fetch(mentionsUrl(spellings, sinceId));
     if (!res.ok) {
       throw new Error(`Webmention fetch ${res.status} for ${target}`);
     }
@@ -72,12 +75,17 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
     const batch = data.children ?? [];
     // End of data is an empty batch, not a short one: the server may cap
     // per-page, so a short page isn't a reliable end signal.
-    if (batch.length === 0) break;
+    if (batch.length === 0) return children;
 
     children.push(...batch);
     sinceId = Math.max(...batch.map(c => c["wm-id"]));
   }
+}
 
+export async function getWebmentions(target: string): Promise<Webmentions> {
+  if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
+
+  const children = await fetchMentions(target);
   // The cursor forced oldest-first; restore newest-first for display.
   children.sort((a, b) => b["wm-id"] - a["wm-id"]);
 
