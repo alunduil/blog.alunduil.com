@@ -1,13 +1,8 @@
 import { readFile } from "node:fs/promises";
 
-import { BRAND_FONT } from "@/config";
+import type { Font, FontWeight } from "satori";
 
-type BrandFont = {
-  name: string;
-  data: Buffer;
-  weight: number;
-  style: string;
-};
+import { BRAND_FONT } from "@/config";
 
 // Fontsource package and file names are the family lowercased and hyphenated,
 // so a change of BRAND_FONT points at the package that has to be installed
@@ -16,30 +11,24 @@ const FAMILY = BRAND_FONT.toLowerCase().replaceAll(" ", "-");
 
 // Satori reads WOFF but not WOFF2, and the latin subset covers everything the
 // OG templates can render.
-const FACES = [
-  { weight: 400, style: "normal" },
-  { weight: 700, style: "bold" },
-];
+const WEIGHTS: FontWeight[] = [400, 700];
 
-let fonts: Promise<BrandFont[]> | undefined;
-
-async function loadBrandFonts(): Promise<BrandFont[]> {
-  fonts ??= Promise.all(
-    FACES.map(async ({ weight, style }) => ({
-      name: BRAND_FONT,
-      weight,
-      style,
-      data: await readFile(
-        new URL(
-          import.meta.resolve(
-            `@fontsource/${FAMILY}/files/${FAMILY}-latin-${weight}-normal.woff`
-          )
-        )
-      ),
-    }))
+function faceFile(weight: FontWeight): URL {
+  return new URL(
+    import.meta.resolve(
+      `@fontsource/${FAMILY}/files/${FAMILY}-latin-${weight}-normal.woff`
+    )
   );
+}
 
-  return fonts;
+async function readFace(weight: FontWeight): Promise<Font> {
+  return { name: BRAND_FONT, weight, data: await readFile(faceFile(weight)) };
+}
+
+let cached: Promise<Font[]> | undefined;
+
+function loadBrandFonts(): Promise<Font[]> {
+  return (cached ??= Promise.all(WEIGHTS.map(weight => readFace(weight))));
 }
 
 export default loadBrandFonts;

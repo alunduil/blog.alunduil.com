@@ -1,7 +1,6 @@
 import satori from "satori";
 import { SITE } from "@/config";
-import loadBrandFonts from "../loadBrandFonts";
-import { COLORS, STROKE, block } from "./mondrian";
+import { COLORS, STROKE, block, canvas } from "./mondrian";
 
 export default async () => {
   const hostname = new URL(SITE.website).hostname;
@@ -139,11 +138,6 @@ export default async () => {
         ],
       },
     },
-    {
-      width: 1200,
-      height: 630,
-      embedFont: true,
-      fonts: await loadBrandFonts(),
-    }
+    await canvas()
   );
 };

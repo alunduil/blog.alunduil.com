@@ -1,7 +1,6 @@
 import satori from "satori";
 import { SITE } from "@/config";
-import loadBrandFonts from "../loadBrandFonts";
-import { COLORS, STROKE, block } from "./mondrian";
+import { COLORS, STROKE, block, canvas } from "./mondrian";
 
 const formatDate = (date, timezone) =>
   new Intl.DateTimeFormat("sv-SE", {
@@ -172,11 +171,6 @@ export default async post => {
         ],
       },
     },
-    {
-      width: 1200,
-      height: 630,
-      embedFont: true,
-      fonts: await loadBrandFonts(),
-    }
+    await canvas()
   );
 };
