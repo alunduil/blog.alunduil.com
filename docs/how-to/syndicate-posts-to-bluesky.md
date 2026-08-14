@@ -62,8 +62,8 @@ appended.
    `dlvr.it`, so follow the redirect to confirm it lands on the
    canonical URL.
 
-On the free tier, dlvr.it polls the feed every six hours, so a new post
-can take that long to appear—a short delay is not a failure.
+dlvr.it checks the feed on a schedule rather than on publish, so a new
+post appears at the next check—a short delay is not a failure.
 
 ## Notice when it breaks
 
@@ -74,5 +74,4 @@ catch the rest are in
 [Set up dlvr.it](set-up-dlvrit.md#notice-when-it-breaks).
 
 Bluesky runs on the open atproto protocol, so a vendor-neutral forwarder
-or a small self-hosted poster can take over this route later, whatever
-happens to the others.
+or a small self-hosted poster can take over this route on its own.

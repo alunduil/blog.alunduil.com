@@ -1,9 +1,7 @@
 # Set up dlvr.it
 
 dlvr.it forwards a source feed to connected social accounts. Every
-syndication guide here assumes the account this page creates, and
-follows the habits it sets out, so each one covers only what its own
-feed and destination need:
+syndication guide here builds on the account this page creates:
 
 - [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
 - [Syndicate posts to Threads](syndicate-posts-to-threads.md)
@@ -18,26 +16,20 @@ match the intent rather than the exact wording.
 ## Create the account
 
 Sign up at dlvr.it. One account carries every source and every
-destination, so this is a one-time step—later guides add to it rather
-than repeating it.
+destination, so this is a one-time step.
 
-Before adding anything, check the plan has room. A source counts against
+Sources live under the Feeds tab and destinations under the Socials tab;
+a route joins one of each. Several sources can share a destination,
+which is what lets a new feed reach socials that are already connected
+and authorised. It also sets what a route costs: a source counts against
 the feed allowance and a destination against the social profile
-allowance, and the two are counted separately, so a new feed routed to
-socials already connected needs no new profile.
-
-## Learn the two halves of a route
-
-Sources live under the Feeds tab, destinations under the Socials tab. A
-route joins one of each, and dlvr.it posts an item when it turns up in
-the feed. Several sources can share one destination, which is what lets
-a second feed reach socials that are already connected and authorised.
+allowance, and the two count separately.
 
 ## Limit the first sync
 
 Whenever you add a feed, cap how many existing items post before the
 route goes live. A feed arrives carrying its back catalogue, and all of
-it is old news. Posting only new items from here on is the goal.
+it is old news.
 
 ## Notice when it breaks
 
@@ -50,8 +42,6 @@ out. Two layers cover it.
   item reached each connected social. A missing post is the signal that
   the route, the credential, or the feed has stopped working.
 
-Each guide names the check specific to its own route.
-
 If the pipeline needs replacing, nothing in this repository depends on
-dlvr.it. ADR 0001 records the alternatives weighed and the triggers for
+dlvr.it. ADR 0001 records the alternatives and the triggers for
 revisiting the choice.
