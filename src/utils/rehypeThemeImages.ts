@@ -1,14 +1,9 @@
 /**
  * Render a post image that has a `-dark` sibling as a light and dark pair.
  *
- * An SVG loaded through `<img>` is an isolated document: it can read the OS
- * `prefers-color-scheme` but never the `data-theme` attribute AstroPaper's
- * toggle sets, so it cannot swap itself. Emitting both variants lets CSS in
- * `src/styles/typography.css` pick the one matching the theme.
- *
- * This runs on the page pipeline only. `renderPostBody` deliberately omits it:
- * a feed reader can't see `data-theme` either, so the feed keeps the single
- * light image the body already describes.
+ * An `<img>` loads the SVG as a separate document, so the page's `data-theme`
+ * never reaches it and it cannot recolour itself. Emitting both variants moves
+ * the choice to CSS. See `docs/reference/post-body.md` for the convention.
  */
 import { existsSync } from "node:fs";
 import path from "node:path";
@@ -16,7 +11,7 @@ import path from "node:path";
 /** The `-dark` sibling of `/assets/foo.svg` is `/assets/foo-dark.svg`. */
 const DARK_SUFFIX = "-dark";
 
-/** The other half of the contract with `src/styles/typography.css`. */
+/** Matched by the swap rules in `src/styles/typography.css`. */
 const LIGHT_CLASS = "theme-image-light";
 const DARK_CLASS = "theme-image-dark";
 
@@ -32,7 +27,6 @@ type HastNode = {
   children?: HastNode[];
 };
 
-/** An `img` whose `src` is known to be a string, so neither needs re-checking. */
 type ImageNode = HastNode & { properties: HastProperties & { src: string } };
 
 function asImageNode(node: HastNode): ImageNode | undefined {
@@ -46,10 +40,6 @@ function isPublicAsset(src: string): boolean {
   return src.startsWith("/") && !src.startsWith("//");
 }
 
-/**
- * An image under `src/assets/` never reaches here: Astro's image service
- * rewrites its `src` to a hashed build path with no predictable sibling.
- */
 function darkVariantPath(src: string): string | undefined {
   const extension = path.extname(src);
   if (!extension) return undefined;
@@ -61,15 +51,14 @@ function darkVariantPath(src: string): string | undefined {
 }
 
 /**
- * Astro bundles `astro.config.ts` and its imports into a single module at the
- * project root, so `import.meta.url` points there rather than at this file.
- * The working directory is the reliable anchor for the lookup.
+ * Astro bundles this module into `astro.config.ts` at the project root, so
+ * `import.meta.url` points there, not here. The working directory is the
+ * reliable anchor.
  */
 function existsInPublic(src: string): boolean {
   return existsSync(path.join(process.cwd(), "public", src));
 }
 
-/** One half of the pair: the original image, reclassed and repointed. */
 function variantImage(
   image: ImageNode,
   className: string,

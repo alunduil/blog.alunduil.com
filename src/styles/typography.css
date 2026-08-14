@@ -92,10 +92,9 @@
   }
 
   /* ===== Theme-aware Images ===== */
-  /* `rehypeThemeImages` emits both variants of an image that has a `-dark`
-     sibling, because an SVG loaded through `<img>` can't read `data-theme`
-     to swap itself. The hidden one leaves the accessibility tree too, so the
-     shared `alt` is announced once. */
+  /* `rehypeThemeImages` emits both variants; these pick one. `display: none`
+     also drops the hidden variant from the accessibility tree, so the `alt`
+     both share is announced once. */
   .theme-image-dark {
     @apply hidden;
   }

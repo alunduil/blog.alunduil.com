@@ -3,9 +3,8 @@
 
 Fetches the author's GitHub contribution calendar (GraphQL, one year per
 request), buckets it by week, and renders a weeks heatmap to the post's
-asset paths — one per site theme, since an SVG loaded through `<img>` can't
-read `data-theme` to recolour itself. The `-dark` filename is the convention
-`rehypeThemeImages` pairs on; see `docs/reference/post-body.md`.
+asset paths, one per site theme. The `-dark` filename is the pairing
+convention; see `docs/reference/post-body.md`.
 
 Run from the repo root:
 
@@ -30,7 +29,7 @@ import numpy.ma as ma  # noqa: E402
 from matplotlib.colors import LinearSegmentedColormap, PowerNorm  # noqa: E402
 
 # Element ids are salted per process unless pinned, so an unchanged figure
-# would otherwise rewrite all 230KB of the asset on every refresh.
+# would otherwise rewrite the whole asset on every refresh.
 matplotlib.rcParams["svg.hashsalt"] = "contributions-heatmap"
 
 LOGIN = "alunduil"
@@ -42,7 +41,7 @@ ASSET_STEM = "public/assets/i-built-the-machine-twice-contributions"
 
 TICK_FONTSIZE = 8
 MONTH_INITIALS = "JFMAMJJASOND"
-# Week index each month starts on, near enough at 52/12 weeks per month.
+# Week each month starts on, approximated at 52/12 weeks per month.
 MONTH_TICKS = (2, 6, 10, 15, 19, 24, 28, 32, 37, 41, 45, 50)
 # The scale is non-linear, so the bar has to name its own stops.
 SCALE_TICKS = (0, 50, 200, 500, 1000)
@@ -53,8 +52,8 @@ class Theme:
     """One rendering of the figure, matched to a site colour scheme."""
 
     suffix: str
-    background: str  # --background, so a blank week reads as page, not paper
-    foreground: str  # --foreground, for title and tick labels
+    background: str  # --background; a blank week matches the page
+    foreground: str  # --foreground
     edge: str  # cell borders, a shade off the background
     colors: Optional[Sequence[str]]  # None keeps matplotlib's Greens
 
@@ -67,7 +66,7 @@ class Theme:
             cmap = plt.cm.Greens.copy()
         else:
             cmap = LinearSegmentedColormap.from_list("contributions", self.colors)
-        # A masked week is one that hasn't happened; it should disappear.
+        # A masked week hasn't happened yet; it should disappear.
         cmap.set_bad(self.background)
         return cmap
 
@@ -80,9 +79,9 @@ THEMES = (
         edge="#e8e8e8",
         colors=None,
     ),
-    # Greens runs pale-to-dark, which inverts against a dark page: quiet weeks
-    # would glow and busy ones recede. GitHub's own dark scale runs the right
-    # way, anchored here on the site background rather than GitHub's.
+    # Greens runs pale-to-dark, which inverts on a dark page: quiet weeks would
+    # glow and busy ones recede. This is GitHub's dark scale, anchored on the
+    # site background rather than GitHub's.
     Theme(
         suffix="-dark",
         background="#212737",
@@ -145,7 +144,7 @@ def build_grid(daily):
 
 
 def style_axes(ax, years, theme):
-    """Years down the side, month initials across the top, no frame."""
+    """Lay the grid out as a calendar: years descending, months along the top."""
     ax.set_aspect("equal")
     ax.invert_yaxis()
     ax.set_yticks(np.arange(len(years)) + 0.5)
@@ -159,7 +158,7 @@ def style_axes(ax, years, theme):
 
 
 def add_scale_bar(fig, ax, mesh, theme):
-    """Label the stops of the non-linear colour scale under the grid."""
+    """Draw the colour key beneath the grid."""
     bar = fig.colorbar(
         mesh, ax=ax, orientation="horizontal", pad=0.05, fraction=0.04,
         ticks=list(SCALE_TICKS),

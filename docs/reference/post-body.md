@@ -61,20 +61,19 @@ scale down within their container.
 `ogImage` is frontmatter rather than body markup; see
 [post frontmatter and scheduling](post-frontmatter.md).
 
-### Theme-aware images
+## Theme-aware images
 
-An image under `public/` that has a `-dark` sibling renders as both
-variants, and CSS shows the one matching the site theme. Name the pair by
-suffix and reference only the light one:
+An image under `public/` that has a `-dark` sibling swaps with the site
+theme. Name the pair by suffix and reference only the light one:
 
 ```md
 ![alt text](/assets/example.svg)
 ```
 
 With `public/assets/example-dark.svg` present, that swaps with the theme
-toggle. Without it, the image renders as a single `img`, unchanged.
+toggle. Without it, the image renders unchanged.
 
-Three constraints follow from how the swap works:
+Three limits apply:
 
 - Only `public/` images pair. An image under `src/assets/` reaches the
   page with a hashed build path that has no predictable sibling.
@@ -84,7 +83,7 @@ Three constraints follow from how the swap works:
 - The RSS feed and the `index.md` endpoint carry the light variant only.
   They render the body outside the page, where no theme applies.
 
-`scripts/contributions-heatmap.py` generates a pair this way.
+`scripts/contributions-heatmap.py` generates such a pair.
 
 ## Code blocks
 

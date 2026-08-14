@@ -34,8 +34,8 @@ export default defineConfig({
   ],
   markdown: {
     remarkPlugins,
-    // Page-only, unlike `remarkPlugins`: the feed shares that list so a post
-    // reads the same in a reader, but a reader can't see the site's theme.
+    // Page-only, unlike the shared `remarkPlugins`: a feed reader has no site
+    // theme, so it keeps the light variant.
     rehypePlugins: [rehypeThemeImages],
     shikiConfig: {
       // For more themes, visit https://shiki.style/themes
