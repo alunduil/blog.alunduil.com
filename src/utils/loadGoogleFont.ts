@@ -1,9 +1,12 @@
+import { BRAND_FONT } from "@/config";
+
 async function loadGoogleFont(
   font: string,
   text: string,
   weight: number
 ): Promise<ArrayBuffer> {
-  const API = `https://fonts.googleapis.com/css2?family=${font}:wght@${weight}&text=${encodeURIComponent(text)}`;
+  const family = font.replaceAll(" ", "+");
+  const API = `https://fonts.googleapis.com/css2?family=${family}:wght@${weight}&text=${encodeURIComponent(text)}`;
 
   const css = await (
     await fetch(API, {
@@ -36,22 +39,20 @@ async function loadGoogleFonts(
 > {
   const fontsConfig = [
     {
-      name: "IBM Plex Sans",
-      font: "IBM+Plex+Sans",
+      name: BRAND_FONT,
       weight: 400,
       style: "normal",
     },
     {
-      name: "IBM Plex Sans",
-      font: "IBM+Plex+Sans",
+      name: BRAND_FONT,
       weight: 700,
       style: "bold",
     },
   ];
 
   const fonts = await Promise.all(
-    fontsConfig.map(async ({ name, font, weight, style }) => {
-      const data = await loadGoogleFont(font, text, weight);
+    fontsConfig.map(async ({ name, weight, style }) => {
+      const data = await loadGoogleFont(name, text, weight);
       return { name, data, weight, style };
     })
   );

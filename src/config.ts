@@ -1,3 +1,6 @@
+// One name so the header and the OG card cannot drift onto different faces.
+export const BRAND_FONT = "IBM Plex Sans";
+
 export const SITE = {
   website: "https://blog.alunduil.com/",
   author: "Alex Brandt",

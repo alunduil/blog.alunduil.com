@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import { Font } from "astro:assets";
 import {
   PUBLIC_GOOGLE_SITE_VERIFICATION,
   PUBLIC_WEBMENTION_IO_USERNAME,
@@ -64,6 +65,8 @@ const structuredData = {
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <Font cssVariable="--font-brand" preload />
 
     {
       PUBLIC_WEBMENTION_IO_USERNAME && (

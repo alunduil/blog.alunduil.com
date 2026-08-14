@@ -26,6 +26,9 @@ html[data-theme="dark"] {
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
+  /* Tailwind only generates utilities for keys declared here, and reusing
+     Astro's --font-brand as the key would define it in terms of itself. */
+  --font-wordmark: var(--font-brand);
 }
 
 @layer base {

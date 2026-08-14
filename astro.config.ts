@@ -1,4 +1,4 @@
-import { defineConfig, envField } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
@@ -8,7 +8,7 @@ import {
   transformerNotationWordHighlight,
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
-import { SITE } from "./src/config";
+import { BRAND_FONT, SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,6 +17,19 @@ export default defineConfig({
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),
+  ],
+  // Only the header wordmark renders in this face, so the weight and subset
+  // lists stay narrow.
+  fonts: [
+    {
+      name: BRAND_FONT,
+      cssVariable: "--font-brand",
+      provider: fontProviders.google(),
+      weights: [700],
+      styles: ["normal"],
+      subsets: ["latin"],
+      fallbacks: ["sans-serif"],
+    },
   ],
   markdown: {
     remarkPlugins,
