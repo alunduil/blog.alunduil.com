@@ -1,0 +1,18 @@
+# `ignorecase: false` keeps "may", "march", and "august" as ordinary
+# words out of the match space. A month name in a date is always
+# capitalized, so nothing is lost.
+#
+# The month list appears twice because RE2 has no subroutine
+# references. Writing it once with an optional day on either side
+# would also match "Month YYYY" and flag "In June 2026".
+
+extends: existence
+message: "Use an RFC 3339 date (2016-07-31), not '%s'."
+level: error
+ignorecase: false
+nonword: true
+tokens:
+  # Month DD, YYYY: "July 31, 2016", "May 5 2026", "June 4th, 2026"
+  - '\b(?:January|February|March|April|May|June|July|August|September|October|November|December) \d{1,2}(?:st|nd|rd|th)?,? \d{4}\b'
+  # DD Month YYYY: "31 July 2016"
+  - '\b\d{1,2}(?:st|nd|rd|th)? (?:January|February|March|April|May|June|July|August|September|October|November|December) \d{4}\b'
