@@ -37,6 +37,15 @@ const empty: Webmentions = {
 
 const PER_PAGE = 100;
 
+// webmention.io matches targets exactly, so a mention filed against one
+// spelling is invisible to a query for the other. Senders resolve to the
+// canonical trailing-slash URL, while getPath builds the bare path.
+function targetSpellings(target: string): string[] {
+  return target.endsWith("/")
+    ? [target, target.slice(0, -1)]
+    : [target, `${target}/`];
+}
+
 export async function getWebmentions(target: string): Promise<Webmentions> {
   if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
 
@@ -46,7 +55,14 @@ export async function getWebmentions(target: string): Promise<Webmentions> {
   const children: WebmentionEntry[] = [];
   let sinceId = 0;
   for (;;) {
-    const url = `https://webmention.io/api/mentions.jf2?target=${encodeURIComponent(target)}&per-page=${PER_PAGE}&sort-dir=up&since_id=${sinceId}`;
+    const params = new URLSearchParams(
+      targetSpellings(target).map(spelling => ["target[]", spelling])
+    );
+    params.set("per-page", String(PER_PAGE));
+    params.set("sort-dir", "up");
+    params.set("since_id", String(sinceId));
+
+    const url = `https://webmention.io/api/mentions.jf2?${params}`;
     const res = await fetch(url);
     if (!res.ok) {
       throw new Error(`Webmention fetch ${res.status} for ${target}`);
