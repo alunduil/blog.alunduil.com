@@ -1,50 +1,32 @@
 # The Second Reader — outline
 
-**Logline.** The moment of change is a re-reading: a week of agent-identity
-plumbing sent me back to a compliance scan I had already passed, and the
-same output read differently — discoverability, content accessibility, and
-bot access aren't checkboxes, they're a reader's access requirements. The
-crawler stopped being traffic to manage and became a second reader to write
-for.
+**Logline.** A week of agent-identity plumbing sent me back to a scan I had
+already passed, and the same output read as a reader's access requirements.
+The crawler stopped being traffic to manage and became a second reader to
+write for.
 
-**Opens on its opposite.** The site as built for exactly one reader: two
-Shiki themes so code follows the theme toggle, `-dark` image siblings that
-swap with it, a Pagefind index built at build time. Every choice assumes
-eyes, a screen, and a preference.
-
-**Lands on** the reader I can't observe. The only mirror is a scanner
-grading my host rather than my writing, and the only analytics I have is a
-JavaScript beacon an agent never runs. I published a second edition and
-have no evidence anyone came for it.
+**Opens on** the site built for exactly one human reader (scene 1).
+**Lands on** the reader I can't observe: the scanner grades my host, and the
+beacon that would see the agent sits in a layout the agent never loads
+(scene 5).
 
 **Register.** Methodology told as narrative — first-person, one recognition
 at the centre, concrete artefacts throughout. Closer to
 `who-accounts-for-the-agent` than to `how-i-back-up`; no section headers.
 
-**Anchors (provable, verify in the citations pass).**
+**Anchors beyond the beats.**
 
 - Cloudflare Agent Readiness score, Apr 2026 —
-  <https://blog.cloudflare.com/agent-readiness/>; free scanner at
+  <https://blog.cloudflare.com/agent-readiness/>; scanner at
   <https://isitagentready.com>
-- Issue #76 scope: three of five dimensions apply to a static blog; API
-  catalogue, MCP server card, OAuth discovery, and commerce protocols don't
-- PR #264, merged 2026-06-21: +52/−0 across three files —
-  `src/pages/robots.txt.ts` (one `Content-Signal` line),
-  `src/pages/llms.txt.ts` (33 lines),
-  `src/pages/posts/[...slug]/index.md.ts` (18 lines)
-- `Content-Signal: search=yes, ai-input=yes, ai-train=yes` — the recorded
-  posture, and the recorded reason that leaving it implicit reads as refusal
-- Live scan 2026-06-22 → **Level 2, "Bot-Aware."** Pass: `robotsTxt`,
-  `sitemap`, `robotsTxtAiRules`, `contentSignals`. Fail: `linkHeaders`,
-  `dnsAid`, `markdownNegotiation`
-- `markdownNegotiation` tests `Accept: text/markdown` on the homepage;
-  every post *is* served as clean Markdown at `/posts/<slug>/index.md`, so
-  the check measures the negotiation mechanism the host can't perform, not
-  the Markdown's existence
-- Analytics blindness: Cloudflare Web Analytics is a JavaScript beacon
-  (`rumPageloadEventsAdaptiveGroups`); zone HTTP analytics are empty
-  because Pages serves unproxied
-- The reading week (Readwise, June 2026, canonical URLs TBD): temporary
+- Scan 2026-06-22, Level 2 "Bot-Aware" — pass `robotsTxt`, `sitemap`,
+  `robotsTxtAiRules`, `contentSignals`; fail `linkHeaders`, `dnsAid`,
+  `markdownNegotiation`
+- PR #264 line split: `robots.txt.ts` one line, `llms.txt.ts` 33,
+  `posts/[...slug]/index.md.ts` 18
+- Cloudflare Web Analytics reads `rumPageloadEventsAdaptiveGroups`; zone
+  HTTP analytics are empty because Pages serves unproxied
+- Reading week (Readwise, June 2026, canonical URLs TBD): temporary
   Cloudflare accounts for AI agents; OAuth extended across the Cloudflare
   app ecosystem; prompt injection as role confusion
 
@@ -67,9 +49,9 @@ at the centre, concrete artefacts throughout. Closer to
 1. That week my reading kept landing on the same plumbing: temporary accounts issued to AI agents, OAuth extended to cover them, prompt injection explained as role confusion. *(Readwise, June 2026)*
 2. Each piece treats the agent as a party that arrives, identifies itself, and is granted a scope — the questions you'd ask about a person.
 3. I ran the scan again with that in my head. *(<https://isitagentready.com>)*
-4. The categories read differently: discoverability, content accessibility, and bot access aren't compliance headings, they're what a reader needs to find the writing, fetch it, and be allowed to.
+4. Discoverability, content accessibility, and bot access name what a reader needs: to find the writing, to fetch it, and to be allowed to.
 5. The crawler stopped being traffic to manage and became a reader to write for.
-6. Which makes the manifests a second edition rather than a checklist — `llms.txt` is the table of contents, and `index.md` is the same post in the form that reader can hold. *(`src/pages/llms.txt.ts`, `src/pages/posts/[...slug]/index.md.ts`)*
+6. The manifests are a second edition — `llms.txt` is the table of contents, and `index.md` is the same post in the form that reader can hold. *(`src/pages/llms.txt.ts`, `src/pages/posts/[...slug]/index.md.ts`)*
 
 ## 4. Saying yes out loud — *the stance*
 
@@ -77,7 +59,8 @@ at the centre, concrete artefacts throughout. Closer to
 2. The argument around that header runs to blocking crawlers, paywalling them, and poisoning what they fetch. *(citation TBD — needs a real source, or soften to the arguments I've actually read)*
 3. I answered `search=yes, ai-input=yes, ai-train=yes` and didn't weigh it long. *(#264)*
 4. The blog is a knowledge base, not a possession — it exists so that whoever wants what's written here can reach it, and a model trained on it reaches further than I can.
-5. Omitting the header wouldn't have been neutral: silence reads as refusal, so the only real choice was whether to say the thing out loud. *(#76 decision note, 2026-06-21)*
+5. Omitting the header wouldn't have been neutral, because silence reads as refusal. *(#76 decision note, 2026-06-21)*
+6. So the only choice was whether to answer in `robots.txt` or leave it to inference.
 
 ## 5. The reader who never runs the JavaScript — *the landing*
 
@@ -88,19 +71,18 @@ at the centre, concrete artefacts throughout. Closer to
 5. The reader itself I can't see at all: Cloudflare Web Analytics is a JavaScript beacon, and an agent pulling `/posts/<slug>/index.md` never runs it. *(confirm the beacon requirement against Cloudflare's docs in the citations pass)*
 6. There are no server logs to fall back on either, because Pages serves unproxied and the zone analytics are empty.
 7. Nothing has come back — no citation, nobody mentioning an assistant summarised a post — and I've filed an issue to go looking properly. *(#547)*
-8. A second edition, for a reader I can't prove has arrived.
 
 ## Open
 
-- **Follow-up issue on measuring the agent audience** — filed as #547; the
-  beacon is a script tag in the base layout, so the `.md` and `llms.txt`
-  surfaces are invisible to it by construction. *(#141 scope)*
-- **Canonical URLs for the three reading-week sources** — the Readwise
+- **Beat 4.2 needs a source** for the blocking, paywalling, and poisoning
+  argument. Failing one, soften to the arguments I've read.
+- **Canonical URLs for the three reading-week sources.** The Readwise
   entries are private placeholders; pull the public source URLs in the
   citations pass and keep no `read.readwise.io` links in the body.
 - **Verify the Agent Readiness announcement date** (Apr 2026) against the
   Cloudflare post before the body asserts it.
-- **Scene 5 carries two blindnesses** — the grade that measures the host and
-  the analytics that miss the reader. Kept together because the scene's one
-  job is that I can't observe this audience in either direction; watch in
-  `post-draft` that beat 4 doesn't read as its own peak.
+- **Confirm the beacon requirement** (beat 5.5) against Cloudflare's docs.
+  Supporting evidence: #141 added the beacon as a script tag in the base
+  layout, which the `.md` and `llms.txt` responses never carry.
+- **Watch beat 5.4** in `post-draft` — the host-versus-writing finding sits
+  one beat from the close and shouldn't read as its own peak.
