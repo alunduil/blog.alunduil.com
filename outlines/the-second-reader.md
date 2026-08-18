@@ -32,9 +32,10 @@ at the centre, concrete artefacts throughout. Closer to
 
 ## 1. Two themes for one reader — *the opposite*
 
-1. The site follows the reader's theme twice over — every code block ships in both `min-light` and `night-owl`, and an image with a `-dark` sibling under `public/` swaps with the toggle. *(`docs/reference/post-body.md`)*
-2. Pagefind builds a search index at build time so a reader can find an old post without leaving the page. *(`pnpm build`)*
-3. Each of those assumes eyes, a screen, and a preference about brightness.
+1. Every code block carries two palettes at once, `min-light` and `night-owl`, and the reader's theme picks which one shows. *(`astro.config.ts` `shikiConfig`, `defaultColor: false`)*
+2. Every theme-aware image is drawn twice instead, a light file and a `-dark` sibling, and the toggle swaps them. *(`docs/reference/post-body.md`)*
+3. Pagefind builds a search index at build time so a reader can find an old post without leaving the page. *(`pnpm build`)*
+4. Each of those assumes eyes, a screen, and a preference about brightness.
 
 ## 2. A score I could fix in an afternoon — *the chore*
 
