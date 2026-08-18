@@ -53,6 +53,11 @@ moment of change), where the story opens (its opposite), and the open
 questions / anchors still to confirm. That header is phase 1's output
 and the top of phase 2's artefact — no separate brief file.
 
+The header carries only what the beats don't. Name the opening and
+landing scenes by number and let their beats speak. Keep an anchor when
+it holds detail no parenthetical does — a full URL, a pass/fail list, a
+line split.
+
 ## 2. Outline — scene → beat
 
 A story is a sequence of **scenes** (concrete moments); each scene is a
@@ -87,7 +92,7 @@ the last scene's role is usually the honest limitation, not the win.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the nine
+Before approval, read the beats top to bottom and check the ten
 failure signatures:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
@@ -110,6 +115,10 @@ failure signatures:
    so the peak is split and the title points at only one. Demote one to
    setup or to the landing. Test (mirrors `post-draft`): state the single
    moment in one sentence, and only one.
+10. **Header restatement** — the header re-tells a scene, or an anchor
+    repeats a fact a beat parenthetical already carries → cut to what the
+    beats don't say. The header grows fastest here, and every duplicate
+    is a second place to update when a beat moves.
 
 The title in the header is a **working title** — a handle for the file
 and the angle. The real title is chosen in `post-draft` once the prose
@@ -122,6 +131,8 @@ exists and the body settles what it argues.
 
 <Logline: the one moment of change, where the story opens (its
 opposite), the surrounding years as context, open questions to confirm.>
+
+**Anchors beyond the beats.** <detail no parenthetical carries>
 
 ## 1. <Scene name> — *the opposite*
 
