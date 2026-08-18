@@ -1,9 +1,13 @@
 # The Second Reader — outline
 
-**Logline.** A week of agent-identity plumbing sent me back to a scan I had
-already passed, and the same output read as a reader's access requirements.
-The crawler stopped being traffic to manage and became a second reader to
-write for.
+**Logline. TBD — blocked on the author.** The sequence is confirmed: a week
+of agent-identity reading, then a second run of a scan already passed. What
+changed in the second reading is not, and the previous logline invented it.
+Scenes 2 and 3 carry the specific gaps.
+
+The kernel claim is the author's and stands (#289): agents are a publishing
+audience, and a personal site has a second reader with its own legibility
+needs. What must come from the author is how he arrived at it.
 
 **Opens on** the site built for exactly one human reader (scene 1).
 **Lands on** the reader I can't observe: the scanner grades my host, and the
@@ -40,19 +44,19 @@ at the centre, concrete artefacts throughout. Closer to
 ## 2. A score I could fix in an afternoon — *the chore*
 
 1. Cloudflare published an Agent Readiness score in April, with a free scanner alongside it. *(<https://blog.cloudflare.com/agent-readiness/>, <https://isitagentready.com>)*
-2. I scanned the blog, filed the gaps, and treated the result as housekeeping. *(#76)*
+2. I scanned the blog and filed the gaps. *(#76)*
 3. Three of the five dimensions applied to a static site; API catalogues, MCP server cards, OAuth discovery, and commerce protocols didn't. *(#76 scope)*
 4. The work came to fifty-two lines across three files: one `Content-Signal` line in `robots.txt`, an `llms.txt` endpoint, and an `index.md` endpoint per post. *(#264, merged 2026-06-21)*
-5. Cheap enough that I shipped it without asking what it was for.
+5. **TBD — what doing this work was actually like at the time.** The scene's role as *the chore* is an inference; if filing and shipping #76 already felt like something else, the role changes with it.
 
 ## 3. Reading the same output again — *the turn*
 
 1. That week my reading kept landing on the same plumbing: temporary accounts issued to AI agents, OAuth extended to cover them, prompt injection explained as role confusion. *(Readwise, June 2026)*
-2. Each piece treats the agent as a party that arrives, identifies itself, and is granted a scope — the questions you'd ask about a person.
-3. I ran the scan again with that in my head. *(<https://isitagentready.com>)*
-4. Discoverability, content accessibility, and bot access name what a reader needs: to find the writing, to fetch it, and to be allowed to.
-5. The crawler stopped being traffic to manage and became a reader to write for.
-6. The manifests are a second edition — `llms.txt` is the table of contents, and `index.md` is the same post in the form that reader can hold. *(`src/pages/llms.txt.ts`, `src/pages/posts/[...slug]/index.md.ts`)*
+2. **TBD — what, if anything, those pieces had in common for you.** The read that agents are being handed identities and scopes like people is mine, not the author's.
+3. I ran the scan again. *(author, sequence confirmed: reading first, then the scan)*
+4. **TBD — what read differently the second time.** This is the moment of change and it is currently fabricated; nothing may be built on it until the author supplies it.
+5. **TBD — the before-state it changed from.** "Traffic to manage" asserts a prior view of crawlers the author never described.
+6. The manifests answer to that second reader — `llms.txt` is the table of contents, and `index.md` is the same post in a form it can hold. *(`src/pages/llms.txt.ts`, `src/pages/posts/[...slug]/index.md.ts`; the audience claim itself is the author's, from #289)*
 
 ## 4. Saying yes out loud — *the stance*
 
