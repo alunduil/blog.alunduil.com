@@ -1,174 +1,92 @@
 # Tales from Earthsea — review spine
 
-> **Spoilers.** Premise-level beats for *Tales from Earthsea* (2001) below,
-> mostly from "The Finder." This is a working note, not the published post —
-> the post keeps the fence; this drawer doesn't.
+> **Spoilers.** Premise-level beats below. The post keeps a fence; this file
+> doesn't.
 
-**Object:** short story collection — Ursula K. Le Guin, Harcourt, 2001. Five
-stories plus a closing reference essay, "A Description of Earthsea."
-**Issue:** #290. **Slug:** `tales-from-earthsea`.
-**Working title:** The Cloud Over Roke.
+**Object:** Ursula K. Le Guin, *Tales from Earthsea*, Harcourt, 2001. Five
+stories plus a reference essay, "A Description of Earthsea."
+**Issue:** #290. **Slug:** `tales-from-earthsea`. **Title:** The Cloud Over
+Roke.
+**Author has read:** *A Wizard of Earthsea* and this collection, nothing else
+in the series. Claims about "the novels" rest on one novel, and the post says
+so.
 
-**Reader position (load-bearing):** the author has read *A Wizard of
-Earthsea* and this collection. Nothing else in the series. Every claim about
-"the novels" is grounded in one novel; the review says so rather than
-implying a series-wide read.
+## Thesis
 
-**Thesis:** Read it for the world, and stay for what the spread of centuries
-makes visible. The worldbuilding is Tolkien-grade in density and beats him
-on mystique. The collection form is why — five stories scattered across
-three hundred years and across social positions show a world, and a history,
-that a novel following one person through one lifetime can only start to
-indicate. What that history turns out to be is a narrowing: Roke founded
-largely by women, then closed against them, laid out with the same beats and
-the same reframing of symbols and of who may hold power that the modern one
-has. It resolves nothing. The mysteries multiply, and that's the reason to
-keep reading rather than a complaint.
+Read it for the world. The density matches Tolkien and the mystique beats
+him. Five stories across three hundred years show a history one novel can't:
+Roke founded largely by women, then closed against them. Nothing resolves.
+The mysteries multiply, which is the pull rather than the flaw.
 
-**Register constraint:** a book review, not an essay on collections as a
-form and not a politics essay. Both arguments stay at the level of what it
-was like to read these five stories after one novel. Keep the book
-load-bearing, ~4:1 argument to summary.
+## Points
 
-## Supporting points (thematic, not chronological)
+1. **An institution's history is invisible from inside its late stage.** Ged
+   is one man, one lifetime, inside Roke at its most settled. The five
+   stories sit centuries apart and Le Guin doesn't bridge them. *Evidence:*
+   the gaps. The reader assembles what no character can see.
 
-1. **The form is the argument: you can't see an institution's history from
-   inside its late stage.** *A Wizard of Earthsea* is Ged's road, and Roke
-   arrives along it — permanent, authoritative, the obvious centre of magic,
-   a fact of the world rather than a thing that was made. He is one man, one
-   lifetime, inside the school at its most settled. The five stories sit
-   centuries apart, in unconnected places, following people with no claim on
-   each other, and Le Guin doesn't bridge them. Evidence: the gaps are where
-   the world gets big. A reader assembles what no character in any one story
-   can see.
+2. **The founding is the payload.** "The Finder" runs three hundred years
+   before Ged, when wizards served whoever held wealth and power. Otter is
+   worked by the mage Gelluk in the mercury mines. The school was made by
+   fugitives, in hiding, at cost, largely by women. *Evidence:* knowing Roke
+   exists, then watching it get built, changes the first novel.
 
-2. **The founding of Roke is where the arc starts, and it's the one that
-   stuck.** "The Finder" runs roughly three hundred years before Ged, in the
-   dark years when wizards served whoever held wealth and power — Otter
-   taken and worked by the mage Gelluk in the mercury mines. The school
-   turns out to have been made by fugitives, in hiding, at cost, and largely
-   by women. Evidence: knowing the school exists and then watching it be
-   built retroactively changes the first novel. For a reader who came for
-   lore, this is the payload.
-
-3. **The narrowing is the history, and it runs the same progression a real
-   account of ours does.** Across the spread the school shuts: women barred
-   from study and teaching, higher magery reframed as a thing only men do,
-   the Archmage raised into an office. Barbara G. Walker's *The Woman's
-   Dictionary of Symbols and Sacred Objects* traces that rise across four
-   thousand years, and Le Guin's invented version runs it the same way, with
-   the same reframing of symbols and of who may stand near power. *The
-   Handmaid's Tale* and *The Power* take the process as their whole subject;
-   Le Guin lays it out as the back-history of a fantasy world and it lands as
-   hard. Evidence: the school in *A Wizard of Earthsea* admits only men and
-   the novel never remarks on it — the collection makes that silence into a
+3. **The history is a narrowing.** Women are barred from study and teaching.
+   Higher magery is recast as men's work. The Archmage is raised into an
+   office. Walker's *The Woman's Dictionary of Symbols and Sacred Objects*
+   traces the same progression across four thousand years. *The Handmaid's
+   Tale* and *The Power* take it as their whole subject; Le Guin puts it in
+   back-history and it lands as hard. *Evidence:* the first novel's school
+   admits only men and never remarks on it. This one makes that silence a
    result.
 
-   **Attribution, not assertion.** Walker's Great Goddess framework is
-   contested — academic critics fault the *Woman's Encyclopedia* for
-   rewriting myths to fit the theory. The post says Le Guin's progression
-   matches the one Walker lays out, which is true either way, and never
-   claims Walker's prehistory as settled. That also buys the better
-   observation: both books reconstruct a lost history out of symbols, and
-   Le Guin admits hers is guesswork. The parallel is between two acts of
-   reconstruction, not two accounts of what happened.
+4. **The mystique is that narrowing seen once more.** Tolkien's appendices
+   settle the history. Le Guin's thirty-page "Description" sits behind
+   stories that call themselves unreliable — "an airy quilt, half made of
+   hearsay and half of guesswork, yet it may be true enough." *Evidence:*
+   "For a cloud hangs over the time when Roke first became the Isle of the
+   Wise, and it may be that the wise men put it there." The uncertainty has
+   an author.
 
-4. **The mystique is a mechanism, and it's the same mechanism.** Tolkien's
-   appendices settle the history: dated chronologies, genealogies, the
-   languages worked out. Le Guin's closing "A Description of Earthsea" runs
-   thirty-odd pages on peoples, languages, history, and magic — the most
-   Tolkien-like thing in the book — and it sits behind stories that declare
-   themselves unreliable. Her preamble to "The Finder": a story pieced from
-   scraps and fragments, "half made of hearsay and half of guesswork, yet it
-   may be true enough," about a time over which "a cloud hangs... and it may
-   be that the wise men put it there." That last clause is the keystone. The
-   uncertainty is inside the world, and it has an author: the history is
-   contested by the people who kept it. The mystique and the erasure are the
-   same fact.
+Points 3 and 4 are one observation. A draft that separates them into "and
+also, feminism" has lost the spine.
 
 ## Honest tail
 
-- The mysteries don't resolve here, and I can't tell you whether the rest of
-  the series pays them off. Two Earthsea books read. The pull is real; that
-  it's a pull toward something worth reaching is the part I'm taking on
-  faith.
-- All five were good and only one stayed. A year on, "The Finder" is the
-  story I can still walk through and the others have gone soft. Whether
-  that's the collection's shape or just the one that happened to catch me, I
-  can't separate.
-- Reading order. *A Wizard of Earthsea*, then this. "The collection makes
-  the world bigger" is firm about that path and guesswork about any other —
-  a reader coming to these five stories cold might just be lost.
+- Two Earthsea books read. Whether the series pays the mysteries off is taken
+  on faith.
+- All five stories were good and one stayed. "The Finder" is whole since
+  June; the others have gone soft. Cause unknown.
+- Reading order was novel, then collection. "Makes the world bigger" is firm
+  for that path only.
 
-## Spoiler approach
+## Draft constraints
 
-Lower stakes than *The Invincible* — the thesis is about world, history, and
-texture, not about surprise. Still:
+- A book review, not an essay on collections or on politics. Keep the book
+  load-bearing, roughly four parts argument to one of summary.
+- Open on Roke, not on provenance. No manufactured stakes.
+- Spoilers: the founding is "The Finder"'s premise, so it's safe. Medra's
+  fate and the endings of "Dragonfly" and "On the High Marsh" stay out. The
+  description gives away nothing.
+- Cadence: Sunday 08:00 local, `2026-09-06T07:00:00Z`.
+- Cover: Open Library `112188`, the 2001 Harcourt first edition.
+- Tags: worldbuilding, patriarchy.
 
-- **The founding of Roke is the premise of "The Finder," not its ending.**
-  Safe to name and to build the argument on. Medra's own fate, and the
-  endings of "Dragonfly" and "On the High Marsh," stay out.
-- **The narrowing is structural, not plot.** It's the shape the collection
-  describes across centuries, so naming it spoils no story's events.
-- **The other four stories are gestured, not summarised.**
-- **The description gives away nothing** — it sells the world, not a story.
+## Decisions needed
 
-## Draft notes
+1. **Point 3's strength.** It currently says Le Guin matches the progression
+   Walker *lays out*. Walker's Great Goddess framework is contested, so the
+   post doesn't claim her prehistory as fact. Standing behind that account
+   hardens the point and drops the hedge.
+2. **The gate.** Thesis and four points as they stand, or does something
+   move?
 
-- **Open on the argument.** Latch on Roke — the school as it appears in the
-  first novel versus the school as it gets made — rather than on provenance.
-  Understated: the honest provenance is a finished book in the Media Log.
-- **Firm recommendation, honest ending.** Recommend flat; close on the
-  two-books limit.
-- **No manufactured stakes.** No claim about why he picked it up or what it
-  did to him. The take is plain: the lore is the draw, it delivered, and the
-  politics turned out to be the strongest thing in it.
-- **Keep points 3 and 4 fused, not sequential.** They are one observation
-  seen twice — the cloud over Roke's founding is both the mystique and the
-  cover-up. If the draft lets them separate into "and also, feminism," the
-  review has lost its spine.
-- **Cadence:** Sunday 08:00 local. Next open slot `2026-09-06T07:00:00Z`
-  (BST); 07-26 through 08-30 are taken.
-- **Cover:** Open Library id `112188` — the 2001 Harcourt first edition,
-  316x475, English. Downloads to
-  `src/assets/images/tales-from-earthsea-cover.jpg`.
-- **Tags:** subjects, never `review` or `book`; run `/tag-suggest` on the
-  draft. Candidates: worldbuilding, patriarchy, history.
-- **Citations:** the Le Guin quotes in point 4 are from her preamble to "The
-  Finder." Verify wording against the book before publishing — they are
-  currently sourced from secondary criticism, not the text. Link *The
-  Handmaid's Tale* and *The Power* on first mention.
+## Settled
 
-## Resolved
-
-- **Tolkien comparison runs against *The Lord of the Rings***, appendices
-  included — not the Christopher Tolkien apparatus. Point 4 stands as
-  written.
-- **The gender revision is in, and it's load-bearing.** It entered as an
-  open question and came back as "a strong theme... on par with *The
-  Handmaid's Tale* or *The Power*." That widened the thesis from a pure lore
-  claim to lore-plus-history, and gave point 4 its keystone.
-- **No second named story.** All five were good; only "The Finder" is recalled
-  in detail. Point 1 rests on the shape of the spread rather than a second
-  title, and the tail admits the blur instead of hiding it.
-- **Title: "The Cloud Over Roke."** Chosen over "The World Behind the Story"
-  once the thesis widened — it carries the mystique and the erasure in one
-  phrase, which is the fusion points 3 and 4 depend on.
-- **"Same punctuations" means the same sequence**, not merely recognisable
-  beats. The source is Barbara G. Walker's *The Woman's Dictionary of Symbols
-  and Sacred Objects*, which renders the rise of patriarchy across four
-  thousand years; Le Guin runs the same progression. Point 3 claims the match
-  rather than a resemblance, attributed to Walker rather than asserted as
-  settled history.
-- ***The Other Wind* is not started.** It reads Active in the Media Log,
-  which is aspirational. The tail stays at two books read and claims nothing
-  about the rest of the series being under way.
-
-## Open questions for the author
-
-1. **Does the attributed rendering of point 3 hold?** The spine now says Le
-   Guin matches the progression Walker traces, rather than the progression
-   history records. If the intent was to stand behind Walker's account as
-   documented fact, say so and point 3 hardens — but the blog would then be
-   asserting contested prehistory, which the honest-limitation register
-   doesn't do elsewhere.
+- The Tolkien comparison is *The Lord of the Rings* with appendices, not the
+  Christopher Tolkien apparatus.
+- The gender revision is load-bearing. It widened the thesis from lore to
+  lore-plus-history.
+- No second story is named. Point 1 rests on the spread.
+- *The Other Wind* is unstarted; Media Log "Active" is aspirational.
+- Both Le Guin quotes are verified verbatim.
