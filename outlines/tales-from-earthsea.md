@@ -13,43 +13,32 @@ so.
 
 ## Thesis
 
-Read it for the world. The density matches Tolkien and the mystique beats
-him. Five stories across three hundred years show a history one novel can't:
-Roke founded largely by women, then closed against them. Nothing resolves.
-The mysteries multiply, which is the pull rather than the flaw.
+Read it for the world. Five stories across three centuries show what Ged's
+one lifetime can't: Roke was founded largely by women, then closed against
+them. Le Guin marks the gap in that record as deliberate, and that is where
+the mystique comes from.
 
-## Points
+## Beats
 
-1. **An institution's history is invisible from inside its late stage.** Ged
-   is one man, one lifetime, inside Roke at its most settled. The five
-   stories sit centuries apart and Le Guin doesn't bridge them. *Evidence:*
-   the gaps. The reader assembles what no character can see.
+1. **The spread shows the founding.** Ged meets Roke settled and
+   authoritative, a fact of the world rather than a thing that was made.
+   "The Finder" runs three hundred years earlier, when wizards served
+   whoever held wealth and power. The school was built by fugitives, in
+   hiding, at cost, largely by women. *Evidence:* knowing Roke exists, then
+   watching it get built, changes the first novel.
 
-2. **The founding is the payload.** "The Finder" runs three hundred years
-   before Ged, when wizards served whoever held wealth and power. Otter is
-   worked by the mage Gelluk in the mercury mines. The school was made by
-   fugitives, in hiding, at cost, largely by women. *Evidence:* knowing Roke
-   exists, then watching it get built, changes the first novel.
-
-3. **The history is a narrowing.** Women are barred from study and teaching.
-   Higher magery is recast as men's work. The Archmage is raised into an
-   office. Walker's *The Woman's Dictionary of Symbols and Sacred Objects*
-   traces the same progression across four thousand years. *The Handmaid's
-   Tale* and *The Power* take it as their whole subject; Le Guin puts it in
-   back-history and it lands as hard. *Evidence:* the first novel's school
-   admits only men and never remarks on it. This one makes that silence a
-   result.
-
-4. **The mystique is that narrowing seen once more.** Tolkien's appendices
-   settle the history. Le Guin's thirty-page "Description" sits behind
-   stories that call themselves unreliable — "an airy quilt, half made of
-   hearsay and half of guesswork, yet it may be true enough." *Evidence:*
-   "For a cloud hangs over the time when Roke first became the Isle of the
-   Wise, and it may be that the wise men put it there." The uncertainty has
-   an author.
-
-Points 3 and 4 are one observation. A draft that separates them into "and
-also, feminism" has lost the spine.
+2. **What the spread reveals is a narrowing, and the record was doctored.**
+   Women are barred from study and teaching. Higher magery becomes men's
+   work. The Archmage turns into an office. Walker's *The Woman's Dictionary
+   of Symbols and Sacred Objects* runs the same progression through the
+   symbols of our own history — the same reordering of what they mean and of
+   who may hold power. No timescale: the author is not behind a figure for
+   Walker's span, so the post claims the progression and nothing about its
+   duration. Tolkien's appendices settle his history;
+   Le Guin's "Description" sits behind stories that call themselves
+   unreliable. *Evidence:* "For a cloud hangs over the time when Roke first
+   became the Isle of the Wise, and it may be that the wise men put it
+   there." The uncertainty has an author.
 
 ## Honest tail
 
@@ -57,36 +46,37 @@ also, feminism" has lost the spine.
   on faith.
 - All five stories were good and one stayed. "The Finder" is whole since
   June; the others have gone soft. Cause unknown.
-- Reading order was novel, then collection. "Makes the world bigger" is firm
-  for that path only.
 
 ## Draft constraints
 
-- A book review, not an essay on collections or on politics. Keep the book
-  load-bearing, roughly four parts argument to one of summary.
+- **Target 400 words.** The corpus runs 272–385 (*The Sicilian*, *The
+  Invincible*, *Keeper*). The previous 679-word draft padded a two-beat
+  argument into four points.
+- A book review, not an essay on collections or on politics.
 - Open on Roke, not on provenance. No manufactured stakes.
+- Two worlds are in play, so never write "this world" — say Earthsea, or say
+  human history.
 - Spoilers: the founding is "The Finder"'s premise, so it's safe. Medra's
-  fate and the endings of "Dragonfly" and "On the High Marsh" stay out. The
-  description gives away nothing.
+  fate and the endings of "Dragonfly" and "On the High Marsh" stay out.
 - Cadence: Sunday 08:00 local, `2026-09-06T07:00:00Z`.
 - Cover: Open Library `112188`, the 2001 Harcourt first edition.
 - Tags: worldbuilding, patriarchy.
 
-## Decisions needed
+## Cut from the 679-word draft
 
-1. **Point 3's strength.** It currently says Le Guin matches the progression
-   Walker *lays out*. Walker's Great Goddess framework is contested, so the
-   post doesn't claim her prehistory as fact. Standing behind that account
-   hardens the point and drops the hedge.
-2. **The gate.** Thesis and four points as they stand, or does something
-   move?
+- The "both books are reconstructions" coda. It restated the beat-2 close.
+- The four-story roll call. One clause carries the spread.
+- *The Handmaid's Tale* and *The Power* as a separate move. Fold into the
+  Walker sentence or drop.
+- The reading-order caveat in the tail. Two admissions are enough.
 
 ## Settled
 
-- The Tolkien comparison is *The Lord of the Rings* with appendices, not the
-  Christopher Tolkien apparatus.
-- The gender revision is load-bearing. It widened the thesis from lore to
-  lore-plus-history.
-- No second story is named. Point 1 rests on the spread.
+- The Tolkien comparison is *The Lord of the Rings* with appendices.
+- The gender revision is load-bearing, not a side theme.
+- Walker is attributed, not asserted; her framework is contested.
+- No second story is named.
 - *The Other Wind* is unstarted; Media Log "Active" is aspirational.
 - Both Le Guin quotes are verified verbatim.
+- No Walker timescale, and no compression claim. The author is guessing at
+  her span, so neither goes in.
