@@ -13,32 +13,33 @@ so.
 
 ## Thesis
 
-Read it for the world. Five stories across three centuries show what Ged's
-one lifetime can't: Roke was founded largely by women, then closed against
-them. Le Guin marks the gap in that record as deliberate, and that is where
-the mystique comes from.
+Read it for the world. The five stories are set centuries apart, so together
+they tell a history that no single novel could: the school on Roke was
+founded largely by women, and then closed against them. Le Guin says the
+record of that founding was obscured deliberately, and that is where the
+mystique comes from.
 
 ## Beats
 
-1. **The spread shows the founding.** Ged meets Roke settled and
-   authoritative, a fact of the world rather than a thing that was made.
-   "The Finder" runs three hundred years earlier, when wizards served
-   whoever held wealth and power. The school was built by fugitives, in
-   hiding, at cost, largely by women. *Evidence:* knowing Roke exists, then
-   watching it get built, changes the first novel.
+1. **"The Finder" shows how Roke was founded, and the first novel never
+   does.** Ged meets the school settled and authoritative, a fact of the
+   world rather than something people made. "The Finder" runs three hundred
+   years earlier, when wizards served whoever held wealth and power. The
+   school was built by fugitives, in hiding, at cost, largely by women.
+   *Evidence:* knowing Roke exists, then watching it get built, changes the
+   first novel.
 
-2. **What the spread reveals is a narrowing, and the record was doctored.**
-   Women are barred from study and teaching. Higher magery becomes men's
-   work. The Archmage turns into an office. Walker's *The Woman's Dictionary
-   of Symbols and Sacred Objects* runs the same progression through the
-   symbols of our own history — the same reordering of what they mean and of
-   who may hold power. No timescale: the author is not behind a figure for
-   Walker's span, so the post claims the progression and nothing about its
-   duration. Tolkien's appendices settle his history;
-   Le Guin's "Description" sits behind stories that call themselves
-   unreliable. *Evidence:* "For a cloud hangs over the time when Roke first
-   became the Isle of the Wise, and it may be that the wise men put it
-   there." The uncertainty has an author.
+2. **The school shut women out over the next three centuries, and Le Guin
+   says that history was buried deliberately.** Women are barred from study
+   and teaching. Higher magery becomes men's work. The Archmage turns into
+   an office. Walker's *The Woman's Dictionary of Symbols and Sacred
+   Objects* traces the same progression through the symbols of our own
+   history, where it reordered what they mean and who may hold power.
+   Tolkien's
+   appendices settle his history, while Le Guin's "Description" sits behind
+   stories that call themselves unreliable. *Evidence:* "For a cloud hangs
+   over the time when Roke first became the Isle of the Wise, and it may be
+   that the wise men put it there." The uncertainty has an author.
 
 ## Honest tail
 
@@ -65,7 +66,8 @@ the mystique comes from.
 ## Cut from the 679-word draft
 
 - The "both books are reconstructions" coda. It restated the beat-2 close.
-- The four-story roll call. One clause carries the spread.
+- The four-story roll call. One clause can say the stories are set centuries
+  apart.
 - *The Handmaid's Tale* and *The Power* as a separate move. Fold into the
   Walker sentence or drop.
 - The reading-order caveat in the tail. Two admissions are enough.
