@@ -67,8 +67,8 @@ plainly that hers is guesswork. Neither hands you the thing itself.
 
 I have read two Earthsea books. The mysteries multiply across these five
 stories and close almost nothing. That's the reason to keep going rather
-than a complaint, though whether the rest of the series pays them off is
-something I'm taking on faith. All five stories were good. Only one of them
+than a complaint. Whether the later books resolve any of it I don't know,
+having read two. All five stories were good. Only one of them
 stayed. Since June I've kept "The Finder" whole in my head while the others
 have gone soft, and I can't tell whether that's the shape of the book or
 just the one that happened to catch me.

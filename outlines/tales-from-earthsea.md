@@ -34,7 +34,8 @@ record was buried on purpose — that's the mystique.
 
 ## Tail
 
-- Two Earthsea books read. Payoff taken on faith.
+- Mysteries don't resolve here. That's the pull, not a complaint.
+- Two Earthsea books read, so whether later ones resolve them is unknown.
 - All five good, one stayed. "The Finder" whole since June, others soft.
   Cause unknown.
 
