@@ -10,7 +10,7 @@ tags:
 
 Roke is already there in [*A Wizard of Earthsea*](https://www.goodreads.com/book/show/13642.A_Wizard_of_Earthsea).
 Ged arrives and finds a school older than anyone's memory of it, the Masters
-at their disciplines, the Grove standing where it has always stood. The
+already teaching, the Grove standing where it has always stood. The
 novel never suggests it was otherwise.
 [*Tales from Earthsea*](https://www.goodreads.com/book/show/13659.Tales_from_Earthsea)
 shows it being built.
@@ -20,17 +20,18 @@ whoever held wealth and power. Otter is taken and worked by the mage Gelluk
 in the mercury mines. The school Ged walks into as a permanent fact of the
 world was made by fugitives, in hiding, at cost, and largely by women. The
 five stories are set centuries apart. Le Guin doesn't bridge them, which is
-how a reader ends up seeing what no character in any one of them can. Ged's
-road is one man across one lifetime, inside the school at its most settled.
-You can't see an institution's history from there.
+how a reader ends up seeing what no character in any one of them can. Ged is
+one man crossing one lifetime, inside the school at its most settled. You
+can't see an institution's history from there.
 
-What the collection lays out is a closing. Women are barred from study and
+What the collection lays out is how the school closed. Women are barred from
+study and
 from teaching. Higher magery becomes a thing only men do. The Archmage is
 raised from a wizard into an office. Barbara Walker's
 [*The Woman's Dictionary of Symbols and Sacred Objects*](https://www.goodreads.com/book/show/408459)
 traces the same progression through our own symbols, the same reordering of
-what they mean and of who may hold power. Le Guin invents it running the
-same way.
+what they mean and of who may hold power. Le Guin's invented version runs
+the same way.
 
 Tolkien answers this with appendices, the chronologies dated and the
 genealogies settled and handed over. Le Guin closes her book with thirty-odd
@@ -42,8 +43,8 @@ may be that the wise men put it there." The uncertainty has an author. The
 history isn't withheld from the reader so much as buried by the people who
 kept it.
 
-The mysteries multiply across these five stories and close almost nothing,
-which is the reason to keep going rather than a complaint. Whether the later
+The five stories open far more than they close, which is the reason to keep
+going rather than a complaint. Whether the later
 books resolve any of it I don't know, having read two. All five stories were
 good. Only one stayed. "The Finder" has been whole in my head since June
 while the others have gone soft. I can't tell whether that's the book or
