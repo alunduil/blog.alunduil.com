@@ -124,7 +124,10 @@ Playdead
 Playdead's
 
 # Books and fiction
-Earthsea
+# Case-insensitive: post slugs carry these into ogImage paths, which Vale
+# lints as prose. See the frontmatter-scoping issue.
+(?i)Earthsea
+(?i)Roke
 Guiliano
 Corleones
 Croce
@@ -132,6 +135,18 @@ Lem's
 Regis
 Rohan
 Yasna
+Archmage
+Ged
+Ged's
+Gelluk
+Gont
+Guin
+Guin's
+Havnor
+Iria
+magery
+Ogion
+Semel
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
