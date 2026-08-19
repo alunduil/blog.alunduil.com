@@ -7,7 +7,7 @@
 **Object:** short story collection — Ursula K. Le Guin, Harcourt, 2001. Five
 stories plus a closing reference essay, "A Description of Earthsea."
 **Issue:** #290. **Slug:** `tales-from-earthsea`.
-**Working title:** The World Behind the Story.
+**Working title:** The Cloud Over Roke.
 
 **Reader position (load-bearing):** the author has read *A Wizard of
 Earthsea* and this collection. Nothing else in the series. Every claim about
@@ -51,16 +51,18 @@ load-bearing, ~4:1 argument to summary.
    built retroactively changes the first novel. For a reader who came for
    lore, this is the payload.
 
-3. **The narrowing is the history, and it's on par with the books that make
-   it their whole subject.** Across the spread the school shuts: women
-   barred from study and teaching, higher magery reframed as a thing only
-   men do, the Archmage raised into an office. The beats are recognisable
-   and the reframing of symbols and of who may stand near power is the one
-   the reader already knows. *The Handmaid's Tale* and *The Power* take that
-   as their whole subject; Le Guin lays it out as the back-history of a
-   fantasy world and it lands as hard. Evidence: the school in *A Wizard of
-   Earthsea* admits only men and the novel never remarks on it — the
-   collection makes that silence into a result.
+3. **The narrowing is the history, and it matches the real one.** Across the
+   spread the school shuts: women barred from study and teaching, higher
+   magery reframed as a thing only men do, the Archmage raised into an
+   office. The beats are the documented ones, in the documented order — the
+   author read a symbology book tracing the same rise across four thousand
+   years, and Le Guin's invented version runs it the same way, with the same
+   reframing of symbols and of who may stand near power. *The Handmaid's
+   Tale* and *The Power* take that process as their whole subject; Le Guin
+   lays it out as the back-history of a fantasy world and it lands as hard.
+   Evidence: the school in *A Wizard of Earthsea* admits only men and the
+   novel never remarks on it — the collection makes that silence into a
+   result.
 
 4. **The mystique is a mechanism, and it's the same mechanism.** Tolkien's
    appendices settle the history: dated chronologies, genealogies, the
@@ -140,14 +142,22 @@ texture, not about surprise. Still:
 - **No second named story.** All five were good; only "The Finder" is recalled
   in detail. Point 1 rests on the shape of the spread rather than a second
   title, and the tail admits the blur instead of hiding it.
+- **Title: "The Cloud Over Roke."** Chosen over "The World Behind the Story"
+  once the thesis widened — it carries the mystique and the erasure in one
+  phrase, which is the fusion points 3 and 4 depend on.
+- **"Same punctuations" means the documented sequence**, not merely
+  recognisable beats: the author read a symbology book rendering the rise of
+  patriarchy over four thousand years and Le Guin runs the same progression.
+  Point 3 now claims the match rather than the resemblance.
 
 ## Open questions for the author
 
-1. **Does the title still fit?** "The World Behind the Story" was picked
-   against the narrower lore-only thesis. It still works. "The Cloud Over
-   Roke" now carries both engines at once — the mystique and the wise men
-   who put it there — and is the stronger pick if the widened thesis is
-   right.
-2. **"Same punctuations" — did I read you right?** Rendered in point 3 as
-   the same recognisable beats, in the same order. If you meant something
-   more specific, say so and I'll pin it.
+1. **Name the symbology book.** Point 3 now rests on it: Le Guin's invented
+   narrowing matching a documented one is a much stronger claim than "beats
+   you recognise." It isn't in Readwise or the Media Log's Reading table, so
+   it needs naming to be citable. If it stays unnamed, point 3 falls back to
+   the weaker rendering and loses the comparison.
+2. **Is *The Other Wind* under way?** It sits Active in the Media Log, which
+   would make the honest tail sharper — the pull toward the rest of the
+   series is being acted on, not just asserted. The stated read is two books,
+   so this is unconfirmed and stays out until it isn't.
