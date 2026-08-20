@@ -44,8 +44,6 @@ half guesswork, yet true enough. "For a cloud hangs over the time when Roke
 first became the Isle of the Wise," she writes, "and it may be that the wise
 men put it there."
 
-The stories open far more than they close. That's the reason to keep going.
-Whether the later books resolve any of it I don't know, having read two. All
-five were good. Only one stayed. "The Finder" has been whole in my head
-since June while the others have gone soft. I can't tell whether that's the
-book or just the one that caught me.
+Almost none of it resolves, and that's why I'll keep going. I've read a
+small corner of Earthsea. Whatever I've learned to see around here, there's
+plenty I'm still standing inside.

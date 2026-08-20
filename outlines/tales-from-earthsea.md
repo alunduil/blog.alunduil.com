@@ -47,10 +47,14 @@ of. That's the mystique.
 
 ## Tail
 
-- Mysteries don't resolve here. That's the pull, not a complaint.
-- Two Earthsea books read, so whether later ones resolve them is unknown.
-- All five good, one stayed. "The Finder" whole since June, others soft.
-  Cause unknown.
+- Very little resolves. That's why he'll keep reading.
+- Read books 1 and 5 of 6 — a non-contiguous gap (*Tombs*, *Farthest Shore*,
+  *Tehanu* unread). The gap is not worth mentioning; say "a small corner"
+  and never a count, which would invite the sequencing question.
+- No memory-decay line. "The Finder" stood out from the start, not because
+  the others faded. Not worth saying either way.
+- Close turns the argument back on the reviewer: the piece recommends
+  learning to see around a myth, and he has read a fraction of the cycle.
 
 ## Constraints
 
