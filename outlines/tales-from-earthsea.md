@@ -33,8 +33,13 @@ of. That's the mystique.
 - Walker, *Woman's Dictionary of Symbols and Sacred Objects*: our own symbols
   and mythos obscure how we actually got here. That, not the sequence of
   exclusions, is the real parallel. No timescale.
-- Not separable: myth forms identity more than history does. Roke is not a
-  school with a suppressed past. It is the story it tells about itself.
+- Not separable: myth forms identity more than history does, and nobody sets
+  it down at will. What you can do is learn to see around it.
+- That is what the collection gives a reader, and no one inside Earthsea can
+  do it. Walker does the same for our own symbols. Neither proposes
+  discarding the myth.
+- NOT "recovering the history would take something away". That was an
+  inference the author rejected.
 - Tolkien's appendices settle his history. Le Guin's "Description" sits
   behind stories calling themselves unreliable.
 - Evidence: "For a cloud hangs over the time when Roke first became the Isle

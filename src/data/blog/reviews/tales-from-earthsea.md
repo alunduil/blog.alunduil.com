@@ -32,9 +32,9 @@ is raised from a wizard into an office. Barbara Walker's
 [*The Woman's Dictionary of Symbols and Sacred Objects*](https://www.goodreads.com/book/show/408459)
 reads our own symbols as a mythology that obscures how we got here, and
 that's the parallel. It isn't a complaint about distortion. Myth does more
-than history to make us who we are, so the buried founding isn't something
-you could just hand back. Return it to Roke's wizards and you would be
-taking something away.
+than history to make us who we are, and you don't get to set it down. What
+you can do is learn to see around it, which is what these five stories are
+for.
 
 Tolkien answers this with appendices, the chronologies dated, the
 genealogies settled. Le Guin closes her book with thirty-odd pages of much
