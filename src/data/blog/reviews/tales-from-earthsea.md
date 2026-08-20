@@ -20,9 +20,9 @@ held wealth and power. Otter is taken and worked by the mage Gelluk in the
 mercury mines. Fugitives built the school Ged walks into, working in hiding
 and at their own risk. Most of them were women. That changed the first novel
 for me. It isn't that Ged is kept from his own history. Roke teaches it to
-him, and always as song. *The Creation of Éa* is one he learns there. The novel says outright that the Deed of Ged leaves
-things out. Seeing a history from inside it is nothing like seeing it warped
-through story.
+him, and always as song. *The Creation of Éa* is one he learns there. The
+novel says outright that the Deed of Ged leaves things out. Seeing a history
+from inside it is nothing like seeing it warped through story.
 
 The collection lays out how the school closed. Women are barred from study
 and from teaching. Higher magery becomes a thing only men do. The Archmage
