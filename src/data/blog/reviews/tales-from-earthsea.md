@@ -1,7 +1,7 @@
 ---
 pubDatetime: 2026-09-06T07:00:00Z
 title: The Cloud Over Roke
-description: "Le Guin's five stories are set centuries apart, and together they tell a history no one novel could. The school on Roke was founded largely by women, and then closed against them."
+description: "The school on Roke was founded largely by women, then closed against them. What survives isn't the history but the story Roke tells about itself."
 ogImage: ../../../assets/images/tales-from-earthsea-cover.jpg
 tags:
   - worldbuilding
@@ -10,8 +10,7 @@ tags:
 
 Roke is already there in [*A Wizard of Earthsea*](https://www.goodreads.com/book/show/13642.A_Wizard_of_Earthsea).
 Ged arrives and finds a school older than anyone's memory of it, the Masters
-already teaching, the Grove standing where it has always stood. The novel
-never suggests it was otherwise.
+already teaching. The novel never suggests it was otherwise.
 [*Tales from Earthsea*](https://www.goodreads.com/book/show/13659.Tales_from_Earthsea)
 shows it being built. I read it in June. I'd tell you to read it for the
 world.
@@ -20,30 +19,31 @@ world.
 held wealth and power. Otter is taken and worked by the mage Gelluk in the
 mercury mines. The school Ged walks into as a permanent fact of the world
 was made by fugitives, in hiding, at cost, and largely by women. That
-changed the first novel for me. The five stories are set centuries apart.
-Across them the school changes. No character lives long enough to watch that
-happen. Ged sees only the finished school. Nothing in his years there tells
-him it was ever different.
+changed the first novel for me. It isn't that Ged is kept from his own
+history. Roke teaches it to him, and always as song. *The Creation of Éa* is
+one he learns there. The novel says outright that the Deed of Ged leaves
+things out. Seeing a history from inside it is nothing like seeing it warped
+through story.
 
 The collection lays out how the school closed. Women are barred from study
 and from teaching. Higher magery becomes a thing only men do. The Archmage
 is raised from a wizard into an office. Barbara Walker's
 [*The Woman's Dictionary of Symbols and Sacred Objects*](https://www.goodreads.com/book/show/408459)
-traces the same progression through our own symbols, the same reordering of
-what they mean and who may hold power. Le Guin's invented version runs the
-same way.
+reads our own symbols as a mythology that obscures how we got here, and
+that's the parallel. It isn't a complaint about distortion. Myth does more
+to make us who we are than history does. Roke isn't a school with a
+suppressed past. It's the story it tells about itself.
 
-Tolkien answers this with appendices, the chronologies dated and the
+Tolkien answers this with appendices, the chronologies dated, the
 genealogies settled. Le Guin closes her book with thirty-odd pages of much
-the same apparatus, then sets it behind five stories that
-tell you they may be wrong. She introduces "The Finder" as an airy quilt,
-half hearsay and half guesswork, yet true enough. "For a cloud hangs over
-the time when Roke first became the Isle of the Wise," she writes, "and it
-may be that the wise men put it there." The history isn't withheld from the
-reader so much as buried by the people who kept it.
+the same apparatus, then sets it behind five stories that tell you they may
+be wrong. She introduces "The Finder" as an airy quilt, half hearsay and
+half guesswork, yet true enough. "For a cloud hangs over the time when Roke
+first became the Isle of the Wise," she writes, "and it may be that the wise
+men put it there."
 
-The stories open far more than they close, which is the reason to keep
-going, not a complaint. Whether the later books resolve any of it I don't
-know, having read two. All five were good. Only one stayed. "The Finder"
-has been whole in my head since June while the others have gone soft. I
-can't tell whether that's the book or just the one that caught me.
+The stories open far more than they close. That's the reason to keep going.
+Whether the later books resolve any of it I don't know, having read two. All
+five were good. Only one stayed. "The Finder" has been whole in my head
+since June while the others have gone soft. I can't tell whether that's the
+book or just the one that caught me.
