@@ -44,5 +44,5 @@ half guesswork, yet true enough. "For a cloud hangs over the time when Roke
 first became the Isle of the Wise," she writes, "and it may be that the wise
 men put it there."
 
-Almost none of it resolves. I've read a small corner of Earthsea, and this
-is the book that made me want the rest.
+Almost none of it resolves. I came to it already reading Earthsea. It left
+me wanting more of the world than either book has shown me.

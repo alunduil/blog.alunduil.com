@@ -48,6 +48,9 @@ of. That's the mystique.
 ## Tail
 
 - Very little resolves. That's why he'll keep reading.
+- *A Wizard of Earthsea* came first and had already made him an Earthsea
+  reader. This collection sharpened that; it did not create it. Never write
+  "the book that made me want the rest".
 - Read books 1 and 5 of 6 — a non-contiguous gap (*Tombs*, *Farthest Shore*,
   *Tehanu* unread). The gap is not worth mentioning; say "a small corner"
   and never a count, which would invite the sequencing question.
