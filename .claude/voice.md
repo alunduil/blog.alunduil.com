@@ -66,6 +66,10 @@ The house register for story posts (Tolkien/Carroll touchstone):
 
 - Drop summary-as-flourish ("outlasted them all", "Everything between me
   and the books").
+- State uncertainty as not knowing: "I don't know whether…", "I can't tell
+  whether…". The register is secular and plain — "faith" and devotional
+  vocabulary are not the author's words, and dressing a limit up as belief
+  overstates it.
 - Ease in via personal continuity ("I'm still…", "Since college I've
   always…") rather than fragment-label openers.
 - Don't repeat temporal anchors; book-end them.
