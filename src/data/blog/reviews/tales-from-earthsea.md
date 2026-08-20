@@ -24,7 +24,7 @@ That isn't what Roke teaches him. It teaches him songs. *The Creation of Éa*
 is one he learns there, and the novel says outright that the Deed of Ged
 leaves things out. So the past reaches Ged constantly, and always as song.
 Seeing a history from inside it is nothing like seeing it warped through
-story. That changed the first novel for me.
+story.
 
 The collection lays out how the school closed. Women are barred from study
 and from teaching. Higher magery becomes a thing only men do. The Archmage
