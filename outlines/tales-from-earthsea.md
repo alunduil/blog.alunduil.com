@@ -11,22 +11,30 @@ Author has read: *A Wizard of Earthsea* and this. Nothing else in the series.
 
 Read it for the world. Stories set centuries apart tell a history no one
 novel can: Roke founded largely by women, then closed against them. The
-record was buried on purpose — that's the mystique.
+record reaches everyone as myth instead, and myth is what the place is made
+of. That's the mystique.
 
-## Beat 1 — the founding, which the novel never shows
+## Beat 1 — the founding, which Ged only ever gets as story
 
 - Ged meets Roke settled, authoritative, ancient.
+- He is not ignorant of the past. Earthsea is saturated with it — *The
+  Creation of Éa*, the Deed of Erreth-Akbe, the lays. Verify one before
+  citing.
+- All of it reaches him as song and legend. Seeing a history from inside a
+  period is not seeing it warped through story.
 - "The Finder": 300 years earlier, wizards serving whoever held wealth and
-  power.
-- School built by fugitives, in hiding, at cost, largely by women.
+  power. School built by fugitives, in hiding, at cost, largely by women.
 - Evidence: watching it get built changes the first novel.
 
-## Beat 2 — the school shuts, the record is buried
+## Beat 2 — myth covers the closing, and myth is what Roke is made of
 
 - Women barred from study and teaching.
 - Higher magery → men's work. Archmage → an office.
-- Walker, *Woman's Dictionary of Symbols and Sacred Objects*: same
-  progression in our own symbols. No timescale.
+- Walker, *Woman's Dictionary of Symbols and Sacred Objects*: our own symbols
+  and mythos obscure how we actually got here. That, not the sequence of
+  exclusions, is the real parallel. No timescale.
+- Not separable: myth forms identity more than history does. Roke is not a
+  school with a suppressed past. It is the story it tells about itself.
 - Tolkien's appendices settle his history. Le Guin's "Description" sits
   behind stories calling themselves unreliable.
 - Evidence: "For a cloud hangs over the time when Roke first became the Isle
