@@ -1,6 +1,7 @@
 import { defineConfig, envField, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
+import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
 import rehypeThemeImages from "./src/utils/rehypeThemeImages";
 import {
@@ -15,6 +16,9 @@ import { BRAND_FONT, SITE } from "./src/config";
 export default defineConfig({
   site: SITE.website,
   integrations: [
+    // Logging defaults on, chattering to the console on every page load.
+    // Errors report regardless.
+    mermaid({ enableLog: false }),
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),
     }),

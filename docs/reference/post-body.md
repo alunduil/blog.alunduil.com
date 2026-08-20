@@ -112,3 +112,28 @@ notation transformers:
 Rendering strips the notation comment from the output. For the full
 syntax, including ranges, see the
 [@shikijs/transformers documentation](https://shiki.style/packages/transformers).
+
+## Diagrams
+
+A `mermaid` fence renders as a diagram, written in
+[Mermaid](https://mermaid.js.org) syntax:
+
+````md
+```mermaid
+flowchart LR
+    Resolver --> Root
+    Root --> TLD
+```
+````
+
+`astro.config.ts` wires the `astro-mermaid` integration, and Shiki
+leaves the fence alone. The diagram follows the site theme toggle, in
+Mermaid's `default` and `dark` palettes rather than the site's.
+
+Two limits apply:
+
+- Mermaid runs in the browser. Without JavaScript the fence shows its
+  own source as a plain block of text.
+- The RSS feed, the `index.md` endpoint, and `llms.txt` carry the fence
+  as source text. They render the body outside the page, where no
+  JavaScript runs.
