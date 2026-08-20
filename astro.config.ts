@@ -16,8 +16,8 @@ import { BRAND_FONT, SITE } from "./src/config";
 export default defineConfig({
   site: SITE.website,
   integrations: [
-    // Client-side: the bundled renderer loads only on pages that hold a
-    // `pre.mermaid`, and re-reads `data-theme` when the site toggle flips it.
+    // Logging defaults on, chattering to the console on every page load.
+    // Errors report regardless.
     mermaid({ enableLog: false }),
     sitemap({
       filter: page => SITE.showArchives || !page.endsWith("/archives"),

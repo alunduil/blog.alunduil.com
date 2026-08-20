@@ -115,9 +115,8 @@ syntax, including ranges, see the
 
 ## Diagrams
 
-A `mermaid` fence renders as a diagram. Write the diagram in
-[Mermaid](https://mermaid.js.org) syntax, so it diffs in git the way the
-rest of the post does:
+A `mermaid` fence renders as a diagram, written in
+[Mermaid](https://mermaid.js.org) syntax:
 
 ````md
 ```mermaid
@@ -127,17 +126,14 @@ flowchart LR
 ```
 ````
 
-The `astro-mermaid` integration in `astro.config.ts` handles this. It
-takes the fence out of Shiki's hands at build time and renders it in the
-browser. The diagram follows the site theme toggle, in Mermaid's own
-`default` and `dark` palettes.
+`astro.config.ts` wires the `astro-mermaid` integration, and Shiki
+leaves the fence alone. The diagram follows the site theme toggle, in
+Mermaid's `default` and `dark` palettes rather than the site's.
 
-Three limits apply:
+Two limits apply:
 
 - Mermaid runs in the browser. Without JavaScript the fence shows its
   own source as a plain block of text.
-- Only a page holding a diagram loads Mermaid. A post without one
-  downloads nothing extra.
 - The RSS feed, the `index.md` endpoint, and `llms.txt` carry the fence
-  as source text. They render the body outside the page, where nothing
-  runs it.
+  as source text. They render the body outside the page, where no
+  JavaScript runs.
