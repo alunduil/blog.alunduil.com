@@ -17,13 +17,13 @@ shows it being built. I read it in June. I'd tell you to read it for the
 world.
 
 "The Finder" runs three hundred years earlier, when wizards served whoever
-held wealth and power. Otter is taken and worked by the mage Gelluk
-in the mercury mines. The school Ged walks into as a permanent fact of the
-world was made by fugitives, in hiding, at cost, and largely by women. That
+held wealth and power. Otter is taken and worked by the mage Gelluk in the
+mercury mines. The school Ged walks into as a permanent fact of the world
+was made by fugitives, in hiding, at cost, and largely by women. That
 changed the first novel for me. The five stories are set centuries apart.
-Le Guin doesn't bridge them, which is how you see what no character in any
-one of them can. Ged is one man, one lifetime, inside the school at
-its most settled. You can't see an institution's history from there.
+Across them the school changes. No character lives long enough to watch that
+happen. Ged sees only the finished school. Nothing in his years there tells
+him it was ever different.
 
 The collection lays out how the school closed. Women are barred from study
 and from teaching. Higher magery becomes a thing only men do. The Archmage
