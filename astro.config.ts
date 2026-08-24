@@ -15,6 +15,20 @@ import { BRAND_FONT, SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  // The Nikola era served posts at `/posts/<slug>.html`; AstroPaper serves
+  // `/posts/<slug>/`. Search engines still hold the old form for the
+  // restored posts, so each keeps a meta-refresh page carrying a canonical
+  // link to its replacement. A static build writes these to
+  // `dist/posts/<slug>.html/index.html`, which GitHub Pages reaches by
+  // redirecting the extension-less request to the trailing-slash form.
+  redirects: {
+    "/posts/best-practices-bind-mounts-and-chroots.html":
+      "/posts/best-practices-bind-mounts-and-chroots/",
+    "/posts/using-apc-to-speed-up-php.html":
+      "/posts/using-apc-to-speed-up-php/",
+    "/posts/using-memcached-with-mediawiki-and-wordpress.html":
+      "/posts/using-memcached-with-mediawiki-and-wordpress/",
+  },
   integrations: [
     // Logging defaults on, chattering to the console on every page load.
     // Errors report regardless.
