@@ -12,23 +12,28 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { BRAND_FONT, SITE } from "./src/config";
 
+/**
+ * Redirects to a restored post from the URL its original engine served it
+ * at.
+ *
+ * Nikola and Hakyll both served `/posts/<slug>.html`, AstroPaper serves
+ * `/posts/<slug>/`, and search engines still hold the old form. A static
+ * build writes each redirect to `dist/posts/<slug>.html/index.html`, which
+ * GitHub Pages reaches by redirecting the extension-less request to the
+ * trailing-slash form; the page there carries a meta refresh, a canonical
+ * link, and `noindex`.
+ */
+const archivalRedirects = (...slugs: string[]) =>
+  Object.fromEntries(slugs.map(s => [`/posts/${s}.html`, `/posts/${s}/`]));
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  // The Nikola era served posts at `/posts/<slug>.html`; AstroPaper serves
-  // `/posts/<slug>/`. Search engines still hold the old form for the
-  // restored posts, so each keeps a meta-refresh page carrying a canonical
-  // link to its replacement. A static build writes these to
-  // `dist/posts/<slug>.html/index.html`, which GitHub Pages reaches by
-  // redirecting the extension-less request to the trailing-slash form.
-  redirects: {
-    "/posts/best-practices-bind-mounts-and-chroots.html":
-      "/posts/best-practices-bind-mounts-and-chroots/",
-    "/posts/using-apc-to-speed-up-php.html":
-      "/posts/using-apc-to-speed-up-php/",
-    "/posts/using-memcached-with-mediawiki-and-wordpress.html":
-      "/posts/using-memcached-with-mediawiki-and-wordpress/",
-  },
+  redirects: archivalRedirects(
+    "best-practices-bind-mounts-and-chroots",
+    "using-apc-to-speed-up-php",
+    "using-memcached-with-mediawiki-and-wordpress"
+  ),
   integrations: [
     // Logging defaults on, chattering to the console on every page load.
     // Errors report regardless.
