@@ -135,7 +135,7 @@ repos:
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
-            src/data/blog/_hakyll/.*
+            src/data/blog/_.*
           )$
 
   # Markdown structure linting with markdownlint-cli2.

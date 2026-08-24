@@ -97,7 +97,7 @@ corpus measurably does. Recalibrate by re-reading the posts.
 Four current author posts as of 2026-07: `how-i-back-up`,
 `how-i-read-eight-years-on` (methodology); `i-built-the-machine-twice`,
 `the-bottleneck-isnt-the-blank-page` (narrative). The archival
-restorations under `_hakyll/` are an older, lightly-copyedited era —
+restorations under `_<engine>/` are an older, lightly-copyedited era —
 weak calibration; weight the four current posts. A fifth,
 `backing-up-google-takeout-to-truenas`, is the first how-to — a distinct
 instructional register (below), n=1 and provisional.

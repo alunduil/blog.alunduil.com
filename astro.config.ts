@@ -12,9 +12,25 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { BRAND_FONT, SITE } from "./src/config";
 
+/**
+ * Nikola and Hakyll served posts at `/posts/<slug>.html`, and search
+ * engines still send traffic there.
+ *
+ * A static build writes each redirect into a directory named for the old
+ * URL, `dist/posts/<slug>.html/index.html`. GitHub Pages reaches it by
+ * redirecting the extension-less request to the trailing-slash form.
+ */
+const archivalRedirects = (...slugs: string[]) =>
+  Object.fromEntries(slugs.map(s => [`/posts/${s}.html`, `/posts/${s}/`]));
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
+  redirects: archivalRedirects(
+    "best-practices-bind-mounts-and-chroots",
+    "using-apc-to-speed-up-php",
+    "using-memcached-with-mediawiki-and-wordpress"
+  ),
   integrations: [
     // Logging defaults on, chattering to the console on every page load.
     // Errors report regardless.
