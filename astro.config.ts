@@ -13,15 +13,12 @@ import { transformerFileName } from "./src/utils/transformers/fileName";
 import { BRAND_FONT, SITE } from "./src/config";
 
 /**
- * Redirects to a restored post from the URL its original engine served it
- * at.
+ * Nikola and Hakyll served posts at `/posts/<slug>.html`, and search
+ * engines still send traffic there.
  *
- * Nikola and Hakyll both served `/posts/<slug>.html`, AstroPaper serves
- * `/posts/<slug>/`, and search engines still hold the old form. A static
- * build writes each redirect to `dist/posts/<slug>.html/index.html`, which
- * GitHub Pages reaches by redirecting the extension-less request to the
- * trailing-slash form; the page there carries a meta refresh, a canonical
- * link, and `noindex`.
+ * A static build writes each redirect into a directory named for the old
+ * URL, `dist/posts/<slug>.html/index.html`. GitHub Pages reaches it by
+ * redirecting the extension-less request to the trailing-slash form.
  */
 const archivalRedirects = (...slugs: string[]) =>
   Object.fromEntries(slugs.map(s => [`/posts/${s}.html`, `/posts/${s}/`]));
