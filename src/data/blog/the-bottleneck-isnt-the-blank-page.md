@@ -6,6 +6,7 @@ tags:
   - tooling
   - writing
   - methodology
+shape: essay
 ---
 
 The hard part of keeping a blog looks like the writing. You picture

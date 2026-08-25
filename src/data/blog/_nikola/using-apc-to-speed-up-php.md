@@ -6,6 +6,7 @@ tags:
   - php
   - caching
   - performance
+shape: how-to
 timezone: America/Chicago
 hideEditPost: true
 ---

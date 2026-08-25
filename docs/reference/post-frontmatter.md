@@ -18,6 +18,8 @@ Fields, in schema order:
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
 | `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
 | `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
+| `shape` | no | string | One of `essay`, `practice`, `review`, `how-to`, `note`; defaults to `essay` (see [post shapes](post-shapes.md)). |
+| `reviewed` | no | string | Name of the work a `review` is about; becomes `itemReviewed`. |
 | `ogImage` | no | image \| string | Overrides the dynamic OG card; reviews set it (see [Locations](#locations)). |
 | `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |

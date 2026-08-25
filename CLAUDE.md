@@ -62,9 +62,9 @@ so the repo-relevant essentials:
 
 ## Posting convention
 
-Every post is an `article` or a `note`, with a style axis inside
-`article`. Types and styles are documented in
-`docs/reference/post-types.md`.
+Every post sets `shape` — `essay`, `practice`, `review`, `how-to`, or
+`note` — which picks the drafting skill and the schema.org type the page
+declares. Documented in `docs/reference/post-shapes.md`.
 
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.

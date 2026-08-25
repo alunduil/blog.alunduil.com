@@ -13,8 +13,8 @@ pnpm build    # produces ./dist
 
 ## Content
 
-Posts are articles or notes, following the [IndieWeb] post-type
-vocabulary. [Post types](docs/reference/post-types.md) defines it;
+Posts are essays, practice notes, reviews, or how-tos.
+[Post shapes](docs/reference/post-shapes.md) defines them;
 [post frontmatter](docs/reference/post-frontmatter.md) covers the fields
 and scheduling.
 
@@ -23,5 +23,4 @@ and scheduling.
 Theme is [AstroPaper] by Sat Naing, MIT-licensed. See [`LICENSE`](LICENSE).
 
 [Astro]: https://astro.build/
-[IndieWeb]: https://indieweb.org/posts
 [AstroPaper]: https://github.com/satnaing/astro-paper
