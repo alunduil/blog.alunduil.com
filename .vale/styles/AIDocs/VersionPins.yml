@@ -2,13 +2,12 @@
 # Renovate opens the PR, and the sentence keeps asserting the old number.
 # Name the file that holds the pin instead.
 #
-# Only versions. Dates were the other half of this tell and didn't
-# survive calibration — "as of 2026-07" stamping a measurement and a
-# stale "supported through 2026" are the same shape to a regex, and
-# telling them apart is the model's job.
+# Versions only. A date stamping a measurement ("as of 2026-07") and a
+# stale claim ("supported through 2026") are the same shape to a regex,
+# so dates are the model's call.
 #
-# Backticked versions are already quiet, because Vale doesn't read inline
-# code. That's what keeps this off quoted commands and dependency pins.
+# Vale doesn't read inline code, so a backticked version in a command or
+# a dependency pin stays quiet.
 
 extends: existence
 message: "Version pinned in prose: '%s'. Point at the file that holds the pin."

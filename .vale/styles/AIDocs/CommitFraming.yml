@@ -1,15 +1,9 @@
-# AI-targeted docs are loaded whole on every relevant turn and describe
-# the repo at HEAD. History belongs to the commit that made it: prose
-# narrating a change spends context on a state the reader can't observe,
-# and keeps the superseded approach weighted long after it lost.
+# AI-targeted docs load whole on every relevant turn. Prose narrating a
+# change spends that context on a state the reader can't observe and
+# leaves the dead approach in it; the commit already holds the history.
 #
-# "used to" carries a second sense — "the flag used to pin the version" —
-# so it only fires next to a state verb, or after "we". A bare `used to`
-# would be the obvious simplification and would flag every passive
-# construction in the repo.
-#
-# `ignorecase` because these open sentences as often as they sit inside
-# one.
+# "used to" also means "employed to" — "the flag used to pin the
+# version" — so it fires only after "we" or beside a state verb.
 
 extends: existence
 message: "Commit-message framing: '%s'. Describe the repo at HEAD."
