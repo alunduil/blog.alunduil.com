@@ -45,8 +45,15 @@ JSON-LD.
 | Shape | schema.org type |
 | --- | --- |
 | `essay`, `practice`, `note` | `BlogPosting` |
-| `how-to` | `TechArticle` |
-| `review` | `Review` |
+| `how-to` | `BlogPosting`, `TechArticle` |
+| `review` | `BlogPosting`, `Review` |
+
+Every post stays a `BlogPosting`, because every post is one. The shape adds a
+second type where one applies. Declaring `Review` alone would drop the page
+out of the blog-post hierarchy that listing and search tools read: `Review`
+descends from `CreativeWork` directly, and `TechArticle` sits on a different
+branch of `Article` than `BlogPosting`. Schema.org allows an entity to hold
+several independent types for exactly this case.
 
 `TechArticle` carries the how-tos rather than `HowTo`, which expects
 machine-readable `step` values this blog's prose doesn't supply.
