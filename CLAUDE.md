@@ -7,9 +7,9 @@ GitHub Pages deploy on push to `main`).
 
 This repo is used from Claude Code on the web, where host-local config
 isn't present: the global `~/.claude/CLAUDE.md` and the per-project memory
-directory don't travel — only the checkout does. Keep durable conventions
+directory don't travel—only the checkout does. Keep durable conventions
 (voice, process, project rules) in the repo: `.claude/skills/`, this file,
-or `docs/`. Skills must stand alone — state what they rely on inline, so
+or `docs/`. Skills must stand alone—state what they rely on inline, so
 host memory only reinforces what the repo already carries.
 
 ## Tooling
@@ -18,11 +18,11 @@ This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
 - Package manager: pnpm, pinned once in `package.json`'s `packageManager`
-  field — Renovate tracks it there, and withastro/action reads it after
+  field—Renovate tracks it there, and withastro/action reads it after
   auto-detecting `pnpm-lock.yaml`. `pnpm-workspace.yaml` holds workspace
   config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
-  `astro check` and pagefind). AstroPaper theme — treat as upstream
+  `astro check` and pagefind). AstroPaper theme—treat as upstream
   (see below).
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
   (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
@@ -37,16 +37,19 @@ scripting your own.
   installs Node/pnpm for the ESLint/Prettier hooks and lychee via
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
-- Vale runs two styles off one config. Human prose (Microsoft, proselint,
-  alex, en_GB spelling) covers posts and docs; this file and `.claude/**`
-  get `blog-alunduil-com-agent`, catching the four AI-doc tells a regex
-  can settle: commit-message framing, forward-looking banners, versions
-  pinned in prose, and pointers to where credentials live. Token
-  efficiency, positive framing, and whether a date stamps a measurement
-  or marks rot stay inferential. `outlines/` gets neither style, holding
-  scene-and-beat planning. Backtick a literal (`TBD`, `not-planned`) so
-  naming one doesn't trip the rule against it, and write any new rule at
-  `error`: a warning exits 0, and a passing hook prints nothing.
+- Vale runs off one config. Posts and docs get the full human stack
+  (Microsoft, proselint, alex, en_GB spelling). This file and
+  `.claude/**` get Microsoft plus `blog-alunduil-com-agent`, which
+  catches the four AI-doc tells a regex can settle: commit-message
+  framing, forward-looking banners, versions pinned in prose, and
+  pointers to where credentials live. Quotes, Foreign, Auto,
+  Contractions, and en_GB spelling stay off those paths; `.vale.ini`
+  carries the reason for each. Token efficiency, positive framing, and
+  whether a date stamps a measurement or marks rot stay inferential.
+  `outlines/` is linted by neither. Backtick a literal (`TBD`,
+  `not-planned`) so naming one doesn't trip the rule against it, and
+  write any new rule at `error`: a warning exits 0, and a passing hook
+  prints nothing.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on
@@ -54,7 +57,7 @@ scripting your own.
   blocks nothing, and reports to one rolling issue. Adding to `exclude`
   takes a failing run plus proof from off the blocking host; the rule
   sits with the list.
-- Custom skills under `.claude/skills/` — catalogued in the Skills
+- Custom skills under `.claude/skills/`—catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.
 
@@ -83,7 +86,7 @@ cadence, timezone, locations, cover images, and tags are documented in
 
 ### "How I X" series
 
-Future entries title as `How I X (YYYY)` — year-stamped titles scale as
+Future entries title as `How I X (YYYY)`—year-stamped titles scale as
 entries accumulate. Cadence ties to substantive change in the practice;
 the next entry is ready when reading the prior one prompts "that's not
 how I do it any more." Add series infrastructure (index page, schema
@@ -91,7 +94,7 @@ field, milestone) once there are 3+ entries.
 
 ## Voice
 
-`.claude/voice.md` is the blog's voice home — the prescriptive rules to
+`.claude/voice.md` is the blog's voice home—the prescriptive rules to
 apply and the descriptive fingerprint measured from the corpus. Read it
 before drafting or editing any post. Distinct from the host
 `~/.claude/voice.md`, which profiles the author's external PR/issue voice
@@ -100,10 +103,10 @@ against a different corpus.
 ## AstroPaper upstream
 
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
-upstream — edit only when the change is the point:
+upstream—edit only when the change is the point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
-  `src/utils/`, `src/content.config.ts` — theme code.
+  `src/utils/`, `src/content.config.ts`—theme code.
 
 The theme's sample posts (tutorials, release notes, example drafts) are
 gone; `src/data/blog/` is all author content. What they documented about
@@ -124,19 +127,19 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 Custom skills under `.claude/skills/`; each SKILL.md frontmatter is the
 authoritative description. The writing pipeline:
 
-- `outline-draft` → `post-draft` — story posts: a scene-and-beat outline
+- `outline-draft` → `post-draft`—story posts: a scene-and-beat outline
   gated at approval, then prose. `/outline-draft [#N]`, `/post-draft <slug>`.
-- `review-draft` — book/paper/game reviews (a claim and its evidence), a
+- `review-draft`—book/paper/game reviews (a claim and its evidence), a
   sibling of the story pipeline. `/review-draft [#N|title|path]`.
 
 Utilities:
 
-- `digest` — cluster a window of GitHub, Readwise, and Reader activity,
+- `digest`—cluster a window of GitHub, Readwise, and Reader activity,
   plus a Notion Media Log check-in, into post kernels.
   `/digest [Nd|Nw|Nm|Ny]` (default `7d`).
-- `tag-suggest` — propose frontmatter tags for a draft; applies only
+- `tag-suggest`—propose frontmatter tags for a draft; applies only
   after confirmation. `/tag-suggest <path>`.
-- `syndicate-instagram` — hand-crafted Instagram post from a published
+- `syndicate-instagram`—hand-crafted Instagram post from a published
   post (the one surface not auto-syndicated by dlvr.it).
   `/syndicate-instagram [path|slug|url]`.
 

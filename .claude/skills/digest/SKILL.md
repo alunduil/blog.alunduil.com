@@ -1,11 +1,11 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat; the only side effects are Media Log status updates you confirm and idea issues on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes)—surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat; the only side effects are Media Log status updates you confirm and idea issues on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
 
-Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
+Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step—everything else is read-only.
 
 **Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
@@ -43,46 +43,46 @@ JSON shape:
 
 Fetch Readwise + Reader for the same window via MCP (using `window.since`, append `T00:00:00Z`), then run the Media Log check-in:
 
-- `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
-- `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **Omit the category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
+- `readwise_list_highlights`— `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
+- `reader_list_documents`— `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **Omit the category filter**—Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
 
-**Notion Media Log check-in** — the one place the digest *writes*. Two trackers; the digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves any other columns the author keeps (Playing carries `Platform`, hours, `% Done`, etc.) untouched:
+**Notion Media Log check-in**—the one place the digest *writes*. Two trackers; the digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves any other columns the author keeps (Playing carries `Platform`, hours, `% Done`, etc.) untouched:
 
 - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
 - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
 
-Derive completions from one "what's active now?" answer per source. A drop resolves to one of three dispositions: finished, abandoned, or **hiatus** — a title the author put down to resume later, which stays Active. Confirm each drop's disposition before writing. Before synthesis:
+Derive completions from one "what's active now?" answer per source. A drop resolves to one of three dispositions: finished, abandoned, or **hiatus**—a title the author put down to resume later, which stays Active. Confirm each drop's disposition before writing. Before synthesis:
 
-1. **Read current Active** (best-effort): per source, `notion-search` `data_source_url=<collection>` (`query` a domain term like `"book"`/`"video game"`), `notion-fetch` the hits, keep `Status = Active` → the *known-active* set. This read can't filter on `Status` server-side, so recall is best-effort — a row it misses just won't be offered this run (stays Active until it surfaces). Self-healing gap.
-2. **Prompt and stop** (one question per source, free-form): show the known-active titles and ask "what are you actually engaged with right now — and did you finish, abandon, or set aside for later any of the rest?" These two questions are the *entire* message — no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
-3. **Classify drops, then write back** (`notion-update-page`, `command="update_properties"`). Every known-active title absent from the answer is a **drop** — but a "currently reading/playing" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert):
-   - **finished** → `"Status":"Finished"` (no date — Status is the whole record).
+1. **Read current Active** (best-effort): per source, `notion-search` `data_source_url=<collection>` (`query` a domain term like `"book"`/`"video game"`), `notion-fetch` the hits, keep `Status = Active` → the *known-active* set. This read can't filter on `Status` server-side, so recall is best-effort—a row it misses just won't be offered this run (stays Active until it surfaces). Self-healing gap.
+2. **Prompt and stop** (one question per source, free-form): show the known-active titles and ask "what are you actually engaged with right now—and did you finish, abandon, or set aside for later any of the rest?" These two questions are the *entire* message—no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
+3. **Classify drops, then write back** (`notion-update-page`, `command="update_properties"`). Every known-active title absent from the answer is a **drop**—but a "currently reading/playing" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert):
+   - **finished** → `"Status":"Finished"` (no date—Status is the whole record).
    - **abandoned** → `"Status":"Abandoned"`.
    - **hiatus** (put down, will resume) → **leave Active, no write.**
    - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
    - in both → unchanged.
 4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
 
-Each item marked **Finished** this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+Each item marked **Finished** this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]`—see §4). **Abandoned** items are just recorded—a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
 
-If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
+If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable—skipped check-in") and continue with the rest.
 
 Mechanical patterns to extract before synthesis:
 
 - **Cross-source links**: archived Reader docs whose `url` matches a Readwise highlight → tag `has_highlights = true`. A highlight is a stronger engagement signal than archive alone.
-- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log items marked `Finished` in this run's check-in. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
+- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log items marked `Finished` in this run's check-in. Narrative-ready ("started and finished this week"; "finished this book/game—worth a review").
 - **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
-- **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — squash-dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
+- **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only—squash-dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
 
 ## 3. Synthesize themes (Claude)
 
 Cluster items across all sources into **4–8 themes** that might seed a blog post. Select the strongest signals. Each theme:
 
 - 1–2 sentence summary of what makes it interesting.
-- Bullet list of supporting items (link + terse identifier), ordered **neutrally** — date desc within the theme. Engagement weighting happens in §4.
-- If a theme's tail exceeds ~10 items, collapse with `+N more — see <gh query | url>`.
+- Bullet list of supporting items (link + terse identifier), ordered **neutrally**—date desc within the theme. Engagement weighting happens in §4.
+- If a theme's tail exceeds ~10 items, collapse with `+N more—see <gh query | url>`.
 
-Direct-to-trunk commits and merged PRs are equivalent for clustering and ranking — pair-heavy repos use direct writes interchangeably with PRs.
+Direct-to-trunk commits and merged PRs are equivalent for clustering and ranking—pair-heavy repos use direct writes interchangeably with PRs.
 
 ## 4. Analyze themes (Claude)
 
@@ -97,10 +97,10 @@ Score each theme by signal-of-engagement-with-the-topic, present themes in desce
 
 After scoring, tag each theme **short** or **long** by shape (independent of score):
 
-- **short** — single idea worth amplifying. External quote/highlight + a paragraph of own commentary. Themes dominated by one strong cross-source link with little code activity usually land here, as do most finished-book/game reviews.
-- **long** — multi-step narrative, how-to, tutorial, or explanation that names a pattern with a worked example. Themes with completion arcs, cross-project sweeps, or pipeline/architecture decisions usually land here.
+- **short**—single idea worth amplifying. External quote/highlight + a paragraph of own commentary. Themes dominated by one strong cross-source link with little code activity usually land here, as do most finished-book/game reviews.
+- **long**—multi-step narrative, how-to, tutorial, or explanation that names a pattern with a worked example. Themes with completion arcs, cross-project sweeps, or pipeline/architecture decisions usually land here.
 
-A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
+A theme can warrant both—a short signal-boost now and a long synthesis later. Say so.
 
 ## 5. Present + wait
 
@@ -112,4 +112,4 @@ Wait for the author's call on each theme:
 - Themes that map to an existing open `idea`-labeled issue (check `gh issue list --label idea --state open`) → add a comment with the new material to that issue.
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
-Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
+Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`)—the default is 7d.

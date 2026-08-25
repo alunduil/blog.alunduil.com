@@ -1,6 +1,6 @@
 ---
 name: post-draft
-description: Draft a narrative blog post from an approved outline — body, voice, citations, frontmatter. The main step after outline-draft; requires an approved outlines/<slug>.md. Invoke via /post-draft <slug>.
+description: Draft a narrative blog post from an approved outline—body, voice, citations, frontmatter. The main step after outline-draft; requires an approved outlines/<slug>.md. Invoke via /post-draft <slug>.
 ---
 
 # Post draft
@@ -18,18 +18,18 @@ Pipeline: **body → conventions → syndication check.** The body is the
 story-specific craft this skill owns; the conventions are shared and
 applied from their single homes.
 
-## 1. Body — write the scenes
+## 1. Body—write the scenes
 
 Render the outline's beats as story, scene by scene. The outline is the
 skeleton: **a beat expands into a passage.** Each beat becomes lived
-prose — a moment to stand in, fact braided with feeling,
+prose—a moment to stand in, fact braided with feeling,
 transitions that carry the reader from one beat to the next. The post
 reads as *more* than its outline; *confirmed when* every paragraph
 carries something the outline can't (a scene, the braid, a transition),
 not just its beat reworded. If a paragraph reads straight off the
 outline, it isn't written yet.
 
-Draft the body before locking title or description — both derive from
+Draft the body before locking title or description—both derive from
 what the post argues, so the finished body settles them.
 
 A story is **lived in scenes** and **built to one moment of change**;
@@ -46,7 +46,7 @@ Principles, each with the criterion that confirms it:
 - **Open at its opposite.** *Confirmed when:* the first scene and the
   last are recognisably opposite states.
 - **Write scenes, not summary.** Concrete moments with documentary
-  detail — real dates, names, what happened. *Confirmed when:* the
+  detail—real dates, names, what happened. *Confirmed when:* the
   passage shows something a reader could picture.
 - **Past tense for past action.** *Confirmed when:* present tense
   appears only for what is true now.
@@ -62,13 +62,13 @@ Principles, each with the criterion that confirms it:
   *Confirmed when:* it reads as an account of what happened.
 - **Land on substance.** *Confirmed when:* the last line says something
   the post hasn't said yet.
-- **Tense — a story may glance forward, sparingly.** "Document only what
+- **Tense—a story may glance forward, sparingly.** "Document only what
   exists at HEAD" is a docs rule, not a narrative one; a story can use the
   future tense for a grounded, stated direction. *Confirmed when:* any
   forward glance is a real plan you're on, used once or twice at most.
 
 Draft and lock **one scene at a time, with the author.** Source each
-scene's concrete moment before staging it — provable facts where they
+scene's concrete moment before staging it—provable facts where they
 exist, and ask the author for the lived specifics rather than inventing
 them ([[feedback_post_claims_provable]]). Stage the scene, refine the
 wording together, lock it, move to the next. Flow and direction shift as
@@ -98,13 +98,13 @@ the completed post.
 ## 3. Instagram syndication check
 
 dlvr.it auto-syndicates each post to the text and link surfaces from the
-RSS feed (`docs/adr/0001-use-dlvrit-for-social-syndication.md`) — no
+RSS feed (`docs/adr/0001-use-dlvrit-for-social-syndication.md`)—no
 action needed. Instagram is the hand-crafted exception. Once the post is
 settled, judge image-fit: does it carry genuine visual material (book
 covers, screenshots, diagrams, a visual-native topic like a game or book
 review), or is it text-heavy engineering prose?
 
-If image-prone, flag it — tell the author this is a blog post *and* a
+If image-prone, flag it—tell the author this is a blog post *and* a
 strong Instagram post, and to run `/syndicate-instagram <slug>` once it's
 live (the Instagram post links back, so it needs the published canonical
 URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
@@ -118,7 +118,7 @@ URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
 
 ## Output
 
-Iterate in `src/data/blog/<slug>.md`. Commit incrementally — each
+Iterate in `src/data/blog/<slug>.md`. Commit incrementally—each
 substantive change as its own commit with the reasoning in the body.
 
 Final state before promoting the PR out of draft:

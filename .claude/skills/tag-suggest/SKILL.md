@@ -26,7 +26,7 @@ Scan the full corpus including `_<engine>/` archives. AstroPaper's loader exclud
 
 ## 3. Propose
 
-Read the target post — frontmatter + body. Then propose **2–3 tags** subject to:
+Read the target post—frontmatter + body. Then propose **2–3 tags** subject to:
 
 - **Existing matches win.** If `reading` covers the topic, propose `reading`.
 - **Content topics only.** A tag answers "what is this post *about*?". See `feedback_tags_are_content_only.md`. Category, era, format, and draft state live in directory structure (`_hakyll/`) and schema fields (`draft`, `featured`).
@@ -37,10 +37,10 @@ Read the target post — frontmatter + body. Then propose **2–3 tags** subject
 
 Output a chat-only report; the file write happens in §5, after the author confirms. Shape:
 
-- **Target** — path + current `tags:` (if any).
-- **Existing tag inventory (top ~10)** — `tag (N)` per line. Surface enough to ground the proposal; the author can ask for the full list if needed.
-- **Proposed tags** — bullet list. For each: `tag-name` — short rationale (≤1 sentence). Mark existing matches as `existing, N posts`; mark net-new as `new` with the nearest inventory neighbour and why it doesn't fit.
-- **Proposed frontmatter block** — fenced YAML showing what would be written:
+- **Target**—path + current `tags:` (if any).
+- **Existing tag inventory (top ~10)**— `tag (N)` per line. Surface enough to ground the proposal; the author can ask for the full list if needed.
+- **Proposed tags**—bullet list. For each: `tag-name`—short rationale (≤1 sentence). Mark existing matches as `existing, N posts`; mark net-new as `new` with the nearest inventory neighbour and why it doesn't fit.
+- **Proposed frontmatter block**—fenced YAML showing what would be written:
 
   ```yaml
   tags:
