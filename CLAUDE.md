@@ -37,16 +37,19 @@ scripting your own.
   installs Node/pnpm for the ESLint/Prettier hooks and lychee via
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
-- Vale runs two styles off one config. Human prose (Microsoft, proselint,
-  alex, en_GB spelling) covers posts and docs; this file and `.claude/**`
-  get `blog-alunduil-com-agent`, catching the four AI-doc tells a regex
-  can settle: commit-message framing, forward-looking banners, versions
-  pinned in prose, and pointers to where credentials live. Token
-  efficiency, positive framing, and whether a date stamps a measurement
-  or marks rot stay inferential. `outlines/` gets neither style, holding
-  scene-and-beat planning. Backtick a literal (`TBD`, `not-planned`) so
-  naming one doesn't trip the rule against it, and write any new rule at
-  `error`: a warning exits 0, and a passing hook prints nothing.
+- Vale runs off one config. Posts and docs get the full human stack
+  (Microsoft, proselint, alex, en_GB spelling). This file and
+  `.claude/**` get Microsoft plus `blog-alunduil-com-agent`, which
+  catches the four AI-doc tells a regex can settle: commit-message
+  framing, forward-looking banners, versions pinned in prose, and
+  pointers to where credentials live. Quotes, Foreign, Auto,
+  Contractions, and en_GB spelling stay off those paths; `.vale.ini`
+  carries the reason for each. Token efficiency, positive framing, and
+  whether a date stamps a measurement or marks rot stay inferential.
+  `outlines/` is linted by neither. Backtick a literal (`TBD`,
+  `not-planned`) so naming one doesn't trip the rule against it, and
+  write any new rule at `error`: a warning exits 0, and a passing hook
+  prints nothing.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on
