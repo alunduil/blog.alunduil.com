@@ -15,5 +15,5 @@ level: error
 nonword: true
 tokens:
   - '\bv\d+\.\d+(?:\.\d+)?\b'
-  - '\bversion \d+\.\d+(?:\.\d+)?\b'
+  - '\bversion\s+\d+\.\d+(?:\.\d+)?\b'
   - '\b\d+\.\d+(?:\.\d+)?\+'

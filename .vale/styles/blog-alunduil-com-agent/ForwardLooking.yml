@@ -2,6 +2,13 @@
 # written into an AI-targeted doc has nothing to retire it, so the model
 # reads an intention as a fact for as long as the file exists.
 #
+# Every multi-word token joins on `\s+`. The docs hard-wrap, so a literal
+# space stops matching wherever the phrase straddles a line break.
+#
+# "will be" and "planned" both describe mechanism as often as intention —
+# "the dist directory will be created", "the planned maintenance window"
+# — so each takes a complement that only a banner supplies.
+#
 # GitHub's `not-planned` close reason and the `TBD` beat marker are
 # literal values; the docs naming them backtick them, and Vale skips
 # inline code. Vale also wraps each token in word boundaries unless
@@ -12,11 +19,12 @@ message: "Forward-looking banner: '%s'. Document what exists at HEAD."
 level: error
 ignorecase: true
 tokens:
-  - 'coming soon'
-  - 'will be'
-  - 'planned'
-  - 'in the future'
-  - 'for now'
+  - 'coming\s+soon'
+  - 'will\s+be\s+(?:added|supported|available|implemented|documented|written|filled)'
+  - '(?:is|are)\s+planned'
+  - 'planned\s+for\s+a\s+future'
+  - 'in\s+the\s+future'
+  - 'for\s+now'
   - 'upcoming'
-  - 'to be (?:added|written|documented|filled in)'
+  - 'to\s+be\s+(?:added|written|documented|filled\s+in)'
   - 'TBD'
