@@ -53,6 +53,10 @@ Discovery]. Two types are in use:
 - `article`—long-form and titled. Syndicates as title, hook, and link.
 - `note`—short-form. Syndicates as its full body.
 
+Type is a signal the blog carries explicitly, not one derived from the
+title. AstroPaper requires a title, so a note holds a page title and
+remains a note.
+
 The blog adopts further types (`quotation`, `bookmark`, `reply`,
 `repost`, `like`) as posts call for them, under their specification
 names rather than local coinages.
@@ -62,10 +66,6 @@ applies inside `article` only, and a style never names a type.
 Narrative, experience report, and review are the styles in use. The
 list stays open: a new way of writing an article adds a style and
 needs no revision here.
-
-Type is a signal the blog carries explicitly, not one derived from the
-title. AstroPaper requires a title, so a note holds a page title and
-remains a note.
 
 Every post published to date is an article. No notes exist yet.
 

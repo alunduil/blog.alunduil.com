@@ -60,24 +60,12 @@ so the repo-relevant essentials:
 - Revert incidental out-of-scope edits before review, especially to the
   AstroPaper upstream files listed below.
 
-## Content vocabulary
-
-Two axes, decided in `docs/adr/0002-adopt-indieweb-post-types-as-the-content-vocabulary.md`:
-
-- **Type** — what a post is, named per [Post Type Discovery]. `article`
-  (long-form, titled, syndicates as title + hook + link) and `note`
-  (short-form, syndicates as full body) are in use. Type is an explicit
-  blog-internal signal: AstroPaper requires a `title` on every entry, so
-  a note carries a page title and stays a note.
-- **Style** — how an article reads, owned by this blog and open-ended.
-  Narrative, experience report, and review are the current members. A
-  style applies inside `article` only and never names a type.
-
-Everything published to date is an article.
-
-[Post Type Discovery]: https://ptd.spec.indieweb.org/
-
 ## Posting convention
+
+Every post is an `article` or a `note` by type, with a style axis
+inside `article`; both are documented in
+`docs/reference/post-types.md`, and `docs/adr/0002-adopt-indieweb-post-types.md`
+records why.
 
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.

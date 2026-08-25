@@ -13,10 +13,9 @@ pnpm build    # produces ./dist
 
 ## Content
 
-Posts follow the [IndieWeb] post-type vocabulary: `article` and `note`
-as types, with an open style axis (narrative, experience report, review)
-inside `article`. See [ADR 0002](docs/adr/0002-adopt-indieweb-post-types-as-the-content-vocabulary.md)
-for the decision and [post frontmatter](docs/reference/post-frontmatter.md)
+Posts are articles or notes, following the [IndieWeb] post-type
+vocabulary. See [post types](docs/reference/post-types.md) for the
+vocabulary and [post frontmatter](docs/reference/post-frontmatter.md)
 for the fields and scheduling.
 
 ## Theme
