@@ -1,8 +1,6 @@
 # Post types and styles
 
-What a post *is* (its type) and how it *reads* (its style). The
-reasoning behind the vocabulary is in
-[ADR 0002](../adr/0002-adopt-indieweb-post-types.md). For the
+What a post *is* (its type) and how it *reads* (its style). For the
 frontmatter fields and scheduling, see
 [post frontmatter](post-frontmatter.md); for markup inside the body, see
 [post body markup](post-body.md).

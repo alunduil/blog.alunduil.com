@@ -113,7 +113,6 @@ Automattic
 Publicize
 
 # Common writing terms
-repost
 frontmatter
 learnings
 dev
