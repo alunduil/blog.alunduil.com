@@ -120,11 +120,17 @@ repos:
       - id: detect-private-key
 
   # Prose linting with Vale.
-  # AI-targeted markdown (CLAUDE.md, .claude/) is in scope, under its own
-  # style: .vale.ini scopes the human-prose styles off those paths and
-  # AIDocs onto them. Skipped here are planning docs (outlines/), where a
-  # scene title reads as a prose tell, and archival republishes
-  # (_<engine>/), which are historical text rather than current writing.
+  # Two files decide Vale's scope, and they answer different questions.
+  # .vale.ini picks which style a path gets: AI-targeted markdown
+  # (CLAUDE.md, .claude/) is in scope there, under AIDocs. This exclude
+  # picks what Vale doesn't open at all, which is the only way to silence
+  # a path — an empty BasedOnStyles still leaves every rule named
+  # outright in .vale.ini firing.
+  #
+  # Out: planning docs (outlines/), where "the aggregator I no longer
+  # needed" is a scene title rather than commit-message framing, and
+  # archival republishes (_<engine>/), which are historical text rather
+  # than current writing.
   - repo: https://github.com/vale-cli/vale
     rev: v3.18.0
     hooks:
@@ -142,6 +148,10 @@ repos:
   # Structure rules serve published pages. AI-targeted markdown is read by
   # a model that doesn't render it, so it stays out even though Vale now
   # covers it.
+  #
+  # The two lists overlap without being the same list, which is why they
+  # no longer share an anchor: this one asks what nothing renders, Vale's
+  # asks what isn't current prose. They move for different reasons.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.23.2
     hooks:

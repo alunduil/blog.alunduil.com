@@ -38,16 +38,17 @@ scripting your own.
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
 - Vale runs two styles off one config. Human prose (Microsoft, proselint,
-  alex, en_GB spelling) covers posts and docs. This file and `.claude/**`
-  get `AIDocs` instead, catching four tells a regex can settle:
-  commit-message framing, forward-looking banners, versions pinned in
-  prose, and pointers to where credentials live. Everything else about
-  writing for a model — token efficiency, positive-over-negative framing,
-  whether a date stamps a measurement or marks rot — stays inferential.
-  Vale skips inline code, so backticking a literal (`TBD`,
-  `not-planned`) is how a doc names one without tripping a rule; and a
-  warning exits 0, so a rule is `error` or it is decoration. `outlines/`
-  stays out, where a scene title reads as a prose tell.
+  alex, en_GB spelling) covers posts and docs; this file and `.claude/**`
+  get `AIDocs` instead, catching the four AI-doc tells a regex can
+  settle — commit-message framing, forward-looking banners, versions
+  pinned in prose, and pointers to where credentials live. The rest of
+  writing for a model stays inferential: token efficiency, positive
+  framing, and whether a date stamps a measurement or marks rot.
+  `outlines/` is out of both, being scene-and-beat planning rather than
+  prose. Two habits follow from how Vale works — backtick a literal
+  (`TBD`, `not-planned`) so naming one doesn't trip the rule against it,
+  and write any new rule at `error`, since a warning exits 0 and a
+  passing hook prints nothing.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on

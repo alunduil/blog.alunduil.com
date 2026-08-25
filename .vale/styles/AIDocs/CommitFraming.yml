@@ -3,6 +3,11 @@
 # narrating a change spends context on a state the reader can't observe,
 # and keeps the superseded approach weighted long after it lost.
 #
+# "used to" carries a second sense — "the flag used to pin the version" —
+# so it only fires next to a state verb, or after "we". A bare `used to`
+# would be the obvious simplification and would flag every passive
+# construction in the repo.
+#
 # `ignorecase` because these open sentences as often as they sit inside
 # one.
 

@@ -4,7 +4,8 @@
 #
 # GitHub's `not-planned` close reason and the `TBD` beat marker are
 # literal values, so the docs that name them backtick them and Vale skips
-# inline code.
+# inline code. Vale wraps each token in word boundaries on its own, which
+# is what keeps "unplanned" out of this.
 
 extends: existence
 message: "Forward-looking banner: '%s'. Document what exists at HEAD."
@@ -18,4 +19,4 @@ tokens:
   - 'for now'
   - 'upcoming'
   - 'to be (?:added|written|documented|filled in)'
-  - '\bTBD\b'
+  - 'TBD'
