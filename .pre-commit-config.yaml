@@ -121,10 +121,10 @@ repos:
 
   # Prose linting with Vale.
   # .vale.ini picks which style a path gets — AI-targeted markdown
-  # (CLAUDE.md, .claude/) is in scope there, under AIDocs. This exclude
-  # picks what Vale doesn't open at all, the only way to silence a path:
-  # an empty BasedOnStyles still leaves every rule named outright in
-  # .vale.ini firing.
+  # (CLAUDE.md, .claude/) is in scope there, under the repo's agent style.
+  # This exclude picks what Vale doesn't open at all, the only way to
+  # silence a path: an empty BasedOnStyles still leaves every rule named
+  # outright in .vale.ini firing.
   #
   # outlines/ holds scene-and-beat planning, where "the aggregator I no
   # longer needed" is a scene title. _<engine>/ holds archival

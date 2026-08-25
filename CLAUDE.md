@@ -39,11 +39,11 @@ scripting your own.
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
 - Vale runs two styles off one config. Human prose (Microsoft, proselint,
   alex, en_GB spelling) covers posts and docs; this file and `.claude/**`
-  get `AIDocs`, which catches the four AI-doc tells a regex can settle:
-  commit-message framing, forward-looking banners, versions pinned in
-  prose, and pointers to where credentials live. Token efficiency,
-  positive framing, and whether a date stamps a measurement or marks rot
-  stay inferential. `outlines/` gets neither style, holding
+  get `blog-alunduil-com-agent`, catching the four AI-doc tells a regex
+  can settle: commit-message framing, forward-looking banners, versions
+  pinned in prose, and pointers to where credentials live. Token
+  efficiency, positive framing, and whether a date stamps a measurement
+  or marks rot stay inferential. `outlines/` gets neither style, holding
   scene-and-beat planning. Backtick a literal (`TBD`, `not-planned`) so
   naming one doesn't trip the rule against it, and write any new rule at
   `error`: a warning exits 0, and a passing hook prints nothing.
