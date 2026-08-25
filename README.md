@@ -14,9 +14,9 @@ pnpm build    # produces ./dist
 ## Content
 
 Posts are articles or notes, following the [IndieWeb] post-type
-vocabulary. See [post types](docs/reference/post-types.md) for the
-vocabulary and [post frontmatter](docs/reference/post-frontmatter.md)
-for the fields and scheduling.
+vocabulary. [Post types](docs/reference/post-types.md) defines it;
+[post frontmatter](docs/reference/post-frontmatter.md) covers the fields
+and scheduling.
 
 ## Theme
 

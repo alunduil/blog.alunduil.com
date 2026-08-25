@@ -106,7 +106,6 @@ Echofeed
 atproto
 OAuth
 IndieWeb
-repost
 IFTTT
 WordPress
 Jetpack
@@ -114,6 +113,7 @@ Automattic
 Publicize
 
 # Common writing terms
+repost
 frontmatter
 learnings
 dev

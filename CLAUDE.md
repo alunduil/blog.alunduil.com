@@ -62,10 +62,9 @@ so the repo-relevant essentials:
 
 ## Posting convention
 
-Every post is an `article` or a `note` by type, with a style axis
-inside `article`; both are documented in
-`docs/reference/post-types.md`, and `docs/adr/0002-adopt-indieweb-post-types.md`
-records why.
+Every post is an `article` or a `note`, with a style axis inside
+`article`. Types and styles are documented in
+`docs/reference/post-types.md`.
 
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
@@ -122,9 +121,8 @@ authoritative description. The writing pipeline:
 - `outline-draft` → `post-draft` — narrative articles: a scene-and-beat
   outline gated at approval, then prose. `/outline-draft [#N]`,
   `/post-draft <slug>`.
-- `review-draft` — review articles on a book, paper, or game (a claim and
-  its evidence), a sibling of the narrative pipeline.
-  `/review-draft [#N|title|path]`.
+- `review-draft` — book/paper/game reviews (a claim and its evidence), a
+  sibling of the narrative pipeline. `/review-draft [#N|title|path]`.
 
 Utilities:
 
