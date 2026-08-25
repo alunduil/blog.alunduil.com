@@ -1,0 +1,21 @@
+# Plans live in the issue tracker, where closing one retires it. A plan
+# written into an AI-targeted doc has nothing to retire it, so the model
+# reads an intention as a fact for as long as the file exists.
+#
+# GitHub's `not-planned` close reason and the `TBD` beat marker are
+# literal values, so the docs that name them backtick them and Vale skips
+# inline code.
+
+extends: existence
+message: "Forward-looking banner: '%s'. Document what exists at HEAD."
+level: error
+ignorecase: true
+tokens:
+  - 'coming soon'
+  - 'will be'
+  - 'planned'
+  - 'in the future'
+  - 'for now'
+  - 'upcoming'
+  - 'to be (?:added|written|documented|filled in)'
+  - '\bTBD\b'

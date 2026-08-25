@@ -1,0 +1,15 @@
+# A version pinned in prose has no sensor behind it: the lockfile moves,
+# Renovate opens the PR, and the sentence keeps asserting the old number.
+# Name the file that holds the pin instead.
+#
+# Backticked versions are already skipped — Vale doesn't read inline
+# code — so this fires on prose assertions, not on quoted commands.
+
+extends: existence
+message: "Version pinned in prose: '%s'. Point at the file that holds the pin."
+level: error
+nonword: true
+tokens:
+  - '\bv\d+\.\d+(?:\.\d+)?\b'
+  - '\bversion \d+\.\d+(?:\.\d+)?\b'
+  - '\b\d+\.\d+(?:\.\d+)?\+'
