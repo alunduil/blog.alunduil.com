@@ -26,6 +26,17 @@ so the default only catches a new post that forgets.
 Two shapes have no drafting skill yet, and `how-to` is mostly archival:
 current-era instructions belong in `docs/how-to/`, not on the blog.
 
+## Shape is not the directory
+
+Directory layout is independent of shape and stays as it is. `getPath` keeps
+every non-underscore path segment in the URL, so moving a published post into
+a shape-named folder would change its URL and break every link to it.
+
+`src/data/blog/reviews/` predates the field and still serves
+`/posts/reviews/<slug>/`. It stays for the URLs it already owns, and the
+cover-image path depends on the extra depth. Where the two disagree, `shape`
+is the one that decides anything.
+
 ## What machines see
 
 `src/utils/getSchemaType.ts` maps the shape to the `@type` in each post's

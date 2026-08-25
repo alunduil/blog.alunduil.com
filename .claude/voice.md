@@ -44,7 +44,7 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
 
 ## Register: poetic without being poetry
 
-The house register for story posts (Tolkien/Carroll touchstone):
+The house register for essays (Tolkien/Carroll touchstone):
 
 - **Latch first.** Open each scene on something concrete the reader can
   hold.

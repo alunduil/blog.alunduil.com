@@ -65,7 +65,7 @@ Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
 Draft outlines live in `outlines/<slug>.md`: tracked, outside `src/`,
 unpublished, and excluded from the linters. Public in the repository.
 
-Reviews set `ogImage` to the reviewed work's cover, the only post type
+Reviews set `ogImage` to the reviewed work's cover, the only shape
 that overrides the dynamic OG card. The file is
 `src/assets/images/<slug>-cover.jpg`, referenced from the deeper
 `reviews/` folder with three `../`:
