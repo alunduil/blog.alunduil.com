@@ -2,13 +2,13 @@
 
 The blog's voice home. Two halves, kept distinct but co-located:
 
-- **Prescriptive rules** (below) — the sentence-level conventions and
+- **Prescriptive rules** (below)—the sentence-level conventions and
   story register to *apply* when drafting or editing a post.
-- **Descriptive fingerprint** (further down) — what the published posts
+- **Descriptive fingerprint** (further down)—what the published posts
   measurably *do*, calibrated from the corpus. When the two overlap they
   agree; when in doubt, the corpus is the evidence.
 
-Read this before drafting or editing any post — story, review,
+Read this before drafting or editing any post—story, review,
 methodology, or freeform. `post-draft` and `review-draft` apply it from
 here.
 
@@ -32,9 +32,9 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
   punctuation outside the quotes. ([[project_grammar_lean]])
-- **Possessives:** singular *s*-ending nouns take *'s* — Books's,
+- **Possessives:** singular *s*-ending nouns take *'s*—Books's,
   Charles's (CMOS). Add new variants to
-  `.vale/styles/config/vocabularies/Custom/accept.txt` as Custom.Spelling
+  `.vale/styles/config/vocabularies/Custom/accept.txt` as `Custom.Spelling`
   surfaces them. ([[project_possessive_convention]])
 - **One independent clause per sentence.** Split every `, and`, semicolon,
   or comma-splice that hooks two complete thoughts together. Length comes
@@ -42,7 +42,7 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   Compound predicates on one subject are fine ("he shows X and stops
   there"); see **Flow** in the register below.
 
-## Register: poetic without being poetry
+## Register: Poetic without being poetry
 
 The house register for story posts (Tolkien/Carroll touchstone):
 
@@ -54,12 +54,12 @@ The house register for story posts (Tolkien/Carroll touchstone):
   only for a grammatical job (clause join, serial list, trailing
   absolute). Colons, semicolons, and em-dashes earn their place by doing
   real structural work. A colon that tacks a list onto a weak phrase
-  ("Puzo's is rich: …") is a smell — rewrite so a verb carries it. Serial
+  ("Puzo's is rich: …") is a smell—rewrite so a verb carries it. Serial
   lists take the plain form (a, b, and c).
-- **Restrained metaphor.** Dial figures *ever so slightly* — a vivid
+- **Restrained metaphor.** Dial figures *ever so slightly*—a vivid
   simile usually wants toning down.
 - **Watch personification.** It creeps in ("a busy place", "a last sign
-  of life") — keep it light.
+  of life")—keep it light.
 - Plain, warm words: punch without the snap, music without verse.
 
 ## Revision pass
@@ -67,7 +67,7 @@ The house register for story posts (Tolkien/Carroll touchstone):
 - Drop summary-as-flourish ("outlasted them all", "Everything between me
   and the books").
 - State uncertainty as not knowing: "I don't know whether…", "I can't tell
-  whether…". The register is secular and plain — "faith" and devotional
+  whether…". The register is secular and plain—"faith" and devotional
   vocabulary are not the author's words, and dressing a limit up as belief
   overstates it.
 - Ease in via personal continuity ("I'm still…", "Since college I've
@@ -89,7 +89,7 @@ judgement calls.
 
 ---
 
-The rest of this file is the **descriptive fingerprint** — what the
+The rest of this file is the **descriptive fingerprint**—what the
 corpus measurably does. Recalibrate by re-reading the posts.
 
 ## Corpus
@@ -97,12 +97,12 @@ corpus measurably does. Recalibrate by re-reading the posts.
 Four current author posts as of 2026-07: `how-i-back-up`,
 `how-i-read-eight-years-on` (methodology); `i-built-the-machine-twice`,
 `the-bottleneck-isnt-the-blank-page` (narrative). The archival
-restorations under `_<engine>/` are an older, lightly-copyedited era —
-weak calibration; weight the four current posts. A fifth,
-`backing-up-google-takeout-to-truenas`, is the first how-to — a distinct
+restorations under `_<engine>/` are an older, lightly-copyedited
+era—weak calibration; weight the four current posts. A fifth,
+`backing-up-google-takeout-to-truenas`, is the first how-to—a distinct
 instructional register (below), n=1 and provisional.
 
-## Shared DNA — every post
+## Shared DNA—every post
 
 - **First person, throughout.** "I", "my" on nearly every paragraph
   (16–47 per post). The author is always in the frame.
@@ -110,7 +110,7 @@ instructional register (below), n=1 and provisional.
   rather than a triumph: "I haven't tested it"; "so far, zero"; "even
   when I can't prove it's the practice doing the work"; "the substrate
   underneath doesn't". The honest-limitation close is the single most
-  reliable signature — a draft that lands on a win reads wrong.
+  reliable signature—a draft that lands on a win reads wrong.
 - **Hedged, not declarative.** "usually", "in practice", "most of the
   time", "I'm not sure", "it's still too early to know", "on the list".
   Confidence is earned and bounded, never asserted flat.
@@ -122,7 +122,7 @@ instructional register (below), n=1 and provisional.
   "50%", ISO dates. Spell counted things in prose; leave technical
   values as figures.
 - **Very low formatting density.** Zero bold, zero bullet lists in the
-  body across all four posts — prose carries the structure. Links are
+  body across all four posts—prose carries the structure. Links are
   inline or reference-style. Reach for a list or bold only when the
   content is genuinely tabular, and expect not to.
 - **Sentence length swings.** ~13–16 words average, but the real range
@@ -131,26 +131,26 @@ instructional register (below), n=1 and provisional.
   wall."). Uniform medium-length sentences read as generated.
 - **Paragraphs are medium, ~4–6 sentences.** One move each; they don't
   sprawl and don't fragment.
-- **Openers latch on something concrete** — a callback to a prior post
+- **Openers latch on something concrete**—a callback to a prior post
   or year ("In 2011 I wrote up…", "In 2018 I wrote about…") or a
   concrete image ("The blog had been quiet a long time before I archived
   it").
 - **Em-dashes, unspaced, for asides** (CMOS). Present but not leaned on;
   a comma does most joins.
 
-## Register: narrative / reflective
+## Register: Narrative / reflective
 
 `i-built-the-machine-twice`, `the-bottleneck-isnt-the-blank-page`.
 
-- No section headers — the piece runs as continuous story, built to one
+- No section headers—the piece runs as continuous story, built to one
   moment of change.
 - Second person to pull the reader in, sparingly ("You picture the blank
   page"). Narrative-only; the methodology posts stay first-person.
-- Restrained figuration — a governing image ("the machine", "the wall")
+- Restrained figuration—a governing image ("the machine", "the wall")
   worked lightly. See the poetic register above.
 - Scene and contrast: opens at the opposite of where it lands.
 
-## Register: methodology / reference
+## Register: Methodology / reference
 
 `how-i-back-up`, `how-i-read-eight-years-on`.
 
@@ -163,22 +163,22 @@ instructional register (below), n=1 and provisional.
   admitted-gap closer holds here too.
 - Present tense for current practice, past tense for what changed.
 
-## Register: how-to / instructional
+## Register: How-to / instructional
 
-`backing-up-google-takeout-to-truenas` (first as of 2026-07 — n=1, weak
+`backing-up-google-takeout-to-truenas` (first as of 2026-07—n=1, weak
 calibration; treat as provisional, recalibrate as more land).
 
 - A Diátaxis how-to: an ordered sequence to a goal the reader already
   has, from a realistic precondition. Prerequisites, then imperative
   steps.
-- Overrides the Shared DNA's "no lists / low formatting density" —
-  numbered steps are the format for an action sequence.
+- Overrides the Shared DNA's "no lists / low formatting
+  density"—numbered steps are the format for an action sequence.
 - Cut explanation and completeness. Fold load-bearing background into a
   step, or link it out (the reference, official docs, the exact
   artefact). The primary failure is "documentation poetry": prose
-  wrapped around a code block that doesn't change what the reader types
-  — what the narrative register produces if applied here. Keep the steps
-  contiguous; trailing notes are where that prose creeps back.
+  wrapped around a code block that doesn't change what the reader
+  types—what the narrative register produces if applied here. Keep the
+  steps contiguous; trailing notes are where that prose creeps back.
 - Still first person and light. Keep one compressed honest-limit close (a
   caveat, sized to a sentence or two). Where an exact version exists, link
   it as the recovery reference.
@@ -186,12 +186,12 @@ calibration; treat as provisional, recalibrate as more land).
   `diataxis` skill carries fuller anti-patterns. Neither travels to web
   sessions, so this section is the portable copy.
 
-## Anti-tells — the generic-LLM markers to strip
+## Anti-tells—the generic-LLM markers to strip
 
 - Bold-for-emphasis and bulleted lists where prose would carry it.
 - A triumphant or summarising closer instead of an admitted gap.
 - Flat declaratives with no hedge; uniform medium sentence length.
 - Section headers on a reflective/narrative piece.
 - Abstraction where the corpus would name a date, a count, or a tool.
-- Applying the narrative flourish register to an instructional post —
-  aphorisms, scene-setting, explanation wrapped around steps.
+- Applying the narrative flourish register to an instructional
+  post—aphorisms, scene-setting, explanation wrapped around steps.
