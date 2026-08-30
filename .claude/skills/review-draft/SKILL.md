@@ -9,17 +9,15 @@ A review is an **argument**. It answers one question — why should someone
 read, read, or play this, or not — and every claim rides on a specific
 moment from the work. The plot and the contents appear as evidence.
 
-Reviews are a **style of article** built on a claim and its evidence. This
-skill is a sibling of the story pipeline (`outline-draft` → `post-draft`) and
-runs start to finish here.
+`review` is one of the post shapes (`docs/reference/post-shapes.md`), built on
+a claim and its evidence. This skill is a sibling of the essay pipeline
+(`outline-draft` → `post-draft`) and runs start to finish here.
 
-A review is a **short article** — argued and evidenced, but small. That makes
-it distinct from a **note**: it syndicates today as a title-and-link teaser via
-dlvr.it, and an argued review is too long for full-body syndication on the
-character-limited networks (Bluesky, Threads) regardless. A note-length
-*micro-review* — an aphoristic verdict in a sentence or two — is a different
-artefact and belongs to `note-draft` (#323) and the note pipeline
-(#321/#322).
+A review is short but argued, which keeps it distinct from a `note`. It
+syndicates as a title-and-link teaser via dlvr.it, and an argued review is too
+long for full-body syndication on the character-limited networks (Bluesky,
+Threads) regardless. A note-length *micro-review* — an aphoristic verdict in a
+sentence or two — is a different artefact and belongs to the note pipeline.
 
 Voice, citations, frontmatter, and the Instagram check are shared. Apply
 them from their single homes — voice (`.claude/voice.md`), citations
@@ -191,10 +189,14 @@ The shared conventions apply unchanged — citations (`.claude/citations.md`),
 frontmatter and scheduling (`docs/reference/post-frontmatter.md`), and the
 Instagram check — with review-specific notes:
 
+- **Shape:** set `shape: review` and `reviewed: "<the work's name>"`. These
+  drive the schema.org type the page declares — a review that omits them ships
+  as a plain `BlogPosting` with nothing naming the work
+  (`docs/reference/post-shapes.md`).
 - **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
-  the URL). Each review carries the work's cover as its OG image, the one post
-  type that does — download it (Open Library `covers.openlibrary.org/b/id/…`,
+  the URL). Each review carries the work's cover as its OG image, the one shape
+  that does — download it (Open Library `covers.openlibrary.org/b/id/…`,
   or the author's own scan) to `src/assets/images/<slug>-cover.jpg` and set
   `ogImage: ../../../assets/images/<slug>-cover.jpg` (three `../` from the
   deeper `reviews/` folder). It replaces the dynamic OG card.

@@ -6,6 +6,7 @@ tags:
   - caching
   - memcached
   - php
+shape: how-to
 timezone: America/Chicago
 hideEditPost: true
 ---

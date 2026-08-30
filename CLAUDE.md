@@ -62,6 +62,10 @@ so the repo-relevant essentials:
 
 ## Posting convention
 
+Every post sets `shape` — `essay`, `practice`, `review`, `how-to`, or
+`note` — which picks the drafting skill and the schema.org type the page
+declares. Documented in `docs/reference/post-shapes.md`.
+
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
 A future `pubDatetime` is the publication gate: merging the PR accepts
@@ -114,10 +118,11 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 Custom skills under `.claude/skills/`; each SKILL.md frontmatter is the
 authoritative description. The writing pipeline:
 
-- `outline-draft` → `post-draft` — story posts: a scene-and-beat outline
-  gated at approval, then prose. `/outline-draft [#N]`, `/post-draft <slug>`.
+- `outline-draft` → `post-draft` — essays: a scene-and-beat
+  outline gated at approval, then prose. `/outline-draft [#N]`,
+  `/post-draft <slug>`.
 - `review-draft` — book/paper/game reviews (a claim and its evidence), a
-  sibling of the story pipeline. `/review-draft [#N|title|path]`.
+  sibling of the essay pipeline. `/review-draft [#N|title|path]`.
 
 Utilities:
 

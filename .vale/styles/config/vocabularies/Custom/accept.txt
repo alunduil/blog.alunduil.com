@@ -187,4 +187,6 @@ else's
 # possessives from base forms it doesn't know.
 Fratantoni
 Fratantoni's
+Werlich
+Werlich's
 Willison

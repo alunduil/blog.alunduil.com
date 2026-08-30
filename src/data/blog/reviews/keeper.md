@@ -7,6 +7,8 @@ tags:
   - wordless-storytelling
   - companionship
   - game-design
+shape: review
+reviewed: "Keeper"
 ---
 
 A lighthouse pulls itself out of the ground and learns to walk. That's the

@@ -6,6 +6,7 @@ tags:
   - backups
   - methodology
   - cloud
+shape: practice
 ---
 
 In 2011 I wrote up the [cron entry][2011] that pushed `rdiff-backup`
