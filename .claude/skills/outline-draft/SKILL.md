@@ -103,7 +103,7 @@ failure signatures:
 5. **Flat arc** — the first scene isn't the opposite of the last, so
    there's no contrast to feel.
 6. **Unanchored claim** — a factual beat with no parenthetical and not
-   marked TBD. Includes false precision: a beat asserting a count or
+   marked `TBD`. Includes false precision: a beat asserting a count or
    certainty ("the one story") the subject doesn't bear → state the real
    range ("zero or more").
 7. **Topic-naming** — a scene named like a section → drifting to essay.

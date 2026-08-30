@@ -1,6 +1,6 @@
 ---
 name: review-draft
-description: Draft a review post — book, paper, or video game — starting from the one question a review answers: recommend it or not, and why. Gates on whether there's a real argument (kills the "it was fine" non-review), lands the thesis, then builds the argument in the blog voice, each claim carrying its evidence. Invoke via /review-draft [#N | title | path].
+description: Draft a review post about a book, paper, or video game, starting from the one question a review answers — recommend it or not, and why. Gates on whether there's a real argument (kills the "it was fine" non-review), lands the thesis, then builds the argument in the blog voice, each claim carrying its evidence. Invoke via /review-draft [#N | title | path].
 ---
 
 # Review draft
@@ -39,7 +39,7 @@ recap of the plot or the contents. "It was fine, nothing to see here" is a
 no-go. Neutral indifference makes a report, not a review; kill it here rather
 than draft two thousand words of shrug. A no-go isn't a failure — it's the
 skill doing its job. Surface it and stop; the idea issue can close as
-not-planned or wait for a real angle to surface on a re-read or replay.
+`not-planned` or wait for a real angle to surface on a re-read or replay.
 
 Recommend *or* pan both pass. A sharp "skip this, because…" is a review; the
 disqualifier is the absence of an argument, not its polarity. Lukewarm-with-a-
