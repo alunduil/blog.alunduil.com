@@ -32,6 +32,8 @@ export type Webmentions = {
   mentions: WebmentionEntry[];
 };
 
+type MentionsByTarget = Map<string, WebmentionEntry[]>;
+
 const empty: Webmentions = {
   likes: [],
   reposts: [],
@@ -47,17 +49,22 @@ const PER_PAGE = 100;
 const TARGETS_PER_REQUEST = 30;
 
 // webmention.io matches targets exactly, so a mention filed against one
-// spelling of a URL is invisible to a query for the other.
-function targetSpellings(target: string): string[] {
-  return target.endsWith("/")
-    ? [target, target.slice(0, -1)]
-    : [target, `${target}/`];
+// spelling of a URL is invisible to a query for the other. Both the query and
+// the lookup key derive from the slashless spelling, so a page can never ask
+// under one and be answered under the other.
+function canonicalTarget(target: string): string {
+  return target.endsWith("/") ? target.slice(0, -1) : target;
 }
 
-// Both spellings of a target collapse to one key so a lookup finds mentions
-// filed against either.
-function targetKey(target: string): string {
-  return target.endsWith("/") ? target.slice(0, -1) : target;
+function targetSpellings(target: string): string[] {
+  const canonical = canonicalTarget(target);
+  return [canonical, `${canonical}/`];
+}
+
+function chunk<T>(items: T[], size: number): T[][] {
+  return Array.from({ length: Math.ceil(items.length / size) }, (_, i) =>
+    items.slice(i * size, (i + 1) * size)
+  );
 }
 
 function mentionsUrl(spellings: string[], sinceId: number): string {
@@ -77,27 +84,25 @@ function mentionsUrl(spellings: string[], sinceId: number): string {
 const MAX_ATTEMPTS = 3;
 const RETRY_WAIT_MS = 1000;
 
-function transient(status: number): boolean {
+function retriable(status: number): boolean {
   return status === 429 || status >= 500;
 }
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function fetchPage(url: string, targets: number): Promise<Response> {
+async function fetchPage(url: string, targetCount: number): Promise<Response> {
   for (let attempt = 1; ; attempt++) {
     // A throw here is a transport failure, which retries on the same terms as
     // a 5xx.
     const res = await fetch(url).catch(() => null);
     if (res?.ok) return res;
 
-    const failure = res ? `${res.status}` : "transport failure";
-    if (res && !transient(res.status)) {
-      throw new Error(`Webmention fetch ${failure} for ${targets} targets`);
-    }
+    const status = res ? String(res.status) : "transport failure";
+    const failure = `Webmention fetch ${status} for ${targetCount} targets`;
+
+    if (res && !retriable(res.status)) throw new Error(failure);
     if (attempt === MAX_ATTEMPTS) {
-      throw new Error(
-        `Webmention fetch ${failure} for ${targets} targets after ${MAX_ATTEMPTS} attempts`
-      );
+      throw new Error(`${failure} after ${MAX_ATTEMPTS} attempts`);
     }
 
     await wait(RETRY_WAIT_MS * attempt);
@@ -129,32 +134,49 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
   }
 }
 
-async function fetchAllMentions(): Promise<Map<string, WebmentionEntry[]>> {
+// The URL every post page passes to getWebmentions, built the way
+// PostDetails.astro builds it. The two must agree or a page looks itself up
+// under a target nothing was filed against.
+async function postTargets(): Promise<string[]> {
   const posts = await getCollection("blog", postFilter);
-  const targets = posts.map(
+
+  return posts.map(
     post => new URL(getPath(post.id, post.filePath), SITE.website).href
   );
+}
 
-  const byTarget = new Map<string, WebmentionEntry[]>();
-  for (let i = 0; i < targets.length; i += TARGETS_PER_REQUEST) {
-    const children = await fetchMentions(
-      targets.slice(i, i + TARGETS_PER_REQUEST)
-    );
-    for (const child of children) {
-      const key = targetKey(child["wm-target"]);
-      byTarget.set(key, [...(byTarget.get(key) ?? []), child]);
-    }
+function groupByTarget(children: WebmentionEntry[]): MentionsByTarget {
+  const byTarget: MentionsByTarget = new Map();
+
+  for (const child of children) {
+    const key = canonicalTarget(child["wm-target"]);
+    const group = byTarget.get(key);
+
+    if (group) group.push(child);
+    else byTarget.set(key, [child]);
   }
 
   return byTarget;
 }
 
+async function fetchAllMentions(): Promise<MentionsByTarget> {
+  const children: WebmentionEntry[] = [];
+
+  // Sequential on purpose: the point of batching is to stop asking
+  // webmention.io for many things at once.
+  for (const batch of chunk(await postTargets(), TARGETS_PER_REQUEST)) {
+    children.push(...(await fetchMentions(batch)));
+  }
+
+  return groupByTarget(children);
+}
+
 // Every post page asks for its own mentions, but a request per page is a burst
 // webmention.io answers with intermittent 502s. One pass over every target,
 // memoised for the build, keeps the site to a single round of requests.
-let allMentions: Promise<Map<string, WebmentionEntry[]>> | null = null;
+let allMentions: Promise<MentionsByTarget> | null = null;
 
-function mentionsByTarget(): Promise<Map<string, WebmentionEntry[]>> {
+function mentionsByTarget(): Promise<MentionsByTarget> {
   allMentions ??= fetchAllMentions();
   return allMentions;
 }
@@ -162,9 +184,9 @@ function mentionsByTarget(): Promise<Map<string, WebmentionEntry[]>> {
 export async function getWebmentions(target: string): Promise<Webmentions> {
   if (!PUBLIC_WEBMENTION_IO_USERNAME) return empty;
 
-  const children = [
-    ...((await mentionsByTarget()).get(targetKey(target)) ?? []),
-  ];
+  const byTarget = await mentionsByTarget();
+  // Copied before sorting: the map is shared by every page of the build.
+  const children = [...(byTarget.get(canonicalTarget(target)) ?? [])];
   // The cursor forced oldest-first; restore newest-first for display.
   children.sort((a, b) => b["wm-id"] - a["wm-id"]);
 
