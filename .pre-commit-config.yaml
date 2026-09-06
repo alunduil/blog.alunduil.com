@@ -124,7 +124,7 @@ repos:
   # (outlines/) where terseness beats prose conventions, plus archival
   # republishes (_<engine>/) which are historical text, not current writing.
   - repo: https://github.com/vale-cli/vale
-    rev: v3.19.0
+    rev: v3.20.0
     hooks:
       - id: vale
         name: Lint prose with Vale
