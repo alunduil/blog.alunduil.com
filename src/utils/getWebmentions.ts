@@ -71,6 +71,39 @@ function mentionsUrl(spellings: string[], sinceId: number): string {
   return `https://webmention.io/api/mentions.jf2?${params}`;
 }
 
+// Batching removes the burst that provokes webmention.io's 502s; these absorb
+// the one that arrives anyway. Only a 429 or a 5xx earns a second attempt --
+// any other status is an answer, and asking again returns the same one.
+const MAX_ATTEMPTS = 3;
+const RETRY_WAIT_MS = 1000;
+
+function transient(status: number): boolean {
+  return status === 429 || status >= 500;
+}
+
+const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function fetchPage(url: string, targets: number): Promise<Response> {
+  for (let attempt = 1; ; attempt++) {
+    // A throw here is a transport failure, which retries on the same terms as
+    // a 5xx.
+    const res = await fetch(url).catch(() => null);
+    if (res?.ok) return res;
+
+    const failure = res ? `${res.status}` : "transport failure";
+    if (res && !transient(res.status)) {
+      throw new Error(`Webmention fetch ${failure} for ${targets} targets`);
+    }
+    if (attempt === MAX_ATTEMPTS) {
+      throw new Error(
+        `Webmention fetch ${failure} for ${targets} targets after ${MAX_ATTEMPTS} attempts`
+      );
+    }
+
+    await wait(RETRY_WAIT_MS * attempt);
+  }
+}
+
 // webmention.io's since_id is a forward-only cursor (returns wm-id
 // strictly greater, with no descending equivalent), so we fetch
 // oldest-first and advance since_id past each batch.
@@ -80,12 +113,10 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
   let sinceId = 0;
 
   for (;;) {
-    const res = await fetch(mentionsUrl(spellings, sinceId));
-    if (!res.ok) {
-      throw new Error(
-        `Webmention fetch ${res.status} for ${targets.length} targets`
-      );
-    }
+    const res = await fetchPage(
+      mentionsUrl(spellings, sinceId),
+      targets.length
+    );
 
     const data = (await res.json()) as { children?: WebmentionEntry[] };
     const batch = data.children ?? [];
