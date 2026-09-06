@@ -44,14 +44,12 @@ const empty: Webmentions = {
 const PER_PAGE = 100;
 
 // webmention.io accepts repeated target[] params, so one request covers many
-// posts. Chunked to keep the query string well inside the server's URL limit;
-// each post contributes two spellings.
+// posts. Chunked to keep the query string inside the server's URL limit; each
+// post contributes two spellings.
 const TARGETS_PER_REQUEST = 30;
 
 // webmention.io matches targets exactly, so a mention filed against one
-// spelling of a URL is invisible to a query for the other. Both the query and
-// the lookup key derive from the slashless spelling, so a page can never ask
-// under one and be answered under the other.
+// spelling of a URL is invisible to a query for the other.
 function canonicalTarget(target: string): string {
   return target.endsWith("/") ? target.slice(0, -1) : target;
 }
@@ -78,12 +76,13 @@ function mentionsUrl(spellings: string[], sinceId: number): string {
   return `https://webmention.io/api/mentions.jf2?${params}`;
 }
 
-// Batching removes the burst that provokes webmention.io's 502s; these absorb
-// the one that arrives anyway. Only a 429 or a 5xx earns a second attempt --
-// any other status is an answer, and asking again returns the same one.
+// webmention.io answers intermittently with a 502; a repeat ask usually
+// succeeds.
 const MAX_ATTEMPTS = 3;
 const RETRY_WAIT_MS = 1000;
 
+// A status is an answer, and asking again returns the same one -- unless the
+// server is saying it could not answer this time.
 function retriable(status: number): boolean {
   return status === 429 || status >= 500;
 }
@@ -92,8 +91,7 @@ const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function fetchPage(url: string, targetCount: number): Promise<Response> {
   for (let attempt = 1; ; attempt++) {
-    // A throw here is a transport failure, which retries on the same terms as
-    // a 5xx.
+    // A rejected fetch never reached a status; treat it as a 5xx.
     const res = await fetch(url).catch(() => null);
     if (res?.ok) return res;
 
@@ -134,9 +132,9 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
   }
 }
 
-// The URL every post page passes to getWebmentions, built the way
-// PostDetails.astro builds it. The two must agree or a page looks itself up
-// under a target nothing was filed against.
+// Mirrors the target PostDetails.astro passes to getWebmentions. Should the
+// two drift, a page looks itself up under a target nothing was filed against
+// and renders nothing, with no error.
 async function postTargets(): Promise<string[]> {
   const posts = await getCollection("blog", postFilter);
 
@@ -162,8 +160,7 @@ function groupByTarget(children: WebmentionEntry[]): MentionsByTarget {
 async function fetchAllMentions(): Promise<MentionsByTarget> {
   const children: WebmentionEntry[] = [];
 
-  // Sequential on purpose: the point of batching is to stop asking
-  // webmention.io for many things at once.
+  // Sequential: webmention.io 502s when asked for many things at once.
   for (const batch of chunk(await postTargets(), TARGETS_PER_REQUEST)) {
     children.push(...(await fetchMentions(batch)));
   }
@@ -171,9 +168,9 @@ async function fetchAllMentions(): Promise<MentionsByTarget> {
   return groupByTarget(children);
 }
 
-// Every post page asks for its own mentions, but a request per page is a burst
-// webmention.io answers with intermittent 502s. One pass over every target,
-// memoised for the build, keeps the site to a single round of requests.
+// Holds the promise rather than the result: pages render concurrently, so
+// callers after the first join the request in flight instead of starting
+// their own.
 let allMentions: Promise<MentionsByTarget> | null = null;
 
 function mentionsByTarget(): Promise<MentionsByTarget> {
