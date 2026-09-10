@@ -41,21 +41,20 @@ literature with this book as a pretext is a different post.
 
 2. **The question has a checkable answer.** Evidence: four documented
    magazine publications, 1953–1957, with *The Defenders* on Project
-   Gutenberg in full. The arc reading as classic Dick is Dick. The container
-   is invented: e-artnow's title, e-artnow's grouping, 2018.
+   Gutenberg in full. The arc reading as classic Dick is Dick.
 
-3. **What's skewed is the frame, and the frame is the whole product.**
+3. **What's skewed is the frame, and the frame is the whole product.** The
+   container is invented: e-artnow's title, e-artnow's grouping, 2018.
    Measurement: against the *Collected Stories*, where the same material
    arrives dated, sourced, ordered, and attributed. Evidence: 91 pages, four
-   stories bundled by motif, ad copy pitching *Adjustment Team* as "adapted
-   into a successful movie featuring Matt Damon." Nothing in the volume
-   dates or sources anything. The front matter is the only part being sold
-   and the only part that isn't Dick.
+   public-domain stories bundled by motif, with nothing in the volume dating
+   or sourcing anything. The front matter is the only part being sold and
+   the only part that isn't Dick.
 
 4. **The irony is accidental.** An object that makes you doubt what's in
    front of you, with no way to check from inside it, is a Dick premise
-   landing on a Dick collection. Commerce produced that, not design. Worth
-   one paragraph; it stays out of the thesis.
+   landing on a Dick collection. Commerce produced that, not design. One
+   clause inside the doubt paragraph, not a paragraph of its own.
 
 ## Honest tail
 
@@ -92,6 +91,12 @@ outlives the answer.
   point 1 concrete.
 - **Tags.** `attribution` and `public-domain`, both net-new. `reading` was
   the only existing candidate; the post isn't about reading practice.
+- **The movie credit stays out.** The blurb pitches *Adjustment Team* as
+  "adapted into a successful movie featuring Matt Damon," which reads as
+  evidence for point 3. The author didn't make that connection while
+  reading, so the post doesn't claim it.
+- **The irony gets a clause, not a paragraph.** Point 4 lands inside the
+  doubt paragraph. Stating it a second time deflates it.
 
 [defenders]: https://www.gutenberg.org/ebooks/28767
 [pd]: https://philipdick.com/2012/04/03/public-domain-philip-k-dick-stories/
