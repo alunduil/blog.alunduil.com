@@ -124,6 +124,17 @@ the beats concrete regardless — the spine needs them to drive the draft, and a
 reader in the notes drawer is opt-in. The spoiler *fence* is the published
 post's job (§4).
 
+**Register: working note.** The spine carries claims; §4 carries prose. State
+each claim flat, one idea per sentence, and leave cadence and figure to the
+draft. A line that already reads like the finished post belongs in the post,
+and the honest tail records what can't be settled in a sentence rather than a
+finished paragraph. `outlines/` is excluded from the linters, so this register
+holds by hand.
+
+**Keep it current.** Move each question the author settles into a `## Resolved`
+section, naming the decision and the reason behind it. The spine is the record
+the draft is built from, so it holds what's decided beside what's still open.
+
 This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
 Confirm the thesis and the points with the author before drafting prose. The
