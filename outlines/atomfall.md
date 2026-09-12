@@ -24,18 +24,20 @@ solved, and it hands you no markers to solve it with.
    postapocalyptic ground, none of the palette. Windscale's quarantine zone
    is bright green Cumbrian countryside under blue sky, and the humour is
    English rather than retro-American. Evidence: the author's own capture,
-   `Atomfall-2026_03_17-19-45-25.png` — three skeletons sitting in a wheeled
-   bathtub on a sunlit hillside, Sten in frame. The light is wrong for a
-   wasteland.
+   `Atomfall-2026_03_17-19-45-25.png` — three skeletons sitting up in a
+   bathtub on cart wheels, parked on a sunlit hillside, one in a flat cap
+   and one in a knitted beanie. Someone dressed them. The light is wrong
+   for a wasteland.
 
 3. **The constraints keep you inside the mystery.** Inventory is
-   slot-limited rather than weight-limited, with no over-encumbrance
-   fallback, and the economy has no currency at all — barter only, offering
-   goods against a trader's scales until they balance. Most reviews call the
-   slot count the game's biggest problem. In this read it's what stops the
-   zone becoming a supply run. Evidence: the Bach comparison — a
-   self-imposed rule set that produces invention, the way all twenty-four
-   keys produced the *Well-Tempered Clavier*.
+   slot-limited rather than weight-limited — four guns and sixteen other
+   items, with no over-encumbrance fallback — and the economy has no
+   currency at all, barter only, offering goods against a trader's scales
+   until they balance. Reviewers named the slot count the game's worst
+   design decision more consistently than anything else in it. In this read
+   it's what stops the zone becoming a supply run. Evidence: the Bach
+   comparison — a self-imposed rule set that produces invention, the way
+   all twenty-four keys produced the *Well-Tempered Clavier*.
 
 4. **The DLC brings different stories, not more zone.** Red Strain and
    Wicked Isle are separate mysteries rather than extra hours of the same
