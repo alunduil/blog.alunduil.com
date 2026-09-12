@@ -122,7 +122,7 @@ LaTeX
 Warcraft
 Playdead
 Playdead's
-Atomfall
+(?i)Atomfall
 Windscale
 
 # Books and fiction

@@ -1,7 +1,12 @@
 ---
 pubDatetime: 2026-09-20T07:00:00Z
 title: Nobody Explains the Bathtub
+ogImage: ../../../assets/images/atomfall-cover.jpg
 description: "Atomfall hands you no quest markers and an inventory too small for what you find. Both are why I'd tell you to play it."
+tags:
+  - game-design
+  - discovery
+  - constraint
 ---
 
 Somewhere on a hillside in the Windscale quarantine zone there is a
@@ -10,6 +15,8 @@ wears a flat cap. Another has a knitted beanie pulled down over the skull.
 Someone dressed them, propped them upright, and pushed the tub out into the
 grass. [*Atomfall*](https://store.steampowered.com/app/801800/Atomfall/)
 never tells you who, or why. That's the reason I'd tell you to play it.
+
+![Three skeletons propped upright in a cast-iron bathtub mounted on cart wheels, parked on a steep grassy hillside under a clear sky. One wears a flat cap, another a knitted beanie.](/assets/atomfall-bathtub.jpg)
 
 There are no quest markers. You get leads instead—a note in a drawer, a set
 of coordinates, a name someone lets slip. You place your own icons on the
