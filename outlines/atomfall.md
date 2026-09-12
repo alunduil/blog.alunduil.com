@@ -9,18 +9,18 @@ survival-action, alternate-history 1960s England. Media Log: Xbox, Status
 Finished, `Main Story (hrs)` 8.5, `My Placement` "Completed.", target was
 DLC-complete (Red Strain + Wicked Isle), not base credits.
 **Issue:** #343. **Slug:** `atomfall`.
-**Working title:** In All Twenty-Four Keys.
+**Working title:** Three Men in a Tub.
 
-**Thesis:** Play *Atomfall*. It works the postapocalyptic ground Fallout
-monopolises and gets somewhere else on it rather than deriving from it, and
-the mystery underneath is genuinely worth unpacking. The two things most
-reviewers file as its faults — no quest markers, and an inventory too small
-to hold what you find — are the composition, not the flaw. They are the rule
-set, and the play happens inside them, the way Bach set himself all
-twenty-four keys and wrote the *Well-Tempered Clavier* inside that. Where it
-goes wonky is the side stories: chase all of them and they converge on a
-single decision that cashes out as effectively one ending. Satisfying anyway,
-and reloading a save is the intended answer.
+**Thesis:** Play *Atomfall* for the mystery. The zone is a thing to be
+solved, it hands you no markers to solve it with, and working out what to do
+next is the whole pleasure. Everything else in the game is in service of
+that: the Cumbrian setting keeps the mystery from feeling like a Fallout
+retread, and the constraints — no quest log, an inventory too small for what
+you find, an economy with no money in it — keep you inside the detective work
+instead of letting you route around it. Where it goes wonky is the side
+stories: chase all of them and they converge on a single decision that cashes
+out as effectively one ending. Satisfying anyway, and reloading a save is the
+intended answer.
 
 **Register constraint:** a game review, not an essay on constraint in art.
 The Bach comparison is one analogy carrying one claim, worked lightly — it
@@ -29,29 +29,45 @@ argument to summary.
 
 ## Supporting points (thematic, not chronological)
 
-1. **The genre ground is Fallout's; the place isn't.** Same postapocalypse,
-   none of the palette. Windscale's quarantine zone is bright green Cumbrian
-   countryside under blue sky, and the humour is English rather than
-   retro-American. That's why it reads as a foray into the genre instead of a
-   derivation from the one game that owns it. Evidence: the author's own
-   capture — three skeletons sitting in a wheeled bathtub on a sunlit
-   hillside, Sten in frame. The light is wrong for a wasteland, and the whole
-   tone follows from that.
-
-2. **The mystery gates progression, and the gates are the pleasure.** No
-   quest markers. Leads come out of notes, coordinates, and overheard
+1. **The mystery is the recommendation, and the gates are the pleasure.**
+   No quest markers. Leads come out of notes, coordinates, and overheard
    rumours, and the player places their own icons on the map from what those
    imply. Progress is gated on working out what to do next rather than on
-   walking to a waypoint. Evidence: the leads system as the substitute for a
-   quest log — the reason the zone stays a thing to be solved.
+   walking to a waypoint, so the zone stays a thing to be solved rather than
+   a route to be walked. This is the claim; the other two points exist to
+   explain why it works here and not as a gimmick. Evidence: the leads
+   system standing in for a quest log — you are reading the zone, not
+   reading a list.
 
-3. **The constraints compose.** Inventory is slot-limited rather than
-   weight-limited, with no over-encumbrance fallback, and the economy has no
-   currency at all — barter only, offering goods against a trader's scales
-   until they balance. Most reviews call the slot count the game's biggest
-   problem. In this read it's the point: the limit forces the choosing, and
-   the choosing is the game. This is where the Bach analogy lands — a
-   self-imposed rule set that produces invention instead of preventing it.
+2. **The place is why the mystery doesn't read as a Fallout retread.** Same
+   postapocalyptic ground, none of the palette. Windscale's quarantine zone
+   is bright green Cumbrian countryside under blue sky, and the humour is
+   English rather than retro-American. A detective game needs a world worth
+   being curious about, and the unfamiliarity of this one is what keeps the
+   curiosity pointed outward. Evidence: the author's own capture — three
+   skeletons sitting in a wheeled bathtub on a sunlit hillside, Sten in
+   frame. The light is wrong for a wasteland, and the whole tone follows
+   from that.
+
+3. **The constraints keep you inside the mystery.** Inventory is
+   slot-limited rather than weight-limited, with no over-encumbrance
+   fallback, and the economy has no currency at all — barter only, offering
+   goods against a trader's scales until they balance. Most reviews call the
+   slot count the game's biggest problem. In this read it's what stops the
+   zone becoming a supply run: the limit forces the choosing, and the
+   choosing keeps the attention on the puzzle. This is where the Bach
+   analogy lands — a self-imposed rule set that produces invention rather
+   than preventing it, the way all twenty-four keys produced the
+   *Well-Tempered Clavier*.
+
+4. **The DLC brings different stories, not more zone.** Red Strain and
+   Wicked Isle are separate mysteries rather than extra hours of the same
+   one — Wicked Isle a smaller parallel region, Red Strain running near the
+   end of the main thread. Worth a sentence because it changes what
+   "finished" means here, and because a reader deciding whether to buy in
+   should know the additions are stories rather than content. Kept to a
+   mention: naming what either is actually about spoils two more mysteries
+   on top of the main one.
 
 ## Honest tail
 
@@ -77,16 +93,18 @@ The mystery is the recommendation, so the fence is load-bearing.
   and one decision is a claim about structure. What is there, and what the
   decision is, stay out of the post. No "Oberon," no named faction leaders,
   no ending.
+- **The DLC mention is structural only.** That they are separate stories is
+  a fact about the shape of the package. What happens in either stays out.
 - **The bathtub is safe.** Environmental comedy in an early outdoor area
   reveals nothing about the plot.
 - **The test:** could a reader who then plays it still be surprised? The
   frontmatter description is strictest — it names the setting and the
-  constraint claim, never the convergence.
+  no-markers claim, never the convergence.
 
 ## Draft notes
 
-- **Open on the argument.** Latch on the bathtub capture or on the missing
-  quest marker — a concrete moment that delivers the thesis. Not on
+- **Open on the argument.** Latch on the missing quest marker or on the
+  bathtub capture — a concrete moment that delivers the thesis. Not on
   provenance; the honest provenance is a finished game in the Media Log.
 - **Firm recommendation, honest ending.** Recommend flat, close on the
   side-story convergence and the reload concession.
@@ -101,28 +119,28 @@ The mystery is the recommendation, so the fence is load-bearing.
   folder.
 - **Cadence:** Sunday 08:00 local. Next open slot `2026-09-20T07:00:00Z`
   (BST); 09-13 is taken by `shining-stork` and nothing is scheduled past it.
-- **Tags:** subjects, never `review` or `game`. Candidates: constraint,
-  mystery. Run `/tag-suggest` on the draft.
+- **Tags:** subjects, never `review` or `game`. Candidates: mystery,
+  constraint. Run `/tag-suggest` on the draft.
 
 ## Resolved
 
+- **The mystery is the spine.** An earlier version of this spine led on
+  "not derivative of Fallout" and landed on the constraints. The author
+  corrected it: the mystery and the story are why he recommends it, and
+  everything else supports that. Points reordered, thesis rewritten.
 - **The Bach reference is the *Well-Tempered Clavier*** — all twenty-four
   keys as a self-imposed rule set, invention happening inside it. Confirmed
   by the author against the clavichord and *Clavier-Büchlein* readings.
+- **The DLC gets a mention, not a section.** Enough to establish that the
+  additions are separate stories; nothing about what either contains.
 - **Cover art is the game's key art, not the capture.** The capture carries
   the body; `ogImage` matches how the book reviews use publisher covers.
 
 ## Open questions for the author
 
-1. **Title.** "In All Twenty-Four Keys" is the working pick — noun phrase,
-   carries the constraint claim, matches "Whichever Comes Second" and "The
-   Man in the Middle." Alternatives: "The Rule Set Is the Game," or
-   "Skeletons in a Bathtub" (concrete, funnier, drops the Bach thread).
-2. **Does point 3 carry the weight the thesis gives it?** The spine leads on
-   "not derivative" and lands the argument on "the constraints compose." If
-   the mystery and its gating is the bigger half of why you'd recommend it,
-   points 2 and 3 swap and the Bach analogy becomes support rather than the
-   spine.
-3. **Is the DLC in scope?** You played to DLC-complete. The spine reviews the
-   game as one thing and never separates Red Strain or Wicked Isle. Say if
-   either earns its own beat.
+1. **Title.** "Three Men in a Tub" is the working pick — the nursery rhyme
+   the capture stages, which lands the English register the review argues
+   for and is quietly grim given the three are skeletons. It carries the
+   tone rather than the mystery, which is the trade. Alternatives that carry
+   the thesis instead: "Nobody Marks the Map," "The Wrong Light for a
+   Wasteland" (image plus the not-Fallout claim), or "Read the Zone."
