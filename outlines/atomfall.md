@@ -54,8 +54,15 @@ solved, and it hands you no markers to solve it with.
 - **Reloading is the intended answer.** The game expects a manual save
   before the decision and a reload to see the others — an odd ask from a
   game that otherwise trusts the player to work things out unaided.
-- **Where the read might be wrong:** the inventory claim is the contrarian
-  one. Plenty of reviewers hit the same slot limit and found it obstruction,
-  not design. The difference may be the eight-and-a-half-hour length — a
-  limit that forces good choices over eight hours is just friction over
-  forty.
+## Open — do not invent
+
+The author's own words for this game are fun, satisfying, excellent,
+limiting but fun, and wonky. Nothing beyond them is established. Unanswered
+and not to be filled in:
+
+- Whether the length affects the inventory read. The contrarian claim is
+  the post's weakest point and a reviewer would normally hedge it, but the
+  author has not said he does.
+- Whether he chased every side story himself, or is reporting what happens
+  if you do.
+- Whether the bathtub ever got explained for him.
