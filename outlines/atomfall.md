@@ -9,7 +9,7 @@ survival-action, alternate-history 1960s England. Media Log: Xbox, Status
 Finished, `Main Story (hrs)` 8.5, `My Placement` "Completed.", target was
 DLC-complete (Red Strain + Wicked Isle), not base credits.
 **Issue:** #343. **Slug:** `atomfall`.
-**Working title:** Three Men in a Tub.
+**Title:** Nobody Explains the Bathtub.
 
 **Thesis:** Play *Atomfall* for the mystery. The zone is a thing to be
 solved, it hands you no markers to solve it with, and working out what to do
@@ -103,9 +103,10 @@ The mystery is the recommendation, so the fence is load-bearing.
 
 ## Draft notes
 
-- **Open on the argument.** Latch on the missing quest marker or on the
-  bathtub capture — a concrete moment that delivers the thesis. Not on
-  provenance; the honest provenance is a finished game in the Media Log.
+- **Open on the argument.** Latch on the bathtub, which the title now
+  commits to: the object in frame, then the fact that nothing in the game
+  accounts for it. Not on provenance; the honest provenance is a finished
+  game in the Media Log.
 - **Firm recommendation, honest ending.** Recommend flat, close on the
   side-story convergence and the reload concession.
 - **Pacing.** 8.5 hours to the main story plus two DLCs. Length reads as
@@ -135,12 +136,9 @@ The mystery is the recommendation, so the fence is load-bearing.
   additions are separate stories; nothing about what either contains.
 - **Cover art is the game's key art, not the capture.** The capture carries
   the body; `ogImage` matches how the book reviews use publisher covers.
-
-## Open questions for the author
-
-1. **Title.** "Three Men in a Tub" is the working pick — the nursery rhyme
-   the capture stages, which lands the English register the review argues
-   for and is quietly grim given the three are skeletons. It carries the
-   tone rather than the mystery, which is the trade. Alternatives that carry
-   the thesis instead: "Nobody Marks the Map," "The Wrong Light for a
-   Wasteland" (image plus the not-Fallout claim), or "Read the Zone."
+- **Title: "Nobody Explains the Bathtub."** Chosen off the capture over
+  "Three Men in a Tub," "The Butcher, the Baker," and "The Wrong Light for
+  a Wasteland." It carries the image and the thesis together — the game
+  never accounts for the tub, and that refusal is the leads system in one
+  object. The rejected three each carried tone or the setting claim, which
+  is support rather than the spine.
