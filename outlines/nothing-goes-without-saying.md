@@ -1,7 +1,7 @@
 # Nothing Goes Without Saying — outline
 
-Opens at scene 1 and lands at scene 5: rewriting two published posts to
-clear a readability score I deleted in May for being the wrong target.
+Rewriting two published posts to clear a readability score I deleted in
+May for being the wrong target (scene 5; scene 1 is its opposite).
 Beck's forest and desert set the question; Meyer's high-to-low context
 scale answers it, because an agent shares no history with me and keeps
 none between sessions.
@@ -82,17 +82,14 @@ none between sessions.
 
 ## Open
 
-- Tuckman is cut. Two frameworks is the post's ceiling, and his stages
-  answer a question about time that neither Beck nor Meyer is asking. If
-  he returns as a clause in scene 4, the citation is "Developmental
-  Sequence in Small Groups," *Psychological Bulletin* 63(6), 1965 — the
-  Media Log title is slightly off.
-- The Spotify Engineering Culture video from #342 is out too. It
-  illustrates Beck rather than advancing the arc.
-- *The Art of Business Value* stays out — unfinished, and Meyer does the
-  job Schwartz would have done.
-- Scene 7 must not land where `who-accounts-for-the-agent` did (being
-  exacting with a machine teaching the author to be exacting with people
-  again). Different gap, deliberately.
-- `pubDatetime` unset. Next open Tuesday slot on `main` is 2026-09-15;
-  other worktree branches not yet checked for a collision.
+- Scene 3, beat 4: #265 was filed 2026-06-21, five days before #260
+  merged the exemption it objects to. Whether that timing was deliberate
+  is unconfirmed, and the scene's role rests on it.
+- `who-accounts-for-the-agent` already closes on being exacting with a
+  machine teaching the author to be exacting with people again. Scene 7
+  lands somewhere else.
+- `pubDatetime` unset. The next open Tuesday on `main` is 2026-09-15;
+  the other worktree branches aren't checked for a collision yet.
+- If Tuckman returns as a clause in scene 4, the citation is
+  "Developmental Sequence in Small Groups," *Psychological Bulletin*
+  63(6), 1965 — the Media Log title is slightly off.
