@@ -6,7 +6,8 @@
 **Object:** video game — Rebellion Developments, 27 March 2025. Media Log:
 Xbox, Finished, 8.5 hours main story, played to DLC-complete.
 **Title:** Nobody Explains the Bathtub. **Slug:** `atomfall`.
-**Out of the post:** the dig site's name, the faction leaders, the ending.
+Keep the dig site's name, the faction leaders, and the ending out of the
+post.
 
 **Thesis:** Play *Atomfall* for the mystery. The zone is a thing to be
 solved, and it hands you no markers to solve it with.
