@@ -120,12 +120,10 @@ failure signatures:
     repeats a fact a beat parenthetical already carries → cut to what the
     beats don't say. The header grows fastest here, and every duplicate
     is a second place to update when a beat moves.
-11. **Pre-written beat** — a beat carrying more than one sentence, or
-    running past ~40 words, has drafted prose where the skeleton belongs,
-    leaving `post-draft` no room for craft → split into one beat per
-    change, or cut to the change. Sentence count is the sharper test:
-    §2's comma-spliced line is two beats, and a second full sentence is
-    two beats stated outright.
+11. **Pre-written beat** — a beat carrying a second sentence, or running
+    past ~40 words, has drafted prose where the skeleton belongs, leaving
+    `post-draft` no room for craft → split into one beat per change, or
+    cut to the change. The second sentence is the surer tell.
 
 Then check `## Open` against the drafting gate.
 
