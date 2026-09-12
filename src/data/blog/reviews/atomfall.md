@@ -32,8 +32,7 @@ I could carry four guns and sixteen other items, and no more. The game has
 no money at all. Trading means piling goods onto a set of scales until the
 merchant's side balances. Reviewers named the inventory the worst decision
 in the game. I think they have it backwards. The limit stops the zone
-becoming a supply run. It was limiting and fun at once. Bach set himself all
-twenty-four keys and wrote the *Well-Tempered Clavier* inside that rule.
+becoming a supply run. It was limiting and fun at once.
 
 Red Strain and Wicked Isle are two more mysteries rather than more zone.
 

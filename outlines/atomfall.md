@@ -35,9 +35,11 @@ solved, and it hands you no markers to solve it with.
    currency at all, barter only, offering goods against a trader's scales
    until they balance. Reviewers named the slot count the game's worst
    design decision more consistently than anything else in it. In this read
-   it's what stops the zone becoming a supply run. Evidence: the Bach
-   comparison — a self-imposed rule set that produces invention, the way
-   all twenty-four keys produced the *Well-Tempered Clavier*.
+   it's what stops the zone becoming a supply run. Evidence: the counts
+   themselves, four guns and sixteen other items, against a barter economy
+   with no currency behind it. The Bach analogy the author reached for in
+   conversation read as forced on the page. It's out, and the mechanics
+   carry the claim alone.
 
 4. **The DLC brings different stories, not more zone.** Red Strain and
    Wicked Isle are separate mysteries rather than extra hours of the same
