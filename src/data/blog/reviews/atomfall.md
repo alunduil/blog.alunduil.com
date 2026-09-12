@@ -21,7 +21,7 @@ explains it.
 The game has no quest markers. It gives leads instead—a note in a drawer, a
 set of coordinates, a name someone lets slip. I placed my own icons on the
 map from what they implied. I unpacked the zone rather than crossing it.
-That's what I'd recommend it for. It takes about eight and a half hours.
+That's what I'd recommend it for.
 
 Fallout is the comparison everyone reaches for. I think it's the right one.
 *Atomfall* works the same post-apocalyptic ground without deriving from it.

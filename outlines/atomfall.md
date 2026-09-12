@@ -54,15 +54,16 @@ solved, and it hands you no markers to solve it with.
 - **Reloading is the intended answer.** The game expects a manual save
   before the decision and a reload to see the others — an odd ask from a
   game that otherwise trusts the player to work things out unaided.
-## Open — do not invent
+## From the author — do not go past these
 
-The author's own words for this game are fun, satisfying, excellent,
-limiting but fun, and wonky. Nothing beyond them is established. Unanswered
-and not to be filled in:
+His words for this game are fun, satisfying, excellent, limiting but fun,
+and wonky. Nothing beyond them is established; write about the game rather
+than about him.
 
-- Whether the length affects the inventory read. The contrarian claim is
-  the post's weakest point and a reviewer would normally hedge it, but the
-  author has not said he does.
-- Whether he chased every side story himself, or is reporting what happens
-  if you do.
-- Whether the bathtub ever got explained for him.
+- **Length is irrelevant here.** It stays out of the post. No pacing claim,
+  no hedge that the inventory argument might not survive a longer game — he
+  doesn't hold that doubt.
+- **He chased most side stories, not all** — the ones whose leads he found
+  and could resolve, without going for completion.
+- **He never saw the bathtub explained**, and allows he may have missed it.
+  This is the close, and it lands the title.
