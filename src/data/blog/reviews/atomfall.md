@@ -19,29 +19,30 @@ never explains it.
 ![Three skeletons propped upright in a cast-iron bathtub mounted on cart wheels, parked on a steep grassy hillside under a clear sky. One wears a flat cap, another a knitted beanie.](/assets/atomfall-bathtub.jpg)
 
 The game has no quest markers. It gives leads instead—a note in a drawer, a
-set of coordinates, a name someone lets slip—and the player places their own
-icons on the map from what those imply. The mystery is there to be unpacked
-rather than walked through, and unpacking it is the fun of the thing. It
-runs eight and a half hours. I'd recommend it on that basis.
+set of coordinates, a name someone lets slip. I placed my own icons on the
+map from what they implied. The zone is a thing to be unpacked rather than
+walked through, and that's what I'd recommend it for. It takes about eight
+and a half hours.
 
 Fallout is the comparison everyone reaches for. I think it's the right one.
-*Atomfall* works the same post-apocalyptic ground and arrives somewhere else
-on it. The zone is bright green under a blue sky, all wet grass and birch
-scrub and wildflowers. The jokes are English. None of it reads as a
-wasteland.
+*Atomfall* works the same post-apocalyptic ground without deriving from it.
+The place is bright green under a blue sky, all wet grass and birch scrub
+and wildflowers. The jokes are English. None of it reads as a wasteland.
 
-The constraints are the other half. The game allows four guns and sixteen
-other items, and there's no money anywhere in the zone, so trading means
-piling goods onto a set of scales until the merchant's side balances.
-Reviewers named the inventory the game's worst decision. I think they have
-it backwards. Limiting and fun are not opposites here, and the limit is what
-stops the zone becoming a supply run. Bach set himself all twenty-four keys
-and wrote the *Well-Tempered Clavier* inside that rule.
+The inventory is the other thing people mention. I could carry four guns and
+sixteen other items, and no more. There's no money in the game at all, so
+trading means piling goods onto a set of scales until the merchant's side
+balances. Reviewers named it the worst decision in the game. I think they
+have it backwards. The limit is what stops the zone becoming a supply run.
+It was limiting and fun at once. Bach set himself all twenty-four keys and
+wrote the *Well-Tempered Clavier* inside that rule.
 
 Red Strain and Wicked Isle are two more mysteries rather than more zone.
 
-Chasing every side story is where it gets wonky. They converge at the end,
-so the balancing goes awry and six mutually exclusive endings collapse into
-whichever one you take. It's satisfying in spite of that. The game's answer
-is a manual save beforehand and a reload after, which is how it expects the
-other endings to be seen.
+I chased most of the side stories, the ones whose leads I found and could
+resolve, without going for completion. They converge at the end all the
+same. The balancing gets wonky there. Six mutually exclusive endings
+collapse into whichever one you take. It's satisfying in spite of that. The
+game expects a manual save beforehand and a reload after to see the others.
+
+I never saw anything that explained the bathtub. I may have missed it.
