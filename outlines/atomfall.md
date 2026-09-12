@@ -12,15 +12,7 @@ DLC-complete (Red Strain + Wicked Isle), not base credits.
 **Title:** Nobody Explains the Bathtub.
 
 **Thesis:** Play *Atomfall* for the mystery. The zone is a thing to be
-solved, it hands you no markers to solve it with, and working out what to do
-next is the whole pleasure. Everything else in the game is in service of
-that: the Cumbrian setting keeps the mystery from feeling like a Fallout
-retread, and the constraints — no quest log, an inventory too small for what
-you find, an economy with no money in it — keep you inside the detective work
-instead of letting you route around it. Where it goes wonky is the side
-stories: chase all of them and they converge on a single decision that cashes
-out as effectively one ending. Satisfying anyway, and reloading a save is the
-intended answer.
+solved, and it hands you no markers to solve it with.
 
 **Register constraint:** a game review, not an essay on constraint in art.
 The Bach comparison is one analogy carrying one claim, worked lightly — it
@@ -34,8 +26,8 @@ argument to summary.
    rumours, and the player places their own icons on the map from what those
    imply. Progress is gated on working out what to do next rather than on
    walking to a waypoint, so the zone stays a thing to be solved rather than
-   a route to be walked. This is the claim; the other two points exist to
-   explain why it works here and not as a gimmick. Evidence: the leads
+   a route to be walked. This is the claim; the points below it explain why
+   it works here rather than reading as a gimmick. Evidence: the leads
    system standing in for a quest log — you are reading the zone, not
    reading a list.
 
@@ -65,9 +57,7 @@ argument to summary.
    one — Wicked Isle a smaller parallel region, Red Strain running near the
    end of the main thread. Worth a sentence because it changes what
    "finished" means here, and because a reader deciding whether to buy in
-   should know the additions are stories rather than content. Kept to a
-   mention: naming what either is actually about spoils two more mysteries
-   on top of the main one.
+   should know the additions are stories rather than content.
 
 ## Honest tail
 
@@ -83,7 +73,8 @@ argument to summary.
 - **Where the read might be wrong:** the inventory claim is the contrarian
   one. Plenty of reviewers hit the same slot limit and found it obstruction,
   not design. The difference may be the eight-and-a-half-hour length — a
-  constraint that composes over a short game could grate over a long one.
+  limit that forces good choices over eight hours is just friction over
+  forty.
 
 ## Spoiler approach
 
@@ -94,7 +85,8 @@ The mystery is the recommendation, so the fence is load-bearing.
   decision is, stay out of the post. No "Oberon," no named faction leaders,
   no ending.
 - **The DLC mention is structural only.** That they are separate stories is
-  a fact about the shape of the package. What happens in either stays out.
+  a fact about the shape of the package. What either is about stays out —
+  naming it spoils two more mysteries on top of the main one.
 - **The bathtub is safe.** Environmental comedy in an early outdoor area
   reveals nothing about the plot.
 - **The test:** could a reader who then plays it still be surprised? The
@@ -125,6 +117,11 @@ The mystery is the recommendation, so the fence is load-bearing.
 
 ## Resolved
 
+- **The thesis states the claim and stops.** An earlier version restated
+  every point and both tail items in one paragraph, which gave the same
+  claim three places to live and let a revised point leave the thesis
+  disagreeing with itself. The points carry the argument; the tail carries
+  the limits. Don't re-inflate it.
 - **The mystery is the spine.** An earlier version of this spine led on
   "not derivative of Fallout" and landed on the constraints. The author
   corrected it: the mystery and the story are why he recommends it, and
