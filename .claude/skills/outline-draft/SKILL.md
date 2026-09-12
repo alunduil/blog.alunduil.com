@@ -121,8 +121,7 @@ failure signatures:
     beats don't say. The header grows fastest here, and every duplicate
     is a second place to update when a beat moves.
 
-Then read `## Open`: every entry still blocks the draft, and each one
-answered since the last pass has moved into the beat it informs.
+Then check `## Open` against the gate below.
 
 The title in the header is a **working title** — a handle for the file
 and the angle. The real title is chosen in `post-draft` once the prose
@@ -130,16 +129,13 @@ exists and the body settles what it argues.
 
 ## Open — the drafting gate
 
-`## Open` holds the items that gate drafting: a citation to find, a fact
-to confirm, a decision to make. It is the hand-off control — while an
-entry stands there, the outline stays with this skill.
+`## Open` holds what gates drafting: a citation to find, a fact to
+confirm, a decision to make. While an entry stands there, the outline
+stays with this skill.
 
-Resolving an item removes it from Open. The answer moves to where it
-does work: a beat, a parenthetical on the beat it supports, or a scene
-role.
-
-An empty Open is the drafting-ready signal. Drop the heading once
-nothing is left, and hand the outline to `post-draft`.
+Resolving an item removes it from Open — the answer moves into the beat
+or scene it informs. An empty Open is the drafting-ready signal: drop
+the heading and hand the outline to `post-draft`.
 
 ## Shape
 
@@ -174,9 +170,8 @@ opposite), the surrounding years as context.>
 
 Iterate in `outlines/<slug>.md` (tracked; outside `src/`, so unpublished
 and excluded from the prose linters and lychee). Run the Diagnose pass.
-Clear `## Open`, folding each answer into the beat it informs. Confirm
-with the author. The skill ends at approval of an outline with nothing
-open — hand to `post-draft`.
+Confirm with the author. The skill ends at approval — hand to
+`post-draft`.
 
 The outline drives the post, one direction only: after approval,
 structural changes originate here and flow forward to the post. The
