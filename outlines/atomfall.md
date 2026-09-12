@@ -1,8 +1,8 @@
 # Atomfall — review spine
 
 > **Spoilers.** Structural endgame beats for *Atomfall* below, including the
-> name of the site the leads converge on. This is a working note, not the
-> published post — the post keeps the spoiler fence; this drawer doesn't.
+> name of the site the leads converge on. The published post keeps a fence;
+> this working note doesn't.
 
 **Object:** video game — Rebellion Developments, 27 March 2025; first-person
 survival-action, alternate-history 1960s England. Media Log: Xbox, Status
@@ -26,17 +26,14 @@ argument to summary.
    rumours, and the player places their own icons on the map from what those
    imply. Progress is gated on working out what to do next rather than on
    walking to a waypoint, so the zone stays a thing to be solved rather than
-   a route to be walked. This is the claim; the points below it explain why
-   it works here rather than reading as a gimmick. Evidence: the leads
-   system standing in for a quest log — you are reading the zone, not
-   reading a list.
+   a route to be walked. This is the claim; the points below explain why it
+   works here. Evidence: the leads system standing in for a quest log.
 
 2. **The place is why the mystery doesn't read as a Fallout retread.** Same
    postapocalyptic ground, none of the palette. Windscale's quarantine zone
    is bright green Cumbrian countryside under blue sky, and the humour is
    English rather than retro-American. A detective game needs a world worth
-   being curious about, and the unfamiliarity of this one is what keeps the
-   curiosity pointed outward. Evidence: the author's own capture — three
+   being curious about. Evidence: the author's own capture — three
    skeletons sitting in a wheeled bathtub on a sunlit hillside, Sten in
    frame. The light is wrong for a wasteland, and the whole tone follows
    from that.
@@ -46,8 +43,7 @@ argument to summary.
    fallback, and the economy has no currency at all — barter only, offering
    goods against a trader's scales until they balance. Most reviews call the
    slot count the game's biggest problem. In this read it's what stops the
-   zone becoming a supply run: the limit forces the choosing, and the
-   choosing keeps the attention on the puzzle. This is where the Bach
+   zone becoming a supply run. This is where the Bach
    analogy lands — a self-imposed rule set that produces invention rather
    than preventing it, the way all twenty-four keys produced the
    *Well-Tempered Clavier*.
@@ -55,9 +51,8 @@ argument to summary.
 4. **The DLC brings different stories, not more zone.** Red Strain and
    Wicked Isle are separate mysteries rather than extra hours of the same
    one — Wicked Isle a smaller parallel region, Red Strain running near the
-   end of the main thread. Worth a sentence because it changes what
-   "finished" means here, and because a reader deciding whether to buy in
-   should know the additions are stories rather than content.
+   end of the main thread. It changes what "finished" means here, and a
+   reader deciding whether to buy in should know the additions are stories.
 
 ## Honest tail
 
@@ -69,7 +64,7 @@ argument to summary.
 - **Reloading is the intended answer, and that's a small concession.** The
   game expects a manual save before the decision and a reload to see the
   others — an odd ask from a game that otherwise trusts the player to work
-  things out unaided. Worth stating flat rather than smoothing over.
+  things out unaided.
 - **Where the read might be wrong:** the inventory claim is the contrarian
   one. Plenty of reviewers hit the same slot limit and found it obstruction,
   not design. The difference may be the eight-and-a-half-hour length — a
@@ -118,10 +113,9 @@ The mystery is the recommendation, so the fence is load-bearing.
 ## Resolved
 
 - **The thesis states the claim and stops.** An earlier version restated
-  every point and both tail items in one paragraph, which gave the same
-  claim three places to live and let a revised point leave the thesis
-  disagreeing with itself. The points carry the argument; the tail carries
-  the limits. Don't re-inflate it.
+  every point and both tail items, giving one claim three places to live.
+  A revised point then left the thesis disagreeing with itself. Don't
+  re-inflate it.
 - **The mystery is the spine.** An earlier version of this spine led on
   "not derivative of Fallout" and landed on the constraints. The author
   corrected it: the mystery and the story are why he recommends it, and
