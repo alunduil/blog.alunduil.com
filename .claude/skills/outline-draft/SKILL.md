@@ -49,9 +49,10 @@ them — a wrong peak or a wrong emotional thread costs scenes to unwind,
 where a wrong fact costs a parenthetical.
 
 Substance lands as the outline file's **header**: the logline (the one
-moment of change), where the story opens (its opposite), and the open
-questions / anchors still to confirm. That header is phase 1's output
-and the top of phase 2's artefact — no separate brief file.
+moment of change), where the story opens (its opposite), and the anchors
+the beats don't carry. Anything still to confirm goes to `## Open`. That
+header is phase 1's output and the top of phase 2's artefact — no
+separate brief file.
 
 The header carries only what the beats don't. Name the opening and
 landing scenes by number and let their beats speak. Keep an anchor when
@@ -120,9 +121,25 @@ failure signatures:
     beats don't say. The header grows fastest here, and every duplicate
     is a second place to update when a beat moves.
 
+Then read `## Open`: every entry still blocks the draft, and each one
+answered since the last pass has moved into the beat it informs.
+
 The title in the header is a **working title** — a handle for the file
 and the angle. The real title is chosen in `post-draft` once the prose
 exists and the body settles what it argues.
+
+## Open — the drafting gate
+
+`## Open` holds the items that gate drafting: a citation to find, a fact
+to confirm, a decision to make. It is the hand-off control — while an
+entry stands there, the outline stays with this skill.
+
+Resolving an item removes it from Open. The answer moves to where it
+does work: a beat, a parenthetical on the beat it supports, or a scene
+role.
+
+An empty Open is the drafting-ready signal. Drop the heading once
+nothing is left, and hand the outline to `post-draft`.
 
 ## Shape
 
@@ -130,7 +147,7 @@ exists and the body settles what it argues.
 # <Working title> — outline
 
 <Logline: the one moment of change, where the story opens (its
-opposite), the surrounding years as context, open questions to confirm.>
+opposite), the surrounding years as context.>
 
 **Anchors beyond the beats.** <detail no parenthetical carries>
 
@@ -142,9 +159,10 @@ opposite), the surrounding years as context, open questions to confirm.>
 ## 2. <Scene name> — *the lift*
 ...
 
-## Open
+## Open  <!-- dropped once empty -->
 
-- <unresolved thread: a citation to find, a fact to confirm>
+- <what still gates the draft: a citation to find, a fact to confirm,
+  a decision to make>
 ```
 
 ## When to invoke
@@ -156,8 +174,9 @@ opposite), the surrounding years as context, open questions to confirm.>
 
 Iterate in `outlines/<slug>.md` (tracked; outside `src/`, so unpublished
 and excluded from the prose linters and lychee). Run the Diagnose pass.
-Confirm with the author. The skill ends at approval — hand to
-`post-draft`.
+Clear `## Open`, folding each answer into the beat it informs. Confirm
+with the author. The skill ends at approval of an outline with nothing
+open — hand to `post-draft`.
 
 The outline drives the post, one direction only: after approval,
 structural changes originate here and flow forward to the post. The
