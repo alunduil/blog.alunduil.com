@@ -122,6 +122,8 @@ LaTeX
 Warcraft
 Playdead
 Playdead's
+(?i)Atomfall
+Windscale
 
 # Books and fiction
 # Case-insensitive: post slugs carry these into ogImage paths, which Vale

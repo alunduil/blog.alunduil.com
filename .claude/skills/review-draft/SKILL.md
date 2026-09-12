@@ -118,6 +118,26 @@ unpublished and excluded from the prose linters and lychee):
 <what it left unresolved / where the read might be wrong>
 ```
 
+**Fill this template. The spine carries the argument and the facts it rides
+on — the object in a line or two, the thesis, the points with their evidence,
+the tail.** Everything else has a home already:
+
+- Rules this skill states — spoiler policy, register, the argument ratio — are
+  read here and applied while drafting. Restating one in the spine creates a
+  second place to update when it changes.
+- Production values — `pubDatetime`, tags, `ogImage`, slug — go straight into
+  the post's frontmatter when you draft, minutes later. They need no staging
+  area.
+- Work-specific facts stay at point of use: a capture's filename rides on the
+  evidence line it supports, not in a notes section.
+- Decisions settled in conversation hold only while drafting. Delete them
+  before the PR is ready.
+
+**Size check before the gate.** The published reviews run 270–390 words; a
+spine longer than the review it produces has stopped being a skeleton. Spines
+grow when one is started from the previous review's file instead of from this
+template, because sections accrete and none are ever removed.
+
 The `outlines/` dir is unpublished to the site but **public in the repo**. Open
 a spine that names plot beats with a one-line `> **Spoilers.** …` marker; keep
 the beats concrete regardless — the spine needs them to drive the draft, and a
@@ -218,10 +238,10 @@ Instagram check — with review-specific notes:
 ## Output
 
 Iterate in `outlines/<slug>.md` then `src/data/blog/reviews/<slug>.md`. Commit
-incrementally. Final state before promoting the PR: title/description/slug match
-the body, `pubDatetime` a future Sunday 08:00 local, Vale + markdownlint pass
-via `pre-commit run --files <path>`, `pnpm build` clean, body links pointing at
-public source URLs.
+incrementally. Final state before promoting the PR: the spine pruned to the
+argument and its evidence, title/description/slug match the body, `pubDatetime`
+a future Sunday 08:00 local, Vale + markdownlint pass via `pre-commit run
+--files <path>`, `pnpm build` clean, body links pointing at public source URLs.
 
 Provenance: the UNC Writing Center handout (review is commentary not summary;
 ~80/20 evaluation to summary; thematic organisation); Parul Sehgal, *NYT* ("a
