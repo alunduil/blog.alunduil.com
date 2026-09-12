@@ -49,10 +49,10 @@ them — a wrong peak or a wrong emotional thread costs scenes to unwind,
 where a wrong fact costs a parenthetical.
 
 Substance lands as the outline file's **header**: the logline (the one
-moment of change), where the story opens (its opposite), and the anchors
-the beats don't carry. Anything still to confirm goes to `## Open`. That
-header is phase 1's output and the top of phase 2's artefact — no
-separate brief file.
+moment of change), where the story opens (its opposite), and the
+anchors. Anything still to confirm goes to `## Open`. That header is
+phase 1's output and the top of phase 2's artefact — no separate brief
+file.
 
 The header carries only what the beats don't. Name the opening and
 landing scenes by number and let their beats speak. Keep an anchor when
@@ -121,7 +121,7 @@ failure signatures:
     beats don't say. The header grows fastest here, and every duplicate
     is a second place to update when a beat moves.
 
-Then check `## Open` against the gate below.
+Then check `## Open` against the drafting gate.
 
 The title in the header is a **working title** — a handle for the file
 and the angle. The real title is chosen in `post-draft` once the prose
@@ -157,8 +157,7 @@ opposite), the surrounding years as context.>
 
 ## Open  <!-- dropped once empty -->
 
-- <what still gates the draft: a citation to find, a fact to confirm,
-  a decision to make>
+- <what still gates the draft>
 ```
 
 ## When to invoke
