@@ -18,21 +18,22 @@ hand. This blog has customised a lot of it.
 - Comfort resolving git merge conflicts across a few dozen files.
 - Knowing which paths belong to the theme and which are this blog's,
   listed under AstroPaper upstream in `CLAUDE.md`.
-- A remote lives in this clone's git configuration, so it does not travel
-  with the repository. Every fresh clone adds it once, including a Claude
-  Code session on the web.
 
 ## Add the upstream remote
+
+A remote lives in this clone's git configuration, so it does not travel
+with the repository. Every fresh clone runs this once, including a Claude
+Code session on the web.
 
 ```bash
 git remote add --no-tags astro-paper https://github.com/satnaing/astro-paper.git
 git fetch astro-paper
 ```
 
-Upstream tags every release, `v1.0.0` onward. Those tags would land
-beside this repository's own `1.0.x` release tags, and a later
-`git push --tags` would publish them here. The cycle below tracks
-`astro-paper/main`, so `--no-tags` costs nothing.
+Upstream tags every release. Those tags would land beside this
+repository's own `1.0.x` release tags, where a later `git push --tags`
+would publish them; the cycle below tracks `astro-paper/main` and never
+needs them.
 
 ## Review what upstream changed
 
@@ -75,9 +76,9 @@ so the next review offers the same commits again.
 Resolve in this blog's favour wherever the two disagree on something
 chosen on purpose. Three of those are worth naming:
 
-- The post collection is named `blog` and loads from `src/data/blog/`.
-  Upstream renamed it to `posts` under `src/content/posts/`, so adopting
-  that rename moves every post and touches every `getCollection` call.
+- Upstream renamed the post collection to `posts` under
+  `src/content/posts/`. Taking that rename moves every post and touches
+  every `getCollection` call.
 - The loader glob in `src/content.config.ts` accepts `.md` alone, where
   upstream accepts `.md` and `.mdx`. Restoring MDX degrades in silence:
   `src/pages/rss.xml.ts` and `src/pages/posts/[...slug]/index.md.ts`
@@ -91,8 +92,7 @@ chosen on purpose. Three of those are worth naming:
 pnpm build
 ```
 
-That runs `astro check` and Pagefind alongside the build. Then confirm
-the parts a passing build leaves untested:
+Then confirm the parts a passing build leaves untested:
 
 1. Existing post links still resolve.
 2. A post dated in the future produces no `dist/posts/<slug>/`.
@@ -103,8 +103,8 @@ updating to mark it.
 
 ## The first merge
 
-This section covers a one-time event and stops applying once it has
-happened. Delete it then, along with the pointer to it above.
+Delete this section, and the pointer to it above, once the first merge
+has happened.
 
 The scaffold copied the theme files without their history, so the two
 sides start unrelated and no merge base exists to review against. The
