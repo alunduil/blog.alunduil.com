@@ -102,6 +102,10 @@ post bodies lives in `docs/reference/post-body.md`.
 Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 `astro.config.ts`, new posts in `src/data/blog/`.
 
+Upstream fixes arrive by merging the `astro-paper` remote, not through
+Renovate — see [Adopt AstroPaper upstream
+changes](docs/how-to/adopt-astropaper-upstream-changes.md).
+
 [AstroPaper]: https://github.com/satnaing/astro-paper
 
 ## Branches and deploy
