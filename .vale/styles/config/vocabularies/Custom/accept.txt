@@ -29,6 +29,7 @@ DevContainer
 devcontainer
 ESLint
 Shiki
+Pagefind
 markdownlint
 pre-commit
 Pre-commit
