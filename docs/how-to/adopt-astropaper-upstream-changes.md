@@ -34,7 +34,7 @@ beside this repository's own `1.0.x` release tags, and a later
 `git push --tags` would publish them here. The cycle below tracks
 `astro-paper/main`, so `--no-tags` costs nothing.
 
-## Find what upstream changed
+## Review what upstream changed
 
 Merging is what establishes the baseline for this step. A merge joins the
 two histories, which makes the upstream commit it brought in an ancestor
@@ -51,8 +51,8 @@ list rather than a file diff. The commit subjects say what each change is
 for. A diff of the theme paths instead mixes those changes together with
 this blog's chosen divergence, and nothing in it separates the two.
 
-Before the first merge the command fails with `no merge base`, because
-the scaffold copied the theme files without their history.
+A `no merge base` failure here means the histories are still unrelated,
+which puts the reader in [The first merge](#the-first-merge) below.
 
 To see the diff for one commit that looks worth taking:
 
@@ -69,10 +69,8 @@ branch rather than a damaged `main`:
 git merge astro-paper/main
 ```
 
-The first merge needs `git pull astro-paper main --allow-unrelated-histories`
-instead, and is large enough to be its own piece of work. This
-repository's copy sits at a v4-era snapshot while upstream is v6, which
-makes the first merge a migration rather than a sync.
+Applying a change by hand instead leaves the histories where they were,
+so the next review offers the same commits again.
 
 Resolve in this blog's favour wherever the two disagree on something
 chosen on purpose. Three of those are worth naming:
@@ -86,10 +84,6 @@ chosen on purpose. Three of those are worth naming:
   both read `post.body` as raw Markdown, and the build still passes.
 - The theme's sample posts are gone by choice. A merge brings them back
   as new files rather than as conflicts.
-
-Merging rather than applying a change by hand is what keeps the baseline
-accurate. A hand-applied change leaves the histories where they were, so
-the next review offers the same commits again.
 
 ## Verify
 
@@ -106,3 +100,22 @@ the parts a passing build leaves untested:
 
 The merge commit records what this blog adopted. Nothing else needs
 updating to mark it.
+
+## The first merge
+
+This section covers a one-time event and stops applying once it has
+happened. Delete it then, along with the pointer to it above.
+
+The scaffold copied the theme files without their history, so the two
+sides start unrelated and no merge base exists to review against. The
+first merge has to say so:
+
+```bash
+git pull astro-paper main --allow-unrelated-histories
+```
+
+That merge is large enough to be its own piece of work rather than a step
+in this guide. This repository's copy sits at a v4-era snapshot while
+upstream is v6. The first pass is therefore a migration rather than a
+sync, settling the collection rename and the configuration layout in one
+go. Every section above then applies as written.
