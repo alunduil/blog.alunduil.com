@@ -43,7 +43,7 @@ jobs:
       # The site is static, so every published page is a file under dist/ and
       # walking it reaches what a crawler would. Building is also the only way
       # `/posts/...` resolves — nothing in the source tree answers those.
-      - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
+      - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6
         with:
           node-version: ${{ env.NODE_VERSION }}
 
