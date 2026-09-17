@@ -37,6 +37,16 @@ scripting your own.
   installs Node/pnpm for the ESLint/Prettier hooks and lychee via
   `scripts/install-lychee.sh`. Excluded file types (no checker): binary
   assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
+- Vale runs two styles off one config. Human prose (Microsoft, proselint,
+  alex, en_GB spelling) covers posts and docs; this file and `.claude/**`
+  get `blog-alunduil-com-agent`, catching the four AI-doc tells a regex
+  can settle: commit-message framing, forward-looking banners, versions
+  pinned in prose, and pointers to where credentials live. Token
+  efficiency, positive framing, and whether a date stamps a measurement
+  or marks rot stay inferential. `outlines/` gets neither style, holding
+  scene-and-beat planning. Backtick a literal (`TBD`, `not-planned`) so
+  naming one doesn't trip the rule against it, and write any new rule at
+  `error`: a warning exits 0, and a passing hook prints nothing.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on

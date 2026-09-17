@@ -1,0 +1,22 @@
+# AI-targeted docs load whole on every relevant turn. Prose narrating a
+# change spends that context on a state the reader can't observe and
+# leaves the dead approach in it; the commit already holds the history.
+#
+# Every multi-word token joins on `\s+`. The docs hard-wrap, so a literal
+# space stops matching wherever the phrase straddles a line break.
+#
+# Both hedged tokens carry a second, innocent sense. "used to" also means
+# "employed to" — "the flag used to pin the version" — so it fires after
+# "we" or beside a state verb. "no longer" reads as plain negation in
+# "files no longer referenced", so it needs a state verb of its own.
+
+extends: existence
+message: "Commit-message framing: '%s'. Describe the repo at HEAD."
+level: error
+ignorecase: true
+tokens:
+  - 'we\s+used\s+to'
+  - 'used\s+to\s+(?:be|live|sit|run|have|keep)'
+  - 'no\s+longer\s+(?:used|needed|supported|read|run|runs|exists|applies|true|the\s+case)'
+  - 'formerly'
+  - 'as\s+(?:mentioned|noted|described)\s+(?:above|earlier|below)'
