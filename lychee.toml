@@ -8,7 +8,11 @@ cache_exclude_status = "429, 500.."
 # Reaches transport failures only. lychee never retries a status it can read,
 # however long it is given.
 retry_wait_time = 5
-include_fragments = "anchor-only"
+
+# Matching is case-sensitive where browsers and the spec fold case, so a
+# fragment differing from its target only in case reports broken though the
+# link works.
+include_fragments = "full"
 
 # Earning a place here takes a report showing the link fail, then proof it is
 # good anyway from somewhere other than the host doing the blocking — which
