@@ -9,10 +9,9 @@ cache_exclude_status = "429, 500.."
 # however long it is given.
 retry_wait_time = 5
 
-# Checks text fragments (`#:~:text=`) alongside anchors. Matching here is
-# case-sensitive where browsers and the spec fold case, so a fragment
-# differing from its target only in case reports broken while resolving fine
-# in a browser.
+# Matching is case-sensitive where browsers and the spec fold case, so a
+# fragment differing from its target only in case reports broken though the
+# link works.
 include_fragments = "full"
 
 # Earning a place here takes a report showing the link fail, then proof it is
