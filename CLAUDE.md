@@ -30,8 +30,10 @@ scripting your own.
   Prettier (`local` hooks running the repo's own binaries so their
   plugins/configs resolve from workspace deps), and baseline file
   hygiene, plus lychee link-checking and post scheduling
-  (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` run the
-  same tools by hand.
+  (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` /
+  `pnpm post-scheduling:check` run the same tools by hand. Single-file repo
+  checks live flat in `scripts/`; a workspace package is for code with its
+  own dependencies, build, and consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
   linters. The whole suite runs in CI via `pre-commit.yml`, which
