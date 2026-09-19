@@ -68,6 +68,21 @@ repos:
         types: [markdown]
         exclude: *post_sources
 
+  # Post scheduling (docs/reference/post-frontmatter.md § Scheduling).
+  # The collection is the unit here, not the file, so the hook reads every
+  # post and takes no filenames; `files` only decides whether it runs, and
+  # src/config.ts is in that pattern because the script imports SITE for the
+  # default timezone. The script needs node_modules, as the eslint and
+  # prettier hooks below do.
+  - repo: local
+    hooks:
+      - id: post-scheduling
+        name: Check post scheduling
+        entry: node scripts/check-post-scheduling.ts
+        language: system
+        pass_filenames: false
+        files: ^(src/data/blog/.*\.md|src/config\.ts)$
+
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.
   - repo: https://github.com/renovatebot/pre-commit-hooks

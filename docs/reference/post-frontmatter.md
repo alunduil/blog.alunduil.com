@@ -41,6 +41,11 @@ encodes content type:
 Monday and Friday are unused. Each `pubDatetime` is unique; a collision
 or a slipped slot moves to the next open date on the same weekday.
 
+The `post-scheduling` hook in `pre-commit` checks both halves—uniqueness,
+and the weekday read in the post's own `timezone`. Nothing checks that a
+Tuesday post is tech and a Sunday post personal. No frontmatter field
+states a post's subject.
+
 A future `pubDatetime` gates publication: AstroPaper's
 `SITE.scheduledPostMargin` (~15 minutes) hides the post until the date
 passes. Publication is independent of the merge; the date is the trigger.
