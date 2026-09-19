@@ -16,8 +16,11 @@ Run from the repo root:
     python3 scripts/check-post-scheduling.py
 """
 
+import calendar
 import re
 import sys
+from collections import defaultdict
+from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
@@ -27,9 +30,7 @@ import yaml
 BLOG = Path("src/data/blog")
 CONFIG = Path("src/config.ts")
 
-# datetime.weekday() values. Monday through Saturday minus these two are
-# unused slots, not a different kind of post.
-SCHEDULED_WEEKDAYS = {1, 6}
+SCHEDULED_WEEKDAYS = {calendar.TUESDAY, calendar.SUNDAY}
 
 # Published on a Monday two months before the weekday convention was
 # written down. `pubDatetime` is a live-site moment that already went out
@@ -40,11 +41,21 @@ FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
 SITE_TIMEZONE = re.compile(r"^\s*timezone:\s*\"([^\"]+)\"", re.MULTILINE)
 
 
-def site_timezone() -> str:
+@dataclass(frozen=True)
+class Post:
+    """One post's schedule, in the two readings the rules need."""
+
+    path: Path
+    instant: datetime
+    # The same moment in the post's own zone, or None when `timezone` names
+    # a zone that doesn't resolve. A collision reads the instant, which
+    # stands whether or not the zone does; only the weekday needs local.
+    local: datetime | None
+
+
+def site_timezone() -> str | None:
     match = SITE_TIMEZONE.search(CONFIG.read_text())
-    if match is None:
-        sys.exit(f"{CONFIG}: no SITE.timezone to default posts to")
-    return match.group(1)
+    return match.group(1) if match else None
 
 
 def in_scope(path: Path) -> bool:
@@ -58,10 +69,9 @@ def frontmatter(path: Path) -> dict:
     return yaml.safe_load(match.group(1)) or {}
 
 
-def main() -> int:
-    default_zone = site_timezone()
-    errors = []
-    sharing_an_instant: dict[datetime, list[Path]] = {}
+def read_posts(default_zone: str) -> tuple[list[Post], list[str]]:
+    posts: list[Post] = []
+    errors: list[str] = []
 
     for path in sorted(p for p in BLOG.rglob("*.md") if in_scope(p)):
         front = frontmatter(path)
@@ -70,30 +80,53 @@ def main() -> int:
             errors.append(f"{path}: pubDatetime is missing or carries no UTC offset")
             continue
 
-        # Aware datetimes hash and compare on the instant, so the two
-        # spellings in the corpus (`…Z` and `…+01:00`) collide correctly.
-        sharing_an_instant.setdefault(published, []).append(path)
-
         zone_name = front.get("timezone", default_zone)
         try:
             local = published.astimezone(ZoneInfo(zone_name))
         except (ZoneInfoNotFoundError, ValueError):
             errors.append(f"{path}: timezone {zone_name!r} is not an IANA zone")
-            continue
+            local = None
 
-        if path not in WEEKDAY_EXEMPT and local.weekday() not in SCHEDULED_WEEKDAYS:
-            errors.append(
-                f"{path}: publishes {local:%A %Y-%m-%d %H:%M %Z}; "
-                f"use a Tuesday (tech) or a Sunday (personal)"
-            )
+        posts.append(Post(path, published, local))
 
-    for instant, posts in sorted(sharing_an_instant.items()):
-        if len(posts) > 1:
-            errors.append(
-                f"{instant:%Y-%m-%dT%H:%M:%S%z}: shared by "
-                + ", ".join(str(post) for post in posts)
-                + "; move one to the next open date on its weekday"
-            )
+    return posts, errors
+
+
+def weekday_errors(posts: list[Post]) -> list[str]:
+    return [
+        f"{post.path}: publishes {post.local:%A %Y-%m-%d %H:%M %Z}; "
+        f"use a Tuesday (tech) or a Sunday (personal)"
+        for post in posts
+        if post.local is not None
+        and post.path not in WEEKDAY_EXEMPT
+        and post.local.weekday() not in SCHEDULED_WEEKDAYS
+    ]
+
+
+def collision_errors(posts: list[Post]) -> list[str]:
+    # Aware datetimes hash and compare on the instant, so the two spellings
+    # in the corpus (`…Z` and `…+01:00`) group together.
+    sharing: dict[datetime, list[Path]] = defaultdict(list)
+    for post in posts:
+        sharing[post.instant].append(post.path)
+
+    return [
+        f"{instant:%Y-%m-%dT%H:%M:%S%z}: shared by "
+        + ", ".join(str(path) for path in paths)
+        + "; move one to the next open date on its weekday"
+        for instant, paths in sorted(sharing.items())
+        if len(paths) > 1
+    ]
+
+
+def main() -> int:
+    default_zone = site_timezone()
+    if default_zone is None:
+        print(f"{CONFIG}: no SITE.timezone to default posts to", file=sys.stderr)
+        return 1
+
+    posts, errors = read_posts(default_zone)
+    errors += weekday_errors(posts) + collision_errors(posts)
 
     for error in sorted(errors):
         print(error, file=sys.stderr)
