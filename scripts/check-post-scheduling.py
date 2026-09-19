@@ -3,13 +3,12 @@
 
 Two rules from `docs/reference/post-frontmatter.md` (Scheduling): every
 post's `pubDatetime` is unique, and it publishes on a Tuesday or a Sunday.
-Neither is expressible in the Astro schema — uniqueness is a property of
-the collection rather than of a file, and the weekday depends on the post's
-`timezone`.
+Uniqueness is a property of the collection, so the Astro schema, which
+validates one file at a time, can't carry it.
 
 Archival republishes under `src/data/blog/_<engine>/` are historical text,
-not scheduled writing, and are out of scope. They drop out the same way
-they drop out of the collection: on the leading underscore.
+not scheduled writing. Both this check and the collection skip them on the
+leading underscore.
 
 Run from the repo root:
 
@@ -32,9 +31,8 @@ CONFIG = Path("src/config.ts")
 
 SCHEDULED_WEEKDAYS = {calendar.TUESDAY, calendar.SUNDAY}
 
-# Published on a Monday two months before the weekday convention was
-# written down. `pubDatetime` is a live-site moment that already went out
-# over RSS, so it stays as posted.
+# Published on a Monday, two months before the weekday convention existed.
+# Its pubDatetime already went out over RSS, so it stays as posted.
 WEEKDAY_EXEMPT = {BLOG / "how-i-read-eight-years-on.md"}
 
 FRONTMATTER = re.compile(r"\A---\n(.*?)\n---\n", re.DOTALL)
@@ -43,13 +41,11 @@ SITE_TIMEZONE = re.compile(r"^\s*timezone:\s*\"([^\"]+)\"", re.MULTILINE)
 
 @dataclass(frozen=True)
 class Post:
-    """One post's schedule, in the two readings the rules need."""
-
     path: Path
     instant: datetime
-    # The same moment in the post's own zone, or None when `timezone` names
-    # a zone that doesn't resolve. A collision reads the instant, which
-    # stands whether or not the zone does; only the weekday needs local.
+    # None when `timezone` names no zone that resolves. A collision is still
+    # caught in that case, because it compares instants; only the weekday
+    # needs the local reading.
     local: datetime | None
 
 
@@ -80,6 +76,8 @@ def read_posts(default_zone: str) -> tuple[list[Post], list[str]]:
             errors.append(f"{path}: pubDatetime is missing or carries no UTC offset")
             continue
 
+        # 08:00 local can land on a different day in UTC, so the weekday is
+        # only right when read in the post's own zone.
         zone_name = front.get("timezone", default_zone)
         try:
             local = published.astimezone(ZoneInfo(zone_name))
