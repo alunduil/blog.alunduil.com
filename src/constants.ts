@@ -5,6 +5,11 @@ import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import { SITE } from "@/config";
 
+// The account identity, separate from the URL that displays it. A handle that
+// stops resolving still serves a 200 from bsky.app, so the weekly scan has to
+// resolve this against atproto rather than fetch the profile page.
+export const BLUESKY_HANDLE = "alunduil.com";
+
 interface Social {
   name: string;
   href: string;
@@ -29,7 +34,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "Bluesky",
-    href: "https://bsky.app/profile/alunduil.com",
+    href: `https://bsky.app/profile/${BLUESKY_HANDLE}`,
     linkTitle: `${SITE.author} on Bluesky`,
     icon: IconBluesky,
   },
