@@ -28,6 +28,10 @@ const BLOG = "src/data/blog";
 
 const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
 
+// en-GB renders Europe/London as BST, the abbreviation every in-scope post
+// carries. Other locales fall back to a GMT offset for it.
+const LOCALE = "en-GB";
+
 // Published on a Monday, two months before the weekday convention existed.
 // Its pubDatetime already went out over RSS, so it stays as posted.
 const WEEKDAY_EXEMPT = new Set([join(BLOG, "how-i-read-eight-years-on.md")]);
@@ -48,6 +52,23 @@ function inScope(relative: string): boolean {
   return !relative.split(sep).some(part => part.startsWith("_"));
 }
 
+function postPaths(): string[] {
+  return readdirSync(BLOG, { recursive: true, encoding: "utf8" })
+    .filter(relative => relative.endsWith(".md") && inScope(relative))
+    .sort()
+    .map(relative => join(BLOG, relative));
+}
+
+function isIanaZone(name: string): boolean {
+  try {
+    // Constructed for the throw; the locale is irrelevant to the zone check.
+    new Intl.DateTimeFormat(undefined, { timeZone: name });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 function frontmatter(path: string): Record<string, unknown> {
   const match = FRONTMATTER.exec(readFileSync(path, "utf8"));
   if (match === null) return {};
@@ -59,7 +80,7 @@ function localStamp(
   instant: Date,
   zone: string
 ): { weekday: string; text: string } {
-  const parts = new Intl.DateTimeFormat("en-GB", {
+  const parts = new Intl.DateTimeFormat(LOCALE, {
     timeZone: zone,
     weekday: "long",
     year: "numeric",
@@ -85,12 +106,7 @@ function readPosts(): { posts: Post[]; errors: string[] } {
   const posts: Post[] = [];
   const errors: string[] = [];
 
-  const relatives = readdirSync(BLOG, { recursive: true, encoding: "utf8" })
-    .filter(relative => relative.endsWith(".md") && inScope(relative))
-    .sort();
-
-  for (const relative of relatives) {
-    const path = join(BLOG, relative);
+  for (const path of postPaths()) {
     const front = frontmatter(path);
     const published = front.pubDatetime;
 
@@ -107,13 +123,10 @@ function readPosts(): { posts: Post[]; errors: string[] } {
 
     // 08:00 local can land on a different day in UTC, so the weekday is only
     // right when read in the post's own zone.
-    const named = front.timezone ?? SITE.timezone;
-    let zone: string | null = null;
-    try {
-      new Intl.DateTimeFormat("en-GB", { timeZone: String(named) });
-      zone = String(named);
-    } catch {
-      errors.push(`${path}: timezone '${String(named)}' is not an IANA zone`);
+    const named = String(front.timezone ?? SITE.timezone);
+    const zone = isIanaZone(named) ? named : null;
+    if (zone === null) {
+      errors.push(`${path}: timezone '${named}' is not an IANA zone`);
     }
 
     posts.push({ path, instant, zone });
@@ -136,18 +149,15 @@ function weekdayErrors(posts: Post[]): string[] {
 }
 
 function collisionErrors(posts: Post[]): string[] {
-  const sharing = new Map<number, string[]>();
-  for (const post of posts) {
-    const instant = post.instant.getTime();
-    sharing.set(instant, [...(sharing.get(instant) ?? []), post.path]);
-  }
+  const sharing = Map.groupBy(posts, post => post.instant.getTime());
 
-  return [...sharing.entries()]
+  return [...sharing]
     .sort(([a], [b]) => a - b)
-    .filter(([, paths]) => paths.length > 1)
-    .map(([instant, paths]) => {
+    .filter(([, group]) => group.length > 1)
+    .map(([instant, group]) => {
       const stamp = new Date(instant).toISOString().replace(".000Z", "Z");
-      return `${stamp}: shared by ${paths.join(", ")}; move one to the next open date on its weekday`;
+      const paths = group.map(post => post.path).join(", ");
+      return `${stamp}: shared by ${paths}; move one to the next open date on its weekday`;
     });
 }
 
