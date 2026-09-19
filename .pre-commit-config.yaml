@@ -71,15 +71,16 @@ repos:
   # Post scheduling (docs/reference/post-frontmatter.md § Scheduling).
   # The collection is the unit here, not the file, so the hook reads every
   # post and takes no filenames; `files` only decides whether it runs.
-  # src/config.ts is in that pattern because it supplies the timezone a post
-  # defaults to.
+  # src/config.ts is in that pattern because the script imports SITE from it
+  # for the timezone a post defaults to. Node runs the TypeScript directly,
+  # and the script needs node_modules for its YAML parse, as the eslint and
+  # prettier hooks below do for theirs.
   - repo: local
     hooks:
       - id: post-scheduling
         name: Check post scheduling
-        entry: scripts/check-post-scheduling.py
-        language: python
-        additional_dependencies: [pyyaml]
+        entry: node scripts/check-post-scheduling.ts
+        language: system
         pass_filenames: false
         files: ^(src/data/blog/.*\.md|src/config\.ts)$
 

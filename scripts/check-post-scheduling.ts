@@ -1,0 +1,166 @@
+/**
+ * Check the scheduling convention on current-era blog posts.
+ *
+ * Two rules from `docs/reference/post-frontmatter.md` (Scheduling): every
+ * post's `pubDatetime` is unique, and it publishes on a Tuesday or a Sunday.
+ * Uniqueness is a property of the collection, so the Astro schema, which
+ * validates one file at a time, can't carry it.
+ *
+ * Archival republishes under `src/data/blog/_<engine>/` are historical text,
+ * not scheduled writing. Both this check and the collection skip them on the
+ * leading underscore.
+ *
+ * Run from the repo root:
+ *
+ *     node scripts/check-post-scheduling.ts
+ */
+import { readdirSync, readFileSync } from "node:fs";
+import { join, sep } from "node:path";
+
+import { parse } from "yaml";
+
+import { SITE } from "../src/config.ts";
+
+// src/content.config.ts exports this path and the underscore rule, but it
+// also imports astro:content, a virtual module that resolves only inside an
+// Astro build. Both are restated here rather than imported.
+const BLOG = "src/data/blog";
+
+const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
+
+// Published on a Monday, two months before the weekday convention existed.
+// Its pubDatetime already went out over RSS, so it stays as posted.
+const WEEKDAY_EXEMPT = new Set([join(BLOG, "how-i-read-eight-years-on.md")]);
+
+const FRONTMATTER = /^---\n(.*?)\n---\n/s;
+const UTC_OFFSET = /(Z|[+-]\d{2}:\d{2})$/;
+
+interface Post {
+  path: string;
+  instant: Date;
+  // null when `timezone` names no zone that resolves. A collision is still
+  // caught in that case, because it compares instants; only the weekday
+  // needs the local reading.
+  zone: string | null;
+}
+
+function inScope(relative: string): boolean {
+  return !relative.split(sep).some(part => part.startsWith("_"));
+}
+
+function frontmatter(path: string): Record<string, unknown> {
+  const match = FRONTMATTER.exec(readFileSync(path, "utf8"));
+  if (match === null) return {};
+  return (parse(match[1]) as Record<string, unknown> | null) ?? {};
+}
+
+/** The instant as the post's own zone renders it, e.g. `Sunday 2026-08-09 08:00 BST`. */
+function localStamp(
+  instant: Date,
+  zone: string
+): { weekday: string; text: string } {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: zone,
+    weekday: "long",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+    timeZoneName: "short",
+  }).formatToParts(instant);
+
+  const part = (type: string) => parts.find(p => p.type === type)?.value ?? "";
+  const weekday = part("weekday");
+  const date = `${part("year")}-${part("month")}-${part("day")}`;
+
+  return {
+    weekday,
+    text: `${weekday} ${date} ${part("hour")}:${part("minute")} ${part("timeZoneName")}`,
+  };
+}
+
+function readPosts(): { posts: Post[]; errors: string[] } {
+  const posts: Post[] = [];
+  const errors: string[] = [];
+
+  const relatives = readdirSync(BLOG, { recursive: true, encoding: "utf8" })
+    .filter(relative => relative.endsWith(".md") && inScope(relative))
+    .sort();
+
+  for (const relative of relatives) {
+    const path = join(BLOG, relative);
+    const front = frontmatter(path);
+    const published = front.pubDatetime;
+
+    if (typeof published !== "string" || !UTC_OFFSET.test(published)) {
+      errors.push(`${path}: pubDatetime is missing or carries no UTC offset`);
+      continue;
+    }
+
+    const instant = new Date(published);
+    if (Number.isNaN(instant.getTime())) {
+      errors.push(`${path}: pubDatetime ${published} is not a valid timestamp`);
+      continue;
+    }
+
+    // 08:00 local can land on a different day in UTC, so the weekday is only
+    // right when read in the post's own zone.
+    const named = front.timezone ?? SITE.timezone;
+    let zone: string | null = null;
+    try {
+      new Intl.DateTimeFormat("en-GB", { timeZone: String(named) });
+      zone = String(named);
+    } catch {
+      errors.push(`${path}: timezone '${String(named)}' is not an IANA zone`);
+    }
+
+    posts.push({ path, instant, zone });
+  }
+
+  return { posts, errors };
+}
+
+function weekdayErrors(posts: Post[]): string[] {
+  return posts.flatMap(post => {
+    if (post.zone === null || WEEKDAY_EXEMPT.has(post.path)) return [];
+
+    const { weekday, text } = localStamp(post.instant, post.zone);
+    if (SCHEDULED_WEEKDAYS.has(weekday)) return [];
+
+    return [
+      `${post.path}: publishes ${text}; use a Tuesday (tech) or a Sunday (personal)`,
+    ];
+  });
+}
+
+function collisionErrors(posts: Post[]): string[] {
+  const sharing = new Map<number, string[]>();
+  for (const post of posts) {
+    const instant = post.instant.getTime();
+    sharing.set(instant, [...(sharing.get(instant) ?? []), post.path]);
+  }
+
+  return [...sharing.entries()]
+    .sort(([a], [b]) => a - b)
+    .filter(([, paths]) => paths.length > 1)
+    .map(([instant, paths]) => {
+      const stamp = new Date(instant).toISOString().replace(".000Z", "Z");
+      return `${stamp}: shared by ${paths.join(", ")}; move one to the next open date on its weekday`;
+    });
+}
+
+function main(): number {
+  const { posts, errors } = readPosts();
+  const all = [
+    ...errors,
+    ...weekdayErrors(posts),
+    ...collisionErrors(posts),
+  ].sort();
+
+  for (const error of all) process.stderr.write(`${error}\n`);
+  return all.length > 0 ? 1 : 0;
+}
+
+process.exitCode = main();

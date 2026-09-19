@@ -30,7 +30,7 @@ scripting your own.
   Prettier (`local` hooks running the repo's own binaries so their
   plugins/configs resolve from workspace deps), and baseline file
   hygiene, plus lychee link-checking and post scheduling
-  (`scripts/check-post-scheduling.py`). `pnpm lint` / `pnpm format` run the
+  (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` run the
   same tools by hand.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
