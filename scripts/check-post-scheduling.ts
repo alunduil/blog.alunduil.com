@@ -10,9 +10,9 @@
  * not scheduled writing. Both this check and the collection skip them on the
  * leading underscore.
  *
- * Run from the repo root:
+ * Paths are relative to the repo root:
  *
- *     node scripts/check-post-scheduling.ts
+ *     pnpm post-scheduling:check
  */
 import { readdirSync, readFileSync } from "node:fs";
 import { join, sep } from "node:path";
@@ -21,15 +21,15 @@ import { parse } from "yaml";
 
 import { SITE } from "../src/config.ts";
 
-// src/content.config.ts exports this path and the underscore rule, but it
-// also imports astro:content, a virtual module that resolves only inside an
-// Astro build. Both are restated here rather than imported.
+// src/content.config.ts exports this path and the underscore rule below, but
+// importing it fails on astro:content, a virtual module that resolves only
+// inside an Astro build.
 const BLOG = "src/data/blog";
 
 const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
 
 // en-GB renders Europe/London as BST, the abbreviation every in-scope post
-// carries. Other locales fall back to a GMT offset for it.
+// carries. Other locales fall back to a GMT offset.
 const LOCALE = "en-GB";
 
 // Published on a Monday, two months before the weekday convention existed.
@@ -61,7 +61,8 @@ function postPaths(): string[] {
 
 function isIanaZone(name: string): boolean {
   try {
-    // Constructed for the throw; the locale is irrelevant to the zone check.
+    // The constructor throws on an unknown zone; its result and its locale
+    // are both beside the point.
     new Intl.DateTimeFormat(undefined, { timeZone: name });
     return true;
   } catch {
@@ -75,7 +76,7 @@ function frontmatter(path: string): Record<string, unknown> {
   return (parse(match[1]) as Record<string, unknown> | null) ?? {};
 }
 
-/** The instant as the post's own zone renders it, e.g. `Sunday 2026-08-09 08:00 BST`. */
+/** The instant, rendered in the post's own zone: `Sunday 2026-08-09 08:00 BST`. */
 function localStamp(
   instant: Date,
   zone: string
