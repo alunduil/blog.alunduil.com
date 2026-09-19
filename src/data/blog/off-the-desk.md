@@ -6,6 +6,7 @@ tags:
   - agentic-coding
   - tooling
   - decision-making
+shape: essay
 ---
 
 For the first months of this year I built genshin.dungeon.studio with GitHub

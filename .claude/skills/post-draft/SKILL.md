@@ -1,6 +1,6 @@
 ---
 name: post-draft
-description: Draft a narrative blog post from an approved outline — body, voice, citations, frontmatter. The main step after outline-draft; requires an approved outlines/<slug>.md. Invoke via /post-draft <slug>.
+description: Draft an essay from an approved outline — body, voice, citations, frontmatter. The main step after outline-draft; requires an approved outlines/<slug>.md. Invoke via /post-draft <slug>.
 ---
 
 # Post draft
@@ -77,7 +77,7 @@ drift toward generic prose.
 
 ## 2. Conventions
 
-Voice, citations, and frontmatter are shared across every article type.
+Voice, citations, and frontmatter are shared across every post shape.
 Apply them from their single homes:
 
 - **Voice** → `.claude/voice.md`. Sentence-level rules and the
@@ -89,6 +89,9 @@ Apply them from their single homes:
 - **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
   Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone, the
   publication gate, tags, archival stanza.
+- **Shape** → `docs/reference/post-shapes.md`. This pipeline drafts
+  `shape: essay`. A post that describes a personal system rather than
+  arguing a claim is `shape: practice`; set it explicitly either way.
 
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /

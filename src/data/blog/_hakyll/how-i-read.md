@@ -5,6 +5,7 @@ description: Codifying how I read several books concurrently—short bursts per 
 tags:
   - reading
   - methodology
+shape: practice
 timezone: America/Chicago
 hideEditPost: true
 ---
