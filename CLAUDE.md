@@ -29,8 +29,10 @@ scripting your own.
   yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
   Prettier (`local` hooks running the repo's own binaries so their
   plugins/configs resolve from workspace deps), and baseline file
-  hygiene, plus lychee link-checking. `pnpm lint` / `pnpm format` run the
-  same tools by hand.
+  hygiene, plus lychee link-checking and the post-scheduling check
+  (`scripts/check-post-scheduling.py`, enforcing
+  `docs/reference/post-frontmatter.md` § Scheduling). `pnpm lint` /
+  `pnpm format` run the same tools by hand.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
   linters. The whole suite runs in CI via `pre-commit.yml`, which

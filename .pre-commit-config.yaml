@@ -68,6 +68,21 @@ repos:
         types: [markdown]
         exclude: *post_sources
 
+  # Post scheduling: unique pubDatetime, publishing Tuesday or Sunday
+  # (docs/reference/post-frontmatter.md). Uniqueness is a property of the
+  # collection rather than of a file, so the hook reads every post and takes
+  # no filenames; `files` only decides whether it runs at all. src/config.ts
+  # is in that pattern because it supplies the timezone a post defaults to.
+  - repo: local
+    hooks:
+      - id: post-scheduling
+        name: Check post scheduling
+        entry: scripts/check-post-scheduling.py
+        language: python
+        additional_dependencies: [pyyaml]
+        pass_filenames: false
+        files: ^(src/data/blog/.*\.md|src/config\.ts)$
+
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.
   - repo: https://github.com/renovatebot/pre-commit-hooks
