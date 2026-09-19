@@ -29,7 +29,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "Bluesky",
-    href: "https://bsky.app/profile/alunduil.bsky.social",
+    href: "https://bsky.app/profile/alunduil.com",
     linkTitle: `${SITE.author} on Bluesky`,
     icon: IconBluesky,
   },
