@@ -28,7 +28,7 @@ repos:
       - id: yamllint
 
   # GitHub Actions workflow linting. v1.7.12+ validates the schedule
-  # `timezone:` key used in pages.yml.
+  # `timezone:` key the scheduled workflows use.
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.12
     hooks:
@@ -94,8 +94,8 @@ repos:
   # JS/TS/Astro formatting and linting. Local hooks so the repo's own
   # prettier/eslint run — their plugins (prettier-plugin-astro,
   # eslint-plugin-astro, typescript-eslint) and configs resolve from the
-  # workspace deps rather than a pinned mirror. Requires node_modules; CI
-  # installs them in pre-commit.yml before running the suite.
+  # workspace deps rather than a pinned mirror. Requires node_modules, which
+  # the `Lint and format` job installs before running the suite.
   - repo: local
     hooks:
       - id: prettier

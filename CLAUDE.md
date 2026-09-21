@@ -36,10 +36,10 @@ scripting your own.
   own dependencies, build, and consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
-  linters. The whole suite runs in CI via `pre-commit.yml`, which
-  installs Node/pnpm for the ESLint/Prettier hooks and lychee via
-  `scripts/install-lychee.sh`. Excluded file types (no checker): binary
-  assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
+  linters. The whole suite runs in CI via the `Lint and format` job in
+  `ci.yml`, which installs Node/pnpm for the ESLint/Prettier hooks and
+  lychee via `scripts/install-lychee.sh`. Excluded file types (no
+  checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on
@@ -114,7 +114,34 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 ## Branches and deploy
 
 - Default branch: `main`. PRs target `main`.
-- Deploy runs on push to `main` (`.github/workflows/pages.yml`).
+- Deploy runs on push to `main` (`.github/workflows/cd.yml`).
+
+## GitHub Actions
+
+Workflows are named and split by when they run, jobs by what they
+produce. `alunduil-chezmoi`'s ADR 0004 carries the reasoning; this is the
+blog's application of it.
+
+- Workflow `name:` is the when — the trigger or cadence (`CI`, `Issues`,
+  `Weekly`), and the filename is that name kebab-cased. The name tracks
+  the trigger, so it stays correct as jobs colocate and changes only when
+  the trigger does.
+- Job `name:` is the what — the outcome as a phrase that reads standalone
+  in the required-checks picker (`Build the site`, `Check links across the
+  published site`).
+- The job id, the key under `jobs:`, wires `needs:` and reuse; the job
+  `name:` is the status-check context branch protection matches.
+- Keep job names unique repo-wide. `required_status_checks` in
+  `alunduil/alunduil-infrastructure` pins them by string, so a rename is a
+  coordinated change with that repo, and a bare `build` or `test` collides.
+- Split files on `on:` alone, the one setting that can't be scoped per job.
+  Permissions, concurrency, env, and defaults all scope per job, so
+  workflows sharing a trigger colocate as jobs in one file.
+- A new check is a job in the file matching its when. A narrower when — its
+  own cadence, or a `paths:` gate — earns a file named for it.
+
+Write `schedule:` cron in local time with an IANA name in `timezone:`.
+Without it GitHub runs the schedule in UTC and ignores daylight saving.
 
 ## Skills
 
@@ -144,6 +171,6 @@ Shared conventions the writing skills draw from: `.claude/voice.md`
 
 ## Idea issues
 
-`.github/workflows/labels.yml` auto-applies the `idea` label to any
+`.github/workflows/issues.yml` auto-applies the `idea` label to any
 issue whose body contains `## Spark` (the idea template's first
 heading). No manual labeling needed when filing via the template.

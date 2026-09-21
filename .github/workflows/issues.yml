@@ -1,4 +1,4 @@
-name: Labels
+name: Issues
 
 on:
   issues:
@@ -9,6 +9,7 @@ permissions:
 
 jobs:
   ideas:
+    name: Label idea issues
     if: contains(github.event.issue.body, '## Spark')
     runs-on: ubuntu-latest
     steps:

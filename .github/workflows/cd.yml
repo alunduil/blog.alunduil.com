@@ -1,4 +1,4 @@
-name: Pages
+name: CD
 
 on:
   push:
@@ -17,6 +17,7 @@ on:
 
 jobs:
   build:
+    name: Build for deploy
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,6 +38,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
   publish:
+    name: Deploy to GitHub Pages
     needs: build
     runs-on: ubuntu-latest
     permissions:
