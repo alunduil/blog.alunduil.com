@@ -1,3 +1,5 @@
+import loadBrandFonts from "../loadBrandFonts";
+
 export const COLORS = {
   cream: "#F4EFE6",
   black: "#0A0A0A",
@@ -7,6 +9,13 @@ export const COLORS = {
 };
 
 export const STROKE = 8;
+
+export const canvas = async () => ({
+  width: 1200,
+  height: 630,
+  embedFont: true,
+  fonts: await loadBrandFonts(),
+});
 
 export const block = (background, extra = {}) => ({
   type: "div",

@@ -9,7 +9,7 @@ The pre-step of the writing pipeline. It produces one artefact — an
 approved `outlines/<slug>.md` — and stops there. `post-draft` consumes
 that outline and refuses to start without it.
 
-Stories only. Technical posts outline by their subject, not by scene.
+Stories only. Technical posts outline by their subject.
 
 Pipeline: **substance → outline → diagnose → approval.**
 
@@ -18,12 +18,11 @@ Pipeline: **substance → outline → diagnose → approval.**
 The outline-approval gate is the most important control point in the
 pipeline: it catches a wrong angle, a missing scene, or a misjudged arc
 while the fix still costs a line, not 2,000 words. So this skill ends at
-an approved outline and hands off — it never drafts prose.
+an approved outline and hands the prose to `post-draft`.
 
 ## 1. Substance
 
-Don't draft from inference. Ask 3–5 anchor questions that ground the
-post in lived experience.
+Ground the post in lived experience. Ask 3–5 anchor questions.
 
 For methodology / practice posts:
 
@@ -50,9 +49,15 @@ them — a wrong peak or a wrong emotional thread costs scenes to unwind,
 where a wrong fact costs a parenthetical.
 
 Substance lands as the outline file's **header**: the logline (the one
-moment of change), where the story opens (its opposite), and the open
-questions / anchors still to confirm. That header is phase 1's output
-and the top of phase 2's artefact — no separate brief file.
+moment of change), where the story opens (its opposite), and the
+anchors. Anything still to confirm goes to `## Open`. That header is
+phase 1's output and the top of phase 2's artefact — no separate brief
+file.
+
+The header carries only what the beats don't. Name the opening and
+landing scenes by number and let their beats speak. Keep an anchor when
+it holds detail no parenthetical does — a full URL, a pass/fail list, a
+line split.
 
 ## 2. Outline — scene → beat
 
@@ -60,8 +65,8 @@ A story is a sequence of **scenes** (concrete moments); each scene is a
 sequence of **beats**. A **beat is one unit of change, on one line.** If
 a line needs comma-spliced clauses to hold together, it is two beats.
 
-Beats are the skeleton, deliberately terse: capture the change, not the
-prose. `post-draft` renders them into story — scenes, the braid, flow.
+Beats are the skeleton, deliberately terse: capture the change.
+`post-draft` renders them into story — scenes, the braid, flow.
 Keep the outline a skeleton so that craft has somewhere to go.
 
 The outline's whole job: read the beats top to bottom and feel the story
@@ -74,9 +79,8 @@ Criteria:
   at a glance.
 - **Anchors as parentheticals.** Dates, PR and issue numbers, provable
   facts ride in `*(...)*` on the beat they support.
-- **Scenes are moments, not topics.** Name a scene for the moment it
-  drops the reader into; a section-label name ("What changed") has
-  drifted toward an essay.
+- **Scenes are moments.** Name a scene for the moment it drops the reader
+  into; a section-label name ("What changed") has drifted toward an essay.
 - **Arc in the scene order.** First scene furthest from the change, last
   arrives at it. Give each scene a one-line *role* — the opposite, the
   lift, the turn, the landing — so the arc reads in the headings alone.
@@ -89,7 +93,7 @@ the last scene's role is usually the honest limitation, not the win.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the nine
+Before approval, read the beats top to bottom and check the eleven
 failure signatures:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
@@ -112,11 +116,30 @@ failure signatures:
    so the peak is split and the title points at only one. Demote one to
    setup or to the landing. Test (mirrors `post-draft`): state the single
    moment in one sentence, and only one.
+10. **Header restatement** — the header re-tells a scene, or an anchor
+    repeats a fact a beat parenthetical already carries → cut to what the
+    beats don't say. The header grows fastest here, and every duplicate
+    is a second place to update when a beat moves.
+11. **Pre-written beat** — a beat carrying a second sentence, or running
+    past ~40 words, has drafted prose the skeleton should leave to
+    `post-draft` → split into one beat per change, or cut to the change.
+    The second sentence is the surer tell.
+
+Then check `## Open` against the drafting gate.
 
 The title in the header is a **working title** — a handle for the file
-and the angle, not a commitment. The real title is chosen in `post-draft`
-once the prose exists and the body settles what it argues; don't burn
-approval cycles refining it here.
+and the angle. The real title is chosen in `post-draft` once the prose
+exists and the body settles what it argues.
+
+## Open — the drafting gate
+
+`## Open` holds what gates drafting: a citation to find, a fact to
+confirm, a decision to make. While an entry stands there, the outline
+stays with this skill.
+
+Resolving an item removes it from Open — the answer moves into the beat
+or scene it informs. An empty Open is the drafting-ready signal: drop
+the heading and hand the outline to `post-draft`.
 
 ## Shape
 
@@ -124,7 +147,9 @@ approval cycles refining it here.
 # <Working title> — outline
 
 <Logline: the one moment of change, where the story opens (its
-opposite), the surrounding years as context, open questions to confirm.>
+opposite), the surrounding years as context.>
+
+**Anchors beyond the beats.** <detail no parenthetical carries>
 
 ## 1. <Scene name> — *the opposite*
 
@@ -134,9 +159,9 @@ opposite), the surrounding years as context, open questions to confirm.>
 ## 2. <Scene name> — *the lift*
 ...
 
-## Open
+## Open  <!-- dropped once empty -->
 
-- <unresolved thread: a citation to find, a fact to confirm>
+- <what still gates the draft>
 ```
 
 ## When to invoke
@@ -152,9 +177,8 @@ Confirm with the author. The skill ends at approval — hand to
 `post-draft`.
 
 The outline drives the post, one direction only: after approval,
-structural changes originate here and flow forward to the post. Never
-back-port post edits into the outline — the outline is the source of
-truth.
+structural changes originate here and flow forward to the post. The
+outline is the source of truth.
 
 Provenance: Jack Hart, *Storycraft* (arc, scene); Matthew Dicks,
 *Storyworthy* (the one moment of change); Lorin Hochstein, "The Power of

@@ -30,10 +30,9 @@ jobs:
           node-version: '24'
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
-        with:
-          python-version: '3.x'
-      - uses: pre-commit/action@2c7b3805fd2a0fd8c1884dcaebf91fc102a13ecd # v3.0.1
+      # The lychee hook is `language: system`; runners ship no lychee.
+      - run: scripts/install-lychee.sh
+      - uses: tox-dev/action-pre-commit-uv@e09b8958484dfe71f4ac3bc7afb230ba506402ec # v1.0.5
 
   bats:
     name: Test skill scripts
@@ -62,25 +61,6 @@ jobs:
       NODE_VERSION: "24"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: withastro/action@e84f40bd8d2caa9e768ec82ad30dd81f0b280853 # v6
+      - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6
         with:
           node-version: ${{ env.NODE_VERSION }}
-          package-manager: pnpm@11.21.0
-
-  lychee:
-    name: Check links
-    runs-on: ubuntu-24.04
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
-        with:
-          path: .lycheecache
-          key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
-          restore-keys: lychee-cache-
-      - uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        with:
-          # Scan the tree, not a glob: the action's shell expands '**/*.md'
-          # to '*/*.md' (one level deep), so a single one-level file would
-          # hijack it. lychee walks for markdown/html; exclude_path filters.
-          args: '.'

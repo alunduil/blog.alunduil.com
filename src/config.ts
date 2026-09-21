@@ -1,3 +1,7 @@
+// One name so the header and the OG card cannot drift onto different faces.
+// Changing it means installing the matching @fontsource package.
+export const BRAND_FONT = "IBM Plex Sans";
+
 export const SITE = {
   website: "https://blog.alunduil.com/",
   author: "Alex Brandt",

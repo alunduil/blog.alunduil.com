@@ -9,13 +9,10 @@ the mechanism is recorded in
 
 - A Bluesky account to post to.
 - The published feed at `https://blog.alunduil.com/rss.xml`. It already
-  carries each post's title, description, and canonical link, and it
-  excludes future-dated (scheduled) posts, so nothing syndicates before
-  its `pubDatetime`.
-- A dlvr.it account; the free tier covers this blog's volume.
-
-The dlvr.it labels below may shift as its interface changes; match the
-intent rather than the exact wording.
+  carries each post's title, description, full body, and canonical link,
+  and it excludes future-dated (scheduled) posts, so nothing syndicates
+  before its `pubDatetime`.
+- A dlvr.it account, per [Set up dlvr.it](set-up-dlvrit.md).
 
 ## Connect Bluesky to dlvr.it
 
@@ -31,47 +28,42 @@ intent rather than the exact wording.
 1. Open the Feeds tab and add the URL
    `https://blog.alunduil.com/rss.xml`.
 2. Route the feed to the connected Bluesky social.
-3. On the first sync, limit how many existing items post, so the back
-   catalogue does not flood the timeline. Posting only new items from
-   here on is the goal.
+3. Limit the first sync, so the back catalogue does not flood the
+   timeline.
 
-## Set the post format
+## Choose the summary over the full body
 
-Match the canonical shape: title, the one-line hook, and the link back.
-In the route's post template, build the message from the feed's title
-and description fields, and let dlvr.it append the canonical link. A
-finished post reads roughly:
+Set this feed to prefer summary content, under its advanced settings.
+Each item carries two blocks of text: `description`, the one-line hook,
+and `content:encoded`, the whole post rendered for feed readers. dlvr.it
+calls them Summary and Full Body. A route preferring full content posts
+the whole article, cut off at the character limit.
+
+## Keep the default post format
+
+Leave the route's post template alone. By default it posts the item's
+title as the message and attaches a link card built from the post's
+`description` and social image:
 
 ```text
-How I Back Up — <the post's one-line description>
-https://blog.alunduil.com/posts/how-i-back-up
+How I Back Up
+[link card: title, the post's one-line hook, social image]
 ```
 
-Bluesky allows 300 characters, and the link counts against that, so keep
-the message lean—a title, hook, and canonical URL fit, but a long
-description may need trimming. Write for the reader, not the limit, and
-add to it only when a later review shows the need.
+Composing a richer message repeats what the card already shows. dlvr.it
+also shortens the link: the card points at a `dlvr.it` URL that
+redirects to the canonical one with `utm_source` and `utm_medium`
+appended.
 
 ## Verify
 
 1. Trigger a manual check, or wait for the next post to publish.
-2. Confirm a Bluesky post appears that points at the canonical URL.
+2. Confirm a Bluesky post appears for it. The visible link points at
+   `dlvr.it`, so follow the redirect to confirm it lands on the
+   canonical URL.
 
-On the free tier, dlvr.it polls the feed every six hours, so a new post
-can take that long to appear—a short delay is not a failure.
+dlvr.it checks the feed on a schedule rather than on publish, so a new
+post appears at the next check—a short delay is not a failure.
 
-## Notice when it breaks
-
-This pipeline has to make breakage observable. Two layers cover it:
-
-- dlvr.it emails on feed or posting errors and shows route health on
-  its dashboard. Keep those emails reaching an inbox you read.
-- Once a month, or after publishing, confirm the latest post reached
-  Bluesky. A missing post is the signal that the route, the Bluesky app
-  password, or the feed has stopped working.
-
-If the pipeline needs replacing, nothing in this repository depends on
-dlvr.it. Bluesky runs on the open atproto protocol, so a vendor-neutral
-forwarder or a small self-hosted poster can take over its route later.
-ADR 0001 records that alternative and the triggers for revisiting the
-choice.
+A post that never arrives points at the route, the Bluesky app password,
+or the feed.

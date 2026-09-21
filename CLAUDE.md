@@ -9,19 +9,18 @@ This repo is used from Claude Code on the web, where host-local config
 isn't present: the global `~/.claude/CLAUDE.md` and the per-project memory
 directory don't travel — only the checkout does. Keep durable conventions
 (voice, process, project rules) in the repo: `.claude/skills/`, this file,
-or `docs/`. Skills must stand alone — state what they rely on inline, and
-treat host memory as local reinforcement, never the sole home for anything
-the work needs.
+or `docs/`. Skills must stand alone — state what they rely on inline, so
+host memory only reinforces what the repo already carries.
 
 ## Tooling
 
 This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
-- Package manager: pnpm. Version pinned in the withastro/action
-  `package-manager:` field of `.github/workflows/ci.yml` and
-  `pages.yml`, kept current by the Renovate custom manager in
-  `renovate.json`. `pnpm-workspace.yaml` holds workspace config.
+- Package manager: pnpm, pinned once in `package.json`'s `packageManager`
+  field — Renovate tracks it there, and withastro/action reads it after
+  auto-detecting `pnpm-lock.yaml`. `pnpm-workspace.yaml` holds workspace
+  config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).
@@ -30,15 +29,24 @@ scripting your own.
   yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
   Prettier (`local` hooks running the repo's own binaries so their
   plugins/configs resolve from workspace deps), and baseline file
-  hygiene. `pnpm lint` / `pnpm format` run the same tools by hand.
+  hygiene, plus lychee link-checking and post scheduling
+  (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` /
+  `pnpm post-scheduling:check` run the same tools by hand. Single-file repo
+  checks live flat in `scripts/`; a workspace package is for code with its
+  own dependencies, build, and consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
-  linters. The whole suite runs in CI via the `pre-commit` job in
-  `ci.yml`, which installs Node/pnpm first for the ESLint/Prettier
-  hooks. Excluded file types (no checker): binary assets
-  (svg/png/webp), `lychee.toml`, `.vale.ini`. lychee link-checking is
-  CI-only (the `lychee` job in `.github/workflows/ci.yml`,
-  `lychee.toml`).
+  linters. The whole suite runs in CI via the `Lint and format` job in
+  `ci.yml`, which installs Node/pnpm for the ESLint/Prettier hooks and
+  lychee via `scripts/install-lychee.sh`. Excluded file types (no
+  checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
+- Link checking runs in two tiers, both configured by `lychee.toml`. The
+  pre-commit hooks are `--offline`: blocking, but only on what resolves
+  without a build. `weekly.yml` builds the site, checks every link on
+  every published page plus the repo docs that never reach `dist/`,
+  blocks nothing, and reports to one rolling issue. Adding to `exclude`
+  takes a failing run plus proof from off the blocking host; the rule
+  sits with the list.
 - Custom skills under `.claude/skills/` — catalogued in the Skills
   section below; each SKILL.md frontmatter is the authoritative
   description.
@@ -51,7 +59,7 @@ so the repo-relevant essentials:
 - Keep each PR to its issue. Check scope against sibling and linked
   issues before opening; when unsure, ask.
 - If an issue is blocked by an unshipped prerequisite, propose deferral
-  with a `blocked-by` edge rather than writing premature code.
+  with a `blocked-by` edge and let the prerequisite land first.
 - Revert incidental out-of-scope edits before review, especially to the
   AstroPaper upstream files listed below.
 
@@ -59,8 +67,8 @@ so the repo-relevant essentials:
 
 New posts live under `src/data/blog/`; archival republishes under
 `src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
-Publication is gated by a future `pubDatetime`, never `draft: true` —
-merging the PR accepts the editorial work, the date defers publication.
+A future `pubDatetime` is the publication gate: merging the PR accepts
+the editorial work, the date defers publication.
 
 Frontmatter fields, the Tuesday (tech) / Sunday (reflective) 08:00
 cadence, timezone, locations, cover images, and tags are documented in
@@ -68,12 +76,11 @@ cadence, timezone, locations, cover images, and tags are documented in
 
 ### "How I X" series
 
-Future entries title as `How I X (YYYY)` — year-stamped scales without
-anniversary arithmetic. Cadence ties to substantive change in the
-practice, not the calendar; the next entry is ready when reading the
-prior one prompts "that's not how I do it any more." Don't add series
-infrastructure (index page, schema field, milestone) until there are
-3+ entries.
+Future entries title as `How I X (YYYY)` — year-stamped titles scale as
+entries accumulate. Cadence ties to substantive change in the practice;
+the next entry is ready when reading the prior one prompts "that's not
+how I do it any more." Add series infrastructure (index page, schema
+field, milestone) once there are 3+ entries.
 
 ## Voice
 
@@ -86,8 +93,7 @@ against a different corpus.
 ## AstroPaper upstream
 
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
-upstream — don't refactor, rename, or reformat unless the change is the
-point:
+upstream — edit only when the change is the point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
   `src/utils/`, `src/content.config.ts` — theme code.
@@ -99,6 +105,10 @@ post bodies lives in `docs/reference/post-body.md`.
 Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 `astro.config.ts`, new posts in `src/data/blog/`.
 
+Upstream fixes arrive by merging the `astro-paper` remote, not through
+Renovate — see [Adopt AstroPaper upstream
+changes](docs/how-to/adopt-astropaper-upstream-changes.md).
+
 [AstroPaper]: https://github.com/satnaing/astro-paper
 
 ## Branches and deploy
@@ -108,26 +118,32 @@ Customized and free to edit: `src/config.ts`, `src/constants.ts`,
 
 ## GitHub Actions
 
-Workflow and job names read as "when / what":
+Workflow and job names read as "when / what", and the filename matches
+the workflow name, kebab-cased. `alunduil-chezmoi`'s ADR 0004 carries the
+reasoning; this is the blog's application of it.
 
-- Workflow `name:` is the when — the trigger or cadence (`CI`). A
-  single-purpose file may take its subject (`Pages`, `Labels`) until
-  something colocates with it. A file that can't take a cadence name
-  without colliding with another's is usually a job, not a file.
+- Workflow `name:` is the when — the trigger or cadence (`CI`, `Weekly`).
+  A single-purpose file may take its subject (`Pages`, `Labels`) until
+  something colocates with it and the cadence name takes over.
 - Job `name:` is the what — the outcome as a human-readable phrase
-  (`Check links`, `Build the site`), legible standing alone in the
-  required-checks picker.
+  (`Build the site`, `Check links across the published site`), legible
+  standing alone in the required-checks picker.
 - The job id (key under `jobs:`) is the kebab wiring identifier for
   `needs:` and reuse; the job `name:` is the status-check context branch
   protection matches. They differ by design.
 - Job names are the scarce namespace: keep them unique repo-wide.
   `required_status_checks` in `alunduil/alunduil-infrastructure` pins
   them by string, so renaming one is a coordinated change with that repo.
+  Bare `build`, `test`, `check`, and `validate` collide.
 - Split files on `on:` alone — the only setting that can't be scoped per
   job. Permissions, concurrency, env, and defaults push down to the job,
-  so workflows sharing a trigger colocate as jobs in one file.
+  so workflows sharing a trigger colocate as jobs in one file. A new
+  check is a job in the file matching its when; a narrower when — a
+  cadence of its own, or a `paths:` gate — earns a file named for it.
 - A matrix job expands one context per cell; when one must be required,
   add a stable aggregator job and require that.
+- Write `schedule:` cron in local time with an IANA name in `timezone:`,
+  so GitHub applies daylight saving rather than running in UTC.
 
 ## Skills
 
@@ -136,9 +152,8 @@ authoritative description. The writing pipeline:
 
 - `outline-draft` → `post-draft` — story posts: a scene-and-beat outline
   gated at approval, then prose. `/outline-draft [#N]`, `/post-draft <slug>`.
-- `review-draft` — book/paper/game reviews (a claim and its evidence, not
-  a scene arc), a sibling of the story pipeline.
-  `/review-draft [#N|title|path]`.
+- `review-draft` — book/paper/game reviews (a claim and its evidence), a
+  sibling of the story pipeline. `/review-draft [#N|title|path]`.
 
 Utilities:
 

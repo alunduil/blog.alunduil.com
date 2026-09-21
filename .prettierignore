@@ -9,6 +9,7 @@
 !/src
 !/public
 !/.github
+!/scripts
 !tsconfig.json
 !astro.config.ts
 !.prettierrc.mjs

@@ -29,7 +29,7 @@ kind Martin Fowler calls [a great lost joy of software development][fowler].
 I was building at a pace I hadn't touched in years, ideas and workflows
 stacking up faster than I could use them.
 
-![A grid of weekly GitHub contributions from 2010 to 2026: light but steady through the 2010s, then a dark streak across spring 2026, far darker than any week before it.](/assets/i-built-the-machine-twice-contributions.svg)
+![A grid of weekly GitHub contributions from 2010 to 2026: faint but steady through the 2010s, then an intense streak across spring 2026, far stronger than any week before it.](/assets/i-built-the-machine-twice-contributions.svg)
 
 *My GitHub contributions by week, 2010–2026. The colour runs on a
 square-root scale, so the steady years stay visible next to 2026's

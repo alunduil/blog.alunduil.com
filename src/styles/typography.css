@@ -91,6 +91,22 @@
     }
   }
 
+  /* ===== Theme-aware Images ===== */
+  /* `rehypeThemeImages` emits both variants; these pick one. `display: none`
+     also drops the hidden variant from the accessibility tree, so the `alt`
+     both share is announced once. */
+  .theme-image-dark {
+    @apply hidden;
+  }
+
+  html[data-theme="dark"] .theme-image-light {
+    @apply hidden;
+  }
+
+  html[data-theme="dark"] .theme-image-dark {
+    @apply block;
+  }
+
   /* ===== Code Blocks & Syntax Highlighting ===== */
   .astro-code {
     @apply flex border bg-(--shiki-light-bg) text-(--shiki-light) outline-border [&_span]:text-(--shiki-light);

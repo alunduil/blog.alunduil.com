@@ -5,6 +5,8 @@ import IconGitHub from "@/assets/icons/IconGitHub.svg";
 import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
 import { SITE } from "@/config";
 
+export const BLUESKY_HANDLE = "alunduil.com";
+
 interface Social {
   name: string;
   href: string;
@@ -29,7 +31,7 @@ export const SOCIALS: Social[] = [
   },
   {
     name: "Bluesky",
-    href: "https://bsky.app/profile/alunduil.bsky.social",
+    href: `https://bsky.app/profile/${BLUESKY_HANDLE}`,
     linkTitle: `${SITE.author} on Bluesky`,
     icon: IconBluesky,
   },

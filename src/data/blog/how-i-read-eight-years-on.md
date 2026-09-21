@@ -8,84 +8,83 @@ tags:
   - memory
 ---
 
-In 2018 I wrote about [how I read](/posts/how-i-read). Eight years later,
-the practice is mostly unchanged; the tools around it have been entirely
-replaced.
-[Google Sheets](https://www.google.com/sheets/about/) for tracking was
-replaced by [Google Play Books](https://play.google.com/store/books)'s
-In Progress sorting, [Pocket](https://getpocket.com) by
-[Reader](https://readwise.io/read), and the recall ritual by
-[Readwise](https://readwise.io)'s daily highlights.
+In 2018 I wrote about [how I read](/posts/how-i-read). Eight years later
+the practice is mostly the same, while the tools around it have all been
+swapped out. [Google Sheets](https://www.google.com/sheets/about/) used
+to hold the tracking, a job
+[Google Play Books](https://play.google.com/store/books) now does with
+its In Progress sort. [Pocket](https://getpocket.com) is gone. I read in
+[Reader](https://readwise.io/read) instead, and the recall ritual runs
+on [Readwise](https://readwise.io)'s daily highlights.
 
-Books I'm interested in go on a wishlist. When they're 50% off or better,
-they move to my Google Play Books library as available-but-not-started.
-Papers I can get as PDF skip the wishlist and go directly to the library.
-The In Progress shelf is sorted by completion percentage; when I finish
-one and pick a new one, I take the most recent library addition I haven't
-started. Within In Progress I read in short bursts—a chapter at a time
-for non-fiction, situational for fiction. Before resuming any book I
-pause and recall the last section.
+Books I want go on a wishlist. When they drop to 50% off or better, they
+move into my Google Play Books library, where they sit unread until I
+pick one up. Papers I can get as PDF skip the wishlist and go straight
+to the library. The In Progress shelf sorts by how far along I am, and
+when I finish a book I start the newest one I haven't opened. Within In
+Progress I read in short bursts—a chapter at a time for non-fiction,
+less strict for fiction. Before I pick a book back up I pause and recall
+the last section.
 
-Articles arrive in Reader's Feeds view. I scan at bedtime: save to later
-or ignore. Saved items get read and highlighted on the tube or during
-downtime, sorted most-recently published first. Readwise pulls fifteen
-highlights from past reading into a morning notification.
+Articles arrive in Reader's Feeds view. I scan them at bedtime and
+either save one for later or let it go. I read and highlight the saved
+ones on the tube or in odd gaps of downtime, newest first. Each morning
+Readwise sends me fifteen highlights from past reading.
 
-I'm still reading multiple books concurrently, though the count has
-changed. The 2018 "five to ten" grew to twenty at the physical peak, then
-to over forty when going digital removed the physical limit. At
-forty-plus, the in-flight set was effectively unbounded and the sense of
-progress disappeared. The hard nine—one screen-glanceable set in Google
-Play Books—is what settled out. The mechanism is the same: read in short
-bursts, leave space between sessions for the chapter to condense, return
-with practised recall rather than skimming back to where I left off. It's
-a sanity cap, not a memory limit.
+I still read several books at once, though the count has changed. The
+2018 "five to ten" grew to twenty while I was still on paper, and when
+going digital took the shelf limit away the number climbed past forty.
+At forty-plus the set had no real edge to it, which is when the sense of
+progress went away. What settled out is a hard nine—one set I can take
+in at a glance in Google Play Books. The method behind it hasn't moved.
+I read in short bursts, leaving time between them for the chapter to
+settle, then come back with the section recalled rather than skimming to
+find my place. It's a sanity cap, not a memory limit.
 
-I still read non-fiction one chapter at a time, setting the book down and
-picking up the next. Fiction is more situational; sometimes the sectional
-discipline holds, sometimes I get caught up and read several chapters at
-a stretch—a distinction the 2018 post didn't make explicit.
+I still read non-fiction a chapter at a time, then set the book down and
+pick up the next. Fiction depends on the book. Sometimes the same
+discipline holds. Other times I get caught up and read four or five
+chapters at a stretch. The 2018 post never drew that line.
 
-The mechanism—short bursts, practised recall, and consolidation across
-days—still describes how I retain material. Cognitive-science writing has
-caught up to the intuition the 2018 post gestured at: [the spacing
-effect][spacing] describes how distributed sessions strengthen retention,
-and cognitive neuroscientist [Dr. Julie Fratantoni's advice][fratantoni]
-to "close down and repeat back what you learned" maps almost exactly onto
-the practised-recall ritual. I can recall books I read nearly a decade
-ago—which is what keeps me confident in the practice, even when I can't
-prove it's the practice doing the work.
+Short bursts, practised recall, and the days between still describe how
+I hold on to what I read. The science has caught up to what the 2018
+post only guessed at. [The spacing effect][spacing] covers the first
+part, in that reading spread out over days sticks better than the same
+reading massed together. The neuroscientist
+[Dr. Julie Fratantoni][fratantoni] covers the second, and her advice to
+"close down and repeat back what you learned" is the ritual almost word
+for word. I can still recall books I read a decade ago. That's what
+keeps me sure of the practice, even when I can't prove it's the practice
+doing the work.
 
-The tools, on the other hand, have all moved. I dropped the spreadsheet
-when I went all-digital. In 2018 I kept readability scores in Google
-Sheets, sorted ascending—lowest score first. Google Play Books provides
-a facsimile: its in-progress list sorts by completion percentage
-descending, surfacing the most-complete books first. That's the dominant
-factor of the original formula recovered as a built-in sort. The other
-factors—page area, pages remaining, font size, age—are gone, but in
-practice the completion sort lands on the right next read most of the
-time.
+The tools have all moved. I dropped the spreadsheet when I went
+all-digital. In 2018 I kept a readability score for each book in Google
+Sheets and sorted the list from the lowest score up. Google Play Books
+gives me a rough copy of that, since its In Progress list puts the books
+I'm furthest through at the top. That was the one factor doing most of
+the work in my old formula. Now it comes built in. The rest of the
+formula is gone—page area, pages left, font size, age. In practice the
+sort still lands on the right next book most of the time.
 
-Pocket's shutdown pushed me to look for an alternative. The deciding
-factor for Reader wasn't features but integration: Reader handles RSS
-feeds and arbitrary articles in one place and connects to the rest of my
-workflow in ways Pocket didn't. I read on the tube and during downtime,
-and my bedtime routine includes triaging new feed content. Reader is what
-made those routines coherent.
+When Pocket shut down I had to find something else. What sold me on
+Reader wasn't the features. It was the way it fits the rest of what I
+do. Feeds and one-off articles land in the same place, with my
+highlights carrying through to Readwise from there. I read on the tube
+and in odd gaps of downtime, and at bedtime I sort through whatever the
+feeds have brought in. Reader is what holds those habits together.
 
-Practised recall hasn't changed; Readwise added a layer on top. The 2018
-ritual still fires when I resume a book—pause, recall the last section,
-then read. Readwise adds a broader scan: fifteen highlights from past
-reading delivered every morning as a notification. The 2018 ritual
-happens when I pick up a book; Readwise's notification arrives whether I
-think about it or not. Whether that adds depth or just frequency, I'm
-not sure.
+Recall itself hasn't changed. Readwise just added a layer on top. The
+2018 ritual still fires when I pick a book back up—pause, recall the
+last section, then read. Readwise casts wider, sending fifteen
+highlights from past reading every morning. The ritual waits for me to
+open a book, while the notification arrives whether I think about it or
+not. Whether that adds depth or just adds frequency, I'm not sure.
 
-I pitched the method "for others" in 2018. Eight years on, I can verify
-it works for one person but I can't separate the methodology from the
-underlying memory. If you try it—or already have—you'd be answering
-something I can't: whether the method works because of what I do, or
-just because of who I am.
+I pitched the method "for others" in 2018. Eight years on, I know it
+works for one person, though I can't pull the method apart from the
+memory it runs on. If you try it—or already have—you'd be answering
+something I can't. Does it work because of what I do, or just because of
+who I am?
 
 [spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
 [fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation

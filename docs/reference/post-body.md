@@ -42,6 +42,11 @@ three from `src/data/blog/reviews/<slug>.md`:
 Optimised images resolve through markdown image syntax only. An `img`
 tag pointing at `@/assets/` or at a relative path doesn't resolve.
 
+Optimised images don't reach the RSS feed. It renders post bodies outside
+the page build, so a `src/assets/` image arrives in a feed reader as a
+broken path. Images under `public/` and on a remote host carry over
+intact.
+
 Astro serves files under `public/` untouched at an absolute path. They
 work in both markdown image syntax and an `img` tag:
 
@@ -55,6 +60,30 @@ scale down within their container.
 
 `ogImage` is frontmatter rather than body markup; see
 [post frontmatter and scheduling](post-frontmatter.md).
+
+## Theme-aware images
+
+An image under `public/` that has a `-dark` sibling swaps with the site
+theme. Name the pair by suffix and reference only the light one:
+
+```md
+![alt text](/assets/example.svg)
+```
+
+With `public/assets/example-dark.svg` present, that swaps with the theme
+toggle. Without it, the image renders unchanged.
+
+Three limits apply:
+
+- Only `public/` images pair. An image under `src/assets/` reaches the
+  page with a hashed build path that has no predictable sibling.
+- Both variants share the one `alt`, so write it without naming a
+  colour or a brightness—the streak that is darkest in one theme is
+  brightest in the other.
+- The RSS feed and the `index.md` endpoint carry the light variant only.
+  They render the body outside the page, where no theme applies.
+
+`scripts/contributions-heatmap.py` generates such a pair.
 
 ## Code blocks
 
@@ -83,3 +112,28 @@ notation transformers:
 Rendering strips the notation comment from the output. For the full
 syntax, including ranges, see the
 [@shikijs/transformers documentation](https://shiki.style/packages/transformers).
+
+## Diagrams
+
+A `mermaid` fence renders as a diagram, written in
+[Mermaid](https://mermaid.js.org) syntax:
+
+````md
+```mermaid
+flowchart LR
+    Resolver --> Root
+    Root --> TLD
+```
+````
+
+`astro.config.ts` wires the `astro-mermaid` integration, and Shiki
+leaves the fence alone. The diagram follows the site theme toggle, in
+Mermaid's `default` and `dark` palettes rather than the site's.
+
+Two limits apply:
+
+- Mermaid runs in the browser. Without JavaScript the fence shows its
+  own source as a plain block of text.
+- The RSS feed, the `index.md` endpoint, and `llms.txt` carry the fence
+  as source text. They render the body outside the page, where no
+  JavaScript runs.

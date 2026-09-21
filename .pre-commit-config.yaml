@@ -34,10 +34,59 @@ repos:
     hooks:
       - id: actionlint
 
-  # A custom-manager regex that stops matching is indistinguishable from a
-  # dependency with no updates.
+  # Link checking. The system binary (scripts/install-lychee.sh) rather than
+  # the upstream auto-installing hook: one version pin, and the static musl
+  # build runs on images whose GLIBC the upstream binary rejects.
+  #
+  # --offline holds the gate to what resolves without a build, so it never
+  # flakes on a third party; weekly.yml checks whatever needs its target to
+  # exist.
+  #
+  # --base-url is the only difference between the two hooks. A post's
+  # `/posts/...` addresses the site, and naming the site turns those into
+  # remote URLs that --offline skips rather than fails to resolve. Docs
+  # address the repo, where the same flag would misread a sibling
+  # `post-body.md` as a page on the site and stop checking it.
+  #
+  # They divide the markdown on one shared pattern. A file falling between two
+  # copies of it would be checked by neither hook, and nothing would say so.
+  - repo: local
+    hooks:
+      - id: lychee-posts
+        name: Check links in posts with lychee
+        entry: >-
+          lychee --config lychee.toml --no-progress --offline
+          --base-url https://blog.alunduil.com
+        language: system
+        types: [markdown]
+        files: &post_sources ^src/data/blog/
+
+      - id: lychee-docs
+        name: Check links in docs with lychee
+        entry: lychee --config lychee.toml --no-progress --offline
+        language: system
+        types: [markdown]
+        exclude: *post_sources
+
+  # Post scheduling (docs/reference/post-frontmatter.md § Scheduling).
+  # The collection is the unit here, not the file, so the hook reads every
+  # post and takes no filenames; `files` only decides whether it runs, and
+  # src/config.ts is in that pattern because the script imports SITE for the
+  # default timezone. The script needs node_modules, as the eslint and
+  # prettier hooks below do.
+  - repo: local
+    hooks:
+      - id: post-scheduling
+        name: Check post scheduling
+        entry: node scripts/check-post-scheduling.ts
+        language: system
+        pass_filenames: false
+        files: ^(src/data/blog/.*\.md|src/config\.ts)$
+
+  # A malformed renovate.json fails silently: Renovate surfaces it as a
+  # Repository Problem on its next run, never in CI.
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 44.16.1
+    rev: 44.69.10
     hooks:
       - id: renovate-config-validator
         args: [--strict, --no-global]
@@ -90,7 +139,7 @@ repos:
   # (outlines/) where terseness beats prose conventions, plus archival
   # republishes (_<engine>/) which are historical text, not current writing.
   - repo: https://github.com/vale-cli/vale
-    rev: v3.17.1
+    rev: v3.22.0
     hooks:
       - id: vale
         name: Lint prose with Vale
@@ -101,7 +150,7 @@ repos:
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
-            src/data/blog/_hakyll/.*
+            src/data/blog/_.*
           )$
 
   # Markdown structure linting with markdownlint-cli2.
