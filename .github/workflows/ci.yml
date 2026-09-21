@@ -11,6 +11,10 @@ on:
 permissions:
   contents: read
 
+env:
+  # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
+  NODE_VERSION: "24"
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -27,7 +31,7 @@ jobs:
       - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
         with:
-          node-version: '24'
+          node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       # The lychee hook is `language: system`; runners ship no lychee.
@@ -56,9 +60,6 @@ jobs:
   build:
     name: Build the site
     runs-on: ubuntu-latest
-    env:
-      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
-      NODE_VERSION: "24"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6

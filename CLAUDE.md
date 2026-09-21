@@ -118,13 +118,14 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
 ## GitHub Actions
 
-Workflow and job names read as "when / what", and the filename matches
-the workflow name, kebab-cased. `alunduil-chezmoi`'s ADR 0004 carries the
-reasoning; this is the blog's application of it.
+Workflows are named and split by when they run, jobs by what they
+produce. `alunduil-chezmoi`'s ADR 0004 carries the reasoning; this is the
+blog's application of it.
 
-- Workflow `name:` is the when — the trigger or cadence (`CI`, `Weekly`).
-  A single-purpose file may take its subject (`Pages`, `Labels`) until
-  something colocates with it and the cadence name takes over.
+- Workflow `name:` is the when — the trigger or cadence (`CI`, `Weekly`),
+  and the filename is that name kebab-cased. A single-purpose file may
+  take its subject (`Pages`, `Labels`) until something colocates with it
+  and the cadence name takes over.
 - Job `name:` is the what — the outcome as a human-readable phrase
   (`Build the site`, `Check links across the published site`), legible
   standing alone in the required-checks picker.
