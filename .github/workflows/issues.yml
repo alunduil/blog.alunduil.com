@@ -1,4 +1,4 @@
-name: Labels
+name: Issues
 
 on:
   issues:

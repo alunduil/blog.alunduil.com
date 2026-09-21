@@ -114,7 +114,7 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 ## Branches and deploy
 
 - Default branch: `main`. PRs target `main`.
-- Deploy runs on push to `main` (`.github/workflows/pages.yml`).
+- Deploy runs on push to `main` (`.github/workflows/cd.yml`).
 
 ## GitHub Actions
 
@@ -122,10 +122,10 @@ Workflows are named and split by when they run, jobs by what they
 produce. `alunduil-chezmoi`'s ADR 0004 carries the reasoning; this is the
 blog's application of it.
 
-- Workflow `name:` is the when — the trigger or cadence (`CI`, `Weekly`),
-  and the filename is that name kebab-cased. A single-purpose file may
-  take its subject (`Pages`, `Labels`) until something colocates with it
-  and the cadence name takes over.
+- Workflow `name:` is the when — the trigger or cadence (`CI`, `CD`,
+  `Issues`, `Weekly`), and the filename is that name kebab-cased. Never
+  the subject: a subject name has to change the moment a second job
+  colocates, where a trigger name holds until the trigger itself does.
 - Job `name:` is the what — the outcome as a phrase that reads standalone
   in the required-checks picker (`Build the site`, `Check links across the
   published site`).
@@ -171,6 +171,6 @@ Shared conventions the writing skills draw from: `.claude/voice.md`
 
 ## Idea issues
 
-`.github/workflows/labels.yml` auto-applies the `idea` label to any
+`.github/workflows/issues.yml` auto-applies the `idea` label to any
 issue whose body contains `## Spark` (the idea template's first
 heading). No manual labeling needed when filing via the template.

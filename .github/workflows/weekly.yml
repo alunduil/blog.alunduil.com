@@ -28,7 +28,7 @@ jobs:
       contents: read
       issues: write
     env:
-      # Matches pages.yml so the tree built here carries the same webmention
+      # Matches cd.yml so the tree built here carries the same webmention
       # link as the deployed one.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
       # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
