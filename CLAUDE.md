@@ -126,25 +126,22 @@ blog's application of it.
   and the filename is that name kebab-cased. A single-purpose file may
   take its subject (`Pages`, `Labels`) until something colocates with it
   and the cadence name takes over.
-- Job `name:` is the what — the outcome as a human-readable phrase
-  (`Build the site`, `Check links across the published site`), legible
-  standing alone in the required-checks picker.
-- The job id (key under `jobs:`) is the kebab wiring identifier for
-  `needs:` and reuse; the job `name:` is the status-check context branch
-  protection matches. They differ by design.
-- Job names are the scarce namespace: keep them unique repo-wide.
-  `required_status_checks` in `alunduil/alunduil-infrastructure` pins
-  them by string, so renaming one is a coordinated change with that repo.
-  Bare `build`, `test`, `check`, and `validate` collide.
-- Split files on `on:` alone — the only setting that can't be scoped per
-  job. Permissions, concurrency, env, and defaults push down to the job,
-  so workflows sharing a trigger colocate as jobs in one file. A new
-  check is a job in the file matching its when; a narrower when — a
-  cadence of its own, or a `paths:` gate — earns a file named for it.
-- A matrix job expands one context per cell; when one must be required,
-  add a stable aggregator job and require that.
-- Write `schedule:` cron in local time with an IANA name in `timezone:`,
-  so GitHub applies daylight saving rather than running in UTC.
+- Job `name:` is the what — the outcome as a phrase that reads standalone
+  in the required-checks picker (`Build the site`, `Check links across the
+  published site`).
+- The job id, the key under `jobs:`, wires `needs:` and reuse; the job
+  `name:` is the status-check context branch protection matches.
+- Keep job names unique repo-wide. `required_status_checks` in
+  `alunduil/alunduil-infrastructure` pins them by string, so a rename is a
+  coordinated change with that repo, and a bare `build` or `test` collides.
+- Split files on `on:` alone, the one setting that can't be scoped per job.
+  Permissions, concurrency, env, and defaults all scope per job, so
+  workflows sharing a trigger colocate as jobs in one file.
+- A new check is a job in the file matching its when. A narrower when — its
+  own cadence, or a `paths:` gate — earns a file named for it.
+
+Write `schedule:` cron in local time with an IANA name in `timezone:`.
+Without it GitHub runs the schedule in UTC and ignores daylight saving.
 
 ## Skills
 

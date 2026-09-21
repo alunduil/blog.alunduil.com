@@ -1,10 +1,9 @@
 name: CI
 
-# Everything gating a pull request, colocated: `on:` is the only setting that
-# can't be scoped per job, so a shared trigger is what makes one file correct.
-# Nothing here repeats on push to main — main takes changes only through a PR
-# under a strict required-check rule, so these already ran against the tree
-# that lands, and pages.yml rebuilds the site on merge regardless.
+# Every check that gates a pull request. CLAUDE.md carries the splitting and
+# naming rules. No push trigger: main takes changes only through a pull
+# request under required checks, so a push run would re-test a tree the pull
+# request already cleared.
 on:
   pull_request:
 
