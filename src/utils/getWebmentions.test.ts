@@ -23,8 +23,7 @@ vi.mock("astro:content", async importOriginal => ({
 
 const target = new URL("/posts/hello", SITE.website).href;
 
-// Each batch is served in descending wm-id order, so the cursor has to take
-// the batch's max rather than its last entry.
+// Highest wm-id first, so a cursor read from the last entry falls behind.
 function batch(size: number, firstId: number): WebmentionEntry[] {
   return Array.from({ length: size }, (_, i) => {
     const id = firstId + i;
@@ -66,8 +65,8 @@ function requestedUrls(fetch: ReturnType<typeof serveBatches>): URL[] {
   return fetch.mock.calls.map(([url]) => new URL(url));
 }
 
-// The module memoises every post's mentions for the build; a fresh import per
-// case keeps one case's responses out of the next.
+// The module caches mentions for the whole build, so each case imports a
+// fresh copy.
 async function getWebmentions(post: string) {
   const module = await import("./getWebmentions");
   return module.getWebmentions(post);

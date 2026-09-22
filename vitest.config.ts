@@ -1,8 +1,8 @@
 /// <reference types="vitest/config" />
 import { getViteConfig } from "astro/config";
 
-// getViteConfig resolves the astro: virtual modules and the @/ alias, so
-// tests can vi.mock them like any other import.
+// Astro's Vite config resolves the astro: virtual modules; under a plain
+// Vitest config, importing them fails.
 export default getViteConfig({
   test: {
     include: ["src/**/*.test.ts"],
