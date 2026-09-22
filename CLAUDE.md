@@ -24,6 +24,8 @@ scripting your own.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).
+- Tests: `pnpm test` runs Vitest over `*.test.ts` files beside the module
+  they cover. Mock `astro:` virtual modules with `vi.mock`.
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
   (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
   yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
