@@ -27,6 +27,11 @@ Fields, in schema order:
 `pubDatetime` and `modDatetime` are live-site moments, independent of
 branch commit time.
 
+`modDatetime` replaces `pubDatetime` in the byline under an "Updated"
+label and appears in the page metadata. Listings and the RSS feed order
+and date posts on `pubDatetime`, so an edit leaves a post in place and
+doesn't mark it unread in feed readers.
+
 ## Scheduling
 
 `pubDatetime` is 08:00 in the post's `timezone` (`Europe/London`
