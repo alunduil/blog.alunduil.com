@@ -14,6 +14,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
+    "test": "vitest run",
     "post-scheduling:check": "node scripts/check-post-scheduling.ts"
   },
   "dependencies": {
@@ -51,6 +52,7 @@
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "npm:@typescript/typescript6@6.0.2",
     "typescript-eslint": "8.70.0",
+    "vitest": "5.0.1",
     "yaml": "2.9.1"
   }
 }
