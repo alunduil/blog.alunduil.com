@@ -26,34 +26,44 @@ const target = new URL("/posts/hello", SITE.website).href;
 // Each batch is served in descending wm-id order, so the cursor has to take
 // the batch's max rather than its last entry.
 function batch(size: number, firstId: number): WebmentionEntry[] {
-  return Array.from({ length: size }, (_, i) => ({
-    type: "entry" as const,
-    url: `https://example.com/${firstId + i}`,
-    "wm-received": "2026-01-01T00:00:00Z",
-    "wm-id": firstId + i,
-    "wm-source": `https://example.com/${firstId + i}`,
-    "wm-target": target,
-    "wm-property": "like-of" as const,
-    "wm-private": false,
-  })).reverse();
+  return Array.from({ length: size }, (_, i) => {
+    const id = firstId + i;
+    const source = `https://example.com/${id}`;
+    return {
+      type: "entry" as const,
+      url: source,
+      "wm-received": "2026-01-01T00:00:00Z",
+      "wm-id": id,
+      "wm-source": source,
+      "wm-target": target,
+      "wm-property": "like-of" as const,
+      "wm-private": false,
+    };
+  }).reverse();
 }
 
-function serve(sizes: number[]) {
+function batches(sizes: number[]): WebmentionEntry[][] {
   let nextId = 1;
-  const responses = sizes.map(size => {
-    const children = batch(size, nextId);
+  return sizes.map(size => {
+    const entries = batch(size, nextId);
     nextId += size;
-    return new Response(JSON.stringify({ children }));
+    return entries;
   });
+}
 
-  const fetch = vi.fn();
-  for (const response of responses) fetch.mockResolvedValueOnce(response);
+function serveBatches(sizes: number[]) {
+  const responses = batches(sizes).map(
+    children => new Response(JSON.stringify({ children }))
+  );
+  const fetch = vi.fn<(url: string) => Promise<Response | undefined>>(
+    async () => responses.shift()
+  );
   vi.stubGlobal("fetch", fetch);
   return fetch;
 }
 
-function requestedUrls(fetch: ReturnType<typeof vi.fn>): URL[] {
-  return fetch.mock.calls.map(([url]) => new URL(url as string));
+function requestedUrls(fetch: ReturnType<typeof serveBatches>): URL[] {
+  return fetch.mock.calls.map(([url]) => new URL(url));
 }
 
 // The module memoises every post's mentions for the build; a fresh import per
@@ -73,37 +83,34 @@ describe("getWebmentions", () => {
     vi.unstubAllGlobals();
   });
 
-  it("keeps paging past a short batch until an empty one", async () => {
-    const fetch = serve([100, 100, 30, 0]);
+  it.each([
+    { name: "past a short batch", sizes: [100, 100, 30, 0] },
+    { name: "after a single batch", sizes: [30, 0] },
+  ])("keeps paging $name until an empty batch", async ({ sizes }) => {
+    const fetch = serveBatches(sizes);
 
     const { likes } = await getWebmentions(target);
 
-    expect(likes).toHaveLength(230);
-    expect(fetch).toHaveBeenCalledTimes(4);
-  });
-
-  it("stops after the empty batch that follows a single one", async () => {
-    const fetch = serve([30, 0]);
-
-    const { likes } = await getWebmentions(target);
-
-    expect(likes).toHaveLength(30);
-    expect(fetch).toHaveBeenCalledTimes(2);
+    expect(likes).toHaveLength(sizes.reduce((sum, size) => sum + size, 0));
+    expect(fetch).toHaveBeenCalledTimes(sizes.length);
   });
 
   it("advances since_id to the highest wm-id seen", async () => {
-    const fetch = serve([100, 100, 30, 0]);
+    const fetch = serveBatches([100, 100, 30, 0]);
 
     await getWebmentions(target);
 
-    const urls = requestedUrls(fetch);
-    expect(urls.map(url => url.searchParams.get("since_id"))).toEqual([
-      "0",
-      "100",
-      "200",
-      "230",
-    ]);
-    for (const url of urls) {
+    expect(
+      requestedUrls(fetch).map(url => url.searchParams.get("since_id"))
+    ).toEqual(["0", "100", "200", "230"]);
+  });
+
+  it("asks for both spellings of the target on every page", async () => {
+    const fetch = serveBatches([100, 30, 0]);
+
+    await getWebmentions(target);
+
+    for (const url of requestedUrls(fetch)) {
       expect(url.searchParams.getAll("target[]")).toEqual([
         target,
         `${target}/`,
@@ -112,7 +119,7 @@ describe("getWebmentions", () => {
   });
 
   it("returns mentions newest first", async () => {
-    serve([100, 30, 0]);
+    serveBatches([100, 30, 0]);
 
     const { likes } = await getWebmentions(target);
 
@@ -122,7 +129,7 @@ describe("getWebmentions", () => {
 
   it("skips the fetch when no webmention.io account is configured", async () => {
     env.username = "";
-    const fetch = serve([]);
+    const fetch = serveBatches([]);
 
     const { likes, reposts, replies, mentions } = await getWebmentions(target);
 
