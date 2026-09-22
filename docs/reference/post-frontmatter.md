@@ -13,7 +13,7 @@ Fields, in schema order:
 | --- | --- | --- | --- |
 | `author` | no | string | Defaults to `SITE.author`. |
 | `pubDatetime` | yes | date | Publication moment; gates visibility (see [Scheduling](#scheduling)). |
-| `modDatetime` | no | date \| null | Last substantive edit; shown in the byline and metadata, never in ordering (see [Edits](#edits)). |
+| `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
 | `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
@@ -27,18 +27,10 @@ Fields, in schema order:
 `pubDatetime` and `modDatetime` are live-site moments, independent of
 branch commit time.
 
-### Edits
-
-`modDatetime` annotates a post without moving it. It sets:
-
-- The "Updated:" byline, which shows it in place of `pubDatetime`.
-- The schema.org `dateModified` and `article:modified_time` metadata.
-
-The home page, the post index, and the RSS feed order and date posts on
-`pubDatetime` alone. An edited old post keeps its place among posts from
-its publication date, and feed readers don't re-surface it as unread.
-RSS 2.0 defines an item's `pubDate` as its publication moment, and the
-feed's order matches.
+`modDatetime` replaces `pubDatetime` in the byline under an "Updated"
+label and appears in the page metadata. Listings and the RSS feed order
+and date posts on `pubDatetime`, so an edit leaves a post in place and
+doesn't mark it unread in feed readers.
 
 ## Scheduling
 
