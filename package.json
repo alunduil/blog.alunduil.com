@@ -41,7 +41,7 @@
     "@shikijs/transformers": "4.4.3",
     "@tailwindcss/typography": "0.5.20",
     "@types/lodash.kebabcase": "4.1.9",
-    "@typescript-eslint/parser": "8.70.0",
+    "@typescript-eslint/parser": "8.70.1",
     "@typescript/native": "npm:typescript@7.0.2",
     "eslint": "10.11.0",
     "eslint-plugin-astro": "3.2.1",
@@ -51,7 +51,7 @@
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "npm:@typescript/typescript6@6.0.2",
-    "typescript-eslint": "8.70.0",
+    "typescript-eslint": "8.70.1",
     "vitest": "5.0.1",
     "yaml": "2.9.1"
   }
