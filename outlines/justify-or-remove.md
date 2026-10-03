@@ -43,9 +43,10 @@ measured.
 2. Sessions feel crisper since, with less of the agent running a command twice. *(author)*
 3. Crisper is a feeling, and I never measured it. *(no measurement exists)*
 4. It might be confirmation bias. *(author)*
-5. The July trim went unmeasured for turn cost too. *(#422 open question)*
-6. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
-7. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
+5. The agent was wrong about rtk at least once too: a claim that rtk trimmed a `git log` line didn't reproduce. *(transcript, 2026-09-21)*
+6. The July trim went unmeasured for turn cost too. *(#422 open question)*
+7. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
+8. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
 
 ## 5. The next thing that asks to load — *the landing*
 

@@ -73,6 +73,20 @@ the output it cut and never the reruns those cuts caused, each one another
 turn spent against the same five-hour limit. Having watched that cost in
 the sessions themselves, I found the number only confirmed what I'd seen.
 
+I removed rtk the next morning. My sessions have felt crisper since, with
+less of the agent running a command twice to see what it actually said.
+
+I haven't measured crisper. It might be confirmation bias. Even the agents
+sometimes blamed rtk for output it hadn't touched. On the twenty-first of September one walked
+back its own report, admitting that "my claim that rtk trims the first `git
+log` line doesn't reproduce" once it compared filtered and unfiltered
+output. I never measured what the July trim saved on each turn either.
+
+Outlining this post, I learned that rtk had never been pinned to a version,
+though I'd believed it was. My own issue from July already said so. rtk
+had installed from whatever its repository's `master` branch held that day.
+It saw the output of every command in every session.
+
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
