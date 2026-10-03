@@ -37,7 +37,8 @@ required through a stable aggregator.
 2. genshin went from sixteen files to nine *(genshin PR #1006, 2026-07-30)*.
 3. Once the sensors shared one file, it showed that pre-commit.ci had never been installed there *(genshin PR #1006)*.
 4. Sixteen hooks, `vale`, `reuse` and `zizmor` among them, had run in no CI job *(genshin PR #1006)*.
-5. With a workflow per when, enforcement and OIDC grants can target the workflow *(author; instance TBD, see Open)*.
+5. With a workflow per when, an OIDC grant can pin one workflow file *(author; infrastructure `c4428d5`, 2026-09-18, binds the blog's analytics grant to `job_workflow_ref` `pages.yml@refs/heads/main`)*.
+6. Woodland-generators finished first: four contexts required, matrix behind an aggregator *(infrastructure `84a68ef`, #575, 2026-09-19; `Confirm every test leg passed`)*.
 
 ## 4. The window with no gate — *the cost*
 
@@ -48,13 +49,16 @@ required through a stable aggregator.
 5. The convention went into global guidance the same day *(chezmoi PR #770, 2026-09-19)*.
 6. The next issue was its first violation: a systemd job named `run` *(chezmoi#771)*.
 
-## 5. Nothing required yet — *the landing*
+## 5. The grant pinned to a file that's gone — *the landing*
 
-1. The blog's rename merged *(PR #388, 2026-09-21)*.
-2. The restore is still open, and `main` has no status-check rule *(infrastructure#300 open; ruleset checked 2026-10-02; re-check at draft)*.
-3. The names now hold up to being required, but nothing requires them yet.
+1. The blog's rename merged, and `pages.yml` became `cd.yml` *(PR #388, 2026-09-21)*.
+2. The analytics grant still names `pages.yml` *(infrastructure `c4428d5`)*.
+3. TBD: what happened when #685 wired the token exchange.
+4. TBD: the blog's required checks restored, or still not *(infrastructure#300; on 2026-10-02 `main` had no status-check rule)*.
 
 ## Open
 
-- OIDC grant per workflow: which repo and which grant is the real instance? Without one, cut 3.5's OIDC half.
+- Wait for blog#685: how the `pages.yml` pin played out lands as 5.3.
+- Wait for infrastructure#300: the blog's pin restored, or not, lands as 5.4.
 - "Easier to enforce workflows": what enforcement did you mean? Required workflows in rulesets, the Actions allowlist, or something else? Name the instance or cut it.
+- After both land, re-run Diagnose: the landing may move from the honest gap to woodland-generators's finished state.
