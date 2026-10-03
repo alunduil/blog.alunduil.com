@@ -1,17 +1,9 @@
 # Justify or Remove — outline
 
-**Logline.** The moment of change is scene 3's replay, which put rtk's
-savings figure beside the retries I'd been living with. The story opens
-on its opposite in scene 1: rtk arriving as another tool's default and
-never measured.
-
-**Anchors beyond the beats.**
-
-- The replay in chezmoi PR #802 covered 40,929 commands from
-  2026-06-30 to 2026-09-27, each capped at Claude Code's
-  30,000-character output limit.
-- The count in beat 3.2 is an upper bound: it matches every agent Bash
-  command containing `rtk proxy`, bypass or not.
+**Logline.** The moment of change is beat 3.8, where rtk's own savings
+report meets the retries I'd been living with. The story opens on its
+opposite in scene 1: rtk arriving as another tool's default and never
+measured.
 
 ## 1. The warning in claustre's header — *the opposite*
 
@@ -25,25 +17,27 @@ never measured.
 
 ## 2. The report that asked for more — *the lift*
 
-1. An `/insights` run over 193 sessions recommends five new sections for my always-loaded instructions. *(chezmoi #431)*
-2. Both rules it wants already live in skills, added before its window opened. *(#431: `pr-create`, `issue-work`)*
-3. The verbose PR bodies and skipped staleness checks it flagged happened with those rules already loaded. *(#431)*
-4. So I cut instead of adding. *(#431: "signal-to-noise, not coverage")*
-5. Ten of 26 sections only pointed at a skill. *(#431)*
-6. Cutting them drops the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
-7. The trim cuts `RTK.md` down to its hook behaviour and leaves rtk running. *(#431 scope)*
-8. That afternoon I file the open question: measure rtk's savings or remove it. *(chezmoi #444, 2026-07-26)*
+1. An `/insights` run over 193 sessions flags verbose PR bodies and skipped staleness checks. *(chezmoi #431)*
+2. It recommends five new sections in my always-loaded instructions to fix them. *(#431)*
+3. Both rules already live in skills, added before its window opened. *(#431: `pr-create`, `issue-work`)*
+4. The friction happened with those rules in place. *(#431: "signal-to-noise, not coverage")*
+5. So I cut instead of adding. *(#431)*
+6. Ten of 26 sections only pointed at a skill. *(#431)*
+7. Cutting them drops the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
+8. The trim cuts `RTK.md` down to its hook behaviour and leaves rtk running. *(#431 scope)*
+9. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
 
 ## 3. Let me try that again — *the turn*
 
 1. The issue sits for two months while rtk keeps filtering. *(#444 open 2026-07-26 to 2026-09-28)*
-2. The agent keeps reaching for `rtk proxy`, rtk's escape hatch that runs a command unfiltered. *(732 agent commands across 63 sessions, 2026-09-06 to 2026-09-28, transcripts)*
+2. The agent keeps reaching for `rtk proxy`, rtk's escape hatch that runs a command unfiltered. *(up to 732 agent commands across 63 sessions, 2026-09-06 to 2026-09-28, transcripts; the count includes every command containing the string)*
 3. The bypasses are retries after rtk cut output the agent needed. *(author)*
-4. The replay starts from rtk's own `gain` report: 90.6% saved. *(PR #802)*
-5. One `curl` that Claude Code would have truncated anyway accounts for 166M of its 201M tokens. *(PR #802)*
-6. Capped the way Claude Code caps output, rtk saves 28.7%: about 112 tokens a command, and nothing on 76% of commands. *(PR #802)*
-7. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
-8. The number confirms what the retries had already decided. *(author: "meh")*
+4. I replay rtk's history with each command capped the way Claude Code caps output. *(chezmoi PR #802: 40,929 commands, 2026-06-30 to 2026-09-27, 30,000-character cap)*
+5. rtk's own `gain` report says 90.6% saved. *(PR #802)*
+6. One `curl` that Claude Code would have truncated anyway accounts for 166M of its 201M tokens. *(PR #802)*
+7. Capped, rtk saves 28.7%: about 112 tokens a command, and nothing on 76% of commands. *(PR #802)*
+8. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
+9. The number confirms what the retries had already decided. *(author: "meh")*
 
 ## 4. Smoother, by feel — *the gap*
 
@@ -56,11 +50,11 @@ never measured.
 
 ## 5. The next thing that asks to load — *the landing*
 
-1. I still try a new tool to find out what it's trying to do. *(author)*
+1. I still look at what each new tool is trying to do, then try it to find out. *(author)*
 2. Noticeable friction, with or without telemetry, puts it on notice. *(author)*
 3. The verdict mixes measurement with my own sentiment. *(author)*
 4. I'm moving it toward measured, so I understand a decision instead of feeling it out. *(author)*
-5. Renovate manages every version I pin, and rtk carried none for it to see. *(chezmoi `script/checks/renovate-pins`; #444)*
+5. Renovate manages every version I pin. *(chezmoi `script/checks/renovate-pins`)*
 6. I'm building monitoring for whatever I might want to change. *(chezmoi PR #662 Grafana Cloud shipper; PR #680 per-process attribution after the 2026-08-29 zellij crash; alunduil-infrastructure PR #562 Fleet Management)*
 7. The principles are still converging. *(author: "converging instead of definitional")*
 8. Some of what a tool brings in, I still notice only later. *(author)*
