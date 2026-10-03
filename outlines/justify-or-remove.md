@@ -1,18 +1,18 @@
 # Justify or Remove — outline
 
-**Logline.** The moment of change is the replay that put rtk's savings
-figure beside the retries I'd been living with: its tally counted the
-tokens it cut and never the turns those cuts cost. The story opens on
-its opposite: rtk arriving as another tool's default and never measured.
+**Logline.** The moment of change is scene 3's replay, which put rtk's
+savings figure beside the retries I'd been living with. The story opens
+on its opposite in scene 1: rtk arriving as another tool's default and
+never measured.
 
 **Anchors beyond the beats.**
 
 - The replay in chezmoi PR #802 covered 40,929 commands from
   2026-06-30 to 2026-09-27, each capped at Claude Code's
   30,000-character output limit.
-- Session transcripts reach back only to 2026-09-06, so July and August
-  bypasses aren't on disk. The count matches agent Bash commands
-  containing `rtk proxy`, so it's an upper bound on bypasses.
+- The `rtk proxy` count in beat 3.2 is an upper bound: it matches every
+  agent Bash command containing the string, and transcripts older than
+  the window are gone.
 
 ## 1. The warning in claustre's header — *the opposite*
 
@@ -28,9 +28,8 @@ its opposite: rtk arriving as another tool's default and never measured.
 2. Both rules it wants already live in skills, added before its window opened. *(#431: `pr-create`, `issue-work`)*
 3. The friction happened with those rules in place, so I cut instead of adding. *(#431: "signal-to-noise, not coverage")*
 4. Ten of 26 sections only pointed at a skill, and the always-loaded set drops from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
-5. The permission allowlist gets the same pass: 16 entries granted nothing Claude Code didn't already allow. *(chezmoi PR #430)*
-6. The trim cuts `RTK.md` down to its hook behaviour and leaves rtk running. *(#431 scope)*
-7. That afternoon I file the open question: measure rtk's savings or remove it. *(chezmoi #444, 2026-07-26)*
+5. The trim cuts `RTK.md` down to its hook behaviour and leaves rtk running. *(#431 scope)*
+6. That afternoon I file the open question: measure rtk's savings or remove it. *(chezmoi #444, 2026-07-26)*
 
 ## 3. Let me try that again — *the turn*
 
@@ -46,11 +45,11 @@ its opposite: rtk arriving as another tool's default and never measured.
 ## 4. Smoother, by feel — *the landing*
 
 1. I remove rtk. *(chezmoi PR #802, merged 2026-09-28)*
-2. Writing down its trust cost, I find it was never pinned. *(#444; author believed it was)*
-3. It installed from a third-party repo's `master` and saw the output of every command in every session. *(#444)*
-4. Sessions run smoother since, with less of the agent running a command twice. *(author)*
-5. Smoother is a feeling, and I never measured it. *(no measurement exists)*
-6. The July trim went unmeasured for turn cost too. *(#422 open question)*
+2. Sessions run smoother since, with less of the agent running a command twice. *(author)*
+3. Smoother is a feeling, and I never measured it. *(no measurement exists)*
+4. The July trim went unmeasured for turn cost too. *(#422 open question)*
+5. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
+6. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
 
 ## Open
 
