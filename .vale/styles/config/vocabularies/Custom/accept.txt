@@ -52,6 +52,8 @@ Casa
 Beelink
 HAOS
 chezmoi
+claustre
+rtk
 Netdata
 Scrutiny
 Onyx
