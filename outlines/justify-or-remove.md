@@ -31,7 +31,7 @@ measured.
 
 1. The issue sits for two months while rtk keeps filtering. *(#444 open 2026-07-26 to 2026-09-28)*
 2. The agent keeps reaching for `rtk proxy`, rtk's escape hatch that runs a command unfiltered. *(up to 732 agent commands across 63 sessions, 2026-09-06 to 2026-09-28, transcripts; the count includes every command containing the string)*
-3. The bypasses I see come with the agent saying rtk mangled the output, then rerunning unfiltered. *(transcripts: "the earlier `diff` \"identical\" was rtk filtering the output", 2026-09-11; "counts came back as 0 … rtk mangling the pipeline", 2026-09-20)*
+3. The bypasses I see come with the agent saying rtk mangled the output, then rerunning unfiltered. *(transcripts: "the earlier `diff` 'identical' was rtk filtering the output", 2026-09-11; "counts came back as 0 … rtk mangling the pipeline", 2026-09-20)*
 4. How many of the 732 were retries, I never counted. *(author: "more sentiment than measured")*
 5. An agent replays rtk's history without my intervention, capping each command the way Claude Code caps output. *(chezmoi PR #802: 40,929 commands, 2026-06-30 to 2026-09-27, 30,000-character cap)*
 6. rtk's own `gain` report says 90.6% saved. *(PR #802)*
