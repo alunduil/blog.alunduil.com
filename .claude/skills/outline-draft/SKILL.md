@@ -176,9 +176,10 @@ and excluded from the prose linters and lychee). Run the Diagnose pass.
 Confirm with the author. The skill ends at approval — hand to
 `post-draft`.
 
-The outline drives the post, one direction only: after approval,
-structural changes originate here and flow forward to the post. The
-outline is the source of truth.
+The outline drives the post, one direction only: after approval, the
+outline is locked; structural changes originate here once the author
+reopens it, then flow forward to the post. The outline is the source of
+truth.
 
 Provenance: Jack Hart, *Storycraft* (arc, scene); Matthew Dicks,
 *Storyworthy* (the one moment of change); Lorin Hochstein, "The Power of

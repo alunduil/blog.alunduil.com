@@ -10,9 +10,12 @@ Consumes an approved outline (`outlines/<slug>.md`, the artefact
 Requires an approved outline; run `outline-draft` first if there isn't
 one.
 
-The outline is the source of truth. If the prose needs a structural
-change, change the outline first (via `outline-draft`), then bring the
-post back in line.
+The approved outline is the source of truth, and it is locked while
+drafting. When the prose needs a structural change, stop, name the
+change, and ask the author to reopen the outline. On their yes, switch to
+outline mode and edit under `outline-draft`'s rules. Then announce the
+return to drafting and bring the post in line. Quotes, citations, and
+wording stay in the post.
 
 Pipeline: **body → conventions → syndication check.** The body is the
 story-specific craft this skill owns; the conventions are shared and
