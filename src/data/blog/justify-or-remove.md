@@ -68,9 +68,10 @@ cut down regardless. With every command capped the way Claude Code caps it,
 rtk saved 28.7%. That came to about 112 tokens a command. On 76% of
 commands it saved nothing.
 
-rtk's tally counted what it cut and never the reruns its cuts caused. By
-the time the number came back, the sessions had already decided. It only
-confirmed them.
+rtk was there to keep my sessions from running out early. Its tally counted
+the output it cut and never the reruns those cuts caused, each one another
+turn spent against the same five-hour limit. Having watched that cost in
+the sessions themselves, I found the number only confirmed what I'd seen.
 
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
