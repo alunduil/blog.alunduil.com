@@ -45,7 +45,7 @@ never measured.
 7. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
 8. The number confirms what the retries had already decided. *(author: "meh")*
 
-## 4. Smoother, by feel — *the landing*
+## 4. Smoother, by feel — *the gap*
 
 1. I remove rtk. *(chezmoi PR #802, merged 2026-09-28)*
 2. Sessions run smoother since, with less of the agent running a command twice. *(author)*
@@ -54,7 +54,13 @@ never measured.
 5. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
 6. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
 
-## Open
+## 5. The next thing that asks to load — *the landing*
 
-- The author holds a version of "what loads every turn earns its place
-  with a number, or leaves"; beat 4.7 waits on the author's wording.
+1. I still try a new tool to find out what it's trying to do. *(author)*
+2. Noticeable friction, with or without telemetry, puts it on notice. *(author)*
+3. The verdict mixes measurement with my own sentiment. *(author)*
+4. I'm moving it toward measured, so I understand a decision instead of feeling it out. *(author)*
+5. Renovate manages every version I pin, and rtk carried none for it to see. *(chezmoi `script/checks/renovate-pins`; #444)*
+6. I'm building monitoring for whatever I might want to change. *(chezmoi PR #662 Grafana Cloud shipper; PR #680 per-process attribution after the 2026-08-29 zellij crash; alunduil-infrastructure PR #562 Fleet Management)*
+7. The principles are still converging. *(author: "converging instead of definitional")*
+8. Some of what a tool brings in, I still notice only later. *(author)*
