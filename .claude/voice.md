@@ -84,6 +84,29 @@ The house register for story posts (Tolkien/Carroll touchstone):
   and never force a verb onto an abstraction ("the mean that reaches").
 - Strip blame: no "I should have", no confession closers.
 
+- Thread each scene on the stake the author named, what they were trying
+  to do. Mechanism earns its sentence where it explains a turn.
+- Give a run of short sentences a thread first: one sentence carries the
+  why, then the short ones land.
+- Name things in the vendor's own terms ("session usage limit"), and
+  gloss a tool a general reader won't know in a clause on first mention.
+
+## Clarity pass
+
+After the revision pass, read each paragraph for crisp, literal prose:
+
+- One idea per sentence. A sentence carrying a definition and an event
+  splits in two.
+- The paragraph's first sentence latches on the thing the paragraph is
+  about.
+- One topic per paragraph.
+- Every sentence adds information. Cut one whose only job is rhythm,
+  contrast, or setting up the next.
+- Keep a figure only when the literal version loses information. Name
+  what a tool did ("wrote a hook into my settings") over an idiom for it.
+- Say exactly what runs out, changes, or breaks: the allowance, not the
+  hours; the hook, not "the wiring".
+
 Iterate in the file; apply the rules confidently, surface only genuine
 judgement calls.
 
