@@ -19,9 +19,10 @@ measured.
 
 1. A report on my sessions recommends five more sections for the instructions loaded on every turn. *(chezmoi #431)*
 2. The rules it wants already live in skills, which load only when a task calls for them. *(#431: `pr-create`, `issue-work`)*
-3. So I cut instead, taking the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
-4. The trim shortens `RTK.md` and leaves rtk running. *(#431 scope)*
-5. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
+3. The habits it flagged happened with those skills in place, so a second copy on every turn would only crowd the rules that matter. *(#431: "signal-to-noise, not coverage"; PR #432)*
+4. So I cut instead, taking the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
+5. The trim shortens `RTK.md` and leaves rtk running. *(#431 scope)*
+6. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
 
 ## 3. Let me try that again — *the turn*
 

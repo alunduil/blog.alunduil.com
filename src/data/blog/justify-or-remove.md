@@ -31,14 +31,15 @@ settings, still filtering every Bash command before the model saw it. It
 was there to make my sessions last. Its README promised 60–90% less
 context. I never measured that against my own sessions.
 
-In late July, Claude Code's `/insights` report recommended five new
-sections for the instructions loaded on every turn. It drew on 193 of my
-sessions. The rules it wanted already existed. They lived in skills, the
-instructions Claude Code loads only when a task calls for them.
-
-This time I didn't take the recommendation. I cut instead. On the
-twenty-sixth of July what loads on every turn went from 594 lines to 241.
-The same pass shortened `RTK.md`. rtk itself kept running.
+In late July, Claude Code's `/insights` report read back over 193 of my
+sessions and recommended five new sections for the instructions loaded on
+every turn. Every rule it wanted was already written, in skills, the
+instructions Claude Code loads only when a task calls for them. Since the
+habits it flagged had happened with those skills already in place, a second
+copy loaded on every turn would only crowd the rules that mattered. This
+time I didn't take the recommendation. I cut instead, taking what loads on
+every turn from 594 lines to 241 on the twenty-sixth of July. The same pass
+shortened `RTK.md`, while rtk itself kept running.
 
 That afternoon I filed an issue against my own setup. rtk would show
 measured savings on my sessions, or it would leave.
