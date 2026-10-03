@@ -15,17 +15,13 @@ measured.
 6. Six days later I drop claustre, and rtk stays. *(chezmoi #158, 2026-05-10)*
 7. Nobody measures rtk on this machine. *(chezmoi #444: "never been measured on this host")*
 
-## 2. The report that asked for more — *the lift*
+## 2. The trim rtk survived — *the lift*
 
-1. An `/insights` run over 193 sessions flags verbose PR bodies and skipped staleness checks. *(chezmoi #431)*
-2. It recommends five new sections in my always-loaded instructions to fix them. *(#431)*
-3. Both rules already live in skills, added before its window opened. *(#431: `pr-create`, `issue-work`)*
-4. The friction happened with those rules in place. *(#431: "signal-to-noise, not coverage")*
-5. So I cut instead of adding. *(#431)*
-6. Ten of 26 sections only pointed at a skill. *(#431)*
-7. Cutting them drops the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
-8. The trim cuts `RTK.md` down to its hook behaviour and leaves rtk running. *(#431 scope)*
-9. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
+1. A report on my sessions recommends five more sections for the instructions loaded on every turn. *(chezmoi #431)*
+2. The rules it wants already live in skills, which load only when a task calls for them. *(#431: `pr-create`, `issue-work`)*
+3. So I cut instead, taking the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
+4. The trim shortens `RTK.md` and leaves rtk running. *(#431 scope)*
+5. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
 
 ## 3. Let me try that again — *the turn*
 
