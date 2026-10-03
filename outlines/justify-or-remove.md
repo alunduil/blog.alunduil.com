@@ -56,8 +56,5 @@ never measured.
 
 ## Open
 
-- Does "what loads every turn earns its place with a number, or leaves"
-  describe a rule the author now holds? If yes, it becomes beat 4.7; if
-  no, the post lands on 4.6.
-- File the follow-up idea issue for the cloud-session permission
-  contract (chezmoi #428, #429) now, or after #429 resolves?
+- The author holds a version of "what loads every turn earns its place
+  with a number, or leaves"; beat 4.7 waits on the author's wording.
