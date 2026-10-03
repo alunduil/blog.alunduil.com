@@ -19,7 +19,7 @@ measured.
 
 1. A report on my sessions recommends five more sections for the instructions loaded on every turn. *(chezmoi #431)*
 2. The rules it wants already live in skills, which load only when a task calls for them. *(#431: `pr-create`, `issue-work`)*
-3. The habits it flagged happened with those skills in place, so a second copy on every turn would only crowd the rules that matter. *(#431: "signal-to-noise, not coverage"; PR #432)*
+3. The habits it flagged happened with those skills in place. *(#431)*
 4. So I cut instead, taking the always-loaded set from 594 lines to 241. *(chezmoi PR #432, 2026-07-26)*
 5. The trim shortens `RTK.md` and leaves rtk running. *(#431 scope)*
 6. That afternoon I file an issue: rtk shows measured savings or leaves. *(chezmoi #444, 2026-07-26)*
@@ -27,14 +27,14 @@ measured.
 ## 3. Let me try that again — *the turn*
 
 1. The issue sits for two months while rtk keeps filtering. *(#444 open 2026-07-26 to 2026-09-28)*
-2. The agent keeps reaching for `rtk proxy`, rtk's escape hatch that runs a command unfiltered. *(up to 732 agent commands across 63 sessions, 2026-09-06 to 2026-09-28, transcripts; the count includes every command containing the string)*
-3. The bypasses I see come with the agent saying rtk mangled the output, then rerunning unfiltered. *(transcripts: "a grep-based sweep gave me a confident wrong answer", 2026-09-18; "the rtk filtering proxy masking `diff`'s exit code", 2026-09-20)*
+2. The agents keep bypassing rtk with `rtk proxy`. *(transcripts, 2026-09-06 to 2026-09-28)*
+3. In live sessions the agents say rtk mangled the output and rerun unfiltered. *(transcripts, 2026-09-18, 2026-09-20)*
 4. How many of the 732 were retries, I never counted. *(author: "more sentiment than measured")*
-5. An agent replays rtk's history without my intervention, capping each command the way Claude Code caps output. *(chezmoi PR #802: 40,929 commands, 2026-06-30 to 2026-09-27, 30,000-character cap)*
+5. An agent replays rtk's history at Claude Code's output cap, without my intervention. *(chezmoi PR #802)*
 6. rtk's own `gain` report says 90.6% saved. *(PR #802)*
 7. One `curl` that Claude Code would have truncated anyway accounts for 166M of its 201M tokens. *(PR #802)*
 8. Capped, rtk saves 28.7%: about 112 tokens a command, and nothing on 76% of commands. *(PR #802)*
-9. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
+9. The tally counts what rtk cut and never the retries its cuts caused. *(author)*
 10. The number confirms what the retries I saw had already decided. *(author: "meh")*
 
 ## 4. Crisper, by feel — *the gap*
@@ -43,10 +43,10 @@ measured.
 2. Sessions feel crisper since, with less of the agent running a command twice. *(author)*
 3. Crisper is a feeling, and I never measured it. *(no measurement exists)*
 4. It might be confirmation bias. *(author)*
-5. The agent was wrong about rtk at least once too: a claim that rtk trimmed a `git log` line didn't reproduce. *(transcript, 2026-09-21)*
+5. An agent wrongly blames rtk at least once. *(transcript, 2026-09-21)*
 6. The July trim went unmeasured for turn cost too. *(#422 open question)*
 7. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
-8. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
+8. My own July issue had already said so. *(chezmoi #444)*
 
 ## 5. The next thing that asks to load — *the landing*
 
@@ -55,6 +55,6 @@ measured.
 3. The verdict mixes measurement with my own sentiment. *(author)*
 4. I'm moving it toward measured, so I understand a decision instead of feeling it out. *(author)*
 5. Renovate manages every version I pin. *(chezmoi `script/checks/renovate-pins`)*
-6. I'm building monitoring for whatever I might want to change. *(chezmoi PR #662 Grafana Cloud shipper; PR #680 per-process attribution after the 2026-08-29 zellij crash; alunduil-infrastructure PR #562 Fleet Management)*
+6. I'm building monitoring for whatever I might want to change. *(chezmoi PRs #662, #680; alunduil-infrastructure PR #562)*
 7. The principles are still converging. *(author: "converging instead of definitional")*
 8. Some of what a tool brings in, I still notice only later. *(author)*
