@@ -1,6 +1,6 @@
 # Justify or Remove — outline
 
-**Logline.** The moment of change is beat 3.8, where rtk's own savings
+**Logline.** The moment of change is beat 3.9, where rtk's own savings
 report meets the retries I'd been living with. The story opens on its
 opposite in scene 1: rtk arriving as another tool's default and never
 measured.
@@ -31,22 +31,24 @@ measured.
 
 1. The issue sits for two months while rtk keeps filtering. *(#444 open 2026-07-26 to 2026-09-28)*
 2. The agent keeps reaching for `rtk proxy`, rtk's escape hatch that runs a command unfiltered. *(up to 732 agent commands across 63 sessions, 2026-09-06 to 2026-09-28, transcripts; the count includes every command containing the string)*
-3. The bypasses are retries after rtk cut output the agent needed. *(author)*
-4. I replay rtk's history with each command capped the way Claude Code caps output. *(chezmoi PR #802: 40,929 commands, 2026-06-30 to 2026-09-27, 30,000-character cap)*
-5. rtk's own `gain` report says 90.6% saved. *(PR #802)*
-6. One `curl` that Claude Code would have truncated anyway accounts for 166M of its 201M tokens. *(PR #802)*
-7. Capped, rtk saves 28.7%: about 112 tokens a command, and nothing on 76% of commands. *(PR #802)*
-8. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
-9. The number confirms what the retries had already decided. *(author: "meh")*
+3. The bypasses I see come with the agent saying rtk mangled the output, then rerunning unfiltered. *(transcripts: "the earlier `diff` \"identical\" was rtk filtering the output", 2026-09-11; "counts came back as 0 … rtk mangling the pipeline", 2026-09-20)*
+4. How many of the 732 were retries, I never counted. *(author: "more sentiment than measured")*
+5. An agent replays rtk's history without my intervention, capping each command the way Claude Code caps output. *(chezmoi PR #802: 40,929 commands, 2026-06-30 to 2026-09-27, 30,000-character cap)*
+6. rtk's own `gain` report says 90.6% saved. *(PR #802)*
+7. One `curl` that Claude Code would have truncated anyway accounts for 166M of its 201M tokens. *(PR #802)*
+8. Capped, rtk saves 28.7%: about 112 tokens a command, and nothing on 76% of commands. *(PR #802)*
+9. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
+10. The number confirms what the retries I saw had already decided. *(author: "meh")*
 
 ## 4. Smoother, by feel — *the gap*
 
 1. I remove rtk. *(chezmoi PR #802, merged 2026-09-28)*
-2. Sessions run smoother since, with less of the agent running a command twice. *(author)*
-3. Smoother is a feeling, and I never measured it. *(no measurement exists)*
-4. The July trim went unmeasured for turn cost too. *(#422 open question)*
-5. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
-6. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
+2. Sessions feel crisper since, with less of the agent running a command twice. *(author)*
+3. Crisper is a feeling, and I never measured it. *(no measurement exists)*
+4. It might be confirmation bias. *(author)*
+5. The July trim went unmeasured for turn cost too. *(#422 open question)*
+6. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
+7. My own July issue had already said so: installed from a third-party repo's `master`, seeing every command's output. *(chezmoi #444 Motivation)*
 
 ## 5. The next thing that asks to load — *the landing*
 
