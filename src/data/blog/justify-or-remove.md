@@ -31,6 +31,18 @@ settings, still filtering every Bash command before the model saw it. It
 was there to make my sessions last. Its README promised 60–90% less
 context. I never measured that against my own sessions.
 
+In late July, Claude Code's `/insights` report recommended five new
+sections for the instructions loaded on every turn. It drew on 193 of my
+sessions. The rules it wanted already existed. They lived in skills, the
+instructions Claude Code loads only when a task calls for them.
+
+This time I didn't take the recommendation. I cut instead. On the
+twenty-sixth of July what loads on every turn went from 594 lines to 241.
+The same pass shortened `RTK.md`. rtk itself kept running.
+
+That afternoon I filed an issue against my own setup. rtk would show
+measured savings on my sessions, or it would leave.
+
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
