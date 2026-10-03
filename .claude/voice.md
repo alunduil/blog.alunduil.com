@@ -93,7 +93,10 @@ The house register for story posts (Tolkien/Carroll touchstone):
 
 ## Clarity pass
 
-After the revision pass, read each paragraph for crisp, literal prose:
+After the revision pass, read each paragraph for crisp, literal prose.
+The pass removes packaging and keeps the reasoning: fold a why into a
+subordinate clause so sentences still run their full length, and keep
+the sentence that explains a turn.
 
 - One idea per sentence. A sentence carrying a definition and an event
   splits in two.
