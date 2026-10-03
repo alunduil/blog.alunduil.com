@@ -44,6 +44,34 @@ shortened `RTK.md`, while rtk itself kept running.
 That afternoon I filed an issue against my own setup. rtk would show
 measured savings on my sessions, or it would leave.
 
+The issue sat open for two months while rtk went on filtering every
+command. In that time the agents kept bypassing it. rtk has an escape
+hatch, `rtk proxy`, which runs a command and leaves its output alone. In
+the three weeks of transcripts I still have, it appears in 732 agent
+commands across 63 sessions.
+
+I watched it happen in live sessions. When a check came back clean or
+empty, the agent would often explain a turn later that rtk had changed what
+it saw. On the eighteenth of
+September one said a grep-based sweep had given it "a confident wrong
+answer" because rtk had reformatted `git diff` out from under its filter.
+Two days later another found "the rtk filtering proxy masking `diff`'s exit
+code" and reran the comparison unfiltered. I never counted how many of the
+732 were reruns like these. What I had was the sessions I'd sat through.
+
+On the twenty-seventh of September I handed the question to an agent. It
+ran the replay on its own, taking rtk's history of 40,929 commands since
+the end of June and capping each one at the 30,000 characters of output
+Claude Code keeps anyway. rtk's own `gain` report claimed 90.6% saved. One
+`curl` accounted for 166M of its 201M tokens, output Claude Code would have
+cut down regardless. With every command capped the way Claude Code caps it,
+rtk saved 28.7%. That came to about 112 tokens a command. On 76% of
+commands it saved nothing.
+
+rtk's tally counted what it cut and never the reruns its cuts caused. By
+the time the number came back, the sessions had already decided. It only
+confirmed them.
+
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
