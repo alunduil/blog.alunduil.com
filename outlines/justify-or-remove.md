@@ -40,7 +40,7 @@ measured.
 9. The tally counts what rtk cut and never the retries its cuts caused. *(author: "cutting useful information rather than actually saving costs in tokens")*
 10. The number confirms what the retries I saw had already decided. *(author: "meh")*
 
-## 4. Smoother, by feel — *the gap*
+## 4. Crisper, by feel — *the gap*
 
 1. I remove rtk. *(chezmoi PR #802, merged 2026-09-28)*
 2. Sessions feel crisper since, with less of the agent running a command twice. *(author)*
