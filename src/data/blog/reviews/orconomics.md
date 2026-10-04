@@ -16,8 +16,8 @@ running amok, worth every word. I read it in July and went straight
 on to [*Son of a Liche*][liche]. I'd tell you to do the same.
 
 The book gives each fantasy convention a financial counterpart. Heroes need a
-licence from the guild, which ranks them by points. Firms like Goldson Baggs,
-a play on Goldman Sachs, run the funds. Orcs, goblins, and kobolds have to
+licence from the guild, which ranks them by points. Firms like Goldson Baggs
+run the funds. Orcs, goblins, and kobolds have to
 apply to become Noncombatant Paper Carriers so that heroes won't kill and
 loot them. NPC is a role-playing pun that also names the paperwork
 deciding who heroes may hunt.
