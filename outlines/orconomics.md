@@ -14,7 +14,8 @@ well-executed satire of capitalism running amok.
    among everyone else.
 2. Gorm is honour in the gutter. Evidence: he has lost his licence and his
    clan and robs adventurers for a living, yet he sticks up for an
-   undocumented goblin. The goblin becomes his squire, and Gorm stays loyal to him.
+   undocumented goblin. The goblin becomes his squire, and Gorm stays loyal
+   to him.
 
 ## Honest tail
 

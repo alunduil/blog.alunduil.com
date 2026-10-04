@@ -25,9 +25,9 @@ deciding who heroes may hunt.
 Gorm Ingerson has fallen about as far as a hero can and kept his sense of
 honour. He's a dwarf who lost his licence and his clan twenty years before
 the book opens. He gets by robbing adventurers. He still sticks up for an
-undocumented goblin. The goblin becomes his squire.
-Gorm stays loyal to him, and to the party of misfits around them, which is a
-lot of why he's so lovable.
+undocumented goblin. The goblin becomes his squire. Gorm stays loyal to him,
+and to the party of misfits around them, which is a lot of why he's so
+lovable.
 
 I read it as the 2008 housing crisis. Pike told [Fantasy Hive][interview]
 that after losing his job that year he spent a lot of time reading and
