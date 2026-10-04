@@ -127,6 +127,10 @@ Playdead
 Playdead's
 (?i)Atomfall
 Windscale
+(?i)Hellblade
+Senua
+Senua's
+Hiddenfolk
 
 # Books and fiction
 # Case-insensitive: post slugs carry these into ogImage paths, which Vale
