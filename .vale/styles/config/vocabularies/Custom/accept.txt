@@ -158,7 +158,6 @@ Liche
 Goldson
 Baggs
 kobolds
-NPCs
 Gorm
 Ingerson
 

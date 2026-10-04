@@ -136,21 +136,21 @@ the tail.** Everything else has a home already:
 - Decisions settled in conversation hold only while drafting. Delete them
   before the PR is ready.
 
+The `outlines/` dir is unpublished to the site but **public in the repo**, so
+the spine is spoiler-free. Its evidence is exactly what the post will use: the
+premise, the texture, and who the characters are, under §4's spoiler rules.
+
 **Size check before the gate.** The published reviews run 270–390 words; a
 spine longer than the review it produces has stopped being a skeleton. Spines
 grow when one is started from the previous review's file instead of from this
 template, because sections accrete and none are ever removed.
-
-The `outlines/` dir is unpublished to the site but **public in the repo**, so
-the spine is spoiler-free. Its evidence is exactly what the post will use: the
-premise, the texture, and who the characters are, under §4's spoiler rules.
 
 **Refactoring pass before the gate.** Read the spine against Fowler's
 refactoring catalogue and apply the entries that map to prose:
 
 - Remove Duplicated Code — a thesis restating its points, a sentence saying
   the previous one again.
-- Remove Dead Code — placeholders, plot recap, rules this skill already states.
+- Remove Dead Code — placeholders and plot recap.
 - Move or Slide Statements — one topic per section, most important first.
 - Change Function Declaration — rename a claim to match the evidence it has.
 
@@ -160,9 +160,9 @@ This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
 Commit the spine and open the draft PR holding only it, with `Closes #N`, so
 the author reviews it rendered on GitHub. Wait for the author's approval of
-the thesis and the points before drafting prose. The
-spine drives the post one direction only — after approval, structural changes
-originate here and flow forward ([[feedback_outline_drives_post]]).
+the thesis and the points before drafting prose. The spine drives the post one
+direction only — after approval, structural changes originate here and flow
+forward ([[feedback_outline_drives_post]]).
 
 ## 4. Draft — build the argument
 
