@@ -33,9 +33,8 @@ I read it as the 2008 housing crisis. Pike told [Fantasy Hive][interview]
 that after losing his job that year he spent a lot of time reading and
 listening to coverage of the financial crisis. He doubts many publishers
 would have looked at a book about orcs and goblins "lampooning a housing
-crisis" before it had an audience. So the reading isn't only mine. I can't
-tell yet whether that makes *Orconomics* a satire of one crash or of how
-money works in general.
+crisis" before it had an audience. So the reading isn't only mine. I don't
+know whether the satire is generic enough to always be true.
 
 [orconomics]: https://www.goodreads.com/book/show/25326486-orconomics
 [liche]: https://www.goodreads.com/book/show/40080889-son-of-a-liche
