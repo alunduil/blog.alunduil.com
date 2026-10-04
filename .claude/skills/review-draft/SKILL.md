@@ -49,14 +49,17 @@ conditional *is* the claim.
 ## 2. Substance — four questions, adapted to the object
 
 Ask these top to bottom; the answers become the spine. Don't infer them — the
-take is the author's ([[feedback_post_claims_provable]]). Vocabulary shifts by
-object type, the shape doesn't:
+take is the author's ([[feedback_post_claims_provable]]). Quote the answers
+verbatim in the spine. The post's prose starts from the author's phrasing.
+Vocabulary shifts by object type, the shape doesn't:
 
 1. **The single question — the thesis.** Finish "Read / read / play this
    because ___" (or "Skip it because ___"). That sentence is the logline.
 2. **The measurement — against what?** The argument engine is comparison: the
    canon, prior work, or genre the author already holds in their head and can
-   measure this against. This is the move a generic review can't make.
+   measure this against. This is the move a generic review can't make. "No
+   comparison" is a valid answer. The review then argues from its evidence
+   alone.
 3. **The evidence — one concrete moment.** The single scene, passage, result,
    mechanic, or system that made the thesis *felt*. This is the ~20% summary,
    and it exists to do argument-work. Every supporting point needs one. Where
@@ -142,22 +145,33 @@ or something concrete ("The Man in the Middle", "Whichever Comes Second",
 substance answers. When the author marks one as closest, offer rewordings of
 that one.
 
+The `outlines/` dir is unpublished to the site but **public in the repo**, so
+the spine is spoiler-free. Its evidence is what the post will use, chosen
+under §4's spoiler rules.
+
 **Size check before the gate.** The published reviews run 270–390 words; a
 spine longer than the review it produces has stopped being a skeleton. Spines
 grow when one is started from the previous review's file instead of from this
 template, because sections accrete and none are ever removed.
 
-The `outlines/` dir is unpublished to the site but **public in the repo**. Open
-a spine that names plot beats with a one-line `> **Spoilers.** …` marker; keep
-the beats concrete regardless — the spine needs them to drive the draft, and a
-reader in the notes drawer is opt-in. The spoiler *fence* is the published
-post's job (§4).
+**Refactoring pass before the gate.** Read the spine against Fowler's
+refactoring catalogue and apply the entries that map to prose:
+
+- Remove Duplicated Code — a thesis restating its points, a sentence saying
+  the previous one again.
+- Remove Dead Code — placeholders and plot recap.
+- Move or Slide Statements — one topic per section, most important first.
+- Change Function Declaration — rename a claim to match the evidence it has.
+
+Tell the author which entries applied and which were refused.
 
 This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
-Confirm the thesis and the points with the author before drafting prose. The
-spine drives the post one direction only — after approval, structural changes
-originate here and flow forward ([[feedback_outline_drives_post]]).
+The author reviews the spine rendered on GitHub, so commit it and open a draft
+PR holding only the spine, with `Closes #N`. Wait for the author's approval of
+the thesis and the points before drafting prose. The spine drives the post one
+direction only — after approval, structural changes originate here and flow
+forward ([[feedback_outline_drives_post]]).
 
 ## 4. Draft — build the argument
 
@@ -215,6 +229,9 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   (`.claude/voice.md`). Check the draft against voice.md's Shared DNA,
   Clarity pass, and Anti-tells before presenting it.
 
+Run §3's refactoring pass over the draft before handing it to the author, and
+report the entries the same way.
+
 ## 5. Frontmatter, citations, syndication
 
 The shared conventions apply unchanged — citations (`.claude/citations.md`),
@@ -238,6 +255,8 @@ Instagram check — with review-specific notes:
   (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
   `/syndicate-instagram <slug>` once live.
 - A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
+- **Title:** check each candidate with Vale (`pre-commit run --files <path>`)
+  before proposing it.
 
 ## When to invoke
 

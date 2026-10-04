@@ -88,6 +88,8 @@ The house register for story posts (Tolkien/Carroll touchstone):
   and never force a verb onto an abstraction ("the mean that reaches",
   "Pragmatism says"). People and tools take the verbs.
 - Strip blame: no "I should have", no confession closers.
+- Leave a work's jokes and parody names unexplained; the reader gets them.
+- Never name the author's former employers.
 
 ## Clarity pass
 
