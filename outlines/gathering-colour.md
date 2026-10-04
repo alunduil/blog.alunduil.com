@@ -10,15 +10,20 @@ It has some good instruction, but it's too preachy and the material is dry.
 
 ## Supporting points (thematic, not chronological)
 
-1. The instruction does its job. Evidence: I never knew how to put these
+1. The instruction does its job. Evidence: paint is pigment plus a binder,
+   about three parts pigment to one of medium, and it rests on the surface
+   where ink sinks in (pp. 18, 103–104). I never knew how to put these
    materials together and apply them; now I have a reference if I need it.
-2. The belief crowds out the instruction. Evidence: each project is a
-   one-page recipe followed by another page of belief on ethics, the land,
-   and magic, which reads as pushed. That's the author's
+2. The belief is woven into the instruction and repeated until it reads as
+   pushed. Evidence: the woven pouch's last step is to fill it with "magical
+   stones, dried plants, or other magic" (p. 65); the Harvest Moon cutoff
+   for gathering appears on pp. 24, 32 (twice), and 120. That's the author's
    prerogative; it isn't the book I wanted.
-3. The repetition makes it dry. Evidence: the prose circles the same points,
-   so the reading drags between recipes.
+3. The repetition makes it dry. Evidence: the solstice wreath is a ritual in
+   Part I (p. 21), a project in Part III (p. 134), and a hope in the
+   conclusion (p. 149), so the reading drags between recipes.
 
 ## Honest tail
 
-I haven't made anything from it. The verdict is a reader's, not a dyer's.
+I'm not a crafter; my partner is. Someone who already crafts might weigh the
+instruction against the preaching differently.
