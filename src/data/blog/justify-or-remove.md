@@ -1,9 +1,11 @@
 ---
 pubDatetime: 2026-10-13T07:00:00Z
 title: Justify or Remove
-description: "Provisional: chosen from the finished body."
+description: "I added rtk to make my Claude sessions last and kept it for months unmeasured. Using it is what told me to take it out."
 tags:
   - agentic-coding
+  - tooling
+  - decision-making
 ---
 
 In April I moved my work to Claude and [rebuilt my tooling around
