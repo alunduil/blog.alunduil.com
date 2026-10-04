@@ -91,23 +91,22 @@ though I'd believed it was. My own issue from July already said so. rtk
 had installed from whatever its repository's `master` branch held that day.
 It saw the output of every command in every session.
 
-When the next tool asks to load on every turn, I'll still try it. I look
-at what each one is trying to do, then run it to find out whether it does.
-Noticeable friction puts a tool on notice, with or without telemetry to
-show it. The verdict is still a mix of numbers and my own sense of the
-sessions, mostly the latter. I'm moving that mix toward measured, so I
-understand my decisions instead of feeling them out and ending up with
-something weird.
+I'll still try the next tool that asks to load on every turn, because
+running it is how I find out what it's actually doing. Friction will still
+be what puts it on notice, the way the reruns did for rtk before the replay
+put a number on them. Most of that judgement is still my own sense of the
+sessions. I'm moving it toward measured, so I understand why a tool stays
+or goes instead of feeling my way there and ending up with something weird.
 
-Every version I pin goes through Renovate. I've also started building
-monitoring for anything I might want to change. My dotfiles ship
-[per-process metrics][per-process] to Grafana, added after a zellij crash
-at the end of August left nothing to say which processes had used up the
-process limit. Fleet management across my machines comes next, through the
-same Grafana setup.
+For the next decision I want the facts in place before the friction. Every
+version I pin goes through Renovate, so I know what's running. I've started
+building monitoring for anything I might want to change, beginning with the
+[per-process metrics][per-process] my dotfiles ship to Grafana. Fleet
+management across my machines comes next, through the same setup.
 
-The principles are still converging. Some of what a tool brings in, I
-still notice only later.
+The principles are still converging. rtk was never something I pinned. It
+came in through another tool's default and its own installer. Some of what
+a tool brings in, I still notice only later.
 
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
