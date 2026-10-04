@@ -1,19 +1,21 @@
 # Justify or Remove — outline
 
 **Logline.** The moment of change is beat 3.9, where rtk's own savings
-report meets the retries I'd been living with. The story opens on its
-opposite in scene 1: rtk arriving as another tool's default and never
-measured.
+report meets the retries I'd been living with. The story opens in scene 1
+on rtk added as another tool's default and then left alone, never
+measured. It lands in scene 5 on the opposite: a tool earns its place in
+use, and friction sends me digging.
 
 ## 1. The warning in claustre's header — *the opposite*
 
-1. claustre ships with rtk turned on and flags its absence in the header. *(chezmoi #11, 2026-04-27)*
-2. I switch the check off. *(chezmoi #11)*
-3. A week later, cutting tokens per turn, I install rtk anyway. *(chezmoi #94, 2026-05-04)*
-4. rtk's installer writes its hook and `RTK.md` into my always-loaded config. *(#94: `rtk init -g --auto-patch`)*
-5. I copy its changes into chezmoi as written. *(#94: diffed and ported)*
-6. Six days later I drop claustre, and rtk stays. *(chezmoi #158, 2026-05-10)*
-7. Nobody measures rtk on this machine. *(chezmoi #444: "never been measured on this host")*
+1. Hitting Claude's session usage limit, I look for ways to make sessions last. *(author)*
+2. claustre ships with rtk turned on and flags its absence in the header. *(chezmoi #11, 2026-04-27)*
+3. I switch the check off. *(chezmoi #11)*
+4. A week later, cutting tokens per turn, I install rtk anyway. *(chezmoi #94, 2026-05-04)*
+5. rtk's installer writes its hook and `RTK.md` into my always-loaded config. *(#94: `rtk init -g --auto-patch`)*
+6. I copy its changes into chezmoi as written. *(#94: diffed and ported)*
+7. Six days later I drop claustre, and rtk stays. *(chezmoi #158, 2026-05-10)*
+8. I never measure rtk on this machine. *(chezmoi #444)*
 
 ## 2. The trim rtk survived — *the lift*
 
@@ -27,7 +29,7 @@ measured.
 ## 3. Let me try that again — *the turn*
 
 1. The issue sits for two months while rtk keeps filtering. *(#444 open 2026-07-26 to 2026-09-28)*
-2. The agents keep bypassing rtk with `rtk proxy`. *(transcripts, 2026-09-06 to 2026-09-28)*
+2. The agents keep bypassing rtk with `rtk proxy`. *(transcripts: 732 commands, 63 sessions, 2026-09-06 to 2026-09-28)*
 3. In live sessions the agents say rtk mangled the output and rerun unfiltered. *(transcripts, 2026-09-18, 2026-09-20)*
 4. How many of the 732 were retries, I never counted. *(author: "more sentiment than measured")*
 5. An agent replays rtk's history at Claude Code's output cap, without my intervention. *(chezmoi PR #802)*
