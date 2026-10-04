@@ -17,7 +17,6 @@ I ran those sessions from [claustre], a terminal dashboard for working across
 several projects at once. It came with rtk support turned on. On a machine
 without rtk, the top of the screen read `rtk not installed — press c to
 configure`. On the twenty-seventh of April I turned that off in its settings.
-The warning went away.
 
 A week later, cutting what each turn cost, I installed [rtk]. rtk is a proxy
 that sits in front of every Bash command an agent runs and shortens its output
@@ -35,10 +34,10 @@ sessions and recommended five new sections for the instructions loaded on
 every turn. Every rule it wanted already existed in skills, the instructions
 Claude Code loads only when a task calls for them. Since the habits it flagged
 had happened with those skills already in place, a second copy loaded on every
-turn would only crowd the rules that mattered. This time I didn't take the
-recommendation. I cut instead, taking what loads on every turn from 594 lines
-to 241 on the twenty-sixth of July. The same pass shortened `RTK.md`, while
-rtk itself kept running.
+turn would only crowd the rules that apply to every task. This time I didn't
+take the recommendation. I cut instead, taking what loads on every turn from
+594 lines to 241 on the twenty-sixth of July. The same pass shortened
+`RTK.md`, while rtk itself kept running.
 
 That afternoon I [filed an issue][issue] against my own setup. rtk would show
 measured savings on my sessions, or it would leave.
@@ -58,8 +57,8 @@ On the eighteenth of September one put it this way:
 > out from under a `^+` filter.
 
 Two days later another found "the rtk filtering proxy masking `diff`'s exit
-code" and reran the comparison unfiltered. I never counted how many of the 732
-were reruns like these. What I had was the sessions I'd sat through.
+code" and reran the comparison unfiltered. I didn't count how many of the 732
+were reruns like these. I had only my own sessions to go on.
 
 On the twenty-seventh of September I handed the question to an agent. It ran
 [the replay][replay] on its own, taking rtk's history of 40,929 commands since
@@ -70,18 +69,18 @@ cut down regardless. Capped that way, rtk saved 28.7%. That came to about 112
 tokens a command. On 76% of commands it saved nothing.
 
 rtk was there to keep my sessions from running out early. Its tally counted
-the output it cut and never the reruns those cuts caused, each one another
-turn spent against the same five-hour limit. Having watched that cost in the
-sessions themselves, I found the number only confirmed what I'd seen.
+the output it cut and never the reruns those cuts caused. Every rerun spent
+another turn against the same limit. The number didn't tell me anything the
+sessions hadn't.
 
 I removed rtk the next morning. My sessions have felt crisper since, with less
 of the agent running a command twice to see what it actually said.
 
-I haven't measured crisper. It might be confirmation bias. Even the agents
-sometimes blamed rtk for output it hadn't touched. On the twenty-first of
-September one wrote "my claim that rtk trims the first `git log` line doesn't
-reproduce" after comparing filtered and unfiltered output. I never measured
-what the July trim saved on each turn either.
+I have no numbers on whether my sessions are crisper. It might be confirmation
+bias. Even the agents sometimes blamed rtk for output it hadn't touched. On
+the twenty-first of September one wrote "my claim that rtk trims the first
+`git log` line doesn't reproduce" after comparing filtered and unfiltered
+output. I never measured what the July trim saved on each turn either.
 
 I still add tools because I like trying new things. Using a tool is the only
 way to find out whether it should stay, unless the data makes that clear
@@ -89,11 +88,11 @@ first. rtk had four and a half months of use before it went. Taking a tool out
 is a separate decision from putting it in. If a tool's being a pain, I don't
 argue with myself much.
 
-I'm data driven. Pragmatism says a feeling about a tool is more data to take
-into account. When I don't have the data, I either add a way to measure and
-give it a while or act because something feels far enough off kilter. The
-history the replay read had been there the whole time. I didn't look at it
-until the sessions felt wrong enough to send me there.
+I'm data driven. To me, a feeling about a tool is more data to take into
+account. When I don't have the data, I either add a way to measure and give it
+a while or act because something feels far enough off kilter. The replay read
+rtk's own history database, which held three months of commands by then. I
+didn't look at it until the sessions were bad enough that I went looking.
 
 Friction shows up as something slowing me down or causing rework. I rarely
 notice it until the timing is really bad or a result isn't what I expected,
