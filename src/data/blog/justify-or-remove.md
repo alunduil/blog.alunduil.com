@@ -53,8 +53,12 @@ commands across 63 sessions.
 I watched it happen in live sessions. When a check came back clean or
 empty, the agent would often explain a turn later that rtk had changed what
 it saw. On the eighteenth of
-September one said a grep-based sweep had given it "a confident wrong
-answer" because rtk had reformatted `git diff` out from under its filter.
+September one put it this way:
+
+> That's the second time this session a grep-based sweep gave me a
+> confident wrong answer—the earlier one was `rtk` reformatting `git diff`
+> out from under a `^+` filter.
+
 Two days later another found "the rtk filtering proxy masking `diff`'s exit
 code" and reran the comparison unfiltered. I never counted how many of the
 732 were reruns like these. What I had was the sessions I'd sat through.
@@ -87,6 +91,25 @@ though I'd believed it was. My own issue from July already said so. rtk
 had installed from whatever its repository's `master` branch held that day.
 It saw the output of every command in every session.
 
+When the next tool asks to load on every turn, I'll still try it. I look
+at what each one is trying to do, then run it to find out whether it does.
+Noticeable friction puts a tool on notice, with or without telemetry to
+show it. The verdict is still a mix of numbers and my own sense of the
+sessions, mostly the latter. I'm moving that mix toward measured, so I
+understand my decisions instead of feeling them out and ending up with
+something weird.
+
+Every version I pin goes through Renovate. I've also started building
+monitoring for anything I might want to change. My dotfiles ship
+[per-process metrics][per-process] to Grafana, added after a zellij crash
+at the end of August left nothing to say which processes had used up the
+process limit. Fleet management across my machines comes next, through the
+same Grafana setup.
+
+The principles are still converging. Some of what a tool brings in, I
+still notice only later.
+
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
+[per-process]: https://github.com/alunduil/alunduil-chezmoi/pull/680
