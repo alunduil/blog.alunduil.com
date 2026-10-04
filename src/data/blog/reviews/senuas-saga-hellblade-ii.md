@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-10-11T07:00:00Z
-title: Senua, As Ever
+title: Carried by Its Giants
 ogImage: ../../../assets/images/senuas-saga-hellblade-ii-cover.jpg
 description: "Senua's Saga: Hellblade II is as well made as the first game, and its giants are excellent, though the ending hits less hard."
 tags:

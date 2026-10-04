@@ -1,4 +1,4 @@
-# Senua's Saga: Hellblade II — review spine
+# Carried by Its Giants — review spine
 
 > **Spoilers.** Names each giant's human origin and how Senua ends it.
 
