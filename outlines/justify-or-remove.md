@@ -56,8 +56,6 @@ measured.
 4. I won't question it hard if the tool is a pain. *(author)*
 5. I'm data driven, though pragmatism needs sentiment too. *(author)*
 6. Without data, I measure for a while or act if the sentiment is far enough off. *(author)*
-7. Renovate keeps my tools and dependencies on their latest versions. *(author)*
-8. Monitoring alerts me to conditions I've said I want to know about. *(author)*
-9. Friction shows up as slowing me down or causing rework. *(author)*
-10. I rarely notice it until the timing is bad or a result surprises me. *(author)*
-11. Then I start digging. *(author)*
+7. Friction shows up as slowing me down or causing rework. *(author)*
+8. I rarely notice it until the timing is bad or a result surprises me. *(author)*
+9. Then I start digging. *(author)*
