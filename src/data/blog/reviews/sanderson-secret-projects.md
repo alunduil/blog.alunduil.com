@@ -37,12 +37,12 @@ she goes to sea after him. Tress works out a captain's motives only after the
 plot has turned on them, so her reasoning reads as a logical retrofit. It's a
 fun journey with too much deus ex machina for my taste.
 
-I didn't know [*Elantris*][elantris] and [*Mistborn: The Final
-Empire*][mistborn] were Cosmere books when I read them. Both were amazing.
-Neither needed me to know. These three put the Cosmere in the foreground,
-which left me wanting more of the worlds and less of the story at hand.
-They're also most of the Cosmere I've read. I don't know whether reading more
-of it would give me a better sense of these three.
+Sanderson has done better in this universe. I read [*Elantris*][elantris] and
+[*Mistborn: The Final Empire*][mistborn] without knowing they were Cosmere
+books and never needed to. Both were amazing. These three put the Cosmere in
+the foreground, which left me wanting more of it and less of the story at
+hand. With most of my Cosmere reading in these three, I may be missing what a
+longer-standing reader finds in them.
 
 [sunlit]: https://www.goodreads.com/book/show/60531420-the-sunlit-man
 [tress]: https://www.goodreads.com/book/show/63068384-tress-of-the-emerald-sea
