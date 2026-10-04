@@ -59,7 +59,10 @@ object type, the shape doesn't:
    measure this against. This is the move a generic review can't make.
 3. **The evidence — one concrete moment.** The single scene, passage, result,
    mechanic, or system that made the thesis *felt*. This is the ~20% summary,
-   and it exists to do argument-work.
+   and it exists to do argument-work. Every supporting point needs one. Where
+   a point's evidence would otherwise come from sources, ask how that element
+   compares with the measure ("how did the voices differ from the first
+   game?").
 4. **The honest tail — the admitted gap.** What the work left unresolved, or
    where the author's read might be wrong. The corpus's honest-limitation close
    ([[feedback_no_blame_in_retrospect]], `.claude/voice.md`).
@@ -130,8 +133,14 @@ the tail.** Everything else has a home already:
   area.
 - Work-specific facts stay at point of use: a capture's filename rides on the
   evidence line it supports, not in a notes section.
-- Decisions settled in conversation hold only while drafting. Delete them
-  before the PR is ready.
+- Decisions settled in conversation, and who supplied each fact, hold only
+  while drafting. Delete them before the PR is ready.
+
+**Propose the title at the gate.** Titles are plain phrases naming the claim
+or something concrete ("The Man in the Middle", "Whichever Comes Second",
+"Carried by Its Giants"). Build candidates from the author's own words in the
+substance answers. When the author marks one as closest, offer rewordings of
+that one.
 
 **Size check before the gate.** The published reviews run 270–390 words; a
 spine longer than the review it produces has stopped being a skeleton. Spines
@@ -203,7 +212,8 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   in the body as thematic analysis; the description can't carry them.
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
-  (`.claude/voice.md`).
+  (`.claude/voice.md`). Check the draft against voice.md's Shared DNA,
+  Clarity pass, and Anti-tells before presenting it.
 
 ## 5. Frontmatter, citations, syndication
 

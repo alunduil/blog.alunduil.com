@@ -34,9 +34,11 @@ scripting your own.
   hygiene, plus lychee link-checking and post scheduling
   (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` /
   `pnpm post-scheduling:check` run the same tools by hand; `pre-commit
-  install` once per clone makes `git commit` run them too. Single-file repo
-  checks live flat in `scripts/`; a workspace package is for code with its
-  own dependencies, build, and consumers.
+  install` once per clone makes `git commit` run them too. Run `pnpm
+  install` once per worktree: the post-scheduling hook imports workspace
+  dependencies. Single-file repo checks live flat in `scripts/`; a
+  workspace package is for code with its own dependencies, build, and
+  consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
   linters. The whole suite runs in CI via the `Lint and format` job in
