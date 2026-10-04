@@ -15,7 +15,7 @@ instead to Nomad and Rebeke as they learn their place in a larger conflict and
 its history. Three of Brandon Sanderson's Secret Projects, the four novels he
 crowdfunded on Kickstarter, are set in the Cosmere, the universe many of his
 novels share. I read those three this summer. Each builds a world worth
-exploring and tells a bland story in it. I'd read them for the Cosmere.
+exploring and tells a bland story in it. I'd read them for the worlds.
 
 In [*Tress of the Emerald Sea*][tress], the seas are spores that rain from
 twelve moons. Water makes the spores burst into growth, which turns every
@@ -39,8 +39,8 @@ fun journey with too much deus ex machina for my taste.
 Sanderson has done better in this universe. I read [*Elantris*][elantris] and
 [*Mistborn: The Final Empire*][mistborn] without knowing they were Cosmere
 books and never needed to. Both were amazing. These three put the Cosmere in
-the foreground, which left me wanting more of it and less of the story at
-hand. With most of my Cosmere reading in these three, I may be missing what a
+the foreground, which left me wanting more of the worlds and less of the story
+at hand. With most of my Cosmere reading in these three, I may be missing what a
 longer-standing reader finds in them.
 
 [sunlit]: https://www.goodreads.com/book/show/60531420-the-sunlit-man
