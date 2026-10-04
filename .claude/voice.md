@@ -119,6 +119,9 @@ the sentence that explains a turn.
 - Name the specific thing ("the rules that apply to every task") where a
   vague stand-in would go.
 - After a word or motif's second use, reach for another.
+- Repeat the noun where a pronoun's referent sits outside its own
+  sentence or could be two things: "rtk's installer", "the agent saw".
+  The author reads loose pronouns as ambiguous.
 
 Iterate in the file; apply the rules confidently, surface only genuine
 judgement calls.
