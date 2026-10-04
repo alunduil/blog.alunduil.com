@@ -133,8 +133,8 @@ the tail.** Everything else has a home already:
   area.
 - Work-specific facts stay at point of use: a capture's filename rides on the
   evidence line it supports, not in a notes section.
-- Conversation residue — settled decisions, who supplied a fact — holds only
-  while drafting. Delete it before the PR is ready.
+- Decisions settled in conversation, and who supplied each fact, hold only
+  while drafting. Delete them before the PR is ready.
 
 **Propose the title at the gate.** Titles are plain phrases naming the claim
 or something concrete ("The Man in the Middle", "Whichever Comes Second",
