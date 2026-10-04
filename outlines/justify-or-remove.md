@@ -50,11 +50,14 @@ measured.
 
 ## 5. The next thing that asks to load — *the landing*
 
-1. I still look at what each new tool is trying to do, then try it to find out. *(author)*
-2. Noticeable friction, with or without telemetry, puts it on notice. *(author)*
-3. The verdict mixes measurement with my own sentiment. *(author)*
-4. I'm moving it toward measured, so I understand a decision instead of feeling it out. *(author)*
-5. Renovate manages every version I pin. *(chezmoi `script/checks/renovate-pins`)*
-6. I'm building monitoring for whatever I might want to change. *(chezmoi PRs #662, #680; alunduil-infrastructure PR #562)*
-7. The principles are still converging. *(author: "converging instead of definitional")*
-8. Some of what a tool brings in, I still notice only later. *(author)*
+1. I add a new tool because I like trying new things. *(author)*
+2. Only using it tells me whether removal is warranted, unless the data is clear. *(author)*
+3. Removal is its own decision. *(author)*
+4. I won't question it hard if the tool is a pain. *(author)*
+5. I'm data driven, though pragmatism needs sentiment too. *(author)*
+6. Without data, I measure for a while or act if the sentiment is far enough off. *(author)*
+7. Renovate keeps my tools and dependencies on their latest versions. *(author)*
+8. Monitoring alerts me to conditions I've said I want to know about. *(author)*
+9. Friction shows up as slowing me down or causing rework. *(author)*
+10. I rarely notice it until the timing is bad or a result surprises me. *(author)*
+11. Then I start digging. *(author)*
