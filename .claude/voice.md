@@ -112,6 +112,13 @@ the sentence that explains a turn.
   what a tool did ("wrote a hook into my settings") over an idiom for it.
 - Say exactly what runs out, changes, or breaks: the allowance, not the
   hours; the hook, not "the wiring".
+- Open a sentence on its real subject and verb, and state the point
+  directly.
+- Give the verbs to people and tools. Abstractions and sessions are what
+  they act on.
+- Name the specific thing ("the rules that apply to every task") where a
+  vague stand-in would go.
+- After a word or motif's second use, reach for another.
 
 Iterate in the file; apply the rules confidently, surface only genuine
 judgement calls.
