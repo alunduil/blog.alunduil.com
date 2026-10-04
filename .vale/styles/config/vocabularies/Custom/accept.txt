@@ -164,6 +164,12 @@ Baggs
 kobolds
 Gorm
 Ingerson
+ffrench
+ffrench's
+Kickstarter
+mordanting
+gallnut
+crafter
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
