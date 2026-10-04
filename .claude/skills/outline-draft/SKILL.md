@@ -1,6 +1,6 @@
 ---
 name: outline-draft
-description: Draft the outline for a narrative blog post — gather substance, build a scene-and-beat outline, diagnose it, and stop at an author-approved outline. The pre-step to post-draft; story posts only. Invoke via /outline-draft [#N] for an idea issue, or omit for freeform.
+description: Draft the outline for an essay — gather substance, build a scene-and-beat outline, diagnose it, and stop at an author-approved outline. The pre-step to post-draft; essays only. Invoke via /outline-draft [#N] for an idea issue, or omit for freeform.
 ---
 
 # Outline draft

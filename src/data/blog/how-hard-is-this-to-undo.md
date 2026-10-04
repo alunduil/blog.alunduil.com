@@ -5,6 +5,7 @@ description: "A rule I gave a coding agent, to keep it off the moves I couldn't 
 tags:
   - agentic-coding
   - decision-making
+shape: essay
 ---
 
 On the last day of April I added a rule to `~/.claude/CLAUDE.md`, the

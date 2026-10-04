@@ -6,6 +6,7 @@ tags:
   - backups
   - cloud
   - truenas
+shape: how-to
 ---
 
 [How I Back Up][how-i-back-up] sketches this backup; here's the recipe. You

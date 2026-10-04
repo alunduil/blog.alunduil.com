@@ -5,6 +5,7 @@ description: "A cron-driven rdiff-backup recipe that pushes incremental backups 
 tags:
   - backups
   - rdiff-backup
+shape: how-to
 timezone: America/Chicago
 hideEditPost: true
 ---

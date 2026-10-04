@@ -6,6 +6,8 @@ ogImage: ../../../assets/images/tales-from-earthsea-cover.jpg
 tags:
   - worldbuilding
   - patriarchy
+shape: review
+reviewed: "Tales from Earthsea"
 ---
 
 Roke is already there in [*A Wizard of Earthsea*](https://www.goodreads.com/book/show/13642.A_Wizard_of_Earthsea).

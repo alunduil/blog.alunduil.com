@@ -7,6 +7,8 @@ tags:
   - idealism
   - pragmatism
   - belief
+shape: review
+reviewed: "The Sicilian"
 ---
 
 I read [*The Sicilian*](https://www.goodreads.com/book/show/826446) in June.

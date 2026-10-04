@@ -6,6 +6,7 @@ tags:
   - tooling
   - writing
   - agentic-coding
+shape: essay
 ---
 
 The blog had been quiet a long time before I archived it. Its last sign

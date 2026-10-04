@@ -6,6 +6,8 @@ description: "Lem's The Invincible works as a game and it works as a novel. It d
 tags:
   - adaptation
   - discovery
+shape: review
+reviewed: "The Invincible"
 ---
 
 Most of my time in [*The Invincible*](https://store.steampowered.com/app/731040/The_Invincible/)

@@ -6,6 +6,7 @@ tags:
   - disaster-recovery
   - backups
   - homelab
+shape: practice
 ---
 
 Somewhere in the American Midwest, a NanoPi-NEO3 runs one service and

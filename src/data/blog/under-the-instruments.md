@@ -6,6 +6,7 @@ tags:
   - agentic-coding
   - reliability
   - burnout
+shape: essay
 ---
 
 On the fourth of June I woke to a handful of branches that had gone green

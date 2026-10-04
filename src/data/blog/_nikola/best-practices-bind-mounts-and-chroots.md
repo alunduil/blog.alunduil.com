@@ -6,6 +6,7 @@ tags:
   - linux
   - chroot
   - bind-mounts
+shape: how-to
 timezone: America/Chicago
 hideEditPost: true
 ---
