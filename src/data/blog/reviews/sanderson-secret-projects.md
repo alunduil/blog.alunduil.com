@@ -2,6 +2,7 @@
 pubDatetime: 2026-10-25T08:00:00Z
 title: Worlds Worth More Than Their Stories
 description: "Brandon Sanderson's three Cosmere Secret Projects build strange worlds worth exploring, then tell bland stories in them."
+ogImage: ../../../assets/images/sanderson-secret-projects-cover.jpg
 tags:
   - worldbuilding
   - characterisation
