@@ -105,6 +105,9 @@ the sentence that explains a turn.
 - One topic per paragraph.
 - Every sentence adds information. Cut one whose only job is rhythm,
   contrast, or setting up the next.
+- A concrete detail earns its place only if it could have been otherwise.
+  A fact true of every case ("it came out in a single pull request") says
+  nothing.
 - Keep a figure only when the literal version loses information. Name
   what a tool did ("wrote a hook into my settings") over an idiom for it.
 - Say exactly what runs out, changes, or breaks: the allowance, not the
@@ -126,9 +129,9 @@ phrasing when a beat states a stance not listed here.
 - Friction: "slowing me down or causing rework". Noticed when "the timing
   is really bad or the results aren't what I expect", and then "I start
   digging".
-- Judgement: data driven, with pragmatism that needs sentiment. Without
-  data, either measure for a while or act when sentiment is "off kilter"
-  enough.
+- Judgement: data driven, and pragmatism treats sentiment as more data to
+  take into account. Without data, either measure for a while or act when
+  sentiment is "off kilter" enough.
 - Renovate keeps tools and dependencies on their latest versions.
   Monitoring, in the industry-standard sense, alerts on conditions the
   author has said they want to know about. Telemetry that explains a
