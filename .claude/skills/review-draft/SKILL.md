@@ -64,6 +64,11 @@ object type, the shape doesn't:
    where the author's read might be wrong. The corpus's honest-limitation close
    ([[feedback_no_blame_in_retrospect]], `.claude/voice.md`).
 
+Every supporting point needs the author's own evidence. Where a point's
+evidence would otherwise come from sources, ask how that element compares with
+the measure ("how did the voices differ from the first game?"). The
+comparison prompt draws out detail a bare "any moment?" doesn't.
+
 Per object type:
 
 - **Book** — evidence is a scene, character, or line; measure against comparable
@@ -132,6 +137,13 @@ the tail.** Everything else has a home already:
   evidence line it supports, not in a notes section.
 - Decisions settled in conversation hold only while drafting. Delete them
   before the PR is ready.
+- Evidence lines name the evidence itself, never who supplied it.
+
+**Propose the title at the gate.** Titles are plain phrases naming the claim
+or something concrete ("The Man in the Middle", "Whichever Comes Second",
+"Carried by Its Giants"). Build candidates from the author's own words in the
+substance answers. When the author marks one as closest, offer rewordings of
+that one.
 
 **Size check before the gate.** The published reviews run 270–390 words; a
 spine longer than the review it produces has stopped being a skeleton. Spines
@@ -204,6 +216,16 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
   (`.claude/voice.md`).
+
+Before presenting the draft, run voice.md's anti-tells and Shared DNA as a
+checklist:
+
+- Sentence length swings; the one-clause rule gets length from subordinate
+  clauses.
+- First person in each paragraph.
+- Hedged judgements around the flat verdict.
+- Lists of three only when the author supplied all three.
+- No word past its second use.
 
 ## 5. Frontmatter, citations, syndication
 
