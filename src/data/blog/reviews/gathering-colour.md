@@ -1,19 +1,18 @@
 ---
 pubDatetime: 2026-10-25T08:00:00Z
 title: Pigments, Pots, and Process
-description: "Caitlin ffrench's Gathering Colour has good instruction on making paint and natural dye, but it's preachy and dry unless you craft with your own supplies."
+description: "Caitlin ffrench's Gathering Colour has good instruction on making paint and natural dye, but it's heavy on ritual and dry unless you craft with your own supplies."
 ogImage: ../../../assets/images/gathering-colour-cover.jpg
 tags:
   - natural-dyeing
   - pigments
 ---
 
-The last step of the woven pouch in Caitlin ffrench's
-[*Gathering Colour*][book] is to fill it with "magical stones, dried plants,
-or other magic" and wear it. I backed the book on [Kickstarter][kickstarter]
-to see how dyeing worked and how to work with colours. It has some good
-instruction. It's also too preachy and dry. Unless you're big into crafting
-with your own supplies, I don't think it's worth the time.
+I backed Caitlin ffrench's [*Gathering Colour*][book] on
+[Kickstarter][kickstarter] to see how dyeing worked and how to work with
+colours. It has some good instruction. It also carries more ritual and belief
+than I wanted. The material is dry. Unless you're big into crafting with your
+own supplies, I don't think it's worth the time.
 
 I studied physics and have dabbled in painting, so the paint chapters had
 something to build on. Paint is pigment plus a binder, about three parts
@@ -37,7 +36,7 @@ the first part, a project in the last, and a hope again in the conclusion.
 Between the recipes, the reading drags.
 
 I'm not a crafter. My partner is. I don't know whether someone who already
-crafts would weigh the instruction against the preaching the way I did.
+crafts would weigh the instruction against the ritual the way I did.
 
 [book]: https://shop.ninetenpublications.ca/products/gathering-colour-by-caitlin-ffrench
 [kickstarter]: https://www.kickstarter.com/projects/ninetenpub/a-book-about-finding-magic-foraging-pigments-and-making-art

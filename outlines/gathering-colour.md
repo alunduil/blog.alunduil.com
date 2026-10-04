@@ -6,7 +6,8 @@ making paint, ink, and dye. I backed it to learn how dyeing works and how to
 work with colours.
 
 **Thesis:** Skip it unless you're big into crafting with your own supplies.
-It has some good instruction, but it's too preachy and the material is dry.
+It has some good instruction, but it carries more ritual and belief than I
+wanted, and the material is dry.
 
 ## Supporting points (thematic, not chronological)
 
@@ -19,8 +20,8 @@ It has some good instruction, but it's too preachy and the material is dry.
    to put these materials together and apply them; now I have a reference if
    I need it.
 2. The belief is woven into the instruction and repeated until it reads as
-   pushed. Evidence: the woven pouch's last step is to fill it with "magical
-   stones, dried plants, or other magic" (p. 65); the Harvest Moon cutoff
+   pushed. Evidence: the eco-printed patch, altar cloth, and wall quilt open
+   on magic before the materials (pp. 55, 67, 73); the Harvest Moon cutoff
    for gathering appears on pp. 24, 32 (twice), and 120. That's the author's
    prerogative; it isn't the book I wanted.
 3. The repetition makes it dry. Evidence: the solstice wreath is a ritual in
@@ -30,4 +31,4 @@ It has some good instruction, but it's too preachy and the material is dry.
 ## Honest tail
 
 I'm not a crafter; my partner is. Someone who already crafts might weigh the
-instruction against the preaching differently.
+instruction against the ritual differently.
