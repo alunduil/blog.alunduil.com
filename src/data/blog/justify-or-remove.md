@@ -86,6 +86,23 @@ trims the first `git log` line doesn't reproduce" once it compared filtered
 and unfiltered output. I never measured what the July trim saved on each turn
 either.
 
+I still add tools because I like trying new things. rtk got in that way. Using
+a tool is the only way to find out whether it should stay, unless the data
+makes that clear first. rtk had four and a half months of use before it went.
+Taking it out is a separate decision from putting it in. If a tool's being a
+pain, I don't argue with myself much.
+
+I'm data driven. Pragmatism says a feeling about a tool is more data to take
+into account. When I don't have the data, I either add a way to measure and
+give it a while or act because something feels far enough off kilter. rtk had
+been keeping a history of every command it filtered since the end of June. I
+didn't look at it until the sessions felt wrong enough to send me there.
+
+Friction shows up as something slowing me down or causing rework. I rarely
+notice it until the timing is really bad or a result isn't what I expected,
+like a `diff` that comes back identical when the files aren't. Then I start
+digging.
+
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
