@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-10-18T07:00:00Z
-title: Plunder Funds
+title: Keeping Arth's Economy Running
 description: "J. Zachary Pike's Orconomics turns fantasy adventuring into a financial industry and follows a disgraced dwarf who still has a sense of honour."
 ogImage: ../../../assets/images/orconomics-cover.jpg
 tags:
