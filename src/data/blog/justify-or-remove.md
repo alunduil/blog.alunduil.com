@@ -50,10 +50,9 @@ hatch, `rtk proxy`, which runs a command and leaves its output alone. In
 the three weeks of transcripts I still have, it appears in 732 agent
 commands across 63 sessions.
 
-I watched it happen in live sessions. When a check came back clean or
-empty, the agent would often explain a turn later that rtk had changed what
-it saw. On the eighteenth of
-September one put it this way:
+I watched it happen in live sessions. When a check came back clean or empty,
+the agent would often explain a turn later that rtk had changed what it saw.
+On the eighteenth of September one put it this way:
 
 > That's the second time this session a grep-based sweep gave me a
 > confident wrong answer—the earlier one was `rtk` reformatting `git diff`
@@ -84,31 +83,9 @@ I haven't measured crisper. It might be confirmation bias. Even the agents
 sometimes blamed rtk for output it hadn't touched. On the twenty-first of
 September one walked back its own report, admitting that "my claim that rtk
 trims the first `git log` line doesn't reproduce" once it compared filtered
-and unfiltered output. I never measured what the July trim saved on each turn either.
-
-Outlining this post, I learned that rtk had never been pinned to a version,
-though I'd believed it was. My own issue from July already said so. rtk
-had installed from whatever its repository's `master` branch held that day.
-It saw the output of every command in every session.
-
-I'll still try the next tool that asks to load on every turn, because
-running it is how I find out what it's actually doing. Friction will still
-be what puts it on notice, the way the reruns did for rtk before the replay
-put a number on them. Most of that judgement is still my own sense of the
-sessions. I'm moving it toward measured, so I understand why a tool stays
-or goes instead of feeling my way there and ending up with something weird.
-
-For the next decision I want the facts in place before the friction. Every
-version I pin goes through Renovate, so I know what's running. I've started
-building monitoring for anything I might want to change, beginning with the
-[per-process metrics][per-process] my dotfiles ship to Grafana. Fleet
-management across my machines comes next, through the same setup.
-
-The principles are still converging. rtk was never something I pinned. It
-came in through another tool's default and its own installer. Some of what
-a tool brings in, I still notice only later.
+and unfiltered output. I never measured what the July trim saved on each turn
+either.
 
 [off-the-desk]: /posts/off-the-desk
 [claustre]: https://github.com/pmbrull/claustre
 [rtk]: https://github.com/rtk-ai/rtk
-[per-process]: https://github.com/alunduil/alunduil-chezmoi/pull/680
