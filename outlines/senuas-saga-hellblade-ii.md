@@ -1,8 +1,6 @@
 # Senua's Saga: Hellblade II — review spine
 
-> **Spoilers.** Names each giant's human origin and how Senua ends it. The
-> published post keeps those as dispositions, not events, and says nothing
-> of the final antagonist.
+> **Spoilers.** Names each giant's human origin and how Senua ends it.
 
 Ninja Theory's 2024 sequel to *Hellblade: Senua's Sacrifice*, set in
 Viking-age Iceland. The first game is the measure throughout.
@@ -20,13 +18,13 @@ Viking-age Iceland. The first game is the measure throughout.
 2. **The story flows through mechanics, as the first game's did.** The game
    railroads Senua through its environments, and the story happens along
    the path. That makes it closer to *Inside* than to anything else —
-   evidence: general; the author named no single stretch.
-3. **The voices in Senua's head are amazing in spatial audio.** They
-   surround the player from every side — evidence: the binaural chorus
-   commenting, doubting, and warning as Senua moves.
+   evidence: the railroaded environments as a whole.
+3. **The voices in Senua's head are amazing in spatial audio.** They come
+   from every side — evidence: the binaural chorus commenting, doubting,
+   and warning as Senua moves.
 
 ## Honest tail
 
-The ending lands with a similar effect to the first game's, but less power.
+The ending has an effect similar to the first game's, with less power.
 *Senua's Sacrifice* had a clear overarching theme. Here the giants take the
 spotlight instead.
