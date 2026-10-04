@@ -39,7 +39,7 @@
       ]
     },
     {
-      "description": "Read actions pinned in wretry.action's `action:` input the same way as `uses:` pins: owner/repo@sha # tag.",
+      "description": "The github-actions manager reads only `uses:`, so this tracks actions pinned in wretry.action's `action:` input.",
       "customType": "regex",
       "managerFilePatterns": [".github/workflows/*.yml"],
       "matchStrings": [

@@ -52,8 +52,8 @@ jobs:
       name: github-pages
       url: ${{ fromJSON(steps.deployment.outputs.outputs).page_url }}
     steps:
-      # Without a retry, a transient Pages API failure waits for the next
-      # cron, holding the 07:50 run's posts back six hours.
+      # A transient Pages API failure would otherwise hold a scheduled
+      # post until the next cron.
       - id: deployment
         name: Deploy, retrying once on failure
         uses: Wandalen/wretry.action@e68c23e6309f2871ca8ae4763e7629b9c258e1ea # v3.8.0
