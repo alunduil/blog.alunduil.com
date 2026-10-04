@@ -8,29 +8,29 @@ tags:
   - grief
 ---
 
-The first giant in [*Senua's Saga: Hellblade II*][hb2] is a mother. When
-the volcano erupted, she left her infant in the caves of the Hiddenfolk,
-hoping they would keep it safe. What she became after that is huge and
-furious. A sword isn't what ends it. Each giant in the game is a person
-undone by grief or fear, given a way to move on from it. Every one of those
-arcs was excellent.
+The first giant in [*Senua's Saga: Hellblade II*][hb2] is a mother whom
+grief has made huge and furious. When the volcano erupted, she left her
+infant in the caves of the Hiddenfolk, hoping they would keep it safe.
+Senua doesn't end her with a sword. Each giant in the game is a person
+undone by grief or fear and given a way to move on, arcs I found excellent
+every time.
 
-I'd tell you to play it. Measured against [*Hellblade: Senua's
-Sacrifice*][hb1], Senua is as good as ever. Ninja Theory's craft is
-top-notch again. The story flows through the playing as seamlessly as it
-did there. The game railroads Senua through its environments. The story
-happens along the path she walks. That puts it closer to [*Inside*][inside]
-than to anything else I've played, a quick story told through its
-mechanics.
+I'd tell you to play it. Senua is as good as she was in [*Hellblade:
+Senua's Sacrifice*][hb1]. The quality is top-notch again. For me the
+narrative flows through the playing as seamlessly as it did in the first
+game, because the game railroads Senua through environments where the tale
+happens along the path she walks. That design puts *Hellblade II* closer to
+[*Inside*][inside] than to anything else I've played, a quick game told
+through its mechanics.
 
-The voices in Senua's head come at her from every side, commenting,
-doubting, and warning as she moves. In spatial audio they're amazing to
-hear.
+I played it with DTS:X, which puts the voices in Senua's head all around
+you. They're amazing to hear that way. They also talk to her differently
+this time. In *Senua's Sacrifice* they fed her hints and lies, where here
+they offer fewer of either and run closer to inner monologue.
 
-The ending is where it falls short of the first game. It lands with a
-similar effect, just with less power. *Senua's Sacrifice* had one clear
-theme running under everything. Here the giants take the spotlight
-instead.
+For me the ending falls short of the first game's. It lands with a similar
+effect but with less power. *Senua's Sacrifice* had one clear theme running
+under everything, while here the giants take the spotlight.
 
 [hb2]: https://store.steampowered.com/app/2461850/Senuas_Saga_Hellblade_II/
 [hb1]: https://store.steampowered.com/app/414340/Hellblade_Senuas_Sacrifice/
