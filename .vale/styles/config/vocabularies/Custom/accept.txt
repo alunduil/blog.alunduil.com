@@ -164,6 +164,16 @@ Baggs
 kobolds
 Gorm
 Ingerson
+(?i)Sanderson
+Sanderson's
+Cosmere
+Elantris
+Mistborn
+Rebeke
+Yumi
+Nikaro
+deus
+machina
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
