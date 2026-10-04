@@ -104,7 +104,7 @@ Apply them from their single homes:
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /
 freeform). Name the concrete subject. The slug becomes a permanent URL, so
-it stays specific as the archive grows. Keep the tone an account rather
+keep it specific enough to hold up as the archive grows. Keep the tone an account rather
 than a verdict, and offer three options, at least one naming the subject.
 Derive the description from the finished body: what happened, in the first
 person, without verdict words.

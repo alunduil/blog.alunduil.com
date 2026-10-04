@@ -29,7 +29,7 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   ([[feedback_no_blame_in_retrospect]])
 - **Show the mechanism.** "Without X, Y happens."
   ([[feedback_causal_narrative_over_contrast]]) Mechanism earns its
-  sentence where it explains a turn; each scene threads on the stake the
+  sentence where it explains a turn. Each scene threads on the stake the
   author named, what they were trying to do.
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
@@ -92,9 +92,9 @@ The house register for story posts (Tolkien/Carroll touchstone):
 ## Clarity pass
 
 After the revision pass, read each paragraph for crisp, literal prose.
-The pass removes packaging and keeps the reasoning: fold a why into a
-subordinate clause so sentences still run their full length, and keep
-the sentence that explains a turn.
+The pass removes packaging and keeps the reasoning. Fold a why into a
+subordinate clause so the sentence still runs its full length, and keep
+any sentence that explains a turn.
 
 - The paragraph's first sentence latches on the thing the paragraph is
   about.
@@ -122,9 +122,9 @@ judgement calls.
 
 ## Repertoire
 
-The author's own phrasings and stances, gathered while drafting. Reach
-for these before inventing an equivalent, and ask the author for the
-phrasing when a beat states a stance not listed here.
+The author's own phrasings and stances. Reach for these before
+inventing an equivalent, and ask the author for the phrasing when a beat
+states a stance not listed here.
 
 - Trying tools: "I like trying new things." Adding and removing are
   separate decisions; only using a thing shows whether removal is
@@ -137,8 +137,8 @@ phrasing when a beat states a stance not listed here.
   take into account. Without data, either measure for a while or act when
   sentiment is "off kilter" enough.
 - Renovate keeps tools and dependencies on their latest versions.
-  Monitoring, in the industry-standard sense, alerts on conditions the
-  author has said they want to know about. Telemetry that explains a
+  Monitoring alerts on conditions the author has said they want to know
+  about. Telemetry that explains a
   failure after the fact is not monitoring.
 - Practices are "converging instead of definitional".
 - Plain colloquial register: "faff", "weird stuff", "meh".

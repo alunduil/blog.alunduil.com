@@ -52,10 +52,11 @@ the author as assumptions to confirm or kill *before* building the arc on
 them — a wrong peak or a wrong emotional thread costs scenes to unwind,
 where a wrong fact costs a parenthetical.
 
-Stances are the author's to word. For any beat that states a view, a
-principle, or a reason, ask how the author would say it aloud, one short
+Ask the author to word each stance. For any beat that states a view, a
+principle, or a reason, ask how they would say it aloud, one short
 question per stance, and carry their wording into the beat. Start from
-the repertoire in `.claude/voice.md` and ask for what it doesn't cover.
+the repertoire in `.claude/voice.md` and ask only for what it doesn't
+cover.
 
 Substance lands as the outline file's **header**: the logline (the one
 moment of change), where the story opens (its opposite), and the
@@ -194,10 +195,9 @@ and excluded from the prose linters and lychee). Run the Diagnose pass.
 Confirm with the author. The skill ends at approval — hand to
 `post-draft`.
 
-The outline drives the post, one direction only: after approval, the
-outline is locked; structural changes originate here once the author
-reopens it, then flow forward to the post. The outline is the source of
-truth. Set `**Status.** locked` on approval. It reads `reopened` only
+The outline drives the post, one direction only. After approval the
+outline is locked. Structural changes start here once the author reopens
+it, then flow forward to the post. Set `**Status.** locked` on approval. It reads `reopened` only
 while the author has reopened it, and returns to `locked` on their
 sign-off.
 
