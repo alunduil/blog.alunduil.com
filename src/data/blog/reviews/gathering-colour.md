@@ -8,35 +8,36 @@ tags:
   - pigments
 ---
 
-I backed Caitlin ffrench's [*Gathering Colour*][book] on
-[Kickstarter][kickstarter] to see how dyeing worked and how to work with
-colours. It has some good instruction. It also carries more ritual and belief
-than I wanted. The material is dry. Unless you're big into crafting with your
-own supplies, I don't think it's worth the time.
+I'd always assumed dyeing was steam in a pot and done. I backed Caitlin
+ffrench's [*Gathering Colour*][book] on [Kickstarter][kickstarter] to learn
+how it actually works and how to work with colours. It has some good
+instruction, set among more ritual and belief than I wanted and in prose
+that runs dry. Unless you're big into crafting with your own supplies, I
+don't think it's worth the time.
 
-I studied physics and have dabbled in painting, so the paint chapters had
-something to build on. Paint is pigment plus a binder, about three parts
-pigment to one of medium. It rests on the surface, where ink sinks into the
-paper. Dyeing I'd assumed was steam in a pot and done. ffrench walks through
-scouring and mordanting the fibre before any dye will hold, with alum for
-wool and silk, and gallnut, alum acetate, and chalk for cotton and linen.
-I appreciate the process more now. I never knew how to put these materials
-together and apply them. Now I have a reference if I need it.
+The paint chapters gave me the most to latch onto, since I studied physics
+and have dabbled a little in painting. Paint is pigment held in a binder,
+about three parts to one, which rests on the surface where ink soaks into the
+paper. I had nothing like that to build on for dyeing. The book shows that
+fibre has to be scoured and then mordanted before any dye will hold, which is
+a long way from steam in a pot. I appreciate the process a lot more now.
+I never knew how these materials went together or how to apply them. Now I
+have a reference if I need it.
 
-ffrench weaves belief into that instruction rather than setting it beside it.
-The first part walks through the eight pagan holidays and the phases of the
-moon. The last part is rituals, from moon water to incense. In the projects
-between, the eco-printed patch, the altar cloth, and the wall quilt all open
-on magic before the materials list. The rule against gathering flowers after
-the Harvest Moon comes round four times. That's the author's prerogative. It
+The belief runs through that instruction rather than sitting beside it. The
+book opens on the eight pagan holidays and the phases of the moon and closes
+on moon water, incense, and the four elements. Several projects between,
+like the eco-printed patch and the altar cloth, start from the magic in them
+before they reach the materials. The rule against gathering flowers after the
+Harvest Moon comes up four times. That's the author's prerogative. It just
 isn't the book I wanted.
 
-The repetition is also what makes it dry. The solstice wreath is a ritual in
-the first part, a project in the last, and a hope again in the conclusion.
-Between the recipes, the reading drags.
+Repetition is also what makes it dry. The solstice wreath appears as a
+ritual near the start, as a project near the end, and once more as a hope in
+the conclusion. Between recipes, the reading drags.
 
-I'm not a crafter. My partner is. I don't know whether someone who already
-crafts would weigh the instruction against the ritual the way I did.
+I'm not a crafter, though my partner is. I don't know whether someone who
+already crafts would weigh the instruction against the ritual the way I did.
 
 [book]: https://shop.ninetenpublications.ca/products/gathering-colour-by-caitlin-ffrench
 [kickstarter]: https://www.kickstarter.com/projects/ninetenpub/a-book-about-finding-magic-foraging-pigments-and-making-art
