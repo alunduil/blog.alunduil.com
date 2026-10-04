@@ -17,6 +17,7 @@ GrafanaCON
 Replit
 bobbit
 Hakyll
+Kickstarter
 Dockerfile
 pnpm
 toolchain
