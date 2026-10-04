@@ -13,18 +13,19 @@ the volcano erupted, she left her infant in the caves of the Hiddenfolk,
 hoping they would keep it safe. What she became after that is huge and
 furious. A sword isn't what ends it. Each giant in the game is a person
 undone by grief or fear, given a way to move on from it. Every one of those
-arcs was excellent. They're the first reason I'd tell you to play it.
+arcs was excellent.
 
-I measure it against [*Hellblade: Senua's Sacrifice*][hb1]. Senua is as
-good as ever, and Ninja Theory's craft is top-notch again. The story flows
-through the playing as seamlessly as the first game's did. The game
-railroads Senua through environments that carry the story along the path
-she walks. That puts it closer to [*Inside*][inside] than to anything else
-I've played, a quick story told through its mechanics.
+I'd tell you to play it. Measured against [*Hellblade: Senua's
+Sacrifice*][hb1], Senua is as good as ever. Ninja Theory's craft is
+top-notch again. The story flows through the playing as seamlessly as it
+did there. The game railroads Senua through its environments. The story
+happens along the path she walks. That puts it closer to [*Inside*][inside]
+than to anything else I've played, a quick story told through its
+mechanics.
 
-The voices in Senua's head are the other reason. They come at her from
-every side, commenting, doubting, and warning as she moves. In spatial
-audio they surround you too. They're amazing to hear.
+The voices in Senua's head come at her from every side, commenting,
+doubting, and warning as she moves. In spatial audio they're amazing to
+hear.
 
 The ending is where it falls short of the first game. It lands with a
 similar effect, just with less power. *Senua's Sacrifice* had one clear
