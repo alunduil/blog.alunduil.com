@@ -28,7 +28,9 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
 - **Retrospect observes.** Ownership ("I did X"), stated flat.
   ([[feedback_no_blame_in_retrospect]])
 - **Show the mechanism.** "Without X, Y happens."
-  ([[feedback_causal_narrative_over_contrast]])
+  ([[feedback_causal_narrative_over_contrast]]) Mechanism earns its
+  sentence where it explains a turn; each scene threads on the stake the
+  author named, what they were trying to do.
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
   punctuation outside the quotes. ([[project_grammar_lean]])
@@ -40,7 +42,8 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   or comma-splice that hooks two complete thoughts together. Length comes
   from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
   Compound predicates on one subject are fine ("he shows X and stops
-  there"); see **Flow** in the register below.
+  there"); see **Flow** in the register below. A definition and an event
+  are two sentences.
 
 ## Register: poetic without being poetry
 
@@ -49,7 +52,8 @@ The house register for story posts (Tolkien/Carroll touchstone):
 - **Latch first.** Open each scene on something concrete the reader can
   hold.
 - **Flow.** Carry weight in cadence and image, in sentences that run
-  their full length.
+  their full length. A run of short sentences lands after one sentence
+  that carries the thread.
 - **Punctuation marks structure.** Let the period carry the load. A comma
   only for a grammatical job (clause join, serial list, trailing
   absolute). Colons, semicolons, and em-dashes earn their place by doing
@@ -81,15 +85,9 @@ The house register for story posts (Tolkien/Carroll touchstone):
   thing a book like this could leave me"), and no weak trailing cliffhanger
   ("mostly that's all it is").
 - Active verbs over dead linking: an agent doing something beats "X is Y's",
-  and never force a verb onto an abstraction ("the mean that reaches").
+  and never force a verb onto an abstraction ("the mean that reaches",
+  "Pragmatism says"). People and tools take the verbs.
 - Strip blame: no "I should have", no confession closers.
-
-- Thread each scene on the stake the author named, what they were trying
-  to do. Mechanism earns its sentence where it explains a turn.
-- Give a run of short sentences a thread first: one sentence carries the
-  why, then the short ones land.
-- Name things in the vendor's own terms ("session usage limit"), and
-  gloss a tool a general reader won't know in a clause on first mention.
 
 ## Clarity pass
 
@@ -98,8 +96,6 @@ The pass removes packaging and keeps the reasoning: fold a why into a
 subordinate clause so sentences still run their full length, and keep
 the sentence that explains a turn.
 
-- One idea per sentence. A sentence carrying a definition and an event
-  splits in two.
 - The paragraph's first sentence latches on the thing the paragraph is
   about.
 - One topic per paragraph.
@@ -108,16 +104,14 @@ the sentence that explains a turn.
 - A concrete detail earns its place only if it could have been otherwise.
   A fact true of every case ("it came out in a single pull request") says
   nothing.
-- Keep a figure only when the literal version loses information. Name
-  what a tool did ("wrote a hook into my settings") over an idiom for it.
-- Say exactly what runs out, changes, or breaks: the allowance, not the
-  hours; the hook, not "the wiring".
+- Keep a figure only when the literal version loses information.
+- Name the specific thing over a stand-in: what a tool did ("wrote a hook
+  into my settings"), what runs out (the allowance, not the hours), which
+  rules ("the rules that apply to every task").
+- Name things in the vendor's own terms ("session usage limit"), and
+  gloss a tool a general reader won't know in a clause on first mention.
 - Open a sentence on its real subject and verb, and state the point
   directly.
-- Give the verbs to people and tools. Abstractions and sessions are what
-  they act on.
-- Name the specific thing ("the rules that apply to every task") where a
-  vague stand-in would go.
 - After a word or motif's second use, reach for another.
 - Repeat the noun where a pronoun's referent sits outside its own
   sentence or could be two things: "rtk's installer", "the agent saw".

@@ -79,8 +79,7 @@ Draft and lock **one scene at a time, with the author.** For each scene:
    ([[feedback_post_claims_provable]]).
 2. Expand each beat into a passage from that material.
 3. Run the passes in order: `voice.md`'s sentence rules and revision
-   pass, its clarity pass, a pronoun read, then
-   `pre-commit run --files <path>`.
+   pass, then its clarity pass, then `pre-commit run --files <path>`.
 4. Stage the scene in chat. It enters the file once the author approves.
 
 Refine the wording together, lock the scene, and move to the next. Flow

@@ -102,8 +102,8 @@ the last scene's role is usually the honest limitation, not the win.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the thirteen
-failure signatures:
+Before approval, read the beats top to bottom and check the failure
+signatures below:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
 2. **Redundant beats** — two beats saying the same thing → merge.
