@@ -47,8 +47,6 @@ use, and friction sends me digging.
 4. It might be confirmation bias. *(author)*
 5. An agent wrongly blames rtk at least once. *(transcript, 2026-09-21)*
 6. The July trim went unmeasured for turn cost too. *(#422 open question)*
-7. Outlining this post, I learn rtk was never pinned, though I believed it was. *(author, 2026-10-02)*
-8. My own July issue had already said so. *(chezmoi #444)*
 
 ## 5. The next thing that asks to load — *the landing*
 
