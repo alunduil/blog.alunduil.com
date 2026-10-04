@@ -50,15 +50,15 @@ conditional *is* the claim.
 
 Ask these top to bottom; the answers become the spine. Don't infer them — the
 take is the author's ([[feedback_post_claims_provable]]). Quote the answers
-verbatim in the spine, and start the post's prose from the author's own
-phrasing. Vocabulary shifts by object type, the shape doesn't:
+verbatim in the spine. The post's prose starts from the author's phrasing.
+Vocabulary shifts by object type, the shape doesn't:
 
 1. **The single question — the thesis.** Finish "Read / read / play this
    because ___" (or "Skip it because ___"). That sentence is the logline.
 2. **The measurement — against what?** The argument engine is comparison: the
    canon, prior work, or genre the author already holds in their head and can
    measure this against. This is the move a generic review can't make. "No
-   comparison" is a real answer; the review then argues from its evidence
+   comparison" is a valid answer. The review then argues from its evidence
    alone.
 3. **The evidence — one concrete moment.** The single scene, passage, result,
    mechanic, or system that made the thesis *felt*. This is the ~20% summary,
@@ -137,8 +137,8 @@ the tail.** Everything else has a home already:
   before the PR is ready.
 
 The `outlines/` dir is unpublished to the site but **public in the repo**, so
-the spine is spoiler-free. Its evidence is exactly what the post will use: the
-premise, the texture, and who the characters are, under §4's spoiler rules.
+the spine is spoiler-free. Its evidence is what the post will use, chosen
+under §4's spoiler rules.
 
 **Size check before the gate.** The published reviews run 270–390 words; a
 spine longer than the review it produces has stopped being a skeleton. Spines
@@ -158,8 +158,8 @@ Tell the author which entries applied and which were refused.
 
 This is the cheap control point, the review's equivalent of the outline gate: a
 wrong thesis costs a line to fix here, two thousand words after drafting.
-Commit the spine and open the draft PR holding only it, with `Closes #N`, so
-the author reviews it rendered on GitHub. Wait for the author's approval of
+The author reviews the spine rendered on GitHub, so commit it and open a draft
+PR holding only the spine, with `Closes #N`. Wait for the author's approval of
 the thesis and the points before drafting prose. The spine drives the post one
 direction only — after approval, structural changes originate here and flow
 forward ([[feedback_outline_drives_post]]).
@@ -219,7 +219,7 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   register, CMOS grammar, very low formatting — prose carries the structure
   (`.claude/voice.md`).
 
-Before handing the draft to the author, run §3's refactoring pass over it and
+Run §3's refactoring pass over the draft before handing it to the author, and
 report the entries the same way.
 
 ## 5. Frontmatter, citations, syndication
@@ -245,8 +245,8 @@ Instagram check — with review-specific notes:
   (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
   `/syndicate-instagram <slug>` once live.
 - A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
-- **Title:** run a candidate through Vale (`pre-commit run --files <path>`)
-  before proposing it, so the author chooses among titles that pass.
+- **Title:** check each candidate with Vale (`pre-commit run --files <path>`)
+  before proposing it.
 
 ## When to invoke
 
