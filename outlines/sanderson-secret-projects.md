@@ -33,9 +33,3 @@ Cosmere books, both were amazing, and neither needed me to know that.
 
 I've read five Cosmere books. More might change how the connective tissue
 reads.
-
-## Left out
-
-- *The Frugal Wizard's Handbook*: the fourth Secret Project, but not Cosmere.
-- Nomad's identity from *The Stormlight Archive*, which I haven't read.
-- Plot beyond each book's premise.

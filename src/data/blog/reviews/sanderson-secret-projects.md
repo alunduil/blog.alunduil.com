@@ -27,8 +27,8 @@ away nightmares.
 The protagonists act younger than these books need. *The Sunlit Man* makes a
 point of Nomad's age, yet his sense of morality keeps pulling against his wish
 to stay detached. He reads to me as immature and not self-aware, more
-hypocrite than veteran. Nikaro, the painter in *Yumi*, is another emo
-protagonist who needs to stop being adolescent. Yumi develops well, while
+hypocrite than veteran. Nikaro, the painter in *Yumi*, is another brooding
+lead who needs to stop being adolescent. Yumi develops well, while
 Nikaro has to catch up for the ending to work. It somehow does. Her growth,
 and a nice romance, make *Yumi* the best of the three.
 
