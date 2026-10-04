@@ -1,37 +1,41 @@
 # More World Than Story — review spine
 
-Three of Brandon Sanderson's Kickstarter Secret Projects, all set in his shared
-Cosmere universe: *Tress of the Emerald Sea*, *Yumi and the Nightmare Painter*,
-and *The Sunlit Man* (all 2023).
+Three of Brandon Sanderson's 2023 Kickstarter Secret Projects, all set in his
+shared Cosmere universe: *Tress of the Emerald Sea*, *Yumi and the Nightmare
+Painter*, and *The Sunlit Man*.
 
-**Thesis:** Skip them unless you want more of the Cosmere. Each builds a world
-worth exploring and puts a bland story in it: "It all felt a bit bland if I'm
-being honest."
+**Thesis:** Each book builds a world worth exploring and tells a bland story in
+it. Read them for the Cosmere, not for the story.
 
-## Supporting points (thematic, not chronological)
+## Supporting points
 
-1. The worlds carry these books — evidence: *Tress*'s spore seas, "a world
-   with some really weird behaviours"; *Yumi*'s "great world build"; Canticle
-   in *The Sunlit Man*, "so weird I couldn't stop thinking about it."
-2. The protagonists act younger than the books need — evidence: Nomad, who the
-   book says is very old, sets his sense of morality against detached desires,
-   leaving him "immature and not self aware." In *Yumi*, Nikaro is "another emo
-   protagonist who needs to stop being adolescent"; Yumi "develops nicely,"
-   and Nikaro has to catch up for the ending to work, "which it somehow does."
-3. The plots run on rails — evidence: *Tress* goes kidnapped paramour, then
-   sailing, then "logical retrofits for her reasoning on captain's motives."
-   "A railroad with too much deus ex machina for my taste."
-4. The overt Cosmere pulls attention off the story — evidence: Nomad and Rebeke
-   learning their place in the larger conflict and its history is what "I
-   latched on to," and it distracted from understanding the world. "Cosmere
-   being overt seems to make me want more of that built and less of the story
-   at hand."
+1. **The world wins over the story.** Each book's best part is its setting, and
+   the plot competes with it for attention.
+   - *The Sunlit Man*: Nomad and Rebeke's story pulls attention away from
+     Canticle, the world I wanted to understand. This is the opener.
+   - *Tress*: the spore seas.
+   - *Yumi*: a great world build, carrying a nice romance.
+2. **The protagonists don't grow up.** Two of the three leads act younger than
+   the story needs.
+   - Nomad: the book calls him very old, yet he reads as immature and not
+     self-aware, saying one thing and wanting another.
+   - Nikaro: adolescent until late, catching up to Yumi so the ending can work.
+   - Yumi is the exception: she develops well, which is why her book is the
+     best of the three.
+3. **The plot runs on rails.** In *Tress*, events arrive first and the
+   reasoning is fitted afterwards: Tress's read of the captain's motives
+   explains a turn the plot has already taken.
 
-Measured against *Elantris* and *Mistborn: The Final Empire*: "both of those
-were amazing," and I didn't know they were Cosmere books. *Yumi* comes
-closest, "a nice romance."
+**Measured against:** *Elantris* and *Mistborn: The Final Empire*. Both are
+Cosmere books, both were amazing, and neither needed me to know that.
 
 ## Honest tail
 
-These are most of the Cosmere I've read: "perhaps I need to get more to get a
-better sense."
+I've read five Cosmere books. More might change how the connective tissue
+reads.
+
+## Left out
+
+- *The Frugal Wizard's Handbook*: the fourth Secret Project, but not Cosmere.
+- Nomad's identity from *The Stormlight Archive*, which I haven't read.
+- Plot beyond each book's premise.
