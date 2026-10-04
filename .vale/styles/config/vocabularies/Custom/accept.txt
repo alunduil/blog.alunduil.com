@@ -167,7 +167,6 @@ Gorm
 Ingerson
 ffrench
 ffrench's
-Kickstarter
 mordanting
 mordanted
 gallnut
