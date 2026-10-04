@@ -1,4 +1,4 @@
-# More World Than Story — review spine
+# Worlds Worth More Than Their Stories — review spine
 
 Three of Brandon Sanderson's 2023 Kickstarter Secret Projects, all set in his
 shared Cosmere universe: *Tress of the Emerald Sea*, *Yumi and the Nightmare
