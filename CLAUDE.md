@@ -36,9 +36,9 @@ scripting your own.
   `pnpm post-scheduling:check` run the same tools by hand; `pre-commit
   install` once per clone makes `git commit` run them too. Run `pnpm
   install` once per worktree: the post-scheduling hook imports workspace
-  dependencies. Single-file repo
-  checks live flat in `scripts/`; a workspace package is for code with its
-  own dependencies, build, and consumers.
+  dependencies. Single-file repo checks live flat in `scripts/`; a
+  workspace package is for code with its own dependencies, build, and
+  consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
   linters. The whole suite runs in CI via the `Lint and format` job in

@@ -247,6 +247,7 @@ calibration; treat as provisional, recalibrate as more land).
 - Bold-for-emphasis and bulleted lists where prose would carry it.
 - A triumphant or summarising closer instead of an admitted gap.
 - Flat declaratives with no hedge; uniform medium sentence length.
+- A three-item list the author didn't supply.
 - Section headers on a reflective/narrative piece.
 - Abstraction where the corpus would name a date, a count, or a tool.
 - Applying the narrative flourish register to an instructional post —
