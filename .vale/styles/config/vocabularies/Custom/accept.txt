@@ -152,6 +152,15 @@ Iria
 magery
 Ogion
 Semel
+(?i)Orconomics
+Arth
+Liche
+Goldson
+Baggs
+kobolds
+NPCs
+Gorm
+Ingerson
 
 # Domain terms (suppress Microsoft.Terms swaps that don't fit a blog
 # about AI coding agents).
