@@ -64,17 +64,17 @@ mostly caught the reruns in Claude's thinking. Claude sometimes summarises
 that thinking out of the turn. Then I miss the reruns completely.
 
 On the twenty-seventh of September I handed the question to an agent. The
-agent ran [the replay][replay] on its own, taking rtk's history of 40,929
-commands since the end of June and capping each command at the 30,000
-characters of output Claude Code keeps anyway. rtk's own `gain` report put the
-savings at 90.6%. One `curl` accounted for 166M of the report's 201M tokens,
-output Claude Code would have cut down regardless. Capped that way, rtk saved
-28.7%, about 112 tokens a command. On 76% of commands rtk saved nothing.
+agent ran the replay on its own, taking rtk's history of 40,929 commands since
+the end of June and capping each command at the 30,000 characters of output
+Claude Code keeps anyway. rtk's own `gain` report put the savings at 90.6%, as
+[the pull request that removed rtk][replay] records. One `curl` accounted for
+166M of the report's 201M tokens, output Claude Code would have cut down
+regardless. Capped that way, rtk saved 28.7%, about 112 tokens a command. On
+76% of commands rtk saved nothing.
 
 rtk was there to keep my sessions from running out early. rtk's tally counted
 the cut output and never the reruns those cuts caused. Every rerun spent
-another turn against the same limit. The number didn't tell me anything the
-sessions hadn't.
+another turn against the same limit. The number matched what I'd already seen.
 
 I removed rtk the next morning. My sessions have felt crisper since, with less
 of the agent rerunning a command to see the real output.
