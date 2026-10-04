@@ -13,7 +13,9 @@ It has some good instruction, but it's too preachy and the material is dry.
 1. The instruction does its job. Evidence: paint is pigment plus a binder,
    about three parts pigment to one of medium, and it rests on the surface
    where ink sinks in (pp. 18, 103–104). Physics gave me some colour and I'd
-   dabbled in painting, so this had something to build on. I never knew how
+   dabbled in painting, so this had something to build on. Dyeing I'd
+   assumed was steam in a pot and done; scouring and mordanting before the
+   dye will hold (pp. 37–40) gave me an appreciation for the process. I never knew how
    to put these materials together and apply them; now I have a reference if
    I need it.
 2. The belief is woven into the instruction and repeated until it reads as
