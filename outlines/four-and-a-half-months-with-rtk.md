@@ -1,5 +1,7 @@
 # Four and a Half Months with rtk — outline
 
+**Status.** locked
+
 **Logline.** The moment of change is beat 3.9, where rtk's own savings
 report meets the retries I'd been living with. The story opens in scene 1
 on rtk added as another tool's default and then left alone, never

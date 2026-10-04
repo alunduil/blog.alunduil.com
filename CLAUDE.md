@@ -33,7 +33,8 @@ scripting your own.
   plugins/configs resolve from workspace deps), and baseline file
   hygiene, plus lychee link-checking and post scheduling
   (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` /
-  `pnpm post-scheduling:check` run the same tools by hand. Single-file repo
+  `pnpm post-scheduling:check` run the same tools by hand; `pre-commit
+  install` once per clone makes `git commit` run them too. Single-file repo
   checks live flat in `scripts/`; a workspace package is for code with its
   own dependencies, build, and consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in

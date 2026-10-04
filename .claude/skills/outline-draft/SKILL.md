@@ -42,11 +42,20 @@ Picking up an idea issue (`gh issue view #N`): use `## Spark` + `## Why
 it could be interesting` as the kernel; open questions become discovery
 anchors.
 
+Trace how the subject first entered: its earliest commit, issue, or
+install, read at the source. A later issue's account of the origin is a
+claim to verify.
+
 The moment of change and the feeling around it are claims too, not just
 the dates. State the inferred climax and any inferred motivation back to
 the author as assumptions to confirm or kill *before* building the arc on
 them — a wrong peak or a wrong emotional thread costs scenes to unwind,
 where a wrong fact costs a parenthetical.
+
+Stances are the author's to word. For any beat that states a view, a
+principle, or a reason, ask how the author would say it aloud, one short
+question per stance, and carry their wording into the beat. Start from
+the repertoire in `.claude/voice.md` and ask for what it doesn't cover.
 
 Substance lands as the outline file's **header**: the logline (the one
 moment of change), where the story opens (its opposite), and the
@@ -93,7 +102,7 @@ the last scene's role is usually the honest limitation, not the win.
 
 ## 3. Diagnose
 
-Before approval, read the beats top to bottom and check the eleven
+Before approval, read the beats top to bottom and check the thirteen
 failure signatures:
 
 1. **Overloaded scene** — one scene carrying two changes → split.
@@ -124,6 +133,13 @@ failure signatures:
     past ~40 words, has drafted prose the skeleton should leave to
     `post-draft` → split into one beat per change, or cut to the change.
     The second sentence is the surer tell.
+12. **Off-thread beat** — a beat that serves a neighbouring story and
+    doesn't move the logline's subject → cut it, or keep only the part
+    the subject needs.
+13. **Abstract scene** — a scene whose beats are stances or principles
+    rather than events → tie each stance to an event already in the
+    story, or ask the author for the moment that shows it. The landing is
+    a scene too.
 
 Then check `## Open` against the drafting gate.
 
@@ -145,6 +161,8 @@ the heading and hand the outline to `post-draft`.
 
 ```markdown
 # <Working title> — outline
+
+**Status.** draft
 
 <Logline: the one moment of change, where the story opens (its
 opposite), the surrounding years as context.>
@@ -179,7 +197,9 @@ Confirm with the author. The skill ends at approval — hand to
 The outline drives the post, one direction only: after approval, the
 outline is locked; structural changes originate here once the author
 reopens it, then flow forward to the post. The outline is the source of
-truth.
+truth. Set `**Status.** locked` on approval. It reads `reopened` only
+while the author has reopened it, and returns to `locked` on their
+sign-off.
 
 Provenance: Jack Hart, *Storycraft* (arc, scene); Matthew Dicks,
 *Storyworthy* (the one moment of change); Lorin Hochstein, "The Power of
