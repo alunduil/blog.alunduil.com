@@ -12,8 +12,10 @@ It has some good instruction, but it's too preachy and the material is dry.
 
 1. The instruction does its job. Evidence: paint is pigment plus a binder,
    about three parts pigment to one of medium, and it rests on the surface
-   where ink sinks in (pp. 18, 103–104). I never knew how to put these
-   materials together and apply them; now I have a reference if I need it.
+   where ink sinks in (pp. 18, 103–104). Physics gave me some colour and I'd
+   dabbled in painting, so this had something to build on. I never knew how
+   to put these materials together and apply them; now I have a reference if
+   I need it.
 2. The belief is woven into the instruction and repeated until it reads as
    pushed. Evidence: the woven pouch's last step is to fill it with "magical
    stones, dried plants, or other magic" (p. 65); the Harvest Moon cutoff
