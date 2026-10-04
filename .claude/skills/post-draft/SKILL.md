@@ -10,9 +10,12 @@ Consumes an approved outline (`outlines/<slug>.md`, the artefact
 Requires an approved outline; run `outline-draft` first if there isn't
 one.
 
-The outline is the source of truth. If the prose needs a structural
-change, change the outline first (via `outline-draft`), then bring the
-post back in line.
+The approved outline is the source of truth, and it is locked while
+drafting. When the prose needs a structural change, stop, name the
+change, and ask the author to reopen the outline. On their yes, switch to
+outline mode and edit under `outline-draft`'s rules. Then announce the
+return to drafting and bring the post in line. Quotes, citations, and
+wording stay in the post.
 
 Pipeline: **body → conventions → syndication check.** The body is the
 story-specific craft this skill owns; the conventions are shared and
@@ -67,13 +70,21 @@ Principles, each with the criterion that confirms it:
   future tense for a grounded, stated direction. *Confirmed when:* any
   forward glance is a real plan you're on, used once or twice at most.
 
-Draft and lock **one scene at a time, with the author.** Source each
-scene's concrete moment before staging it — provable facts where they
-exist, and ask the author for the lived specifics rather than inventing
-them ([[feedback_post_claims_provable]]). Stage the scene, refine the
-wording together, lock it, move to the next. Flow and direction shift as
-the prose takes form; watch the back half, where unattended stretches
-drift toward generic prose.
+Draft and lock **one scene at a time, with the author.** For each scene:
+
+1. Gather the material. For every beat, pull the concrete detail on
+   record: a date, a quote, a count, the specific instance of a
+   principle. Ask the author for lived specifics, and for their phrasing
+   of any stance the repertoire in `.claude/voice.md` doesn't cover
+   ([[feedback_post_claims_provable]]).
+2. Expand each beat into a passage from that material.
+3. Run the passes in order: `voice.md`'s sentence rules and revision
+   pass, then its clarity pass, then `pre-commit run --files <path>`.
+4. Stage the scene in chat. It enters the file once the author approves.
+
+Refine the wording together, lock the scene, and move to the next. Flow
+and direction shift as the prose takes form; watch the back half, where
+unattended stretches drift toward generic prose.
 
 ## 2. Conventions
 
@@ -92,8 +103,11 @@ Apply them from their single homes:
 
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /
-freeform); derive the description from the finished body. Draft both from
-the completed post.
+freeform). Name the concrete subject. The slug becomes a permanent URL, so
+keep it specific enough to hold up as the archive grows. Keep the tone an account rather
+than a verdict, and offer three options, at least one naming the subject.
+Derive the description from the finished body: what happened, in the first
+person, without verdict words.
 
 ## 3. Instagram syndication check
 

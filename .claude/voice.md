@@ -28,7 +28,9 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
 - **Retrospect observes.** Ownership ("I did X"), stated flat.
   ([[feedback_no_blame_in_retrospect]])
 - **Show the mechanism.** "Without X, Y happens."
-  ([[feedback_causal_narrative_over_contrast]])
+  ([[feedback_causal_narrative_over_contrast]]) Mechanism earns its
+  sentence where it explains a turn. Each scene threads on the stake the
+  author named, what they were trying to do.
 - **Grammar leans CMOS, en_GB for spelling and quotes:** Oxford comma,
   unspaced em-dashes, spelled-out numbers, semicolons; en_GB spelling and
   punctuation outside the quotes. ([[project_grammar_lean]])
@@ -40,7 +42,8 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   or comma-splice that hooks two complete thoughts together. Length comes
   from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
   Compound predicates on one subject are fine ("he shows X and stops
-  there"); see **Flow** in the register below.
+  there"); see **Flow** in the register below. A definition and an event
+  are two sentences.
 
 ## Register: poetic without being poetry
 
@@ -49,7 +52,8 @@ The house register for story posts (Tolkien/Carroll touchstone):
 - **Latch first.** Open each scene on something concrete the reader can
   hold.
 - **Flow.** Carry weight in cadence and image, in sentences that run
-  their full length.
+  their full length. A run of short sentences lands after one sentence
+  that carries the thread.
 - **Punctuation marks structure.** Let the period carry the load. A comma
   only for a grammatical job (clause join, serial list, trailing
   absolute). Colons, semicolons, and em-dashes earn their place by doing
@@ -81,11 +85,63 @@ The house register for story posts (Tolkien/Carroll touchstone):
   thing a book like this could leave me"), and no weak trailing cliffhanger
   ("mostly that's all it is").
 - Active verbs over dead linking: an agent doing something beats "X is Y's",
-  and never force a verb onto an abstraction ("the mean that reaches").
+  and never force a verb onto an abstraction ("the mean that reaches",
+  "Pragmatism says"). People and tools take the verbs.
 - Strip blame: no "I should have", no confession closers.
+
+## Clarity pass
+
+After the revision pass, read each paragraph for crisp, literal prose.
+The pass removes packaging and keeps the reasoning. Fold a why into a
+subordinate clause so the sentence still runs its full length, and keep
+any sentence that explains a turn.
+
+- The paragraph's first sentence latches on the thing the paragraph is
+  about.
+- One topic per paragraph.
+- Every sentence adds information. Cut one whose only job is rhythm,
+  contrast, or setting up the next.
+- A concrete detail earns its place only if it could have been otherwise.
+  A fact true of every case ("it came out in a single pull request") says
+  nothing.
+- Keep a figure only when the literal version loses information.
+- Name the specific thing over a stand-in: what a tool did ("wrote a hook
+  into my settings"), what runs out (the allowance, not the hours), which
+  rules ("the rules that apply to every task").
+- Name things in the vendor's own terms ("session usage limit"), and
+  gloss a tool a general reader won't know in a clause on first mention.
+- Open a sentence on its real subject and verb, and state the point
+  directly.
+- After a word or motif's second use, reach for another.
+- Repeat the noun where a pronoun's referent sits outside its own
+  sentence or could be two things: "rtk's installer", "the agent saw".
+  The author reads loose pronouns as ambiguous.
 
 Iterate in the file; apply the rules confidently, surface only genuine
 judgement calls.
+
+## Repertoire
+
+The author's own phrasings and stances. Reach for these before
+inventing an equivalent, and ask the author for the phrasing when a beat
+states a stance not listed here.
+
+- Trying tools: "I like trying new things." Adding and removing are
+  separate decisions; only using a thing shows whether removal is
+  warranted, unless the data is clear. A tool "being a pain" goes without
+  much argument.
+- Friction: "slowing me down or causing rework". Noticed when "the timing
+  is really bad or the results aren't what I expect", and then "I start
+  digging".
+- Judgement: data driven, and pragmatism treats sentiment as more data to
+  take into account. Without data, either measure for a while or act when
+  sentiment is "off kilter" enough.
+- Renovate keeps tools and dependencies on their latest versions.
+  Monitoring alerts on conditions the author has said they want to know
+  about. Telemetry that explains a
+  failure after the fact is not monitoring.
+- Practices are "converging instead of definitional".
+- Plain colloquial register: "faff", "weird stuff", "meh".
 
 ---
 
