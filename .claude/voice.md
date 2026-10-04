@@ -131,7 +131,7 @@ phrasing when a beat states a stance not listed here.
   enough.
 - Renovate keeps tools and dependencies on their latest versions.
   Monitoring, in the industry-standard sense, alerts on conditions the
-  author has said he wants to know about. Telemetry that explains a
+  author has said they want to know about. Telemetry that explains a
   failure after the fact is not monitoring.
 - Practices are "converging instead of definitional".
 - Plain colloquial register: "faff", "weird stuff", "meh".
