@@ -1,4 +1,4 @@
-# Justify or Remove — outline
+# Four and a Half Months with rtk — outline
 
 **Logline.** The moment of change is beat 3.9, where rtk's own savings
 report meets the retries I'd been living with. The story opens in scene 1

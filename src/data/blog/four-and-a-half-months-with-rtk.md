@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-10-13T07:00:00Z
-title: Justify or Remove
+title: Four and a Half Months with rtk
 description: "I added rtk to make my Claude sessions last and kept it for months unmeasured. Using it is what told me to take it out."
 tags:
   - agentic-coding
