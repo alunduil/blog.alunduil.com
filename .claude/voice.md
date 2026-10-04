@@ -113,6 +113,29 @@ the sentence that explains a turn.
 Iterate in the file; apply the rules confidently, surface only genuine
 judgement calls.
 
+## Repertoire
+
+The author's own phrasings and stances, gathered while drafting. Reach
+for these before inventing an equivalent, and ask the author for the
+phrasing when a beat states a stance not listed here.
+
+- Trying tools: "I like trying new things." Adding and removing are
+  separate decisions; only using a thing shows whether removal is
+  warranted, unless the data is clear. A tool "being a pain" goes without
+  much argument.
+- Friction: "slowing me down or causing rework". Noticed when "the timing
+  is really bad or the results aren't what I expect", and then "I start
+  digging".
+- Judgement: data driven, with pragmatism that needs sentiment. Without
+  data, either measure for a while or act when sentiment is "off kilter"
+  enough.
+- Renovate keeps tools and dependencies on their latest versions.
+  Monitoring, in the industry-standard sense, alerts on conditions the
+  author has said he wants to know about. Telemetry that explains a
+  failure after the fact is not monitoring.
+- Practices are "converging instead of definitional".
+- Plain colloquial register: "faff", "weird stuff", "meh".
+
 ---
 
 The rest of this file is the **descriptive fingerprint** — what the
