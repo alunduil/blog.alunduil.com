@@ -21,8 +21,6 @@ jobs:
     name: Build for deploy
     runs-on: ubuntu-24.04
     timeout-minutes: 15
-    permissions:
-      contents: read
     env:
       # Public by design: the page emits it in its rel="webmention" link.
       # Committed rather than an Actions Variable so the webmention receiver
