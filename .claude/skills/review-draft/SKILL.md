@@ -208,7 +208,6 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
   personal thesis. If a personal paragraph reads thin, cut it and let the
   analysis carry — the take survives in the frame and the argument. Let the
   take stand at whatever depth it has.
-- **Spoilers** — trade on ideas and texture; see Spoilers below.
 - Otherwise the blog voice holds: first person, hedged, headerless reflective
   register, CMOS grammar, very low formatting — prose carries the structure
   (`.claude/voice.md`). Check the draft against voice.md's Shared DNA,
@@ -217,27 +216,27 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 Run §3's refactoring pass over the draft before handing it to the author, and
 report the entries the same way.
 
-### Spoilers
+### Spoilers — trade on ideas and texture
 
 A review spoils by revealing what *happens*; it stays clean revealing what the
 work is *about* and how it feels. Build the recommendation from spoiler-free
-currency: the unresolved question, the texture, the reading experience.
+currency: the texture, the reading experience, and the unresolved question,
+sold as a surprise the reader gets to sit in.
 
 - **Recast plot beats as dispositions.** Write who a character is, not what
   happens to them. Show the early, establishing beat concretely; gesture the
   outcome-adjacent one.
-- **Fence once, early and honestly.** Sell the surprise as a question the
-  reader gets to sit in.
-- **The test.** Could a reader who then picks up the work still be surprised
-  by the plot? If a sentence's pull needs a known outcome, cut it or lift it
-  to theme.
+- **Fence once,** early and honestly.
+- **Apply the surprise test.** Could a reader who then picks up the work still
+  be surprised by the plot? If a sentence's pull needs a known outcome, cut it
+  or lift it to theme.
+- **"Unresolved" is an ending-reveal.** "The book leaves it unresolved" tells
+  the reader how it ends. Pitch it at the work's *stance*,
+  poses-and-steps-back, not the plot's end.
+- **Fate words reveal outcomes** — "outlasts", "never chooses".
 - **The frontmatter description is the strictest surface.** It's a pre-read
-  teaser, tighter than the body, so give away nothing there.
-- **Two quiet leaks recur.** "The book leaves it unresolved" is itself an
-  ending-reveal; pitch it at the work's *stance*, poses-and-steps-back, not
-  the plot's end. Fate words like "outlasts" or "never chooses" reveal
-  outcomes. Softened, both can stay in the body as thematic analysis; the
-  description can't carry them.
+  teaser, tighter than the body, so give away nothing there. The body can keep
+  a softened leak as thematic analysis; the description can't.
 
 ## 5. Frontmatter
 
