@@ -235,7 +235,8 @@ report the entries the same way.
 
 The shared conventions apply unchanged — citations (`.claude/citations.md`),
 frontmatter and scheduling (`docs/reference/post-frontmatter.md`), and the
-Instagram check — with review-specific notes:
+image-fit check (`.claude/skills/syndicate-instagram/SKILL.md`) — with
+review-specific notes:
 
 - **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
@@ -250,9 +251,7 @@ Instagram check — with review-specific notes:
   myth-making, whatever the argument engages
   (`docs/reference/post-frontmatter.md`).
 - **Instagram:** reviews are strongly image-prone (covers, screenshots, box
-  art). dlvr.it covers the auto surfaces on publish
-  (`docs/adr/0001-use-dlvrit-for-social-syndication.md`); flag
-  `/syndicate-instagram <slug>` once live.
+  art), so the image-fit check almost always flags them.
 - A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
 - **Title:** check each candidate with Vale (`pre-commit run --files <path>`)
   before proposing it.

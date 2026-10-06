@@ -20,6 +20,19 @@ under `src/data/blog/`.
 
 Pipeline: **resolve → extract kernel → draft → present.**
 
+## Image-fit check
+
+`post-draft` and `review-draft` run this check once a draft settles, before
+the post is live. Judge whether the post carries real visual material:
+
+- Image-prone posts have book covers, screenshots, diagrams, or a
+  visual-native topic like a game or book review. Tell the author this is a
+  blog post *and* a strong Instagram post. They should run
+  `/syndicate-instagram <slug>` once it's live, since the link-back needs the
+  published canonical URL.
+- Text-heavy engineering prose stays quiet. Most engineering posts skip
+  Instagram.
+
 ## 1. Resolve the post
 
 Accept a file path, slug, or live URL. Default: the newest post by
@@ -60,6 +73,5 @@ bio-link note. Write nothing to the repo.
 - **Voice.** Match the post's own register — conversational and first-person.
   This is alunduil's own surface.
 - **Canonical-first.** The post links back to the blog, which stays canonical.
-- **Trigger.** `/post-draft` flags image-prone posts as Instagram candidates;
-  run this once the post is live (the link-back needs the published URL).
-  dlvr.it covers the auto surfaces on publish.
+- **Trigger.** The image-fit check flags candidates; run this once the post
+  is live.
