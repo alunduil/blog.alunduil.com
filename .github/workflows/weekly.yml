@@ -31,8 +31,6 @@ jobs:
       # Matches cd.yml so the tree built here carries the same webmention
       # link as the deployed one.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
-      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
-      NODE_VERSION: "24"
       # The search and the issue title have to agree exactly; drift files a
       # fresh report every run instead of updating the standing one.
       REPORT_TITLE: Link Checker Report
@@ -43,9 +41,7 @@ jobs:
       # The site is static, so every published page is a file under dist/ and
       # walking it reaches what a crawler would. Building is also the only way
       # `/posts/...` resolves — nothing in the source tree answers those.
-      - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      - uses: ./.github/actions/build-site
 
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6
         with:
