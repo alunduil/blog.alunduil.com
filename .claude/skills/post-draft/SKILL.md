@@ -135,13 +135,8 @@ URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
 Iterate in `src/data/blog/<slug>.md`. Commit incrementally — each
 substantive change as its own commit with the reasoning in the body.
 
-Final state before promoting the PR out of draft:
-
-- Title, description, slug match the body.
-- `pubDatetime` set to a future Tuesday or Sunday at 08:00 local.
-- Vale + markdownlint pass via `pre-commit run --files <path>`.
-- `pnpm build` clean.
-- Body links point at public source URLs.
+Before promoting the PR out of draft, reach the final state in
+`.claude/publishing.md`.
 
 Provenance: Matthew Dicks, *Storyworthy* (moment of change, start at its
 opposite); Jack Hart, *Storycraft* (scene, arc, story-versus-report);

@@ -24,8 +24,8 @@ artefact and belongs to `note-draft` (#323) and the note pipeline
 Voice, citations, frontmatter, and the Instagram check are shared. Apply
 them from their single homes — voice (`.claude/voice.md`), citations
 (`.claude/citations.md`), frontmatter and scheduling
-(`docs/reference/post-frontmatter.md`); only the review-specific deltas
-live here.
+(`docs/reference/post-frontmatter.md`), the final state
+(`.claude/publishing.md`); only the review-specific deltas live here.
 
 Pipeline: **gate → substance → spine (approval) → draft → frontmatter.**
 
@@ -165,9 +165,8 @@ refactoring catalogue and apply the entries that map to prose:
 
 Tell the author which entries applied and which were refused.
 
-This is the cheap control point, the review's equivalent of the outline gate: a
-wrong thesis costs a line to fix here, two thousand words after drafting.
-The author reviews the spine rendered on GitHub, so commit it and open a draft
+This is the review's equivalent of the outline gate, for the reason
+`outline-draft` gives under "Why this is its own step". The author reviews the spine rendered on GitHub, so commit it and open a draft
 PR holding only the spine, with `Closes #N`. Wait for the author's approval of
 the thesis and the points before drafting prose. The spine drives the post one
 direction only — after approval, structural changes originate here and flow
@@ -267,10 +266,9 @@ Instagram check — with review-specific notes:
 ## Output
 
 Iterate in `outlines/<slug>.md` then `src/data/blog/reviews/<slug>.md`. Commit
-incrementally. Final state before promoting the PR: the spine pruned to the
-argument and its evidence, title/description/slug match the body, `pubDatetime`
-a future Sunday 08:00 local, Vale + markdownlint pass via `pre-commit run
---files <path>`, `pnpm build` clean, body links pointing at public source URLs.
+incrementally. Before promoting the PR, reach the final state in
+`.claude/publishing.md`, with the spine pruned to the argument and its
+evidence.
 
 Provenance: the UNC Writing Center handout (review is commentary not summary;
 ~80/20 evaluation to summary; thematic organisation); Parul Sehgal, *NYT* ("a
