@@ -1,5 +1,4 @@
 ---
-# Pre-commit hooks for code quality and consistency.
 # See https://pre-commit.com for usage.
 
 # Vale ships its style packages under .vale/styles/ as upstream content.
@@ -7,7 +6,7 @@
 exclude: ^\.vale/styles/
 
 repos:
-  # Shell linting and formatting (digest skill collect.sh and any future scripts)
+  # Shell linting and formatting.
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.11.0.1
     hooks:
@@ -27,8 +26,7 @@ repos:
     hooks:
       - id: yamllint
 
-  # GitHub Actions workflow linting. v1.7.12+ validates the schedule
-  # `timezone:` key the scheduled workflows use.
+  # GitHub Actions workflow linting.
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.12
     hooks:
@@ -134,7 +132,6 @@ repos:
       - id: check-shebang-scripts-are-executable
       - id: detect-private-key
 
-  # Prose linting with Vale.
   # Skips AI-targeted markdown (CLAUDE.md, .claude/) and planning docs
   # (outlines/) where terseness beats prose conventions, plus archival
   # republishes (_<engine>/) which are historical text, not current writing.
@@ -153,8 +150,6 @@ repos:
             src/data/blog/_.*
           )$
 
-  # Markdown structure linting with markdownlint-cli2.
-  # Same exclude as Vale: AI-targeted markdown, planning docs, archival text.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.23.3
     hooks:

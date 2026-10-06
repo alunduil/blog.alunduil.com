@@ -5,10 +5,10 @@ on:
     branches: [main]
   schedule:
     # Refresh webmentions from webmention.io through the day; the static
-    # display is otherwise frozen between builds. See #148.
+    # display is otherwise frozen between builds.
     - cron: "0 */6 * * *"
     # Publish posts dated 08:00 Europe/London (see CLAUDE.md posting
-    # convention). Fires at 07:50 so scheduledPostMargin (15 min) reveals
+    # convention). Fires at 07:50 so the scheduled-post margin reveals
     # the post and build + deploy lands it by ~08:00 even if Actions
     # delays the run.
     - cron: "50 7 * * *"
@@ -24,7 +24,7 @@ jobs:
     env:
       # Public by design (Astro PUBLIC_ prefix; emitted in the page's
       # rel="webmention" link). Committed here rather than an Actions
-      # Variable so the webmention receiver is configured as IaC. See #148.
+      # Variable so the webmention receiver is configured as IaC.
       PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
       # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
       NODE_VERSION: "24"
