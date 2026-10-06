@@ -1,13 +1,9 @@
 ---
-# Pre-commit hooks for code quality and consistency.
-# See https://pre-commit.com for usage.
-
 # Vale ships its style packages under .vale/styles/ as upstream content.
 # No hook should touch them.
 exclude: ^\.vale/styles/
 
 repos:
-  # Shell linting and formatting (digest skill collect.sh and any future scripts)
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.11.0.1
     hooks:
@@ -21,35 +17,27 @@ repos:
         args: [-i, "2", -ci]
         types: [shell]
 
-  # YAML linting (workflows, frontmatter, pre-commit config itself)
   - repo: https://github.com/adrienverge/yamllint
     rev: v1.38.0
     hooks:
       - id: yamllint
 
-  # GitHub Actions workflow linting. v1.7.12+ validates the schedule
-  # `timezone:` key the scheduled workflows use.
   - repo: https://github.com/rhysd/actionlint
     rev: v1.7.12
     hooks:
       - id: actionlint
 
-  # Link checking. The system binary (scripts/install-lychee.sh) rather than
-  # the upstream auto-installing hook: one version pin, and the static musl
-  # build runs on images whose GLIBC the upstream binary rejects.
+  # The system lychee rather than the upstream auto-installing hook: one
+  # version pin, and the static musl build runs on images whose GLIBC the
+  # upstream binary rejects.
   #
   # --offline holds the gate to what resolves without a build, so it never
-  # flakes on a third party; weekly.yml checks whatever needs its target to
-  # exist.
+  # flakes on a third party; the weekly link check covers the rest.
   #
-  # --base-url is the only difference between the two hooks. A post's
-  # `/posts/...` addresses the site, and naming the site turns those into
-  # remote URLs that --offline skips rather than fails to resolve. Docs
+  # A post's `/posts/...` links address the site, and --base-url turns them
+  # into remote URLs that --offline skips rather than fails to resolve. Docs
   # address the repo, where the same flag would misread a sibling
   # `post-body.md` as a page on the site and stop checking it.
-  #
-  # They divide the markdown on one shared pattern. A file falling between two
-  # copies of it would be checked by neither hook, and nothing would say so.
   - repo: local
     hooks:
       - id: lychee-posts
@@ -59,6 +47,7 @@ repos:
           --base-url https://blog.alunduil.com
         language: system
         types: [markdown]
+        # Shared with lychee-docs so no file falls between the two unchecked.
         files: &post_sources ^src/data/blog/
 
       - id: lychee-docs
@@ -68,12 +57,9 @@ repos:
         types: [markdown]
         exclude: *post_sources
 
-  # Post scheduling (docs/reference/post-frontmatter.md § Scheduling).
-  # The collection is the unit here, not the file, so the hook reads every
-  # post and takes no filenames; `files` only decides whether it runs, and
-  # src/config.ts is in that pattern because the script imports SITE for the
-  # default timezone. The script needs node_modules, as the eslint and
-  # prettier hooks below do.
+  # The script checks the whole collection, so it takes no filenames; `files`
+  # only decides whether it runs. src/config.ts is in that pattern because
+  # the script imports SITE for the default timezone. Needs node_modules.
   - repo: local
     hooks:
       - id: post-scheduling
@@ -91,20 +77,17 @@ repos:
       - id: renovate-config-validator
         args: [--strict, --no-global]
 
-  # JS/TS/Astro formatting and linting. Local hooks so the repo's own
-  # prettier/eslint run — their plugins (prettier-plugin-astro,
-  # eslint-plugin-astro, typescript-eslint) and configs resolve from the
-  # workspace deps rather than a pinned mirror. Requires node_modules, which
-  # the `Lint and format` job installs before running the suite.
+  # Local hooks so the repo's own prettier and eslint run, resolving their
+  # plugins and configs from workspace deps rather than a pinned mirror.
+  # Needs node_modules.
   - repo: local
     hooks:
       - id: prettier
         name: Format with Prettier
         entry: pnpm exec prettier --write
         language: system
-        # Scope lives in .prettierignore (code only; markdown and YAML have
-        # dedicated linters). This regex just avoids invoking prettier on
-        # files it would skip anyway.
+        # Scope lives in .prettierignore; this regex only spares invoking
+        # prettier on files it would skip anyway.
         files: \.(js|mjs|cjs|jsx|ts|tsx|astro|css|json)$
       - id: eslint
         name: Lint with ESLint
@@ -112,7 +95,6 @@ repos:
         language: system
         files: \.(js|mjs|cjs|jsx|ts|tsx|astro)$
 
-  # Baseline file hygiene
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
@@ -134,10 +116,6 @@ repos:
       - id: check-shebang-scripts-are-executable
       - id: detect-private-key
 
-  # Prose linting with Vale.
-  # Skips AI-targeted markdown (CLAUDE.md, .claude/) and planning docs
-  # (outlines/) where terseness beats prose conventions, plus archival
-  # republishes (_<engine>/) which are historical text, not current writing.
   - repo: https://github.com/vale-cli/vale
     rev: v3.24.0
     hooks:
@@ -145,6 +123,9 @@ repos:
         name: Lint prose with Vale
         args: ["--config=.vale.ini"]
         types: [markdown]
+        # Skips AI-targeted markdown and planning docs, where terseness beats
+        # prose conventions, and archival republishes, which keep their era's
+        # prose.
         exclude: &unlinted_md |
           (?x)^(
             CLAUDE\.md|
@@ -153,8 +134,6 @@ repos:
             src/data/blog/_.*
           )$
 
-  # Markdown structure linting with markdownlint-cli2.
-  # Same exclude as Vale: AI-targeted markdown, planning docs, archival text.
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.23.3
     hooks:
