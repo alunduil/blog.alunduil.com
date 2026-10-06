@@ -21,6 +21,9 @@ scripting your own.
   field — Renovate tracks it there, and withastro/action reads it after
   auto-detecting `pnpm-lock.yaml`. `pnpm-workspace.yaml` holds workspace
   config.
+- Node: pinned once in `.node-version`, which Renovate tracks. Workflows
+  read it through `setup-node`'s `node-version-file` or by building with
+  `.github/actions/build-site`.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).
