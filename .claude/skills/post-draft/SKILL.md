@@ -17,9 +17,9 @@ outline mode and edit under `outline-draft`'s rules. Then announce the
 return to drafting and bring the post in line. Quotes, citations, and
 wording stay in the post.
 
-Pipeline: **body → conventions → syndication check.** The body is the
-story-specific craft this skill owns; the conventions are shared and
-applied from their single homes.
+Pipeline: **body → conventions.** The body is the story-specific craft
+this skill owns; the conventions are shared and applied from their single
+homes.
 
 ## 1. Body — write the scenes
 
@@ -88,8 +88,8 @@ unattended stretches drift toward generic prose.
 
 ## 2. Conventions
 
-Voice, citations, and frontmatter are shared across every article type.
-Apply them from their single homes:
+Voice, citations, frontmatter, and the Instagram check are shared across
+every article type. Apply them from their single homes:
 
 - **Voice** → `.claude/voice.md`. Sentence-level rules and the
   poetic-without-poetry register; apply across the drafted body, then run
@@ -100,6 +100,8 @@ Apply them from their single homes:
 - **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
   Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone, the
   publication gate, tags, archival stanza.
+- **Instagram** → `syndicate-instagram`'s image-fit check, once the post
+  is settled.
 
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /
@@ -108,20 +110,6 @@ keep it specific enough to hold up as the archive grows. Keep the tone an accoun
 than a verdict, and offer three options, at least one naming the subject.
 Derive the description from the finished body: what happened, in the first
 person, without verdict words.
-
-## 3. Instagram syndication check
-
-dlvr.it auto-syndicates each post to the text and link surfaces from the
-RSS feed (`docs/adr/0001-use-dlvrit-for-social-syndication.md`) — no
-action needed. Instagram is the hand-crafted exception. Once the post is
-settled, judge image-fit: does it carry genuine visual material (book
-covers, screenshots, diagrams, a visual-native topic like a game or book
-review), or is it text-heavy engineering prose?
-
-If image-prone, flag it — tell the author this is a blog post *and* a
-strong Instagram post, and to run `/syndicate-instagram <slug>` once it's
-live (the Instagram post links back, so it needs the published canonical
-URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
 
 ## When to invoke
 
@@ -135,13 +123,8 @@ URL). If text-heavy, stay quiet; most engineering posts skip Instagram.
 Iterate in `src/data/blog/<slug>.md`. Commit incrementally — each
 substantive change as its own commit with the reasoning in the body.
 
-Final state before promoting the PR out of draft:
-
-- Title, description, slug match the body.
-- `pubDatetime` set to a future Tuesday or Sunday at 08:00 local.
-- Vale + markdownlint pass via `pre-commit run --files <path>`.
-- `pnpm build` clean.
-- Body links point at public source URLs.
+Before promoting the PR out of draft, reach the final state in
+`.claude/publishing.md`.
 
 Provenance: Matthew Dicks, *Storyworthy* (moment of change, start at its
 opposite); Jack Hart, *Storycraft* (scene, arc, story-versus-report);
