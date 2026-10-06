@@ -19,11 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      # Public by design: the page emits it in its rel="webmention" link.
-      # Committed rather than an Actions Variable so the webmention receiver
-      # is configured as code.
-      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
