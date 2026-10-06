@@ -17,9 +17,9 @@ outline mode and edit under `outline-draft`'s rules. Then announce the
 return to drafting and bring the post in line. Quotes, citations, and
 wording stay in the post.
 
-Pipeline: **body → conventions → syndication check.** The body is the
-story-specific craft this skill owns; the conventions are shared and
-applied from their single homes.
+Pipeline: **body → conventions.** The body is the story-specific craft
+this skill owns; the conventions are shared and applied from their single
+homes.
 
 ## 1. Body — write the scenes
 
@@ -88,8 +88,8 @@ unattended stretches drift toward generic prose.
 
 ## 2. Conventions
 
-Voice, citations, and frontmatter are shared across every article type.
-Apply them from their single homes:
+Voice, citations, frontmatter, and the Instagram check are shared across
+every article type. Apply them from their single homes:
 
 - **Voice** → `.claude/voice.md`. Sentence-level rules and the
   poetic-without-poetry register; apply across the drafted body, then run
@@ -100,6 +100,8 @@ Apply them from their single homes:
 - **Frontmatter and scheduling** → `docs/reference/post-frontmatter.md`.
   Fields, the Tuesday (tech) / Sunday (reflective) cadence, timezone, the
   publication gate, tags, archival stanza.
+- **Instagram** → `syndicate-instagram`'s image-fit check, once the post
+  is settled.
 
 Story-specific: choose the title once the prose exists and the body has
 settled what it argues (anniversary / revision / substrate-shift /
@@ -108,11 +110,6 @@ keep it specific enough to hold up as the archive grows. Keep the tone an accoun
 than a verdict, and offer three options, at least one naming the subject.
 Derive the description from the finished body: what happened, in the first
 person, without verdict words.
-
-## 3. Instagram syndication check
-
-Once the post is settled, run the image-fit check in
-`.claude/skills/syndicate-instagram/SKILL.md`.
 
 ## When to invoke
 

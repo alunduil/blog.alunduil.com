@@ -21,11 +21,11 @@ character-limited networks (Bluesky, Threads) regardless. A note-length
 artefact and belongs to `note-draft` (#323) and the note pipeline
 (#321/#322).
 
-Voice, citations, frontmatter, and the Instagram check are shared. Apply
-them from their single homes — voice (`.claude/voice.md`), citations
-(`.claude/citations.md`), frontmatter and scheduling
-(`docs/reference/post-frontmatter.md`), the final state
-(`.claude/publishing.md`); only the review-specific deltas live here.
+Apply the shared conventions from their single homes — voice
+(`.claude/voice.md`), citations (`.claude/citations.md`), frontmatter and
+scheduling (`docs/reference/post-frontmatter.md`), the Instagram check
+(`syndicate-instagram`), and the final state (`.claude/publishing.md`). Only
+the review-specific deltas live here.
 
 Pipeline: **gate → substance → spine (approval) → draft → frontmatter.**
 
@@ -166,8 +166,9 @@ refactoring catalogue and apply the entries that map to prose:
 Tell the author which entries applied and which were refused.
 
 This is the review's equivalent of the outline gate, for the reason
-`outline-draft` gives under "Why this is its own step". The author reviews the spine rendered on GitHub, so commit it and open a draft
-PR holding only the spine, with `Closes #N`. Wait for the author's approval of
+`outline-draft` gives under "Why this is its own step". The author reviews the
+spine rendered on GitHub, so commit it and open a draft PR holding only the
+spine, with `Closes #N`. Wait for the author's approval of
 the thesis and the points before drafting prose. The spine drives the post one
 direction only — after approval, structural changes originate here and flow
 forward ([[feedback_outline_drives_post]]).
@@ -231,12 +232,9 @@ author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 Run §3's refactoring pass over the draft before handing it to the author, and
 report the entries the same way.
 
-## 5. Frontmatter, citations, syndication
+## 5. Frontmatter
 
-The shared conventions apply unchanged — citations (`.claude/citations.md`),
-frontmatter and scheduling (`docs/reference/post-frontmatter.md`), and the
-image-fit check (`.claude/skills/syndicate-instagram/SKILL.md`) — with
-review-specific notes:
+The shared conventions apply unchanged, with review-specific notes:
 
 - **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
@@ -250,8 +248,6 @@ review-specific notes:
 - **Tags are the work's subject.** Tag what the review is *about* — the mafia,
   myth-making, whatever the argument engages
   (`docs/reference/post-frontmatter.md`).
-- **Instagram:** reviews are strongly image-prone (covers, screenshots, box
-  art), so the image-fit check almost always flags them.
 - A future `pubDatetime` gates publication (`docs/reference/post-frontmatter.md`).
 - **Title:** check each candidate with Vale (`pre-commit run --files <path>`)
   before proposing it.
