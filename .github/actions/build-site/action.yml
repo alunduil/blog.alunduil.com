@@ -1,0 +1,17 @@
+name: Build the site
+description: Build the Astro site into dist/.
+
+runs:
+  using: composite
+  steps:
+    # withastro/action has no node-version-file input.
+    - id: node
+      shell: bash
+      run: echo "version=$(<.node-version)" >>"${GITHUB_OUTPUT}"
+    - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6
+      env:
+        # Every page publishes this in its rel="webmention" link, so it
+        # isn't a secret.
+        PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
+      with:
+        node-version: ${{ steps.node.outputs.version }}

@@ -19,21 +19,12 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    env:
-      # Public by design: the page emits it in its rel="webmention" link.
-      # Committed rather than an Actions Variable so the webmention receiver
-      # is configured as code.
-      PUBLIC_WEBMENTION_IO_USERNAME: blog.alunduil.com
-      # renovate: datasource=node-version depName=node extractVersion=^v(?<version>.+)$
-      NODE_VERSION: "24"
     concurrency:
       group: ${{ github.workflow }}-build-${{ github.ref }}
       cancel-in-progress: false
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: withastro/action@3eafd002e65cc31b4f0eae0bb05450d521562247 # v6
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+      - uses: ./.github/actions/build-site
 
   publish:
     name: Deploy to GitHub Pages
