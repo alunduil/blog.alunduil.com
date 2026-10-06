@@ -86,5 +86,5 @@ memory it runs on. If you try it—or already have—you'd be answering
 something I can't. Does it work because of what I do, or just because of
 who I am?
 
-[spacing]: https://onyxboox.medium.com/micro-learning-made-easy-learn-something-new-with-boox-192f481349be
+[spacing]: https://shop.boox.com/blogs/news/micro-learning-made-easy-learn-something-new-with-boox
 [fratantoni]: https://lucymcbride.substack.com/p/top-tips-for-brain-health-a-conversation
