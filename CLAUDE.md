@@ -174,7 +174,7 @@ Utilities:
 
 Shared conventions the writing skills draw from: `.claude/voice.md`
 (voice), `.claude/citations.md` (citations), `.claude/publishing.md`
-(the PR's final state before leaving draft),
+(final state before leaving draft),
 `docs/reference/post-frontmatter.md` (frontmatter, scheduling, tags), and
 `docs/reference/post-body.md` (images, table of contents, code blocks).
 

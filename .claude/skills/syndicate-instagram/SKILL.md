@@ -61,10 +61,9 @@ bio-link note. Write nothing to the repo.
 the post is live. Judge whether the post carries real visual material:
 
 - Image-prone posts have book covers, screenshots, diagrams, or a
-  visual-native topic like a game or book review. Tell the author this is a
-  blog post *and* a strong Instagram post. They should run
-  `/syndicate-instagram <slug>` once it's live, since the link-back needs the
-  published canonical URL.
+  visual-native topic like a game or book review. Tell the author it would
+  make a strong Instagram post, and to run `/syndicate-instagram <slug>` once
+  it's live. The link-back needs the published canonical URL.
 - For text-heavy engineering prose, stay quiet. Most engineering posts skip
   Instagram.
 

@@ -165,10 +165,9 @@ refactoring catalogue and apply the entries that map to prose:
 
 Tell the author which entries applied and which were refused.
 
-This is the review's equivalent of the outline gate, for the reason
-`outline-draft` gives under "Why this is its own step". The author reviews the
-spine rendered on GitHub, so commit it and open a draft PR holding only the
-spine, with `Closes #N`. Wait for the author's approval of
+This gate works like `outline-draft`'s, for the same reason. The author
+reviews the spine rendered on GitHub, so commit it and open a draft PR holding
+only the spine, with `Closes #N`. Wait for the author's approval of
 the thesis and the points before drafting prose. The spine drives the post one
 direction only — after approval, structural changes originate here and flow
 forward ([[feedback_outline_drives_post]]).
@@ -234,7 +233,7 @@ report the entries the same way.
 
 ## 5. Frontmatter
 
-The shared conventions apply unchanged, with review-specific notes:
+Review-specific notes on the shared conventions:
 
 - **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
