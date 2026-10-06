@@ -80,4 +80,4 @@ from which local copy. I haven't tested it.
 [nabu-backups]: https://www.home-assistant.io/integrations/cloud/
 [chezmoi]: https://www.chezmoi.io/
 [alunduil-chezmoi]: https://github.com/alunduil/alunduil-chezmoi
-[boox]: https://onyxboox.com/boox_tabultrac
+[boox]: https://shop.boox.com/products/tabultrac
