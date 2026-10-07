@@ -30,11 +30,12 @@ scripting your own.
 - Tests: `pnpm test` runs Vitest over `*.test.ts` files beside the module
   they cover. Mock `astro:` virtual modules with `vi.mock`.
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
-  (`.vale.ini` + `.vale/`), markdownlint (`.markdownlint-cli2.yaml`),
-  yamllint (`.yamllint`), actionlint, shellcheck/shfmt, ESLint and
-  Prettier (`local` hooks running the repo's own binaries so their
-  plugins/configs resolve from workspace deps), and baseline file
-  hygiene, plus lychee link-checking and post scheduling
+  (`.vale.ini` + `.vale/`; give each custom rule must-flag and must-pass
+  fixtures in `.vale/fixtures/Custom/`), markdownlint
+  (`.markdownlint-cli2.yaml`), yamllint (`.yamllint`), actionlint,
+  shellcheck/shfmt, ESLint and Prettier (`local` hooks running the
+  repo's own binaries so their plugins/configs resolve from workspace
+  deps), and baseline file hygiene, plus lychee link-checking and post scheduling
   (`scripts/check-post-scheduling.ts`). `pnpm lint` / `pnpm format` /
   `pnpm post-scheduling:check` run the same tools by hand; `pre-commit
   install` once per clone makes `git commit` run them too. Run `pnpm
