@@ -51,5 +51,5 @@ release appears at the next check—a short delay is not a failure.
 
 Every public repository publishes the same `releases.atom`, so a second
 project needs a second automation, posting to the same outputs, with
-its own name in front of the tag. If a release goes missing on a day several
-projects shipped, check the profile's posting cap first.
+its own name in front of the tag. If a release goes missing on a day
+several projects shipped, check the profile's posting cap first.

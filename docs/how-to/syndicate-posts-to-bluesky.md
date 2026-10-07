@@ -8,11 +8,7 @@ the mechanism is recorded in
 ## Before you start
 
 - A Bluesky account to post to.
-- The published feed at `https://blog.alunduil.com/rss.xml`. It already
-  carries each post's title, description, full body, and canonical link,
-  and it excludes future-dated (scheduled) posts, so nothing syndicates
-  before its `pubDatetime`.
-- A dlvr.it account, per [Set up dlvr.it](set-up-dlvrit.md).
+- The blog's dlvr.it automation, per [Set up dlvr.it](set-up-dlvrit.md).
 
 ## Connect Bluesky to dlvr.it
 
@@ -25,25 +21,11 @@ the mechanism is recorded in
 
 ## Add Bluesky to the blog's automation
 
-One dlvr.it automation reads the blog's feed and posts to every
-connected social, so each social is an output on that automation.
-
-1. Open the Automate tab. If an automation with the input
-   `https://blog.alunduil.com/rss.xml` exists, open it and choose Add
-   Output. Otherwise, create a New Automation with that URL as its
-   input.
+1. Open the Automate tab, open the automation reading
+   `https://blog.alunduil.com/rss.xml`, and choose Add Output.
 2. Pick the connected Bluesky output.
 3. Limit the first sync, so the back catalogue does not flood the
    timeline.
-
-## Choose the summary over the full body
-
-In the automation's Settings, under Advanced, set Body posting options
-to Prefer summary content. Each item carries two blocks of text:
-`description`, the one-line hook, and `content:encoded`, the whole post
-rendered for feed readers. An automation preferring full content posts
-the whole article, cut off at the character limit. The setting applies
-to every output on the automation.
 
 ## Post the title and a link card
 

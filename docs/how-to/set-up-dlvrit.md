@@ -21,8 +21,29 @@ match the intent rather than the exact wording.
    and posting errors, and that email is the only thing that announces a
    post which never went out.
 
+## Create the blog's automation
+
+One automation reads the blog's feed and posts to every connected
+social, each as an output on it. The feed at
+`https://blog.alunduil.com/rss.xml` carries each post's title,
+description, full body, and canonical link, and it excludes
+future-dated (scheduled) posts, so nothing syndicates before its
+`pubDatetime`.
+
+1. Open the Automate tab and create a New Automation with
+   `https://blog.alunduil.com/rss.xml` as its input.
+2. In the automation's Settings, under Advanced, set:
+   - Body posting options: Prefer summary content
+   - Image selection order: Open Graph tags first
+
+Each item carries two blocks of text: `description`, the one-line hook,
+and `content:encoded`, the whole post rendered for feed readers. An
+automation preferring full content posts the whole article, cut off at
+the character limit. Open Graph tags first picks the post's social image
+over the first image in its body.
+
 ## Limit the first sync
 
 Whenever you add a feed, cap how many existing items post before the
-automation goes live. A feed arrives carrying its back catalogue, and all of
-it is old news.
+automation goes live. A feed arrives carrying its back catalogue, and
+all of it is old news.
