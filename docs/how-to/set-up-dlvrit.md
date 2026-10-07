@@ -24,5 +24,5 @@ match the intent rather than the exact wording.
 ## Limit the first sync
 
 Whenever you add a feed, cap how many existing items post before the
-route goes live. A feed arrives carrying its back catalogue, and all of
+automation goes live. A feed arrives carrying its back catalogue, and all of
 it is old news.

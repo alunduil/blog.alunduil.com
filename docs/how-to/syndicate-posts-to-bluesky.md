@@ -16,33 +16,47 @@ the mechanism is recorded in
 
 ## Connect Bluesky to dlvr.it
 
-1. Sign in to dlvr.it and open the Socials tab.
-2. Choose Add Social, pick Bluesky, and connect with the account handle
-   and a Bluesky app password (create one under Bluesky's Settings, App
+1. Sign in to dlvr.it and open the Outputs tab.
+2. Add Bluesky as an output and connect with the account handle and a
+   Bluesky app password (create one under Bluesky's Settings, App
    Passwords). The app password grants dlvr.it permission to post and
    nothing more, and you can revoke it later by deleting it in those
    same Bluesky settings.
 
-## Add the feed and route it to Bluesky
+## Add Bluesky to the blog's automation
 
-1. Open the Feeds tab and add the URL
-   `https://blog.alunduil.com/rss.xml`.
-2. Route the feed to the connected Bluesky social.
+One dlvr.it automation reads the blog's feed and posts to every
+connected social, so each social is an output on that automation.
+
+1. Open the Automate tab. If an automation with the input
+   `https://blog.alunduil.com/rss.xml` exists, open it and choose Add
+   Output. Otherwise, create a New Automation with that URL as its
+   input.
+2. Pick the connected Bluesky output.
 3. Limit the first sync, so the back catalogue does not flood the
    timeline.
 
 ## Choose the summary over the full body
 
-Set this feed to prefer summary content, under its advanced settings.
-Each item carries two blocks of text: `description`, the one-line hook,
-and `content:encoded`, the whole post rendered for feed readers. dlvr.it
-calls them Summary and Full Body. A route preferring full content posts
-the whole article, cut off at the character limit.
+In the automation's Settings, under Advanced, set Body posting options
+to Prefer summary content. Each item carries two blocks of text:
+`description`, the one-line hook, and `content:encoded`, the whole post
+rendered for feed readers. An automation preferring full content posts
+the whole article, cut off at the character limit. The setting applies
+to every output on the automation.
 
-## Keep the default post format
+## Post the title and a link card
 
-Leave the route's post template alone. By default it posts the item's
-title as the message and attaches a link card built from the post's
+Open the Bluesky output from the Outputs tab and choose Edit. Under Post
+options, set:
+
+- Post title: on
+- Post body: off
+- Post URL: on
+- Post photo: on
+
+Leave Begin posts with and End posts with empty. The post is the item's
+title as the message, with a link card built from the post's
 `description` and social image:
 
 ```text
@@ -65,5 +79,5 @@ appended.
 dlvr.it checks the feed on a schedule rather than on publish, so a new
 post appears at the next check—a short delay is not a failure.
 
-A post that never arrives points at the route, the Bluesky app password,
-or the feed.
+A post that never arrives points at the automation, the Bluesky app
+password, or the feed.
