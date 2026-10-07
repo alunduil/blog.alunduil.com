@@ -3,8 +3,7 @@ set -euo pipefail
 
 # Assert each custom Vale rule against its fixtures in .vale/fixtures/Custom/:
 # every line of <Rule>.flag.md must draw exactly one alert, and
-# <Rule>.pass.md must draw none. Each rule runs alone so other styles' alerts
-# don't count against it.
+# <Rule>.pass.md must draw none.
 
 cd "$(git rev-parse --show-toplevel)"
 tmp=$(mktemp -d)
@@ -12,7 +11,7 @@ trap 'rm -rf "$tmp"' EXIT
 
 failed=0
 
-# Prints the path of a config enabling only Custom.<rule>.
+# Enables Custom.<rule> alone so other styles' alerts don't count against it.
 config_for() {
   local rule=$1 config="$tmp/$1.ini"
   cat >"$config" <<EOF

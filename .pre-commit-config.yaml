@@ -135,8 +135,8 @@ repos:
             \.vale/fixtures/.*
           )$
       # The fixtures hold intentional violations, so the hook above skips
-      # them and this runner inverts the assertion. It always runs: the
-      # top-level exclude hides the rule files it guards.
+      # them and this one checks each lands where expected. It always runs
+      # because the top-level exclude hides the rule files from pre-commit.
       - id: vale
         alias: vale-rules
         name: Check custom Vale rules against fixtures
