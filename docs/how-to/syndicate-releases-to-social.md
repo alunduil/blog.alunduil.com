@@ -6,7 +6,7 @@ posts link back to the release page on GitHub, not to the blog.
 
 ## Before you start
 
-- A dlvr.it account with its socials connected, per
+- A dlvr.it account with its outputs connected, per
   [Set up dlvr.it](set-up-dlvrit.md).
 - The project's releases feed. GitHub publishes one for every public
   repository at `https://github.com/<owner>/<repo>/releases.atom`, with
@@ -24,14 +24,12 @@ posts link back to the release page on GitHub, not to the blog.
 ## Post the title and link, not the release notes
 
 Each entry carries the tag as its title, a link to the release page, and
-the whole rendered release notes, with no short summary alongside them.
-Unlike the blog's feed, this one offers no choice of length, so an
-output posting the item body posts the notes in full.
+the whole rendered release notes. Each output's Post body toggle, off
+per the post syndication guides, keeps the notes out of the post.
 
-Keep each output's Post body toggle off, so the message is the title
-and link. In the automation's Settings, under Item text, set Begin
-posts with to the project name—the tag alone identifies nothing to a
-reader scrolling past. A finished post reads:
+The tag alone identifies nothing to a reader scrolling past, so in the
+automation's Settings, under Item text, set Begin posts with to the
+project name. A finished post reads:
 
 ```text
 zfs-replicate v4.1.0

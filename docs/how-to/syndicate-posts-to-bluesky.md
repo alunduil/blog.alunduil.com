@@ -29,27 +29,24 @@ the mechanism is recorded in
 
 ## Post the title and a link card
 
-Open the Bluesky output from the Outputs tab and choose Edit. Under Post
-options, set:
+The link card already shows the hook, so the message needs only the
+title. Keeping the body off also keeps the article text out of the
+post.
 
-- Post title: on
-- Post body: off
-- Post URL: on
-- Post photo: on
+1. Open the Bluesky output from the Outputs tab and choose Edit.
+2. Under Post options, turn Post title, Post URL, and Post photo on,
+   and Post body off.
+3. Leave Begin posts with and End posts with empty.
 
-Leave Begin posts with and End posts with empty. The post is the item's
-title as the message, with a link card built from the post's
-`description` and social image:
+The post reads:
 
 ```text
 How I Back Up
 [link card: title, the post's one-line hook, social image]
 ```
 
-Composing a richer message repeats what the card already shows. dlvr.it
-also shortens the link: the card points at a `dlvr.it` URL that
-redirects to the canonical one with `utm_source` and `utm_medium`
-appended.
+The card links to a `dlvr.it` URL that redirects to the canonical one
+with `utm_source` and `utm_medium` appended.
 
 ## Verify
 

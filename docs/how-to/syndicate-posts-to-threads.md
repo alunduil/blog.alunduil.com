@@ -27,16 +27,14 @@ the mechanism is recorded in
 
 ## Post the title and link
 
-Open the Threads output from the Outputs tab and choose Edit. Under Post
-options, set:
+Keeping the body off keeps the article text out of the post.
 
-- Post title: on
-- Post body: off
-- Post URL: on
-- Post photo: on
+1. Open the Threads output from the Outputs tab and choose Edit.
+2. Under Post options, turn Post title, Post URL, and Post photo on,
+   and Post body off.
+3. Leave Begin posts with and End posts with empty.
 
-Leave Begin posts with and End posts with empty. With the body off, the
-post is the item's title, a link, and the post's social image:
+The post is the item's title, a link, and the post's social image:
 
 ```text
 How I Back Up http://dlvr.it/<id>

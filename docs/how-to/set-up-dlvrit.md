@@ -1,7 +1,7 @@
 # Set up dlvr.it
 
 dlvr.it forwards a source feed to connected social accounts. Every
-syndication guide here builds on the account this page creates:
+syndication guide here builds on what this page sets up:
 
 - [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
 - [Syndicate posts to Threads](syndicate-posts-to-threads.md)
@@ -25,22 +25,17 @@ match the intent rather than the exact wording.
 
 One automation reads the blog's feed and posts to every connected
 social, each as an output on it. The feed at
-`https://blog.alunduil.com/rss.xml` carries each post's title,
-description, full body, and canonical link, and it excludes
-future-dated (scheduled) posts, so nothing syndicates before its
-`pubDatetime`.
+`https://blog.alunduil.com/rss.xml` excludes future-dated posts, so
+nothing syndicates before its `pubDatetime`. Each item carries two
+blocks of text: `description`, the one-line hook, and
+`content:encoded`, the whole post.
 
 1. Open the Automate tab and create a New Automation with
    `https://blog.alunduil.com/rss.xml` as its input.
-2. In the automation's Settings, under Advanced, set:
-   - Body posting options: Prefer summary content
-   - Image selection order: Open Graph tags first
-
-Each item carries two blocks of text: `description`, the one-line hook,
-and `content:encoded`, the whole post rendered for feed readers. An
-automation preferring full content posts the whole article, cut off at
-the character limit. Open Graph tags first picks the post's social image
-over the first image in its body.
+2. In the automation's Settings, under Advanced, set Body posting
+   options to Prefer summary content, which picks the hook.
+3. Set Image selection order to Open Graph tags first, which picks the
+   post's social image over the first image in its body.
 
 ## Limit the first sync
 
