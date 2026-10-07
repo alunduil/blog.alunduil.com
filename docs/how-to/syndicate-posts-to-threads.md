@@ -8,60 +8,47 @@ the mechanism is recorded in
 ## Before you start
 
 - A Threads account to post to.
-- The published feed at `https://blog.alunduil.com/rss.xml`. It already
-  carries each post's title, description, full body, and canonical link,
-  and it excludes future-dated (scheduled) posts, so nothing syndicates
-  before its `pubDatetime`.
-- A dlvr.it account, per [Set up dlvr.it](set-up-dlvrit.md).
+- The blog's dlvr.it automation, per [Set up dlvr.it](set-up-dlvrit.md).
 
 ## Connect Threads to dlvr.it
 
-1. Sign in to dlvr.it and open the Socials tab.
-2. Choose Add Social, pick Threads, and complete the Meta
-   authorisation. This grants dlvr.it permission to post to the
-   account and nothing more, and you can revoke it later from the
-   Threads account settings.
+1. Sign in to dlvr.it and open the Outputs tab.
+2. Add Threads as an output and complete the Meta authorisation. This
+   grants dlvr.it permission to post to the account and nothing more,
+   and you can revoke it later from the Threads account settings.
 
-## Add the feed and route it to Threads
+## Add Threads to the blog's automation
 
-1. Open the Feeds tab and add the URL
-   `https://blog.alunduil.com/rss.xml`.
-2. Route the feed to the connected Threads social.
+1. Open the Automate tab, open the automation reading
+   `https://blog.alunduil.com/rss.xml`, and choose Add Output.
+2. Pick the connected Threads output.
 3. Limit the first sync, so the back catalogue does not flood the
    timeline.
 
-## Choose the summary over the full body
+## Post the title and link
 
-Set this feed to prefer summary content, under its advanced settings.
-Each item carries two blocks of text: `description`, the one-line hook,
-and `content:encoded`, the whole post rendered for feed readers. dlvr.it
-calls them Summary and Full Body. A route preferring full content posts
-the whole article, cut off at the character limit.
+Keeping the body off keeps the article text out of the post.
 
-## Set the post format
+1. Open the Threads output from the Outputs tab and choose Edit.
+2. Under Post options, turn Post title, Post URL, and Post photo on,
+   and Post body off.
+3. Leave Begin posts with and End posts with empty.
 
-Match the canonical shape: title, the one-line hook, and the link back.
-In the route's post template, build the message from the feed's title
-and description fields, and let dlvr.it append the canonical link. A
-finished post reads roughly:
+The post is the item's title, a link, and the post's social image:
 
 ```text
-How I Back Up — <the post's one-line description>
-https://blog.alunduil.com/posts/how-i-back-up
+How I Back Up http://dlvr.it/<id>
 ```
-
-Threads allows 500 characters, and the link counts against that, so a
-title, hook, and canonical URL still fit with room to spare. Keep the
-message lean for the reader, not the limit, and add to it only when a
-later review shows the need.
 
 ## Verify
 
 1. Trigger a manual check, or wait for the next post to publish.
-2. Confirm a Threads post appears that points at the canonical URL.
+2. Confirm a Threads post appears. The visible link points at
+   `dlvr.it`, so follow the redirect to confirm it lands on the
+   canonical URL.
 
 dlvr.it checks the feed on a schedule rather than on publish, so a new
 post appears at the next check—a short delay is not a failure.
 
-A post that never arrives points at the route, the Threads
+A post that never arrives points at the automation, the Threads
 authorisation, or the feed.
