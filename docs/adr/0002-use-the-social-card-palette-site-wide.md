@@ -51,20 +51,17 @@ The accent changes hue between themes because contrast demands it:
 blue is the only card colour that reads as text on cream, and yellow
 the only one on black. Links carry colour as text, which the card never
 does. Holding links to the card's rules would mean redesigning them.
+Text selection uses the full-strength accent: cream on 75% blue measures
+3.94:1.
 
 Borders follow the card's black lines. The card has no dark version, so
 dark mode inverts the grid: cream lines on a black field. Cream is also
 the only card colour other than red that clears 3:1 on black, and red
-lines break the card's rule. Red therefore has no role on the site. Its
-place in the card's rules is a solid block, which needs no contrast
-check as decoration.
+lines break the card's rule.
 
 Browser chrome `theme-color` uses each theme's `--background`. The
 manifest holds one `theme_color` and one `background_color`, so both
 take the light background.
-
-Text selection uses the full-strength accent: cream on 75% blue measures
-3.94:1.
 
 Measured contrast, using the WCAG 2.2 relative-luminance formula:
 
@@ -83,13 +80,11 @@ Measured contrast, using the WCAG 2.2 relative-luminance formula:
 
 - The page, browser chrome, manifest, and OG card agree, so a shared
   link previews in the site's own colours.
-- Every text pair clears 4.5:1 and every non-text pair clears 3:1 in
-  both themes.
 - Borders read as full-contrast rules rather than AstroPaper's faint
   grey. Header, footer, table, and image borders are as strong as the
   card's lines.
 - Red appears only on the card. Bringing it to the site means adding
-  solid colour blocks, not recolouring an existing token.
+  solid colour blocks. As decoration, blocks need no contrast check.
 - A new token or colour starts from the card's five colours and needs
   its own contrast check in both themes. Yellow can't carry text in
   light mode, and blue can't in dark mode.
