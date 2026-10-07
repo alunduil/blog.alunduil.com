@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate the contributions heatmap for "The Tool Was Never the Lever".
+"""Regenerate the contributions heatmap for "I Built the Machine Twice".
 
 Fetches the author's GitHub contribution calendar (GraphQL, one year per
 request), buckets it by week, and renders a weeks heatmap to the post's
@@ -68,9 +68,8 @@ class Theme:
         return cmap
 
 
-# GitHub's contribution scales, each anchored on the site background so an
-# empty week reads as page. The dark scale runs dark-to-bright so busy weeks
-# stand out on a dark page rather than recede.
+# GitHub's contribution scales, each starting from the site background so an
+# empty week blends into the page.
 THEMES = (
     Theme(
         suffix="",
