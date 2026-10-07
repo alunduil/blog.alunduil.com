@@ -131,8 +131,18 @@ repos:
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
-            src/data/blog/_.*
+            src/data/blog/_.*|
+            \.vale/fixtures/.*
           )$
+      # The fixtures hold intentional violations, so the hook above skips
+      # them and this runner inverts the assertion. It always runs: the
+      # top-level exclude hides the rule files it guards.
+      - id: vale
+        alias: vale-rules
+        name: Check custom Vale rules against fixtures
+        entry: scripts/check-vale-rules.sh
+        pass_filenames: false
+        always_run: true
 
   - repo: https://github.com/DavidAnson/markdownlint-cli2
     rev: v0.23.3
