@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Assert each custom Vale rule against its fixtures in
-# .vale/fixtures/blog-alunduil-com/:
+# Assert each custom Vale rule against its fixtures in .vale/fixtures/<style>/:
 # every line of <Rule>.flag.md must draw exactly one alert, and
 # <Rule>.pass.md must draw none.
 
@@ -10,17 +9,17 @@ cd "$(git rev-parse --show-toplevel)"
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
 
+style=blog-alunduil-com
 failed=0
 
-# Enables blog-alunduil-com.<rule> alone so other styles' alerts don't count
-# against it.
+# Enables <style>.<rule> alone so other styles' alerts don't count against it.
 config_for() {
   local rule=$1 config="$tmp/$1.ini"
   cat >"$config" <<EOF
 StylesPath = $PWD/.vale/styles
-Vocab = blog-alunduil-com
+Vocab = $style
 [*.md]
-blog-alunduil-com.$rule = YES
+$style.$rule = YES
 EOF
   echo "$config"
 }
@@ -35,14 +34,14 @@ lint() {
   fi
 }
 
-for rule_file in .vale/styles/blog-alunduil-com/*.yml; do
+for rule_file in ".vale/styles/$style"/*.yml; do
   rule=$(basename "$rule_file" .yml)
-  flag_file=".vale/fixtures/blog-alunduil-com/$rule.flag.md"
-  pass_file=".vale/fixtures/blog-alunduil-com/$rule.pass.md"
+  flag_file=".vale/fixtures/$style/$rule.flag.md"
+  pass_file=".vale/fixtures/$style/$rule.pass.md"
 
   # Vale lints a missing path as literal text, which would pass silently.
   if [[ ! -f "$flag_file" || ! -f "$pass_file" ]]; then
-    echo "blog-alunduil-com.$rule: needs $flag_file and $pass_file" >&2
+    echo "$style.$rule: needs $flag_file and $pass_file" >&2
     failed=1
     continue
   fi
@@ -52,14 +51,14 @@ for rule_file in .vale/styles/blog-alunduil-com/*.yml; do
   expected=$(grep -n . "$flag_file" | cut -d: -f1)
   actual=$(lint "$config" "$flag_file" | cut -d: -f2)
   if [[ "$expected" != "$actual" ]]; then
-    echo "blog-alunduil-com.$rule: lines of $flag_file that must flag once:" >&2
+    echo "$style.$rule: lines of $flag_file that must flag once:" >&2
     diff <(echo "$expected") <(echo "$actual") | grep '^[<>]' >&2 || true
     failed=1
   fi
 
   hits=$(lint "$config" "$pass_file")
   if [[ -n "$hits" ]]; then
-    echo "blog-alunduil-com.$rule: $pass_file must not flag:" >&2
+    echo "$style.$rule: $pass_file must not flag:" >&2
     echo "$hits" >&2
     failed=1
   fi
