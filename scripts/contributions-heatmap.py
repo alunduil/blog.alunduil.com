@@ -18,7 +18,7 @@ import datetime
 import json
 import subprocess
 from dataclasses import dataclass
-from typing import Optional, Sequence
+from typing import Sequence
 
 import matplotlib
 
@@ -54,40 +54,37 @@ class Theme:
     suffix: str
     background: str  # --background; a blank week matches the page
     foreground: str  # --foreground
-    edge: str  # cell borders, a shade off the background
-    colors: Optional[Sequence[str]]  # None keeps matplotlib's Greens
+    edge: str  # cell borders, --muted
+    colors: Sequence[str]  # empty week first, busiest last
 
     @property
     def output(self) -> str:
         return f"{ASSET_STEM}{self.suffix}.svg"
 
     def colormap(self):
-        if self.colors is None:
-            cmap = plt.cm.Greens.copy()
-        else:
-            cmap = LinearSegmentedColormap.from_list("contributions", self.colors)
+        cmap = LinearSegmentedColormap.from_list("contributions", self.colors)
         # A masked week hasn't happened yet; it should disappear.
         cmap.set_bad(self.background)
         return cmap
 
 
+# GitHub's contribution scales, each anchored on the site background so an
+# empty week reads as page. The dark scale runs dark-to-bright so busy weeks
+# stand out on a dark page rather than recede.
 THEMES = (
     Theme(
         suffix="",
-        background="#ffffff",
-        foreground="#000000",
-        edge="#e8e8e8",
-        colors=None,
+        background="#f4efe6",
+        foreground="#0a0a0a",
+        edge="#e1ddd4",
+        colors=("#f4efe6", "#9be9a8", "#40c463", "#30a14e", "#216e39"),
     ),
-    # Greens runs pale-to-dark, which inverts on a dark page: quiet weeks would
-    # glow and busy ones recede. This is GitHub's dark scale, anchored on the
-    # site background rather than GitHub's.
     Theme(
         suffix="-dark",
-        background="#212737",
-        foreground="#eaedf3",
-        edge="#343f60",
-        colors=("#212737", "#0e4429", "#006d32", "#26a641", "#39d353"),
+        background="#0a0a0a",
+        foreground="#f4efe6",
+        edge="#1d1c1c",
+        colors=("#0a0a0a", "#0e4429", "#006d32", "#26a641", "#39d353"),
     ),
 )
 
