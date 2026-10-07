@@ -42,10 +42,10 @@ WCAG 2.2 AA in both themes. The tokens in `src/styles/global.css`:
 | Token | Light | Dark | Role |
 | --- | --- | --- | --- |
 | `--background` | `#f4efe6` cream | `#0a0a0a` black | Card background per theme |
-| `--foreground` | `#282728` | `#eaedf3` | Body text |
+| `--foreground` | `#0a0a0a` black | `#f4efe6` cream | The card's text colour, inverted on black |
 | `--accent` | `#1e4fa1` blue | `#f1c232` yellow | Whichever card colour reads as text on that background |
 | `--border` | `#0a0a0a` black | `#f4efe6` cream | The card's line colour, inverted on black |
-| `--muted` | `#e4dfd7` | `#1c1c1d` | Background mixed 8% toward foreground, for raised surfaces |
+| `--muted` | `#e1ddd4` | `#1d1c1c` | Background mixed 8% toward foreground, for raised surfaces |
 
 The accent changes hue between themes because contrast demands it:
 blue is the only card colour that reads as text on cream, and yellow
@@ -70,9 +70,9 @@ Measured contrast, using the WCAG 2.2 relative-luminance formula:
 
 | Pair | Light | Dark |
 | --- | --- | --- |
-| Foreground on background | 12.99 | 16.88 |
-| Foreground on muted | 11.22 | 14.52 |
-| Foreground at 70% opacity on background | 5.22 | 8.41 |
+| Foreground on background | 17.29 | 17.29 |
+| Foreground on muted | 14.61 | 14.85 |
+| Foreground at 70% opacity on background | 7.15 | 8.57 |
 | Accent on background | 6.82 | 11.79 |
 | Accent at 85% opacity on background | 4.91 | 8.59 |
 | Accent at 75% opacity (focus outline) on background | 3.94 | 6.86 |
@@ -93,6 +93,9 @@ Measured contrast, using the WCAG 2.2 relative-luminance formula:
 - A new token or colour starts from the card's five colours and needs
   its own contrast check in both themes. Yellow can't carry text in
   light mode, and blue can't in dark mode.
+- Figures that bake a background into the image follow these tokens.
+  `scripts/contributions-heatmap.py` draws its chart on each
+  theme's background and muted colours.
 - Syntax-highlighted code blocks keep their Shiki themes' own
   backgrounds and colours. The palette doesn't reach inside them.
 - Upstream AstroPaper theme updates that touch `global.css` conflict on
