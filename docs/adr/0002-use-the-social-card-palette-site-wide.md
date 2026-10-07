@@ -14,6 +14,11 @@ red `#D5232A`, blue `#1E4FA1`, and yellow `#F1C232`. The browser chrome
 page itself kept AstroPaper's near-white `#fdfdfd` and slate `#212737`,
 so the mobile address bar showed a colour the page never did.
 
+The card is a Mondrian composition with fixed rules. Lines are black:
+every division is an 8px black gap. Red, blue, and yellow appear only
+as solid blocks, never as lines or text. Cream is the empty field, and its
+text is black.
+
 The accent was the card's blue in light mode and its red in dark mode.
 Red on slate measures 2.91:1, below the 4.5:1 that the Web Content
 Accessibility Guidelines (WCAG) 2.2 require at level AA for text. The
@@ -31,21 +36,28 @@ user-interface component under WCAG 2.2 success criterion 1.4.11.
 
 ## Decision
 
-Take every site colour from the card, and meet WCAG 2.2 AA in both
-themes. The tokens in `src/styles/global.css`:
+Take every site colour from the card, follow its line rule, and meet
+WCAG 2.2 AA in both themes. The tokens in `src/styles/global.css`:
 
 | Token | Light | Dark | Role |
 | --- | --- | --- | --- |
 | `--background` | `#f4efe6` cream | `#0a0a0a` black | Card background per theme |
 | `--foreground` | `#282728` | `#eaedf3` | Body text |
 | `--accent` | `#1e4fa1` blue | `#f1c232` yellow | Whichever card colour reads as text on that background |
-| `--border` | `#d5232a` red | `#d5232a` red | The card's red, which clears 3:1 on both backgrounds |
+| `--border` | `#0a0a0a` black | `#f4efe6` cream | The card's line colour, inverted on black |
 | `--muted` | `#e4dfd7` | `#1c1c1d` | Background mixed 8% toward foreground, for raised surfaces |
 
 The accent changes hue between themes because contrast demands it:
 blue is the only card colour that reads as text on cream, and yellow
-the only one on black. Red moves from the dark accent to the border in
-both themes, so all three card colours appear on the site.
+the only one on black. Links carry colour as text, which the card never
+does. Holding links to the card's rules would mean redesigning them.
+
+Borders follow the card's black lines. The card has no dark version, so
+dark mode inverts the grid: cream lines on a black field. Cream is also
+the only card colour other than red that clears 3:1 on black, and red
+lines break the card's rule. Red therefore has no role on the site. Its
+place in the card's rules is a solid block, which needs no contrast
+check as decoration.
 
 Browser chrome `theme-color` uses each theme's `--background`. The
 manifest holds one `theme_color` and one `background_color`, so both
@@ -65,7 +77,7 @@ Measured contrast, using the WCAG 2.2 relative-luminance formula:
 | Accent at 85% opacity on background | 4.91 | 8.59 |
 | Accent at 75% opacity (focus outline) on background | 3.94 | 6.86 |
 | Background on accent (selection) | 6.82 | 11.79 |
-| Border on background | 4.47 | 3.87 |
+| Border on background | 17.29 | 17.29 |
 
 ## Consequences
 
@@ -73,8 +85,11 @@ Measured contrast, using the WCAG 2.2 relative-luminance formula:
   link previews in the site's own colours.
 - Every text pair clears 4.5:1 and every non-text pair clears 3:1 in
   both themes.
-- Red borders are louder than AstroPaper's faint grey. Header, footer,
-  table, and image borders now carry colour in both themes.
+- Borders read as full-contrast rules rather than AstroPaper's faint
+  grey. Header, footer, table, and image borders are as strong as the
+  card's lines.
+- Red appears only on the card. Bringing it to the site means adding
+  solid colour blocks, not recolouring an existing token.
 - A new token or colour starts from the card's five colours and needs
   its own contrast check in both themes. Yellow can't carry text in
   light mode, and blue can't in dark mode.
