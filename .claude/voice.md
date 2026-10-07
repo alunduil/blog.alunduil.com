@@ -1,12 +1,18 @@
 # Blog voice
 
-The blog's voice home. Two halves, kept distinct but co-located:
+The blog's voice home. Two halves, co-located on purpose:
 
 - **Prescriptive rules** (below) — the sentence-level conventions and
   story register to *apply* when drafting or editing a post.
 - **Descriptive fingerprint** (further down) — what the published posts
-  measurably *do*, calibrated from the corpus. When the two overlap they
-  agree; when in doubt, the corpus is the evidence.
+  measurably *do*, calibrated from the corpus.
+
+The halves share a file because some sections are both at once: the
+anti-tells and the how-to register prescribe from inside the
+fingerprint. When the two overlap they agree; when in doubt, the corpus
+is the evidence. One file is also easier for a web session to find. Each
+half still has its own edit trigger: rules change when an editorial call
+is made, the fingerprint when the corpus is re-measured.
 
 Read this before drafting or editing any post — story, review,
 methodology, or freeform. `post-draft` and `review-draft` apply it from

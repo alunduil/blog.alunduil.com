@@ -1,7 +1,7 @@
 # Set up dlvr.it
 
 dlvr.it forwards a source feed to connected social accounts. Every
-syndication guide here builds on the account this page creates:
+syndication guide here builds on what this page sets up:
 
 - [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
 - [Syndicate posts to Threads](syndicate-posts-to-threads.md)
@@ -21,8 +21,24 @@ match the intent rather than the exact wording.
    and posting errors, and that email is the only thing that announces a
    post which never went out.
 
+## Create the blog's automation
+
+One automation reads the blog's feed and posts to every connected
+social, each as an output on it. The feed at
+`https://blog.alunduil.com/rss.xml` excludes future-dated posts, so
+nothing syndicates before its `pubDatetime`. Each item carries two
+blocks of text: `description`, the one-line hook, and
+`content:encoded`, the whole post.
+
+1. Open the Automate tab and create a New Automation with
+   `https://blog.alunduil.com/rss.xml` as its input.
+2. In the automation's Settings, under Advanced, set Body posting
+   options to Prefer summary content, which picks the hook.
+3. Set Image selection order to Open Graph tags first, which picks the
+   post's social image over the first image in its body.
+
 ## Limit the first sync
 
 Whenever you add a feed, cap how many existing items post before the
-route goes live. A feed arrives carrying its back catalogue, and all of
-it is old news.
+automation goes live. A feed arrives carrying its back catalogue, and
+all of it is old news.
