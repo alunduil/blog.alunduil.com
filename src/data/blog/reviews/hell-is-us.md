@@ -14,7 +14,7 @@ faith should be kept apart from power. His reform turned into two centuries of
 religious war. The civil war tearing Hadea apart in [*Hell is Us*][steam] is
 still fought along the line he drew. Most of the game's history reached me
 like that, one document or ruin at a time, which is why I'd tell anyone to
-play it. I'll keep the later discoveries unnamed here.
+play it.
 
 Each find reached further back than the one before. The modern war led me to
 the reform. From the reform I kept going, into an antiquity
