@@ -127,8 +127,8 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
 ## Reading ADRs
 
-An ADR under `docs/adr/` states what was decided and known when it was
-written. Take current state from the live system or the author.
+Take current state from the live system or the author. An ADR under
+`docs/adr/` states what was decided and known when it was written.
 
 ## GitHub Actions
 
