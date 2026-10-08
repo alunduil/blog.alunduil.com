@@ -17,19 +17,19 @@ like that, one document or ruin at a time, which is why I'd tell anyone to
 play it.
 
 Each find reached further back than the one before. The modern war led me to
-the reform. From the reform I kept going, into an antiquity
-whose statues stand in the caves and temples I fought through. Seeing the
-history open from the modern day back to antiquity was the draw for me. It
-came out piecemeal enough to keep me hooked the whole time.
+the reform. From the reform I kept going, into an antiquity whose statues
+stand in the caves and temples I fought through. Seeing the history open
+from the modern day back to antiquity was the draw for me. It came out
+piecemeal enough to keep me hooked the whole time.
 
 ![A figure in a white coat, a red-handled axe in hand, crosses a paved cave floor between giant carved stone statues. Candles and small wooden crosses line the rocks beside him, and pale, hunched figures stand further in.](/assets/hell-is-us-statues.jpg)
 
 The game never stops to explain any of this. It leaves far more to read than
 *Inside* or the Souls games, in journals and readings scattered across
 Hadea. Quests get no more explanation than the lore, with no map or quest
-markers to say where to go next. Leads came from
-the people I questioned and the documents I read. Making the connections
-between them without any hand-holding was excellent.
+markers to say where to go next. Leads came from the people I questioned
+and the documents I read. Making the connections between them without any
+hand-holding was excellent.
 
 I reached one faith's temple before I found an ancient queen's tomb. Her
 tomb's walls tell her story in order. Because I'd already seen the rival
