@@ -11,9 +11,10 @@ growth and confidence building on a rising arc for the hero group.
 1. The party grows by coming back together. Evidence: the party opens as
    outlaws, and the secrets they keep from each other pull them apart. Gorm
    brings each member back in turn.
-2. The mages grow past what broke them. Evidence: Jynn's lies about his
+2. The pairs inside the party grow too. Evidence: Jynn's lies about his
    liche father break what he has with Laruna, who doesn't handle lies at
-   all. The two become friends again who help each other.
+   all. The two become friends again who help each other. Kaitha, who took
+   Thane the troll for a supernatural guardian, sets out looking for him.
 
 ## Honest tail
 
