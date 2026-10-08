@@ -2,43 +2,43 @@
 pubDatetime: 2026-11-15T08:00:00Z
 title: Under the War
 ogImage: ../../../assets/images/hell-is-us-cover.jpg
-description: "Hell is Us hands over its history a piece at a time, from a modern civil war back to antiquity. That kept me hooked to the end."
+description: "Hell is Us reveals its history piecemeal, from a modern civil war back to antiquity. That kept me hooked the whole time."
 tags:
   - worldbuilding
   - discovery
   - belief
 ---
 
-A book in the National Library of Lethe tells of a scholar who wanted faith
-split from power. His argument started a reform that turned into two
-centuries of religious war. The civil war going on around you in
-[*Hell is Us*][steam] runs along the same split. That book is the first
-layer of history the game gives you. The rest arrives the same way, a piece
-at a time. Play it for the history. I'll leave the deeper layers unnamed,
-because finding them is the game.
+The National Library of Lethe holds a book about a scholar who argued that
+faith should be kept apart from power. His reform turned into two centuries of
+religious war. The civil war tearing Hadea apart in [*Hell is Us*][steam] is
+still fought along the line he drew. Most of the game's history reached me
+like that, one document or ruin at a time, which is why I'd tell anyone to
+play it. I'll keep the later discoveries unnamed here.
 
-Under the war sits the schism. Under the schism sits something older,
-carved in stone across the caves and temples of Hadea. Watching the history
-open from the modern day back to antiquity was the draw for me. It came out
-piecemeal enough to keep me hooked the whole time.
+Each find reached further back than the one before. The modern war led me to
+the reform. From the reform I kept going, into an antiquity
+whose statues stand in the caves and temples I fought through. Seeing the
+history open from the modern day back to antiquity was the draw for me. It
+came out piecemeal enough to keep me hooked the whole time.
 
 ![A figure in a white coat carrying a long-handled axe walks a cave floor toward a crowd of pale, hunched figures, under giant carved stone statues.](/assets/hell-is-us-statues.jpg)
 
-Nothing narrates any of it. Like *Inside* and the Souls games, *Hell is Us*
-leaves its lore in the world for you to find. It has no quest markers, no
-map, and no quest log. Leads come from the people you question and the
-documents you pick up. Leaving every connection for me to make was
-excellent.
+The game never stops to explain any of this. Like *Inside* and the Souls
+games, it leaves its lore in the world for me to find. Quests work the same
+way, with no map or quest markers to say where to go next. Leads came from
+the people I questioned and the documents I read. Making the connections
+between them without any hand-holding was excellent.
 
-Belief in Hadea is a power struggle over one artefact. I reached one
-faith's temple before I found an ancient queen's tomb, whose walls tell her
-story in order. Having already seen the rival side, I read her account as
-one half of a back-and-forth. The faiths take the upper hand and lose it
-again, each time over the same relic.
+I reached one faith's temple before I found an ancient queen's tomb. Her
+tomb's walls tell her story in order. Because I'd already seen the rival
+faith's side, I read those walls as one half of a back-and-forth. Power passes
+between the faiths more than once, with the same artefact at the centre of
+every turn.
 
-The side stories branch off the main one out of order. I like that kind of
-branching, because it shows a living history. It also means the documents
-pile up. I played the whole game without learning I could archive the
-finished ones. It would have helped.
+The side stories cross the main story out of order. I like that kind of
+branching, because it shows a living history. It also piles up documents. I
+played the whole game before I found out I could archive the ones I'd
+finished with. Keeping them organised that way would have helped a lot.
 
 [steam]: https://store.steampowered.com/app/1620730/Hell_is_Us/
