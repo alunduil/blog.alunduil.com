@@ -62,8 +62,9 @@ Derive completions from one "what's active now?" answer per source. A drop resol
    - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
    - in both → unchanged.
 4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
+5. **Ask the review question while it's fresh.** If anything was marked Finished, send one more message listing those titles and asking, for each, "would you recommend it or not, and why?" For a magazine or anthology issue, ask which story carries the recommendation. Wait for the reply. This is `review-draft`'s gate, asked at the moment the author still remembers the work.
 
-Each item marked **Finished** this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+A **Finished** item whose answer names a claim — a recommendation or a pan, with a reason — is a **completion** kernel for synthesis (review, almost always `[short]` — see §4). Record the author's answer verbatim; it goes into the idea issue's Spark. A Finished item with no claim ("it was fine", can't name a story) stays a Media Log entry and offers no review kernel. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
 
 If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
 
@@ -102,14 +103,26 @@ After scoring, tag each theme **short** or **long** by shape (independent of sco
 
 A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
 
+**Screen each theme before offering it as a kernel.** These are the questions that closed past ideas as not-planned weeks after filing; answer them now, from the collected data and a quick look at the sources:
+
+- **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data; the author confirms it at filing.
+- **Causality holds.** When the angle rests on an order of events ("X made Y possible"), check `merged_at` and touched files of the cited PRs and commits. The order in the data must support the story.
+- **The source hasn't written it.** When a theme leans on a highlight or article, check that the source doesn't already make the claim. The kernel must add lived material the source lacks.
+- **Not a corpus repeat.** Compare the landing sentence against published posts in `src/data/blog/`. The same conclusion pointed at a new target is a repeat.
+- **Survives the wait.** A kernel tied to a live news event or an undecided downstream issue must be writable now, or framed so the outcome doesn't matter.
+
+Run the data checks (causality, source) only on themes the author is weighing, not on every theme. A theme that fails a check moves to a short **Screened out** list in §5 with its reason, so the author can overrule it.
+
 ## 5. Present + wait
 
-Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
+Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence). End with empty `## Idea kernels` section.
 
 Wait for the author's call on each theme:
 
 - "file idea X" (one or many) → file each via `gh issue create --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
-- Themes that map to an existing open `idea`-labeled issue (check `gh issue list --label idea --state open`) → add a comment with the new material to that issue.
+- Before filing, search existing `idea` issues in both states: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>` (no `--state` returns both).
+  - Matches an open issue → add a comment with the new material to that issue.
+  - Matches an issue closed as not-planned → read its closing comment. File only when the new material answers the reason it closed, and link the old issue in Source material.
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
 Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
