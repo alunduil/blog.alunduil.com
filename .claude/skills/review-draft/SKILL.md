@@ -224,7 +224,8 @@ to sit in. Revealing what *happens* is what spoils.
 
 - **Recast plot beats as dispositions.** Write who a character is. Show the
   early, establishing beat concretely; gesture at the outcome-adjacent one.
-- **Fence once,** early and honestly.
+- **Withhold silently.** These rules keep the post spoiler-free; every
+  sentence stays on the work itself.
 - **Apply the surprise test.** Could a reader who then picks up the work still
   be surprised by the plot? If a sentence's pull needs a known outcome, cut it
   or lift it to theme.
