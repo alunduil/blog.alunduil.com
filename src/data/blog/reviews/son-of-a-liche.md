@@ -21,11 +21,9 @@ squire and a band of misfits was a lot of why he was so lovable. In this book
 he brings each member of the party back in turn. By the time they're together
 again they act like a group of heroes, and a surer one than before.
 
-The rest of the party grows alongside him. Jynn, one of the two mages, is the
-son of the title and hides who his father is. Laruna, the other, doesn't
-handle lies at all. His secrets come between them. Over the book they work out
-how to be friends who help each other. Heraldin, the bard, did most of his
-growing in *Orconomics*. In this book he capitalises on it.
+The party's two mages grow as well. Jynn, the son of the title, and Laruna, the
+fire mage, start this book on bad terms. Over it they work out how to be
+friends who help each other.
 
 Pike sets up a final showdown with the dragon for the third book. I read the
 dragon as standing, literally and figuratively, for what backs Arth's economy.
