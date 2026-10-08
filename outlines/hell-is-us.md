@@ -1,0 +1,37 @@
+# Hell is Us — review spine
+
+**Object:** video game — Rogue Factor, published by Nacon, 4 September
+2025. Played on Xbox, finished August 2026. Hadea: a country in civil war
+between Palomists and Sabinians, struck by a calamity that fills it with
+mystical entities.
+
+**Thesis:** Play *Hell is Us* for its history. It comes out piecemeal,
+from the modern war back to antiquity, and that's "enough to leave me
+hooked the whole time."
+
+## Supporting points (thematic, not chronological)
+
+1. **The history is dug up, layer by layer, by you.** The present-day war
+   sits on an older religious split, and that split on something older
+   still: "seeing it open from modern back to antiquity is the amazing."
+   Measured against Inside and the Souls games, the lore lives in the
+   world and nobody narrates it. No markers, no map, no quest log: "the
+   no hand holding quests with the connection being discovered was
+   excellent." Evidence: a library book tracing the war's schism back two
+   centuries to a scholar who wanted faith split from power, the first
+   layer down. Capture: `Hell Is Us-2026_08_14-15-07-18.png`, pale figures
+   among giant carved statues.
+
+2. **Belief is a power struggle over one artefact.** Faiths take and lose
+   the upper hand around a single relic across centuries: "the back and
+   forth in the power struggle of the beliefs based on this artefact."
+   Evidence: reaching a cult's temple first, then the Blood Queen's tomb,
+   whose walls tell her story in order, so her side lands against a
+   rival's already seen. Name neither the cult nor the relic.
+
+## Honest tail
+
+The documents pile up, and I played the whole game without learning I
+could archive the finished ones. It would have helped. The clutter is
+also the point, though: the stories branch nonlinearly, and "I like
+seeing something that branches nonlinearly to show a living history."
