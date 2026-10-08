@@ -187,7 +187,7 @@ machina
 agent
 
 # Technical terms not in the en_GB-ise dictionary (SCOWL size 60).
-# Add as Custom.Spelling surfaces them.
+# Add as blog-alunduil-com.Spelling surfaces them.
 observability
 integrations
 reachability

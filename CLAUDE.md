@@ -31,7 +31,7 @@ scripting your own.
   they cover. Mock `astro:` virtual modules with `vi.mock`.
 - Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
   (`.vale.ini` + `.vale/`; give each custom rule must-flag and must-pass
-  fixtures in `.vale/fixtures/Custom/`), markdownlint
+  fixtures in `.vale/fixtures/blog-alunduil-com/`), markdownlint
   (`.markdownlint-cli2.yaml`), yamllint (`.yamllint`), actionlint,
   shellcheck/shfmt, ESLint and Prettier (`local` hooks running the
   repo's own binaries so their plugins/configs resolve from workspace

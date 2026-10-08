@@ -3,16 +3,16 @@
 # is years, so refresh by hand when a real spelling gap surfaces:
 #
 #   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/index.aff \
-#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.aff
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/blog-alunduil-com/en_GB.aff
 #   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/index.dic \
-#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.dic
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/blog-alunduil-com/en_GB.dic
 #   gh api repos/wooorm/dictionaries/contents/dictionaries/en-GB/license \
-#     -H 'Accept: application/vnd.github.raw' > .vale/styles/Custom/en_GB.LICENSE
+#     -H 'Accept: application/vnd.github.raw' > .vale/styles/blog-alunduil-com/en_GB.LICENSE
 
 extends: spelling
 message: "Did you really mean '%s'?"
 level: error
 append: false
-dicpath: Custom
+dicpath: blog-alunduil-com
 dictionaries:
   - en_GB
