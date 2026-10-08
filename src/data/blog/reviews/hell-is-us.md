@@ -24,9 +24,12 @@ came out piecemeal enough to keep me hooked the whole time.
 
 ![A figure in a white coat, a red-handled axe in hand, crosses a paved cave floor between giant carved stone statues. Candles and small wooden crosses line the rocks beside him, and pale, hunched figures stand further in.](/assets/hell-is-us-statues.jpg)
 
-The game never stops to explain any of this. Like *Inside* and the Souls
-games, it leaves its lore in the world for me to find. Quests work the same
-way, with no map or quest markers to say where to go next. Leads came from
+The game never stops to explain any of this, though it gives me much more
+to read than the games I'd compare it with. The Souls games keep their lore
+in weapon descriptions and scant dialogue. *Inside* has only its
+environment. *Hell is Us* fills its world with journals and readings
+instead. Quests get no more explanation than the lore, with no map or quest
+markers to say where to go next. Leads came from
 the people I questioned and the documents I read. Making the connections
 between them without any hand-holding was excellent.
 

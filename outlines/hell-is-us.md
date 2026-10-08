@@ -16,9 +16,11 @@ hooked the whole time."
    Evidence: a library book tracing the war's schism back two centuries to
    a scholar who wanted faith split from power.
    Capture: `Hell Is Us-2026_08_17-14-30-19.png`, pale figures among giant
-   carved statues. Measure: Inside and the Souls games, lore left in the
-   world and never narrated; "the no hand holding quests with the
-   connection being discovered was excellent."
+   carved statues. Measure: Inside and the Souls games, also never narrated,
+   but sparser. Souls keeps its lore in weapon descriptions and scant
+   NPC dialogue, Inside in the environment alone. Hell is Us adds
+   journals and readings. "The no hand holding quests with the connection
+   being discovered was excellent."
 
 2. **Belief is a power struggle over one artefact.** "The back and forth
    in the power struggle of the beliefs based on this artefact." Evidence:
