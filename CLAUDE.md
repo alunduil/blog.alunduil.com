@@ -125,6 +125,11 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/cd.yml`).
 
+## Reading ADRs
+
+Take current state from the live system or the author. An ADR under
+`docs/adr/` states what was decided and known when it was written.
+
 ## GitHub Actions
 
 Workflows are named and split by when they run, jobs by what they
