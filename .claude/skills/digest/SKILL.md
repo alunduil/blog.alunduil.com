@@ -7,7 +7,7 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
-**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop; the same holds for the review question that follows them (§2 step 5). Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
+**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Ask the review question (§2 step 5) the same way. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
 ## 1. Collect (script)
 
@@ -103,13 +103,13 @@ After scoring, tag each theme **short** or **long** by shape (independent of sco
 
 A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
 
-**Screen each theme before offering it as a kernel.** These checks are the reasons past ideas closed as not-planned weeks after filing. Answer them from the collected data:
+**Screen each theme against the collected data before offering it as a kernel:**
 
-- **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data; the author confirms it at filing.
+- **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data for the author to confirm.
 - **Not a corpus repeat.** Compare the landing sentence against published posts in `src/data/blog/`. The same conclusion pointed at a new target is a repeat.
 - **Survives the wait.** A kernel tied to a live news event or an undecided downstream issue must be writable now, or framed so the outcome doesn't matter.
 
-A theme that fails moves to a short **Screened out** list in §5 with its reason, so the author can overrule it. Two further checks need source reads, so they run at filing (§5).
+A theme that fails moves to a short **Screened out** list in §5 with its reason, so the author can overrule it. The checks that need source reads run at filing (§5).
 
 ## 5. Present + wait
 
@@ -118,8 +118,12 @@ Only reachable once the check-in (§2) is answered and written back. Print the t
 Wait for the author's call on each theme:
 
 - "file idea X" (one or many) → for each, in order:
-  1. Search existing `idea` issues in both states: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>` (no `--state` returns both). An open match → add a comment with the new material to that issue and stop. A not-planned match → read its closing comment; continue only when the new material answers the reason it closed, and link the old issue in Source material.
-  2. Run the source checks. **Causality holds:** when the angle rests on an order of events ("X made Y possible"), check `merged_at` and touched files of the cited PRs and commits; the order must support the story. **The source hasn't written it:** when the theme leans on a highlight or article, check the source doesn't already make the claim; the kernel must add lived material it lacks. A failure goes back to the author with the evidence instead of filing.
+  1. Search open and closed `idea` issues: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>`.
+     - Open match → comment the new material on that issue and stop.
+     - Not-planned match → read its closing comment. Continue only when the new material answers why it closed; link it in Source material.
+  2. Run the source checks. A failure goes back to the author with the evidence instead of filing.
+     - **Causality holds.** When the angle rests on an order of events ("X made Y possible"), the `merged_at` and touched files of the cited PRs and commits must support that order.
+     - **The source hasn't written it.** When the theme leans on a highlight or article, the kernel must add lived material the source lacks.
   3. File via `gh issue create --label idea --title "<outcome>"`, passing `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
