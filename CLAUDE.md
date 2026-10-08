@@ -125,11 +125,10 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/cd.yml`).
 
-## ADRs
+## Reading ADRs
 
 An ADR under `docs/adr/` states what was decided and known when it was
-written. Take current state from the live system or the author, never from
-an ADR.
+written. Take current state from the live system or the author.
 
 ## GitHub Actions
 
