@@ -7,7 +7,7 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
-**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
+**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Ask the review question (§2 step 5) the same way. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
 ## 1. Collect (script)
 
@@ -62,8 +62,9 @@ Derive completions from one "what's active now?" answer per source. A drop resol
    - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
    - in both → unchanged.
 4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
+5. **Run `review-draft`'s gate while the work is fresh.** If anything was marked Finished, send one more message listing those titles and asking `review-draft` §1's question for each; for a magazine or anthology issue, ask which story carries it. Wait for the reply and apply §1's go/no-go.
 
-Each item marked **Finished** this run is a **completion** kernel for synthesis (review/commentary, almost always `[short]` — see §4). **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+A **Finished** item that passes the gate is a **completion** kernel for synthesis (review, almost always `[short]` — see §4); its answer goes verbatim into the idea issue's Spark. One that fails stays a Media Log entry. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
 
 If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
 
@@ -102,14 +103,28 @@ After scoring, tag each theme **short** or **long** by shape (independent of sco
 
 A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
 
+**Screen each theme against the collected data before offering it as a kernel:**
+
+- **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data for the author to confirm.
+- **Not a corpus repeat.** Compare the landing sentence against published posts in `src/data/blog/`. The same conclusion pointed at a new target is a repeat.
+- **Survives the wait.** A kernel tied to a live news event or an undecided downstream issue must be writable now, or framed so the outcome doesn't matter.
+
+A theme that fails moves to a short **Screened out** list in §5 with its reason, so the author can overrule it. The checks that need source reads run at filing (§5).
+
 ## 5. Present + wait
 
-Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. End with empty `## Idea kernels` section.
+Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence). End with empty `## Idea kernels` section.
 
 Wait for the author's call on each theme:
 
-- "file idea X" (one or many) → file each via `gh issue create --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
-- Themes that map to an existing open `idea`-labeled issue (check `gh issue list --label idea --state open`) → add a comment with the new material to that issue.
+- "file idea X" (one or many) → for each, in order:
+  1. Search open and closed `idea` issues: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>`.
+     - Open match → comment the new material on that issue and stop.
+     - Not-planned match → read its closing comment. Continue only when the new material answers why it closed; link it in Source material.
+  2. Run the source checks. A failure goes back to the author with the evidence instead of filing.
+     - **Causality holds.** When the angle rests on an order of events ("X made Y possible"), the `merged_at` and touched files of the cited PRs and commits must support that order.
+     - **The source hasn't written it.** When the theme leans on a highlight or article, the kernel must add lived material the source lacks.
+  3. File via `gh issue create --label idea --title "<outcome>"`, passing `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
 Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
