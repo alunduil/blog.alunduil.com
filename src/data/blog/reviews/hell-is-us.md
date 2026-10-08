@@ -22,7 +22,7 @@ whose statues stand in the caves and temples I fought through. Seeing the
 history open from the modern day back to antiquity was the draw for me. It
 came out piecemeal enough to keep me hooked the whole time.
 
-![A figure in a white coat carrying a long-handled axe walks a cave floor toward a crowd of pale, hunched figures, under giant carved stone statues.](/assets/hell-is-us-statues.jpg)
+![A figure in a white coat, a red-handled axe in hand, crosses a paved cave floor between giant carved stone statues. Candles and small wooden crosses line the rocks beside him, and pale, hunched figures stand further in.](/assets/hell-is-us-statues.jpg)
 
 The game never stops to explain any of this. Like *Inside* and the Souls
 games, it leaves its lore in the world for me to find. Quests work the same

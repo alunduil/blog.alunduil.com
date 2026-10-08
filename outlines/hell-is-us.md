@@ -15,7 +15,7 @@ hooked the whole time."
    still: "seeing it open from modern back to antiquity is the amazing."
    Evidence: a library book tracing the war's schism back two centuries to
    a scholar who wanted faith split from power.
-   Capture: `Hell Is Us-2026_08_14-15-07-18.png`, pale figures among giant
+   Capture: `Hell Is Us-2026_08_17-14-30-19.png`, pale figures among giant
    carved statues. Measure: Inside and the Souls games, lore left in the
    world and never narrated; "the no hand holding quests with the
    connection being discovered was excellent."
