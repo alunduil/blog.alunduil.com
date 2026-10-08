@@ -7,7 +7,7 @@ description: Weekly (or arbitrary cadence) review of GitHub activity, Readwise h
 
 Pipeline: **collect → analyze data (incl. Media Log check-in) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
 
-**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
+**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop; the same holds for the review question that follows them (§2 step 5). Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
 ## 1. Collect (script)
 
@@ -62,9 +62,9 @@ Derive completions from one "what's active now?" answer per source. A drop resol
    - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
    - in both → unchanged.
 4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
-5. **Ask the review question while it's fresh.** If anything was marked Finished, send one more message listing those titles and asking, for each, "would you recommend it or not, and why?" For a magazine or anthology issue, ask which story carries the recommendation. Wait for the reply. This is `review-draft`'s gate, asked at the moment the author still remembers the work.
+5. **Run `review-draft`'s gate while the work is fresh.** If anything was marked Finished, send one more message listing those titles and asking `review-draft` §1's question for each; for a magazine or anthology issue, ask which story carries it. Wait for the reply and apply §1's go/no-go.
 
-A **Finished** item whose answer names a claim — a recommendation or a pan, with a reason — is a **completion** kernel for synthesis (review, almost always `[short]` — see §4). Record the author's answer verbatim; it goes into the idea issue's Spark. A Finished item with no claim ("it was fine", can't name a story) stays a Media Log entry and offers no review kernel. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+A **Finished** item that passes the gate is a **completion** kernel for synthesis (review, almost always `[short]` — see §4); its answer goes verbatim into the idea issue's Spark. One that fails stays a Media Log entry. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
 
 If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
 
@@ -103,15 +103,13 @@ After scoring, tag each theme **short** or **long** by shape (independent of sco
 
 A theme can warrant both — a short signal-boost now and a long synthesis later. Say so.
 
-**Screen each theme before offering it as a kernel.** These are the questions that closed past ideas as not-planned weeks after filing; answer them now, from the collected data and a quick look at the sources:
+**Screen each theme before offering it as a kernel.** These checks are the reasons past ideas closed as not-planned weeks after filing. Answer them from the collected data:
 
 - **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data; the author confirms it at filing.
-- **Causality holds.** When the angle rests on an order of events ("X made Y possible"), check `merged_at` and touched files of the cited PRs and commits. The order in the data must support the story.
-- **The source hasn't written it.** When a theme leans on a highlight or article, check that the source doesn't already make the claim. The kernel must add lived material the source lacks.
 - **Not a corpus repeat.** Compare the landing sentence against published posts in `src/data/blog/`. The same conclusion pointed at a new target is a repeat.
 - **Survives the wait.** A kernel tied to a live news event or an undecided downstream issue must be writable now, or framed so the outcome doesn't matter.
 
-Run the data checks (causality, source) only on themes the author is weighing, not on every theme. A theme that fails a check moves to a short **Screened out** list in §5 with its reason, so the author can overrule it.
+A theme that fails moves to a short **Screened out** list in §5 with its reason, so the author can overrule it. Two further checks need source reads, so they run at filing (§5).
 
 ## 5. Present + wait
 
@@ -119,10 +117,10 @@ Only reachable once the check-in (§2) is answered and written back. Print the t
 
 Wait for the author's call on each theme:
 
-- "file idea X" (one or many) → file each via `gh issue create --label idea --title "<outcome>"`, pass `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
-- Before filing, search existing `idea` issues in both states: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>` (no `--state` returns both).
-  - Matches an open issue → add a comment with the new material to that issue.
-  - Matches an issue closed as not-planned → read its closing comment. File only when the new material answers the reason it closed, and link the old issue in Source material.
+- "file idea X" (one or many) → for each, in order:
+  1. Search existing `idea` issues in both states: `gh search issues --repo alunduil/blog.alunduil.com --label idea --json number,title,state <keywords>` (no `--state` returns both). An open match → add a comment with the new material to that issue and stop. A not-planned match → read its closing comment; continue only when the new material answers the reason it closed, and link the old issue in Source material.
+  2. Run the source checks. **Causality holds:** when the angle rests on an order of events ("X made Y possible"), check `merged_at` and touched files of the cited PRs and commits; the order must support the story. **The source hasn't written it:** when the theme leans on a highlight or article, check the source doesn't already make the claim; the kernel must add lived material it lacks. A failure goes back to the author with the evidence instead of filing.
+  3. File via `gh issue create --label idea --title "<outcome>"`, passing `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
 Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
