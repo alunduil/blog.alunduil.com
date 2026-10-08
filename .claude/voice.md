@@ -42,8 +42,8 @@ isn't present; bracketed `[[names]]` are local-only see-alsos.
   punctuation outside the quotes. ([[project_grammar_lean]])
 - **Possessives:** singular *s*-ending nouns take *'s* — Books's,
   Charles's (CMOS). Add new variants to
-  `.vale/styles/config/vocabularies/Custom/accept.txt` as Custom.Spelling
-  surfaces them. ([[project_possessive_convention]])
+  `.vale/styles/config/vocabularies/blog-alunduil-com/accept.txt` as
+  blog-alunduil-com.Spelling surfaces them. ([[project_possessive_convention]])
 - **One independent clause per sentence.** Split every `, and`, semicolon,
   or comma-splice that hooks two complete thoughts together. Length comes
   from subordinate clauses (`which…`, `while…`, `that…`) and cadence.
