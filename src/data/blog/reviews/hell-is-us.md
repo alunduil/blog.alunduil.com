@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-11-15T08:00:00Z
-title: Modern Back to Antiquity
+title: Under the War
 ogImage: ../../../assets/images/hell-is-us-cover.jpg
 description: "Hell is Us hands over its history a piece at a time, from a modern civil war back to antiquity. That kept me hooked to the end."
 tags:
