@@ -8,29 +8,29 @@ tags:
   - characterisation
 ---
 
-A year after [*Orconomics*][orconomics], Gorm Ingerson's party are outlaws,
-still trying to make amends to the orcs they betrayed. Each of them keeps a
-secret from the others. The secrets pull the party apart.
+I went straight from [*Orconomics*][orconomics] into
 [*Son of a Liche*][liche], the second book of J. Zachary Pike's Dark Profit
-Saga, climbs from that low point on a rising arc. It's an excellent
-continuation of the first book, with heroes who grow in confidence as it goes.
-I'll keep to who they become rather than what happens to them.
+Saga. It picks up a year later, with Gorm Ingerson's party living as outlaws
+while they try to make amends to the orcs they betrayed. Each of them is
+keeping a secret from the others, which is what splits the party up. I think
+it's an excellent continuation of the first book. Each of the heroes grows
+in confidence as the book goes.
 
-In the first book, Gorm's loyalty to a goblin squire and a band of misfits was
-most of what made him lovable. Here he puts it to work, bringing each member
-back in turn. Without him they'd stay scattered. With him they become a group
-of heroes again, surer of themselves than they ever were in *Orconomics*.
+Gorm drives most of that growth. In *Orconomics* his loyalty to a goblin
+squire and a band of misfits was a lot of why he was so lovable. In this book
+he brings each member of the party back in turn. By the time they're together
+again they act like a group of heroes, and a surer one than before.
 
-The pairs inside the party grow too. Jynn, the son of the title, hides who his
-father is. Laruna, the fire mage, doesn't handle lies at all. Jynn's secrets
-cost the two of them what they had. They find their way back to being friends
-who help each other. Kaitha, the elf ranger, took the troll Thane for a
-supernatural guardian watching over her from the woods. She sets out looking
-for him.
+Two pairs inside the party grow alongside him. Jynn, one of the two mages, is
+the son of the title and hides who his father is. Laruna, the other, doesn't
+handle lies at all. His secrets come between them. Over the book they work out
+how to be friends who help each other. Kaitha, the elf ranger, took the troll
+Thane for a supernatural guardian watching over her from the woods. In this
+book she goes looking for him.
 
-The book also sets up the final showdown with the dragon. I read the dragon as
-standing, literally and figuratively, for what backs Arth's economy. I don't
-know yet where [*Dragonfired*][dragonfired] takes that.
+Pike sets up a final showdown with the dragon for the third book. I read the
+dragon as standing, literally and figuratively, for what backs Arth's economy.
+I don't know yet where [*Dragonfired*][dragonfired] takes that.
 
 [orconomics]: /posts/reviews/orconomics/
 [liche]: https://www.goodreads.com/book/show/40080889-son-of-a-liche
