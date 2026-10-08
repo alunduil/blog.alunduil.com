@@ -24,8 +24,8 @@ again they act like a group of heroes, and a surer one than before.
 The rest of the party grows alongside him. Jynn, one of the two mages, is the
 son of the title and hides who his father is. Laruna, the other, doesn't
 handle lies at all. His secrets come between them. Over the book they work out
-how to be friends who help each other. Heraldin did most of his growing in
-*Orconomics*. In this book he capitalises on it.
+how to be friends who help each other. Heraldin, the bard, did most of his
+growing in *Orconomics*. In this book he capitalises on it.
 
 Pike sets up a final showdown with the dragon for the third book. I read the
 dragon as standing, literally and figuratively, for what backs Arth's economy.
