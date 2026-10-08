@@ -132,6 +132,7 @@ Windscale
 Senua
 Senua's
 Hiddenfolk
+Hadea
 
 # Books and fiction
 # Case-insensitive: post slugs carry these into ogImage paths, which Vale
