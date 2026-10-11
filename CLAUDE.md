@@ -49,6 +49,8 @@ scripting your own.
   `ci.yml`, which installs Node/pnpm for the ESLint/Prettier hooks and
   lychee via `scripts/install-lychee.sh`. Excluded file types (no
   checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
+- Vale false positives: reword first. The vocabulary's `accept.txt`
+  takes real project vocabulary only; the rule sits with the list.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on

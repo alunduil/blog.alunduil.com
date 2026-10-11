@@ -1,4 +1,9 @@
 # Project-specific terms accepted by Vale.
+#
+# Entries are proper nouns, technical terms, and abbreviations. When a
+# rule flags an ordinary word, reword the sentence: an entry here hides
+# the word from every rule in every file, and a disabled rule stops
+# catching its real cases too.
 
 # Brand and theme.
 # Case-insensitive so domain names (blog.alunduil.com) and file
