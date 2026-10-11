@@ -1,6 +1,6 @@
 # Project-specific terms accepted by Vale: proper nouns, technical terms,
-# and abbreviations. An entry joins every rule's exception list in every
-# file, so when a rule flags an ordinary word, reword the sentence.
+# and abbreviations. When a rule flags an ordinary word, reword the
+# sentence: an entry exempts the word from every rule in every file.
 
 # Brand and theme.
 # Case-insensitive so domain names (blog.alunduil.com) and file

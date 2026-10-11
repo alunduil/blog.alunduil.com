@@ -49,10 +49,8 @@ scripting your own.
   `ci.yml`, which installs Node/pnpm for the ESLint/Prettier hooks and
   lychee via `scripts/install-lychee.sh`. Excluded file types (no
   checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
-- Clear a Vale false positive by rewording the sentence. `accept.txt`
-  takes proper nouns, technical terms, and abbreviations; `.vale.ini`
-  turns off only rules that are wrong for every file in a section. Each
-  file's header comment carries the why.
+- Clear a Vale false positive by rewording the sentence. The headers of
+  `accept.txt` and `.vale.ini` state when to add a word or turn a rule off.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
   pre-commit hooks are `--offline`: blocking, but only on what resolves
   without a build. `weekly.yml` builds the site, checks every link on
