@@ -17,11 +17,9 @@ SYNC_NOISE_REPO='alunduil/alunduil-claustre-state'
 SYNC_NOISE_SUBJECT_RE='^sync: '
 NOISE_REF_RE='^(task/|release-please--)'
 INTEREST_EVENT_TYPES=(WatchEvent ForkEvent CreateEvent ReleaseEvent PublicEvent MemberEvent GollumEvent)
-# Owners whose repos sit on the Inbox project board; milestones are
-# reviewed across all of them because they share one person's capacity.
+# Owners of the repos on the Inbox project board.
 MILESTONE_OWNERS=(alunduil dungeon-studio qua-world)
-# Monthly objective milestones (`YYYY-MM: <objective>`); release-version
-# milestones carry no objective or key results and are skipped.
+# Release-version milestones have no objective or key results.
 OBJECTIVE_TITLE_RE='^[0-9]{4}-[0-9]{2}: '
 
 # Extracts owner/repo from a github.com URL by positional split.
@@ -163,7 +161,6 @@ rollup_repos() {
   '
 }
 
-# Fetches every page of a REST list endpoint as one JSON array.
 gh_api_all() {
   gh api --paginate "$1" 2>/dev/null | jq -s 'add // []'
 }
@@ -176,9 +173,8 @@ inbox_repos() {
   done
 }
 
-# Reads a repo's raw milestones array on stdin. Keeps objective
-# milestones that are open or closed since SINCE. Key results are the
-# description's checklist items; the score is its `Scored N/M` line.
+# Per the milestones skill, key results are the description's checklist
+# items and the score is its `Scored N/M` line.
 filter_milestones() {
   local repo="$1" since="$2"
   jq --arg repo "$repo" --arg since "$since" --arg title_re "$OBJECTIVE_TITLE_RE" \
@@ -196,8 +192,7 @@ filter_milestones() {
     ]'
 }
 
-# Reads a repo's raw issues array (REST, may include PRs) on stdin.
-# Emits issues closed since SINCE with their milestone number, if any.
+# The REST issues endpoint also returns pull requests.
 filter_closed_issues() {
   local repo="$1" since="$2"
   jq --arg repo "$repo" --arg since "$since" \
@@ -209,9 +204,7 @@ filter_closed_issues() {
     ]'
 }
 
-# Reads {milestones: [...], closed_issues: [...]} on stdin. Attaches each
-# milestone's in-window completed closes and emits each repo's total
-# completed closes; closes outside objectives are the difference.
+# Counts completed closes only: a not-planned close moves no key result.
 rollup_milestones() {
   jq '
     (.closed_issues | map(select(.state_reason == "completed"))) as $done
@@ -225,7 +218,6 @@ rollup_milestones() {
   '
 }
 
-# Emits one {milestones, closed_issues} object for REPO.
 fetch_repo_milestones() {
   local repo="$1" since="$2"
   jq -n \

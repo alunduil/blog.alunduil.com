@@ -15,7 +15,7 @@ Pipeline: **collect → analyze data (incl. Media Log check-in and milestone loo
 bash .claude/skills/digest/collect.sh "$cadence"
 ```
 
-The script owns cadence parsing, the `gh` query fan-out, heuristic noise filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. It also lists every non-archived repo with issues under `alunduil`, `dungeon-studio`, and `qua-world` (the Inbox board) and reads their milestones and in-window closed issues over REST. Exits non-zero with a stderr message on invalid cadence. The digest is stateless: each run resolves `since` from the cadence alone, so a few days of boundary overlap between back-to-back digests is expected and fine.
+The script owns cadence parsing, the `gh` query fan-out, heuristic noise filters (squash-merge dupes, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. It also reads milestones and in-window closed issues from every repo under `alunduil`, `dungeon-studio`, and `qua-world` (the Inbox board). Exits non-zero with a stderr message on invalid cadence. The digest is stateless: each run resolves `since` from the cadence alone, so a few days of boundary overlap between back-to-back digests is expected and fine.
 
 JSON shape:
 
@@ -82,12 +82,13 @@ Mechanical patterns to extract before synthesis:
 - **Cross-source links**: archived Reader docs whose `url` matches a Readwise highlight → tag `has_highlights = true`. A highlight is a stronger engagement signal than archive alone.
 - **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log items marked `Finished` in this run's check-in. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
 - **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
-- **Milestone lookback** — see below.
 - **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — squash-dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
 
 ### Milestone lookback
 
-Milestones are per repo: one objective for one month in one repo, titled `YYYY-MM: <objective>`. The month orders objectives; it is not a deadline. Identical titles in different repos are separate milestones. The `milestones` skill in `alunduil/alunduil-chezmoi` (`dot_claude/skills/milestones/SKILL.md`) defines the system: an objective, an `As measured by:` checklist of two or three key results, a `Scored N/M key results.` line on close, and velocity sized from past scores. The collector reports only `YYYY-MM:` milestones open now or closed in the window; both `closed_in_window` counts (per milestone, and per repo across all issues) include only issues closed as completed. A repo's closes outside objectives are its total minus its milestones' sum.
+A milestone is one objective for one month in one repo, titled `YYYY-MM: <objective>`. Identical titles in different repos are separate milestones. The month orders objectives; it is not a deadline. The `milestones` skill in `alunduil/alunduil-chezmoi` (`dot_claude/skills/milestones/SKILL.md`) defines the rest: an `As measured by:` checklist of two or three key results, a `Scored N/M key results.` line on close, and velocity sized from past scores.
+
+`milestones.milestones` holds the `YYYY-MM:` milestones open now or closed in the window. Both `closed_in_window` counts, per milestone and per repo, cover issues closed as completed. A repo's closes outside objectives are its total minus its milestones' sum.
 
 Build two outputs from `milestones`:
 
@@ -96,7 +97,7 @@ Build two outputs from `milestones`:
    - **Velocity.** Completed closes inside objectives against outside them, overall and per repo; key results ticked; scores of milestones closed in the window. Measure across all repos together, because they share one person's capacity. Name repos whose closes sit mostly outside objectives.
    - **Format drift.** Milestones with `key_results == 0`: no checklist to tick or score.
    - **Unscored close.** A closed milestone with a null `score`.
-   - **Open past target month.** Report as a neutral fact with its open count; whether it is a problem is the author's call.
+   - **Open past target month.** Report it as a neutral fact with its open count.
    - **Stalled.** Open issues and `closed_in_window == 0` in a milestone whose month has arrived.
 
    Before presenting, search open and closed issues in `alunduil/alunduil-chezmoi` (`gh search issues --repo alunduil/alunduil-chezmoi milestone --json number,title,state`) and attach any match to the finding it covers.
@@ -139,7 +140,7 @@ A theme that fails moves to a short **Screened out** list in §5 with its reason
 
 ## 5. Present + wait
 
-Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence), then `## Milestone lookback` and `## Milestone system` (§2), numbered so each finding can be filed by number, with any matching existing issue linked. End with empty `## Idea kernels` section.
+Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence), then `## Milestone lookback` and `## Milestone system` (§2). Number the findings and link any matching issue. End with empty `## Idea kernels` section.
 
 Wait for the author's call on each theme:
 
@@ -151,7 +152,7 @@ Wait for the author's call on each theme:
      - **Causality holds.** When the angle rests on an order of events ("X made Y possible"), the `merged_at` and touched files of the cited PRs and commits must support that order.
      - **The source hasn't written it.** When the theme leans on a highlight or article, the kernel must add lived material the source lacks.
   3. File via `gh issue create --label idea --title "<outcome>"`, passing `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
-- "file milestone finding X" (one or many) → for each: an open match in `alunduil/alunduil-chezmoi` gets the new evidence as a comment; otherwise file there with `gh issue create --repo alunduil/alunduil-chezmoi --title "<outcome>"` and a body stating the observation, the evidence from this run, and the window. Proposed changes to the system stay as open questions in the body for the author to settle.
+- "file milestone finding X" (one or many) → for each: an open match in `alunduil/alunduil-chezmoi` gets the new evidence as a comment; otherwise file there with `gh issue create --repo alunduil/alunduil-chezmoi --title "<outcome>"` and a body stating the observation, the evidence from this run, and the window. List proposed changes as open questions.
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
 Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
