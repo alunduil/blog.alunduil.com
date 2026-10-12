@@ -17,6 +17,10 @@ SYNC_NOISE_REPO='alunduil/alunduil-claustre-state'
 SYNC_NOISE_SUBJECT_RE='^sync: '
 NOISE_REF_RE='^(task/|release-please--)'
 INTEREST_EVENT_TYPES=(WatchEvent ForkEvent CreateEvent ReleaseEvent PublicEvent MemberEvent GollumEvent)
+# Owners of the repos on the Inbox project board.
+MILESTONE_OWNERS=(alunduil dungeon-studio qua-world)
+# Release-version milestones have no objective or key results.
+OBJECTIVE_TITLE_RE='^[0-9]{4}-[0-9]{2}: '
 
 # Extracts owner/repo from a github.com URL by positional split.
 REPO_FROM_URL='(.url | split("/") | .[3] + "/" + .[4])'
@@ -157,14 +161,86 @@ rollup_repos() {
   '
 }
 
+gh_api_all() {
+  gh api --paginate "$1" 2>/dev/null | jq -s 'add // []'
+}
+
+inbox_repos() {
+  local owner
+  for owner in "${MILESTONE_OWNERS[@]}"; do
+    gh api --paginate "users/$owner/repos?per_page=100&type=owner" \
+      --jq '.[] | select(.archived | not) | select(.has_issues) | .full_name' 2>/dev/null
+  done
+}
+
+# Per the milestones skill, key results are the description's checklist
+# items and the score is its `Scored N/M` line.
+filter_milestones() {
+  local repo="$1" since="$2"
+  jq --arg repo "$repo" --arg since "$since" --arg title_re "$OBJECTIVE_TITLE_RE" \
+    '[.[]
+     | select(.title | test($title_re))
+     | select(.state == "open" or ((.closed_at // "") >= $since))
+     | (.description // "") as $desc
+     | ($desc | [scan("(?m)^\\s*- \\[([ xX])\\] ")[0]]) as $krs
+     | {repo: $repo, number, title, state, url: .html_url,
+        closed_at,
+        open_issues, closed_issues,
+        key_results: ($krs | length),
+        key_results_done: ($krs | map(select(. != " ")) | length),
+        score: ($desc | (capture("Scored (?<s>[0-9]+/[0-9]+)").s) // null)}
+    ]'
+}
+
+# The REST issues endpoint also returns pull requests.
+filter_closed_issues() {
+  local repo="$1" since="$2"
+  jq --arg repo "$repo" --arg since "$since" \
+    '[.[]
+     | select(.pull_request == null)
+     | select((.closed_at // "") >= $since)
+     | {repo: $repo, n: .number, closed_at, state_reason,
+        milestone: (.milestone.number // null)}
+    ]'
+}
+
+# Counts completed closes only: a not-planned close moves no key result.
+rollup_milestones() {
+  jq '
+    (.closed_issues | map(select(.state_reason == "completed"))) as $done
+    | {
+        milestones: (.milestones | map(
+          . as $m
+          | .closed_in_window = ($done | map(select(.repo == $m.repo and .milestone == $m.number)) | length)
+        )),
+        closed_in_window: ($done | group_by(.repo) | map({key: .[0].repo, value: length}) | from_entries)
+      }
+  '
+}
+
+fetch_repo_milestones() {
+  local repo="$1" since="$2"
+  jq -n \
+    --argjson m "$(gh_api_all "repos/$repo/milestones?state=all&per_page=100" | filter_milestones "$repo" "$since")" \
+    --argjson c "$(gh_api_all "repos/$repo/issues?state=closed&since=${since}T00:00:00Z&per_page=100" | filter_closed_issues "$repo" "$since")" \
+    '{milestones: $m, closed_issues: $c}'
+}
+
+fetch_milestones() {
+  local since="$1" repo
+  inbox_repos | while read -r repo; do
+    fetch_repo_milestones "$repo" "$since"
+  done | jq -s '{milestones: (map(.milestones) | add // []),
+                 closed_issues: (map(.closed_issues) | add // [])}' | rollup_milestones
+}
+
 fetch_events() {
   local since="$1" include="$2"
   if [[ "$include" != "true" ]]; then
     echo '[]'
     return
   fi
-  gh api "users/$LOGIN/events?per_page=100" --paginate 2>/dev/null |
-    jq -s 'add // []' | filter_events "$since"
+  gh_api_all "users/$LOGIN/events?per_page=100" | filter_events "$since"
 }
 
 main() {
@@ -233,9 +309,11 @@ main() {
     --argjson issues_closed "$issues_closed_pkg" \
     --argjson commented "$commented_pkg" \
     --argjson events "$(fetch_events "$since" "$include_events")" \
+    --argjson milestones "$(fetch_milestones "$since")" \
     '{window: {since: $since, now: $now, events_included: $include_events,
                limit: $limit, truncated: $truncated},
       repos: $repos,
+      milestones: $milestones,
       commits: $commits.items,
       prs_opened: $prs_opened.items,
       prs_reviewed: $prs_reviewed.items,
