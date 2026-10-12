@@ -18,8 +18,10 @@ in confidence as the book goes.
 
 Gorm drives most of that growth. In *Orconomics* his loyalty to a goblin
 squire and a band of misfits was a lot of why he was so lovable. In this book
-he brings each member of the party back in turn. By the time they're together
-again they act like a group of heroes, and a surer one than before.
+he puts it to work. "I ain't the sort for quittin'," he tells the first of his
+old companions he goes after. "And I hang on to things once I've made up my
+mind." He brings each member of the party back in turn. By the time they're
+together again they act like a group of heroes, and a surer one than before.
 
 The party's two mages learn to fight together. In one brawl Jynn keeps trying
 out new weaves while Laruna tells him to stop experimenting and fight. One of
