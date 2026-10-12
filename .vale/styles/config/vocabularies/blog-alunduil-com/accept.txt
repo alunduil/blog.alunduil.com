@@ -128,19 +128,17 @@ LaTeX
 Warcraft
 Playdead
 Playdead's
-(?i)Atomfall
+Atomfall
 Windscale
-(?i)Hellblade
+Hellblade
 Senua
 Senua's
 Hiddenfolk
 Hadea
 
 # Books and fiction
-# Case-insensitive: post slugs carry these into ogImage paths, which Vale
-# lints as prose. See the frontmatter-scoping issue.
-(?i)Earthsea
-(?i)Roke
+Earthsea
+Roke
 Guiliano
 Corleones
 Croce
@@ -160,9 +158,9 @@ Iria
 magery
 Ogion
 Semel
-(?i)Orconomics
+Orconomics
 Arth
-(?i)Liche
+Liche
 Goldson
 Baggs
 kobolds
@@ -178,7 +176,7 @@ mordanting
 mordanted
 gallnut
 crafter
-(?i)Sanderson
+Sanderson
 Sanderson's
 Cosmere
 Elantris
