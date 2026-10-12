@@ -3,6 +3,10 @@
 # No hook should touch them.
 exclude: ^\.vale/styles/
 
+# nodeenv reads .node-version, whose bare major version it cannot download.
+default_language_version:
+  node: system
+
 repos:
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.11.0.1

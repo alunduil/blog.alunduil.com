@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.28.4",
+  "packageManager": "pnpm@11.28.5",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
@@ -31,7 +31,7 @@
     "mermaid": "^12.0.0",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "satori": "^0.35.0",
+    "satori": "^0.44.0",
     "sharp": "^0.35.0",
     "tailwindcss": "^4.1.18"
   },
@@ -41,17 +41,17 @@
     "@shikijs/transformers": "4.5.0",
     "@tailwindcss/typography": "0.5.20",
     "@types/lodash.kebabcase": "4.1.9",
-    "@typescript-eslint/parser": "8.71.0",
+    "@typescript-eslint/parser": "8.71.1",
     "@typescript/native": "npm:typescript@7.0.2",
     "eslint": "10.12.0",
     "eslint-plugin-astro": "3.2.1",
     "globals": "17.13.0",
     "pagefind": "1.5.2",
     "prettier": "3.9.9",
-    "prettier-plugin-astro": "0.14.1",
+    "prettier-plugin-astro": "1.1.0",
     "prettier-plugin-tailwindcss": "0.8.1",
     "typescript": "npm:@typescript/typescript6@6.0.2",
-    "typescript-eslint": "8.71.0",
+    "typescript-eslint": "8.71.1",
     "vitest": "5.0.3",
     "yaml": "2.9.1"
   }
