@@ -1,6 +1,6 @@
 ---
 pubDatetime: 2026-11-08T08:00:00Z
-title: Back Together
+title: Misfits Worth Hanging On To
 description: "J. Zachary Pike's Son of a Liche picks up a year after Orconomics and gives every member of Gorm Ingerson's party of misfits room to grow."
 ogImage: ../../../assets/images/son-of-a-liche-cover.jpg
 tags:

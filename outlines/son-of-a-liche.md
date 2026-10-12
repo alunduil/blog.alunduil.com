@@ -1,4 +1,4 @@
-# Son of a Liche — review spine
+# Misfits Worth Hanging On To — review spine
 
 J. Zachary Pike, *Son of a Liche*, book two of the Dark Profit Saga, a year
 on from *Orconomics*.
