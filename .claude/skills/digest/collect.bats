@@ -246,3 +246,69 @@ setup() {
   result=$(echo "$input" | rollup_repos)
   [ "$(jq 'length' <<<"$result")" -eq 0 ]
 }
+
+# --- milestones ---
+
+@test "filter_milestones skips release-version milestones" {
+  source "$SCRIPT"
+  result=$(echo '[{"number":1,"title":"1.0.0","state":"open","description":""}]' | filter_milestones a/b 2026-10-01)
+  [ "$(jq 'length' <<<"$result")" -eq 0 ]
+}
+
+@test "filter_milestones keeps open objectives and those closed in the window" {
+  source "$SCRIPT"
+  input='[
+    {"number":1,"title":"2026-10: A","state":"open","closed_at":null},
+    {"number":2,"title":"2026-09: B","state":"closed","closed_at":"2026-10-02T00:00:00Z"},
+    {"number":3,"title":"2026-08: C","state":"closed","closed_at":"2026-09-01T00:00:00Z"}
+  ]'
+  result=$(echo "$input" | filter_milestones a/b 2026-10-01)
+  [ "$(jq -c 'map(.number)' <<<"$result")" = "[1,2]" ]
+  [ "$(jq -r '.[0].repo' <<<"$result")" = "a/b" ]
+}
+
+@test "filter_milestones counts key results and parses the score" {
+  source "$SCRIPT"
+  input='[{"number":1,"title":"2026-10: A","state":"open","description":"Outcome.\n\nAs measured by:\n\n- [x] one\n- [ ] two\n- [X] three\n\nScored 2/3 key results."}]'
+  result=$(printf '%s' "$input" | filter_milestones a/b 2026-10-01)
+  [ "$(jq -r '.[0].key_results' <<<"$result")" = "3" ]
+  [ "$(jq -r '.[0].key_results_done' <<<"$result")" = "2" ]
+  [ "$(jq -r '.[0].score' <<<"$result")" = "2/3" ]
+}
+
+@test "filter_milestones reports zero key results for prose descriptions" {
+  source "$SCRIPT"
+  result=$(echo '[{"number":1,"title":"2026-10: A","state":"open","description":"Key results: x; y."}]' | filter_milestones a/b 2026-10-01)
+  [ "$(jq -r '.[0].key_results' <<<"$result")" = "0" ]
+  [ "$(jq -r '.[0].score' <<<"$result")" = "null" ]
+}
+
+@test "filter_closed_issues drops pull requests and closes before the window" {
+  source "$SCRIPT"
+  input='[
+    {"number":1,"closed_at":"2026-10-02T00:00:00Z","state_reason":"completed","milestone":{"number":5}},
+    {"number":2,"closed_at":"2026-10-02T00:00:00Z","pull_request":{}},
+    {"number":3,"closed_at":"2026-09-02T00:00:00Z","state_reason":"completed"}
+  ]'
+  result=$(echo "$input" | filter_closed_issues a/b 2026-10-01)
+  [ "$(jq -c 'map(.n)' <<<"$result")" = "[1]" ]
+  [ "$(jq -r '.[0].milestone' <<<"$result")" = "5" ]
+}
+
+@test "rollup_milestones counts completed closes per milestone and repo" {
+  source "$SCRIPT"
+  input='{
+    "milestones":[{"repo":"a/b","number":5},{"repo":"c/d","number":5}],
+    "closed_issues":[
+      {"repo":"a/b","n":1,"state_reason":"completed","milestone":5},
+      {"repo":"a/b","n":2,"state_reason":"not_planned","milestone":5},
+      {"repo":"a/b","n":3,"state_reason":"completed","milestone":null},
+      {"repo":"c/d","n":4,"state_reason":"completed","milestone":null}
+    ]
+  }'
+  result=$(echo "$input" | rollup_milestones)
+  [ "$(jq -c '.milestones | map(.closed_in_window)' <<<"$result")" = "[1,0]" ]
+  [ "$(jq -r '.closed_without_milestone."a/b"' <<<"$result")" = "1" ]
+  [ "$(jq -r '.closed_without_milestone."c/d"' <<<"$result")" = "1" ]
+  [ "$(jq -r '.closed_with_milestone."a/b"' <<<"$result")" = "1" ]
+}
