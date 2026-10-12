@@ -34,8 +34,10 @@ it. Half of the fire rains down on the enemy's head. "You messed up my spell,"
 Laruna says, and Pike writes her as more shocked than angry. The scene plays
 for a laugh while the two of them work out how to help each other.
 
-Pike sets up a final showdown with the dragon for the third book. I read the
-dragon as standing, literally and figuratively, for what backs Arth's economy.
+Pike points the reassembled party at a dragon for the third book.
+With *Orconomics* built on the funds that trade on a monster's hoard, I read
+the dragon as standing, literally and figuratively, for what backs Arth's
+economy.
 I don't know yet where [*Dragonfired*][dragonfired] takes that.
 
 [orconomics]: /posts/reviews/orconomics/
