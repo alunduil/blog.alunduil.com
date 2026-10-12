@@ -5,7 +5,7 @@ description: "J. Zachary Pike's Son of a Liche picks up a year after Orconomics 
 ogImage: ../../../assets/images/son-of-a-liche-cover.jpg
 tags:
   - companionship
-  - characterisation
+  - loyalty
 ---
 
 I went straight from [*Orconomics*][orconomics] into
