@@ -160,7 +160,7 @@ Ogion
 Semel
 Orconomics
 Arth
-(?i)Liche
+Liche
 Goldson
 Baggs
 kobolds
