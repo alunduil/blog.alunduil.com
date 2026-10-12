@@ -11,8 +11,9 @@ growth and confidence building on a rising arc for the hero group.
 1. The party grows by coming back together. Evidence: the party opens as
    outlaws, and the secrets they keep from each other pull them apart. Gorm
    brings each member back in turn.
-2. The mages grow too. Evidence: Jynn and Laruna start the book on bad terms
-   and become friends who help each other.
+2. The mages learn to fight together. Evidence: one of Jynn's experimental
+   weaves splits Laruna's fireball onto an enemy's head, and she is "more
+   shocked than angry" that he messed up her spell (chapter 26).
 
 ## Honest tail
 

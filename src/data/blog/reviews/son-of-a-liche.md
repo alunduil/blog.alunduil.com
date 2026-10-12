@@ -21,9 +21,12 @@ squire and a band of misfits was a lot of why he was so lovable. In this book
 he brings each member of the party back in turn. By the time they're together
 again they act like a group of heroes, and a surer one than before.
 
-The party's two mages grow as well. Jynn, the son of the title, and Laruna, the
-fire mage, start this book on bad terms. Over it they work out how to be
-friends who help each other.
+The party's two mages learn to fight together. In one brawl Jynn keeps trying
+out new weaves while Laruna tells him to stop experimenting and fight. One of
+his small spells glances off an enemy's shield into her fireball and splits
+it. Half of the fire rains down on the enemy's head. "You messed up my spell,"
+Laruna says, and Pike writes her as more shocked than angry. The scene plays
+for a laugh while the two of them work out how to help each other.
 
 Pike sets up a final showdown with the dragon for the third book. I read the
 dragon as standing, literally and figuratively, for what backs Arth's economy.
