@@ -1,4 +1,6 @@
-# Project-specific terms accepted by Vale.
+# Project-specific terms accepted by Vale: proper nouns, technical terms,
+# and abbreviations. When a rule flags an ordinary word, reword the
+# sentence: an entry exempts the word from every rule in every file.
 
 # Brand and theme.
 # Case-insensitive so domain names (blog.alunduil.com) and file
@@ -132,6 +134,7 @@ Hellblade
 Senua
 Senua's
 Hiddenfolk
+Hadea
 
 # Books and fiction
 Earthsea
@@ -157,12 +160,16 @@ Ogion
 Semel
 Orconomics
 Arth
-Liche
+(?i)Liche
 Goldson
 Baggs
 kobolds
 Gorm
 Ingerson
+Jynn
+Jynn's
+Laruna
+Dragonfired
 ffrench
 ffrench's
 mordanting
