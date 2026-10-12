@@ -1,0 +1,23 @@
+# Misfits Worth Hanging On To — review spine
+
+J. Zachary Pike, *Son of a Liche*, book two of the Dark Profit Saga, a year
+on from *Orconomics*.
+
+**Thesis:** Read it. It's an excellent continuation of *Orconomics*, with
+growth and confidence building on a rising arc for the hero group.
+
+## Supporting points (thematic, not chronological)
+
+1. The party grows by coming back together. Evidence: the party opens as
+   outlaws, and the secrets they keep from each other pull them apart. Gorm
+   brings each member back in turn, starting with "I ain't the sort for
+   quittin'… And I hang on to things once I've made up my mind" (chapter 24).
+2. The mages learn to fight together. Evidence: one of Jynn's experimental
+   weaves splits Laruna's fireball onto an enemy's head, and she is "more
+   shocked than angry" that he messed up her spell (chapter 26).
+
+## Honest tail
+
+It sets up the final showdown with the dragon, which I read as standing,
+literally and figuratively, for what backs the economy. I'm wondering where
+the third book takes that.

@@ -85,6 +85,28 @@ Three limits apply:
 
 `scripts/contributions-heatmap.py` generates such a pair.
 
+## Quoted words Vale flags
+
+A quotation keeps its source's words, which can trip a Vale rule: dialect
+fails `blog-alunduil-com.Spelling`, and a stock phrase fails
+`proselint.Cliches`. Wrap the quotation in comments that switch off the
+rule it trips, each on its own line:
+
+```md
+<!-- vale blog-alunduil-com.Spelling = NO -->
+"I ain't the sort for quittin',"
+<!-- vale blog-alunduil-com.Spelling = YES -->
+```
+
+Scoping to the one rule leaves every other rule checking the quotation.
+Words a post uses in its own voice, such as names, titles, and terms, go
+in `.vale/styles/config/vocabularies/blog-alunduil-com/accept.txt`
+instead.
+
+The page and the RSS feed render the comments as invisible HTML
+comments. The `index.md` endpoint serves the body as written, comments
+included.
+
 ## Code blocks
 
 Shiki highlights fenced code blocks. It carries dual themes, `min-light`
