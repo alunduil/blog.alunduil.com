@@ -111,7 +111,7 @@ repos:
         # AstroPaper ships JSONC files in .vscode/ and .devcontainer/.
         exclude: ^(\.vscode/|\.devcontainer/)
       - id: check-yaml
-        exclude: ^\.github/workflows/
+        exclude: ^(\.github/workflows/|pnpm-lock\.yaml$)
       - id: check-merge-conflict
       - id: check-case-conflict
       - id: check-added-large-files
