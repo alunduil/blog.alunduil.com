@@ -85,11 +85,12 @@ Three limits apply:
 
 `scripts/contributions-heatmap.py` generates such a pair.
 
-## Quoted words Vale doesn't know
+## Quoted words Vale flags
 
-A quotation can carry words that fail `blog-alunduil-com.Spelling`, such
-as dialect or a source's own spelling. Wrap the quotation in scoped Vale
-comments, each on its own line:
+A quotation keeps its source's words, which can trip a Vale rule: dialect
+fails `blog-alunduil-com.Spelling`, and a stock phrase fails
+`proselint.Cliches`. Wrap the quotation in comments that switch off the
+rule it trips, each on its own line:
 
 ```md
 <!-- vale blog-alunduil-com.Spelling = NO -->
@@ -97,10 +98,10 @@ comments, each on its own line:
 <!-- vale blog-alunduil-com.Spelling = YES -->
 ```
 
-The comments switch off the spelling rule alone, so every other rule
-still checks the quotation. Words a post uses in its own voice, such as
-names, titles, and terms, go in
-`.vale/styles/config/vocabularies/blog-alunduil-com/accept.txt` instead.
+Scoping to the one rule leaves every other rule checking the quotation.
+Words a post uses in its own voice, such as names, titles, and terms, go
+in `.vale/styles/config/vocabularies/blog-alunduil-com/accept.txt`
+instead.
 
 The page and the RSS feed render the comments as invisible HTML
 comments. The `index.md` endpoint serves the body as written, comments

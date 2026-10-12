@@ -34,11 +34,14 @@ it. Half of the fire rains down on the enemy's head. "You messed up my spell,"
 Laruna says, and Pike writes her as more shocked than angry. The scene plays
 for a laugh while the two of them work out how to help each other.
 
-Pike points the reassembled party at a dragon for the third book.
-With *Orconomics* built on the funds that trade on a monster's hoard, I read
-the dragon as standing, literally and figuratively, for what backs Arth's
-economy.
-I don't know yet where [*Dragonfired*][dragonfired] takes that.
+Early on, a banker tells the king that investors treat shares of the dragon's
+hoard
+<!-- vale proselint.Cliches = NO -->
+"as good as gold."
+<!-- vale proselint.Cliches = YES -->
+I read the dragon as standing, literally and figuratively, for what backs
+Arth's economy. I don't know yet where [*Dragonfired*][dragonfired] takes
+that.
 
 [orconomics]: /posts/reviews/orconomics/
 [liche]: https://www.goodreads.com/book/show/40080889-son-of-a-liche
