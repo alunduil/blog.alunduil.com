@@ -163,6 +163,11 @@ rollup_repos() {
   '
 }
 
+# Fetches every page of a REST list endpoint as one JSON array.
+gh_api_all() {
+  gh api --paginate "$1" 2>/dev/null | jq -s 'add // []'
+}
+
 inbox_repos() {
   local owner
   for owner in "${MILESTONE_OWNERS[@]}"; do
@@ -180,13 +185,14 @@ filter_milestones() {
     '[.[]
      | select(.title | test($title_re))
      | select(.state == "open" or ((.closed_at // "") >= $since))
-     | (.description // "" | [scan("(?m)^\\s*- \\[([ xX])\\] ")[0]]) as $krs
+     | (.description // "") as $desc
+     | ($desc | [scan("(?m)^\\s*- \\[([ xX])\\] ")[0]]) as $krs
      | {repo: $repo, number, title, state, url: .html_url,
         closed_at,
         open_issues, closed_issues,
         key_results: ($krs | length),
         key_results_done: ($krs | map(select(. != " ")) | length),
-        score: ((.description // "") | (capture("Scored (?<s>[0-9]+/[0-9]+)").s) // null)}
+        score: ($desc | (capture("Scored (?<s>[0-9]+/[0-9]+)").s) // null)}
     ]'
 }
 
@@ -204,8 +210,8 @@ filter_closed_issues() {
 }
 
 # Reads {milestones: [...], closed_issues: [...]} on stdin. Attaches each
-# milestone's in-window completed closes and emits per-repo counts of
-# completed closes that carried no milestone.
+# milestone's in-window completed closes and emits each repo's total
+# completed closes; closes outside objectives are the difference.
 rollup_milestones() {
   jq '
     (.closed_issues | map(select(.state_reason == "completed"))) as $done
@@ -214,32 +220,26 @@ rollup_milestones() {
           . as $m
           | .closed_in_window = ($done | map(select(.repo == $m.repo and .milestone == $m.number)) | length)
         )),
-        closed_without_milestone: (
-          $done | map(select(.milestone == null)) | group_by(.repo)
-          | map({key: .[0].repo, value: length}) | from_entries
-        ),
-        closed_with_milestone: (
-          $done | map(select(.milestone != null)) | group_by(.repo)
-          | map({key: .[0].repo, value: length}) | from_entries
-        )
+        closed_in_window: ($done | group_by(.repo) | map({key: .[0].repo, value: length}) | from_entries)
       }
   '
 }
 
+# Emits one {milestones, closed_issues} object for REPO.
+fetch_repo_milestones() {
+  local repo="$1" since="$2"
+  jq -n \
+    --argjson m "$(gh_api_all "repos/$repo/milestones?state=all&per_page=100" | filter_milestones "$repo" "$since")" \
+    --argjson c "$(gh_api_all "repos/$repo/issues?state=closed&since=${since}T00:00:00Z&per_page=100" | filter_closed_issues "$repo" "$since")" \
+    '{milestones: $m, closed_issues: $c}'
+}
+
 fetch_milestones() {
-  local since="$1" repo milestones="[]" closed="[]"
-  while read -r repo; do
-    milestones=$(jq -s 'add' <(echo "$milestones") <(
-      gh api --paginate "repos/$repo/milestones?state=all&per_page=100" 2>/dev/null |
-        jq -s 'add // []' | filter_milestones "$repo" "$since"
-    ))
-    closed=$(jq -s 'add' <(echo "$closed") <(
-      gh api --paginate "repos/$repo/issues?state=closed&since=${since}T00:00:00Z&per_page=100" 2>/dev/null |
-        jq -s 'add // []' | filter_closed_issues "$repo" "$since"
-    ))
-  done < <(inbox_repos)
-  jq -n --argjson m "$milestones" --argjson c "$closed" \
-    '{milestones: $m, closed_issues: $c}' | rollup_milestones
+  local since="$1" repo
+  inbox_repos | while read -r repo; do
+    fetch_repo_milestones "$repo" "$since"
+  done | jq -s '{milestones: (map(.milestones) | add // []),
+                 closed_issues: (map(.closed_issues) | add // [])}' | rollup_milestones
 }
 
 fetch_events() {
@@ -248,8 +248,7 @@ fetch_events() {
     echo '[]'
     return
   fi
-  gh api "users/$LOGIN/events?per_page=100" --paginate 2>/dev/null |
-    jq -s 'add // []' | filter_events "$since"
+  gh_api_all "users/$LOGIN/events?per_page=100" | filter_events "$since"
 }
 
 main() {

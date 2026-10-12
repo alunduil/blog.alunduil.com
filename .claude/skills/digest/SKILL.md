@@ -40,8 +40,7 @@ JSON shape:
       "open_issues": N, "closed_issues": N, "closed_in_window": N,
       "key_results": N, "key_results_done": N, "score": "N/M|null"
     }],
-    "closed_without_milestone": {"owner/repo": N},
-    "closed_with_milestone": {"owner/repo": N}
+    "closed_in_window": {"owner/repo": N}
   },
   "commits": [...], "prs_opened": [...], "prs_reviewed": [...],
   "issues_opened": [...], "issues_closed": [...],
@@ -88,18 +87,17 @@ Mechanical patterns to extract before synthesis:
 
 ### Milestone lookback
 
-Milestones are per repo: one objective for one month in one repo, titled `YYYY-MM: <objective>`. The month orders objectives; it is not a deadline. Identical titles in different repos are separate milestones. The `milestones` skill in `alunduil/alunduil-chezmoi` (`dot_claude/skills/milestones/SKILL.md`) defines the system: an objective, an `As measured by:` checklist of two or three key results, a `Scored N/M key results.` line on close, and velocity sized from past scores. The collector reports only `YYYY-MM:` milestones open now or closed in the window; `closed_in_window` and the per-repo counts include only issues closed as completed.
+Milestones are per repo: one objective for one month in one repo, titled `YYYY-MM: <objective>`. The month orders objectives; it is not a deadline. Identical titles in different repos are separate milestones. The `milestones` skill in `alunduil/alunduil-chezmoi` (`dot_claude/skills/milestones/SKILL.md`) defines the system: an objective, an `As measured by:` checklist of two or three key results, a `Scored N/M key results.` line on close, and velocity sized from past scores. The collector reports only `YYYY-MM:` milestones open now or closed in the window; both `closed_in_window` counts (per milestone, and per repo across all issues) include only issues closed as completed. A repo's closes outside objectives are its total minus its milestones' sum.
 
 Build two outputs from `milestones`:
 
 1. **Lookback.** Per repo with movement: milestones closed in the window with their score, key results ticked, and `closed_in_window`. Name repos whose milestones did not move. A milestone closed or with every key result ticked in the window is an **objective arc**, a completion arc whose objective sentence is the candidate moment of change for §4's screen.
 2. **System findings.** Measured patterns in how the milestone system is working, each with its evidence (repo, milestone, number):
-   - **Velocity.** Completed closes inside milestones against outside them, overall and per repo; key results ticked; scores of milestones closed in the window. Velocity is measured across all repos together, because they share one person's capacity.
+   - **Velocity.** Completed closes inside objectives against outside them, overall and per repo; key results ticked; scores of milestones closed in the window. Measure across all repos together, because they share one person's capacity. Name repos whose closes sit mostly outside objectives.
    - **Format drift.** Milestones with `key_results == 0`: no checklist to tick or score.
    - **Unscored close.** A closed milestone with a null `score`.
    - **Open past target month.** Report as a neutral fact with its open count; whether it is a problem is the author's call.
    - **Stalled.** Open issues and `closed_in_window == 0` in a milestone whose month has arrived.
-   - **Work outside objectives.** A repo whose completed closes sit mostly outside milestones.
 
    Before presenting, search open and closed issues in `alunduil/alunduil-chezmoi` (`gh search issues --repo alunduil/alunduil-chezmoi milestone --json number,title,state`) and attach any match to the finding it covers.
 

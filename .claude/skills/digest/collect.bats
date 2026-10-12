@@ -308,7 +308,6 @@ setup() {
   }'
   result=$(echo "$input" | rollup_milestones)
   [ "$(jq -c '.milestones | map(.closed_in_window)' <<<"$result")" = "[1,0]" ]
-  [ "$(jq -r '.closed_without_milestone."a/b"' <<<"$result")" = "1" ]
-  [ "$(jq -r '.closed_without_milestone."c/d"' <<<"$result")" = "1" ]
-  [ "$(jq -r '.closed_with_milestone."a/b"' <<<"$result")" = "1" ]
+  [ "$(jq -r '.closed_in_window."a/b"' <<<"$result")" = "2" ]
+  [ "$(jq -r '.closed_in_window."c/d"' <<<"$result")" = "1" ]
 }
