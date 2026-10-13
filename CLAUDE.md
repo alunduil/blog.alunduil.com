@@ -107,7 +107,9 @@ The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
 upstream — edit only when the change is the point:
 
 - `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
-  `src/utils/`, `src/content.config.ts` — theme code.
+  `src/utils/`, `src/content.config.ts` — theme code. Prettier and the
+  end-of-file fixer skip it so upstream merges don't conflict on
+  formatting.
 
 The theme's sample posts (tutorials, release notes, example drafts) are
 gone; `src/data/blog/` is all author content. What they documented about

@@ -105,6 +105,9 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
       - id: end-of-file-fixer
+        # AstroPaper's icons ship without a final newline; adding one would
+        # conflict on every upstream merge.
+        exclude: ^src/assets/icons/
       - id: mixed-line-ending
         args: [--fix=lf]
       - id: check-json
