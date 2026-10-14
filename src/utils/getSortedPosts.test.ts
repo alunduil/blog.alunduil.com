@@ -1,12 +1,12 @@
 import type { CollectionEntry } from "astro:content";
 import { describe, expect, it } from "vitest";
-import getSortedPosts from "./getSortedPosts";
+import { getSortedPosts } from "./getSortedPosts";
 
 function post(
   id: string,
   pubDatetime: string,
   modDatetime?: string
-): CollectionEntry<"blog"> {
+): CollectionEntry<"posts"> {
   return {
     id,
     data: {
@@ -14,7 +14,7 @@ function post(
       modDatetime: modDatetime ? new Date(modDatetime) : undefined,
       draft: false,
     },
-  } as CollectionEntry<"blog">;
+  } as CollectionEntry<"posts">;
 }
 
 describe("getSortedPosts", () => {
