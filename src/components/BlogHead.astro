@@ -1,7 +1,10 @@
 ---
+import { Font } from "astro:assets";
 import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
 import "@/styles/themeImages.css";
 ---
+
+<Font cssVariable="--font-brand" preload />
 
 {PUBLIC_WEBMENTION_IO_USERNAME && (
   <>

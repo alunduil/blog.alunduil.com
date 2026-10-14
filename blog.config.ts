@@ -1,4 +1,6 @@
-import { envField } from "astro/config";
+import { envField, fontProviders } from "astro/config";
+import type { AstroUserConfig } from "astro";
+import { BRAND_FONT } from "./src/utils/loadBrandFonts";
 
 /**
  * The blog's additions to astro.config.ts. Keeping them here leaves the
@@ -22,6 +24,18 @@ export const redirects = archivalRedirects(
   "using-apc-to-speed-up-php",
   "using-memcached-with-mediawiki-and-wordpress"
 );
+
+// Only the header wordmark renders in this face, so the weight and subset
+// lists stay narrow.
+export const brandFont = {
+  name: BRAND_FONT,
+  cssVariable: "--font-brand",
+  provider: fontProviders.google(),
+  weights: [700],
+  styles: ["normal"],
+  subsets: ["latin"],
+  fallbacks: ["sans-serif"],
+} satisfies NonNullable<AstroUserConfig["fonts"]>[number];
 
 export const envSchema = {
   PUBLIC_WEBMENTION_IO_USERNAME: envField.string({

@@ -19,7 +19,7 @@ import config from "./astro-paper.config";
 import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
 import rehypeThemeImages from "./src/utils/rehypeThemeImages";
-import { envSchema, redirects } from "./blog.config";
+import { brandFont, envSchema, redirects } from "./blog.config";
 
 export default defineConfig({
   site: config.site.url,
@@ -73,6 +73,7 @@ export default defineConfig({
       styles: ["normal", "italic"],
       formats: ["woff", "ttf"],
     },
+    brandFont,
   ],
   env: {
     schema: {

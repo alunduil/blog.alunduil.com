@@ -116,7 +116,7 @@ gone; `src/content/posts/` is all author content. What they documented about
 post bodies lives in `docs/reference/post-body.md`.
 
 Customized and free to edit: `astro-paper.config.ts` (site settings),
-new posts in `src/content/posts/`.
+`src/styles/theme.css` (palette), new posts in `src/content/posts/`.
 
 Build a customization in a blog-owned file and hook it into the upstream
 file with as few lines as possible: Astro config additions in
