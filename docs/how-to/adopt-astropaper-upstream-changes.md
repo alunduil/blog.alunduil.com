@@ -41,9 +41,12 @@ blog's own divergence.
 
 Merge from a branch, so an unworkable result is a discarded branch
 rather than a damaged `main`, and land the pull request as a merge
-commit so `main` keeps upstream as a parent:
+commit so `main` keeps upstream as a parent. Have Git record conflict
+resolutions first: a later rewrite of the branch recreates the merge,
+and Git then replays them.
 
 ```bash
+git config rerere.enabled true
 git merge astro-paper/main
 ```
 
@@ -55,6 +58,16 @@ chosen on purpose. Two of those a passing build hides:
   either line ships a feed of summaries.
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
+
+## Keep the merge commit through review
+
+Commit follow-up fixes, such as deleting restored sample posts,
+separately after the merge. Fold review fixes into those commits without
+flattening the merge:
+
+```bash
+GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
+```
 
 ## Verify
 

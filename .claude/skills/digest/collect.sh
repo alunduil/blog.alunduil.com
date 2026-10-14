@@ -39,11 +39,27 @@ resolve_since() {
   esac
 }
 
+# The digest lists a merged PR itself, so its merge commit and the commits
+# it brought in are duplicates.
+merged_in_shas() {
+  jq -r '.[]
+    | select((.parents // []) | length > 1)
+    | "\(.repository.fullName) \(.sha) \(.parents[0].sha) \(.parents[1].sha)"' |
+    while read -r repo merge base head; do
+      echo "$merge"
+      gh api "repos/$repo/compare/$base...$head" --jq '.commits[].sha' 2>/dev/null
+    done | jq -Rsc 'split("\n") | map(select(. != ""))'
+}
+
 filter_commits() {
+  local raw
+  raw=$(cat)
   jq --arg sync_repo "$SYNC_NOISE_REPO" \
     --arg sync_re "$SYNC_NOISE_SUBJECT_RE" \
     --arg squash_re "$SQUASH_MERGE_RE" \
+    --argjson merged_in "$(merged_in_shas <<<"$raw")" \
     '[.[]
+     | select(.sha as $s | $merged_in | index($s) | not)
      | {repo: .repository.fullName,
         sha: .sha[:7],
         subject: (.commit.message | split("\n")[0]),
@@ -51,7 +67,7 @@ filter_commits() {
      | select(.subject | test($squash_re) | not)
      | select(.subject | test($sync_re) | not)
      | select(.repo != $sync_repo)
-    ]'
+    ]' <<<"$raw"
 }
 
 filter_prs_opened() {
@@ -107,7 +123,7 @@ gh_search() {
   package "$raw" "$("$filter_fn" <<<"$raw")"
 }
 
-fetch_commits()       { gh_search commits --author      --author-date "$1" repository,sha,commit             filter_commits; }
+fetch_commits()       { gh_search commits --author      --author-date "$1" repository,sha,parents,commit     filter_commits; }
 fetch_prs_opened()    { gh_search prs     --author      --created     "$1" number,title,state,url,createdAt  filter_prs_opened; }
 fetch_prs_reviewed()  { gh_search prs     --reviewed-by --updated     "$1" number,title,url,author,updatedAt filter_prs_reviewed; }
 fetch_issues_opened() { gh_search issues  --author      --created     "$1" number,title,state,url,createdAt  filter_issues_opened; }

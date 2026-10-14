@@ -134,6 +134,33 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/cd.yml`).
+- PRs merge by merge commit, so every branch commit lands on `main`.
+
+### Curate the branch before ready
+
+Before a PR leaves draft, its branch holds only isolated commits:
+
+- Each commit makes one change and follows the [seven
+  rules](https://cbea.ms/git-commit/): imperative subject of 50
+  characters or fewer, blank line, body wrapped at 72 explaining why.
+- Each commit passes the pre-commit hooks on its own.
+- The PR description summarises the commits; the commits explain
+  themselves.
+
+Fold review fixes into the commit they amend. Record them with
+`git commit --fixup=<sha>` while working, then rewrite and push:
+
+```bash
+GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
+git push --force-with-lease
+```
+
+`--rebase-merges` keeps a merge of `astro-paper/main` as one of the
+isolated commits, with its upstream parent intact. See [Adopt AstroPaper
+upstream changes](docs/how-to/adopt-astropaper-upstream-changes.md).
+
+`--force-with-lease` on a draft PR's own branch is the one sanctioned
+force-push: a draft has no reviewer building on its history.
 
 ## Reading ADRs
 
