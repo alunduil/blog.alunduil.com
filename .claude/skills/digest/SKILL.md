@@ -15,7 +15,7 @@ Pipeline: **collect → analyze data (incl. Media Log check-in and milestone loo
 bash .claude/skills/digest/collect.sh "$cadence"
 ```
 
-The script owns cadence parsing, the `gh` query fan-out, heuristic noise filters (commits a PR already stands for — squash-merge subjects, merge commits, and the branch commits a merge brought in — `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. It also reads milestones and in-window closed issues from every repo under `alunduil`, `dungeon-studio`, and `qua-world` (the Inbox board). Exits non-zero with a stderr message on invalid cadence. The digest is stateless: each run resolves `since` from the cadence alone, so a few days of boundary overlap between back-to-back digests is expected and fine.
+The script owns cadence parsing, the `gh` query fan-out, heuristic noise filters (commits a merged PR already stands for, `alunduil/alunduil-claustre-state` sync noise, `task/*` + `release-please--*` agent branches), URL→repo parsing, truncation detection, and the per-repo rollup. It also reads milestones and in-window closed issues from every repo under `alunduil`, `dungeon-studio`, and `qua-world` (the Inbox board). Exits non-zero with a stderr message on invalid cadence. The digest is stateless: each run resolves `since` from the cadence alone, so a few days of boundary overlap between back-to-back digests is expected and fine.
 
 JSON shape:
 
