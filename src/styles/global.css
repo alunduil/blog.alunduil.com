@@ -1,35 +1,9 @@
 @import "tailwindcss";
+@import "./theme.css";
 @import "./typography.css";
+@import "rehype-callouts/theme/obsidian";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-:root,
-html[data-theme="light"] {
-  --background: #f4efe6;
-  --foreground: #0a0a0a;
-  --accent: #1e4fa1;
-  --muted: #e1ddd4;
-  --border: #0a0a0a;
-}
-
-html[data-theme="dark"] {
-  --background: #0a0a0a;
-  --foreground: #f4efe6;
-  --accent: #f1c232;
-  --muted: #1d1c1c;
-  --border: #f4efe6;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
-  /* Tailwind only generates utilities for keys declared here, and reusing
-     Astro's --font-brand as the key would define it in terms of itself. */
-  --font-wordmark: var(--font-brand);
-}
 
 @layer base {
   * {
@@ -37,15 +11,10 @@ html[data-theme="dark"] {
     scrollbar-width: auto;
     scrollbar-color: var(--color-muted) transparent;
   }
-  html {
-    @apply overflow-y-scroll scroll-smooth;
-  }
-  body {
-    @apply flex min-h-svh flex-col bg-background font-mono text-foreground selection:bg-accent selection:text-background;
-  }
   a,
-  button {
-    @apply outline-offset-1 outline-accent focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
+  button,
+  #main-content {
+    @apply outline-accent outline-offset-1 focus-visible:no-underline focus-visible:outline-2 focus-visible:outline-dashed;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
@@ -58,15 +27,13 @@ html[data-theme="dark"] {
 }
 
 @utility app-layout {
-  @apply mx-auto w-full max-w-app px-4;
+  @apply max-w-app mx-auto w-full px-4;
 }
 
-.active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-4;
+@utility active-nav {
+  @apply underline decoration-wavy decoration-2 underline-offset-8;
 }
 
-/* Source: https://piccalil.li/blog/a-more-modern-css-reset/ */
-/* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
 }
