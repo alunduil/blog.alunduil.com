@@ -76,8 +76,8 @@ so the repo-relevant essentials:
 
 ## Posting convention
 
-New posts live under `src/data/blog/`; archival republishes under
-`src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
+New posts live under `src/content/posts/`; archival republishes under
+`src/content/posts/_<engine>/`; reviews under `src/content/posts/reviews/`.
 A future `pubDatetime` is the publication gate: merging the PR accepts
 the editorial work, the date defers publication.
 
@@ -106,15 +106,23 @@ against a different corpus.
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
 upstream — edit only when the change is the point:
 
-- `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
-  `src/utils/`, `src/content.config.ts` — theme code.
+- `src/components/`, `src/i18n/`, `src/layouts/`, `src/pages/`,
+  `src/scripts/`, `src/styles/`, `src/types/`, `src/utils/`,
+  `src/config.ts`, `src/content.config.ts` — theme code. Prettier and the
+  end-of-file fixer skip it so upstream merges don't conflict on
+  formatting.
 
 The theme's sample posts (tutorials, release notes, example drafts) are
-gone; `src/data/blog/` is all author content. What they documented about
+gone; `src/content/posts/` is all author content. What they documented about
 post bodies lives in `docs/reference/post-body.md`.
 
-Customized and free to edit: `src/config.ts`, `src/constants.ts`,
-`astro.config.ts`, new posts in `src/data/blog/`.
+Customized and free to edit: `astro-paper.config.ts` (site settings),
+`src/styles/theme.css` (palette), new posts in `src/content/posts/`.
+
+Build a customization in a blog-owned file and hook it into the upstream
+file with as few lines as possible: Astro config additions in
+`blog.config.ts`, head tags in `src/components/BlogHead.astro`, logic in its
+own module under `src/utils/`. Small hooks keep upstream merges routine.
 
 Upstream fixes arrive by merging the `astro-paper` remote, not through
 Renovate — see [Adopt AstroPaper upstream

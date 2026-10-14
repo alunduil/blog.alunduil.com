@@ -11,7 +11,7 @@ import path from "node:path";
 /** The `-dark` sibling of `/assets/foo.svg` is `/assets/foo-dark.svg`. */
 const DARK_SUFFIX = "-dark";
 
-/** Matched by the swap rules in `src/styles/typography.css`. */
+/** Matched by the swap rules in `src/styles/themeImages.css`. */
 const LIGHT_CLASS = "theme-image-light";
 const DARK_CLASS = "theme-image-dark";
 

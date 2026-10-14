@@ -1,6 +1,6 @@
 ---
 name: tag-suggest
-description: Propose 2–3 frontmatter tags for a draft blog post. Scans existing tags across `src/data/blog/**/*.md`, prioritises existing matches, flags morphological near-duplicates, justifies any net-new tag. Proposes first; only writes to the file after explicit author confirmation. Use via `/tag-suggest <path>` or omit the path to default to the currently staged/modified post.
+description: Propose 2–3 frontmatter tags for a draft blog post. Scans existing tags across `src/content/posts/**/*.md`, prioritises existing matches, flags morphological near-duplicates, justifies any net-new tag. Proposes first; only writes to the file after explicit author confirmation. Use via `/tag-suggest <path>` or omit the path to default to the currently staged/modified post.
 ---
 
 # Tag-suggest
@@ -10,12 +10,12 @@ Pipeline: **resolve target → enumerate corpus → propose → confirm → appl
 ## 1. Resolve target
 
 - Path argument given: use it.
-- No argument: pick the `.md` under `src/data/blog/` from `git status --porcelain` (staged or modified). If zero matches or more than one, ask.
+- No argument: pick the `.md` under `src/content/posts/` from `git status --porcelain` (staged or modified). If zero matches or more than one, ask.
 
 ## 2. Enumerate corpus
 
 ```bash
-find src/data/blog -name '*.md' -type f \
+find src/content/posts -name '*.md' -type f \
   | while read -r f; do yq --front-matter=extract '.tags[]' "$f" 2>/dev/null; done \
   | sort | uniq -c | sort -rn
 ```

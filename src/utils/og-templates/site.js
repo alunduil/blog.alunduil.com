@@ -1,9 +1,9 @@
 import satori from "satori";
-import { SITE } from "@/config";
+import config from "@/config";
 import { COLORS, STROKE, block, canvas } from "./mondrian";
 
 export default async () => {
-  const hostname = new URL(SITE.website).hostname;
+  const hostname = new URL(config.site.url).hostname;
 
   return satori(
     {
@@ -71,7 +71,7 @@ export default async () => {
                             lineHeight: 1,
                             letterSpacing: "-0.02em",
                           },
-                          children: SITE.title,
+                          children: config.site.title,
                         },
                       },
                       {
@@ -84,7 +84,7 @@ export default async () => {
                             maxWidth: "92%",
                             lineHeight: 1.35,
                           },
-                          children: SITE.desc,
+                          children: config.site.description,
                         },
                       },
                     ],
@@ -121,7 +121,7 @@ export default async () => {
                     children: [
                       {
                         type: "div",
-                        props: { children: SITE.author },
+                        props: { children: config.site.author },
                       },
                       {
                         type: "div",

@@ -2,18 +2,25 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import { getWebmentions, type WebmentionEntry } from "@/utils/getWebmentions";
-import { SITE } from "@/config";
+import type { CollectionEntry } from "astro:content";
+import {
+  getWebmentions,
+  webmentionTarget,
+  type WebmentionEntry,
+} from "@/utils/getWebmentions";
+import config from "@/config";
 import Facepile from "@/components/Facepile.astro";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-type Props = { target: string };
+type Props = { post: CollectionEntry<"posts"> };
 
-const { target } = Astro.props;
+const { post } = Astro.props;
 
-const { likes, reposts, replies, mentions } = await getWebmentions(target);
+const { likes, reposts, replies, mentions } = await getWebmentions(
+  webmentionTarget(post)
+);
 
 const visible = (e: WebmentionEntry) => !e["wm-private"];
 const visibleLikes = likes.filter(visible);
@@ -82,7 +89,9 @@ const total =
                     rel="nofollow ugc"
                   >
                     <time datetime={replyDate}>
-                      {dayjs(replyDate).tz(SITE.timezone).format("D MMM, YYYY")}
+                      {dayjs(replyDate)
+                        .tz(config.site.timezone)
+                        .format("D MMM, YYYY")}
                     </time>
                   </a>
                 </p>

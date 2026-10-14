@@ -1,10 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { SITE } from "@/config";
+import config from "@/config";
 import type { WebmentionEntry } from "./getWebmentions";
 
 const env = vi.hoisted(() => ({ username: "alunduil" }));
 
-vi.mock("astro:env/client", () => ({
+vi.mock("astro:env/client", async importOriginal => ({
+  ...(await importOriginal<typeof import("astro:env/client")>()),
   get PUBLIC_WEBMENTION_IO_USERNAME() {
     return env.username;
   },
@@ -15,13 +16,13 @@ vi.mock("astro:content", async importOriginal => ({
   getCollection: async () => [
     {
       id: "hello",
-      filePath: "src/data/blog/hello.md",
+      filePath: "src/content/posts/hello.md",
       data: { pubDatetime: new Date(0), draft: false },
     },
   ],
 }));
 
-const target = new URL("/posts/hello", SITE.website).href;
+const target = new URL("/posts/hello", config.site.url).href;
 
 // Highest wm-id first, so a cursor read from the last entry falls behind.
 function batch(size: number, firstId: number): WebmentionEntry[] {

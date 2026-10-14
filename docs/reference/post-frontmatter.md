@@ -11,7 +11,7 @@ Fields, in schema order:
 
 | Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
-| `author` | no | string | Defaults to `SITE.author`. |
+| `author` | no | string | Defaults to `site.author` in `astro-paper.config.ts`. |
 | `pubDatetime` | yes | date | Publication moment; gates visibility (see [Scheduling](#scheduling)). |
 | `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
@@ -22,7 +22,7 @@ Fields, in schema order:
 | `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
 | `hideEditPost` | no | boolean | Hides the "edit this page" link. |
-| `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `SITE.timezone`. |
+| `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `site.timezone` in `astro-paper.config.ts`. |
 
 `pubDatetime` and `modDatetime` are live-site moments, independent of
 branch commit time.
@@ -52,20 +52,22 @@ Tuesday post is tech and a Sunday post personal. No frontmatter field
 states a post's subject.
 
 A future `pubDatetime` gates publication: AstroPaper's
-`SITE.scheduledPostMargin` (~15 minutes) hides the post until the date
+`posts.scheduledPostMargin` (~15 minutes) hides the post until the date
 passes. Publication is independent of the merge; the date is the trigger.
 No post sets `draft: true`.
 
 ## Locations
 
-The blog collection loads `**/[^_]*.md` under `src/data/blog`, skipping
-`_`-prefixed files and directories.
+The posts collection loads `**/[^_]*.{md,mdx}` under `src/content/posts`,
+skipping `_`-prefixed files. An `.mdx` post fails the build: the RSS feed
+and each post's `index.md` serve the body as Markdown and can't render MDX
+yet.
 
 | Content | Path | URL |
 | --- | --- | --- |
-| Post | `src/data/blog/<slug>.md` | `/posts/<slug>/` |
-| Review | `src/data/blog/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
-| Archival republish | `src/data/blog/_<engine>/<slug>.md` | `/posts/<slug>/` |
+| Post | `src/content/posts/<slug>.md` | `/posts/<slug>/` |
+| Review | `src/content/posts/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
+| Archival republish | `src/content/posts/_<engine>/<slug>.md` | `/posts/<slug>/` |
 
 Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
 (`_hakyll/`) are stripped, so archival posts serve at `/posts/<slug>/`.
@@ -84,7 +86,7 @@ ogImage: ../../../assets/images/<slug>-cover.jpg
 
 ## Archival republishes
 
-Restored posts live under `src/data/blog/_<engine>/` (`_hakyll/`,
+Restored posts live under `src/content/posts/_<engine>/` (`_hakyll/`,
 `_nikola/`). They set `hideEditPost: true`, set `timezone` to the zone of
 original authorship, and open with the stanza:
 

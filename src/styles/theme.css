@@ -1,0 +1,38 @@
+/* Register design tokens for Tailwind v4 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  /* The body face is undecided, so it stays on the OS mono stack. */
+  --font-app: var(--font-mono);
+  /* Tailwind only generates utilities for keys declared here, and reusing
+     Astro's --font-brand as the key would define it in terms of itself. */
+  --font-wordmark: var(--font-brand);
+}
+
+/* Light theme values */
+:root,
+[data-theme="light"] {
+  --background: #f4efe6;
+  --foreground: #0a0a0a;
+  --accent: #1e4fa1;
+  --accent-foreground: #f4efe6;
+  --muted: #e1ddd4;
+  --muted-foreground: #6b7280;
+  --border: #0a0a0a;
+}
+
+/* Dark theme values */
+[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #f4efe6;
+  --accent: #f1c232;
+  --accent-foreground: #0a0a0a;
+  --muted: #1d1c1c;
+  --muted-foreground: #afb9ca;
+  --border: #f4efe6;
+}

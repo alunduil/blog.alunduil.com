@@ -6,7 +6,7 @@
  * Uniqueness is a property of the collection, so the Astro schema, which
  * validates one file at a time, can't carry it.
  *
- * Archival republishes under `src/data/blog/_<engine>/` are historical text,
+ * Archival republishes under `src/content/posts/_<engine>/` are historical text,
  * not scheduled writing. Both this check and the collection skip them on the
  * leading underscore.
  *
@@ -19,12 +19,12 @@ import { join, sep } from "node:path";
 
 import { parse } from "yaml";
 
-import { SITE } from "../src/config.ts";
+import config from "../astro-paper.config.ts";
 
 // src/content.config.ts exports this path and the underscore rule below, but
 // importing it fails on astro:content, a virtual module that resolves only
 // inside an Astro build.
-const BLOG = "src/data/blog";
+const BLOG = "src/content/posts";
 
 const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
 
@@ -124,7 +124,7 @@ function readPosts(): { posts: Post[]; errors: string[] } {
 
     // 08:00 local can land on a different day in UTC, so the weekday is only
     // right when read in the post's own zone.
-    const named = String(front.timezone ?? SITE.timezone);
+    const named = String(front.timezone ?? config.site.timezone);
     const zone = isIanaZone(named) ? named : null;
     if (zone === null) {
       errors.push(`${path}: timezone '${named}' is not an IANA zone`);

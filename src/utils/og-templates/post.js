@@ -1,5 +1,5 @@
 import satori from "satori";
-import { SITE } from "@/config";
+import config from "@/config";
 import { COLORS, STROKE, block, canvas } from "./mondrian";
 
 const formatDate = (date, timezone) =>
@@ -17,10 +17,10 @@ const truncate = tag =>
   tag.length > TAG_CHAR_LIMIT ? tag.slice(0, TAG_CHAR_LIMIT - 1) + "…" : tag;
 
 export default async post => {
-  const hostname = new URL(SITE.website).hostname;
+  const hostname = new URL(config.site.url).hostname;
   const pubDate = formatDate(
     post.data.pubDatetime,
-    post.data.timezone ?? SITE.timezone
+    post.data.timezone ?? config.site.timezone
   );
   const titleSize = post.data.title.length > 60 ? 64 : 84;
   const tags = post.data.tags.slice(0, TAG_LIMIT).map(truncate);

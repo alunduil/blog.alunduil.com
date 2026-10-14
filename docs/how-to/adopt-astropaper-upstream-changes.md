@@ -18,6 +18,13 @@ git remote add --no-tags astro-paper https://github.com/satnaing/astro-paper.git
 `--no-tags` keeps the theme's release tags out of this repository's own
 `1.0.x` ones.
 
+A shallow clone can merge but not push the result, since GitHub needs
+the upstream history the merge commit points into. Fetch it in full:
+
+```bash
+git fetch --unshallow astro-paper
+```
+
 ## Review what upstream changed
 
 ```bash
@@ -33,7 +40,8 @@ blog's own divergence.
 ## Merge what this blog wants
 
 Merge from a branch, so an unworkable result is a discarded branch
-rather than a damaged `main`:
+rather than a damaged `main`, and land the pull request as a merge
+commit so `main` keeps upstream as a parent:
 
 ```bash
 git merge astro-paper/main
@@ -42,10 +50,9 @@ git merge astro-paper/main
 Resolve in this blog's favour wherever the two disagree on something
 chosen on purpose. Two of those a passing build hides:
 
-- The loader glob in `src/content.config.ts` takes `.md` alone where
-  upstream also takes `.mdx`. `src/pages/rss.xml.ts` and
-  `src/pages/posts/[...slug]/index.md.ts` read `post.body` as raw
-  Markdown, so MDX would reach feeds as raw source.
+- `src/pages/rss.xml.ts` takes each item's full body from
+  `renderPostBodies` through its `content` field. A resolution that drops
+  either line ships a feed of summaries.
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
 

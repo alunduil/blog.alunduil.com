@@ -63,7 +63,7 @@ jobs:
         id: docs
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
         with:
-          args: '--no-progress --exclude-path (^|/)(src/data/blog|dist)/ .'
+          args: '--no-progress --exclude-path (^|/)(src/content/posts|dist)/ .'
           output: ./lychee/docs.md
           fail: false
           token: ${{ secrets.GITHUB_TOKEN }}

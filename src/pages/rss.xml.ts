@@ -1,31 +1,26 @@
 import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import getSortedPosts from "@/utils/getSortedPosts";
-import renderPostBody from "@/utils/renderPostBody";
-import { SITE } from "@/config";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getPostUrl } from "@/utils/getPostPaths";
+import { renderPostBodies } from "@/utils/postBody";
+import config from "@/config";
 
 export async function GET() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("posts");
   const sortedPosts = getSortedPosts(posts);
+  const contents = await renderPostBodies(sortedPosts);
+
   return rss({
-    title: SITE.title,
-    description: SITE.desc,
-    site: SITE.website,
-    items: await Promise.all(
-      sortedPosts.map(async post => {
-        const link = getPath(post.id, post.filePath);
-        // The trailing slash matches the item link `@astrojs/rss` emits, so
-        // fragment links in the body point at the same URL subscribers land on.
-        const canonicalURL = new URL(`${link}/`, SITE.website);
-        return {
-          link,
-          title: post.data.title,
-          description: post.data.description,
-          pubDate: post.data.pubDatetime,
-          content: await renderPostBody(post.body ?? "", canonicalURL),
-        };
-      })
-    ),
+    title: config.site.title,
+    description: config.site.description,
+    site: config.site.url,
+    items: sortedPosts.map(({ data, id, filePath }) => ({
+      link: getPostUrl(id, filePath, config.site.lang),
+      title: data.title,
+      description: data.description,
+      // The publication moment: an edit must not re-surface a post as unread.
+      pubDate: data.pubDatetime,
+      content: contents.get(id),
+    })),
   });
 }

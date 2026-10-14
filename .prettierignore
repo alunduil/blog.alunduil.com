@@ -11,6 +11,7 @@
 !/.github
 !/scripts
 !tsconfig.json
+!blog.config.ts
 !astro.config.ts
 !.prettierrc.mjs
 !package.json
@@ -21,3 +22,32 @@
 *.md
 *.yml
 *.yaml
+
+# AstroPaper theme code follows upstream's formatting, which an older
+# prettier-plugin-astro produces. Reformatting it here would conflict on
+# every upstream merge. Files the blog adds to these folders stay formatted.
+/src/components/*
+/src/i18n/*
+/src/layouts/*
+/src/pages/*
+/src/scripts/*
+/src/styles/*
+/src/types/*
+/src/utils/*
+!/src/components/BlogHead.astro
+!/src/components/Facepile.astro
+!/src/components/Webmentions.astro
+!/src/pages/llms.txt.ts
+!/src/pages/posts/
+/src/pages/posts/*
+!/src/pages/posts/[[]...slug]/
+/src/pages/posts/[[]...slug]/*
+!/src/pages/posts/[[]...slug]/index.md.ts
+!/src/utils/*.test.ts
+!/src/utils/getWebmentions.ts
+!/src/utils/loadBrandFonts.ts
+!/src/utils/markdownPlugins.ts
+!/src/utils/og-templates/
+!/src/utils/rehypeThemeImages.ts
+!/src/styles/themeImages.css
+!/src/utils/postBody.ts

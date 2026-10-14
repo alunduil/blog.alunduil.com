@@ -6,7 +6,8 @@ CommonMark. For frontmatter, scheduling, and file locations, see
 
 ## Headings
 
-`PostDetails.astro` renders the frontmatter `title` as the page `h1`.
+The post page (`src/pages/posts/[...slug]/index.astro`) renders the
+frontmatter `title` as the page `h1`.
 Body headings start at `h2`.
 
 ## Table of contents
@@ -31,8 +32,8 @@ Three storage locations, differing in optimisation and path form.
 
 Images under `src/assets/` pass through Astro's image service. Reference
 them with the `@/assets/` alias or with a path relative to the post file,
-which varies by folder depth—two `../` from `src/data/blog/<slug>.md`,
-three from `src/data/blog/reviews/<slug>.md`:
+which varies by folder depth—two `../` from `src/content/posts/<slug>.md`,
+three from `src/content/posts/reviews/<slug>.md`:
 
 ```md
 ![alt text](@/assets/images/example.png)
