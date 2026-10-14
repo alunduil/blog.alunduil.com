@@ -6,7 +6,7 @@
  * Uniqueness is a property of the collection, so the Astro schema, which
  * validates one file at a time, can't carry it.
  *
- * Archival republishes under `src/data/blog/_<engine>/` are historical text,
+ * Archival republishes under `src/content/posts/_<engine>/` are historical text,
  * not scheduled writing. Both this check and the collection skip them on the
  * leading underscore.
  *
@@ -24,7 +24,7 @@ import config from "../astro-paper.config.ts";
 // src/content.config.ts exports this path and the underscore rule below, but
 // importing it fails on astro:content, a virtual module that resolves only
 // inside an Astro build.
-const BLOG = "src/data/blog";
+const BLOG = "src/content/posts";
 
 const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
 

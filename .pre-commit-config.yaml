@@ -52,7 +52,7 @@ repos:
         language: system
         types: [markdown]
         # Shared with lychee-docs so no file falls between the two unchecked.
-        files: &post_sources ^src/data/blog/
+        files: &post_sources ^src/content/posts/
 
       - id: lychee-docs
         name: Check links in docs with lychee
@@ -72,7 +72,7 @@ repos:
         entry: node scripts/check-post-scheduling.ts
         language: system
         pass_filenames: false
-        files: ^(src/data/blog/.*\.md|astro-paper\.config\.ts)$
+        files: ^(src/content/posts/.*\.md|astro-paper\.config\.ts)$
 
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.
@@ -139,7 +139,7 @@ repos:
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
-            src/data/blog/_.*|
+            src/content/posts/_.*|
             \.vale/fixtures/.*
           )$
       # The fixtures hold intentional violations, so the hook above skips

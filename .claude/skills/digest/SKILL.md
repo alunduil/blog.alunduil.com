@@ -133,7 +133,7 @@ A theme can warrant both — a short signal-boost now and a long synthesis later
 **Screen each theme against the collected data before offering it as a kernel:**
 
 - **Moment of change.** The post needs a point where the author's practice or view changed. Name the candidate moment from the data for the author to confirm.
-- **Not a corpus repeat.** Compare the landing sentence against published posts in `src/data/blog/`. The same conclusion pointed at a new target is a repeat.
+- **Not a corpus repeat.** Compare the landing sentence against published posts in `src/content/posts/`. The same conclusion pointed at a new target is a repeat.
 - **Survives the wait.** A kernel tied to a live news event or an undecided downstream issue must be writable now, or framed so the outcome doesn't matter.
 
 A theme that fails moves to a short **Screened out** list in §5 with its reason, so the author can overrule it. The checks that need source reads run at filing (§5).

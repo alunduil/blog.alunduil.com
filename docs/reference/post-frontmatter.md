@@ -58,14 +58,14 @@ No post sets `draft: true`.
 
 ## Locations
 
-The blog collection loads `**/[^_]*.md` under `src/data/blog`, skipping
+The posts collection loads `**/[^_]*.md` under `src/content/posts`, skipping
 `_`-prefixed files and directories.
 
 | Content | Path | URL |
 | --- | --- | --- |
-| Post | `src/data/blog/<slug>.md` | `/posts/<slug>/` |
-| Review | `src/data/blog/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
-| Archival republish | `src/data/blog/_<engine>/<slug>.md` | `/posts/<slug>/` |
+| Post | `src/content/posts/<slug>.md` | `/posts/<slug>/` |
+| Review | `src/content/posts/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
+| Archival republish | `src/content/posts/_<engine>/<slug>.md` | `/posts/<slug>/` |
 
 Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
 (`_hakyll/`) are stripped, so archival posts serve at `/posts/<slug>/`.
@@ -84,7 +84,7 @@ ogImage: ../../../assets/images/<slug>-cover.jpg
 
 ## Archival republishes
 
-Restored posts live under `src/data/blog/_<engine>/` (`_hakyll/`,
+Restored posts live under `src/content/posts/_<engine>/` (`_hakyll/`,
 `_nikola/`). They set `hideEditPost: true`, set `timezone` to the zone of
 original authorship, and open with the stanza:
 

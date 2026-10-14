@@ -76,8 +76,8 @@ so the repo-relevant essentials:
 
 ## Posting convention
 
-New posts live under `src/data/blog/`; archival republishes under
-`src/data/blog/_<engine>/`; reviews under `src/data/blog/reviews/`.
+New posts live under `src/content/posts/`; archival republishes under
+`src/content/posts/_<engine>/`; reviews under `src/content/posts/reviews/`.
 A future `pubDatetime` is the publication gate: merging the PR accepts
 the editorial work, the date defers publication.
 
@@ -112,11 +112,11 @@ upstream — edit only when the change is the point:
   formatting.
 
 The theme's sample posts (tutorials, release notes, example drafts) are
-gone; `src/data/blog/` is all author content. What they documented about
+gone; `src/content/posts/` is all author content. What they documented about
 post bodies lives in `docs/reference/post-body.md`.
 
 Customized and free to edit: `astro-paper.config.ts` (site settings),
-`astro.config.ts`, new posts in `src/data/blog/`.
+`astro.config.ts`, new posts in `src/content/posts/`.
 
 Upstream fixes arrive by merging the `astro-paper` remote, not through
 Renovate — see [Adopt AstroPaper upstream

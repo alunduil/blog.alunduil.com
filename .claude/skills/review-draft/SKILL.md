@@ -174,7 +174,7 @@ forward ([[feedback_outline_drives_post]]).
 
 ## 4. Draft — build the argument
 
-Render the spine into `src/data/blog/reviews/<slug>.md`, one point at a time with the
+Render the spine into `src/content/posts/reviews/<slug>.md`, one point at a time with the
 author. Review-specific rules, on top of the blog voice (`.claude/voice.md`):
 
 - **Argument outweighs summary, roughly four to one.** Every evaluative claim
@@ -241,7 +241,7 @@ to sit in. Revealing what *happens* is what spoils.
 
 Review-specific notes on the shared conventions:
 
-- **Location and cover:** reviews live in `src/data/blog/reviews/<slug>.md`,
+- **Location and cover:** reviews live in `src/content/posts/reviews/<slug>.md`,
   which serves at `/posts/reviews/<slug>/` (the theme keeps non-`_` folders in
   the URL). Each review carries the work's cover as its OG image, the one post
   type that does — download it (Open Library `covers.openlibrary.org/b/id/…`,
@@ -265,7 +265,7 @@ Review-specific notes on the shared conventions:
 
 ## Output
 
-Iterate in `outlines/<slug>.md` then `src/data/blog/reviews/<slug>.md`. Commit
+Iterate in `outlines/<slug>.md` then `src/content/posts/reviews/<slug>.md`. Commit
 incrementally. Before promoting the PR, reach the final state in
 `.claude/publishing.md`, with the spine pruned to the argument and its
 evidence.

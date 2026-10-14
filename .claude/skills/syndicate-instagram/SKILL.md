@@ -16,14 +16,14 @@ The blog stays canonical; the Instagram post is a derivative that points back.
 nothing is committed.
 
 Invoke: `/syndicate-instagram [path|slug|url]` — defaults to the newest post
-under `src/data/blog/`.
+under `src/content/posts/`.
 
 Pipeline: **resolve → extract kernel → draft → present.**
 
 ## 1. Resolve the post
 
 Accept a file path, slug, or live URL. Default: the newest post by
-`pubDatetime` under `src/data/blog/` (a future `pubDatetime` is fine —
+`pubDatetime` under `src/content/posts/` (a future `pubDatetime` is fine —
 Instagram can be drafted ahead of publication). Read frontmatter (`title`,
 `description`, `slug`, `pubDatetime`, `tags`) and the body.
 

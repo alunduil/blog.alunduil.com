@@ -15,7 +15,7 @@ vi.mock("astro:content", async importOriginal => ({
   getCollection: async () => [
     {
       id: "hello",
-      filePath: "src/data/blog/hello.md",
+      filePath: "src/content/posts/hello.md",
       data: { pubDatetime: new Date(0), draft: false },
     },
   ],

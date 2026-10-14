@@ -120,7 +120,7 @@ person, without verdict words.
 
 ## Output
 
-Iterate in `src/data/blog/<slug>.md`. Commit incrementally — each
+Iterate in `src/content/posts/<slug>.md`. Commit incrementally — each
 substantive change as its own commit with the reasoning in the body.
 
 Before promoting the PR out of draft, reach the final state in
