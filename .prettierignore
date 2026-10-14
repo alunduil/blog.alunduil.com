@@ -49,4 +49,4 @@
 !/src/utils/markdownPlugins.ts
 !/src/utils/og-templates/
 !/src/utils/rehypeThemeImages.ts
-!/src/utils/renderPostBody.ts
+!/src/utils/postBody.ts

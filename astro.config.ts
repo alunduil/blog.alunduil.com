@@ -8,8 +8,6 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { unified } from "@astrojs/markdown-remark";
-import remarkToc from "remark-toc";
-import remarkCollapse from "remark-collapse";
 import rehypeCallouts from "rehype-callouts";
 import {
   transformerNotationDiff,
@@ -18,6 +16,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+import { remarkPlugins } from "./src/utils/markdownPlugins";
 import { envSchema } from "./blog.config";
 
 export default defineConfig({
@@ -38,10 +37,8 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      remarkPlugins: [
-        remarkToc,
-        [remarkCollapse, { test: "Table of contents" }],
-      ],
+      // Shared with the RSS renderer, so feed and page match.
+      remarkPlugins,
       rehypePlugins: [rehypeCallouts],
     }),
     shikiConfig: {

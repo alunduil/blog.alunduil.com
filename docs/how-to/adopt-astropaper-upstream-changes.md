@@ -42,10 +42,9 @@ git merge astro-paper/main
 Resolve in this blog's favour wherever the two disagree on something
 chosen on purpose. Two of those a passing build hides:
 
-- The loader glob in `src/content.config.ts` takes `.md` alone where
-  upstream also takes `.mdx`. `src/pages/rss.xml.ts` and
-  `src/pages/posts/[...slug]/index.md.ts` read `post.body` as raw
-  Markdown, so MDX would reach feeds as raw source.
+- `src/pages/rss.xml.ts` takes each item's full body from
+  `renderPostBodies` through its `content` field. A resolution that drops
+  either line ships a feed of summaries.
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
 
