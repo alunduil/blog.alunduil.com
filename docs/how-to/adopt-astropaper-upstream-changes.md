@@ -61,9 +61,9 @@ chosen on purpose. Two of those a passing build hides:
 
 ## Keep the merge commit through review
 
-Fixes made after the merge, such as deleting restored sample posts, go
-in their own commits after it. Fold review fixes into those commits
-without flattening the merge:
+Commit follow-up fixes, such as deleting restored sample posts,
+separately after the merge. Fold review fixes into those commits without
+flattening the merge:
 
 ```bash
 GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
