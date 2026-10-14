@@ -56,6 +56,24 @@ chosen on purpose. Two of those a passing build hides:
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
 
+## Keep the merge commit through review
+
+The next sync finds its merge base through the upstream parent of this
+merge commit, so the commit has to reach `main` intact. The pull request
+merges by merge commit, which keeps it.
+
+Fixes made after the merge, such as deleting restored sample posts, go
+in their own commits after it. Fold review fixes into those commits
+without flattening the merge:
+
+```bash
+GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
+```
+
+Rewriting the branch recreates the merge, and any conflict resolved
+inside it comes back. Enable `git config rerere.enabled true` before
+merging so Git replays the resolution.
+
 ## Verify
 
 ```bash
