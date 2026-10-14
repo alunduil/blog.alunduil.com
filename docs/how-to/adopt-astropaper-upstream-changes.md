@@ -58,10 +58,6 @@ chosen on purpose. Two of those a passing build hides:
 
 ## Keep the merge commit through review
 
-The next sync finds its merge base through the upstream parent of this
-merge commit, so the commit has to reach `main` intact. The pull request
-merges by merge commit, which keeps it.
-
 Fixes made after the merge, such as deleting restored sample posts, go
 in their own commits after it. Fold review fixes into those commits
 without flattening the merge:
