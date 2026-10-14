@@ -39,11 +39,26 @@ resolve_since() {
   esac
 }
 
+# A merge commit's PR already stands for the commits it brought in: those
+# between its first and second parent. Emits their full SHAs as a JSON array.
+merged_in_shas() {
+  jq -r '.[]
+    | select((.parents // []) | length > 1)
+    | "\(.repository.fullName) \(.parents[0].sha) \(.parents[1].sha)"' |
+    while read -r repo base head; do
+      gh api "repos/$repo/compare/$base...$head" --jq '.commits[].sha' 2>/dev/null
+    done | jq -Rsc 'split("\n") | map(select(. != ""))'
+}
+
+# Usage: filter_commits [MERGED_IN_SHAS_JSON]
 filter_commits() {
   jq --arg sync_repo "$SYNC_NOISE_REPO" \
     --arg sync_re "$SYNC_NOISE_SUBJECT_RE" \
     --arg squash_re "$SQUASH_MERGE_RE" \
+    --argjson merged_in "${1:-[]}" \
     '[.[]
+     | select((.parents // []) | length < 2)
+     | select(.sha as $s | $merged_in | index($s) | not)
      | {repo: .repository.fullName,
         sha: .sha[:7],
         subject: (.commit.message | split("\n")[0]),
@@ -107,7 +122,12 @@ gh_search() {
   package "$raw" "$("$filter_fn" <<<"$raw")"
 }
 
-fetch_commits()       { gh_search commits --author      --author-date "$1" repository,sha,commit             filter_commits; }
+fetch_commits() {
+  local raw
+  raw=$(gh search commits --author=@me "--author-date=>$1" \
+    --limit "$LIMIT" --json repository,sha,parents,commit 2>/dev/null)
+  package "$raw" "$(filter_commits "$(merged_in_shas <<<"$raw")" <<<"$raw")"
+}
 fetch_prs_opened()    { gh_search prs     --author      --created     "$1" number,title,state,url,createdAt  filter_prs_opened; }
 fetch_prs_reviewed()  { gh_search prs     --reviewed-by --updated     "$1" number,title,url,author,updatedAt filter_prs_reviewed; }
 fetch_issues_opened() { gh_search issues  --author      --created     "$1" number,title,state,url,createdAt  filter_issues_opened; }

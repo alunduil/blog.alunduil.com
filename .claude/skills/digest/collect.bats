@@ -101,6 +101,22 @@ setup() {
   [ "$(jq -r '.[0].sha' <<<"$result")" = "abc1234" ]
 }
 
+@test "filter_commits drops merge commit and the commits it brought in" {
+  source "$SCRIPT"
+  gh() {
+    [ "$*" = "api repos/a/b/compare/base...head --jq .commits[].sha" ] || return 1
+    printf '%s\n' branch1 branch2
+  }
+  raw='[
+    {"repository":{"fullName":"a/b"},"sha":"merge","parents":[{"sha":"base"},{"sha":"head"}],"commit":{"message":"Merge pull request #7 from a/x","author":{"date":"2026-04-26T00:00:00Z"}}},
+    {"repository":{"fullName":"a/b"},"sha":"branch1","parents":[{"sha":"base"}],"commit":{"message":"Add one thing","author":{"date":"2026-04-26T00:00:00Z"}}},
+    {"repository":{"fullName":"a/b"},"sha":"branch2","parents":[{"sha":"branch1"}],"commit":{"message":"Add another thing","author":{"date":"2026-04-26T00:00:00Z"}}},
+    {"repository":{"fullName":"a/b"},"sha":"direct","parents":[{"sha":"merge"}],"commit":{"message":"Direct work on trunk","author":{"date":"2026-04-26T00:00:00Z"}}}
+  ]'
+  result=$(filter_commits "$(merged_in_shas <<<"$raw")" <<<"$raw")
+  [ "$(jq -c '[.[].subject]' <<<"$result")" = '["Direct work on trunk"]' ]
+}
+
 # --- filter_events heuristics ---
 
 @test "filter_events drops task/* CreateEvent" {
