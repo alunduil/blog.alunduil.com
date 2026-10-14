@@ -18,6 +18,13 @@ git remote add --no-tags astro-paper https://github.com/satnaing/astro-paper.git
 `--no-tags` keeps the theme's release tags out of this repository's own
 `1.0.x` ones.
 
+A shallow clone can merge but not push the result, since GitHub needs
+the upstream history the merge commit points into. Fetch it in full:
+
+```bash
+git fetch --unshallow astro-paper
+```
+
 ## Review what upstream changed
 
 ```bash
@@ -33,7 +40,8 @@ blog's own divergence.
 ## Merge what this blog wants
 
 Merge from a branch, so an unworkable result is a discarded branch
-rather than a damaged `main`:
+rather than a damaged `main`, and land the pull request as a merge
+commit so `main` keeps upstream as a parent:
 
 ```bash
 git merge astro-paper/main
