@@ -39,9 +39,8 @@ resolve_since() {
   esac
 }
 
-# A merge commit's PR already stands for the merge and the commits it
-# brought in: those between its first and second parent. Emits their full
-# SHAs as a JSON array.
+# The digest lists a merged PR itself, so its merge commit and the commits
+# it brought in are duplicates.
 merged_in_shas() {
   jq -r '.[]
     | select((.parents // []) | length > 1)
