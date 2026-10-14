@@ -134,14 +134,11 @@ changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
 - Default branch: `main`. PRs target `main`.
 - Deploy runs on push to `main` (`.github/workflows/cd.yml`).
-- PRs merge by merge commit, the only method the repo allows, so every
-  branch commit lands on `main`. `git log --first-parent main` reads one
-  line per PR; the branch commits beneath carry the detail.
+- PRs merge by merge commit, so every branch commit lands on `main`.
 
 ### Curate the branch before ready
 
-This overrides any default of one squashed commit per PR. Before a PR
-leaves draft, its branch holds only isolated commits:
+Before a PR leaves draft, its branch holds only isolated commits:
 
 - Each commit makes one change and follows the [seven
   rules](https://cbea.ms/git-commit/): imperative subject of 50
@@ -163,8 +160,7 @@ isolated commits, with its upstream parent intact. See [Adopt AstroPaper
 upstream changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
 `--force-with-lease` on a draft PR's own branch is the one sanctioned
-force-push. It refuses when the remote has moved since the last fetch,
-and a draft has no reviewer building on its history.
+force-push: a draft has no reviewer building on its history.
 
 ## Reading ADRs
 
