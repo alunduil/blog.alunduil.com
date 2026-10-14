@@ -39,13 +39,15 @@ resolve_since() {
   esac
 }
 
-# A merge commit's PR already stands for the commits it brought in: those
-# between its first and second parent. Emits their full SHAs as a JSON array.
+# A merge commit's PR already stands for the merge and the commits it
+# brought in: those between its first and second parent. Emits their full
+# SHAs as a JSON array.
 merged_in_shas() {
   jq -r '.[]
     | select((.parents // []) | length > 1)
-    | "\(.repository.fullName) \(.parents[0].sha) \(.parents[1].sha)"' |
-    while read -r repo base head; do
+    | "\(.repository.fullName) \(.sha) \(.parents[0].sha) \(.parents[1].sha)"' |
+    while read -r repo merge base head; do
+      echo "$merge"
       gh api "repos/$repo/compare/$base...$head" --jq '.commits[].sha' 2>/dev/null
     done | jq -Rsc 'split("\n") | map(select(. != ""))'
 }
@@ -58,7 +60,6 @@ filter_commits() {
     --arg squash_re "$SQUASH_MERGE_RE" \
     --argjson merged_in "$(merged_in_shas <<<"$raw")" \
     '[.[]
-     | select((.parents // []) | length < 2)
      | select(.sha as $s | $merged_in | index($s) | not)
      | {repo: .repository.fullName,
         sha: .sha[:7],
