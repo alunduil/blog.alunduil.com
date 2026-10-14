@@ -16,13 +16,18 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
-import { envSchema } from "./blog.config";
+import rehypeThemeImages from "./src/utils/rehypeThemeImages";
+import { envSchema, redirects } from "./blog.config";
 
 export default defineConfig({
   site: config.site.url,
+  redirects,
   integrations: [
     mdx(),
+    // Logging defaults on, chattering to the console on every page load.
+    mermaid({ enableLog: false }),
     sitemap({
       filter: page =>
         config.features?.showArchives !== false || !page.endsWith("/archives/"),
@@ -39,7 +44,7 @@ export default defineConfig({
     processor: unified({
       // Shared with the RSS renderer, so feed and page match.
       remarkPlugins,
-      rehypePlugins: [rehypeCallouts],
+      rehypePlugins: [rehypeCallouts, rehypeThemeImages],
     }),
     shikiConfig: {
       themes: { light: "min-light", dark: "night-owl" },

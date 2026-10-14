@@ -1,0 +1,14 @@
+/* `rehypeThemeImages` emits both variants of a theme-aware image; these
+   rules pick one. `display: none` also drops the hidden variant from the
+   accessibility tree, so the `alt` both share is announced once. */
+.theme-image-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-image-light {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-image-dark {
+  display: block;
+}

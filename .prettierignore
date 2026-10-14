@@ -49,4 +49,5 @@
 !/src/utils/markdownPlugins.ts
 !/src/utils/og-templates/
 !/src/utils/rehypeThemeImages.ts
+!/src/styles/themeImages.css
 !/src/utils/postBody.ts
