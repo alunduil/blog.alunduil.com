@@ -60,6 +60,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    // Native bindings: the Mondrian OG cards render through resvg.
+    optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
   fonts: [
     {

@@ -2,7 +2,10 @@ import { readFile } from "node:fs/promises";
 
 import type { Font, FontWeight } from "satori";
 
-import { BRAND_FONT } from "@/config";
+// One name so the header wordmark and the OG card cannot drift onto
+// different faces. Changing it means installing the matching @fontsource
+// package.
+export const BRAND_FONT = "IBM Plex Sans";
 
 // Fontsource names its packages and files after the family, lowercased and
 // hyphenated.
