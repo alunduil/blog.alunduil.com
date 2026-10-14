@@ -11,7 +11,7 @@ Fields, in schema order:
 
 | Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
-| `author` | no | string | Defaults to `SITE.author`. |
+| `author` | no | string | Defaults to `site.author` in `astro-paper.config.ts`. |
 | `pubDatetime` | yes | date | Publication moment; gates visibility (see [Scheduling](#scheduling)). |
 | `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
@@ -22,7 +22,7 @@ Fields, in schema order:
 | `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
 | `hideEditPost` | no | boolean | Hides the "edit this page" link. |
-| `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `SITE.timezone`. |
+| `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `site.timezone` in `astro-paper.config.ts`. |
 
 `pubDatetime` and `modDatetime` are live-site moments, independent of
 branch commit time.
@@ -52,7 +52,7 @@ Tuesday post is tech and a Sunday post personal. No frontmatter field
 states a post's subject.
 
 A future `pubDatetime` gates publication: AstroPaper's
-`SITE.scheduledPostMargin` (~15 minutes) hides the post until the date
+`posts.scheduledPostMargin` (~15 minutes) hides the post until the date
 passes. Publication is independent of the merge; the date is the trigger.
 No post sets `draft: true`.
 

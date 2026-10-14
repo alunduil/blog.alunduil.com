@@ -29,7 +29,7 @@ Instagram can be drafted ahead of publication). Read frontmatter (`title`,
 
 Derive:
 
-- **Canonical URL** — `SITE.website` + `posts/<slug>/`.
+- **Canonical URL** — `site.url` from `astro-paper.config.ts` + `posts/<slug>/`.
 - **OG card** — `.../posts/<slug>/index.png` (`dynamicOgImage: true`), the
   zero-effort default image.
 

@@ -62,8 +62,9 @@ repos:
         exclude: *post_sources
 
   # The script checks the whole collection, so it takes no filenames; `files`
-  # only decides whether it runs. src/config.ts is in that pattern because
-  # the script imports SITE for the default timezone. Needs node_modules.
+  # only decides whether it runs. astro-paper.config.ts is in that pattern
+  # because the script imports it for the default timezone. Needs
+  # node_modules.
   - repo: local
     hooks:
       - id: post-scheduling
@@ -71,7 +72,7 @@ repos:
         entry: node scripts/check-post-scheduling.ts
         language: system
         pass_filenames: false
-        files: ^(src/data/blog/.*\.md|src/config\.ts)$
+        files: ^(src/data/blog/.*\.md|astro-paper\.config\.ts)$
 
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.

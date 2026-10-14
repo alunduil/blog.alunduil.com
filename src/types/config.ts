@@ -74,6 +74,8 @@ interface SocialLink {
    * Override when the default wording doesn't fit.
    */
   linkTitle?: string;
+  /** Link relationship, e.g. "me" to verify profile ownership. */
+  rel?: string;
 }
 
 interface ShareLink {

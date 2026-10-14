@@ -115,7 +115,7 @@ The theme's sample posts (tutorials, release notes, example drafts) are
 gone; `src/data/blog/` is all author content. What they documented about
 post bodies lives in `docs/reference/post-body.md`.
 
-Customized and free to edit: `src/config.ts`, `src/constants.ts`,
+Customized and free to edit: `astro-paper.config.ts` (site settings),
 `astro.config.ts`, new posts in `src/data/blog/`.
 
 Upstream fixes arrive by merging the `astro-paper` remote, not through
