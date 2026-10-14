@@ -6,7 +6,8 @@ CommonMark. For frontmatter, scheduling, and file locations, see
 
 ## Headings
 
-`PostDetails.astro` renders the frontmatter `title` as the page `h1`.
+The post page (`src/pages/posts/[...slug]/index.astro`) renders the
+frontmatter `title` as the page `h1`.
 Body headings start at `h2`.
 
 ## Table of contents

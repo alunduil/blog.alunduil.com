@@ -106,8 +106,9 @@ against a different corpus.
 The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
 upstream — edit only when the change is the point:
 
-- `src/components/`, `src/layouts/`, `src/pages/`, `src/styles/`,
-  `src/utils/`, `src/content.config.ts` — theme code. Prettier and the
+- `src/components/`, `src/i18n/`, `src/layouts/`, `src/pages/`,
+  `src/scripts/`, `src/styles/`, `src/types/`, `src/utils/`,
+  `src/config.ts`, `src/content.config.ts` — theme code. Prettier and the
   end-of-file fixer skip it so upstream merges don't conflict on
   formatting.
 
