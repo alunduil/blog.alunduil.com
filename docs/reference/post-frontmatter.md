@@ -58,8 +58,10 @@ No post sets `draft: true`.
 
 ## Locations
 
-The posts collection loads `**/[^_]*.md` under `src/content/posts`, skipping
-`_`-prefixed files and directories.
+The posts collection loads `**/[^_]*.{md,mdx}` under `src/content/posts`,
+skipping `_`-prefixed files. An `.mdx` post fails the build: the RSS feed
+and each post's `index.md` serve the body as Markdown and can't render MDX
+yet.
 
 | Content | Path | URL |
 | --- | --- | --- |

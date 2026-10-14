@@ -1,22 +1,23 @@
 import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import getSortedPosts from "@/utils/getSortedPosts";
-import { SITE } from "@/config";
+import { getPostUrl } from "@/utils/getPostPaths";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import config from "@/config";
 
 export const GET: APIRoute = async ({ site }) => {
-  const posts = getSortedPosts(await getCollection("blog"));
+  const posts = getSortedPosts(await getCollection("posts"));
 
   const postLines = posts.map(({ data, id, filePath }) => {
-    const url = new URL(`${getPath(id, filePath)}/index.md`, site).href;
+    const url = new URL("index.md", new URL(getPostUrl(id, filePath), site))
+      .href;
     return `- [${data.title}](${url}): ${data.description}`;
   });
 
-  const body = `# ${SITE.title}
+  const body = `# ${config.site.title}
 
-> ${SITE.desc}
+> ${config.site.description}
 
-This is the personal blog of ${SITE.author}. Every post below is also available as clean Markdown at its \`index.md\` URL.
+This is the personal blog of ${config.site.author}. Every post below is also available as clean Markdown at its \`index.md\` URL.
 
 ## Posts
 
