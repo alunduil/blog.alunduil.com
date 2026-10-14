@@ -113,7 +113,7 @@ setup() {
     {"repository":{"fullName":"a/b"},"sha":"branch2","parents":[{"sha":"branch1"}],"commit":{"message":"Add another thing","author":{"date":"2026-04-26T00:00:00Z"}}},
     {"repository":{"fullName":"a/b"},"sha":"direct","parents":[{"sha":"merge"}],"commit":{"message":"Direct work on trunk","author":{"date":"2026-04-26T00:00:00Z"}}}
   ]'
-  result=$(filter_commits "$(merged_in_shas <<<"$raw")" <<<"$raw")
+  result=$(filter_commits <<<"$raw")
   [ "$(jq -c '[.[].subject]' <<<"$result")" = '["Direct work on trunk"]' ]
 }
 

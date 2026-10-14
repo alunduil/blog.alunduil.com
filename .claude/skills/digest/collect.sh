@@ -50,12 +50,13 @@ merged_in_shas() {
     done | jq -Rsc 'split("\n") | map(select(. != ""))'
 }
 
-# Usage: filter_commits [MERGED_IN_SHAS_JSON]
 filter_commits() {
+  local raw
+  raw=$(cat)
   jq --arg sync_repo "$SYNC_NOISE_REPO" \
     --arg sync_re "$SYNC_NOISE_SUBJECT_RE" \
     --arg squash_re "$SQUASH_MERGE_RE" \
-    --argjson merged_in "${1:-[]}" \
+    --argjson merged_in "$(merged_in_shas <<<"$raw")" \
     '[.[]
      | select((.parents // []) | length < 2)
      | select(.sha as $s | $merged_in | index($s) | not)
@@ -66,7 +67,7 @@ filter_commits() {
      | select(.subject | test($squash_re) | not)
      | select(.subject | test($sync_re) | not)
      | select(.repo != $sync_repo)
-    ]'
+    ]' <<<"$raw"
 }
 
 filter_prs_opened() {
@@ -122,12 +123,7 @@ gh_search() {
   package "$raw" "$("$filter_fn" <<<"$raw")"
 }
 
-fetch_commits() {
-  local raw
-  raw=$(gh search commits --author=@me "--author-date=>$1" \
-    --limit "$LIMIT" --json repository,sha,parents,commit 2>/dev/null)
-  package "$raw" "$(filter_commits "$(merged_in_shas <<<"$raw")" <<<"$raw")"
-}
+fetch_commits()       { gh_search commits --author      --author-date "$1" repository,sha,parents,commit     filter_commits; }
 fetch_prs_opened()    { gh_search prs     --author      --created     "$1" number,title,state,url,createdAt  filter_prs_opened; }
 fetch_prs_reviewed()  { gh_search prs     --reviewed-by --updated     "$1" number,title,url,author,updatedAt filter_prs_reviewed; }
 fetch_issues_opened() { gh_search issues  --author      --created     "$1" number,title,state,url,createdAt  filter_issues_opened; }
