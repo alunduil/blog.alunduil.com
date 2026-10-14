@@ -1,8 +1,15 @@
 ---
 import { Font } from "astro:assets";
-import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
+import {
+  PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN,
+  PUBLIC_WEBMENTION_IO_USERNAME,
+} from "astro:env/client";
+import { getAssetPath } from "@/utils/withBase";
 import "@/styles/themeImages.css";
 ---
+
+<link rel="apple-touch-icon" href={getAssetPath("apple-touch-icon.png")} />
+<link rel="manifest" href={getAssetPath("site.webmanifest")} />
 
 <Font cssVariable="--font-brand" preload />
 
@@ -18,3 +25,13 @@ import "@/styles/themeImages.css";
     />
   </>
 )}
+
+{
+  // Injected as raw HTML: a conditional self-closing <script src> trips
+  // astro-eslint-parser's preprocessor.
+  PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN && import.meta.env.PROD && (
+    <Fragment
+      set:html={`<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "${PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN}"}'></script>`}
+    />
+  )
+}
