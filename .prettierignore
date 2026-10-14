@@ -11,6 +11,7 @@
 !/.github
 !/scripts
 !tsconfig.json
+!blog.config.ts
 !astro.config.ts
 !.prettierrc.mjs
 !package.json
@@ -33,6 +34,7 @@
 /src/styles/*
 /src/types/*
 /src/utils/*
+!/src/components/BlogHead.astro
 !/src/components/Facepile.astro
 !/src/components/Webmentions.astro
 !/src/pages/llms.txt.ts

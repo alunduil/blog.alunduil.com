@@ -1,8 +1,8 @@
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
-import { SITE } from "@/config";
-import { getPath } from "@/utils/getPath";
-import postFilter from "@/utils/postFilter";
+import config from "@/config";
+import { getPostUrl } from "@/utils/getPostPaths";
+import { postFilter } from "@/utils/postFilter";
 
 export type WebmentionAuthor = {
   name?: string;
@@ -132,15 +132,18 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
   }
 }
 
-// Mirrors the target PostDetails.astro passes to getWebmentions. Should the
-// two drift, a page looks itself up under a target nothing was filed against
-// and renders nothing, with no error.
-async function postTargets(): Promise<string[]> {
-  const posts = await getCollection("blog", postFilter);
+/** The URL a post's webmentions are filed against. */
+export function webmentionTarget({
+  id,
+  filePath,
+}: CollectionEntry<"posts">): string {
+  return new URL(getPostUrl(id, filePath), config.site.url).href;
+}
 
-  return posts.map(
-    post => new URL(getPath(post.id, post.filePath), SITE.website).href
-  );
+async function postTargets(): Promise<string[]> {
+  const posts = await getCollection("posts", postFilter);
+
+  return posts.map(webmentionTarget);
 }
 
 function groupByTarget(children: WebmentionEntry[]): MentionsByTarget {

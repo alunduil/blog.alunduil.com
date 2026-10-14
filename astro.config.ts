@@ -18,6 +18,7 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
+import { envSchema } from "./blog.config";
 
 export default defineConfig({
   site: config.site.url,
@@ -76,6 +77,7 @@ export default defineConfig({
         context: "client",
         optional: true,
       }),
+      ...envSchema,
     },
   },
   experimental: {

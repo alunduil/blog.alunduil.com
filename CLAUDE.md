@@ -116,7 +116,12 @@ gone; `src/content/posts/` is all author content. What they documented about
 post bodies lives in `docs/reference/post-body.md`.
 
 Customized and free to edit: `astro-paper.config.ts` (site settings),
-`astro.config.ts`, new posts in `src/content/posts/`.
+new posts in `src/content/posts/`.
+
+Build a customization in a blog-owned file and hook it into the upstream
+file with as few lines as possible: Astro config additions in
+`blog.config.ts`, head tags in `src/components/BlogHead.astro`, logic in its
+own module under `src/utils/`. Small hooks keep upstream merges routine.
 
 Upstream fixes arrive by merging the `astro-paper` remote, not through
 Renovate — see [Adopt AstroPaper upstream
