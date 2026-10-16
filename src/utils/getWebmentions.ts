@@ -1,4 +1,5 @@
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
 import config from "@/config";
 import { getPostUrl } from "@/utils/getPostPaths";
@@ -133,10 +134,7 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
 }
 
 /** The URL a post's webmentions are filed against. */
-export function webmentionTarget({
-  id,
-  filePath,
-}: CollectionEntry<"posts">): string {
+export function webmentionTarget({ id, filePath }: Entry): string {
   return new URL(getPostUrl(id, filePath), config.site.url).href;
 }
 

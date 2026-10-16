@@ -1,13 +1,13 @@
 ---
 import type { Page } from "astro";
-import type { CollectionEntry } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import IconArrowLeft from "@/assets/icons/IconArrowLeft.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import LinkButton from "./LinkButton.astro";
 import { useTranslations } from "@/i18n";
 
 type Props = {
-  page: Page<CollectionEntry<"posts">>;
+  page: Page<Entry>;
 };
 
 const { page } = Astro.props;

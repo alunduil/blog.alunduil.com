@@ -1,12 +1,12 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { BLOG_PATH } from "@/content.config";
+import { sectionOf } from "./entries";
 import { slugifyStr } from "./slugify";
 import config from "@/config";
 
 function getPostPathSegments(filePath: string | undefined): string[] {
   return (
     filePath
-      ?.replace(BLOG_PATH, "")
+      ?.replace(sectionOf(filePath).base, "")
       .split("/")
       .filter(path => path !== "")
       .filter(path => !path.startsWith("_"))
@@ -48,5 +48,8 @@ export function getPostUrl(
   filePath: string | undefined,
   locale: string | undefined = config.site.lang
 ): string {
-  return getRelativeLocaleUrl(locale, `posts/${getPostSlugPath(id, filePath)}`);
+  return getRelativeLocaleUrl(
+    locale,
+    `${sectionOf(filePath).section}/${getPostSlugPath(id, filePath)}`
+  );
 }

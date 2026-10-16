@@ -2,7 +2,7 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import type { CollectionEntry } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import {
   getWebmentions,
   webmentionTarget,
@@ -14,7 +14,7 @@ import Facepile from "@/components/Facepile.astro";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-type Props = { post: CollectionEntry<"posts"> };
+type Props = { post: Entry };
 
 const { post } = Astro.props;
 
