@@ -2,6 +2,7 @@ import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
+import { blogCollections } from "@/utils/blogCollections";
 
 export const BLOG_PATH = "src/content/posts";
 
@@ -34,4 +35,4 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, pages };
+export const collections = { posts, pages, ...blogCollections };
