@@ -18,7 +18,7 @@ Fields, in schema order:
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
 | `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
 | `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
-| `ogImage` | no | image \| string | Overrides the dynamic OG card; reviews set it (see [Locations](#locations)). |
+| `ogImage` | no | image \| string | Overrides the dynamic OG card; required on reviews (see [Reviews](#reviews)). |
 | `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
 | `hideEditPost` | no | boolean | Hides the "edit this page" link. |
@@ -59,30 +59,43 @@ No post sets `draft: true`.
 ## Locations
 
 The posts collection loads `**/[^_]*.{md,mdx}` under `src/content/posts`,
-skipping `_`-prefixed files. An `.mdx` post fails the build: the RSS feed
-and each post's `index.md` serve the body as Markdown and can't render MDX
-yet.
+and the reviews collection the same pattern under `src/content/reviews`,
+both skipping `_`-prefixed files. An `.mdx` entry fails the build: the RSS
+feeds and each entry's `index.md` serve the body as Markdown and can't
+render MDX yet.
 
 | Content | Path | URL |
 | --- | --- | --- |
 | Post | `src/content/posts/<slug>.md` | `/posts/<slug>/` |
-| Review | `src/content/posts/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
+| Review | `src/content/reviews/<slug>.md` | `/reviews/<slug>/` |
 | Archival republish | `src/content/posts/_<engine>/<slug>.md` | `/posts/<slug>/` |
 | Note | `src/content/notes/<slug>.md` | `/notes/<slug>/` |
 
-Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
-(`_hakyll/`) are stripped, so archival posts serve at `/posts/<slug>/`.
+Non-`_` folders stay in the URL; `_`-prefixed folders (`_hakyll/`) are
+stripped, so archival posts serve at `/posts/<slug>/`.
 
 Draft outlines live in `outlines/<slug>.md`: tracked, outside `src/`,
 unpublished, and excluded from the linters. Public in the repository.
 
-Reviews set `ogImage` to the reviewed work's cover, the only post type
-that overrides the dynamic OG card. The file is
-`src/assets/images/<slug>-cover.jpg`, referenced from the deeper
-`reviews/` folder with three `../`:
+## Reviews
+
+Reviews are their own collection. They list at `/reviews/` and feed at
+`/reviews/rss.xml`, and stay out of `/posts/` and the posts feed. The home
+page, archives, and tags interlace them with posts by date.
+
+The review schema extends the post fields with two requirements, so a
+review missing either fails the build:
+
+| Field | Required | Type | Meaning |
+| --- | --- | --- | --- |
+| `reviewed` | yes | string | The name of the work under review. |
+| `ogImage` | yes | image | The reviewed work's cover, in place of the dynamic OG card. |
+
+The cover is `src/assets/images/<slug>-cover.jpg`, referenced with two
+`../`:
 
 ```yaml
-ogImage: ../../../assets/images/<slug>-cover.jpg
+ogImage: ../../assets/images/<slug>-cover.jpg
 ```
 
 ## Archival republishes

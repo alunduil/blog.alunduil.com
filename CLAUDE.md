@@ -77,7 +77,8 @@ so the repo-relevant essentials:
 ## Posting convention
 
 New posts live under `src/content/posts/`; archival republishes under
-`src/content/posts/_<engine>/`; reviews under `src/content/posts/reviews/`.
+`src/content/posts/_<engine>/`; reviews in their own collection under
+`src/content/reviews/`.
 A future `pubDatetime` is the publication gate: merging the PR accepts
 the editorial work, the date defers publication.
 
