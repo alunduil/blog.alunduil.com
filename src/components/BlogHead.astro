@@ -5,11 +5,23 @@ import {
   PUBLIC_WEBMENTION_IO_USERNAME,
 } from "astro:env/client";
 import { getAssetPath } from "@/utils/withBase";
+import { useTranslations } from "@/i18n";
+import config from "@/config";
 import "@/styles/themeImages.css";
+
+const t = useTranslations(Astro.currentLocale ?? config.site.lang);
 ---
 
 <link rel="apple-touch-icon" href={getAssetPath("apple-touch-icon.png")} />
 <link rel="manifest" href={getAssetPath("site.webmanifest")} />
+
+<!-- The layout advertises the posts feed; reviews have their own. -->
+<link
+  rel="alternate"
+  type="application/rss+xml"
+  title={`${t.pages.reviewsTitle} | ${config.site.title}`}
+  href={new URL(getAssetPath("reviews/rss.xml"), Astro.site)}
+/>
 
 <Font cssVariable="--font-brand" preload />
 
