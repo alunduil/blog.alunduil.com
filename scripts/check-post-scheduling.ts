@@ -1,8 +1,8 @@
 /**
- * Check the scheduling convention on current-era blog posts.
+ * Check the scheduling convention on current-era blog posts and reviews.
  *
  * Two rules from `docs/reference/post-frontmatter.md` (Scheduling): every
- * post's `pubDatetime` is unique, and it publishes on a Tuesday or a Sunday.
+ * entry's `pubDatetime` is unique across both collections, and it publishes on a Tuesday or a Sunday.
  * Uniqueness is a property of the collection, so the Astro schema, which
  * validates one file at a time, can't carry it.
  *
@@ -21,10 +21,11 @@ import { parse } from "yaml";
 
 import config from "../astro-paper.config.ts";
 
-// src/content.config.ts exports this path and the underscore rule below, but
-// importing it fails on astro:content, a virtual module that resolves only
-// inside an Astro build.
+// src/content.config.ts exports these paths and the underscore rule below,
+// but importing it fails on astro:content, a virtual module that resolves
+// only inside an Astro build.
 const BLOG = "src/content/posts";
+const SOURCES = [BLOG, "src/content/reviews"];
 
 const SCHEDULED_WEEKDAYS = new Set(["Tuesday", "Sunday"]);
 
@@ -53,10 +54,12 @@ function inScope(relative: string): boolean {
 }
 
 function postPaths(): string[] {
-  return readdirSync(BLOG, { recursive: true, encoding: "utf8" })
-    .filter(relative => relative.endsWith(".md") && inScope(relative))
-    .sort()
-    .map(relative => join(BLOG, relative));
+  return SOURCES.flatMap(source =>
+    readdirSync(source, { recursive: true, encoding: "utf8" })
+      .filter(relative => relative.endsWith(".md") && inScope(relative))
+      .sort()
+      .map(relative => join(source, relative))
+  );
 }
 
 function isIanaZone(name: string): boolean {

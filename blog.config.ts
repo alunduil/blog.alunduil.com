@@ -8,22 +8,7 @@ import { BRAND_FONT } from "./src/utils/loadBrandFonts";
  * conflict on it.
  */
 
-/**
- * Nikola and Hakyll served posts at `/posts/<slug>.html`, and search
- * engines still send traffic there.
- *
- * A static build writes each redirect into a directory named for the old
- * URL, `dist/posts/<slug>.html/index.html`. GitHub Pages reaches it by
- * redirecting the extension-less request to the trailing-slash form.
- */
-const archivalRedirects = (...slugs: string[]) =>
-  Object.fromEntries(slugs.map(s => [`/posts/${s}.html`, `/posts/${s}/`]));
-
-export const redirects = archivalRedirects(
-  "best-practices-bind-mounts-and-chroots",
-  "using-apc-to-speed-up-php",
-  "using-memcached-with-mediawiki-and-wordpress"
-);
+export { redirects } from "./src/utils/redirects";
 
 // Only the header wordmark renders in this face, so the weight and subset
 // lists stay narrow.

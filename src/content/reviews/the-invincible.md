@@ -1,7 +1,8 @@
 ---
 pubDatetime: 2026-08-30T07:00:00Z
 title: Whichever Comes Second
-ogImage: ../../../assets/images/the-invincible-cover.jpg
+reviewed: "The Invincible"
+ogImage: ../../assets/images/the-invincible-cover.jpg
 description: "Lem's The Invincible works as a game and it works as a novel. It doesn't work as both, and whichever you come to second is the one that pays."
 tags:
   - adaptation

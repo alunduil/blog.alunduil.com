@@ -1,8 +1,9 @@
 ---
 pubDatetime: 2026-11-01T08:00:00Z
 title: Pigments, Pots, and Process
+reviewed: "Gathering Colour"
 description: "Caitlin ffrench's Gathering Colour has good instruction on paint and natural dye, but more ritual than I wanted. Worth it if you craft your own supplies."
-ogImage: ../../../assets/images/gathering-colour-cover.jpg
+ogImage: ../../assets/images/gathering-colour-cover.jpg
 tags:
   - natural-dyeing
   - pigments

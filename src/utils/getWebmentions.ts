@@ -1,7 +1,7 @@
-import { getCollection } from "astro:content";
-import type { Entry } from "@/utils/entries";
 import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
 import config from "@/config";
+import { getEntries, type Entry } from "@/utils/entries";
+import { redirects } from "@/utils/redirects";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { postFilter } from "@/utils/postFilter";
 
@@ -54,6 +54,15 @@ const TARGETS_PER_REQUEST = 30;
 function canonicalTarget(target: string): string {
   return target.endsWith("/") ? target.slice(0, -1) : target;
 }
+
+// webmention.io files a mention under the URL it was sent to, so mentions of
+// a page that moved stay under its old URL.
+const movedTo = new Map(
+  Object.entries(redirects).map(([from, to]) => [
+    canonicalTarget(new URL(from, config.site.url).href),
+    canonicalTarget(new URL(to, config.site.url).href),
+  ])
+);
 
 function targetSpellings(target: string): string[] {
   const canonical = canonicalTarget(target);
@@ -139,16 +148,21 @@ export function webmentionTarget({ id, filePath }: Entry): string {
 }
 
 async function postTargets(): Promise<string[]> {
-  const posts = await getCollection("posts", postFilter);
+  const targets = (await getEntries(postFilter)).map(webmentionTarget);
+  const current = new Set(targets.map(canonicalTarget));
+  const former = [...movedTo]
+    .filter(([, to]) => current.has(to))
+    .map(([from]) => from);
 
-  return posts.map(webmentionTarget);
+  return [...targets, ...former];
 }
 
 function groupByTarget(children: WebmentionEntry[]): MentionsByTarget {
   const byTarget: MentionsByTarget = new Map();
 
   for (const child of children) {
-    const key = canonicalTarget(child["wm-target"]);
+    const target = canonicalTarget(child["wm-target"]);
+    const key = movedTo.get(target) ?? target;
     const group = byTarget.get(key);
 
     if (group) group.push(child);

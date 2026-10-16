@@ -1,7 +1,8 @@
 ---
 pubDatetime: 2026-09-20T07:00:00Z
 title: Nobody Explains the Bathtub
-ogImage: ../../../assets/images/atomfall-cover.jpg
+reviewed: "Atomfall"
+ogImage: ../../assets/images/atomfall-cover.jpg
 description: "Atomfall has no quest markers and an inventory too small for the zone. I came away thinking both are why it works."
 tags:
   - game-design

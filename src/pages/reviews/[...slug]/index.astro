@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import { getPostSlug } from "@/utils/getPostPaths";
+import { getSortedPosts } from "@/utils/getSortedPosts";
+import PostPage from "../../posts/[...slug]/index.astro";
+
+export async function getStaticPaths() {
+  const reviews = getSortedPosts(await getCollection("reviews"));
+  const adjacent = (index: number) => {
+    const review = reviews[index];
+    return review
+      ? { id: review.id, title: review.data.title, filePath: review.filePath }
+      : null;
+  };
+
+  // Newest-first, so the older review sits at index + 1.
+  return reviews.map((review, index) => ({
+    params: { slug: getPostSlug(review.id, review.filePath) },
+    props: {
+      post: review,
+      prevPost: adjacent(index + 1),
+      nextPost: adjacent(index - 1),
+    },
+  }));
+}
+---
+
+<PostPage {...Astro.props} />
