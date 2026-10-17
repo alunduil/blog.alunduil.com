@@ -1,0 +1,23 @@
+---
+import { type CollectionEntry, render } from "astro:content";
+import Datetime from "@/components/Datetime.astro";
+import NoteSource from "@/components/NoteSource.astro";
+import { getNoteUrl } from "@/utils/getNotes";
+
+type Props = { note: CollectionEntry<"notes"> };
+
+const { note } = Astro.props;
+const { pubDatetime, timezone, source } = note.data;
+
+const { Content } = await render(note);
+---
+
+<li class="my-8">
+  <a href={getNoteUrl(note.id, Astro.currentLocale)} class="hover:underline">
+    <Datetime {pubDatetime} {timezone} />
+  </a>
+  <div class="app-prose max-w-app">
+    <Content />
+  </div>
+  {source && <NoteSource {source} />}
+</li>

@@ -40,25 +40,33 @@ export function markdownBody({ body, filePath }: CollectionEntry<"posts">) {
 }
 
 /**
- * Render each post's body to HTML that stands alone outside the site, keyed
- * by post id.
+ * Render Markdown to HTML that stands alone outside the site, with
+ * site-relative links resolved against the page it came from.
  *
  * Images under `src/assets/` render unresolved: they reach the image service
  * through the page build, which this processor is no part of. See
  * `docs/reference/post-body.md`.
  */
+export async function renderBody(markdown: string, canonicalURL: URL) {
+  const processor = await processorPromise;
+  const { code } = await processor.render(markdown);
+  return absolutizeLinks(code, canonicalURL);
+}
+
+/** Render each post's body with `renderBody`, keyed by post id. */
 export async function renderPostBodies(
   posts: CollectionEntry<"posts">[]
 ): Promise<Map<string, string>> {
-  const processor = await processorPromise;
   const rendered = await Promise.all(
     posts.map(async post => {
       const canonicalURL = new URL(
         getPostUrl(post.id, post.filePath),
         config.site.url
       );
-      const { code } = await processor.render(markdownBody(post));
-      return [post.id, absolutizeLinks(code, canonicalURL)] as const;
+      return [
+        post.id,
+        await renderBody(markdownBody(post), canonicalURL),
+      ] as const;
     })
   );
   return new Map(rendered);

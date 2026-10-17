@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { noteSchema, noteTitle } from "./notes";
+import { noteSchema, noteTitle, plainText, sourceLine } from "./notes";
 
 const pubDatetime = new Date("2026-11-03T08:00:00Z");
 const source = {
@@ -60,5 +60,29 @@ describe("noteSchema source", () => {
         source: { ...source, url: "javascript:alert(1)" },
       }).success
     ).toBe(false);
+  });
+});
+
+describe("plainText", () => {
+  it("drops markup and decodes entities", () => {
+    expect(
+      plainText(
+        `<blockquote>\n<p>Outages are PvE &#x26; breaches are PvP.</p>\n</blockquote>\n<p>A <a href="/x">reply</a>.</p>`
+      )
+    ).toBe("Outages are PvE & breaches are PvP. A reply.");
+  });
+});
+
+describe("sourceLine", () => {
+  it("escapes the source's text and URL", () => {
+    expect(
+      sourceLine({
+        url: 'https://example.com/a?b=1&c="2"',
+        title: "The <dialog> element, a *primer* [draft]",
+        author: "A & B",
+      })
+    ).toBe(
+      `On <a href="https://example.com/a?b=1&amp;c=&quot;2&quot;">The &lt;dialog&gt; element, a *primer* [draft]</a> by A &amp; B`
+    );
   });
 });
