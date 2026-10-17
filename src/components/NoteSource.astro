@@ -1,0 +1,11 @@
+---
+import { type NoteData, sourceLine } from "@/utils/notes";
+
+type Props = { source: NonNullable<NoteData["source"]> };
+
+const { source } = Astro.props;
+---
+
+<p class="text-muted-foreground text-sm [&_a]:underline">
+  <Fragment set:html={sourceLine(source)} />
+</p>

@@ -68,6 +68,7 @@ yet.
 | Post | `src/content/posts/<slug>.md` | `/posts/<slug>/` |
 | Review | `src/content/posts/reviews/<slug>.md` | `/posts/reviews/<slug>/` |
 | Archival republish | `src/content/posts/_<engine>/<slug>.md` | `/posts/<slug>/` |
+| Note | `src/content/notes/<slug>.md` | `/notes/<slug>/` |
 
 Non-`_` folders (`reviews/`) stay in the URL; `_`-prefixed folders
 (`_hakyll/`) are stripped, so archival posts serve at `/posts/<slug>/`.
@@ -95,6 +96,38 @@ original authorship, and open with the stanza:
 ```
 
 `<engine>` names the source ("Hakyll" for `_hakyll/`).
+
+## Notes
+
+A note is short enough to post whole to Bluesky, about 300 characters,
+and responds to at most one source: a quote with commentary, or a
+thought standing alone. Notes are a collection of their own, listed at
+`/notes/` with their feed at `/notes/rss.xml`, and stay out of `rss.xml`.
+The schema is `noteSchema` in `src/utils/notes.ts`.
+
+| Field | Required | Type | Meaning |
+| --- | --- | --- | --- |
+| `pubDatetime` | yes | date | Publication moment; gates visibility as for posts. |
+| `title` | without `source` | string | Page title; overrides the generated one. |
+| `source.url` | with `source` | URL | The work the note responds to. |
+| `source.title` | with `source` | string | Its title. |
+| `source.author` | no | string | Its author. |
+| `tags` | no | string[] | Content topics; defaults to none. |
+| `timezone` | no | string | IANA zone for `pubDatetime`. |
+
+A note with a source and no `title` gets the title `On <author>'s
+"<title>"`, or `On "<title>"` without an author. Set `title` on any note
+whose generated title reads badly. A note with neither fails the build.
+
+The title appears in the browser tab and the feed item. Neither the page
+nor `/notes/` shows it, except to screen readers, so keep anything
+readers need in the body.
+
+The body is the note. Put the quoted line in a `>` quote. The page and
+the feed item end with the source line, so the body needn't link the
+source. The body also becomes `og:description`.
+
+`scripts/check-post-scheduling.ts` doesn't check notes.
 
 ## Tags
 
