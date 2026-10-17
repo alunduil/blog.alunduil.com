@@ -28,6 +28,31 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/build-site
 
+  # A deploy stuck waiting on its environment never reaches a runner, so
+  # timeout-minutes never ends it and it holds the pages group.
+  release-stuck-deploy:
+    name: Release a stuck Pages deploy
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    env:
+      STUCK_AFTER: 30 minutes
+    steps:
+      - name: Cancel CD runs waiting over ${{ env.STUCK_AFTER }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          WORKFLOW: ${{ github.workflow }}
+        run: |
+          cutoff=$(date -u -d "$STUCK_AFTER ago" +%Y-%m-%dT%H:%M:%SZ)
+          gh run list --workflow "$WORKFLOW" --status waiting \
+            --created "<$cutoff" --json databaseId --jq '.[].databaseId' |
+            while read -r id; do
+              echo "::warning::Cancelling CD run $id, waiting since before $cutoff"
+              gh run cancel "$id"
+            done
+
   publish:
     name: Deploy to GitHub Pages
     needs: build
