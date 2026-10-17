@@ -1,5 +1,6 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { getCollection, render } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import PostLayout from "@/layouts/PostLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
@@ -54,7 +55,7 @@ type AdjacentPost = {
 } | null;
 
 type Props = {
-  post: CollectionEntry<"posts">;
+  post: Entry;
   prevPost: AdjacentPost;
   nextPost: AdjacentPost;
 };

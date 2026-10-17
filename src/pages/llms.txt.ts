@@ -1,11 +1,11 @@
 import type { APIRoute } from "astro";
-import { getCollection } from "astro:content";
+import { getEntries } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import config from "@/config";
 
 export const GET: APIRoute = async ({ site }) => {
-  const posts = getSortedPosts(await getCollection("posts"));
+  const posts = getSortedPosts(await getEntries());
 
   const postLines = posts.map(({ data, id, filePath }) => {
     const url = new URL("index.md", new URL(getPostUrl(id, filePath), site))

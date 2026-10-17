@@ -1,8 +1,9 @@
 ---
 pubDatetime: 2026-09-06T07:00:00Z
 title: The Cloud Over Roke
+reviewed: "Tales from Earthsea"
 description: "The school on Roke was founded largely by women, then closed against them. What reaches its wizards isn't that history but the songs."
-ogImage: ../../../assets/images/tales-from-earthsea-cover.jpg
+ogImage: ../../assets/images/tales-from-earthsea-cover.jpg
 tags:
   - worldbuilding
   - patriarchy

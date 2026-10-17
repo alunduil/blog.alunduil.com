@@ -1,5 +1,5 @@
 import { createMarkdownProcessor } from "@astrojs/markdown-remark";
-import type { CollectionEntry } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import config from "@/config";
 import { getPostUrl } from "./getPostPaths";
 import { remarkPlugins } from "./markdownPlugins";
@@ -32,7 +32,7 @@ function absolutizeLinks(html: string, canonicalURL: URL) {
  * A post's body as Markdown, for outputs that serve or parse it as such. An
  * MDX body is source: its imports and components would pass through verbatim.
  */
-export function markdownBody({ body, filePath }: CollectionEntry<"posts">) {
+export function markdownBody({ body, filePath }: Entry) {
   if (filePath?.endsWith(".mdx")) {
     throw new Error(`MDX can't be served as Markdown yet: ${filePath}`);
   }
@@ -55,7 +55,7 @@ export async function renderBody(markdown: string, canonicalURL: URL) {
 
 /** Render each post's body with `renderBody`, keyed by post id. */
 export async function renderPostBodies(
-  posts: CollectionEntry<"posts">[]
+  posts: Entry[]
 ): Promise<Map<string, string>> {
   const rendered = await Promise.all(
     posts.map(async post => {

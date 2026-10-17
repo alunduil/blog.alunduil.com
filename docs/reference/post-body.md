@@ -32,8 +32,9 @@ Three storage locations, differing in optimisation and path form.
 
 Images under `src/assets/` pass through Astro's image service. Reference
 them with the `@/assets/` alias or with a path relative to the post file,
-which varies by folder depth—two `../` from `src/content/posts/<slug>.md`,
-three from `src/content/posts/reviews/<slug>.md`:
+which varies by folder depth—two `../` from `src/content/posts/<slug>.md`
+or `src/content/reviews/<slug>.md`, three from a folder one level deeper,
+such as `src/content/posts/_hakyll/<slug>.md`:
 
 ```md
 ![alt text](@/assets/images/example.png)

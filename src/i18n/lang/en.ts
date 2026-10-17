@@ -4,6 +4,7 @@ export default {
   nav: {
     home: "Home",
     posts: "Posts",
+    reviews: "Reviews",
     tags: "Tags",
     about: "About",
     archives: "Archives",
@@ -46,6 +47,9 @@ export default {
 
     postsTitle: "Posts",
     postsDesc: "All the articles I've posted.",
+
+    reviewsTitle: "Reviews",
+    reviewsDesc: "All the books, games, and papers I've reviewed.",
 
     archivesTitle: "Archives",
     archivesDesc: "All the articles I've archived.",

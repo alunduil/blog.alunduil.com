@@ -1,8 +1,9 @@
 ---
 pubDatetime: 2026-11-08T08:00:00Z
 title: Misfits Worth Hanging On To
+reviewed: "Son of a Liche"
 description: "J. Zachary Pike's Son of a Liche picks up a year after Orconomics and gives every member of Gorm Ingerson's party of misfits room to grow."
-ogImage: ../../../assets/images/son-of-a-liche-cover.jpg
+ogImage: ../../assets/images/son-of-a-liche-cover.jpg
 tags:
   - companionship
   - loyalty
@@ -43,6 +44,6 @@ I read the dragon as standing, literally and figuratively, for what backs
 Arth's economy. I don't know yet where [*Dragonfired*][dragonfired] takes
 that.
 
-[orconomics]: /posts/reviews/orconomics/
+[orconomics]: /reviews/orconomics/
 [liche]: https://www.goodreads.com/book/show/40080889-son-of-a-liche
 [dragonfired]: https://www.goodreads.com/book/show/42921438-dragonfired

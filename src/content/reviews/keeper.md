@@ -1,8 +1,9 @@
 ---
 pubDatetime: 2026-08-23T07:00:00Z
 title: Told Without Telling
+reviewed: "Keeper"
 description: "Keeper tells its story the way Inside and the Souls games do, with the history in the world rather than in dialogue—and none of the adrenaline."
-ogImage: ../../../assets/images/keeper-cover.jpg
+ogImage: ../../assets/images/keeper-cover.jpg
 tags:
   - wordless-storytelling
   - companionship

@@ -1,9 +1,9 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { Entry } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import Datetime from "./Datetime.astro";
 
-type Props = CollectionEntry<"posts">;
+type Props = Entry;
 
 const { id, data, filePath } = Astro.props;
 ---

@@ -1,7 +1,8 @@
 ---
 pubDatetime: 2026-11-15T08:00:00Z
 title: Under the War
-ogImage: ../../../assets/images/hell-is-us-cover.jpg
+reviewed: "Hell is Us"
+ogImage: ../../assets/images/hell-is-us-cover.jpg
 description: "Hell is Us reveals its history piecemeal, from a modern civil war back to antiquity. That kept me hooked the whole time."
 tags:
   - worldbuilding
