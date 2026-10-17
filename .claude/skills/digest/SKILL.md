@@ -1,13 +1,13 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone lookback and milestone-system findings; the only side effects are Media Log status updates you confirm, and idea or milestone-system issues on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone lookback and milestone-system findings; the only side effects are Media Log status updates and milestone key-result scores you confirm, and idea or milestone-system issues on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
 
-Pipeline: **collect → analyze data (incl. Media Log check-in and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in is the one interactive, write-back step — everything else is read-only.
+Pipeline: **collect → analyze data (incl. Media Log check-in, milestone scoring, and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in and milestone scoring are the interactive, write-back steps — everything else is read-only.
 
-**Hard gate: the check-in blocks synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Ask the review question (§2 step 5) the same way. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
+**Hard gate: the interactive steps block synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Ask the review question (§2 step 5) and send the milestone scoring proposals (§2) the same way. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
 ## 1. Collect (script)
 
@@ -55,7 +55,7 @@ Fetch Readwise + Reader for the same window via MCP (using `window.since`, appen
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
 - `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **Omit the category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
 
-**Notion Media Log check-in** — the one place the digest *writes*. Two trackers; the digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves any other columns the author keeps (Playing carries `Platform`, hours, `% Done`, etc.) untouched:
+**Notion Media Log check-in** — two trackers; the digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves any other columns the author keeps (Playing carries `Platform`, hours, `% Done`, etc.) untouched:
 
 - Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
 - Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
@@ -83,6 +83,15 @@ Mechanical patterns to extract before synthesis:
 - **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log items marked `Finished` in this run's check-in. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
 - **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
 - **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — PR dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
+
+### Milestone scoring
+
+Score after the review gate and before the lookback, so a milestone this step completes counts as an objective arc. Score open milestones with `closed_in_window > 0` and `key_results_done < key_results`:
+
+1. Read the milestone's description: `gh api repos/<repo>/milestones/<number> --jq .description`.
+2. For each unticked key result, run or read the check it names, such as a command, a live query, or a count across repos. Closed issues and merged PRs support a score; the check decides it.
+3. Propose a tick (1.0) or a partial score per key result, with its evidence: the command and its output, or the issue or PR. Leave a key result unscored when its check can't run this session, and say why.
+4. Send the proposals under the hard gate. For each confirmed score, tick a 1.0 or append ` — 0.5` to its line, then write the edited description back: `gh api -X PATCH repos/<repo>/milestones/<number> -f description="<edited description>"`.
 
 ### Milestone lookback
 
@@ -140,7 +149,7 @@ A theme that fails moves to a short **Screened out** list in §5 with its reason
 
 ## 5. Present + wait
 
-Only reachable once the check-in (§2) is answered and written back. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence), then `## Milestone lookback` and `## Milestone system` (§2). Number the findings and link any matching issue. End with empty `## Idea kernels` section.
+Only reachable once every hard-gate message is answered and its writes are done. Print the themed digest to chat. Truncation warning (if any) above clusters. Prefix each theme heading with its form tag, e.g. `## 1. [long] Claude/agent tooling buildout...`. After the themes, a `## Screened out` list (one line each: theme, failed check, evidence), then `## Milestone lookback` and `## Milestone system` (§2). Number the findings and link any matching issue. End with empty `## Idea kernels` section.
 
 Wait for the author's call on each theme:
 
