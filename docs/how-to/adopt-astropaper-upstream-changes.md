@@ -51,11 +51,15 @@ git merge astro-paper/main
 ```
 
 Resolve in this blog's favour wherever the two disagree on something
-chosen on purpose. Two of those a passing build hides:
+chosen on purpose. Three of those a passing build hides:
 
 - `src/pages/rss.xml.ts` takes each item's full body from
   `renderPostBodies` through its `content` field. A resolution that drops
   either line ships a feed of summaries.
+- The home page, archives, both tag pages, and `src/pages/llms.txt.ts`
+  read posts and reviews together through `getEntries`. A resolution that
+  restores the theme's `getCollection("posts")` drops reviews from that
+  page.
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
 
@@ -75,6 +79,7 @@ GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges o
 pnpm build
 ```
 
-Then check that existing post links still resolve, that a future-dated
-post produces no `dist/posts/<slug>/`, and that tag pages and search
-list the posts they did before.
+`pnpm test` fails if the merge sends review links to `/posts/`. Then
+check that existing post links still resolve, that a future-dated post
+produces no `dist/posts/<slug>/`, and that tag pages and search list the
+posts and reviews they did before.
