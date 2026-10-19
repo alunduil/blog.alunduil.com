@@ -1,13 +1,13 @@
 ---
 name: syndicate-instagram
-description: Craft an Instagram post from a published blog post — image or carousel guidance, a scroll-stopping caption, link-in-bio handling, and a hashtag set. Instagram is the one surface the blog syndicates by hand; Bluesky, Threads, and Facebook auto-syndicate through dlvr.it (ADR 0001). Generation is automated, posting manual — the draft lands in chat, nothing is committed. Use via `/syndicate-instagram [path|slug|url]`, defaulting to the most recently published post. Use when drafting an Instagram post for an article or doing the per-post Instagram pass.
+description: Craft an Instagram post from a published blog post — image or carousel guidance, a scroll-stopping caption, link-in-bio handling, and a hashtag set. Instagram is the one surface the blog syndicates by hand; the rest auto-syndicate through dlvr.it (ADR 0001). Generation is automated, posting manual — the draft lands in chat, nothing is committed. Use via `/syndicate-instagram [path|slug|url]`, defaulting to the most recently published post. Use when drafting an Instagram post for an article or doing the per-post Instagram pass.
 ---
 
 # Syndicate to Instagram
 
-The blog auto-syndicates to Bluesky, Threads, and Facebook through dlvr.it —
-RSS feed in, uniform hook out, no manual step
-(`docs/adr/0001-use-dlvrit-for-social-syndication.md`). Instagram is the
+Every surface but Instagram auto-syndicates through dlvr.it — RSS feed in,
+uniform hook out, no manual step (`docs/how-to/set-up-dlvrit.md`,
+`docs/adr/0001-use-dlvrit-for-social-syndication.md`). Instagram is the
 deliberate exception: image-first and link-hostile, it's the surface where the
 uniform feed hook fits worst, so it's crafted by hand here.
 
