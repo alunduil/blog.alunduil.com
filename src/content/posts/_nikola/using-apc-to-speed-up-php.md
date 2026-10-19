@@ -2,6 +2,7 @@
 pubDatetime: 2011-02-03T17:05:04Z
 title: Using APC to Speed Up PHP
 description: "APC caches PHP's compiled bytecode so it isn't recompiled on every request, which speeds up an application without touching a line of its code."
+type: how-to
 tags:
   - php
   - caching

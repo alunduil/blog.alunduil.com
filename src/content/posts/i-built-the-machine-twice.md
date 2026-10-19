@@ -2,6 +2,7 @@
 pubDatetime: 2026-06-30T07:00:00Z
 title: I Built the Machine Twice
 description: "I archived this blog and meant it. What reopened it wasn't a better tool—it was agentic coding leaving me more to share than I could keep to myself."
+type: story
 tags:
   - tooling
   - writing

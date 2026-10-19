@@ -3,6 +3,7 @@ import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
 import { blogCollections } from "@/utils/blogCollections";
+import { postType } from "@/utils/postTypes";
 
 export const BLOG_PATH = "src/content/posts";
 
@@ -19,6 +20,7 @@ const posts = defineCollection({
       tags: z.array(z.string()).default(["others"]),
       ogImage: image().or(z.string()).optional(),
       description: z.string(),
+      type: postType,
       canonicalURL: z.string().optional(),
       hideEditPost: z.boolean().optional(),
       timezone: z.string().optional(),

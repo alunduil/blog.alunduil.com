@@ -2,6 +2,7 @@
 pubDatetime: 2026-07-07T07:00:00Z
 title: The Bottleneck Isn't the Blank Page
 description: "The hard part of keeping a blog was never the writing. It was remembering what the week held and seeing which of it was worth telling."
+type: story
 tags:
   - tooling
   - writing

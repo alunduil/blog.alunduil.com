@@ -2,6 +2,7 @@
 pubDatetime: 2026-07-26T07:00:00Z
 title: Under the Instruments
 description: "I merged sixty-odd agent-written pull requests in a week, and it barely felt like work. The checks I built watch the code. Nothing watches me."
+type: story
 tags:
   - agentic-coding
   - reliability

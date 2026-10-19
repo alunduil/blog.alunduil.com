@@ -2,6 +2,7 @@
 pubDatetime: 2026-07-28T08:00:00+01:00
 title: "How I'd Recover a Box I Can't Reach"
 description: "The data was never the hard part. Recovering a Linux box I run from another continent is a plan I've never dared to run, and the risk lives in one configuration file."
+type: practice
 tags:
   - disaster-recovery
   - backups

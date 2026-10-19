@@ -2,6 +2,7 @@
 pubDatetime: 2011-01-31T18:32:06Z
 title: "Best Practices: Bind Mounts and chroots"
 description: "Bind mounts make a chroot jail quick to assemble and set a trap: whoever tears it down later reaches for rm -rf and takes the host's /dev, /lib, and /usr/lib with it."
+type: how-to
 tags:
   - linux
   - chroot

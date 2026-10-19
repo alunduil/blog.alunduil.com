@@ -2,6 +2,7 @@
 pubDatetime: 2026-08-02T07:00:00Z
 title: How Hard Is This to Undo
 description: "A rule I gave a coding agent, to keep it off the moves I couldn't undo, turned out to be one question—how hard is this to undo—sizing every decision I make."
+type: story
 tags:
   - agentic-coding
   - decision-making
