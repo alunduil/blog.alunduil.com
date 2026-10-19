@@ -12,6 +12,8 @@ hideEditPost: true
 ---
 
 > **Archival republish.** From this blog's Hakyll era; lightly copyedited.
+> [How I Read, Eight Years On](/posts/how-i-read-eight-years-on) revisits
+> it in 2026.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
