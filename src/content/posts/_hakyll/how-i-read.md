@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2018-01-21T14:00:00Z
 title: How I Read
+type: practice
 description: Codifying how I read several books concurrently—short bursts per book with practised recall between sessions, plus a 'readability' formula for ordering the stack.
 tags:
   - reading

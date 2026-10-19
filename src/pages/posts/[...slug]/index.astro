@@ -8,6 +8,7 @@ import Datetime from "@/components/Datetime.astro";
 import Tag from "@/components/Tag.astro";
 import { getPostSlug, getPostUrl } from "@/utils/getPostPaths";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { schemaOrgType } from "@/utils/postTypes";
 import { slugifyStr } from "@/utils/slugify";
 import { toTransitionName } from "@/utils/toTransitionName";
 import EditPost from "./_components/EditPost.astro";
@@ -105,6 +106,7 @@ const ogImage = ogImageUrl
   canonicalURL={canonicalURL}
   pubDatetime={pubDatetime}
   modDatetime={modDatetime}
+  schemaOrgType={schemaOrgType(post)}
 >
   <Header />
 

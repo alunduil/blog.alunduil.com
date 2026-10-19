@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2026-08-09T07:00:00Z
 title: Off the Desk
+type: story
 description: "GitHub dropped my one model from Copilot. I went to Claude, and the work came off the desk onto my phone."
 tags:
   - agentic-coding

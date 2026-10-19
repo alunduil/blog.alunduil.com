@@ -9,16 +9,24 @@ type Props = {
   canonicalURL?: string;
   pubDatetime?: Date;
   modDatetime?: Date | null;
+  schemaOrgType?: string | string[];
 };
 
 const { site } = config;
 
-const { title, description, ogImage, canonicalURL, pubDatetime, modDatetime } =
-  Astro.props;
+const {
+  title,
+  description,
+  ogImage,
+  canonicalURL,
+  pubDatetime,
+  modDatetime,
+  schemaOrgType = "BlogPosting",
+} = Astro.props;
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@type": schemaOrgType,
   headline: title ?? site.title,
   image: ogImage,
   ...(pubDatetime && { datePublished: pubDatetime.toISOString() }),

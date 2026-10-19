@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2026-07-21T07:00:00Z
 title: Who accounts for the agent?
+type: story
 description: "An agent can do the work, and even build the guardrails that check it. Accountability is the harder question, and I'm not sure it can ever belong to the tool itself."
 tags:
   - agentic-coding

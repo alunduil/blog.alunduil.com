@@ -15,6 +15,7 @@ Fields, in schema order:
 | `pubDatetime` | yes | date | Publication moment; gates visibility (see [Scheduling](#scheduling)). |
 | `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
+| `type` | yes | `story` \| `practice` \| `how-to` | The kind of post (see [Types](#types)). |
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
 | `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
 | `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
@@ -32,6 +33,21 @@ branch commit time.
 label and appears in the page metadata. Listings and the RSS feed order
 and date posts on `pubDatetime`, so an edit leaves a post in place and
 doesn't mark it unread in feed readers.
+
+## Types
+
+Every post sets one of three types. A missing or unknown value fails the
+build.
+
+| Type | What it is |
+| --- | --- |
+| `story` | Lived experience told in scenes, built to a change. |
+| `practice` | A personal system, revisited years later: the "How I X" series. |
+| `how-to` | Reproducible steps. |
+
+A how-to's JSON-LD declares `TechArticle` alongside `BlogPosting`.
+
+Reviews and notes are collections of their own and set no `type`.
 
 ## Scheduling
 

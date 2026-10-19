@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2011-02-03T21:13:29Z
 title: Using Memcached with MediaWiki and WordPress
+type: how-to
 description: "Pointing MediaWiki and WordPress at a remote memcached takes one LocalSettings.php block and one sed against W3 Total Cache's config file."
 tags:
   - caching

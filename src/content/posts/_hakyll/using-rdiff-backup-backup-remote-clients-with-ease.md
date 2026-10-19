@@ -1,6 +1,7 @@
 ---
 pubDatetime: 2011-02-03T14:00:00Z
 title: "Using rdiff-backup: Backup Remote Clients With Ease"
+type: how-to
 description: "A cron-driven rdiff-backup recipe that pushes incremental backups over SSH from a NAT'd client to a remote server, wrapping the SSH call through --remote-schema."
 tags:
   - backups
