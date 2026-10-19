@@ -23,6 +23,7 @@ Fields, in schema order:
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
 | `hideEditPost` | no | boolean | Hides the "edit this page" link. |
 | `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `site.timezone` in `astro-paper.config.ts`. |
+| `linkedin` | no | boolean | Syndicates the post to LinkedIn (see [LinkedIn](#linkedin)). |
 
 `pubDatetime` and `modDatetime` are live-site moments, independent of
 branch commit time.
@@ -143,6 +144,17 @@ the feed item end with the source line, so the body needn't link the
 source. The body also becomes `og:description`.
 
 `scripts/check-post-scheduling.ts` doesn't check notes.
+
+## LinkedIn
+
+`linkedin: true` adds a post to `/linkedin.xml`, the feed syndicated to
+LinkedIn. Every post, marked or not, syndicates to the other socials from
+`rss.xml`. Reviews and notes can't be marked.
+
+Mark a post when an engineer in the author's field would forward it to a
+colleague at another company: lessons learned, postmortems, tooling
+deep-dives, and engineering methodology. Personal essays, hobby projects,
+and practices not yet tried stay off.
 
 ## Tags
 
