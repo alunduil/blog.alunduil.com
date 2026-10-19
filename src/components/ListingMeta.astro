@@ -1,0 +1,15 @@
+---
+import type { Listing } from "@/utils/entries";
+import { listingType } from "@/utils/postTypes";
+import Datetime from "./Datetime.astro";
+
+type Props = { listing: Listing; modDatetime?: Date | null };
+
+const { listing, modDatetime } = Astro.props;
+const { pubDatetime, timezone } = listing.data;
+---
+
+<div class="flex flex-wrap items-center gap-x-3">
+  <Datetime {pubDatetime} {modDatetime} {timezone} />
+  <span class="text-muted-foreground text-sm">{listingType(listing)}</span>
+</div>

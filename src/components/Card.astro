@@ -2,7 +2,7 @@
 import type { Entry } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
-import Datetime from "./Datetime.astro";
+import ListingMeta from "./ListingMeta.astro";
 
 type Props = {
   variant?: "h2" | "h3";
@@ -10,7 +10,7 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, modDatetime } = data;
 ---
 
 <li class="my-6">
@@ -26,6 +26,6 @@ const { title, description, ...props } = data;
       {title}
     </Heading>
   </a>
-  <Datetime {...props} />
+  <ListingMeta listing={Astro.props} {modDatetime} />
   <p>{description}</p>
 </li>
