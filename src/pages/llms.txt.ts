@@ -1,23 +1,29 @@
 import type { APIRoute } from "astro";
-import { getEntries } from "@/utils/entries";
+import { getListings, isNote, listingTitle } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { renderNoteBody } from "@/utils/getNotes";
+import { plainText } from "@/utils/notes";
 import config from "@/config";
 
 export const GET: APIRoute = async ({ site }) => {
-  const posts = getSortedPosts(await getEntries());
+  const posts = getSortedPosts(await getListings());
 
-  const postLines = posts.map(({ data, id, filePath }) => {
-    const url = new URL("index.md", new URL(getPostUrl(id, filePath), site))
-      .href;
-    return `- [${data.title}](${url}): ${data.description}`;
-  });
+  const postLines = await Promise.all(
+    posts.map(async post => {
+      const page = new URL(getPostUrl(post.id, post.filePath), site);
+      const [url, description] = isNote(post)
+        ? [page.href, plainText(await renderNoteBody(post))]
+        : [new URL("index.md", page).href, post.data.description];
+      return `- [${listingTitle(post)}](${url}): ${description}`;
+    })
+  );
 
   const body = `# ${config.site.title}
 
 > ${config.site.description}
 
-This is the personal blog of ${config.site.author}. Every post below is also available as clean Markdown at its \`index.md\` URL.
+This is the personal blog of ${config.site.author}. Posts and reviews below are also available as clean Markdown at their \`index.md\` URLs. Notes link to their pages.
 
 ## Posts
 

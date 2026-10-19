@@ -1,0 +1,17 @@
+---
+import Card from "@/components/Card.astro";
+import NoteCard from "@/components/NoteCard.astro";
+import { isNote, type Listing } from "@/utils/entries";
+
+type Props = { listing: Listing; variant?: "h2" | "h3" };
+
+const { listing, variant } = Astro.props;
+---
+
+{
+  isNote(listing) ? (
+    <NoteCard note={listing} />
+  ) : (
+    <Card {variant} {...listing} />
+  )
+}

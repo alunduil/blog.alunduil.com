@@ -1,6 +1,6 @@
 import { getCollection, type CollectionEntry } from "astro:content";
 import { BLOG_PATH } from "@/content.config";
-import { NOTES_PATH } from "./notes";
+import { NOTES_PATH, noteTitle } from "./notes";
 import { REVIEWS_PATH } from "./reviews";
 
 /** A dated entry: anything that lists, tags, and feeds the way a post does. */
@@ -16,6 +16,11 @@ export type Listing = Entry | Note;
 
 export function isNote(listing: Listing): listing is Note {
   return listing.collection === "notes";
+}
+
+/** The one-line title a listing shows, generated for a note without one. */
+export function listingTitle(listing: Listing): string {
+  return isNote(listing) ? noteTitle(listing.data) : listing.data.title;
 }
 
 /** Each collection's source folder, keyed by the URL section it serves. */
