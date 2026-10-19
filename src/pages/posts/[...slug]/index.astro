@@ -17,6 +17,7 @@ import BackButton from "./_components/BackButton.astro";
 import BackToTopButton from "./_components/BackToTopButton.astro";
 import AdjacentPostNav from "./_components/AdjacentPostNav.astro";
 import Webmentions from "@/components/Webmentions.astro";
+import SeriesLine from "@/components/SeriesLine.astro";
 import config from "@/config";
 
 export async function getStaticPaths() {
@@ -137,6 +138,8 @@ const ogImage = ogImageUrl
       </span>
       <EditPost {hideEditPost} {post} class="max-sm:hidden" />
     </div>
+
+    <SeriesLine {post} />
 
     <article
       id="article"

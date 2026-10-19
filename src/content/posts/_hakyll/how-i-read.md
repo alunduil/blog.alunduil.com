@@ -2,6 +2,7 @@
 pubDatetime: 2018-01-21T14:00:00Z
 title: How I Read
 type: practice
+series: how-i
 description: Codifying how I read several books concurrently—short bursts per book with practised recall between sessions, plus a 'readability' formula for ordering the stack.
 tags:
   - reading
@@ -11,6 +12,8 @@ hideEditPost: true
 ---
 
 > **Archival republish.** From this blog's Hakyll era; lightly copyedited.
+> [How I Read, Eight Years On](/posts/how-i-read-eight-years-on) revisits
+> it in 2026.
 
 I've been told the rate and retention I have while reading is abnormal to say
 the least.  Others have been interested in trying my reading methodology and
