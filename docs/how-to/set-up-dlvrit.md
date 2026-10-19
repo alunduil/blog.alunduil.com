@@ -23,26 +23,33 @@ match the intent rather than the exact wording.
    and posting errors, and that email is the only thing that announces a
    post which never went out.
 
-## Create an automation for a feed
+## Create an automation for each feed
 
 Each feed gets one automation, and each social reading that feed is an
-output on it. The blog serves three feeds for syndication:
+output on it. An output's post options belong to its automation, so the
+same social account can post one feed as a link card and
+another as plain text. The blog syndicates four feeds:
 
 - `https://blog.alunduil.com/rss.xml` carries every post.
 - `https://blog.alunduil.com/reviews/rss.xml` carries every review.
+- `https://blog.alunduil.com/notes/rss.xml` carries every note.
 - `https://blog.alunduil.com/linkedin.xml` carries only posts marked
   `linkedin: true`.
 
-All three exclude future-dated posts, so nothing syndicates before its
-`pubDatetime`. Each item carries two blocks of text: `description`, the
-one-line hook, and `content:encoded`, the whole post.
+All four exclude future-dated entries, so nothing syndicates before its
+`pubDatetime`. Post and review items carry two blocks of text:
+`description`, the one-line hook, and `content:encoded`, the whole
+entry. Note items carry only `content:encoded`, because a note is short
+enough to post whole.
 
 1. Open the Automate tab and create a New Automation with the feed's URL
    as its input.
 2. In the automation's Settings, under Advanced, set Body posting
-   options to Prefer summary content, which picks the hook.
+   options. Posts, reviews, and the LinkedIn feed use Prefer summary
+   content, which picks the hook. Notes use full content, which picks
+   the note itself.
 3. Set Image selection order to Open Graph tags first, which picks the
-   post's social image over the first image in its body.
+   entry's social image over the first image in its body.
 
 ## Limit the first sync
 
