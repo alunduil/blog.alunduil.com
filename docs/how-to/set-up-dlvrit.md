@@ -25,13 +25,14 @@ match the intent rather than the exact wording.
 ## Create an automation for a feed
 
 Each feed gets one automation, and each social reading that feed is an
-output on it. The blog syndicates two feeds:
+output on it. The blog serves three feeds for syndication:
 
 - `https://blog.alunduil.com/rss.xml` carries every post.
+- `https://blog.alunduil.com/reviews/rss.xml` carries every review.
 - `https://blog.alunduil.com/linkedin.xml` carries only posts marked
   `linkedin: true`.
 
-Both exclude future-dated posts, so nothing syndicates before its
+All three exclude future-dated posts, so nothing syndicates before its
 `pubDatetime`. Each item carries two blocks of text: `description`, the
 one-line hook, and `content:encoded`, the whole post.
 
