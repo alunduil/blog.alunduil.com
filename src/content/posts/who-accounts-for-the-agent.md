@@ -6,6 +6,7 @@ tags:
   - agentic-coding
   - accountability
   - methodology
+linkedin: true
 ---
 
 An agent tells me the fix is a configuration flag, names it, and writes as

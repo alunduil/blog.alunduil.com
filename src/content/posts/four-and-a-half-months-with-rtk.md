@@ -6,6 +6,7 @@ tags:
   - agentic-coding
   - tooling
   - decision-making
+linkedin: true
 ---
 
 In April I moved my work to Claude and [rebuilt my tooling around
