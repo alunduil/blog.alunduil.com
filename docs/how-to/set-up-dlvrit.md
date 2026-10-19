@@ -4,6 +4,7 @@ dlvr.it forwards a source feed to connected social accounts. Every
 syndication guide here builds on what this page sets up:
 
 - [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
+- [Syndicate posts to Facebook](syndicate-posts-to-facebook.md)
 - [Syndicate posts to LinkedIn](syndicate-posts-to-linkedin.md)
 - [Syndicate posts to Threads](syndicate-posts-to-threads.md)
 - [Syndicate releases to social](syndicate-releases-to-social.md)
