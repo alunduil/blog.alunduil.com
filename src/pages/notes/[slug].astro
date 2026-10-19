@@ -45,7 +45,7 @@ const description = plainText(await renderNoteBody(note));
 
     {source && <NoteSource {source} />}
 
-    <Webmentions post={note} />
+    <Webmentions listing={note} />
   </main>
   <Footer />
 </PostLayout>
