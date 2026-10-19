@@ -57,9 +57,9 @@ chosen on purpose. Three of those a passing build hides:
   `renderPostBodies` through its `content` field. A resolution that drops
   either line ships a feed of summaries.
 - The home page, archives, both tag pages, and `src/pages/llms.txt.ts`
-  read posts and reviews together through `getEntries`. A resolution that
-  restores the theme's `getCollection("posts")` drops reviews from that
-  page.
+  read posts, reviews, and notes together through `getListings`. A
+  resolution that restores the theme's `getCollection("posts")` drops
+  reviews and notes from that page.
 - The theme's sample posts are gone by choice. A merge restores them as
   new files rather than as conflicts.
 
@@ -82,4 +82,4 @@ pnpm build
 `pnpm test` fails if the merge sends review links to `/posts/`. Then
 check that existing post links still resolve, that a future-dated post
 produces no `dist/posts/<slug>/`, and that tag pages and search list the
-posts and reviews they did before.
+posts, reviews, and notes they did before.

@@ -116,7 +116,8 @@ A note is short enough to post whole to Bluesky, about 300 characters,
 and responds to at most one source: a quote with commentary, or a
 thought standing alone. Notes are a collection of their own, listed at
 `/notes/` with their feed at `/notes/rss.xml`, and stay out of `rss.xml`.
-The schema is `noteSchema` in `src/utils/notes.ts`.
+Home, archives, tag pages, and `llms.txt` list them by date among posts
+and reviews. The schema is `noteSchema` in `src/utils/notes.ts`.
 
 | Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
@@ -132,9 +133,10 @@ A note with a source and no `title` gets the title `On <author>'s
 "<title>"`, or `On "<title>"` without an author. Set `title` on any note
 whose generated title reads badly. A note with neither fails the build.
 
-The title appears in the browser tab and the feed item. Neither the page
-nor `/notes/` shows it, except to screen readers, so keep anything
-readers need in the body.
+The title appears in the browser tab, the feed item, the archives, and
+`llms.txt`. The note's page and its card on home, tag pages, and
+`/notes/` show it only to screen readers, so keep anything readers need
+in the body.
 
 The body is the note. Put the quoted line in a `>` quote. The page and
 the feed item end with the source line, so the body needn't link the
