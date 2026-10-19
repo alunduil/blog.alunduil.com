@@ -112,6 +112,7 @@ Echofeed
 atproto
 OAuth
 IndieWeb
+(?i)Webmention
 IFTTT
 WordPress
 Jetpack

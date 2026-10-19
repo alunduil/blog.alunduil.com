@@ -1,0 +1,14 @@
+name = "webmention-relay"
+main = "src/index.ts"
+compatibility_date = "2026-10-14"
+account_id = "76626ec3f004e86f1a4d85faca9ac3a2"
+
+# The custom domain is the only way in; Wrangler creates its DNS record and
+# certificate.
+workers_dev = false
+preview_urls = false
+routes = [{ pattern = "webmention.alunduil.com", custom_domain = true }]
+
+# Secrets, set with `wrangler secret put`:
+#   WEBMENTION_SECRET     the shared secret webmention.io sends in callbacks
+#   GITHUB_DISPATCH_TOKEN fine-grained token that can dispatch to the blog

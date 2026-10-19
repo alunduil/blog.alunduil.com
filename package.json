@@ -17,7 +17,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run && pnpm --recursive test",
     "post-scheduling:check": "node scripts/check-post-scheduling.ts"
   },
   "dependencies": {
