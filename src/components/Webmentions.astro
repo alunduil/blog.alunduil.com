@@ -2,7 +2,7 @@
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import type { Listing } from "@/utils/entries";
+import { isNote, type Listing } from "@/utils/entries";
 import {
   getWebmentions,
   webmentionTarget,
@@ -21,6 +21,8 @@ const { post } = Astro.props;
 const { likes, reposts, replies, mentions } = await getWebmentions(
   webmentionTarget(post)
 );
+
+const kind = isNote(post) ? "note" : "post";
 
 const visible = (e: WebmentionEntry) => !e["wm-private"];
 const visibleLikes = likes.filter(visible);
@@ -119,7 +121,7 @@ const total =
             >
               {mention.author?.name ?? mention["wm-source"]}
             </a>{" "}
-            <span class="opacity-70">linked to this post.</span>
+            <span class="opacity-70">linked to this {kind}.</span>
           </li>
         ))}
       </ul>
