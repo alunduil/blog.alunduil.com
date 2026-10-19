@@ -3,6 +3,7 @@ import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 import config from "@/config";
 import { blogCollections } from "@/utils/blogCollections";
+import { postTypeSchema } from "@/utils/postTypes";
 
 export const BLOG_PATH = "src/content/posts";
 
@@ -14,6 +15,7 @@ const posts = defineCollection({
       pubDatetime: z.date(),
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
+      type: postTypeSchema,
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
