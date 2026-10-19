@@ -20,6 +20,7 @@ Fields, in schema order:
 | `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
 | `ogImage` | no | image \| string | Overrides the dynamic OG card; required on reviews (see [Reviews](#reviews)). |
 | `description` | yes | string | ~120–150 chars; becomes `og:description` and the dlvr.it syndication text. |
+| `type` | yes | `story` \| `practice` \| `how-to` | What the post is (see [Types](#types)). |
 | `canonicalURL` | no | string | The canonical URL when the post is canonical off-site. |
 | `hideEditPost` | no | boolean | Hides the "edit this page" link. |
 | `timezone` | no | string | IANA zone for `pubDatetime`/`modDatetime`; defaults to `site.timezone` in `astro-paper.config.ts`. |
@@ -31,6 +32,19 @@ branch commit time.
 label and appears in the page metadata. Listings and the RSS feed order
 and date posts on `pubDatetime`, so an edit leaves a post in place and
 doesn't mark it unread in feed readers.
+
+## Types
+
+`type` names what a post is; `tags` name what it's about. It has no
+default, so a post that omits it or names another value fails the build.
+
+| Type | What it is | JSON-LD `@type` |
+| --- | --- | --- |
+| `story` | Lived experience told in scenes, built to a change. | `BlogPosting` |
+| `practice` | A personal system, revisited years later: the "How I X" series. | `BlogPosting` |
+| `how-to` | Reproducible steps. | `BlogPosting`, `TechArticle` |
+
+Reviews and notes are collections of their own and don't set `type`.
 
 ## Scheduling
 
@@ -83,8 +97,8 @@ Reviews are their own collection. They list at `/reviews/` and feed at
 `/reviews/rss.xml`, and stay out of `/posts/` and the posts feed. The home
 page, archives, and tags interlace them with posts by date.
 
-The review schema extends the post fields with two requirements, so a
-review missing either fails the build:
+The review schema takes the post fields except `type`, with two
+requirements added, so a review missing either fails the build:
 
 | Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
