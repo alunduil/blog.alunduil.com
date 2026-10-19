@@ -10,6 +10,7 @@
 !/public
 !/.github
 !/scripts
+!/workers
 !tsconfig.json
 !blog.config.ts
 !astro.config.ts
