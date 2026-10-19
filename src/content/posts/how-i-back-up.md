@@ -2,6 +2,7 @@
 pubDatetime: 2026-06-02T07:00:00Z
 title: "How I Back Up"
 type: practice
+series: how-i
 description: "How a TrueNAS, a Home Assistant box, and a Chromebook back themselves up—delegated to Cloud Sync, Nabu Casa, and a Google account."
 tags:
   - backups

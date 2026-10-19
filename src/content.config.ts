@@ -4,6 +4,7 @@ import { glob } from "astro/loaders";
 import config from "@/config";
 import { blogCollections } from "@/utils/blogCollections";
 import { postTypeSchema } from "@/utils/postTypes";
+import { seriesSchema } from "@/utils/series";
 
 export const BLOG_PATH = "src/content/posts";
 
@@ -16,6 +17,7 @@ const posts = defineCollection({
       modDatetime: z.date().optional().nullable(),
       title: z.string(),
       type: postTypeSchema,
+      series: seriesSchema.optional(),
       featured: z.boolean().optional(),
       draft: z.boolean().optional(),
       tags: z.array(z.string()).default(["others"]),
