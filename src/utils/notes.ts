@@ -1,5 +1,7 @@
 import { z } from "astro/zod";
 
+export const NOTES_PATH = "src/content/notes";
+
 export const notesSection = {
   title: "Notes",
   description: "Short responses and passing thoughts.",

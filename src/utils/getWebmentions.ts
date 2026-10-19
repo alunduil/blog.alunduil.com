@@ -1,6 +1,6 @@
 import { PUBLIC_WEBMENTION_IO_USERNAME } from "astro:env/client";
 import config from "@/config";
-import { getEntries, type Entry } from "@/utils/entries";
+import { getListings, type Listing } from "@/utils/entries";
 import { redirects } from "@/utils/redirects";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { postFilter } from "@/utils/postFilter";
@@ -142,13 +142,15 @@ async function fetchMentions(targets: string[]): Promise<WebmentionEntry[]> {
   }
 }
 
-/** The URL a post's webmentions are filed against. */
-export function webmentionTarget({ id, filePath }: Entry): string {
+/** The URL a post's or note's webmentions are filed against. */
+export function webmentionTarget({ id, filePath }: Listing): string {
   return new URL(getPostUrl(id, filePath), config.site.url).href;
 }
 
-async function postTargets(): Promise<string[]> {
-  const targets = (await getEntries(postFilter)).map(webmentionTarget);
+async function listingTargets(): Promise<string[]> {
+  const targets = (await getListings())
+    .filter(postFilter)
+    .map(webmentionTarget);
   const current = new Set(targets.map(canonicalTarget));
   const former = [...movedTo]
     .filter(([, to]) => current.has(to))
@@ -176,7 +178,7 @@ async function fetchAllMentions(): Promise<MentionsByTarget> {
   const children: WebmentionEntry[] = [];
 
   // Sequential: webmention.io 502s when asked for many things at once.
-  for (const batch of chunk(await postTargets(), TARGETS_PER_REQUEST)) {
+  for (const batch of chunk(await listingTargets(), TARGETS_PER_REQUEST)) {
     children.push(...(await fetchMentions(batch)));
   }
 

@@ -1,4 +1,4 @@
-import type { Entry } from "@/utils/entries";
+import type { Listing } from "@/utils/entries";
 import { postFilter } from "./postFilter";
 import { slugifyStr } from "./slugify";
 
@@ -14,7 +14,7 @@ type Tag = {
  * - `tag` is the slug used in URLs; `tagName` is the original label for display
  * - Uniqueness is based on the slug (so differently-cased labels collapse)
  */
-export function getUniqueTags(posts: Entry[]) {
+export function getUniqueTags(posts: Listing[]) {
   const tags: Tag[] = posts
     .filter(postFilter)
     .flatMap(post => post.data.tags)

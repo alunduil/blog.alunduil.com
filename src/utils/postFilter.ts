@@ -1,4 +1,4 @@
-import type { Entry } from "@/utils/entries";
+import type { Listing } from "@/utils/entries";
 import config from "@/config";
 
 /**
@@ -8,9 +8,10 @@ import config from "@/config";
  * - In production, excludes scheduled posts until `pubDatetime` minus the configured margin
  * - In dev, always shows non-draft posts to make authoring easier
  */
-export function postFilter({ data }: Entry) {
+export function postFilter({ data }: Listing) {
   const isPublishTimePassed =
     Date.now() >
     new Date(data.pubDatetime).getTime() - config.posts.scheduledPostMargin;
-  return !data.draft && (import.meta.env.DEV || isPublishTimePassed);
+  const isDraft = "draft" in data && data.draft;
+  return !isDraft && (import.meta.env.DEV || isPublishTimePassed);
 }

@@ -1,9 +1,9 @@
 ---
-import type { Entry } from "@/utils/entries";
+import { listingTitle, type Listing } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import Datetime from "./Datetime.astro";
 
-type Props = Entry;
+type Props = Listing;
 
 const { id, data, filePath } = Astro.props;
 ---
@@ -17,7 +17,7 @@ const { id, data, filePath } = Astro.props;
       "focus-visible:no-underline focus-visible:underline-offset-0",
     ]}
   >
-    {data.title}
+    {listingTitle(Astro.props)}
   </a>
   {/* Archives group by publication month, so an update date would contradict the heading. */}
   <Datetime pubDatetime={data.pubDatetime} timezone={data.timezone} />

@@ -1,5 +1,5 @@
 ---
-import { getEntries } from "@/utils/entries";
+import { getListings, isNote, type Listing } from "@/utils/entries";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import IconRss from "@/assets/icons/IconRss.svg";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
@@ -7,7 +7,7 @@ import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
-import Card from "@/components/Card.astro";
+import ListingCard from "@/components/ListingCard.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
 import { useTranslations } from "@/i18n";
@@ -18,10 +18,11 @@ const { socials, posts: postsConfig } = config;
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
 
-const posts = await getEntries();
+const posts = await getListings();
 const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const isFeatured = (post: Listing) => !isNote(post) && post.data.featured;
+const featuredPosts = sortedPosts.filter(isFeatured);
+const recentPosts = sortedPosts.filter(post => !isFeatured(post));
 const homePath = getRelativeLocaleUrl(locale, "");
 ---
 
@@ -78,8 +79,8 @@ const homePath = getRelativeLocaleUrl(locale, "");
             {t.home.featured}
           </h2>
           <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
+            {featuredPosts.map(listing => (
+              <ListingCard variant="h3" {listing} />
             ))}
           </ul>
         </section>
@@ -93,8 +94,8 @@ const homePath = getRelativeLocaleUrl(locale, "");
             {t.home.recentPosts}
           </h2>
           <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
-              <Card variant="h3" {...data} />
+            {recentPosts.slice(0, postsConfig.perIndex).map(listing => (
+              <ListingCard variant="h3" {listing} />
             ))}
           </ul>
         </section>
