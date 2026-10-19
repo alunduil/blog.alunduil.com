@@ -28,7 +28,7 @@ LinkedIn takes only the marked posts, so its output sits on the
 so a LinkedIn output there would post them twice.
 
 1. Create an automation for `https://blog.alunduil.com/linkedin.xml`,
-   per [Set up dlvr.it](set-up-dlvrit.md#create-an-automation-for-a-feed).
+   per [Set up dlvr.it](set-up-dlvrit.md#create-an-automation-for-each-feed).
 2. Choose Add Output and pick the connected LinkedIn output.
 3. Limit the first sync, so the marked back catalogue does not post at
    once.

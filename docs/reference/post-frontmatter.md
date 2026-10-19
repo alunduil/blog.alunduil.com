@@ -141,9 +141,10 @@ original authorship, and open with the stanza:
 
 ## Notes
 
-A note is short enough to post whole to Bluesky, about 300 characters,
-and responds to at most one source: a quote with commentary, or a
-thought standing alone. Notes are a collection of their own, listed at
+A note is short enough to post whole to Bluesky: at most 300 characters
+of plain text, enforced by `scripts/check-note-length.ts`. It responds
+to at most one source: a quote with commentary, or a thought standing
+alone. Notes are a collection of their own, listed at
 `/notes/` with their feed at `/notes/rss.xml`, and stay out of `rss.xml`.
 Home, archives, tag pages, and `llms.txt` list them by date among posts
 and reviews. The schema is `noteSchema` in `src/utils/notes.ts`.

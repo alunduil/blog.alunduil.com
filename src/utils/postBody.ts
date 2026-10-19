@@ -1,15 +1,7 @@
-import { createMarkdownProcessor } from "@astrojs/markdown-remark";
 import type { Entry } from "@/utils/entries";
 import config from "@/config";
+import { renderFeedMarkdown } from "./feedMarkdown";
 import { getPostUrl } from "./getPostPaths";
-import { remarkPlugins } from "./markdownPlugins";
-
-const processorPromise = createMarkdownProcessor({
-  remarkPlugins,
-  // The site's dual Shiki themes carry their colours in CSS variables a feed
-  // reader never loads, so highlighting arrives as markup around plain text.
-  syntaxHighlight: false,
-});
 
 const LINK_ATTRIBUTE = /(\s(?:href|src)=")([^"]*)(")/g;
 
@@ -48,9 +40,7 @@ export function markdownBody({ body, filePath }: Entry) {
  * `docs/reference/post-body.md`.
  */
 export async function renderBody(markdown: string, canonicalURL: URL) {
-  const processor = await processorPromise;
-  const { code } = await processor.render(markdown);
-  return absolutizeLinks(code, canonicalURL);
+  return absolutizeLinks(await renderFeedMarkdown(markdown), canonicalURL);
 }
 
 /** Render each post's body with `renderBody`, keyed by post id. */

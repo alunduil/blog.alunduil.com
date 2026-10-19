@@ -73,6 +73,12 @@ repos:
         language: system
         pass_filenames: false
         files: ^(src/content/(posts|reviews)/.*\.md|astro-paper\.config\.ts)$
+      - id: note-length
+        name: Check note length
+        entry: node scripts/check-note-length.ts
+        language: system
+        pass_filenames: false
+        files: ^(src/content/notes/.*\.md|src/utils/(notes|feedMarkdown|markdownPlugins)\.ts)$
 
   # A malformed renovate.json fails silently: Renovate surfaces it as a
   # Repository Problem on its next run, never in CI.
