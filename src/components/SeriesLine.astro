@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Entry } from "@/utils/entries";
+import { seriesInfo, seriesPlace } from "@/utils/series";
+import config from "@/config";
+
+type Props = { post: Entry };
+
+const { post } = Astro.props;
+const locale = Astro.currentLocale ?? config.site.lang;
+const place = seriesPlace(await getCollection("posts"), post);
+---
+
+{
+  place && (
+    <p class="text-muted-foreground text-sm [&_a]:underline">
+      Entry {place.position} of {place.total} in the{" "}
+      <a href={getRelativeLocaleUrl(locale, `series/${place.series}/`)}>
+        {seriesInfo[place.series].title}
+      </a>{" "}
+      series.
+    </p>
+  )
+}
