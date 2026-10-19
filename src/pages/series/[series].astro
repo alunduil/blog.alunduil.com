@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Main from "@/components/Main.astro";
+import Footer from "@/components/Footer.astro";
+import ListingCard from "@/components/ListingCard.astro";
+import {
+  type Series,
+  seriesEntries,
+  seriesInfo,
+  seriesSchema,
+} from "@/utils/series";
+import config from "@/config";
+
+export function getStaticPaths() {
+  return seriesSchema.options.map(series => ({
+    params: { series },
+    props: { series },
+  }));
+}
+
+type Props = { series: Series };
+
+const { series } = Astro.props;
+const { title, description } = seriesInfo[series];
+const entries = seriesEntries(await getCollection("posts"), series);
+---
+
+<Layout title={`${title} | ${config.site.title}`} {description}>
+  <Header />
+
+  <Main pageTitle={title} pageDesc={description}>
+    <ul>
+      {entries.map(listing => <ListingCard {listing} />)}
+    </ul>
+  </Main>
+
+  <Footer />
+</Layout>
