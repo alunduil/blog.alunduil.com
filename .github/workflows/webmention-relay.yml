@@ -1,0 +1,35 @@
+name: Webmention relay
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/webmention-relay.yml
+      - workers/webmention-relay/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy the webmention relay
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    concurrency:
+      group: ${{ github.workflow }}-deploy
+      cancel-in-progress: false
+    defaults:
+      run:
+        working-directory: workers/webmention-relay
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile --filter webmention-relay
+      - run: pnpm run deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
