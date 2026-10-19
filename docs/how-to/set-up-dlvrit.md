@@ -4,6 +4,7 @@ dlvr.it forwards a source feed to connected social accounts. Every
 syndication guide here builds on what this page sets up:
 
 - [Syndicate posts to Bluesky](syndicate-posts-to-bluesky.md)
+- [Syndicate posts to LinkedIn](syndicate-posts-to-linkedin.md)
 - [Syndicate posts to Threads](syndicate-posts-to-threads.md)
 - [Syndicate releases to social](syndicate-releases-to-social.md)
 
@@ -21,17 +22,21 @@ match the intent rather than the exact wording.
    and posting errors, and that email is the only thing that announces a
    post which never went out.
 
-## Create the blog's automation
+## Create an automation for a feed
 
-One automation reads the blog's feed and posts to every connected
-social, each as an output on it. The feed at
-`https://blog.alunduil.com/rss.xml` excludes future-dated posts, so
-nothing syndicates before its `pubDatetime`. Each item carries two
-blocks of text: `description`, the one-line hook, and
-`content:encoded`, the whole post.
+Each feed gets one automation, and each social reading that feed is an
+output on it. The blog syndicates two feeds:
 
-1. Open the Automate tab and create a New Automation with
-   `https://blog.alunduil.com/rss.xml` as its input.
+- `https://blog.alunduil.com/rss.xml` carries every post.
+- `https://blog.alunduil.com/linkedin.xml` carries only posts marked
+  `linkedin: true`.
+
+Both exclude future-dated posts, so nothing syndicates before its
+`pubDatetime`. Each item carries two blocks of text: `description`, the
+one-line hook, and `content:encoded`, the whole post.
+
+1. Open the Automate tab and create a New Automation with the feed's URL
+   as its input.
 2. In the automation's Settings, under Advanced, set Body posting
    options to Prefer summary content, which picks the hook.
 3. Set Image selection order to Open Graph tags first, which picks the
