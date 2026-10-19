@@ -37,17 +37,16 @@ another as plain text. The blog syndicates four feeds:
   `linkedin: true`.
 
 All four exclude future-dated entries, so nothing syndicates before its
-`pubDatetime`. Post and review items carry two blocks of text:
-`description`, the one-line hook, and `content:encoded`, the whole
-entry. Note items carry only `content:encoded`, because a note is short
-enough to post whole.
+`pubDatetime`. Each item carries two blocks of text: `description` and
+`content:encoded`, the whole entry. For a post or review, `description`
+is the one-line hook. For a note, it is the note's text without its
+source line.
 
 1. Open the Automate tab and create a New Automation with the feed's URL
    as its input.
-2. In the automation's Settings, under Advanced, set Body posting
-   options. Posts, reviews, and the LinkedIn feed use Prefer summary
-   content, which picks the hook. Notes use full content, which picks
-   the note itself.
+2. Open the settings for the automation's feed input, not an output's.
+   Under Advanced, set Body posting options to Prefer summary content,
+   which picks `description` for every output on the automation.
 3. Set Image selection order to Open Graph tags first, which picks the
    entry's social image over the first image in its body.
 

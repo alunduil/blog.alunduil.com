@@ -1,9 +1,18 @@
 import rss from "@astrojs/rss";
 import { getNoteUrl, getSortedNotes, renderNoteBody } from "@/utils/getNotes";
-import { notesSection, noteTitle, sourceLine } from "@/utils/notes";
+import {
+  notesSection,
+  noteTitle,
+  plainText,
+  sourceLine,
+} from "@/utils/notes";
 import config from "@/config";
 
-/** Notes syndicate whole, so each item carries the body and source line. */
+/**
+ * Notes syndicate whole, so each item carries the body and source line. The
+ * description drops the source line: social posts strip its link, leaving a
+ * bare title.
+ */
 export async function GET() {
   const notes = await getSortedNotes();
 
@@ -22,6 +31,7 @@ export async function GET() {
           link: getNoteUrl(note.id),
           title: noteTitle(data),
           pubDate: data.pubDatetime,
+          description: plainText(html),
           content,
         };
       })
