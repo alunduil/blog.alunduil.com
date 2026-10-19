@@ -18,7 +18,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "post-scheduling:check": "node scripts/check-post-scheduling.ts"
+    "post-scheduling:check": "node scripts/check-post-scheduling.ts",
+    "note-length:check": "node scripts/check-note-length.ts"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.2.1",
