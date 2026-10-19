@@ -5,6 +5,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Datetime from "@/components/Datetime.astro";
 import NoteSource from "@/components/NoteSource.astro";
+import Webmentions from "@/components/Webmentions.astro";
 import { getSortedNotes, renderNoteBody } from "@/utils/getNotes";
 import { noteTitle, plainText } from "@/utils/notes";
 import config from "@/config";
@@ -43,6 +44,8 @@ const description = plainText(await renderNoteBody(note));
     </article>
 
     {source && <NoteSource {source} />}
+
+    <Webmentions post={note} />
   </main>
   <Footer />
 </PostLayout>

@@ -7,6 +7,7 @@ const env = vi.hoisted(() => ({ username: "alunduil" }));
 const collections = vi.hoisted(() => ({
   posts: [] as unknown[],
   reviews: [] as unknown[],
+  notes: [] as unknown[],
 }));
 
 vi.mock("astro:env/client", async importOriginal => ({
@@ -88,6 +89,7 @@ describe("getWebmentions", () => {
     env.username = "alunduil";
     collections.posts = [post];
     collections.reviews = [];
+    collections.notes = [];
   });
 
   afterEach(() => {
@@ -152,6 +154,27 @@ describe("getWebmentions", () => {
     expect(likes).toHaveLength(2);
     expect(requestedUrls(fetch)[0].searchParams.getAll("target[]")).toContain(
       former
+    );
+  });
+
+  it("asks for mentions of notes", async () => {
+    collections.posts = [];
+    collections.notes = [
+      {
+        id: "aside",
+        collection: "notes",
+        filePath: "src/content/notes/aside.md",
+        data: { pubDatetime: new Date(0) },
+      },
+    ];
+    const note = new URL("/notes/aside", config.site.url).href;
+    const fetch = serveBatches([2, 0], note);
+
+    const { likes } = await getWebmentions(note);
+
+    expect(likes).toHaveLength(2);
+    expect(requestedUrls(fetch)[0].searchParams.getAll("target[]")).toContain(
+      note
     );
   });
 
