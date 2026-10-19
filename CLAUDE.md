@@ -91,8 +91,8 @@ cadence, timezone, locations, cover images, and tags are documented in
 Future entries title as `How I X (YYYY)` — year-stamped titles scale as
 entries accumulate. Cadence ties to substantive change in the practice;
 the next entry is ready when reading the prior one prompts "that's not
-how I do it any more." Add series infrastructure (index page, schema
-field, milestone) once there are 3+ entries.
+how I do it any more." Each entry sets `series: how-i` (see
+`docs/reference/post-frontmatter.md`).
 
 ## Voice
 

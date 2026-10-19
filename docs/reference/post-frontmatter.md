@@ -16,6 +16,7 @@ Fields, in schema order:
 | `modDatetime` | no | date \| null | Last substantive edit. |
 | `title` | yes | string | Post title. |
 | `type` | yes | `story` \| `practice` \| `how-to` | The kind of post (see [Types](#types)). |
+| `series` | no | `how-i` | The series the post belongs to (see [Series](#series)). |
 | `featured` | no | boolean | Pins the post to the home page's featured list. |
 | `draft` | no | boolean | Unused; publication gates on `pubDatetime`, not this flag. |
 | `tags` | no | string[] | Content topics; defaults to `["others"]` (see [Tags](#tags)). |
@@ -48,6 +49,17 @@ build.
 A how-to's JSON-LD declares `TechArticle` alongside `BlogPosting`.
 
 Reviews and notes are collections of their own and set no `type`.
+
+## Series
+
+`series: how-i` puts a post in the "How I X" series. Set it on every
+entry; an unknown value fails the build.
+
+`/series/how-i/` lists the entries oldest first. Each entry shows its
+position in the series under the date, linked to that page.
+
+Add a series by extending `seriesSchema` and `seriesInfo` in
+`src/utils/series.ts`.
 
 ## Scheduling
 
