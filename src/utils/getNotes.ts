@@ -1,23 +1,12 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import config from "@/config";
+import { getSortedPosts } from "./getSortedPosts";
 import { renderBody } from "./postBody";
 
-/**
- * Published notes, newest first. A note is scheduled like a post: hidden
- * until its `pubDatetime`, less the scheduling margin, except in dev.
- */
+/** Published notes, newest first. */
 export async function getSortedNotes(): Promise<CollectionEntry<"notes">[]> {
-  const notes = await getCollection(
-    "notes",
-    ({ data }) =>
-      import.meta.env.DEV ||
-      Date.now() >
-        data.pubDatetime.getTime() - config.posts.scheduledPostMargin
-  );
-  return notes.sort(
-    (a, b) => b.data.pubDatetime.getTime() - a.data.pubDatetime.getTime()
-  );
+  return getSortedPosts(await getCollection("notes"));
 }
 
 export function getNoteUrl(

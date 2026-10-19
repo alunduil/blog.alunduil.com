@@ -1,6 +1,6 @@
 import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
-import { noteSchema } from "./notes";
+import { NOTES_PATH, noteSchema } from "./notes";
 import { REVIEWS_PATH, reviewSchema } from "./reviews";
 
 /**
@@ -9,7 +9,7 @@ import { REVIEWS_PATH, reviewSchema } from "./reviews";
  */
 export const blogCollections = {
   notes: defineCollection({
-    loader: glob({ pattern: "[^_]*.md", base: "./src/content/notes" }),
+    loader: glob({ pattern: "[^_]*.md", base: `./${NOTES_PATH}` }),
     schema: noteSchema,
   }),
   reviews: defineCollection({

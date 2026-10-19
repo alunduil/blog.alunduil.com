@@ -1,4 +1,4 @@
-import type { Entry } from "@/utils/entries";
+import type { Listing } from "@/utils/entries";
 import { postFilter } from "./postFilter";
 
 /**
@@ -7,7 +7,7 @@ import { postFilter } from "./postFilter";
  *
  * Note: filtering respects drafts and scheduled posts via `postFilter()`.
  */
-export function getSortedPosts<T extends Entry>(posts: T[]) {
+export function getSortedPosts<T extends Listing>(posts: T[]) {
   return posts
     .filter(postFilter)
     .sort(

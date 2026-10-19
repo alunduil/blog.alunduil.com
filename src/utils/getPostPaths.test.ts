@@ -6,6 +6,7 @@ describe("getPostUrl", () => {
     ["src/content/posts/hello.md", "/posts/hello/"],
     ["src/content/posts/_hakyll/hello.md", "/posts/hello/"],
     ["src/content/reviews/hello.md", "/reviews/hello/"],
+    ["src/content/notes/hello.md", "/notes/hello/"],
   ])("serves %s under its collection's section", (filePath, url) => {
     expect(getPostUrl("hello", filePath)).toBe(url);
   });
