@@ -23,6 +23,10 @@ const t = useTranslations(Astro.currentLocale ?? config.site.lang);
   href={new URL(getAssetPath("reviews/rss.xml"), Astro.site)}
 />
 
+<Font
+  cssVariable="--font-body"
+  preload={[{ subset: "latin", weight: 400, style: "normal" }]}
+/>
 <Font cssVariable="--font-brand" preload />
 
 {PUBLIC_WEBMENTION_IO_USERNAME && (

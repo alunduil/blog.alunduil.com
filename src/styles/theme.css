@@ -7,7 +7,8 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  /* The body face is undecided, so it stays on the OS mono stack. */
+  /* Overriding --font-mono puts code blocks in the body face too. */
+  --font-mono: var(--font-body);
   --font-app: var(--font-mono);
   /* Tailwind only generates utilities for keys declared here, and reusing
      Astro's --font-brand as the key would define it in terms of itself. */

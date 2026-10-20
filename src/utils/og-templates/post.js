@@ -1,5 +1,6 @@
 import satori from "satori";
 import config from "@/config";
+import { BRAND_FONT } from "@/utils/loadBrandFonts";
 import { COLORS, STROKE, block, canvas } from "./mondrian";
 
 const formatDate = (date, timezone) =>
@@ -37,7 +38,7 @@ export default async post => {
           background: COLORS.black,
           padding: STROKE,
           gap: STROKE,
-          fontFamily: "IBM Plex Sans",
+          fontFamily: BRAND_FONT,
           color: COLORS.black,
         },
         children: [
