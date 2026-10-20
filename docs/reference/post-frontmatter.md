@@ -50,6 +50,9 @@ A how-to's JSON-LD declares `TechArticle` alongside `BlogPosting`.
 
 Reviews and notes are collections of their own and set no `type`.
 
+Listing rows show each post's type, and `review` or `note` for the
+other collections.
+
 ## Series
 
 `series: how-i` puts a post in the "How I X" series. Set it on every

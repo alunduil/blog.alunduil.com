@@ -150,19 +150,24 @@ Before a PR leaves draft, its branch holds only isolated commits:
   themselves.
 
 Fold review fixes into the commit they amend. Record them with
-`git commit --fixup=<sha>` while working, then rewrite and push:
+`git commit --fixup=<sha>` while working. Run the rewrite yourself:
 
 ```bash
 GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
-git push --force-with-lease
 ```
 
 `--rebase-merges` keeps a merge of `astro-paper/main` as one of the
 isolated commits, with its upstream parent intact. See [Adopt AstroPaper
 upstream changes](docs/how-to/adopt-astropaper-upstream-changes.md).
 
-`--force-with-lease` on a draft PR's own branch is the one sanctioned
-force-push: a draft has no reviewer building on its history.
+Then hand the author the push:
+
+```bash
+! git push --force-with-lease
+```
+
+Only the author force-pushes, and only on a draft PR's own branch: a
+draft has no reviewer building on its history.
 
 ## Reading ADRs
 

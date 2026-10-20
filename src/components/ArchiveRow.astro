@@ -1,11 +1,11 @@
 ---
 import { listingTitle, type Listing } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
-import Datetime from "./Datetime.astro";
+import ListingMeta from "./ListingMeta.astro";
 
 type Props = Listing;
 
-const { id, data, filePath } = Astro.props;
+const { id, filePath } = Astro.props;
 ---
 
 <li class="my-4 sm:my-6">
@@ -20,5 +20,5 @@ const { id, data, filePath } = Astro.props;
     {listingTitle(Astro.props)}
   </a>
   {/* Archives group by publication month, so an update date would contradict the heading. */}
-  <Datetime pubDatetime={data.pubDatetime} timezone={data.timezone} />
+  <ListingMeta listing={Astro.props} />
 </li>
