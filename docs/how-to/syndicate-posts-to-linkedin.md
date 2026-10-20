@@ -38,7 +38,7 @@ so a LinkedIn output there would post them twice.
 A shared link renders as a card built from the post's Open Graph tags:
 title, one-line hook, and social image.
 
-1. Open the LinkedIn output from the Outputs tab and choose Edit.
+1. In the `linkedin.xml` automation, open its LinkedIn output.
 2. Under Post options, set Post style to Shared link, and leave Begin
    posts with and End posts with empty.
 3. Under Advanced, set Post privacy to Public, so the post reaches
