@@ -111,9 +111,11 @@ included.
 
 ## Code blocks
 
-Shiki highlights fenced code blocks. It carries dual themes, `min-light`
-and `night-owl`, matching the site's light and dark mode. Long lines
-scroll rather than wrap.
+Shiki highlights fenced code blocks in GitHub's `github-light-default`
+and `github-dark-default` themes, matching the site's light and dark
+mode. Blocks sit on the page's cream or black, and `blog.config.ts`
+darkens the two light-mode colours that fall below WCAG AA on cream.
+Long lines scroll rather than wrap.
 
 A `file` attribute on the fence info string renders a filename label on
 the block:

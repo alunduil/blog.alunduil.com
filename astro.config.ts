@@ -14,7 +14,13 @@ import config from "./astro-paper.config";
 import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
 import rehypeThemeImages from "./src/utils/rehypeThemeImages";
-import { bodyFont, brandFont, envSchema, redirects } from "./blog.config";
+import {
+  bodyFont,
+  brandFont,
+  envSchema,
+  redirects,
+  shikiThemes,
+} from "./blog.config";
 
 export default defineConfig({
   site: config.site.url,
@@ -42,7 +48,7 @@ export default defineConfig({
       rehypePlugins: [rehypeCallouts, rehypeThemeImages],
     }),
     shikiConfig: {
-      themes: { light: "min-light", dark: "night-owl" },
+      themes: shikiThemes,
       defaultColor: false,
       wrap: false,
       transformers: [
