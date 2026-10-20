@@ -43,11 +43,9 @@ the automation for each.
 ## Post the title and a link card
 
 The link card shows the post's hook, so the message carries only the
-title.
+title. Apply these settings in the posts automation and the reviews one.
 
-Set both Facebook outputs the same way:
-
-1. Open the output from the Outputs tab and choose Edit.
+1. In the automation, open its Facebook output.
 2. Under Post options, set Post style to Shared link.
 3. Turn Post title, Post URL, and Post photo on, and Post body off.
 4. Leave Begin posts with and End posts with empty.
