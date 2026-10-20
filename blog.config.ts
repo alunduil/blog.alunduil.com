@@ -35,8 +35,9 @@ export const brandFont = {
   fallbacks: ["sans-serif"],
 } satisfies NonNullable<AstroUserConfig["fonts"]>[number];
 
-// Cream drops two of GitHub's light colours below WCAG AA's 4.5:1, so
-// each takes the next darker step on GitHub's Primer scale.
+// Cream drops two of GitHub's light colours below WCAG AA's 4.5:1, and
+// the keyword red below it on a highlighted line, so each takes the next
+// darker step on GitHub's Primer scale.
 export const shikiThemes = {
   light: {
     ...githubLight,
@@ -44,6 +45,7 @@ export const shikiThemes = {
       "#ffffff": COLORS.cream,
       "#6e7781": "#59636e",
       "#8250df": "#6639ba",
+      "#cf222e": "#a40e26",
     },
   },
   dark: {

@@ -15,6 +15,13 @@
   --font-wordmark: var(--font-brand);
 }
 
+/* The OG card's primaries, the same in both themes. */
+:root {
+  --red: #d5232a;
+  --blue: #1e4fa1;
+  --yellow: #f1c232;
+}
+
 /* Light theme values */
 :root,
 [data-theme="light"] {
@@ -25,6 +32,7 @@
   --muted: #e1ddd4;
   --muted-foreground: #6b7280;
   --border: #0a0a0a;
+  --code-highlight: color-mix(in srgb, var(--yellow) 32%, transparent);
 }
 
 /* Dark theme values */
@@ -36,4 +44,6 @@
   --muted: #1d1c1c;
   --muted-foreground: #afb9ca;
   --border: #f4efe6;
+  /* Any stronger and GitHub's dark comment grey drops below 4.5:1. */
+  --code-highlight: color-mix(in srgb, var(--yellow) 18%, transparent);
 }
