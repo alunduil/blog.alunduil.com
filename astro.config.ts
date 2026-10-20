@@ -1,9 +1,4 @@
-import {
-  defineConfig,
-  envField,
-  fontProviders,
-  svgoOptimizer,
-} from "astro/config";
+import { defineConfig, envField, svgoOptimizer } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
@@ -19,7 +14,7 @@ import config from "./astro-paper.config";
 import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
 import rehypeThemeImages from "./src/utils/rehypeThemeImages";
-import { brandFont, envSchema, redirects } from "./blog.config";
+import { bodyFont, brandFont, envSchema, redirects } from "./blog.config";
 
 export default defineConfig({
   site: config.site.url,
@@ -63,18 +58,7 @@ export default defineConfig({
     // Native bindings: the Mondrian OG cards render through resvg.
     optimizeDeps: { exclude: ["@resvg/resvg-js"] },
   },
-  fonts: [
-    {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
-      provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
-      styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
-    },
-    brandFont,
-  ],
+  fonts: [bodyFont, brandFont],
   env: {
     schema: {
       PUBLIC_GOOGLE_SITE_VERIFICATION: envField.string({

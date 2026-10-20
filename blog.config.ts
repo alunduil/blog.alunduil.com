@@ -10,6 +10,16 @@ import { BRAND_FONT } from "./src/utils/loadBrandFonts";
 
 export { redirects } from "./src/utils/redirects";
 
+export const bodyFont = {
+  name: "IBM Plex Mono",
+  cssVariable: "--font-body",
+  provider: fontProviders.google(),
+  weights: [400, 500, 600, 700],
+  styles: ["normal", "italic"],
+  subsets: ["latin"],
+  fallbacks: ["monospace"],
+} satisfies NonNullable<AstroUserConfig["fonts"]>[number];
+
 // Only the header wordmark renders in this face, so the weight and subset
 // lists stay narrow.
 export const brandFont = {
