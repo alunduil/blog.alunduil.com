@@ -121,7 +121,7 @@ review missing either fails the build:
 | Field | Required | Type | Meaning |
 | --- | --- | --- | --- |
 | `reviewed` | yes | string | The name of the work under review. |
-| `ogImage` | yes | image | The reviewed work's cover, in place of the dynamic OG card. |
+| `ogImage` | yes | image | The reviewed work's cover. It replaces the dynamic OG card and shows as the review's listing thumbnail. |
 
 The cover is `src/assets/images/<slug>-cover.jpg`, referenced with two
 `../`:
