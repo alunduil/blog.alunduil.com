@@ -3,6 +3,7 @@ import type { Entry } from "@/utils/entries";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
 import ListingMeta from "./ListingMeta.astro";
+import ListingCover from "./ListingCover.astro";
 
 type Props = {
   variant?: "h2" | "h3";
@@ -14,6 +15,7 @@ const { title, description, modDatetime } = data;
 ---
 
 <li class="my-6">
+  <ListingCover entry={Astro.props}>
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
@@ -28,4 +30,5 @@ const { title, description, modDatetime } = data;
   </a>
   <ListingMeta listing={Astro.props} {modDatetime} />
   <p>{description}</p>
+  </ListingCover>
 </li>

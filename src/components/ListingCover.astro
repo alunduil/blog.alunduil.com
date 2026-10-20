@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import type { Entry } from "@/utils/entries";
+
+type Props = { entry: Entry };
+
+const { entry } = Astro.props;
+
+/** Width, in CSS pixels, of the cover column; each cover fits a square this size. */
+const SLOT = 96;
+
+const cover = entry.collection === "reviews" ? entry.data.ogImage : undefined;
+---
+
+{
+  cover ? (
+    <div class="flex gap-4">
+      <div class="min-w-0 flex-1">
+        <slot />
+      </div>
+      <div
+        class="bg-muted flex shrink-0 items-center justify-center"
+        style={{ width: `${SLOT}px` }}
+      >
+        <Image
+          src={cover}
+          alt=""
+          {...(cover.width >= cover.height ? { width: SLOT } : { height: SLOT })}
+          densities={[1, 2]}
+        />
+      </div>
+    </div>
+  ) : (
+    <slot />
+  )
+}
