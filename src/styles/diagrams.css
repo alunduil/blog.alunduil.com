@@ -1,0 +1,3 @@
+pre.mermaid svg {
+  font-weight: var(--diagram-weight);
+}

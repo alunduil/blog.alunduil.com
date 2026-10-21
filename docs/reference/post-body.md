@@ -111,9 +111,11 @@ included.
 
 ## Code blocks
 
-Shiki highlights fenced code blocks. It carries dual themes, `min-light`
-and `night-owl`, matching the site's light and dark mode. Long lines
-scroll rather than wrap.
+Shiki highlights fenced code blocks in GitHub's `github-light-default`
+and `github-dark-default` themes, matching the site's light and dark
+mode. Blocks sit on the page's cream or black, and `blog.config.ts`
+darkens the light-mode colours that fall below WCAG AA on cream.
+Long lines scroll rather than wrap.
 
 A `file` attribute on the fence info string renders a filename label on
 the block:
@@ -150,14 +152,15 @@ flowchart LR
 ```
 ````
 
-`astro.config.ts` wires the `astro-mermaid` integration, and Shiki
-leaves the fence alone. The diagram follows the site theme toggle, in
-Mermaid's `default` and `dark` palettes rather than the site's.
+The diagram draws in the site's colours and follows the theme toggle.
+One wider than the column scrolls sideways, as a long code line does.
 
-Two limits apply:
+Three limits apply:
 
 - Mermaid runs in the browser. Without JavaScript the fence shows its
   own source as a plain block of text.
+- A diagram Mermaid can't parse shows its source too, and the build
+  doesn't catch it. Check each diagram on the page.
 - The RSS feed, the `index.md` endpoint, and `llms.txt` carry the fence
   as source text. They render the body outside the page, where no
   JavaScript runs.
