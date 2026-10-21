@@ -152,14 +152,15 @@ flowchart LR
 ```
 ````
 
-`astro.config.ts` wires the `astro-mermaid` integration, and Shiki
-leaves the fence alone. The diagram follows the site theme toggle, in
-Mermaid's `default` and `dark` palettes rather than the site's.
+The diagram draws in the site's colours and follows the theme toggle.
+One wider than the column scrolls sideways, as a long code line does.
 
-Two limits apply:
+Three limits apply:
 
 - Mermaid runs in the browser. Without JavaScript the fence shows its
   own source as a plain block of text.
+- A diagram Mermaid can't parse shows its source too, and the build
+  doesn't catch it. Check each diagram on the page.
 - The RSS feed, the `index.md` endpoint, and `llms.txt` carry the fence
   as source text. They render the body outside the page, where no
   JavaScript runs.

@@ -9,6 +9,7 @@ import { useTranslations } from "@/i18n";
 import config from "@/config";
 import "@/styles/themeImages.css";
 import "@/styles/codeMarkers.css";
+import "@/styles/diagrams.css";
 
 const t = useTranslations(Astro.currentLocale ?? config.site.lang);
 ---
@@ -29,6 +30,10 @@ const t = useTranslations(Astro.currentLocale ?? config.site.lang);
   preload={[{ subset: "latin", weight: 400, style: "normal" }]}
 />
 <Font cssVariable="--font-brand" preload />
+
+<script>
+  import "@/utils/mermaidDiagrams";
+</script>
 
 {PUBLIC_WEBMENTION_IO_USERNAME && (
   <>

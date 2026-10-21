@@ -11,8 +11,8 @@ import {
 } from "@shikijs/transformers";
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import config from "./astro-paper.config";
-import mermaid from "astro-mermaid";
 import { remarkPlugins } from "./src/utils/markdownPlugins";
+import remarkMermaid from "./src/utils/remarkMermaid";
 import rehypeThemeImages from "./src/utils/rehypeThemeImages";
 import {
   bodyFont,
@@ -27,8 +27,6 @@ export default defineConfig({
   redirects,
   integrations: [
     mdx(),
-    // Logging defaults on, chattering to the console on every page load.
-    mermaid({ enableLog: false }),
     sitemap({
       filter: page =>
         config.features?.showArchives !== false || !page.endsWith("/archives/"),
@@ -43,8 +41,9 @@ export default defineConfig({
   },
   markdown: {
     processor: unified({
-      // Shared with the RSS renderer, so feed and page match.
-      remarkPlugins,
+      // Shared with the RSS renderer, so feed and page match. Diagrams
+      // render only on the page; the feed carries their source.
+      remarkPlugins: [...remarkPlugins, remarkMermaid],
       rehypePlugins: [rehypeCallouts, rehypeThemeImages],
     }),
     shikiConfig: {

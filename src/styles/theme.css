@@ -15,8 +15,9 @@
   --font-wordmark: var(--font-brand);
 }
 
-/* The OG card's primaries, the same in both themes. */
+/* The OG card's colours, the same in both themes. */
 :root {
+  --black: #0a0a0a;
   --red: #d5232a;
   --blue: #1e4fa1;
   --yellow: #f1c232;
@@ -33,6 +34,7 @@
   --muted-foreground: #6b7280;
   --border: #0a0a0a;
   --code-highlight: color-mix(in srgb, var(--yellow) 32%, transparent);
+  --diagram-weight: 400;
 }
 
 /* Dark theme values */
@@ -46,4 +48,6 @@
   --border: #f4efe6;
   /* Any stronger and GitHub's dark comment grey drops below 4.5:1. */
   --code-highlight: color-mix(in srgb, var(--yellow) 18%, transparent);
+  /* Light text on black reads thinner than dark text on cream. */
+  --diagram-weight: 500;
 }
