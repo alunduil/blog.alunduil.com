@@ -46,10 +46,8 @@ scripting your own.
   consumers.
   Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
   `.prettierignore`); markdown and YAML stay with their dedicated
-  linters. The whole suite runs in CI via the `Lint and format` job in
-  `ci.yml`, which installs Node/pnpm for the ESLint/Prettier hooks and
-  lychee via `scripts/install-lychee.sh`. Excluded file types (no
-  checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
+  linters. The whole suite runs in CI as the `Run pre-commit hooks` job
+  in `ci.yml`. Excluded file types (no checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
 - Clear a Vale false positive by rewording the sentence. The headers of
   `accept.txt` and `.vale.ini` state when to add a word or turn a rule off.
 - Link checking runs in two tiers, both configured by `lychee.toml`. The
