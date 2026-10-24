@@ -1,0 +1,18 @@
+---
+import { COLORS } from "@/utils/og-templates/mondrian";
+
+// The favicon's composition, with the frame and the neutral block drawn in
+// theme colours so the lines invert in dark mode.
+---
+
+<svg
+  aria-hidden="true"
+  viewBox="0 0 32 32"
+  class="size-6 shrink-0 sm:size-7"
+>
+  <rect width="32" height="32" class="fill-border"></rect>
+  <rect x="2" y="2" width="8" height="8" fill={COLORS.red}></rect>
+  <rect x="2" y="13" width="8" height="17" fill={COLORS.blue}></rect>
+  <rect x="13" y="2" width="17" height="20" fill={COLORS.yellow}></rect>
+  <rect x="13" y="25" width="17" height="5" class="fill-background"></rect>
+</svg>
