@@ -23,6 +23,7 @@ Kickstarter
 Dockerfile
 pnpm
 toolchain
+ruleset
 direnv
 Nikola
 Bacula
