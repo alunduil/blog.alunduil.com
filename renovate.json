@@ -1,34 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:best-practices",
-    "security:openssf-scorecard",
-    "customManagers:githubActionsVersions"
-  ],
-  "timezone": "Europe/London",
-  "reviewers": ["alunduil"],
-  "labels": ["dependencies"],
-  "pre-commit": {
-    "enabled": true
-  },
-  "minimumReleaseAge": "3 days",
-  "osvVulnerabilityAlerts": true,
-  "packageRules": [
-    {
-      "description": "These update types carry no release timestamp, so timestamp-required behaviour stalls them behind a stability check that never clears.",
-      "matchUpdateTypes": [
-        "pin",
-        "pinDigest",
-        "digest",
-        "lockFileMaintenance",
-        "lockfileUpdate",
-        "rollback",
-        "bump",
-        "replacement"
-      ],
-      "minimumReleaseAge": null
-    }
-  ],
+  "extends": ["github>alunduil/renovate-config"],
   "customManagers": [
     {
       "description": "Read `# renovate:` annotations above shell `*_VERSION=` pins so a new pin needs an annotation rather than a manager of its own.",

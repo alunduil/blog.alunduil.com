@@ -36,7 +36,7 @@ jobs:
           days-before-pr-close: 14
           # Closing a Renovate pull request tells Renovate the version is
           # unwanted and it will not re-offer it. Renovate labels nothing by
-          # default; renovate.json applies this label.
+          # default; the alunduil/renovate-config preset applies this label.
           exempt-pr-labels: dependencies
           stale-pr-message: >-
             This has been quiet for 30 days, so it's picked up a stale label. A
