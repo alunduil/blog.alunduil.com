@@ -81,7 +81,8 @@ repos:
         files: ^(src/content/notes/.*\.md|src/utils/(notes|feedMarkdown|markdownPlugins)\.ts)$
 
   # A malformed renovate.json fails silently: Renovate surfaces it as a
-  # Repository Problem on its next run, never in CI.
+  # Repository Problem on its next run, never in CI. The validator does not
+  # fetch remote presets, so a missing or broken `extends` target passes.
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 44.181.5
     hooks:
