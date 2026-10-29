@@ -50,4 +50,5 @@
 !/src/utils/og-templates/
 !/src/utils/rehypeThemeImages.ts
 !/src/styles/themeImages.css
+!/src/styles/*.test.ts
 !/src/utils/postBody.ts
