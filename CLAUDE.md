@@ -211,8 +211,9 @@ authoritative description. The writing pipeline:
 
 Utilities:
 
-- `digest` — cluster a window of GitHub, Readwise, and Reader activity,
-  plus a Notion Media Log check-in, into post kernels.
+- `digest` — cluster a window of GitHub, Readwise, Reader, and Todoist
+  activity, plus a check-in on the Readwise Books shelves and the Notion
+  Media Log's games, into post kernels.
   `/digest [Nd|Nw|Nm|Ny]` (default `7d`).
 - `tag-suggest` — propose frontmatter tags for a draft; applies only
   after confirmation. `/tag-suggest <path>`.
