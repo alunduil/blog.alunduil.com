@@ -1,11 +1,11 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, and Reader archives, plus an interactive Notion Media Log check-in (asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the status changes) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone lookback and milestone-system findings; the only side effects are Media Log status updates and milestone key-result scores you confirm, and idea or milestone-system issues on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, Reader archives, and Todoist completions and upcoming tasks, plus an interactive check-in on books (Readwise Books) and games (Notion Media Log) that asks what you're currently reading/playing, infers completions from whatever dropped off the active list, and records the changes — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone lookback and milestone-system findings; the only side effects are book shelf and game status updates and milestone key-result scores you confirm, plus idea or milestone-system issues and Todoist tasks on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
 
-Pipeline: **collect → analyze data (incl. Media Log check-in, milestone scoring, and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The Media Log check-in and milestone scoring are the interactive, write-back steps — everything else is read-only.
+Pipeline: **collect → analyze data (incl. reading and playing check-in, milestone scoring, and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The check-in and milestone scoring are the interactive write-back steps, and §5 writes Todoist tasks on request. Everything else is read-only.
 
 **Hard gate: the interactive steps block synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Ask the review question (§2 step 5) and send the milestone scoring proposals (§2) the same way. Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
@@ -50,37 +50,52 @@ JSON shape:
 
 ## 2. Analyze data (Claude pre-synthesis)
 
-Fetch Readwise + Reader for the same window via MCP (using `window.since`, append `T00:00:00Z`), then run the Media Log check-in:
+Fetch Readwise, Reader, and Todoist for the same window via MCP (using `window.since`, append `T00:00:00Z`), then run the reading and playing check-in:
 
 - `readwise_list_highlights` — `highlighted_at_gt=<since>T00:00:00Z`, `page_size=100`, `response_fields=["text","note","url","highlighted_at","book_title","book_author"]`.
 - `reader_list_documents` — `location="archive"`, `updated_after=<since>T00:00:00Z`, `limit=100`, `response_fields=["title","author","source","url","last_moved_at","saved_at","category","first_opened_at"]`. **Omit the category filter** — Reader's save/dismiss flow already filters at feed-time, so archive = engaged-with.
+- Todoist completions — `user-info` for the author's `userId` and timezone, then `find-activity` with `objectType="task"`, `eventType="completed"`, `initiatorId=<userId>`, `dateFrom=<since>T00:00:00Z`, `dateTo=<window.now>`, `limit=100`, paging on `cursor`.
+- Todoist plans — `find-tasks-by-date` with `startDate="today"`, `daysCount=14`, `limit=100`: overdue and upcoming tasks. Planning context for themes, never a kernel by itself.
 
-**Notion Media Log check-in** — two trackers; the digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves any other columns the author keeps (Playing carries `Platform`, hours, `% Done`, etc.) untouched:
+**Reading and playing check-in** — derive completions from one "what's active now?" answer per source. Every known-active title absent from the answer is a **drop**, and resolves to one of three dispositions: finished, abandoned, or **hiatus** — a title the author put down to resume later.
 
-- Reading (books): `collection://886930b5-cd2e-4528-afe3-0bb6eb1bb8e1`
-- Playing (games): `collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`
+**Books — Readwise Books (`books_*` tools).** The digest writes only `status`, `started_reading_at`, and `finished_reading_at`, and leaves rating, review, and page counts to the author.
 
-Derive completions from one "what's active now?" answer per source. A drop resolves to one of three dispositions: finished, abandoned, or **hiatus** — a title the author put down to resume later, which stays Active. Confirm each drop's disposition before writing. Before synthesis:
+- *Known-active*: `books_list_books` `status="currently_reading"`.
+- *On hiatus*: `want_to_read` books with a `started_reading_at`, a non-null `progress`, or sessions. The rest of `want_to_read` is unstarted.
+- *Settled*: shelf moves the author made in the Readwise app during the window. Read them with `books_list_books` `order="updated"`, `updated_after=<since>T00:00:00Z`, keeping books whose `status_changed_at` falls in the window. Report them; don't ask about them.
+- Writes, in one `books_update_books` call; check each item's result `status`:
+  - **finished** → `status="finished"`, `finished_reading_at` = the day the author names, else the check-in time.
+  - **abandoned** → `status="did_not_finish"`.
+  - **hiatus** → `status="want_to_read"`, keeping `started_reading_at` and progress, which mark it as on hiatus.
+  - **resumed** from hiatus → `status="currently_reading"`.
+  - **newly started** → find it with `books_list_books` (ISBN or ASIN when known, else scan by title) → `status="currently_reading"` with `started_reading_at`; when the library lacks it, `books_create_books` with `status="currently_reading"`, identifying the book by `isbn` first, then `asin`, then `title` with `author`.
 
-1. **Read current Active** (best-effort): per source, `notion-search` `data_source_url=<collection>` (`query` a domain term like `"book"`/`"video game"`), `notion-fetch` the hits, keep `Status = Active` → the *known-active* set. This read can't filter on `Status` server-side, so recall is best-effort — a row it misses just won't be offered this run (stays Active until it surfaces). Self-healing gap.
-2. **Prompt and stop** (one question per source, free-form): show the known-active titles and ask "what are you actually engaged with right now — and did you finish, abandon, or set aside for later any of the rest?" These two questions are the *entire* message — no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
-3. **Classify drops, then write back** (`notion-update-page`, `command="update_properties"`). Every known-active title absent from the answer is a **drop** — but a "currently reading/playing" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert):
-   - **finished** → `"Status":"Finished"` (no date — Status is the whole record).
-   - **abandoned** → `"Status":"Abandoned"`.
-   - **hiatus** (put down, will resume) → **leave Active, no write.**
-   - answer item **not** in known-active → **newly started**: `notion-search` the source by exact title (precise even in a large table) → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
-   - in both → unchanged.
-4. Show the derived diff (finished / abandoned / hiatus-unchanged / started / unchanged) and confirm in one line before moving on.
-5. **Run `review-draft`'s gate while the work is fresh.** If anything was marked Finished, send one more message listing those titles and asking `review-draft` §1's question for each; for a magazine or anthology issue, ask which story carries it. Wait for the reply and apply §1's go/no-go.
+**Games — Notion Playing tracker (`collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`).** The digest touches **only** `Title` + `Status` (one of `Active` / `Finished` / `Abandoned`) and leaves the other columns (`Platform`, hours, `% Done`, etc.) untouched.
 
-A **Finished** item that passes the gate is a **completion** kernel for synthesis (review, almost always `[short]` — see §4); its answer goes verbatim into the idea issue's Spark. One that fails stays a Media Log entry. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+- *Known-active* (best-effort): `notion-search` `data_source_url=<collection>` (`query` `"video game"`), `notion-fetch` the hits, keep `Status = Active`. This read can't filter on `Status` server-side, so a row it misses won't be offered this run and stays Active until it surfaces.
+- Writes (`notion-update-page`, `command="update_properties"`):
+  - **finished** → `"Status":"Finished"`.
+  - **abandoned** → `"Status":"Abandoned"`.
+  - **hiatus** → leave Active, no write.
+  - **newly started** → `notion-search` by exact title → flip an existing row to `"Status":"Active"`, or `notion-create-pages` under the `data_source_id` if none exists.
 
-If a source's MCP is unavailable, note which (e.g. "Notion Media Log unavailable — skipped check-in") and continue with the rest.
+Before synthesis:
+
+1. **Read** each source's known-active set, plus the books on hiatus and the settled books.
+2. **Prompt and stop** (one question per source, free-form): show the known-active titles and ask "what are you actually engaged with right now — and did you finish, abandon, or set aside for later any of the rest?" For books, also list the books on hiatus and ask whether any resumed. These two questions are the *entire* message — no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
+3. **Classify, then write back.** A "currently reading/playing" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert). An answer title outside the known-active set is **newly started**; a title in both is unchanged. Apply the source's writes.
+4. Show the derived diff (finished / abandoned / hiatus / resumed / started / unchanged, plus the settled books) and confirm in one line before moving on.
+5. **Run `review-draft`'s gate while the work is fresh.** If anything finished — in this check-in or among the settled books — send one more message listing those titles and asking `review-draft` §1's question for each; for a magazine or anthology issue, ask which story carries it. Wait for the reply and apply §1's go/no-go.
+
+A **finished** item that passes the gate is a **completion** kernel for synthesis (review, almost always `[short]` — see §4); its answer goes verbatim into the idea issue's Spark. One that fails stays a shelf or Media Log entry. **Abandoned** items are just recorded — a did-not-finish can still seed commentary, but only if the author calls it out. Still-active and newly-started items are light "currently reading/playing" context that colors adjacent themes (e.g. a game whose mechanics echo a work post).
+
+If a source's MCP is unavailable, note which (e.g. "Readwise Books unavailable — skipped the book check-in") and continue with the rest.
 
 Mechanical patterns to extract before synthesis:
 
 - **Cross-source links**: archived Reader docs whose `url` matches a Readwise highlight → tag `has_highlights = true`. A highlight is a stronger engagement signal than archive alone.
-- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus Media Log items marked `Finished` in this run's check-in. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
+- **Completion arcs**: issues that appear in both `issues_opened` and `issues_closed` within the window, plus books and games finished in this run's check-in, plus Todoist tasks completed in the window that close out work the other sources show. Narrative-ready ("started and finished this week"; "finished this book/game — worth a review").
 - **Cross-project signals**: use `repos[].days_active` to spot repos with simultaneous activity bursts. Same kind of work hitting multiple repos on the same days is often a single underlying decision worth surfacing.
 - **Truncation**: if `window.truncated` is non-empty (excluding `commits`-only — PR dedup destroys most raw items so commits-only truncation is usually noise), surface as a warning above the themed clusters.
 
@@ -125,7 +140,7 @@ Direct-to-trunk commits and merged PRs are equivalent for clustering and ranking
 
 Score each theme by signal-of-engagement-with-the-topic, present themes in descending score. Engagement is at the topic layer, not the item layer:
 
-- **Source breadth**: how many of {commits, PRs, issues_opened, issues_closed, comments, highlights, archives} contribute. Theme spanning 4+ sources beats theme drawn from one.
+- **Source breadth**: how many of {commits, PRs, issues_opened, issues_closed, comments, highlights, archives, Todoist completions} contribute. Upcoming Todoist tasks don't count toward breadth; note them on the theme as already planned. Theme spanning 4+ sources beats theme drawn from one.
 - **Cross-source resonance**: theme has both a GitHub item AND a Readwise highlight on the same topic. External validation. Heavy weight.
 - **Completion arc presence**: theme contains an opened+closed issue, a merged PR-with-explicit-Closes, an objective arc, or a finished book/game. Narrative-ready, easier to write.
 - **Time span**: spans the whole window > single-day burst (sustained interest > momentary distraction).
@@ -162,6 +177,7 @@ Wait for the author's call on each theme:
      - **The source hasn't written it.** When the theme leans on a highlight or article, the kernel must add lived material the source lacks.
   3. File via `gh issue create --label idea --title "<outcome>"`, passing `--body` directly with Spark / Why interesting / Open questions / Source material filled from conversation. The idea template auto-applies its labels; pass `--body` alone (gh rejects it alongside `--template`).
 - "file milestone finding X" (one or many) → for each: an open match in `alunduil/alunduil-chezmoi` gets the new evidence as a comment; otherwise file there with `gh issue create --repo alunduil/alunduil-chezmoi --title "<outcome>"` and a body stating the observation, the evidence from this run, and the window. List proposed changes as open questions.
+- "add task X" (one or many, e.g. drafting a filed idea or a review that passed the gate) → propose each task's `content`, project (default `"inbox"`), and due date, link the idea issue in `description`, and create them with one `add-tasks` call after the author confirms.
 - Anything else (silence, "let me think", "re-run") → drop it; next digest will rediscover anything still relevant.
 
 Skipped ≥2 weeks? Pass an explicit cadence (`/digest 3w`) — the default is 7d.
