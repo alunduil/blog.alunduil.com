@@ -27,7 +27,7 @@ jobs:
         with:
           install_args: node pnpm lychee
       - run: pnpm install --frozen-lockfile
-      - uses: tox-dev/action-pre-commit-uv@4de52c139ed1a6963bcc4c30042c4ef9d75d8b11 # v1.1.0
+      - uses: tox-dev/action-pre-commit-uv@ae5b217f46f65d48b20a76b902d7950c745171af # v1.1.1
 
   bats:
     name: Test skill scripts
