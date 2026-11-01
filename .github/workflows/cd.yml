@@ -12,6 +12,11 @@ on:
     - cron: "50 7 * * *"
       timezone: "Europe/London"
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      dry-run:
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -38,24 +43,35 @@ jobs:
       actions: write
     env:
       STUCK_AFTER: 30 minutes
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
     steps:
-      - name: Cancel CD runs waiting over ${{ env.STUCK_AFTER }}
+      - id: stuck
+        name: Find CD runs waiting over ${{ env.STUCK_AFTER }}
         env:
-          GH_TOKEN: ${{ github.token }}
-          GH_REPO: ${{ github.repository }}
-          WORKFLOW: ${{ github.workflow }}
+          # A called workflow's github.workflow is the caller's name.
+          WORKFLOW: cd.yml
         run: |
           cutoff=$(date -u -d "$STUCK_AFTER ago" +%Y-%m-%dT%H:%M:%SZ)
-          gh run list --workflow "$WORKFLOW" --status waiting \
-            --created "<$cutoff" --json databaseId --jq '.[].databaseId' |
-            while read -r id; do
-              echo "::warning::Cancelling CD run $id, waiting since before $cutoff"
-              gh run cancel "$id"
-            done
+          ids=$(gh run list --workflow "$WORKFLOW" --status waiting \
+            --created "<$cutoff" --json databaseId --jq '.[].databaseId')
+          for id in $ids; do
+            echo "::warning::CD run $id has waited since before $cutoff"
+          done
+          echo "ids=${ids//$'\n'/ }" >>"${GITHUB_OUTPUT}"
+      - name: Cancel them
+        if: ${{ !inputs.dry-run && steps.stuck.outputs.ids != '' }}
+        env:
+          IDS: ${{ steps.stuck.outputs.ids }}
+        run: |
+          for id in $IDS; do
+            gh run cancel "$id"
+          done
 
   publish:
     name: Deploy to GitHub Pages
     needs: build
+    if: ${{ !inputs.dry-run }}
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
