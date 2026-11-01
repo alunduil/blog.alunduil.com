@@ -81,3 +81,86 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/dependency-review-action@a1d282b36b6f3519aa1f3fc636f609c47dddb294 # v5.0.0
+
+  # Dry runs execute every workflow outside CI, so a runner image or action
+  # update that breaks one fails before merge. The writes a dry run skips
+  # first execute after merge, so a broken write fails that workflow's next
+  # run on main.
+  workflow-changes:
+    name: Detect workflow changes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      pull-requests: read
+    outputs:
+      changed: ${{ steps.files.outputs.changed }}
+    steps:
+      - id: files
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          files=$(gh api --paginate "repos/$REPO/pulls/$NUMBER/files" \
+            --jq '.[].filename | select(test("^\\.github/(workflows|actions)/"))')
+          echo "changed=$([[ -n $files ]] && echo true || echo false)" >>"${GITHUB_OUTPUT}"
+
+  # A called workflow can't exceed its caller's grant, even in jobs the dry run
+  # skips.
+  dry-run-cd:
+    name: Dry-run CD
+    needs: workflow-changes
+    if: needs.workflow-changes.outputs.changed == 'true'
+    uses: ./.github/workflows/cd.yml
+    permissions:
+      contents: read
+      actions: write
+      pages: write
+      id-token: write
+
+  dry-run-daily:
+    name: Dry-run Daily
+    needs: workflow-changes
+    if: needs.workflow-changes.outputs.changed == 'true'
+    uses: ./.github/workflows/daily.yml
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
+  dry-run-weekly:
+    name: Dry-run Weekly
+    needs: workflow-changes
+    if: needs.workflow-changes.outputs.changed == 'true'
+    uses: ./.github/workflows/weekly.yml
+    permissions:
+      contents: read
+      issues: write
+
+  dry-run-issues:
+    name: Dry-run Issues
+    needs: workflow-changes
+    if: needs.workflow-changes.outputs.changed == 'true'
+    uses: ./.github/workflows/issues.yml
+    permissions:
+      issues: write
+
+  # alunduil/alunduil-infrastructure requires this job by name, so renaming it
+  # breaks the merge gate.
+  dry-run-results:
+    name: Check workflow dry runs
+    needs:
+      - workflow-changes
+      - dry-run-cd
+      - dry-run-daily
+      - dry-run-weekly
+      - dry-run-issues
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Fail when any dry run failed or was cancelled
+        if: >-
+          contains(needs.*.result, 'failure')
+          || contains(needs.*.result, 'cancelled')
+        run: exit 1
