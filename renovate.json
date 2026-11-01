@@ -1,14 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["github>alunduil/renovate-config"],
-  "customManagers": [
+  "packageRules": [
     {
-      "description": "Read `# renovate:` annotations above shell `*_VERSION=` pins so a new pin needs an annotation rather than a manager of its own.",
-      "customType": "regex",
-      "managerFilePatterns": ["scripts/*"],
-      "matchStrings": [
-        "# renovate: datasource=(?<datasource>[a-zA-Z0-9-._]+?) depName=(?<depName>[^\\s]+?)(?: packageName=(?<packageName>[^\\s]+?))?(?: versioning=(?<versioning>[^\\s]+?))?(?: extractVersion=(?<extractVersion>[^\\s]+?))?\\s+[A-Za-z0-9_]+?_VERSION=\"(?<currentValue>.+?)\""
-      ]
+      "description": "Bump pnpm in mise.toml and package.json's packageManager together so the pnpm mise installs matches the version pnpm switches to.",
+      "matchPackageNames": ["pnpm"],
+      "groupName": "pnpm"
     }
   ]
 }

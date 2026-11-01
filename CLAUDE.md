@@ -17,13 +17,15 @@ host memory only reinforces what the repo already carries.
 This repo already wires the tooling below; consult it before adding or
 scripting your own.
 
-- Package manager: pnpm, pinned once in `package.json`'s `packageManager`
-  field — Renovate tracks it there, and withastro/action reads it after
-  auto-detecting `pnpm-lock.yaml`. `pnpm-workspace.yaml` holds workspace
-  config.
-- Node: pinned once in `.node-version`, which Renovate tracks. Workflows
-  read it through `setup-node`'s `node-version-file` or by building with
-  `.github/actions/build-site`.
+- Tool versions: `mise.toml` pins Node, pnpm, lychee, and bats, and
+  `mise.lock` holds their checksums. `mise install` gives a checkout the
+  versions CI runs. Workflows install through `jdx/mise-action`. Add a new
+  pinned CLI to `mise.toml` from mise's `core` or `aqua` backends; Renovate
+  tracks both files.
+- Package manager: pnpm. `package.json`'s `packageManager` repeats the
+  `mise.toml` pin, because pnpm switches to that version and withastro/action
+  reads it. A `renovate.json` group bumps both in one PR.
+  `pnpm-workspace.yaml` holds workspace config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).
