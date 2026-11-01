@@ -8,4 +8,4 @@ lychee = "0.24.2"
 node = "24.22.2"
 # Keep equal to package.json's packageManager, which pnpm and withastro/action
 # read.
-pnpm = "12.15.0"
+pnpm = "12.16.1"
