@@ -7,14 +7,20 @@ on:
     - cron: '0 7 * * 3'
       timezone: Europe/London
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      dry-run:
+        type: boolean
+        default: true
 
 permissions:
   contents: read
 
 concurrency:
   # Ref-less so a manual dispatch and the schedule can't race on the shared
-  # report issue.
-  group: ${{ github.workflow }}
+  # report issue. A dry run never writes the issue, so it takes its own group
+  # per ref.
+  group: ${{ inputs.dry-run && format('weekly-{0}', github.ref) || github.workflow }}
   cancel-in-progress: true
 
 jobs:
@@ -93,7 +99,7 @@ jobs:
           } >>"${GITHUB_OUTPUT}"
 
       - name: Open or update issue on broken links
-        if: steps.report.outputs.broken == 'true'
+        if: steps.report.outputs.broken == 'true' && !inputs.dry-run
         uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
         with:
           title: ${{ env.REPORT_TITLE }}

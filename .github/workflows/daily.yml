@@ -6,14 +6,20 @@ on:
     - cron: '47 6 * * *'
       timezone: Europe/London
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      dry-run:
+        type: boolean
+        default: true
 
 permissions:
   contents: read
 
 concurrency:
   # No cancel-in-progress: a truncated sweep loses the operations-per-run
-  # resume cache and restarts from the first pull request.
-  group: ${{ github.workflow }}
+  # resume cache and restarts from the first pull request. A dry run takes
+  # its own group per ref so it never displaces a queued live sweep.
+  group: ${{ inputs.dry-run && format('daily-{0}', github.ref) || github.workflow }}
 
 jobs:
   stale-pull-requests:
@@ -30,6 +36,7 @@ jobs:
       # eligible for closing.
       - uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11
         with:
+          debug-only: ${{ inputs.dry-run || false }}
           days-before-issue-stale: -1
           days-before-issue-close: -1
           days-before-pr-stale: 30

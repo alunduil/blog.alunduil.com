@@ -1,0 +1,55 @@
+name: Workflows
+
+# Runs every workflow outside CI as a dry run, so a runner image or action
+# update executes before merge.
+#
+# Dry runs skip these writes, so they first run after merge:
+# - cd.yml: actions/deploy-pages and `gh run cancel`
+# - weekly.yml: peter-evans/create-issue-from-file
+# - issues.yml: `gh issue edit`
+# A failure in any of them fails that workflow's next run on main.
+on:
+  pull_request:
+    paths:
+      - .github/workflows/**
+      - .github/actions/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+# A called workflow can't exceed its caller's grant, even in jobs the dry run
+# skips.
+jobs:
+  cd:
+    name: Dry-run CD
+    uses: ./.github/workflows/cd.yml
+    permissions:
+      contents: read
+      actions: write
+      pages: write
+      id-token: write
+
+  daily:
+    name: Dry-run Daily
+    uses: ./.github/workflows/daily.yml
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: write
+
+  weekly:
+    name: Dry-run Weekly
+    uses: ./.github/workflows/weekly.yml
+    permissions:
+      contents: read
+      issues: write
+
+  issues:
+    name: Dry-run Issues
+    uses: ./.github/workflows/issues.yml
+    permissions:
+      issues: write
