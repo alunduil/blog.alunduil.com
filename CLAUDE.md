@@ -24,8 +24,8 @@ scripting your own.
   tracks both files.
 - Package manager: pnpm. `package.json`'s `packageManager` repeats the
   `mise.toml` pin, because pnpm switches to that version and withastro/action
-  reads it. Change both together. `pnpm-workspace.yaml` holds workspace
-  config.
+  reads it. A `renovate.json` group bumps both in one PR.
+  `pnpm-workspace.yaml` holds workspace config.
 - Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
   `astro check` and pagefind). AstroPaper theme — treat as upstream
   (see below).
