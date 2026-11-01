@@ -3,7 +3,7 @@
 # No hook should touch them.
 exclude: ^\.vale/styles/
 
-# nodeenv reads .node-version, whose bare major version it cannot download.
+# Node hooks run on the mise-pinned Node, not a nodeenv download.
 default_language_version:
   node: system
 

@@ -4,10 +4,14 @@ description: Build the Astro site into dist/.
 runs:
   using: composite
   steps:
-    # withastro/action has no node-version-file input.
+    # withastro/action installs Node itself and takes no version file, so mise
+    # only reads the pin.
+    - uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+      with:
+        install: false
     - id: node
       shell: bash
-      run: echo "version=$(<.node-version)" >>"${GITHUB_OUTPUT}"
+      run: echo "version=$(mise current node)" >>"${GITHUB_OUTPUT}"
     - uses: withastro/action@a8b97df764791eb61fbf3338ef713b0e61ae05c5 # v6
       env:
         # Every page publishes this in its rel="webmention" link, so it

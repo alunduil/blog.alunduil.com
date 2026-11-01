@@ -1,0 +1,11 @@
+[settings]
+locked = true
+lockfile_platforms = ["linux-x64"]
+
+[tools]
+bats = "1.14.0"
+lychee = "0.24.2"
+node = "24.22.2"
+# Keep equal to package.json's packageManager, which pnpm and withastro/action
+# read.
+pnpm = "12.15.0"
