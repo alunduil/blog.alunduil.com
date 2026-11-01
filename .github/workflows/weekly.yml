@@ -52,27 +52,35 @@ jobs:
           key: lychee-cache-${{ hashFiles('lychee.toml', '**/*.md') }}
           restore-keys: lychee-cache-
 
+      - uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+        with:
+          install_args: lychee
+
       # --root-dir must be absolute. Each page's canonical tag is an absolute
       # URL, so this exercises the live deploy on the way past.
       - name: Check the built site
         id: site
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        with:
-          args: '--no-progress --root-dir ${{ github.workspace }}/dist dist'
-          output: ./lychee/site.md
-          fail: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p lychee
+          exit_code=0
+          lychee --no-progress --format markdown --output ./lychee/site.md \
+            --root-dir "${GITHUB_WORKSPACE}/dist" dist || exit_code=$?
+          echo "exit_code=${exit_code}" >>"${GITHUB_OUTPUT}"
 
       # Repo docs never reach dist/, so nothing above sees their links. Post
       # sources are skipped: the built pages already cover them.
       - name: Check the repo docs
         id: docs
-        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
-        with:
-          args: '--no-progress --exclude-path (^|/)(src/content/posts|dist)/ .'
-          output: ./lychee/docs.md
-          fail: false
-          token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p lychee
+          exit_code=0
+          lychee --no-progress --format markdown --output ./lychee/docs.md \
+            --exclude-path '(^|/)(src/content/posts|dist)/' . || exit_code=$?
+          echo "exit_code=${exit_code}" >>"${GITHUB_OUTPUT}"
 
       # A scan added above needs its exit code in this condition, and nowhere
       # else.
