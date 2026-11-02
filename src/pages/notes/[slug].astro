@@ -25,12 +25,16 @@ const { Content } = await render(note);
 
 // The body is the note, so it doubles as the description.
 const description = plainText(await renderNoteBody(note));
+
+// Notes syndicate as text, and dlvr.it attaches any og:image it finds.
+const ogImage = false;
 ---
 
 <PostLayout
   title={`${title} | ${config.site.title}`}
   {description}
   {pubDatetime}
+  {ogImage}
 >
   <Header />
 
