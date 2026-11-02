@@ -50,6 +50,9 @@ source line.
 3. Set Image selection order to Open Graph tags first, which picks the
    entry's social image over the first image in its body.
 
+A note goes out as text alone. dlvr.it attaches a page's `og:image`
+under any image setting, so note pages leave it out.
+
 ## Limit the first sync
 
 Whenever you add a feed, cap how many existing items post before the

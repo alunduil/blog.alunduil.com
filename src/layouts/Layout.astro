@@ -10,7 +10,8 @@ import "@/styles/global.css";
 type Props = {
   title?: string;
   description?: string;
-  ogImage?: string;
+  /** `false` omits the social image. */
+  ogImage?: string | false;
   canonicalURL?: string;
 };
 
@@ -23,7 +24,7 @@ const {
   canonicalURL = new URL(Astro.url.pathname, Astro.site).href,
 } = Astro.props;
 
-const socialImageURL = new URL(ogImage, Astro.site ?? Astro.url);
+const socialImageURL = ogImage && new URL(ogImage, Astro.site ?? Astro.url);
 const rssHref = getRelativeLocaleUrl(
   Astro.currentLocale ?? config.site.lang,
   "rss.xml"
@@ -58,14 +59,21 @@ const rssHref = getRelativeLocaleUrl(
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={socialImageURL} />
+    {socialImageURL && <meta property="og:image" content={socialImageURL} />}
 
     <!-- Twitter / X -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:card"
+      content={socialImageURL ? "summary_large_image" : "summary"}
+    />
     <meta property="twitter:url" content={canonicalURL} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={socialImageURL} />
+    {
+      socialImageURL && (
+        <meta property="twitter:image" content={socialImageURL} />
+      )
+    }
 
     <!-- RSS autodiscovery -->
     <link
