@@ -1,6 +1,6 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, Reader archives, and Todoist completions and upcoming tasks, plus an interactive check-in on books (Readwise Books: what you're reading, with completions inferred from whatever dropped off the active list) and games (Notion Media Log: which Finished games were recent) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone review (scores, month-end closes, velocity) and milestone-system findings; the only side effects are book shelf and game row updates, and milestone scores and closes you confirm, plus idea or milestone-system issues and Todoist tasks on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, Reader archives, and Todoist completions and upcoming tasks, plus an interactive check-in on books (Readwise Books: what you're reading, with completions inferred from whatever dropped off the active list) and games (Notion Media Log: recent Finished games, and dates for undated ones) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone review (scores, month-end closes, velocity) and milestone-system findings; the only side effects are book shelf and game row updates, and milestone scores and closes you confirm, plus idea or milestone-system issues and Todoist tasks on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
@@ -73,20 +73,22 @@ Fetch Readwise, Reader, and Todoist for the same window via MCP (using `window.s
   - **resumed** from hiatus → `status="currently_reading"`.
   - **newly started** → find it with `books_list_books` (ISBN or ASIN when known, else scan by title) → `status="currently_reading"` with `started_reading_at`; when the library lacks it, `books_create_books` with `status="currently_reading"`, identifying the book by `isbn` first, then `asin`, then `title` with `author`.
 
-**Games — Notion Playing tracker (`collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`).** The author keeps `Status` current, so the digest reads the Finished rows and asks only which of them finished recently. The tracker has no finish date to filter on.
+**Games — Notion Playing tracker (`collection://a37ceaff-e104-4298-b117-aa6ca386a0e6`).**
 
-- *Finished*: `notion-query-data-sources` in SQL mode: `SELECT "Title", "Platform", createdTime FROM "<collection>" WHERE "Status" = 'Finished' ORDER BY createdTime DESC`.
-- The one write: a game the author names as newly started with no row (`"Title" LIKE` the name finds none) → `notion-create-pages` under the `data_source_id` with `Title` and `"Status":"Active"` only.
+- *Finished rows*: one `notion-query-data-sources` call in SQL mode: `SELECT "Title", "date:Finished:start" FROM "<collection>" WHERE "Status" = 'Finished' AND ("date:Finished:start" >= '<since>' OR "date:Finished:start" IS NULL)`. A dated row is a *recent* finish and needs no question. An *undated* row needs the author to say whether it finished recently, and on which day.
+- Writes:
+  - An undated row the author dates → `notion-update-page` `update_properties` with `"date:Finished:start"`.
+  - A game the author names as newly started with no row (`"Title" LIKE` the name finds none) → `notion-create-pages` under the `data_source_id` with `Title` and `"Status":"Active"` only.
 
 Before synthesis:
 
-1. **Read** the books' known-active set, the books on hiatus, the settled books, and the games' Finished rows.
+1. **Read** the books' known-active set, the books on hiatus, the settled books, and the games' recent and undated Finished rows.
 2. **Prompt and stop**, with two questions:
    - Books: show the known-active titles and ask "what are you actually reading right now — and did you finish, abandon, or set aside for later any of the rest?" Also list the books on hiatus and ask whether any resumed.
-   - Games: show the Finished titles and ask which finished recently, and whether a newly started game is missing from the tracker.
+   - Games: report the recent finishes. List the undated Finished titles and ask which finished recently, and on which day. Ask whether a newly started game is missing from the tracker.
 
    These two questions are the *entire* message — no themes, no digest, nothing after them. Wait for the author's reply before doing anything else.
-3. **Classify, then write back.** A "currently reading" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert). An answer title outside the known-active set is **newly started**; a title in both is unchanged. Apply the books' writes and any new game row.
+3. **Classify, then write back.** A "currently reading" list omits hiatus titles too, so the drop set mixes finished, abandoned, and hiatus. Resolve each drop to a disposition from the author's reply; if the reply doesn't say, **ask** before writing (a wrong Finish needs a manual revert). An answer title outside the known-active set is **newly started**; a title in both is unchanged. Apply each source's writes, including the Finished dates the author gave.
 4. Show the derived diff (finished / abandoned / hiatus / resumed / started / unchanged, plus the settled books and the recent games) and confirm in one line before moving on.
 5. **Run `review-draft`'s gate while the work is fresh.** If anything finished — books in this check-in, settled books, or recent games — send one more message listing those titles and asking `review-draft` §1's question for each; for a magazine or anthology issue, ask which story carries it. Wait for the reply and apply §1's go/no-go.
 
