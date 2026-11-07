@@ -52,7 +52,7 @@
     "@typescript/native": "npm:typescript@7.0.2",
     "eslint": "10.14.0",
     "eslint-plugin-astro": "3.2.1",
-    "globals": "17.13.0",
+    "globals": "17.14.0",
     "pagefind": "1.6.0",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.2",
