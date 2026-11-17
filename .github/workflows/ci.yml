@@ -1,6 +1,6 @@
 name: CI
 
-# Every check that gates a pull request. CLAUDE.md carries the splitting and
+# Every check that gates a pull request. AGENTS.md carries the splitting and
 # naming rules. No push trigger: main takes changes only through a pull
 # request under required checks, so a push run would re-test a tree the pull
 # request already cleared.
