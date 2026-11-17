@@ -1,205 +1,28 @@
 # CLAUDE.md
 
-Repo-local guide for Claude Code on this personal blog (AstroPaper +
-GitHub Pages deploy on push to `main`).
+Claude Code reads this file instead of `AGENTS.md`, so this file imports
+it. Add a rule here only when no other agent needs it.
+
+@AGENTS.md
 
 ## Portability
 
 This repo is used from Claude Code on the web, where host-local config
 isn't present: the global `~/.claude/CLAUDE.md` and the per-project memory
 directory don't travel — only the checkout does. Keep durable conventions
-(voice, process, project rules) in the repo: `.claude/skills/`, this file,
+(voice, process, project rules) in the repo: `AGENTS.md`, `.claude/skills/`,
 or `docs/`. Skills must stand alone — state what they rely on inline, so
 host memory only reinforces what the repo already carries.
 
-## Tooling
-
-This repo already wires the tooling below; consult it before adding or
-scripting your own.
-
-- Tool versions: `mise.toml` pins Node, pnpm, lychee, and bats, and
-  `mise.lock` holds their checksums. `mise install` gives a checkout the
-  versions CI runs. Workflows install through `jdx/mise-action`. Add a new
-  pinned CLI to `mise.toml` from mise's `core` or `aqua` backends; Renovate
-  tracks both files.
-- Package manager: pnpm. `package.json`'s `packageManager` repeats the
-  `mise.toml` pin, because pnpm switches to that version and withastro/action
-  reads it. A `renovate.json` group bumps both in one PR.
-  `pnpm-workspace.yaml` holds workspace config.
-- Dev / build: `pnpm dev`, `pnpm build` (Astro; `build` also runs
-  `astro check` and pagefind). AstroPaper theme — treat as upstream
-  (see below).
-- Tests: `pnpm test` runs Vitest over `*.test.ts` files beside the module
-  they cover. Mock `astro:` virtual modules with `vi.mock`.
-- Lint / format via `pre-commit` (`.pre-commit-config.yaml`): Vale prose
-  (`.vale.ini` + `.vale/`; give each custom rule must-flag and must-pass
-  fixtures in `.vale/fixtures/blog-alunduil-com/`), markdownlint
-  (`.markdownlint-cli2.yaml`), yamllint (`.yamllint`), actionlint,
-  shellcheck/shfmt, ESLint and Prettier (`local` hooks running the
-  repo's own binaries so their plugins/configs resolve from workspace
-  deps), and baseline file hygiene, plus lychee link-checking, post scheduling
-  (`scripts/check-post-scheduling.ts`), and note length
-  (`scripts/check-note-length.ts`). `pnpm lint` / `pnpm format` /
-  `pnpm post-scheduling:check` / `pnpm note-length:check` run the same
-  tools by hand; `pre-commit install` once per clone makes `git commit`
-  run them too. Run `pnpm install` once per worktree: both content hooks
-  import workspace dependencies. Single-file repo checks live flat in `scripts/`; a
-  workspace package is for code with its own dependencies, build, and
-  consumers.
-  Prettier owns `.ts`/`.js`/`.astro`/`.css`/`.json` only (scope in
-  `.prettierignore`); markdown and YAML stay with their dedicated
-  linters. The whole suite runs in CI as the `Run pre-commit hooks` job
-  in `ci.yml`. Excluded file types (no checker): binary assets (svg/png/webp), `lychee.toml`, `.vale.ini`.
-- Clear a Vale false positive by rewording the sentence. The headers of
-  `accept.txt` and `.vale.ini` state when to add a word or turn a rule off.
-- Link checking runs in two tiers, both configured by `lychee.toml`. The
-  pre-commit hooks are `--offline`: blocking, but only on what resolves
-  without a build. `weekly.yml` builds the site, checks every link on
-  every published page plus the repo docs that never reach `dist/`,
-  blocks nothing, and reports to one rolling issue. Adding to `exclude`
-  takes a failing run plus proof from off the blocking host; the rule
-  sits with the list.
-- Custom skills under `.claude/skills/` — catalogued in the Skills
-  section below; each SKILL.md frontmatter is the authoritative
-  description.
-
-## Scope discipline
-
-Web sessions load neither the global guide nor the `issue-work` skill,
-so the repo-relevant essentials:
-
-- Keep each PR to its issue. Check scope against sibling and linked
-  issues before opening; when unsure, ask.
-- If an issue is blocked by an unshipped prerequisite, propose deferral
-  with a `blocked-by` edge and let the prerequisite land first.
-- Revert incidental out-of-scope edits before review, especially to the
-  AstroPaper upstream files listed below.
-
-## Posting convention
-
-New posts live under `src/content/posts/`; archival republishes under
-`src/content/posts/_<engine>/`; reviews in their own collection under
-`src/content/reviews/`.
-A future `pubDatetime` is the publication gate: merging the PR accepts
-the editorial work, the date defers publication.
-
-Frontmatter fields, the Tuesday (tech) / Sunday (reflective) 08:00
-cadence, timezone, locations, cover images, and tags are documented in
-`docs/reference/post-frontmatter.md`.
-
-### "How I X" series
-
-Future entries title as `How I X (YYYY)` — year-stamped titles scale as
-entries accumulate. Cadence ties to substantive change in the practice;
-the next entry is ready when reading the prior one prompts "that's not
-how I do it any more." Each entry sets `series: how-i` (see
-`docs/reference/post-frontmatter.md`).
-
 ## Voice
 
-`.claude/voice.md` is the blog's voice home — the prescriptive rules to
-apply and the descriptive fingerprint measured from the corpus. Read it
-before drafting or editing any post. Distinct from the host
-`~/.claude/voice.md`, which profiles the author's external PR/issue voice
-against a different corpus.
+`.claude/voice.md` is distinct from the host `~/.claude/voice.md`, which
+profiles the author's external PR/issue voice against a different corpus.
 
-## AstroPaper upstream
+## Force-push handoff
 
-The site is built on the [AstroPaper] theme, MIT-licensed. Treat as
-upstream — edit only when the change is the point:
-
-- `src/components/`, `src/i18n/`, `src/layouts/`, `src/pages/`,
-  `src/scripts/`, `src/styles/`, `src/types/`, `src/utils/`,
-  `src/config.ts`, `src/content.config.ts` — theme code. Prettier and the
-  end-of-file fixer skip it so upstream merges don't conflict on
-  formatting.
-
-The theme's sample posts (tutorials, release notes, example drafts) are
-gone; `src/content/posts/` is all author content. What they documented about
-post bodies lives in `docs/reference/post-body.md`.
-
-Customized and free to edit: `astro-paper.config.ts` (site settings),
-`src/styles/theme.css` (palette), new posts in `src/content/posts/`.
-
-Build a customization in a blog-owned file and hook it into the upstream
-file with as few lines as possible: Astro config additions in
-`blog.config.ts`, head tags in `src/components/BlogHead.astro`, logic in its
-own module under `src/utils/`. Small hooks keep upstream merges routine.
-
-Upstream fixes arrive by merging the `astro-paper` remote, not through
-Renovate — see [Adopt AstroPaper upstream
-changes](docs/how-to/adopt-astropaper-upstream-changes.md).
-
-[AstroPaper]: https://github.com/satnaing/astro-paper
-
-## Branches and deploy
-
-- Default branch: `main`. PRs target `main`.
-- Deploy runs on push to `main` (`.github/workflows/cd.yml`).
-- PRs merge by merge commit, so every branch commit lands on `main`.
-
-### Curate the branch before ready
-
-Before a PR leaves draft, its branch holds only isolated commits:
-
-- Each commit makes one change and follows the [seven
-  rules](https://cbea.ms/git-commit/): imperative subject of 50
-  characters or fewer, blank line, body wrapped at 72 explaining why.
-- Each commit passes the pre-commit hooks on its own.
-- The PR description summarises the commits; the commits explain
-  themselves.
-
-Fold review fixes into the commit they amend. Record them with
-`git commit --fixup=<sha>` while working. Run the rewrite yourself:
-
-```bash
-GIT_SEQUENCE_EDITOR=true git rebase --interactive --autosquash --rebase-merges origin/main
-```
-
-`--rebase-merges` keeps a merge of `astro-paper/main` as one of the
-isolated commits, with its upstream parent intact. See [Adopt AstroPaper
-upstream changes](docs/how-to/adopt-astropaper-upstream-changes.md).
-
-Then hand the author the push:
-
-```bash
-! git push --force-with-lease
-```
-
-Only the author force-pushes, and only on a draft PR's own branch: a
-draft has no reviewer building on its history.
-
-## Reading ADRs
-
-Take current state from the live system or the author. An ADR under
-`docs/adr/` states what was decided and known when it was written.
-
-## GitHub Actions
-
-Workflows are named and split by when they run, jobs by what they
-produce. `alunduil-chezmoi`'s ADR 0004 carries the reasoning; this is the
-blog's application of it.
-
-- Workflow `name:` is the when — the trigger or cadence (`CI`, `Issues`,
-  `Weekly`), and the filename is that name kebab-cased. The name tracks
-  the trigger, so it stays correct as jobs colocate and changes only when
-  the trigger does.
-- Job `name:` is the what — the outcome as a phrase that reads standalone
-  in the required-checks picker (`Build the site`, `Check links across the
-  published site`).
-- The job id, the key under `jobs:`, wires `needs:` and reuse; the job
-  `name:` is the status-check context branch protection matches.
-- Keep job names unique repo-wide. `required_status_checks` in
-  `alunduil/alunduil-infrastructure` pins them by string, so a rename is a
-  coordinated change with that repo, and a bare `build` or `test` collides.
-- Split files on `on:` alone, the one setting that can't be scoped per job.
-  Permissions, concurrency, env, and defaults all scope per job, so
-  workflows sharing a trigger colocate as jobs in one file.
-- A new check is a job in the file matching its when. A narrower when — its
-  own cadence, or a `paths:` gate — earns a file named for it.
-
-Write `schedule:` cron in local time with an IANA name in `timezone:`.
-Without it GitHub runs the schedule in UTC and ignores daylight saving.
+Hand the author the branch-curation push as
+`! git push --force-with-lease`. The `!` prefix runs it in this session.
 
 ## Skills
 
@@ -223,14 +46,5 @@ Utilities:
   post (the one surface not auto-syndicated by dlvr.it).
   `/syndicate-instagram [path|slug|url]`.
 
-Shared conventions the writing skills draw from: `.claude/voice.md`
-(voice), `.claude/citations.md` (citations), `.claude/publishing.md`
-(final state before leaving draft),
-`docs/reference/post-frontmatter.md` (frontmatter, scheduling, tags), and
-`docs/reference/post-body.md` (images, table of contents, code blocks).
-
-## Idea issues
-
-`.github/workflows/issues.yml` auto-applies the `idea` label to any
-issue whose body contains `## Spark` (the idea template's first
-heading). No manual labeling needed when filing via the template.
+The writing skills draw from the post references under Posting
+convention in `AGENTS.md`.

@@ -143,6 +143,7 @@ repos:
         # prose.
         exclude: &unlinted_md |
           (?x)^(
+            AGENTS\.md|
             CLAUDE\.md|
             \.claude/.*|
             outlines/.*|
