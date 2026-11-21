@@ -1,11 +1,11 @@
 ---
 name: digest
-description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, Reader archives, and Todoist completions and upcoming tasks, plus an interactive check-in on books (Readwise Books: what you're reading, with completions inferred from whatever dropped off the active list) and games (Notion Media Log: recent Finished games, and dates for undated ones) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone review (scores, month-end closes, velocity) and milestone-system findings; the only side effects are book shelf and game row updates, and milestone scores and closes you confirm, plus idea or milestone-system issues and Todoist tasks on request. Promising kernels → `gh issue create --label idea`.
+description: Weekly (or arbitrary cadence) review of GitHub activity, monthly milestones across every Inbox repo, Readwise highlights, Reader archives, and Todoist completions and upcoming tasks, plus an interactive check-in on books (Readwise Books: what you're reading, with completions inferred from whatever dropped off the active list) and games (Notion Media Log: recent Finished games, and dates for undated ones) — surfaces raw material for brainstorming blog posts. Use via /digest [cadence] where cadence is `Nd|Nw|Nm|Ny` (e.g. `7d`, `4w`, `6m`); defaults to `7d` when no cadence is given. Output is thematically clustered in chat with a milestone review (scores, month-end closes, velocity) and milestone-system findings; the only side effects are book shelf and game row updates, and milestone scores, closes, and key-result gap issues you confirm, plus idea or milestone-system issues and Todoist tasks on request. Promising kernels → `gh issue create --label idea`.
 ---
 
 # Digest
 
-Pipeline: **collect → analyze data (incl. reading and playing check-in, milestone scoring, month-end milestone review, and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The check-in, milestone scoring, and month-end review are the interactive write-back steps, and §5 writes Todoist tasks on request. Everything else is read-only.
+Pipeline: **collect → analyze data (incl. reading and playing check-in, milestone scoring, month-end milestone review, and milestone lookback) → synthesize themes → analyze themes → present**. Each stage has a different owner; keep them separate. The check-in, milestone scoring with its gap issues, and month-end review are the interactive write-back steps, and §5 writes Todoist tasks on request. Everything else is read-only.
 
 **Hard gate: the interactive steps block synthesis.** Present the reading and gaming questions *alone*, as the only content of their message, and stop. Send each of these alone in the same way: the review question (§2 step 5), the milestone scoring proposals, and the month-end close proposals (§2). Synthesize, score, and print themes once the author has answered. Completions from the check-in add and reshape themes, and holding the themes back keeps the questions visible.
 
@@ -112,12 +112,14 @@ Score after the review gate and before the lookback, so a milestone this step co
 
 The month-end review scores milestones whose month has ended.
 
-1. Read the milestone's description: `gh api repos/<repo>/milestones/<number> --jq .description`.
-2. For **every** unticked key result, run or read the check it names, such as a command, an Actions API query, a `gcx` query against Grafana, or a count across repos. Measure the window the key result defines. Closed issues and merged PRs support a score; the check decides it.
-3. Propose a tick (1.0) or a partial score per key result, with its evidence. Leave a key result unscored only when its check can't run this session, and say why.
-4. Present each milestone in full: its title, its objective sentence, a table of every key result (text, current score, proposed score, evidence), and the objective score before and after. Flag each key result below 1.0 with no open issue in the milestone; that gap needs an issue.
-5. Send the proposals under the hard gate. For each confirmed score, tick a 1.0 or append ` — 0.5` to its line, and update the `Score:` line.
-6. Re-read the live description. When it differs from the one read in step 1, show the diff and ask. Otherwise write it back: `gh api -X PATCH repos/<repo>/milestones/<number> -f description="<edited description>"`.
+Read each due milestone's description first: `gh api repos/<repo>/milestones/<number> --jq .description`. Milestones with identical descriptions are copies of one shared objective. Score that objective once. When more than about ten objectives are due, measure them with parallel read-only subagents, one per family of related objectives. Tell each to report the command and output behind every score, and to use REST, which spares the GraphQL budget every session shares. Then, for each objective:
+
+1. For **every** unticked key result, run or read the check it names, such as a command, an Actions API query, a `gcx` query against Grafana, or a count across repos. Measure the window the key result defines. Closed issues and merged PRs support a score; the check decides it.
+2. Propose a tick (1.0) or a partial score per key result, with its evidence. Leave a key result unscored only when its check can't run this session, and say why.
+3. Present the objective in full: its title, the milestone copies it covers, its objective sentence, a table of every key result (text, current score, proposed score, evidence), and the objective score before and after. Flag each key result below 1.0 with no open issue in the milestone; that gap needs an issue.
+4. Send the proposals under the hard gate. Write each confirmed score into every due copy: tick a 1.0 or append ` — 0.5` to its line, and update the `Score:` line.
+5. Re-read each copy's live description. When a copy changed since you read it, show the diff and ask. Otherwise write it back: `gh api -X PATCH repos/<repo>/milestones/<number> -f description="<edited description>"`.
+6. File each flagged gap the author confirms. Search the milestone's repo for open and closed issues. Move a matching unmilestoned issue into the milestone. Otherwise file one with `issue-create`, and add its `blocked-by` edges with `issue-links`.
 
 ### Month-end milestone review
 
