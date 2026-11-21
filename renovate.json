@@ -1,11 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>alunduil/renovate-config"],
+  "extends": [
+    "github>alunduil/renovate-config",
+    "github>alunduil/renovate-config:automerge-minor",
+    "github>alunduil/renovate-config:hold-bundled-dependencies"
+  ],
   "packageRules": [
     {
       "description": "Bump pnpm in mise.toml and package.json's packageManager together so the pnpm mise installs matches the version pnpm switches to.",
       "matchPackageNames": ["pnpm"],
       "groupName": "pnpm"
+    },
+    {
+      "description": "cd.yml deploys the site, so it is this repo's release job. Repeats default.json's release-job hold, which matches only release.yml; change both. Runner images are exempt because GitHub also issues that job's OIDC token.",
+      "matchFileNames": [".github/workflows/cd.yml"],
+      "matchDatasources": ["!github-runners"],
+      "automerge": false
     }
   ]
 }
