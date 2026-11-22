@@ -70,18 +70,14 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/dependency-review-action@bbc44d14a204704ccc493733616cd1e93a0321ec # v5.0.1
 
-  # Dry runs execute every workflow outside CI, so a runner image or action
-  # update that breaks one fails before merge. The writes a dry run skips
-  # first execute after merge, so a broken write fails that workflow's next
-  # run on main.
-  workflow-changes:
-    name: Detect workflow changes
+  changed-paths:
+    name: Detect changed paths
     runs-on: ubuntu-26.04
     timeout-minutes: 5
     permissions:
       pull-requests: read
     outputs:
-      changed: ${{ steps.files.outputs.changed }}
+      workflows: ${{ steps.files.outputs.workflows }}
     steps:
       - id: files
         env:
@@ -90,15 +86,21 @@ jobs:
           NUMBER: ${{ github.event.pull_request.number }}
         run: |
           files=$(gh api --paginate "repos/$REPO/pulls/$NUMBER/files" \
-            --jq '.[].filename | select(test("^\\.github/(workflows|actions)/"))')
-          echo "changed=$([[ -n $files ]] && echo true || echo false)" >>"${GITHUB_OUTPUT}"
+            --jq '.[].filename')
+          touches() { grep -qE "$1" <<<"$files" && echo true || echo false; }
+          echo "workflows=$(touches '^\.github/(workflows|actions)/')" >>"${GITHUB_OUTPUT}"
 
+  # Dry runs execute every workflow outside CI, so a runner image or action
+  # update that breaks one fails before merge. The writes a dry run skips
+  # first execute after merge, so a broken write fails that workflow's next
+  # run on main.
+  #
   # A called workflow can't exceed its caller's grant, even in jobs the dry run
   # skips.
   dry-run-cd:
     name: Dry-run CD
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/cd.yml
     permissions:
       contents: read
@@ -108,8 +110,8 @@ jobs:
 
   dry-run-daily:
     name: Dry-run Daily
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/daily.yml
     permissions:
       contents: read
@@ -118,8 +120,8 @@ jobs:
 
   dry-run-weekly:
     name: Dry-run Weekly
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/weekly.yml
     permissions:
       contents: read
@@ -127,8 +129,8 @@ jobs:
 
   dry-run-issues:
     name: Dry-run Issues
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/issues.yml
     permissions:
       issues: write
@@ -138,7 +140,7 @@ jobs:
   dry-run-results:
     name: Check workflow dry runs
     needs:
-      - workflow-changes
+      - changed-paths
       - dry-run-cd
       - dry-run-daily
       - dry-run-weekly
