@@ -62,6 +62,65 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: ./.github/actions/build-site
 
+  # Built in the same run as the head build, so a post published since the last
+  # deploy appears in both.
+  base-feeds:
+    name: Build the base commit's feeds
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          install_args: node pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec astro build
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: base-feeds
+          path: dist/**/*.xml
+          if-no-files-found: error
+
+  # A separate runner keeps build code away from the script.
+  feed-items:
+    name: Check every feed's items are unchanged
+    needs:
+      - build
+      - base-feeds
+      - changed-paths
+    # GitHub counts a skipped required check as passing.
+    if: always()
+    runs-on: ubuntu-26.04
+    timeout-minutes: 10
+    steps:
+      - name: Fail when a needed job didn't succeed
+        if: >-
+          contains(needs.*.result, 'failure')
+          || contains(needs.*.result, 'cancelled')
+          || contains(needs.*.result, 'skipped')
+        run: exit 1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+      - uses: jdx/mise-action@d5574b52816a478f9d4e6529a3f6ff17a8a36785 # v5.2.8
+        with:
+          install_args: node pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: base-feeds
+          path: ${{ runner.temp }}/base
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/pages
+      - run: mkdir "$RUNNER_TEMP/head" && tar -xf "$RUNNER_TEMP/pages/artifact.tar" -C "$RUNNER_TEMP/head"
+      # Content and feed code live under src/, so a change there may alter a
+      # feed on purpose.
+      - name: Compare each feed's items
+        continue-on-error: ${{ needs.changed-paths.outputs.src == 'true' }}
+        run: node scripts/check-feed-items.ts "$RUNNER_TEMP/base" "$RUNNER_TEMP/head"
+
   dependency-review:
     name: Review dependencies
     runs-on: ubuntu-26.04
@@ -70,18 +129,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: actions/dependency-review-action@bbc44d14a204704ccc493733616cd1e93a0321ec # v5.0.1
 
-  # Dry runs execute every workflow outside CI, so a runner image or action
-  # update that breaks one fails before merge. The writes a dry run skips
-  # first execute after merge, so a broken write fails that workflow's next
-  # run on main.
-  workflow-changes:
-    name: Detect workflow changes
+  changed-paths:
+    name: Detect changed paths
     runs-on: ubuntu-26.04
     timeout-minutes: 5
     permissions:
       pull-requests: read
     outputs:
-      changed: ${{ steps.files.outputs.changed }}
+      workflows: ${{ steps.files.outputs.workflows }}
+      src: ${{ steps.files.outputs.src }}
     steps:
       - id: files
         env:
@@ -90,15 +146,24 @@ jobs:
           NUMBER: ${{ github.event.pull_request.number }}
         run: |
           files=$(gh api --paginate "repos/$REPO/pulls/$NUMBER/files" \
-            --jq '.[].filename | select(test("^\\.github/(workflows|actions)/"))')
-          echo "changed=$([[ -n $files ]] && echo true || echo false)" >>"${GITHUB_OUTPUT}"
+            --jq '.[].filename')
+          touches() { grep -qE "$1" <<<"$files" && echo true || echo false; }
+          {
+            echo "workflows=$(touches '^\.github/(workflows|actions)/')"
+            echo "src=$(touches '^src/')"
+          } >>"${GITHUB_OUTPUT}"
 
+  # Dry runs execute every workflow outside CI, so a runner image or action
+  # update that breaks one fails before merge. The writes a dry run skips
+  # first execute after merge, so a broken write fails that workflow's next
+  # run on main.
+  #
   # A called workflow can't exceed its caller's grant, even in jobs the dry run
   # skips.
   dry-run-cd:
     name: Dry-run CD
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/cd.yml
     permissions:
       contents: read
@@ -108,8 +173,8 @@ jobs:
 
   dry-run-daily:
     name: Dry-run Daily
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/daily.yml
     permissions:
       contents: read
@@ -118,8 +183,8 @@ jobs:
 
   dry-run-weekly:
     name: Dry-run Weekly
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/weekly.yml
     permissions:
       contents: read
@@ -127,8 +192,8 @@ jobs:
 
   dry-run-issues:
     name: Dry-run Issues
-    needs: workflow-changes
-    if: needs.workflow-changes.outputs.changed == 'true'
+    needs: changed-paths
+    if: needs.changed-paths.outputs.workflows == 'true'
     uses: ./.github/workflows/issues.yml
     permissions:
       issues: write
@@ -138,7 +203,7 @@ jobs:
   dry-run-results:
     name: Check workflow dry runs
     needs:
-      - workflow-changes
+      - changed-paths
       - dry-run-cd
       - dry-run-daily
       - dry-run-weekly

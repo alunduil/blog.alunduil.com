@@ -5,6 +5,6 @@ import { getViteConfig } from "astro/config";
 // Vitest config, importing them fails.
 export default getViteConfig({
   test: {
-    include: ["src/**/*.test.ts"],
+    include: ["{scripts,src}/**/*.test.ts"],
   },
 });
